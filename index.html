@@ -1,955 +1,664 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practice Session</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-        
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        
-        
-        html { font-size: 16px; }
-        h1, h2, h3 { letter-spacing: -0.02em; }
-        .card-shadow { box-shadow: 0 10px 25px rgba(2, 6, 23, 0.08); }
-    .eliminated {
-            opacity: 0.35;
-            text-decoration: line-through;
-        }
-        
-        .gradient-bg {
-background: linear-gradient(135deg, #064E3B 0%, #10B981 100%);
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CFA Level I – Practice Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:#0f1e3c; --navy-mid:#1a2f5a; --navy-soft:#243a6b; --navy-glow:#1e3a78;
+  --gold:#c9a84c; --gold-light:#e8c97a; --gold-pale:#f7f0dc; --gold-dim:#a07c30;
+  --cream:#faf8f3; --white:#ffffff;
+  --text:#1a1a2e; --text-mid:#3a3a5c; --text-light:#7a7a9a;
+  --border:#ddd8cc; --border-soft:#eceae4;
+  --green:#1a7a4a; --green-bg:#e8f7ef;
+  --shadow-sm:0 2px 12px rgba(15,30,60,.07);
+  --shadow-md:0 6px 28px rgba(15,30,60,.12);
+  --shadow-lg:0 16px 56px rgba(15,30,60,.16);
 }
-        
-        .gradient-bg-2 {
-background: linear-gradient(135deg, #10B981 0%, #34D399 100%);
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);min-height:100vh;overflow-x:hidden}
+
+/* ── HEADER ── */
+header {
+  background:var(--navy);
+  padding:20px 40px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  position:relative;
+  overflow:hidden;
 }
-        
-        .bg-slate-50 {
-background: linear-gradient(135deg, #0F172A 0%, #334155 100%);
+header::before {
+  content:'';
+  position:absolute;
+  inset:0;
+  background:
+    repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(201,168,76,.04) 79px,rgba(201,168,76,.04) 80px),
+    repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(201,168,76,.04) 79px,rgba(201,168,76,.04) 80px);
+}
+.header-brand {
+  display:flex;
+  align-items:center;
+  gap:16px;
+  position:relative;
+}
+.brand-badge {
+  width:44px;height:44px;
+  background:linear-gradient(135deg, var(--gold) 0%, var(--gold-dim) 100%);
+  border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.2rem;font-weight:700;
+  color:var(--navy);
+  flex-shrink:0;
+  box-shadow:0 4px 12px rgba(201,168,76,.35);
+}
+.brand-text h1{font-family:'Cormorant Garamond',serif;color:var(--white);font-size:1.1rem;font-weight:600;line-height:1.2}
+.brand-text p{color:rgba(255,255,255,.4);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;margin-top:2px}
+.header-nav {
+  display:flex;gap:8px;position:relative;
+}
+.nav-link {
+  color:rgba(255,255,255,.5);
+  font-size:.78rem;font-weight:500;
+  text-decoration:none;
+  padding:7px 16px;border-radius:7px;
+  transition:all .2s;
+  letter-spacing:.02em;
+}
+.nav-link:hover{color:var(--gold-light);background:rgba(255,255,255,.06)}
+.nav-link.active{color:var(--gold-light);background:rgba(201,168,76,.15)}
+
+/* ── HERO ── */
+.hero {
+  position:relative;
+  background:var(--navy);
+  overflow:hidden;
+  padding:80px 40px 0;
+}
+.hero-bg {
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 60% 80% at 10% 60%, rgba(201,168,76,.09) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 50% at 90% 20%, rgba(36,58,107,.9) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 60% at 50% 100%, rgba(15,30,60,1) 0%, transparent 70%);
+}
+.hero-grid {
+  position:absolute;inset:0;
+  background-image:
+    repeating-linear-gradient(0deg,transparent,transparent 49px,rgba(201,168,76,.05) 49px,rgba(201,168,76,.05) 50px),
+    repeating-linear-gradient(90deg,transparent,transparent 49px,rgba(201,168,76,.05) 49px,rgba(201,168,76,.05) 50px);
+}
+.hero-inner {
+  max-width:1100px;
+  margin:0 auto;
+  position:relative;
+  display:grid;
+  grid-template-columns:1fr 440px;
+  gap:60px;
+  align-items:end;
+  padding-bottom:0;
+}
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr}.hero-card-col{display:none}}
+.hero-text {
+  padding-bottom:64px;
+}
+.hero-eyebrow {
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(201,168,76,.12);
+  border:1px solid rgba(201,168,76,.25);
+  border-radius:20px;
+  padding:5px 14px 5px 10px;
+  margin-bottom:28px;
+}
+.hero-eyebrow-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
+.hero-eyebrow span{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+.hero h2 {
+  font-family:'Cormorant Garamond',serif;
+  color:var(--white);
+  font-size:clamp(2.8rem,5.5vw,4.4rem);
+  font-weight:700;
+  line-height:1.05;
+  letter-spacing:-.02em;
+  margin-bottom:24px;
+}
+.hero h2 em{color:var(--gold-light);font-style:italic}
+.hero-desc {
+  color:rgba(255,255,255,.6);
+  font-size:1rem;
+  line-height:1.7;
+  max-width:480px;
+  margin-bottom:36px;
+}
+.hero-stats {
+  display:flex;gap:32px;flex-wrap:wrap;
+  padding-top:32px;
+  border-top:1px solid rgba(255,255,255,.08);
+}
+.hero-stat-num{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:700;color:var(--gold-light);line-height:1}
+.hero-stat-label{font-size:.72rem;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.08em;margin-top:3px}
+
+/* Floating card in hero */
+.hero-card-col {
+  position:relative;
+  padding-bottom:40px;
+}
+.hero-float-card {
+  background:rgba(255,255,255,.05);
+  backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:20px;
+  padding:28px;
+  box-shadow:0 24px 64px rgba(0,0,0,.3);
+}
+.hfc-label{font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.hfc-chapter {
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:10px;
+  padding:12px 14px;
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:8px;
+  cursor:pointer;
+  transition:all .2s;
+}
+.hfc-chapter:hover{background:rgba(201,168,76,.12);border-color:rgba(201,168,76,.3)}
+.hfc-ch-num{font-family:'DM Mono',monospace;font-size:.65rem;color:var(--gold);background:rgba(201,168,76,.15);padding:3px 7px;border-radius:4px;flex-shrink:0}
+.hfc-ch-title{font-size:.78rem;color:rgba(255,255,255,.75);line-height:1.3}
+.hfc-ch-count{margin-left:auto;font-size:.65rem;color:rgba(255,255,255,.35);flex-shrink:0}
+.hfc-available{display:inline-block;background:var(--green-bg);color:var(--green);font-size:.65rem;font-weight:600;padding:2px 8px;border-radius:4px;margin-top:10px}
+.hfc-coming{display:inline-block;background:rgba(255,255,255,.07);color:rgba(255,255,255,.35);font-size:.65rem;padding:2px 8px;border-radius:4px;margin-top:10px}
+
+/* ── WAVE DIVIDER ── */
+.wave {
+  display:block;
+  width:100%;
+  height:64px;
+  background:var(--navy);
+  clip-path:ellipse(55% 100% at 50% 0%);
+  margin-bottom:-2px;
 }
 
-        .card-shadow {
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
+/* ── MAIN CONTENT ── */
+.main {
+  max-width:1100px;
+  margin:0 auto;
+  padding:60px 40px 80px;
+}
+@media(max-width:640px){.main{padding:40px 20px 60px}}
 
-        .option-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
+/* Section label */
+.section-eyebrow {
+  display:flex;align-items:center;gap:10px;
+  margin-bottom:12px;
+}
+.eyebrow-line{flex:0 0 32px;height:2px;background:var(--gold);border-radius:2px}
+.section-eyebrow span{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,3vw,2.1rem);font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:8px}
+.section-sub{font-size:.88rem;color:var(--text-light);line-height:1.6;max-width:560px}
 
-        .option-card {
-            transition: all 0.2s ease;
-        }
-    </style>
+/* ── HOW IT WORKS ── */
+.how-list {
+  margin-top:20px;
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:var(--shadow-sm);
+}
+.how-item {
+  display:flex;align-items:flex-start;gap:14px;
+  padding:13px 20px;
+  border-bottom:1px solid var(--border-soft);
+  transition:background .15s;
+}
+.how-item:last-child{border-bottom:none}
+.how-item:hover{background:#f9f8ff}
+.how-step {
+  width:24px;height:24px;flex-shrink:0;margin-top:1px;
+  background:var(--navy);color:var(--gold-light);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-family:'DM Mono',monospace;font-size:.68rem;font-weight:700;
+}
+.how-icon{font-size:.95rem;flex-shrink:0;margin-top:3px}
+.how-item-text strong{font-size:.85rem;font-weight:600;color:var(--navy)}
+.how-item-text p{font-size:.77rem;color:var(--text-mid);margin-top:1px;line-height:1.4}
+
+/* ── START EXAM SECTION ── */
+.start-section {margin-top:60px}
+.start-grid {
+  display:grid;
+  grid-template-columns:1fr 360px;
+  gap:36px;align-items:start;margin-top:32px;
+}
+@media(max-width:800px){.start-grid{grid-template-columns:1fr}}
+
+/* Chapter selector */
+.selector-card {
+  background:var(--white);border:1px solid var(--border);
+  border-radius:20px;overflow:hidden;box-shadow:var(--shadow-sm);
+}
+.selector-header {
+  background:var(--navy);padding:18px 24px;
+  display:flex;align-items:center;gap:12px;
+}
+.selector-header h3{color:var(--gold-light);font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600}
+.selector-header p{color:rgba(255,255,255,.45);font-size:.72rem;margin-top:2px}
+.selector-body{padding:22px}
+
+.field-label {
+  font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--text-light);margin-bottom:8px;display:block;
+}
+
+/* Native select dropdown */
+.chapter-select-wrap{position:relative;margin-bottom:18px}
+.chapter-select-wrap::after{
+  content:'▾';position:absolute;right:14px;top:50%;transform:translateY(-50%);
+  color:var(--gold);font-size:.85rem;pointer-events:none;
+}
+select#chapterDropdown {
+  appearance:none;-webkit-appearance:none;
+  width:100%;background:var(--white);
+  border:2px solid var(--border);border-radius:10px;
+  padding:11px 40px 11px 14px;
+  font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:500;color:var(--text);
+  cursor:pointer;outline:none;transition:border-color .18s;
+}
+select#chapterDropdown:focus{border-color:var(--navy)}
+select#chapterDropdown option{font-size:.85rem}
+select#chapterDropdown option:disabled{color:var(--text-light)}
+
+/* Options row */
+.options-row {
+  display:flex;align-items:center;gap:20px;
+  padding:14px 0;
+  border-top:1px solid var(--border-soft);
+  border-bottom:1px solid var(--border-soft);
+  margin-bottom:20px;
+}
+.toggle-wrap {
+  display:flex;align-items:center;gap:10px;cursor:pointer;user-select:none;
+}
+.toggle {
+  width:40px;height:22px;
+  background:var(--border);border-radius:11px;
+  position:relative;transition:background .2s;
+  flex-shrink:0;
+}
+.toggle.on{background:var(--navy)}
+.toggle::after{
+  content:'';position:absolute;
+  top:3px;left:3px;
+  width:16px;height:16px;
+  background:var(--white);border-radius:50%;
+  transition:left .2s;
+  box-shadow:0 1px 4px rgba(0,0,0,.2);
+}
+.toggle.on::after{left:21px}
+.toggle-label{font-size:.8rem;font-weight:500;color:var(--text-mid)}
+.toggle-sublabel{font-size:.7rem;color:var(--text-light)}
+
+/* Start button */
+.btn-start {
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;padding:15px 28px;
+  background:linear-gradient(135deg, var(--navy) 0%, var(--navy-soft) 100%);
+  color:var(--gold-light);
+  border:none;border-radius:12px;
+  font-family:'DM Sans',sans-serif;font-size:.95rem;font-weight:700;
+  letter-spacing:.02em;
+  cursor:pointer;
+  transition:all .2s;
+  box-shadow:0 4px 20px rgba(15,30,60,.25);
+  text-decoration:none;
+}
+.btn-start:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(15,30,60,.32)}
+.btn-start:active{transform:translateY(0)}
+.btn-start-arrow{font-size:1.1rem;transition:transform .2s}
+.btn-start:hover .btn-start-arrow{transform:translateX(4px)}
+.btn-start.disabled{opacity:.4;cursor:not-allowed;pointer-events:none}
+
+/* Right side info */
+.info-aside {
+  display:flex;flex-direction:column;gap:16px;
+  position:sticky;top:24px;
+}
+.info-box {
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:var(--shadow-sm);
+}
+.info-box-header {
+  background:linear-gradient(135deg,var(--gold-pale),#f0e8cc);
+  padding:14px 18px;
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:8px;
+}
+.info-box-header h4{font-family:'Cormorant Garamond',serif;font-size:.95rem;font-weight:700;color:var(--navy)}
+.info-box-body{padding:16px 18px}
+.info-row{display:flex;justify-content:space-between;align-items:center;font-size:.8rem;padding:6px 0;border-bottom:1px solid var(--border-soft)}
+.info-row:last-child{border-bottom:none}
+.info-row-label{color:var(--text-light)}
+.info-row-val{font-weight:600;color:var(--navy)}
+.info-row-val.green{color:var(--green)}
+
+/* Tips box */
+.tips-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.tips-list li{display:flex;gap:10px;font-size:.78rem;color:var(--text-mid);line-height:1.45}
+.tips-list li::before{content:'💡';flex-shrink:0;font-size:.8rem;margin-top:1px}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--navy);
+  padding:28px 40px;
+  text-align:center;
+}
+.footer-logo{font-family:'Cormorant Garamond',serif;color:rgba(255,255,255,.3);font-size:.85rem;letter-spacing:.1em}
+.footer-note{color:rgba(255,255,255,.2);font-size:.7rem;margin-top:6px}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.anim-1{animation:fadeUp .6s ease both}
+.anim-2{animation:fadeUp .6s .1s ease both}
+.anim-3{animation:fadeUp .6s .2s ease both}
+.anim-4{animation:fadeUp .6s .3s ease both}
+.anim-5{animation:fadeUp .6s .4s ease both}
+.anim-6{animation:fadeUp .6s .5s ease both}
+</style>
 </head>
-<body class="bg-gray-100">
-    <div id="app"></div>
+<body>
 
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    
-    <script type="text/babel">
-        const { useState, useEffect } = React;
+<!-- ── HEADER ── -->
+<header>
+  <div class="header-brand">
+    <div class="brand-badge">CFA</div>
+    <div class="brand-text">
+      <h1>Practice Hub</h1>
+      <p>CFA Level I</p>
+    </div>
+  </div>
+  <nav class="header-nav">
+    <a href="#" class="nav-link active">Home</a>
+    <a href="finance-practice-exam-fsa-final.html" class="nav-link">Exam</a>
+  </nav>
+</header>
 
-        // Questions are loaded from ./questions.json (kept in the same folder as this HTML)
-async function fetchQuestions() {
-    const res = await fetch("./questions.json", { cache: "no-store" });
-    if (!res.ok) {
-        throw new Error(`Could not load questions.json (HTTP ${res.status})`);
-    }
-    const data = await res.json();
-    if (!Array.isArray(data)) {
-        throw new Error("questions.json is not an array");
-    }
-    return data;
-}
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-text anim-1">
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-dot"></div>
+        <span>2026 CFA® Program · Level I</span>
+      </div>
+      <h2>Master <em>CFA</em><br>Level I</h2>
+      <p class="hero-desc">A structured practice environment for CFA Level I candidates. Work through every topic across the full curriculum — chapter by chapter or all at once — with practice questions, concept summaries, and live score tracking.</p>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num" id="heroTotalQ">100</div>
+          <div class="hero-stat-label">Questions Available</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">10</div>
+          <div class="hero-stat-label">Chapters Covered</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">1</div>
+          <div class="hero-stat-label">Chapter Active</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-card-col anim-2">
+      <div class="hero-float-card">
+        <div class="hfc-label">Chapters Available</div>
+        <div class="hfc-chapter">
+          <span class="hfc-ch-num">R1</span>
+          <span class="hfc-ch-title">Intro to Financial Statement Analysis</span>
+          <span class="hfc-ch-count">100 Qs</span>
+        </div>
+        <div class="hfc-chapter" style="opacity:.45;cursor:default">
+          <span class="hfc-ch-num">R2</span>
+          <span class="hfc-ch-title">Financial Reporting Standards</span>
+          <span class="hfc-ch-count">Soon</span>
+        </div>
+        <div class="hfc-chapter" style="opacity:.45;cursor:default">
+          <span class="hfc-ch-num">R3</span>
+          <span class="hfc-ch-title">Understanding Income Statements</span>
+          <span class="hfc-ch-count">Soon</span>
+        </div>
+        <div class="hfc-chapter" style="opacity:.45;cursor:default">
+          <span class="hfc-ch-num">R4–10</span>
+          <span class="hfc-ch-title">Balance Sheets, Cash Flows & more…</span>
+          <span class="hfc-ch-count">Soon</span>
+        </div>
+        <div><span class="hfc-available">✓ Reading 1 ready now</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="wave"></div>
 
-// Shuffle helper (Fisher–Yates)
-function shuffleArray(array) {
-    const shuffled = [...array];
-    for (let i = shuffled.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-    }
-    return shuffled;
-}
-function FinanceExamApp() {
-            // allQuestions: full bank loaded from questions.json
-            // questions: active exam set (after chapter filter / shuffle)
-            const [allQuestions, setAllQuestions] = useState([]);
-            const [questions, setQuestions] = useState([]);
-            const [isLoadingQuestions, setIsLoadingQuestions] = useState(false);
-            const [loadError, setLoadError] = useState('');
-            const [selectedChapters, setSelectedChapters] = useState(new Set());
-            const [chapterSelection, setChapterSelection] = useState('ALL');
-            const [shuffleEnabled, setShuffleEnabled] = useState(true);
-            const [examStarted, setExamStarted] = useState(false);
-            const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-            const [selectedAnswer, setSelectedAnswer] = useState('');
-            const [answers, setAnswers] = useState({});
-            const [markedForReview, setMarkedForReview] = useState(new Set());
-            const [eliminatedOptions, setEliminatedOptions] = useState({});
-            const [showResults, setShowResults] = useState(false);
-            const [timeElapsed, setTimeElapsed] = useState(0);
+<!-- ── MAIN ── -->
+<main class="main">
 
+  <!-- HOW IT WORKS -->
+  <section class="anim-3">
+    <div class="section-eyebrow"><div class="eyebrow-line"></div><span>Guide</span></div>
+    <h2 class="section-title">How It Works</h2>
+    <p class="section-sub">Everything you need to know to get the most out of your CFA practice sessions.</p>
+    <div class="how-list">
+      <div class="how-item">
+        <div class="how-step">1</div>
+        <div class="how-icon">🎯</div>
+        <div class="how-item-text"><strong>Choose your scope</strong><p>Pick a specific chapter to drill one reading, or select <em>All</em> to mix questions across the full curriculum.</p></div>
+      </div>
+      <div class="how-item">
+        <div class="how-step">2</div>
+        <div class="how-icon">🔀</div>
+        <div class="how-item-text"><strong>Optionally shuffle</strong><p>Toggle shuffle to randomise question order and break pattern recognition — closer to real exam conditions.</p></div>
+      </div>
+      <div class="how-item">
+        <div class="how-step">3</div>
+        <div class="how-icon">📝</div>
+        <div class="how-item-text"><strong>Answer, skip, or come back</strong><p>Select an answer to lock it in. Skip freely and return before submitting. Explanations reveal on every question after submission.</p></div>
+      </div>
+      <div class="how-item">
+        <div class="how-step">4</div>
+        <div class="how-icon">📊</div>
+        <div class="how-item-text"><strong>Track your score live</strong><p>A sidebar shows running score, correct/wrong counts, and a colour-coded question map as you go.</p></div>
+      </div>
+      <div class="how-item">
+        <div class="how-step">5</div>
+        <div class="how-icon">📖</div>
+        <div class="how-item-text"><strong>Review chapter summaries</strong><p>Switch to the Summary tab anytime — learning outcomes, frameworks, tables, and key thresholds in one concise view.</p></div>
+      </div>
+    </div>
+  </section>
 
-            // Load questions.json once when the page opens (so chapter list is available)
-            useEffect(() => {
-                if (allQuestions.length > 0 || isLoadingQuestions) return;
-                (async () => {
-                    try {
-                        setIsLoadingQuestions(true);
-                        setLoadError('');
-                        const data = await fetchQuestions();
-                        setAllQuestions(data);
+  <!-- START EXAM -->
+  <section class="start-section anim-4">
+    <div class="section-eyebrow"><div class="eyebrow-line"></div><span>Begin</span></div>
+    <h2 class="section-title">Configure Your Session</h2>
+    <p class="section-sub">Select a topic, set your preferences, then launch your practice exam across any part of the CFA Level I curriculum.</p>
 
-                        // Default: all chapters selected
-                        const chapters = new Set(data.map(q => String(q.chapter)));
-                        setSelectedChapters(chapters);
-                        setChapterSelection('ALL');
-                    } catch (e) {
-                        console.error(e);
-                        setLoadError(e?.message || 'Failed to load questions.json');
-                    } finally {
-                        setIsLoadingQuestions(false);
-                    }
-                })();
-            }, []);
+    <div class="start-grid">
 
-            // Timer
-            useEffect(() => {
-                if (examStarted && !showResults) {
-                    const timer = setInterval(() => {
-                        setTimeElapsed(prev => prev + 1);
-                    }, 1000);
-                    return () => clearInterval(timer);
-                }
-            }, [examStarted, showResults]);
+      <!-- LEFT: Selector card -->
+      <div class="selector-card">
+        <div class="selector-header">
+          <div>
+            <h3>Select Chapter</h3>
+            <p>Browse the full CFA Level I curriculum</p>
+          </div>
+        </div>
+        <div class="selector-body">
+          <span class="field-label">Chapter / Reading</span>
+          <div class="chapter-select-wrap">
+            <select id="chapterDropdown" onchange="selectChapter(this.value)">
+              <option value="" disabled selected>— Select a chapter —</option>
+            </select>
+          </div>
 
-            const formatTime = (seconds) => {
-                const hrs = Math.floor(seconds / 3600);
-                const mins = Math.floor((seconds % 3600) / 60);
-                const secs = seconds % 60;
-                return `${hrs.toString().padStart(2, '0')}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-            };
+          <!-- Options -->
+          <div class="options-row">
+            <div class="toggle-wrap" onclick="toggleShuffle()">
+              <div class="toggle" id="shuffleToggle"></div>
+              <div>
+                <div class="toggle-label">Shuffle Questions</div>
+                <div class="toggle-sublabel">Randomize question order</div>
+              </div>
+            </div>
+          </div>
 
-            const currentQuestion = questions[currentQuestionIndex];
-            const totalQuestions = questions.length;
-            const progress = ((currentQuestionIndex + 1) / totalQuestions) * 100;
-            const answeredCount = Object.keys(answers).length;
+          <!-- CTA -->
+          <a href="#" class="btn-start" id="startBtn">
+            <span>Start Practice Exam</span>
+            <span class="btn-start-arrow">→</span>
+          </a>
+          <div style="text-align:center;margin-top:10px">
+            <a href="finance-practice-exam-fsa-final.html" style="font-size:.75rem;color:var(--text-light);text-decoration:none">
+              Or open exam with default settings →
+            </a>
+          </div>
+        </div>
+      </div>
 
-            const handleAnswerSelect = (option) => {
-                setSelectedAnswer(option);
-            };
+      <!-- RIGHT: Info aside -->
+      <div class="info-aside">
+        <div class="info-box">
+          <div class="info-box-header">
+            <span>📋</span>
+            <h4>Session Preview</h4>
+          </div>
+          <div class="info-box-body">
+            <div class="info-row"><span class="info-row-label">Selected Chapter</span><span class="info-row-val" id="previewChapter">—</span></div>
+            <div class="info-row"><span class="info-row-label">Questions</span><span class="info-row-val green" id="previewCount">—</span></div>
+            <div class="info-row"><span class="info-row-label">Shuffle</span><span class="info-row-val" id="previewShuffle">Off</span></div>
+            <div class="info-row"><span class="info-row-label">Est. Time</span><span class="info-row-val" id="previewTime">—</span></div>
+          </div>
+        </div>
 
-            const handleConfirm = () => {
-                if (selectedAnswer) {
-                    setAnswers({
-                        ...answers,
-                        [currentQuestion.id]: {
-                            selected: selectedAnswer,
-                            timeSpent: timeElapsed
-                        }
-                    });
-                    
-                    // Auto-advance
-                    if (currentQuestionIndex < totalQuestions - 1) {
-                        setTimeout(() => {
-                            setCurrentQuestionIndex(currentQuestionIndex + 1);
-                            setSelectedAnswer('');
-                        }, 200);
-                    }
-                }
-            };
+        <div class="info-box">
+          <div class="info-box-header">
+            <span>💡</span>
+            <h4>Study Tips</h4>
+          </div>
+          <div class="info-box-body">
+            <ul class="tips-list">
+              <li>Read each question carefully — CFA questions often hinge on "most likely" or "least likely."</li>
+              <li>Use the Skip button for questions you're unsure about and return before submitting.</li>
+              <li>After submitting, review every explanation — not just the ones you got wrong.</li>
+              <li>Open the Chapter Summary tab side-by-side to reinforce concepts as you review.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-            const handlePrevious = () => {
-                if (currentQuestionIndex > 0) {
-                    setCurrentQuestionIndex(currentQuestionIndex - 1);
-                    const prevAnswer = answers[questions[currentQuestionIndex - 1].id];
-                    setSelectedAnswer(prevAnswer?.selected || '');
-                }
-            };
+    </div>
+  </section>
 
-            const handleNext = () => {
-                if (currentQuestionIndex < totalQuestions - 1) {
-                    setCurrentQuestionIndex(currentQuestionIndex + 1);
-                    const nextAnswer = answers[questions[currentQuestionIndex + 1].id];
-                    setSelectedAnswer(nextAnswer?.selected || '');
-                }
-            };
+</main>
 
-            const toggleEliminate = (questionId, option) => {
-                const key = `${questionId}-${option}`;
-                setEliminatedOptions({
-                    ...eliminatedOptions,
-                    [key]: !eliminatedOptions[key]
-                });
-            };
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-logo">CFA Level I · Practice Hub</div>
+  <div class="footer-note">For study purposes only · Not affiliated with CFA Institute</div>
+</footer>
 
-            const toggleRevisit = () => {
-                const newMarked = new Set(markedForReview);
-                if (newMarked.has(currentQuestion.id)) {
-                    newMarked.delete(currentQuestion.id);
-                } else {
-                    newMarked.add(currentQuestion.id);
-                }
-                setMarkedForReview(newMarked);
-            };
+<script>
+// ── Chapter data ──
+const CHAPTERS = [
+  { id:'all',   label:'All Chapters',                          sub:'',     count:100, available:true  },
+  { id:'ch1',   label:'Intro to Financial Statement Analysis', sub:'R·01', count:100, available:true  },
+  { id:'ch2',   label:'Financial Reporting Standards',         sub:'R·02', count:0,   available:false },
+  { id:'ch3',   label:'Understanding Income Statements',       sub:'R·03', count:0,   available:false },
+  { id:'ch4',   label:'Understanding Balance Sheets',          sub:'R·04', count:0,   available:false },
+  { id:'ch5',   label:'Understanding Cash Flow Statements',    sub:'R·05', count:0,   available:false },
+  { id:'ch6',   label:'Financial Analysis Techniques',         sub:'R·06', count:0,   available:false },
+  { id:'ch7',   label:'Inventories',                           sub:'R·07', count:0,   available:false },
+  { id:'ch8',   label:'Long-Lived Assets',                     sub:'R·08', count:0,   available:false },
+  { id:'ch9',   label:'Income Taxes',                          sub:'R·09', count:0,   available:false },
+  { id:'ch10',  label:'Non-Current Liabilities',               sub:'R·10', count:0,   available:false },
+];
 
-            const markedCount = markedForReview.size;
+let selectedChapter = null;
+let shuffleOn = false;
 
-            const goToNextMarked = () => {
-                if (markedForReview.size === 0) return;
-                // Find next marked question after current index (wrap around)
-                const n = questions.length;
-                for (let step = 1; step <= n; step++) {
-                    const j = (currentQuestionIndex + step) % n;
-                    if (markedForReview.has(questions[j].id)) {
-                        setCurrentQuestionIndex(j);
-                        setSelectedAnswer('');
-                        return;
-                    }
-                }
-            };
+function buildChapterDropdown() {
+  const sel = document.getElementById('chapterDropdown');
+  // Group: All
+  const allOpt = document.createElement('option');
+  allOpt.value = 'all';
+  allOpt.textContent = '📚  All Chapters — ' + CHAPTERS.filter(c=>c.available && c.id!=='all').reduce((s,c)=>s+c.count,0) + ' questions';
+  sel.appendChild(allOpt);
 
-            const clearAllMarked = () => {
-                if (markedForReview.size === 0) return;
-                const ok = window.confirm("Clear all review marks?");
-                if (!ok) return;
-                setMarkedForReview(new Set());
-            };
+  // Separator
+  const sep = document.createElement('option');
+  sep.disabled = true;
+  sep.textContent = '──────────────────────────';
+  sel.appendChild(sep);
 
-
-            const calculateScore = () => {
-                let correct = 0;
-                let total = 0;
-                
-                questions.forEach(q => {
-                    if (answers[q.id]) {
-                        total++;
-                        if (answers[q.id].selected === q.correctAnswer) {
-                            correct++;
-                        }
-                    }
-                });
-                
-                return { 
-                    correct, 
-                    total, 
-                    percentage: total > 0 ? ((correct / total) * 100).toFixed(1) : 0,
-                    unanswered: questions.length - total
-                };
-            };
-
-            const getAnalysisByDifficulty = () => {
-                const byDifficulty = { 
-                    Easy: { correct: 0, total: 0 }, 
-                    Moderate: { correct: 0, total: 0 }, 
-                    Difficult: { correct: 0, total: 0 } 
-                };
-                
-                questions.forEach(q => {
-                    if (answers[q.id]) {
-                        byDifficulty[q.difficulty].total++;
-                        if (answers[q.id].selected === q.correctAnswer) {
-                            byDifficulty[q.difficulty].correct++;
-                        }
-                    }
-                });
-                
-                return byDifficulty;
-            };
-
-            const getAnalysisByChapter = () => {
-                const byChapter = {};
-                
-                questions.forEach(q => {
-                    if (!byChapter[q.chapter]) {
-                        byChapter[q.chapter] = { 
-                            name: q.chapterName, 
-                            correct: 0, 
-                            total: 0 
-                        };
-                    }
-                    if (answers[q.id]) {
-                        byChapter[q.chapter].total++;
-                        if (answers[q.id].selected === q.correctAnswer) {
-                            byChapter[q.chapter].correct++;
-                        }
-                    }
-                });
-                
-                return byChapter;
-            };
-
-
-            // Chapter list for chapter-wise practice mode
-            const chapterOptions = (() => {
-                const map = new Map();
-                allQuestions.forEach(q => {
-                    const key = String(q.chapter);
-                    const name = q.chapterName ? String(q.chapterName) : `Chapter ${key}`;
-                    if (!map.has(key)) map.set(key, name);
-                });
-                return Array.from(map.entries())
-                    .map(([chapter, chapterName]) => ({ chapter, chapterName }))
-                    .sort((a, b) => Number(a.chapter) - Number(b.chapter));
-            })();
-
-            
-const handleChapterSelection = (value) => {
-    setChapterSelection(value);
-    if (value === 'ALL') {
-        setSelectedChapters(new Set(chapterOptions.map(c => c.chapter)));
+  // Individual chapters
+  CHAPTERS.filter(c => c.id !== 'all').forEach(ch => {
+    const opt = document.createElement('option');
+    opt.value = ch.id;
+    if (!ch.available) {
+      opt.disabled = true;
+      opt.textContent = ch.sub + '  ' + ch.label + '  (Coming Soon)';
     } else {
-        setSelectedChapters(new Set([value]));
+      opt.textContent = ch.sub + '  ' + ch.label + '  — ' + ch.count + ' Qs';
     }
-};
-
-            const startExamWithSettings = () => {
-                // Build filtered set
-                const filtered = (allQuestions.length ? allQuestions : []).filter(q => selectedChapters.has(String(q.chapter)));
-                if (filtered.length === 0) {
-                    setLoadError('Please select at least one chapter to start.');
-                    return;
-                }
-
-                const active = shuffleEnabled ? shuffleArray(filtered) : filtered;
-
-                // Reset exam state
-                setQuestions(active);
-                setExamStarted(true);
-                setCurrentQuestionIndex(0);
-                setSelectedAnswer('');
-                setAnswers({});
-                setMarkedForReview(new Set());
-                setEliminatedOptions({});
-                setShowResults(false);
-                setTimeElapsed(0);
-                setLoadError('');
-            };
-
-            const exitExam = () => {
-                const ok = window.confirm("Exit the practice exam and view results & solutions?");
-                if (!ok) return;
-
-                // Show results/review screen for the questions attempted so far
-                setShowResults(true);
-            };
-
-            // Start Screen
-            if (!examStarted) {
-                return (
-                    <div className="min-h-screen gradient-bg flex items-center justify-center p-4">
-                        <div className="bg-white rounded-3xl card-shadow p-12 max-w-3xl w-full">
-                            <div className="text-center">
-                                <div className="w-24 h-24 bg-slate-50 rounded-3xl flex items-center justify-center mx-auto mb-6 transform rotate-12">
-                                    <svg className="w-12 h-12 text-white transform -rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                                    </svg>
-                                </div>
-                                <h1 className="text-3xl font-bold text-gray-800 mb-3">Practice Session</h1>
-                                <p className="text-lg text-gray-600 mb-10">Test Your Knowledge</p>
-                                
-                                <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 mb-10">
-                                    <div className="grid grid-cols-2 gap-8">
-                                        <div className="text-left">
-                                            <p className="text-sm text-gray-600 mb-2 font-medium">Questions</p>
-                                            <p className="text-4xl font-bold text-emerald-600">{allQuestions.length ? allQuestions.filter(q => selectedChapters.has(String(q.chapter))).length : '—'}</p>
-                                        </div>
-                                        <div className="text-left">
-                                            <p className="text-sm text-gray-600 mb-2 font-medium">Time Limit</p>
-                                            <p className="text-4xl font-bold text-emerald-600">None</p>
-                                        </div>
-                                        <div className="col-span-2 text-left">
-                                            <p className="text-sm text-gray-600 mb-3 font-medium">Topics Covered</p>
-                                            <div className="flex flex-wrap gap-2">
-                                                <span className="bg-white px-4 py-2 rounded-full text-sm font-semibold text-emerald-700 shadow-sm">Financial Statement Analysis</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="text-left bg-gray-50 rounded-2xl p-6 mb-10">
-                                    <h3 className="font-bold text-gray-800 mb-4 text-lg">How it works:</h3>
-                                    <ul className="space-y-3 text-gray-700">
-                                        <li className="flex items-start">
-                                            <span className="text-2xl mr-3">✓</span>
-                                            <span>Select your answer and click <strong>Submit</strong> to move forward</span>
-                                        </li>
-                                        <li className="flex items-start">
-                                            <span className="text-2xl mr-3">✓</span>
-                                            <span>Use navigation arrows to review previous questions</span>
-                                        </li>
-                                        <li className="flex items-start">
-                                            <span className="text-2xl mr-3">✓</span>
-                                            <span>Mark tricky questions to revisit later</span>
-                                        </li>
-                                        <li className="flex items-start">
-                                            <span className="text-2xl mr-3">✓</span>
-                                            <span>Get detailed results and explanations at the end</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                
-
-                                {/* Practice settings */}
-                                <div className="text-left bg-white border border-gray-200 rounded-2xl p-6 mb-8">
-                                    <h3 className="font-bold text-gray-800 mb-4 text-lg">Practice settings</h3>
-
-                                    <label className="flex items-center space-x-3 mb-5 cursor-pointer select-none">
-                                        <input
-                                            type="checkbox"
-                                            checked={shuffleEnabled}
-                                            onChange={(e) => setShuffleEnabled(e.target.checked)}
-                                            className="h-5 w-5"
-                                        />
-                                        <span className="text-gray-700 font-medium">Shuffle questions</span>
-                                    </label>
-
-                                    
-<div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
-    <div className="flex-1">
-        <div className="font-semibold text-gray-800 mb-2">Chapter</div>
-        <p className="text-sm text-gray-600">Pick one chapter (or All). Your exam will load questions from that selection.</p>
-    </div>
-
-    <div className="sm:w-80">
-        <select
-            value={chapterSelection}
-            onChange={(e) => handleChapterSelection(e.target.value)}
-            className="w-full border border-gray-300 rounded-xl px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-purple-300"
-        >
-            <option value="ALL">All chapters</option>
-            {chapterOptions.map(c => (
-                <option key={c.chapter} value={c.chapter}>
-                    {`Ch ${c.chapter}: ${c.chapterName === 'Financial Statement Analysis' ? 'Introduction to Financial Statement Analysis' : c.chapterName}`}
-                </option>
-            ))}
-        </select>
-
-        <div className="mt-2 text-xs text-gray-500">
-            Questions in selection: <strong>{allQuestions.length ? allQuestions.filter(q => selectedChapters.has(String(q.chapter))).length : '—'}</strong>
-        </div>
-    </div>
-</div>
-
-<div className="mt-4 text-xs text-gray-500">
-
-                                        Tip: If chapters don’t show, make sure you opened this page via <strong>http://localhost:8001/...</strong> and <strong>questions.json</strong> is in the same folder.
-                                    </div>
-                                </div>
-
-                                <button 
-                                    disabled={isLoadingQuestions || allQuestions.length === 0}
-                                    onClick={startExamWithSettings}
-                                    className="gradient-bg text-white px-16 py-5 rounded-2xl font-bold text-lg hover:shadow-2xl transition-all transform hover:scale-105"
-                                >
-                                    {isLoadingQuestions ? 'Loading Questions…' : 'Begin Practice Exam'}
-                                </button>
-
-{loadError && (
-    <div className="mt-6 text-left bg-red-50 border-2 border-red-200 text-red-700 rounded-2xl p-5">
-        <div className="font-bold mb-1">Could not start the exam</div>
-        <div className="text-sm">
-            {loadError}
-            <div className="mt-2 text-xs text-red-600">
-                Tip: Make sure <strong>questions.json</strong> is in the same folder and you opened the app via
-                <strong> http://localhost:8000/finance-practice-exam.html</strong> (not by double-clicking the HTML).
-            </div>
-        </div>
-    </div>
-)}
-
-                            </div>
-                        </div>
-                    </div>
-                );
-            }
-
-
-// If exam has started but questions haven't loaded yet (or failed), show a friendly screen
-if (examStarted && questions.length === 0) {
-    return (
-        <div className="min-h-screen gradient-bg flex items-center justify-center p-4">
-            <div className="bg-white rounded-3xl card-shadow p-10 max-w-xl w-full text-center">
-                <h2 className="text-3xl font-bold text-gray-800 mb-3">Loading questions…</h2>
-                <p className="text-gray-600 mb-6">Please wait.</p>
-                {loadError && (
-                    <div className="text-left bg-red-50 border-2 border-red-200 text-red-700 rounded-2xl p-5">
-                        <div className="font-bold mb-1">Error</div>
-                        <div className="text-sm">{loadError}</div>
-                    </div>
-                )}
-                <button
-                    onClick={() => {
-                        setExamStarted(false);
-                        setIsLoadingQuestions(false);
-                    }}
-                    className="mt-6 gradient-bg text-white px-8 py-3 rounded-2xl font-bold hover:shadow-2xl transition-all"
-                >
-                    Back
-                </button>
-            </div>
-        </div>
-    );
+    sel.appendChild(opt);
+  });
 }
 
-            // Results Screen
-            if (showResults) {
-                const score = calculateScore();
-                const analysisByDifficulty = getAnalysisByDifficulty();
-                const analysisByChapter = getAnalysisByChapter();
-                const passed = parseFloat(score.percentage) >= 70;
-                
-                return (
-                    <div className="min-h-screen bg-gray-100 p-6">
-                        <div className="max-w-6xl mx-auto">
-                            <div className="bg-white rounded-3xl card-shadow p-10">
-                                {/* Header */}
-                                <div className="text-center mb-10">
-                                    <div className={`w-32 h-32 ${passed ? 'bg-slate-50' : 'gradient-bg-2'} rounded-full flex items-center justify-center mx-auto mb-6 card-shadow`}>
-                                        {passed ? (
-                                            <svg className="w-20 h-20 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                            </svg>
-                                        ) : (
-                                            <svg className="w-20 h-20 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                            </svg>
-                                        )}
-                                    </div>
-                                    <h1 className="text-4xl font-bold text-gray-800 mb-3">Exam Complete!</h1>
-                                    <p className="text-2xl text-gray-600">Time: {formatTime(timeElapsed)}</p>
-                                </div>
+function selectChapter(id) {
+  selectedChapter = id || null;
+  updatePreview();
+  updateStartBtn();
+}
 
-                                {/* Overall Score */}
-                                <div className="gradient-bg rounded-3xl p-10 mb-10 text-white card-shadow">
-                                    <div className="text-center">
-                                        <p className="text-2xl mb-3 opacity-90 font-medium">Your Score</p>
-                                        <p className="text-8xl font-bold mb-4">{score.percentage}%</p>
-                                        <p className="text-3xl mb-2">{score.correct} / {score.total} Correct</p>
-                                        {score.unanswered > 0 && (
-                                            <p className="text-lg opacity-75 mt-2">({score.unanswered} not answered)</p>
-                                        )}
-                                        <div className="mt-8">
-                                            <div className="bg-white bg-opacity-20 rounded-full h-5 overflow-hidden">
-                                                <div 
-                                                    className="bg-white h-full transition-all duration-1000"
-                                                    style={{ width: `${score.percentage}%` }}
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+function toggleShuffle() {
+  shuffleOn = !shuffleOn;
+  document.getElementById('shuffleToggle').classList.toggle('on', shuffleOn);
+  document.getElementById('previewShuffle').textContent = shuffleOn ? 'On ✓' : 'Off';
+}
 
-                                {/* Performance Breakdown */}
-                                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
-                                    {/* By Difficulty */}
-                                    <div>
-                                        <h2 className="text-2xl font-bold text-gray-800 mb-5">By Difficulty Level</h2>
-                                        <div className="space-y-4">
-                                            {Object.entries(analysisByDifficulty).map(([difficulty, stats]) => {
-                                                const percentage = stats.total > 0 ? ((stats.correct / stats.total) * 100).toFixed(0) : 0;
-                                                const colorMap = {
-                                                    'Easy': 'from-green-400 to-green-600',
-                                                    'Moderate': 'from-yellow-400 to-orange-500',
-                                                    'Difficult': 'from-red-400 to-pink-600'
-                                                };
-                                                
-                                                return (
-                                                    <div key={difficulty} className="bg-gray-50 rounded-2xl p-5 border-2 border-gray-200">
-                                                        <div className="flex justify-between items-center mb-3">
-                                                            <h3 className="font-bold text-gray-800 text-lg">{difficulty}</h3>
-                                                            <span className="text-3xl font-bold text-gray-800">{percentage}%</span>
-                                                        </div>
-                                                        <p className="text-sm text-gray-600 mb-3">{stats.correct} of {stats.total} correct</p>
-                                                        <div className="bg-gray-200 rounded-full h-3 overflow-hidden">
-                                                            <div 
-                                                                className={`bg-gradient-to-r ${colorMap[difficulty]} h-full transition-all duration-1000`}
-                                                                style={{ width: `${percentage}%` }}
-                                                            />
-                                                        </div>
-                                                    </div>
-                                                );
-                                            })}
-                                        </div>
-                                    </div>
+function updatePreview() {
+  if (!selectedChapter) return;
+  const ch = CHAPTERS.find(c => c.id === selectedChapter);
+  document.getElementById('previewChapter').textContent =
+    selectedChapter === 'all' ? 'All Chapters' : ch.sub + ' · ' + ch.label.split(' ').slice(0,3).join(' ') + '…';
+  const count = ch.count || 0;
+  document.getElementById('previewCount').textContent = count > 0 ? count + ' questions' : '—';
+  const mins = Math.round(count * 1.5);
+  document.getElementById('previewTime').textContent = count > 0 ? `~${mins} min` : '—';
+}
 
-                                    {/* By Chapter */}
-                                    <div>
-                                        <h2 className="text-2xl font-bold text-gray-800 mb-5">By Chapter</h2>
-                                        <div className="space-y-4">
-                                            {Object.entries(analysisByChapter).map(([chapter, data]) => {
-                                                const percentage = data.total > 0 ? ((data.correct / data.total) * 100).toFixed(0) : 0;
-                                                
-                                                return (
-                                                    <div key={chapter} className="bg-gray-50 rounded-2xl p-5 border-2 border-gray-200">
-                                                        <div className="flex justify-between items-center mb-3">
-                                                            <h3 className="font-bold text-gray-800">Chapter {chapter}: {data.name}</h3>
-                                                            <span className="text-3xl font-bold text-gray-800">{percentage}%</span>
-                                                        </div>
-                                                        <p className="text-sm text-gray-600 mb-3">{data.correct} of {data.total} correct</p>
-                                                        <div className="bg-gray-200 rounded-full h-3 overflow-hidden">
-                                                            <div 
-                                                                className="bg-gradient-to-r from-purple-400 to-pink-600 h-full transition-all duration-1000"
-                                                                style={{ width: `${percentage}%` }}
-                                                            />
-                                                        </div>
-                                                    </div>
-                                                );
-                                            })}
-                                        </div>
-                                    </div>
-                                </div>
+function updateStartBtn() {
+  const btn = document.getElementById('startBtn');
+  if (!selectedChapter) {
+    btn.classList.add('disabled');
+    return;
+  }
+  btn.classList.remove('disabled');
+  const url = `finance-practice-exam-fsa-final.html?chapter=${selectedChapter}&shuffle=${shuffleOn}`;
+  btn.href = url;
+}
 
-                                
-                                {/* Marked Review */}
-                                <div className="mb-10">
-                                    <h2 className="text-2xl font-bold text-gray-800 mb-5">Marked for Review</h2>
-                                    <div className="bg-white rounded-2xl p-5 border border-gray-200">
-                                        {questions.filter(q => markedForReview.has(q.id) && !!answers[q.id]).length === 0 ? (
-                                            <p className="text-gray-600">No answered questions are marked for review.</p>
-                                        ) : (
-                                            <div className="space-y-4 max-h-80 overflow-y-auto pr-2">
-                                                {questions.filter(q => markedForReview.has(q.id) && !!answers[q.id]).map((q, idx) => {
-                                                    const answer = answers[q.id];
-                                                    const isCorrect = answer?.selected === q.correctAnswer;
-                                                    return (
-                                                        <div
-                                                            key={q.id}
-                                                            className={`rounded-2xl p-5 border-2 ${isCorrect ? 'bg-green-50 border-green-400' : 'bg-red-50 border-red-400'}`}
-                                                        >
-                                                            <div className="flex items-start justify-between mb-3">
-                                                                <div>
-                                                                    <div className="text-sm text-gray-600 font-semibold mb-1">{q.id} • Chapter {q.chapter}</div>
-                                                                    <div className="text-gray-900 font-semibold">{q.question}</div>
-                                                                </div>
-                                                                <div className={`px-3 py-1 rounded-full text-sm font-bold ${isCorrect ? 'bg-green-200 text-green-800' : 'bg-red-200 text-red-800'}`}>
-                                                                    {isCorrect ? 'Correct' : 'Incorrect'}
-                                                                </div>
-                                                            </div>
-
-                                                            <div className="text-sm text-gray-700 mb-2">
-                                                                <span className="font-semibold">Your answer:</span> {answer?.selected || '—'} &nbsp; | &nbsp;
-                                                                <span className="font-semibold">Correct:</span> {q.correctAnswer}
-                                                            </div>
-
-                                                            <div className="text-sm text-gray-700">
-                                                                <span className="font-semibold">Explanation:</span> {q.explanation}
-                                                            </div>
-                                                        </div>
-                                                    );
-                                                })}
-                                            </div>
-                                        )}
-                                    </div>
-                                </div>
-
-{/* Question Review */}
-                                <div>
-                                    <h2 className="text-2xl font-bold text-gray-800 mb-5">Question-by-Question Review</h2>
-                                    <div className="space-y-4 max-h-96 overflow-y-auto pr-2">
-                                        {questions.filter(q => !!answers[q.id]).map((q, idx) => {
-                                            const answer = answers[q.id];
-                                            const isCorrect = answer?.selected === q.correctAnswer;
-                                            const wasAnswered = !!answer;
-                                            
-                                            return (
-                                                <div 
-                                                    key={q.id} 
-                                                    className={`rounded-2xl p-5 border-2 ${
-                                                        !wasAnswered ? 'bg-gray-50 border-gray-300' :
-                                                        isCorrect ? 'bg-green-50 border-green-400' : 'bg-red-50 border-red-400'
-                                                    }`}
-                                                >
-                                                    <div className="flex items-start justify-between mb-3">
-                                                        <div className="flex items-center">
-                                                            {wasAnswered ? (
-                                                                isCorrect ? (
-                                                                    <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-3">
-                                                                        <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                                                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                                                        </svg>
-                                                                    </div>
-                                                                ) : (
-                                                                    <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center mr-3">
-                                                                        <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                                                            <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
-                                                                        </svg>
-                                                                    </div>
-                                                                )
-                                                            ) : (
-                                                                <div className="w-8 h-8 bg-gray-400 rounded-full flex items-center justify-center mr-3">
-                                                                    <span className="text-white font-bold">?</span>
-                                                                </div>
-                                                            )}
-                                                            <span className="font-bold text-gray-800">Q{idx + 1}</span>
-                                                            <span className={`ml-3 text-xs px-3 py-1 rounded-full font-semibold ${
-                                                                q.difficulty === 'Easy' ? 'bg-green-100 text-green-700' :
-                                                                q.difficulty === 'Moderate' ? 'bg-yellow-100 text-yellow-700' :
-                                                                'bg-red-100 text-red-700'
-                                                            }`}>
-                                                                {q.difficulty}
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                    
-                                                    <p className="text-gray-700 mb-3 font-medium">{q.question}</p>
-                                                    
-                                                    {wasAnswered ? (
-                                                        <div className="space-y-2">
-                                                            <div className={`font-bold text-lg ${isCorrect ? 'text-green-700' : 'text-red-700'}`}>
-                                                                Your answer: {answer.selected}
-                                                            </div>
-                                                            {!isCorrect && (
-                                                                <div className="text-green-700 font-bold text-lg">
-                                                                    Correct answer: {q.correctAnswer}
-                                                                </div>
-                                                            )}
-                                                            <div className="text-gray-700 mt-3 pt-3 border-t-2 border-gray-300">
-                                                                <span className="font-semibold">💡 Explanation:</span> {q.explanation}
-                                                            </div>
-                                                        </div>
-                                                    ) : (
-                                                        <p className="text-gray-500 italic">Not answered</p>
-                                                    )}
-                                                </div>
-                                            );
-                                        })}
-                                    </div>
-                                </div>
-
-                                <div className="mt-10 text-center">
-                                    <button 
-                                        onClick={() => {
-                                            setExamStarted(false);
-                                            setCurrentQuestionIndex(0);
-                                            setAnswers({});
-                                            setMarkedForReview(new Set());
-                                            setEliminatedOptions({});
-                                            setShowResults(false);
-                                            setTimeElapsed(0);
-                                            setSelectedAnswer('');
-                                        }}
-                                        className="gradient-bg text-white px-12 py-4 rounded-2xl font-bold text-lg hover:shadow-2xl transition-all transform hover:scale-105"
-                                    >
-                                        Take Another Practice Exam
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                );
-            }
-
-            // Exam Screen
-            return (
-                <div className="min-h-screen bg-gray-100">
-                    {/* Header */}
-                    <div className="bg-white shadow-md">
-                        <div className="max-w-7xl mx-auto px-6 py-5">
-                            <div className="flex items-center justify-between">
-                                <div>
-                                    <h1 className="text-2xl font-bold text-gray-800">Practice Session</h1>
-                                    <p className="text-sm text-gray-600"> </p>
-                                </div>
-                                <div className="flex items-center space-x-8">
-                                    <div className="text-center">
-                                        <p className="text-xs text-gray-500 font-medium">TIME</p>
-                                        <p className="text-2xl font-bold text-emerald-600 font-mono">{formatTime(timeElapsed)}</p>
-                                    </div>
-                                    <div className="text-center">
-                                        <p className="text-xs text-gray-500 font-medium">PROGRESS</p>
-                                        <p className="text-2xl font-bold text-emerald-600">{answeredCount}/{totalQuestions}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Progress Bar */}
-                    <div className="bg-white shadow-sm">
-                        <div className="max-w-7xl mx-auto px-6 py-4">
-                            <div className="flex items-center justify-between mb-3">
-                                <div className="flex items-center space-x-3">
-                                    <button
-                                        onClick={handlePrevious}
-                                        disabled={currentQuestionIndex === 0}
-                                        className={`p-2 rounded-lg transition-all ${
-                                            currentQuestionIndex === 0 
-                                                ? 'text-gray-300 cursor-not-allowed' 
-                                                : 'text-emerald-600 hover:bg-emerald-50'
-                                        }`}
-                                    >
-                                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                                        </svg>
-                                    </button>
-                                    
-                                    <span className="text-lg font-bold text-gray-800">
-                                        Question {currentQuestionIndex + 1} of {totalQuestions}
-                                    </span>
-                                    
-                                    <button
-                                        onClick={handleNext}
-                                        disabled={currentQuestionIndex === totalQuestions - 1}
-                                        className={`p-2 rounded-lg transition-all ${
-                                            currentQuestionIndex === totalQuestions - 1 
-                                                ? 'text-gray-300 cursor-not-allowed' 
-                                                : 'text-emerald-600 hover:bg-emerald-50'
-                                        }`}
-                                    >
-                                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                        </svg>
-                                    </button>
-                                </div>
-                                
-                                <div className="flex items-center space-x-4">
-                                    <label className="flex items-center cursor-pointer text-gray-700 hover:text-emerald-600 font-medium">
-                                        <input 
-                                            type="checkbox"
-                                            checked={markedForReview.has(currentQuestion.id)}
-                                            onChange={toggleRevisit}
-                                            className="mr-2 w-5 h-5 text-emerald-600 rounded"
-                                        />
-                                        Mark for Review
-                                    </label>
-
-                                    <span className="text-sm text-gray-600 mr-3">Marked: <span className="font-semibold text-gray-900">{markedCount}</span></span>
-
-                                    <button
-                                        onClick={goToNextMarked}
-                                        disabled={markedCount === 0}
-                                        className={`px-4 py-2 rounded-xl font-bold transition-all ${markedCount === 0 ? 'bg-gray-100 text-gray-400 cursor-not-allowed' : 'bg-emerald-600 text-white hover:shadow-lg'}`}
-                                    >
-                                        Next Marked
-                                    </button>
-
-                                    <button
-                                        onClick={clearAllMarked}
-                                        disabled={markedCount === 0}
-                                        className={`px-4 py-2 rounded-xl font-bold transition-all ${markedCount === 0 ? 'bg-gray-100 text-gray-400 cursor-not-allowed' : 'bg-gray-200 text-gray-800 hover:bg-gray-300'}`}
-                                    >
-                                        Clear Marks
-                                    </button>
-
-                                    <button
-                                        onClick={exitExam}
-                                        className="px-6 py-2 bg-gray-200 text-gray-800 rounded-xl font-bold hover:bg-gray-300 transition-all"
-                                    >
-                                        Exit
-                                    </button>
-                                    
-                                    {answeredCount === totalQuestions && (
-                                        <button
-                                            onClick={() => setShowResults(true)}
-                                            className="px-6 py-2 gradient-bg text-white rounded-xl font-bold hover:shadow-lg transition-all"
-                                        >
-                                            Finish Exam
-                                        </button>
-                                    )}
-                                </div>
-                            </div>
-                            
-                            <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-                                <div 
-                                    className="gradient-bg h-full transition-all duration-300"
-                                    style={{ width: `${progress}%` }}
-                                />
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Question Content */}
-                    <div className="max-w-7xl mx-auto p-6">
-                        <div className="bg-white rounded-3xl card-shadow p-10">
-                            {/* Question Header */}
-                            <div className="mb-8">
-                                <div className="flex items-center justify-between mb-5">
-                                    <span className="bg-emerald-100 text-emerald-800 px-4 py-2 rounded-xl text-sm font-bold">
-                                        {currentQuestion.topic}
-                                    </span>
-                                    <span className={`px-4 py-2 rounded-xl text-sm font-bold ${
-                                        currentQuestion.difficulty === 'Easy' ? 'bg-green-100 text-green-800' :
-                                        currentQuestion.difficulty === 'Moderate' ? 'bg-yellow-100 text-yellow-800' :
-                                        'bg-red-100 text-red-800'
-                                    }`}>
-                                        {currentQuestion.difficulty}
-                                    </span>
-                                </div>
-                                <h2 className="text-2xl font-bold text-gray-800 leading-relaxed">
-                                    {currentQuestion.question}
-                                </h2>
-                            </div>
-
-                            {/* Answer Options */}
-                            <div className="space-y-4 mb-10">
-                                {currentQuestion.options.map((option, idx) => {
-                                    const optionLetter = String.fromCharCode(65 + idx);
-                                    const isSelected = selectedAnswer === optionLetter;
-                                    const isEliminated = eliminatedOptions[`${currentQuestion.id}-${optionLetter}`];
-                                    
-                                    return (
-                                        <div 
-                                            key={idx}
-                                            className={`option-card flex items-center border-3 rounded-2xl p-5 cursor-pointer ${
-                                                isEliminated ? 'eliminated border-gray-200' : 
-                                                isSelected ? 'border-purple-500 bg-emerald-50 shadow-lg' : 'border-gray-300 hover:border-purple-400'
-                                            }`}
-                                            onClick={() => !isEliminated && handleAnswerSelect(optionLetter)}
-                                        >
-                                            <div className={`w-12 h-12 rounded-xl flex items-center justify-center font-bold text-lg mr-5 ${
-                                                isSelected ? 'gradient-bg text-white' : 'bg-gray-200 text-gray-700'
-                                            }`}>
-                                                {optionLetter}
-                                            </div>
-                                            <span className={`flex-1 text-lg ${isEliminated ? 'line-through text-gray-400' : 'text-gray-800 font-medium'}`}>
-                                                {option}
-                                            </span>
-                                            <button
-                                                onClick={(e) => {
-                                                    e.stopPropagation();
-                                                    toggleEliminate(currentQuestion.id, optionLetter);
-                                                }}
-                                                className={`ml-4 ${isEliminated ? 'text-gray-400' : 'text-gray-400 hover:text-red-500'} transition-colors`}
-                                            >
-                                                <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 20 20">
-                                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
-                                                </svg>
-                                            </button>
-                                        </div>
-                                    );
-                                })}
-                            </div>
-
-                            {/* Submit Button */}
-                            <button
-                                onClick={handleConfirm}
-                                disabled={!selectedAnswer}
-                                className={`w-full py-5 rounded-2xl font-bold text-lg transition-all ${
-                                    selectedAnswer
-                                        ? 'gradient-bg text-white hover:shadow-2xl transform hover:scale-[1.02]'
-                                        : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                                }`}
-                            >
-                                {currentQuestionIndex < totalQuestions - 1 ? 'Submit Answer' : 'Submit Final Answer'}
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            );
-        }
-
-        const root = ReactDOM.createRoot(document.getElementById('app'));
-        root.render(<FinanceExamApp />);
-    </script>
+// Init
+buildChapterDropdown();
+updateStartBtn();
+</script>
 </body>
 </html>
