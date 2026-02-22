@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CFA Level I – Financial Statement Analysis | Practice Exam</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:#0f1e3c; --navy-mid:#1a2f5a; --navy-soft:#243a6b;
+  --gold:#c9a84c; --gold-light:#e8c97a; --gold-pale:#f7f0dc;
+  --cream:#faf8f3; --white:#fff;
+  --text:#1a1a2e; --text-mid:#3a3a5c; --text-light:#7a7a9a;
+  --border:#ddd8cc;
+  --correct:#1a7a4a; --correct-bg:#e8f7ef;
+  --wrong:#b91c1c;   --wrong-bg:#fef2f2;
+  --shadow:0 4px 24px rgba(15,30,60,.10);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);min-height:100vh}
+
+/* ── TOP NAV ── */
+.topnav{background:var(--navy);position:sticky;top:0;z-index:200;box-shadow:0 2px 16px rgba(0,0,0,.3)}
+.topnav-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;align-items:stretch;gap:0}
+.brand{display:flex;flex-direction:column;justify-content:center;padding:14px 0;margin-right:40px;border-right:1px solid rgba(255,255,255,.1);padding-right:32px}
+.brand h1{font-family:'Playfair Display',serif;color:var(--gold-light);font-size:1.05rem;font-weight:700;line-height:1.2}
+.brand p{color:rgba(255,255,255,.45);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;margin-top:2px}
+.tabs{display:flex;align-items:stretch;gap:4px;padding:8px 0}
+.tab-btn{background:none;border:none;cursor:pointer;padding:8px 22px;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:.82rem;font-weight:500;color:rgba(255,255,255,.55);letter-spacing:.02em;transition:all .2s;display:flex;align-items:center;gap:7px}
+.tab-btn:hover{color:rgba(255,255,255,.85);background:rgba(255,255,255,.06)}
+.tab-btn.active{background:rgba(201,168,76,.18);color:var(--gold-light);font-weight:600}
+.tab-btn .tab-icon{font-size:.95rem}
+.nav-right{margin-left:auto;display:flex;align-items:center;gap:16px;padding:12px 0}
+.progress-pill{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:5px 14px;font-size:.75rem;color:rgba(255,255,255,.7);font-weight:500}
+.progress-pill span{color:var(--gold-light);font-weight:700}
+
+/* ── PANELS ── */
+.panel{display:none;min-height:calc(100vh - 62px)}
+.panel.active{display:block}
+
+/* ══════════════════════════════════
+   PANEL 1 — EXAM
+══════════════════════════════════ */
+.exam-layout{max-width:1100px;margin:0 auto;padding:32px 24px;display:grid;grid-template-columns:1fr 280px;gap:28px;align-items:start}
+@media(max-width:860px){.exam-layout{grid-template-columns:1fr}.sidebar{display:none}}
+
+/* Question card */
+.q-card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:32px;box-shadow:var(--shadow)}
+.q-meta{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.q-num{background:var(--navy);color:var(--gold-light);font-family:'DM Mono',monospace;font-size:.75rem;font-weight:500;padding:4px 11px;border-radius:6px}
+.q-topic{font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-light)}
+.q-text{font-size:1rem;font-weight:500;color:var(--text);line-height:1.65;margin-bottom:24px}
+.options{display:flex;flex-direction:column;gap:10px}
+.opt{border:2px solid var(--border);border-radius:10px;padding:13px 16px;cursor:pointer;display:flex;align-items:flex-start;gap:12px;transition:all .18s;background:var(--white)}
+.opt:hover{border-color:var(--navy-soft);background:#f5f7ff}
+.opt.selected{border-color:var(--navy);background:#eef1fb}
+.opt.correct{border-color:var(--correct);background:var(--correct-bg)}
+.opt.wrong{border-color:var(--wrong);background:var(--wrong-bg)}
+.opt.reveal-correct{border-color:var(--correct);background:var(--correct-bg)}
+.opt-letter{width:26px;height:26px;border-radius:50%;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:.72rem;font-weight:700;flex-shrink:0;margin-top:1px;color:var(--text-mid);transition:all .18s}
+.opt.selected .opt-letter{background:var(--navy);border-color:var(--navy);color:#fff}
+.opt.correct .opt-letter{background:var(--correct);border-color:var(--correct);color:#fff}
+.opt.wrong .opt-letter{background:var(--wrong);border-color:var(--wrong);color:#fff}
+.opt.reveal-correct .opt-letter{background:var(--correct);border-color:var(--correct);color:#fff}
+.opt-text{font-size:.9rem;color:var(--text-mid);line-height:1.5;padding-top:2px}
+.explanation{margin-top:20px;padding:16px;background:var(--gold-pale);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;font-size:.84rem;color:var(--text-mid);line-height:1.6;display:none}
+.explanation.show{display:block}
+.explanation strong{color:var(--navy)}
+
+/* Nav buttons */
+.q-nav{display:flex;align-items:center;justify-content:space-between;margin-top:24px;gap:12px}
+.btn{border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:600;font-size:.85rem;border-radius:9px;padding:10px 22px;transition:all .18s}
+.btn-ghost{background:transparent;border:2px solid var(--border);color:var(--text-mid)}
+.btn-ghost:hover{border-color:var(--navy);color:var(--navy)}
+.btn-primary{background:var(--navy);color:var(--gold-light)}
+.btn-primary:hover{background:var(--navy-mid)}
+.btn-submit{background:var(--gold);color:var(--navy);font-weight:700}
+.btn-submit:hover{background:var(--gold-light)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+
+/* Sidebar */
+.sidebar{position:sticky;top:90px}
+.sidebar-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:20px;box-shadow:var(--shadow);margin-bottom:16px}
+.sidebar-card h3{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light);margin-bottom:14px}
+.score-ring{text-align:center;margin-bottom:16px}
+.score-big{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:700;color:var(--navy);line-height:1}
+.score-big span{font-size:1rem;color:var(--text-light);font-family:'DM Sans',sans-serif;font-weight:400}
+.score-sub{font-size:.78rem;color:var(--text-light);margin-top:4px}
+.mini-grid{display:grid;grid-template-columns:repeat(10,1fr);gap:4px;margin-bottom:8px}
+.mini-dot{width:100%;aspect-ratio:1;border-radius:4px;background:#eee;cursor:pointer;transition:all .15s;border:none;font-size:0}
+.mini-dot.answered{background:var(--navy-soft)}
+.mini-dot.correct{background:var(--correct)}
+.mini-dot.wrong{background:var(--wrong)}
+.mini-dot.current{outline:2px solid var(--gold);outline-offset:1px}
+.stat-row{display:flex;justify-content:space-between;font-size:.78rem;padding:5px 0;border-bottom:1px solid var(--border)}
+.stat-row:last-child{border-bottom:none}
+.stat-label{color:var(--text-light)}
+.stat-val{font-weight:700;color:var(--navy)}
+
+/* Results banner */
+.results-banner{background:var(--navy);border-radius:16px;padding:32px;margin-bottom:28px;text-align:center;display:none}
+.results-banner.show{display:block}
+.results-banner h2{font-family:'Playfair Display',serif;color:var(--gold-light);font-size:1.8rem;margin-bottom:8px}
+.results-banner p{color:rgba(255,255,255,.7);font-size:.9rem}
+.results-stats{display:flex;justify-content:center;gap:32px;margin-top:20px;flex-wrap:wrap}
+.r-stat{text-align:center}
+.r-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--gold-light)}
+.r-lbl{font-size:.72rem;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.08em;margin-top:2px}
+.btn-restart{background:var(--gold);color:var(--navy);font-weight:700;margin-top:20px;padding:11px 28px;border-radius:10px;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.88rem}
+
+/* ══════════════════════════════════
+   PANEL 2 — CHAPTER SUMMARIES
+══════════════════════════════════ */
+.summary-panel{max-width:1000px;margin:0 auto;padding:36px 24px 60px}
+.summary-topbar{display:flex;align-items:center;gap:20px;margin-bottom:32px;flex-wrap:wrap}
+.summary-topbar h2{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--navy);flex:1;min-width:200px}
+.chapter-select-wrap{position:relative}
+.chapter-select-wrap::after{content:'▾';position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--gold);font-size:.85rem;pointer-events:none}
+select#chapterSelect{appearance:none;background:var(--white);border:2px solid var(--border);border-radius:10px;padding:10px 40px 10px 16px;font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:500;color:var(--text);cursor:pointer;min-width:280px;outline:none;transition:border-color .18s}
+select#chapterSelect:focus{border-color:var(--navy)}
+
+/* Chapter content area */
+.chapter-content{background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+.chapter-content-inner{padding:0}
+
+/* ── Summary Hero ── */
+.sum-hero{background:var(--navy);background-image:radial-gradient(ellipse at 20% 50%,rgba(201,168,76,.12) 0%,transparent 60%);padding:40px 40px 32px;position:relative;overflow:hidden}
+.sum-hero::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(201,168,76,.05) 39px,rgba(201,168,76,.05) 40px),repeating-linear-gradient(90deg,transparent,transparent 39px,rgba(201,168,76,.05) 39px,rgba(201,168,76,.05) 40px)}
+.sum-hero-label{font-size:.65rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;position:relative}
+.sum-hero h1{font-family:'Playfair Display',serif;color:var(--white);font-size:clamp(1.3rem,3vw,2rem);font-weight:700;line-height:1.2;max-width:600px;position:relative}
+.sum-hero h1 em{color:var(--gold-light);font-style:italic}
+.sum-hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;position:relative}
+.sum-hero-tag{background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.3);color:var(--gold-light);font-size:.68rem;font-weight:500;letter-spacing:.05em;padding:3px 10px;border-radius:16px}
+
+/* Summary body */
+.sum-body{padding:36px 36px 48px}
+@media(max-width:600px){.sum-body{padding:24px 20px 36px}}
+
+/* Section headers */
+.s-header{display:flex;align-items:center;gap:12px;margin-bottom:16px;margin-top:36px}
+.s-header:first-of-type{margin-top:0}
+.s-icon{width:36px;height:36px;background:var(--navy);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.9rem}
+.s-header h2{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--navy);line-height:1.2}
+.s-header h2 span{display:block;font-family:'DM Sans',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:2px}
+
+/* LO items */
+.lo-list{display:flex;flex-direction:column;gap:7px}
+.lo-item{display:flex;gap:10px;align-items:flex-start;background:var(--cream);border-left:3px solid var(--gold);padding:9px 14px;border-radius:0 7px 7px 0}
+.lo-num{font-family:'DM Mono',monospace;font-size:.66rem;font-weight:500;color:var(--gold);background:var(--gold-pale);padding:2px 7px;border-radius:4px;flex-shrink:0;margin-top:1px}
+.lo-text{font-size:.8rem;color:var(--text-mid);line-height:1.45}
+
+/* Framework phases */
+.phases{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--white)}
+.phase{display:grid;grid-template-columns:40px 1fr;align-items:stretch;border-bottom:1px solid var(--border)}
+.phase:last-child{border-bottom:none}
+.phase:hover{background:#f8f7ff}
+.phase-num{background:var(--navy);color:var(--gold-light);font-family:'Playfair Display',serif;font-size:.9rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+.phase-content{padding:12px 16px}
+.phase-title{font-weight:600;font-size:.84rem;color:var(--navy);margin-bottom:3px}
+.phase-desc{font-size:.78rem;color:var(--text-mid);line-height:1.5}
+.phase-out{display:inline-block;margin-top:5px;font-size:.68rem;font-weight:500;color:var(--gold);background:var(--gold-pale);border-radius:4px;padding:2px 8px;font-family:'DM Mono',monospace}
+
+/* Key numbers */
+.stats-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px}
+.stat-box{background:var(--cream);border:1px solid var(--border);border-radius:10px;padding:16px 12px;text-align:center}
+.stat-num{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--navy);line-height:1}
+.stat-num sup{font-size:.85rem;color:var(--gold);vertical-align:super}
+.stat-label{font-size:.68rem;color:var(--text-light);margin-top:5px;line-height:1.4;font-weight:500}
+
+/* Card grid */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.s-card{background:var(--cream);border:1px solid var(--border);border-radius:10px;padding:16px;transition:transform .2s,box-shadow .2s}
+.s-card:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(15,30,60,.08)}
+.s-card-icon{font-size:1.2rem;margin-bottom:8px}
+.s-card h3{font-weight:600;font-size:.82rem;color:var(--navy);margin-bottom:5px}
+.s-card p{font-size:.76rem;color:var(--text-mid);line-height:1.5}
+
+/* Audit types */
+.audit-list{display:flex;flex-direction:column;gap:9px}
+.audit-item{display:flex;align-items:flex-start;gap:12px;background:var(--cream);border:1px solid var(--border);border-radius:9px;padding:12px 14px}
+.audit-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;margin-top:5px}
+.audit-item h4{font-size:.82rem;font-weight:600;color:var(--navy);margin-bottom:2px}
+.audit-item p{font-size:.76rem;color:var(--text-mid);line-height:1.4}
+
+/* Compare table */
+.compare-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;font-size:.8rem}
+.compare-table thead tr{background:var(--navy);color:var(--gold-light)}
+.compare-table th{padding:11px 16px;font-weight:600;letter-spacing:.03em;text-align:left}
+.compare-table th:first-child{width:26%}
+.compare-table tbody tr{background:var(--white);border-bottom:1px solid var(--border)}
+.compare-table tbody tr:last-child{border-bottom:none}
+.compare-table tbody tr:nth-child(even){background:#f9f8ff}
+.compare-table tbody tr:hover{background:var(--gold-pale)}
+.compare-table td{padding:10px 16px;color:var(--text-mid);vertical-align:top}
+.compare-table td:first-child{font-weight:600;color:var(--navy)}
+.badge{display:inline-block;padding:2px 7px;border-radius:4px;font-size:.68rem;font-weight:600}
+.badge-us{background:#e8f0fe;color:#1a3a8f}
+.badge-ifrs{background:#e8f7ef;color:#1a5c3a}
+
+/* Sources grid */
+.sources-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(max-width:560px){.sources-grid{grid-template-columns:1fr}}
+.src-group{background:var(--white);border:1px solid var(--border);border-radius:9px;overflow:hidden}
+.src-header{background:var(--navy-soft);color:var(--white);padding:8px 14px;font-size:.72rem;font-weight:600;letter-spacing:.05em}
+.src-items{padding:10px 14px;list-style:none;display:flex;flex-direction:column;gap:5px}
+.src-items li{font-size:.75rem;color:var(--text-mid);padding-left:12px;position:relative;line-height:1.4}
+.src-items li::before{content:'›';position:absolute;left:0;color:var(--gold);font-weight:700}
+
+/* Takeaway */
+.takeaway{background:var(--navy);border-radius:12px;padding:24px 26px;margin-top:32px;position:relative;overflow:hidden}
+.takeaway::before{content:'"';position:absolute;top:-20px;left:14px;font-family:'Playfair Display',serif;font-size:9rem;color:rgba(201,168,76,.08);line-height:1;pointer-events:none}
+.takeaway h3{font-family:'Playfair Display',serif;color:var(--gold-light);font-size:.95rem;margin-bottom:10px;position:relative}
+.takeaway p{color:rgba(255,255,255,.78);font-size:.8rem;line-height:1.65;position:relative}
+.takeaway strong{color:var(--gold-light)}
+
+/* Info note */
+.info-note{margin-top:10px;padding:10px 14px;border-radius:7px;border-left:3px solid;font-size:.77rem;line-height:1.5}
+.info-note.gold{background:var(--gold-pale);border-color:var(--gold);color:var(--text-mid)}
+.info-note.blue{background:#eef1f9;border-color:var(--navy-soft);color:var(--text-mid)}
+.divider{border:none;border-top:1px solid var(--border);margin:28px 0 0}
+
+/* Placeholder for future chapters */
+.chapter-placeholder{padding:80px 40px;text-align:center}
+.chapter-placeholder .ph-icon{font-size:3rem;margin-bottom:16px;opacity:.3}
+.chapter-placeholder h3{font-family:'Playfair Display',serif;color:var(--navy);font-size:1.2rem;margin-bottom:8px;opacity:.5}
+.chapter-placeholder p{color:var(--text-light);font-size:.85rem}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.fade-in{animation:fadeIn .35s ease both}
+</style>
+</head>
+<body>
+
+<!-- ══ TOP NAV ══ -->
+<nav class="topnav">
+  <div class="topnav-inner">
+    <div class="brand">
+      <h1>CFA Level I · FSA</h1>
+      <p>Financial Statement Analysis</p>
+    </div>
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab('exam',this)">
+        <span class="tab-icon">📝</span> Practice Exam
+      </button>
+      <button class="tab-btn" onclick="switchTab('summary',this)">
+        <span class="tab-icon">📖</span> Chapter Summaries
+      </button>
+    </div>
+    <div class="nav-right">
+      <div class="progress-pill" id="progressPill">Q <span id="pillCurrent">1</span> / <span id="pillTotal">100</span></div>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════
+     PANEL 1 – PRACTICE EXAM
+══════════════════════════════════ -->
+<div id="panel-exam" class="panel active">
+  <div class="exam-layout">
+
+    <!-- Main Question Area -->
+    <div>
+      <!-- Results Banner (hidden until submitted) -->
+      <div class="results-banner" id="resultsBanner">
+        <h2 id="resultsTitle">Exam Complete</h2>
+        <p id="resultsSubtitle">Here's how you performed</p>
+        <div class="results-stats">
+          <div class="r-stat"><div class="r-num" id="rScore">-</div><div class="r-lbl">Score %</div></div>
+          <div class="r-stat"><div class="r-num" id="rCorrect">-</div><div class="r-lbl">Correct</div></div>
+          <div class="r-stat"><div class="r-num" id="rWrong">-</div><div class="r-lbl">Incorrect</div></div>
+          <div class="r-stat"><div class="r-num" id="rSkipped">-</div><div class="r-lbl">Unanswered</div></div>
+        </div>
+        <button class="btn-restart" onclick="restartExam()">↺ Restart Exam</button>
+      </div>
+
+      <!-- Question Card -->
+      <div class="q-card" id="questionCard">
+        <div class="q-meta">
+          <span class="q-num" id="qNum">Q 1</span>
+          <span class="q-topic" id="qTopic">Financial Statement Analysis Framework</span>
+        </div>
+        <div class="q-text" id="qText"></div>
+        <div class="options" id="optionsContainer"></div>
+        <div class="explanation" id="explanation"></div>
+        <div class="q-nav">
+          <button class="btn btn-ghost" id="btnPrev" onclick="navigate(-1)">← Previous</button>
+          <button class="btn btn-ghost" id="btnSkip" onclick="skipQuestion()">Skip →</button>
+          <button class="btn btn-primary" id="btnNext" onclick="navigate(1)" style="display:none">Next →</button>
+          <button class="btn btn-submit" id="btnSubmit" onclick="submitExam()" style="display:none">Submit Exam</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="sidebar-card">
+        <h3>Your Score</h3>
+        <div class="score-ring">
+          <div class="score-big" id="sideScore">0<span>%</span></div>
+          <div class="score-sub" id="sideScoreSub">0 of 0 answered</div>
+        </div>
+        <div class="stat-row"><span class="stat-label">✅ Correct</span><span class="stat-val" id="sCorrect">0</span></div>
+        <div class="stat-row"><span class="stat-label">❌ Wrong</span><span class="stat-val" id="sWrong">0</span></div>
+        <div class="stat-row"><span class="stat-label">⏭ Skipped</span><span class="stat-val" id="sSkipped">0</span></div>
+        <div class="stat-row"><span class="stat-label">📌 Remaining</span><span class="stat-val" id="sRemain">100</span></div>
+      </div>
+      <div class="sidebar-card">
+        <h3>Question Map</h3>
+        <div class="mini-grid" id="miniGrid"></div>
+        <div style="font-size:.68rem;color:var(--text-light);margin-top:8px;display:flex;gap:10px;flex-wrap:wrap">
+          <span>⬜ Not visited</span><span style="color:var(--navy-soft)">🟦 Answered</span>
+          <span style="color:var(--correct)">🟩 Correct</span><span style="color:var(--wrong)">🟥 Wrong</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════
+     PANEL 2 – CHAPTER SUMMARIES
+══════════════════════════════════ -->
+<div id="panel-summary" class="panel">
+  <div class="summary-panel">
+
+    <div class="summary-topbar">
+      <h2>Chapter Summaries</h2>
+      <div class="chapter-select-wrap">
+        <select id="chapterSelect" onchange="loadChapter(this.value)">
+          <option value="">— Select a Chapter —</option>
+          <option value="ch1" selected>Reading 1 · Introduction to Financial Statement Analysis</option>
+          <option value="ch2">Reading 2 · Financial Reporting Standards (Coming Soon)</option>
+          <option value="ch3">Reading 3 · Understanding Income Statements (Coming Soon)</option>
+          <option value="ch4">Reading 4 · Understanding Balance Sheets (Coming Soon)</option>
+          <option value="ch5">Reading 5 · Understanding Cash Flow Statements (Coming Soon)</option>
+          <option value="ch6">Reading 6 · Financial Analysis Techniques (Coming Soon)</option>
+          <option value="ch7">Reading 7 · Inventories (Coming Soon)</option>
+          <option value="ch8">Reading 8 · Long-Lived Assets (Coming Soon)</option>
+          <option value="ch9">Reading 9 · Income Taxes (Coming Soon)</option>
+          <option value="ch10">Reading 10 · Non-Current Liabilities (Coming Soon)</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Dynamic chapter content -->
+    <div class="chapter-content" id="chapterContent">
+      <!-- Default: show ch1 immediately -->
+    </div>
+
+  </div>
+</div>
+
+
+<script>
+// ═══════════════════════════════════════
+// QUESTION DATA
+// ═══════════════════════════════════════
+const QUESTIONS = [
+  {id:1,topic:"Framework",q:"Which of the following is the first step in the financial statement analysis framework?",opts:{A:"Collect data",B:"Process data",C:"Articulate the purpose and context of the analysis"},ans:"C",exp:"The first step is to articulate the purpose and context of the analysis. Understanding the purpose is essential before any data collection or processing begins."},
+  {id:2,topic:"Framework",q:"Which output is most likely to result from the 'Process Data' phase of the financial statement analysis framework?",opts:{A:"Investment recommendation",B:"Common-size financial statements",C:"Statement of the purpose of analysis"},ans:"B",exp:"Processing data produces outputs such as adjusted financial statements, common-size statements, and ratios and graphs."},
+  {id:3,topic:"Framework",q:"During which phase of the financial statement analysis framework would an analyst most likely conduct company site visits?",opts:{A:"Process data",B:"Collect data",C:"Analyze/interpret the data"},ans:"B",exp:"Company site visits are a source of information used in the 'Collect Data' phase of the framework."},
+  {id:4,topic:"Framework",q:"An analyst is computing growth rates and preparing charts from financial data. This activity is most consistent with which phase?",opts:{A:"Collect data",B:"Process data",C:"Analyze/interpret the data"},ans:"B",exp:"Computing ratios, growth rates, and preparing charts are activities that occur during the 'Process Data' phase."},
+  {id:5,topic:"Framework",q:"The output of the 'Develop and Communicate Conclusions' phase most likely includes:",opts:{A:"Completed questionnaires",B:"Adjusted financial statements",C:"A recommendation regarding whether to make an investment"},ans:"C",exp:"The output of this phase includes an analytical report and a recommendation regarding the purpose of the analysis, such as whether to make an investment or extend credit."},
+  {id:6,topic:"Framework",q:"A less experienced analyst is tempted to immediately start calculating ratios when facing a large amount of financial data. This approach is best described as:",opts:{A:"Efficient, as it quickly identifies key metrics",B:"Advisable only when peer comparisons are needed",C:"Generally inadvisable, as it may result in unnecessary or pointless efforts"},ans:"C",exp:"It is generally advisable to resist the temptation to immediately calculate ratios without considering what is relevant for the decision at hand."},
+  {id:7,topic:"Framework",q:"Comparing actual results to expected results is most closely associated with which phase of the financial statement analysis framework?",opts:{A:"Process data",B:"Follow-up",C:"Collect data"},ans:"B",exp:"The follow-up phase involves repeating previous steps as necessary and produces outputs such as comparison of actual to expected results and revised forecasts."},
+  {id:8,topic:"Framework",q:"An equity analyst's report for external distribution would most likely include which of the following components?",opts:{A:"Internal control assessment",B:"Summary and investment conclusion",C:"List of specific questions answered by the analysis"},ans:"B",exp:"An equity analyst's report for external distribution typically includes a summary and investment conclusion, industry overview, financial model, valuation, and investment risks."},
+  {id:9,topic:"Framework",q:"According to CFA Institute Standards of Practice, when communicating an investment recommendation, a member must:",opts:{A:"Limit disclosures to the most favorable information",B:"Distinguish clearly between opinions and facts",C:"Avoid disclosing limitations to the analysis"},ans:"B",exp:"Standard V(B) requires that members communicate the factors instrumental in making the investment recommendation and distinguish clearly between opinions and facts."},
+  {id:10,topic:"Framework",q:"An analyst adopts a top-down approach to financial analysis. Which correctly represents the order?",opts:{A:"Company → industry → macroeconomic",B:"Macroeconomic → industry → company",C:"Industry → company → macroeconomic"},ans:"B",exp:"The top-down approach involves first gaining an understanding of the macroeconomic environment, then analyzing the industry, and then determining the prospects for the specific company."},
+  {id:11,topic:"Scope",q:"The primary purpose of financial statement analysis is best described as:",opts:{A:"Verifying the accuracy of financial statements",B:"Evaluating past, current, and potential performance for economic decision making",C:"Ensuring companies comply with accounting standards"},ans:"B",exp:"The role of financial statement analysis is to use financial reports to evaluate past, current, and potential performance and financial position for the purpose of making investment, credit, and other economic decisions."},
+  {id:12,topic:"Scope",q:"Which of the following is least likely to be a use of financial statement analysis?",opts:{A:"Assigning a debt rating to a bond issue",B:"Evaluating whether to make a venture capital investment",C:"Preparing a company's financial statements for regulatory filing"},ans:"C",exp:"Preparing financial statements is the role of the company's management, not financial statement analysts. Analysts use the statements; they do not prepare them."},
+  {id:13,topic:"Scope",q:"A debt investor conducting financial analysis is most likely to focus on:",opts:{A:"Per-share value of the company's equity",B:"The company's ability to pay interest and repay principal",C:"The company's dividend growth prospects"},ans:"B",exp:"A debt investor is primarily concerned with a company's ability to pay interest and repay the principal lent."},
+  {id:14,topic:"Scope",q:"An equity investor conducting financial analysis is most concerned with:",opts:{A:"The company's credit rating and debt covenants",B:"The company's profitability and per-share value",C:"The auditor's opinion on internal controls"},ans:"B",exp:"An equity investor is interested in a company's profitability and per-share value."},
+  {id:15,topic:"Scope",q:"A central focus of financial analysis is evaluating a company's ability to:",opts:{A:"Minimize tax obligations and regulatory disclosures",B:"Earn a return on capital at least equal to the cost of that capital",C:"Achieve zero leverage on its balance sheet"},ans:"B",exp:"A central focus of financial analysis is evaluating the company's ability to earn a return on capital at least equal to the cost of capital, to profitably grow, and to generate enough cash to meet obligations."},
+  {id:16,topic:"Scope",q:"Compared to external analysts, managers within a company:",opts:{A:"Rely exclusively on public financial statements",B:"Have access to non-public financial information",C:"Are required to follow stricter analytical frameworks"},ans:"B",exp:"Managers within a company do not exclusively rely on analysis of financial statements because they have access to non-public financial information."},
+  {id:17,topic:"Scope",q:"An analyst uses price-to-earnings (P/E) ratios to value shares of a company. This is an example of:",opts:{A:"Assessing creditworthiness for loan extension",B:"Using earnings in valuation",C:"Evaluating internal control effectiveness"},ans:"B",exp:"Earnings are frequently used by analysts in valuation, for example by comparing a company's P/E ratio to peer companies or using forecasted earnings in discounted cash flow models."},
+  {id:18,topic:"Scope",q:"A credit analyst's assessment of a company's financial position is most likely to be used for:",opts:{A:"Determining an appropriate equity purchase price",B:"Deciding whether to extend a loan and on what terms",C:"Evaluating the performance of a subsidiary"},ans:"B",exp:"Credit analysts evaluate the creditworthiness of a company to decide whether and on what terms a debt investment should be made or what credit rating should be assigned."},
+  {id:19,topic:"Scope",q:"Profitability is defined as:",opts:{A:"Cash receipts in excess of cash disbursements",B:"The ability to earn a profit from delivering goods and services",C:"The ratio of net income to total assets"},ans:"B",exp:"Profitability is defined as the ability to earn a profit from delivering goods and services."},
+  {id:20,topic:"Scope",q:"The ability to generate positive cash flows refers to:",opts:{A:"Maintaining a current ratio above 1.0",B:"Cash receipts in excess of cash disbursements",C:"Earnings per share exceeding analyst estimates"},ans:"B",exp:"The ability to generate positive cash flows refers to cash receipts in excess of cash disbursements."},
+  {id:21,topic:"Regulatory",q:"Regulatory authorities require publicly traded companies to prepare financial reports in accordance with:",opts:{A:"Internal guidelines set by management",B:"Specified accounting standards and other securities laws and regulations",C:"Recommendations from credit rating agencies"},ans:"B",exp:"Regulatory authorities require publicly traded issuers to prepare financial reports in accordance with specified accounting standards and other securities laws and regulations."},
+  {id:22,topic:"Regulatory",q:"IOSCO has ordinary members representing securities regulators in more than how many jurisdictions?",opts:{A:"50 jurisdictions",B:"75 jurisdictions",C:"115 jurisdictions"},ans:"C",exp:"IOSCO members regulate more than 95 percent of the world's financial capital markets in more than 115 jurisdictions."},
+  {id:23,topic:"Regulatory",q:"Which of the following is NOT one of IOSCO's three core objectives?",opts:{A:"Protecting investors",B:"Ensuring that markets are fair, efficient, and transparent",C:"Eliminating systemic risk"},ans:"C",exp:"IOSCO's core objectives are to protect investors, ensure markets are fair/efficient/transparent, and reduce (not eliminate) systemic risk."},
+  {id:24,topic:"Regulatory",q:"IOSCO's principle for issuers states that accounting standards should be:",opts:{A:"Based solely on each country's cultural and economic norms",B:"Of a high and internationally acceptable quality",C:"Established by national regulators without international input"},ans:"B",exp:"An IOSCO principle states that accounting standards used by issuers to prepare financial statements should be of a high and internationally acceptable quality."},
+  {id:25,topic:"Regulatory",q:"The US Securities and Exchange Commission (SEC) was created as a result of:",opts:{A:"The Sarbanes-Oxley Act of 2002",B:"The Securities Exchange Act of 1934",C:"The Securities Act of 1933"},ans:"B",exp:"The Securities Exchange Act of 1934 created the SEC and gave it authority over all aspects of the securities industry."},
+  {id:26,topic:"Regulatory",q:"The Securities Act of 1933 primarily:",opts:{A:"Created the SEC and gave it authority over the securities industry",B:"Required the creation of the Public Company Accounting Oversight Board",C:"Requires initial registration of all public issuances of securities"},ans:"C",exp:"The Securities Act of 1933 specifies financial information investors must receive when securities are sold, prohibits misrepresentations, and requires initial registration of all public issuances of securities."},
+  {id:27,topic:"Regulatory",q:"The Sarbanes-Oxley Act of 2002 created which oversight body?",opts:{A:"Financial Accounting Standards Board (FASB)",B:"Public Company Accounting Oversight Board (PCAOB)",C:"International Auditing and Assurance Standards Board (IAASB)"},ans:"B",exp:"The Sarbanes-Oxley Act of 2002 created the Public Company Accounting Oversight Board (PCAOB) to oversee auditors."},
+  {id:28,topic:"Regulatory",q:"Under the Sarbanes-Oxley Act, executive management is required to:",opts:{A:"Conduct their own independent audit",B:"Certify that financial reports fairly present the company's condition",C:"Personally certify that no errors exist"},ans:"B",exp:"The Sarbanes-Oxley Act requires executive management to certify that the company's financial reports fairly present the company's condition."},
+  {id:29,topic:"SEC Filings",q:"A US domestic registrant is required to file which annual form with the SEC?",opts:{A:"Form 20-F",B:"Form 40-F",C:"Form 10-K"},ans:"C",exp:"Form 10-K is required for US registrants, Form 40-F is for certain Canadian registrants, and Form 20-F is for all other non-US registrants."},
+  {id:30,topic:"SEC Filings",q:"Form 20-F must be filed with the SEC by:",opts:{A:"US domestic registrants",B:"Certain Canadian registrants",C:"Non-US registrants other than certain Canadian registrants"},ans:"C",exp:"Form 20-F is required for all non-US registrants except certain Canadian registrants, who file Form 40-F."},
+  {id:31,topic:"SEC Filings",q:"Which SEC form is used to report material corporate events such as acquisitions on a current basis?",opts:{A:"Form 10-Q",B:"Form 8-K",C:"Form DEF-14A"},ans:"B",exp:"Form 8-K is the 'current report' companies must file to announce major events such as acquisitions or changes in management."},
+  {id:32,topic:"SEC Filings",q:"A proxy statement filed as Form DEF-14A most likely contains information about:",opts:{A:"Quarterly unaudited financial statements",B:"Details of security ownership by management and executive compensation",C:"Registration of initial public offerings"},ans:"B",exp:"Proxy statements typically include proposals requiring shareholder votes, details of security ownership by management, biographical information on directors, and disclosure of executive compensation."},
+  {id:33,topic:"SEC Filings",q:"US companies are required to file interim financial reports on which form?",opts:{A:"Form 10-K",B:"Form 10-Q",C:"Form 8-K"},ans:"B",exp:"Form 10-Q is required quarterly for US companies to submit interim period financial information, including unaudited financial statements and MD&A."},
+  {id:34,topic:"SEC Filings",q:"Forms 3, 4, and 5 filed with the SEC are primarily used to:",opts:{A:"Report annual earnings results",B:"Report beneficial ownership of securities by directors and officers",C:"Announce changes in accounting policies"},ans:"B",exp:"Forms 3, 4, and 5 are required to report beneficial ownership of securities by directors, officers, and beneficial owners of greater than 10% of a class of registered equity securities."},
+  {id:35,topic:"SEC Filings",q:"An annual report to shareholders prepared by most companies is:",opts:{A:"Required by the SEC and must contain audited financial statements",B:"Not a requirement of the SEC and is often a polished marketing document",C:"Required and must follow the same format as Form 10-K"},ans:"B",exp:"The annual report to shareholders is not a requirement of the SEC and is often a highly polished marketing document. In contrast, Form 10-K is a more legal type of document."},
+  {id:36,topic:"Regulatory",q:"In the European Union, consolidated accounts of EU-listed companies have been required to use IFRS since:",opts:{A:"1997",B:"2001",C:"2005"},ans:"C",exp:"The EU agreed that from 2005, consolidated accounts of EU-listed companies would use International Financial Reporting Standards."},
+  {id:37,topic:"Regulatory",q:"The European Securities and Market Authority (ESMA) is best described as:",opts:{A:"An EU regulatory body with exclusive power over individual member states",B:"An EU cross-border supervisor established to coordinate supervision of the EU market",C:"The body responsible for setting accounting standards for all EU listed companies"},ans:"B",exp:"ESMA is an EU cross-border supervisor established to coordinate supervision of the EU market, though regulation still rests with individual member states."},
+  {id:38,topic:"Notes",q:"The notes accompanying financial statements are required primarily because they:",opts:{A:"Allow analysts to bypass the primary financial statements",B:"Provide information essential to understanding the primary financial statements",C:"Replace the need for management commentary"},ans:"B",exp:"The notes provide information that is essential to understanding the information provided in the primary financial statements."},
+  {id:39,topic:"Notes",q:"Which of the following is most likely found in the notes to financial statements?",opts:{A:"The auditor's opinion on the fairness of financial statements",B:"Management's forward-looking discussion of capital expenditure plans",C:"Accounting policies, methods, and estimates used in preparing the statements"},ans:"C",exp:"The notes disclose the accounting policies, methods, and estimates used to prepare the financial statements, among other information essential to understanding the statements."},
+  {id:40,topic:"Segment Reporting",q:"An operating segment must be disclosed separately if it constitutes what minimum percentage of combined operating segments' revenue, assets, or profit?",opts:{A:"5 percent",B:"10 percent",C:"15 percent"},ans:"B",exp:"A company must disclose separate information about any operating segment that constitutes 10 percent or more of the combined operating segments' revenue, assets, or profit."},
+  {id:41,topic:"Segment Reporting",q:"The combined revenue from external customers for all reportable segments must represent at least what percentage of total company revenue?",opts:{A:"50 percent",B:"65 percent",C:"75 percent"},ans:"C",exp:"If the combined revenue from external customers for all reportable segments is less than 75 percent of total company revenue, the company must identify additional reportable segments until the 75 percent level is reached."},
+  {id:42,topic:"Segment Reporting",q:"Which of the following must be disclosed for each reportable operating segment?",opts:{A:"Names of the segment's top 10 customers",B:"Revenue distinguishing between external customers and inter-segment revenue",C:"Detailed employee headcount by segment"},ans:"B",exp:"For each reportable segment, companies must disclose revenue, distinguishing between revenue to external customers and revenue from other segments, among other items."},
+  {id:43,topic:"Segment Reporting",q:"Under segment reporting rules, a company must disclose if any single customer represents:",opts:{A:"5 percent or more of total revenues",B:"10 percent or more of total revenues",C:"15 percent or more of total revenues"},ans:"B",exp:"If any single customer represents 10 percent or more of the company's total revenues, the company must disclose that fact (though not the identity of that customer)."},
+  {id:44,topic:"MD&A",q:"Management commentary, or MD&A, is best described as:",opts:{A:"Audited information that provides the basis for the audit opinion",B:"Typically unaudited discussion by management about the company's operations and prospects",C:"A technical analysis of financial ratios required by accounting standards"},ans:"B",exp:"The discussion by management is one of the most useful parts of a company's annual report; however, other than excerpts from the financial statements, information in the management commentary is typically unaudited."},
+  {id:45,topic:"MD&A",q:"The IASB's IFRS Practice Statement on Management Commentary identifies which of the following as one of five content elements?",opts:{A:"Segment-by-segment audit findings",B:"Management's objectives and strategies",C:"Detailed tax reconciliation tables"},ans:"B",exp:"The IASB framework identifies five content elements: nature of the business, management's objectives and strategies, significant resources/risks/relationships, results of operations, and critical performance measures."},
+  {id:46,topic:"MD&A",q:"In the US, the SEC requires the MD&A to highlight:",opts:{A:"Favorable trends only, to maintain investor confidence",B:"Any favorable or unfavorable trends and significant events affecting liquidity and operations",C:"Only events that have already materially affected the company's financial results"},ans:"B",exp:"The SEC requires the MD&A to highlight any favorable or unfavorable trends and identify significant events and uncertainties affecting the company's liquidity, capital resources, and results of operations."},
+  {id:47,topic:"Audit",q:"An unqualified audit opinion is also referred to as:",opts:{A:"An adverse opinion",B:"A disclaimer of opinion",C:"A clean or unmodified opinion"},ans:"C",exp:"An unqualified audit opinion states that the financial statements give a 'true and fair view' or are 'fairly presented,' and is also referred to as an 'unmodified' or 'clean' opinion."},
+  {id:48,topic:"Audit",q:"An adverse audit opinion is issued when:",opts:{A:"The auditor has a minor scope limitation in testing",B:"The financial statements materially depart from accounting standards and are not fairly presented",C:"The auditor is unable to issue an opinion due to scope limitations"},ans:"B",exp:"An adverse audit opinion is issued when an auditor determines that the financial statements materially depart from accounting standards and are not fairly presented."},
+  {id:49,topic:"Audit",q:"A disclaimer of opinion in an audit report occurs when:",opts:{A:"The auditor finds a minor exception to accounting standards",B:"For some reason such as a scope limitation, auditors are unable to issue an opinion",C:"The financial statements depart materially from accounting standards"},ans:"B",exp:"A disclaimer of opinion occurs when, for some reason such as a scope limitation, the auditors are unable to issue an opinion."},
+  {id:50,topic:"Audit",q:"International Standards on Auditing (ISAs) have been developed by:",opts:{A:"The International Accounting Standards Board (IASB)",B:"The International Auditing and Assurance Standards Board (IAASB)",C:"The Public Company Accounting Oversight Board (PCAOB)"},ans:"B",exp:"International Standards on Auditing (ISAs) have been developed by the IAASB, which emerged from the International Federation of Accountants."},
+  {id:51,topic:"Audit",q:"An independent audit provides what level of assurance about the accuracy of financial statements?",opts:{A:"Absolute assurance that financial statements are error-free",B:"Reasonable assurance that financial statements are fairly presented",C:"Limited assurance that statements comply with local regulations"},ans:"B",exp:"Because audits use sampling techniques and financial statements may be based on estimates, auditors can only provide reasonable assurance—not absolute assurance—that financial statements are fairly presented."},
+  {id:52,topic:"Audit",q:"Key Audit Matters are best described as:",opts:{A:"Issues the auditor considers most important, such as those with higher risk of misstatement or significant management judgment",B:"Automatically the most important factors for analysts and investors",C:"Minor issues noted during the audit that do not affect the opinion"},ans:"A",exp:"Key Audit Matters include issues with higher risk of misstatement, involving significant management judgment, or reporting the effects of significant transactions. However, they are not necessarily the most important factors for analysts and investors."},
+  {id:53,topic:"Audit",q:"Under the Sarbanes-Oxley Act, management of publicly traded US companies is required to:",opts:{A:"Conduct their own independent audit",B:"Explicitly accept responsibility for the effectiveness of internal control",C:"Personally certify that no errors exist in the financial statements"},ans:"B",exp:"Management of publicly traded US companies is required to explicitly accept responsibility for the effectiveness of internal control, evaluate its effectiveness, support the evaluation with evidence, and provide a report on internal control."},
+  {id:54,topic:"Audit",q:"A financial analyst should treat audited financial statements with:",opts:{A:"Absolute trust, as the audit provides a guarantee of accuracy",B:"A degree of healthy skepticism, even after reviewing audit opinions",C:"No skepticism, because the PCAOB standards eliminate the risk of errors"},ans:"B",exp:"Although audit reports and attestations provide some assurances to analysts, they are not infallible. The analyst must always use a degree of healthy skepticism when analyzing financial statements."},
+  {id:55,topic:"IFRS vs GAAP",q:"Which is a key difference between IFRS and US GAAP regarding interest paid on the cash flow statement?",opts:{A:"Under US GAAP, interest paid can be classified as either financing or operating activities",B:"Under IFRS, interest paid must be classified as operating activities only",C:"Under IFRS, interest paid may be classified as either financing or operating activities"},ans:"C",exp:"Under IFRS, interest paid may be classified as Cash Flows from Financing Activities or Cash Flows from Operating Activities, while under US GAAP it is classified as Cash Flows from Operating Activities only."},
+  {id:56,topic:"IFRS vs GAAP",q:"Which inventory valuation method is permitted under US GAAP but not under IFRS?",opts:{A:"First In, First Out (FIFO)",B:"Last In, First Out (LIFO)",C:"Weighted Average Method"},ans:"B",exp:"US GAAP permits FIFO, LIFO, and Weighted Average Method, while IFRS only permits FIFO and Weighted Average Method."},
+  {id:57,topic:"IFRS vs GAAP",q:"Under IFRS, development costs are:",opts:{A:"Always expensed as incurred",B:"Capitalized only if certain conditions are satisfied",C:"Capitalized in all circumstances"},ans:"B",exp:"Under IFRS, development costs are capitalized if certain conditions are satisfied, while under US GAAP they are treated as an expense."},
+  {id:58,topic:"IFRS vs GAAP",q:"The reversal of inventory write-downs is:",opts:{A:"Prohibited under both IFRS and US GAAP",B:"Permissible under IFRS if specified conditions are met, but prohibited under US GAAP",C:"Permissible under US GAAP but prohibited under IFRS"},ans:"B",exp:"Under IFRS, reversal of inventory write-downs is permissible if specified conditions are met. Under US GAAP, such reversals are prohibited."},
+  {id:59,topic:"IFRS vs GAAP",q:"US GAAP is best described as a:",opts:{A:"Principles-based system of accounting standards",B:"Rules-based system of accounting standards",C:"Hybrid of rules and principles with equal emphasis on both"},ans:"B",exp:"US GAAP is generally described as rules-based, while IFRS is described as principles-based."},
+  {id:60,topic:"IFRS vs GAAP",q:"When analyzing two companies that use different reporting standards, an analyst should:",opts:{A:"Assume financial statements are comparable without adjustment",B:"Maintain caution and be aware of areas where standards have not converged",C:"Ignore differences since IASB and FASB have achieved full convergence"},ans:"B",exp:"An analyst must maintain caution in interpreting comparative financial measures produced under different accounting standards and monitor significant developments in financial reporting standards."},
+  {id:61,topic:"IFRS vs GAAP",q:"Reconciliation disclosures between IFRS and US GAAP:",opts:{A:"Are required for all cross-border filings",B:"Are not required, making analyst adjustments challenging",C:"Are only required for companies listed on US exchanges"},ans:"B",exp:"Because reconciliation disclosures between IFRS and US GAAP are not required, an analyst comparing two companies using different standards must be aware of areas where standards have not converged."},
+  {id:62,topic:"IFRS vs GAAP",q:"New accounting standards issued jointly by IASB and FASB have been:",opts:{A:"Identical in treatment for all major accounting areas",B:"Mostly or entirely converged, resulting in increasing uniformity over time",C:"Effective only after approval by national governments"},ans:"B",exp:"New accounting standards have been mostly or entirely converged (e.g., revenue recognition, leasing, credit losses), resulting in increasing uniformity over time."},
+  {id:63,topic:"IFRS vs GAAP",q:"Analysts need to monitor developments in financial reporting standards from:",opts:{A:"A preparer's perspective to ensure compliance",B:"A user's perspective to understand how developments affect financial reports",C:"An auditor's perspective to ensure standards are enforced"},ans:"B",exp:"An accountant monitors developments from a preparer's perspective; an analyst needs to monitor them from a user's perspective to know how developments will affect financial reports."},
+  {id:64,topic:"IFRS vs GAAP",q:"An example of a regulatory change that affected financial statements was the requirement to:",opts:{A:"Disclose inventory write-downs in the income statement",B:"Include stock option expense in the income statement",C:"Eliminate intercompany transactions in consolidated statements"},ans:"B",exp:"One regulatory change required companies to include a provision for expenses associated with the grant and vesting of employee stock options as an expense in the income statement."},
+  {id:65,topic:"IFRS vs GAAP",q:"CFA Institute's involvement in financial reporting standard setting is best characterized as:",opts:{A:"Direct authority to set accounting standards",B:"Active support for improvements through advocacy and liaison committees",C:"Enforcement of compliance with IFRS standards globally"},ans:"B",exp:"CFA Institute is active in supporting improvements to financial reporting. Volunteer members serve on liaison committees that meet to make recommendations to the IASB and FASB."},
+  {id:66,topic:"IFRS vs GAAP",q:"When a new accounting standard is proposed, stakeholders can provide input by:",opts:{A:"Voting directly on proposed changes at shareholder meetings",B:"Drafting comment letters and position papers in response to exposure drafts",C:"Lobbying government officials to reject or approve standards"},ans:"B",exp:"When a new standard is proposed, an exposure draft is made available and users of financial statements can draft comment letters and position papers for submission to the IASB and FASB."},
+  {id:67,topic:"IFRS vs GAAP",q:"CFA Institute's position paper on financial reporting emphasized the importance of:",opts:{A:"Simplifying disclosures to reduce information volume",B:"Timeliness, transparency, comparability, and consistency in financial reporting",C:"Shifting financial reporting to a cash-based system"},ans:"B",exp:"CFA Institute's position paper states that investors require timeliness, transparency, comparability, and consistency in financial reporting."},
+  {id:68,topic:"Information Sources",q:"Earnings calls hosted by company management are primarily intended for which audience?",opts:{A:"Internal employees and human resources departments",B:"Analysts, investors, and members of the media",C:"Regulatory authorities and auditors"},ans:"B",exp:"The primary audience for earnings calls are analysts, investors, and members of the media."},
+  {id:69,topic:"Information Sources",q:"Which of the following is best described as an issuer source of information other than regulatory filings?",opts:{A:"Industry whitepapers from a consultancy",B:"Analyst reports from credit rating agencies",C:"Investor day presentations by management"},ans:"C",exp:"Investor day presentations are issuer sources of information (other than regulatory filings). Industry whitepapers and credit rating agency reports are third-party sources."},
+  {id:70,topic:"Information Sources",q:"Proprietary primary research used by analysts most likely includes:",opts:{A:"Government-released economic indicators",B:"Surveys and product comparisons commissioned directly by the analyst",C:"Free industry whitepapers accessed via internet search engines"},ans:"B",exp:"Proprietary primary research includes surveys, conversations, product comparisons, and other studies commissioned by the analyst or conducted directly."},
+  {id:71,topic:"Information Sources",q:"Which of the following is an example of a proprietary third-party source of information?",opts:{A:"A company's investor relations website",B:"Reports and data from platforms such as Bloomberg or FactSet",C:"A government statistical agency's monthly retail sales data"},ans:"B",exp:"Proprietary third-party sources include analyst reports, credit rating agency communications, and reports/data from platforms such as Bloomberg, Wind, and FactSet."},
+  {id:72,topic:"Information Sources",q:"Social media is most useful to financial analysts as a gauge of:",opts:{A:"A company's compliance with accounting standards",B:"Customer sentiment for a company's products",C:"The accuracy of a company's disclosed financial results"},ans:"B",exp:"Social media may be a useful gauge of customer sentiment for a company's products."},
+  {id:73,topic:"Information Sources",q:"When analysts speak with company management or investor relations personnel, this is best categorized as:",opts:{A:"A public third-party source of information",B:"A proprietary third-party source of information",C:"An issuer source of information"},ans:"C",exp:"Speaking with management, investor relations, or other company personnel is classified as an issuer source of information."},
+  {id:74,topic:"Information Sources",q:"An analyst visiting a company's stores to gain direct product experience is using which type of source?",opts:{A:"Proprietary third-party source",B:"Issuer source via direct company or product experience",C:"Public third-party source"},ans:"B",exp:"Company website or properties that the analyst can visit as a customer or an investor are issuer sources. Analysts typically seek direct experience with products."},
+  {id:75,topic:"Information Sources",q:"Information on the economy and industry used in financial analysis is most useful for:",opts:{A:"Verifying the mathematical accuracy of financial ratios",B:"Putting a company's financial performance in perspective and assessing its future",C:"Replacing the need to read the company's own financial disclosures"},ans:"B",exp:"Information from sources apart from the company is crucial to an analyst's effectiveness, as it helps put the company's financial performance and position in perspective and assess its future."},
+  {id:76,topic:"Information Sources",q:"Press releases issued by companies are commonly distributed via:",opts:{A:"Only the SEC's EDGAR database",B:"The company's investor relations website and third-party news sources",C:"Encrypted channels accessible only to institutional investors"},ans:"B",exp:"Press releases are often distributed not only on issuers' websites but also on third-party news sources."},
+  {id:77,topic:"Information Sources",q:"An analyst aware that management is biased toward their own perspective should:",opts:{A:"Avoid using management commentary entirely",B:"Ask probing questions to gain further information and sharpen estimates",C:"Report management to the relevant regulatory authorities"},ans:"B",exp:"Analysts must be aware that management is biased toward their perspective, and often need to ask questions to get the information they want, especially during earnings calls and investor events."},
+  {id:78,topic:"Notes",q:"The flexibility in accounting choices is necessary because:",opts:{A:"It allows companies to manipulate financial statements to appear more profitable",B:"Different policies, methods, and estimates can better reflect the unique economic environment of each business",C:"It reduces the need for auditors to express opinions"},ans:"B",exp:"Flexibility in accounting choices is necessary because, ideally, a company will select those policies, methods, and estimates that are allowable and most relevant and that fairly reflect the unique economic environment of its business and industry."},
+  {id:79,topic:"Notes",q:"An analyst comparing two companies with different depreciation methods faces which primary challenge?",opts:{A:"Determining the market value of the companies' fixed assets",B:"Reduced comparability of the companies' financial positions and performance",C:"Inability to access the companies' financial statements"},ans:"B",exp:"Different accounting policies, methods, and estimates—such as different depreciation methods—reduce comparability across different companies' financial statements."},
+  {id:80,topic:"MD&A",q:"Off-balance-sheet obligations must be disclosed in which section of a regulatory filing?",opts:{A:"The audit report",B:"The management commentary or MD&A",C:"The proxy statement"},ans:"B",exp:"The SEC requires the MD&A to provide information about off-balance-sheet obligations and about contractual commitments, such as purchase obligations."},
+  {id:81,topic:"Regulatory",q:"Which body oversees auditing standards for public companies in the United States?",opts:{A:"The American Institute of Certified Public Accountants (AICPA)",B:"The Public Company Accounting Oversight Board (PCAOB)",C:"The Financial Accounting Standards Board (FASB)"},ans:"B",exp:"With the enactment of the Sarbanes-Oxley Act of 2002, auditing standards for public companies are promulgated by the PCAOB."},
+  {id:82,topic:"MD&A",q:"The IASB's IFRS Practice Statement on Management Commentary provides:",opts:{A:"Mandatory requirements set forth in an accounting standard",B:"Guidance rather than requirements, as it is a practice statement not a standard",C:"Regulations that must be adopted by all IFRS-reporting jurisdictions"},ans:"B",exp:"The IASB's IFRS Practice Statement on Management Commentary provides guidance rather than sets forth requirements in a standard."},
+  {id:83,topic:"Notes",q:"Sea Ltd.'s 2021 financial statements prepared on a consolidated basis means:",opts:{A:"Only Sea Ltd. parent company accounts are included",B:"Financial records of Sea Ltd. and all its controlled subsidiaries are aggregated after eliminating intercompany items",C:"Financial statements of only the two largest subsidiaries are included"},ans:"B",exp:"Consolidated financial statements aggregate the financial records of all subsidiaries the company controls, after eliminating intercompany balances and transactions."},
+  {id:84,topic:"Segment Reporting",q:"From the Sea Ltd. segment data in the chapter, which segment was the only profitable one in 2021?",opts:{A:"E-Commerce",B:"Digital Entertainment",C:"Digital Financial Services"},ans:"B",exp:"From the segment data, the e-commerce segment generated a large operating loss, and the digital entertainment segment was the only profitable segment."},
+  {id:85,topic:"Framework",q:"Common-size financial statements are primarily used to:",opts:{A:"Convert financial statements to a foreign currency",B:"Scale data to directly reflect percentages or changes to facilitate comparisons",C:"Adjust financial statements for seasonal fluctuations"},ans:"B",exp:"Common-size financial statements scale data to directly reflect percentages (e.g., of sales) or changes (e.g., from the prior year) to facilitate comparison."},
+  {id:86,topic:"Framework",q:"Financial ratios are best described as:",opts:{A:"Standardized amounts required by regulatory authorities for annual filings",B:"Measures of various aspects of corporate performance based on financial statement elements",C:"Tools used exclusively by credit analysts to assess debt repayment ability"},ans:"B",exp:"Financial ratios are measures of various aspects of corporate performance based on financial statement elements, used to evaluate profitability, liquidity, leverage, efficiency, and valuation."},
+  {id:87,topic:"Notes",q:"An analyst's ability to compare the depreciation expense of two companies with different depreciation methods is best described as:",opts:{A:"Unaffected, because depreciation equals the same amount over the asset's life",B:"Hindered by the difference in methods and assumptions used to record expense",C:"Enhanced by the fact that both companies must disclose their methods in the notes"},ans:"B",exp:"Two companies may acquire similar equipment but use different methods and assumptions. An analyst's ability to compare the companies' performance is hindered by the difference."},
+  {id:88,topic:"SEC Filings",q:"A company's Form 11-K filed with the SEC is most relevant for analysts interested in:",opts:{A:"The company's insider stock transactions",B:"The company's employee stock purchase, savings, and similar plans",C:"The company's current report on material corporate events"},ans:"B",exp:"Form 11-K is the annual report of employee stock purchase, savings, and similar plans. It might be of interest for companies with significant employee benefit plans."},
+  {id:89,topic:"Regulatory",q:"Under Regulation Fair Disclosure (Reg FD), when an issuer discloses material non-public information to securities market professionals, it must:",opts:{A:"Report the disclosure to the SEC within 30 days",B:"Make simultaneous or prompt public disclosure of that information",C:"Obtain written consent from each recipient before disclosing"},ans:"B",exp:"Regulation FD provides that when an issuer discloses material non-public information to certain individuals, the issuer must make public disclosure of that information to promote full and fair disclosure."},
+  {id:90,topic:"Regulatory",q:"A self-regulatory organization (SRO) in the context of IOSCO principles is best described as:",opts:{A:"An organization that sets government fiscal policy",B:"An organization that exercises some direct oversight for its area of competence and is subject to oversight of the relevant regulator",C:"An organization that exclusively focuses on consumer protection"},ans:"B",exp:"SROs exercise some direct oversight for their areas of competence and should be subject to the oversight of the relevant regulator and observe fairness and confidentiality."},
+  {id:91,topic:"Regulatory",q:"The International Federation of Accountants is most closely associated with the development of:",opts:{A:"US GAAP standards through the FASB",B:"International Standards on Auditing through the IAASB",C:"IFRS standards through the IASB"},ans:"B",exp:"The International Auditing and Assurance Standards Board (IAASB), which developed International Standards on Auditing, emerged from the International Federation of Accountants."},
+  {id:92,topic:"Scope",q:"For an analyst assessing a company's financial position for credit analysis, which is most relevant?",opts:{A:"The company's earnings per share growth rate over the last five years",B:"The company's debt leverage ratios, interest coverage, and free cash flow generation",C:"The company's dividend payout history and stock price performance"},ans:"B",exp:"Credit analysts focus on financial position, particularly debt leverage, interest coverage, and free cash flow generation to assess creditworthiness and the ability to repay debt."},
+  {id:93,topic:"Regulatory",q:"The process for adoption of a new IASB standard within the European Union involves:",opts:{A:"Automatic adoption without review by EU bodies",B:"A review and endorsement process involving the European Financial Reporting Advisory Group, European Commission, and Parliament",C:"Direct approval by each individual EU member state without any coordinated EU review"},ans:"B",exp:"When the IASB issues a new standard, it goes through an endorsement process involving the European Financial Reporting Advisory Group, the Standards Advice Review Group, the European Commission, and the European Parliament."},
+  {id:94,topic:"Framework",q:"The financial statement analysis framework presented in the reading is best described as:",opts:{A:"A rigid, step-by-step process with no flexibility for analyst judgment",B:"A generic, adaptable structure used across various analytical roles and tasks",C:"A replacement for the need to gather information beyond financial statements"},ans:"B",exp:"The framework is presented as a generic framework used in various roles—equity analysis, credit analysis, performance evaluation, etc.—that guides but does not rigidly constrain the analytical process."},
+  {id:95,topic:"SEC Filings",q:"Sea Ltd. is listed on the NYSE. As a non-US registrant, it files which annual form with the SEC?",opts:{A:"Form 10-K",B:"Form 40-F",C:"Form 20-F"},ans:"C",exp:"Form 20-F is required for all non-US registrants other than certain Canadian registrants. Sea Ltd., being a Singapore-based company, would file Form 20-F."},
+  {id:96,topic:"SEC Filings",q:"A company's annual report described as a 'highly polished marketing document' contrasts most with:",opts:{A:"The company's Form 10-K, which is a more legal type of document with minimal marketing emphasis",B:"The company's proxy statement, which is required for all shareholder meetings",C:"The auditor's report, which contains management's forward-looking commentary"},ans:"A",exp:"The annual report is often a highly polished marketing document. In contrast, Form 10-K is a more legal type of document with minimal marketing emphasis."},
+  {id:97,topic:"MD&A",q:"Which type of information in management commentary is particularly useful for projecting future performance?",opts:{A:"Historical financial results and prior-year comparisons",B:"Forward-looking disclosures, such as planned capital expenditures and new store openings",C:"Accounting policy elections made under IFRS or US GAAP"},ans:"B",exp:"Forward-looking disclosures in the management commentary, such as those about planned capital expenditures, new store openings, or divestitures, can be useful in projecting a company's future performance."},
+  {id:98,topic:"IFRS vs GAAP",q:"An analyst identifies a company using a new financial instrument with no explicit guidance in financial reporting standards. To understand its business purpose, the analyst should:",opts:{A:"Assume the instrument is being used for financial statement window dressing",B:"Obtain further information from the company's management",C:"Ignore the instrument until the IASB issues specific guidance"},ans:"B",exp:"If necessary, an analyst can obtain further information from company management, which should be able to describe the economic purpose, financial statement reporting, significant estimates and judgments, and future cash flow implications."},
+  {id:99,topic:"Segment Reporting",q:"When identifying operating segments, which is NOT one of the required characteristics?",opts:{A:"The segment engages in activities that may generate revenue and create expenses",B:"Results are regularly reviewed by senior management",C:"The segment must be a wholly-owned subsidiary of the parent company"},ans:"C",exp:"An operating segment must engage in activities generating revenue and expenses, have results regularly reviewed by senior management, and have discrete financial information available. Being a wholly-owned subsidiary is not a requirement."},
+  {id:100,topic:"Regulatory",q:"Securities regulators in emerging markets account for approximately what percentage of IOSCO's ordinary membership?",opts:{A:"25 percent",B:"50 percent",C:"75 percent"},ans:"C",exp:"Securities regulators in emerging markets account for 75 percent of IOSCO's ordinary membership."}
+];
+
+// ═══════════════════════════════════════
+// EXAM STATE
+// ═══════════════════════════════════════
+let current = 0;
+let answers = new Array(QUESTIONS.length).fill(null); // null = unanswered
+let submitted = false;
+
+function switchTab(name, btn) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('panel-' + name).classList.add('active');
+  btn.classList.add('active');
+  if (name === 'summary') {
+    document.getElementById('progressPill').style.display = 'none';
+    // Auto-load ch1 if nothing loaded
+    const sel = document.getElementById('chapterSelect');
+    if (!sel.value) sel.value = 'ch1';
+    loadChapter(sel.value);
+  } else {
+    document.getElementById('progressPill').style.display = '';
+  }
+}
+
+function renderQuestion() {
+  const q = QUESTIONS[current];
+  document.getElementById('qNum').textContent = 'Q ' + q.id;
+  document.getElementById('qTopic').textContent = q.topic;
+  document.getElementById('qText').textContent = q.q;
+  document.getElementById('pillCurrent').textContent = q.id;
+
+  const container = document.getElementById('optionsContainer');
+  container.innerHTML = '';
+
+  ['A','B','C'].forEach(letter => {
+    const div = document.createElement('div');
+    div.className = 'opt';
+    div.id = 'opt-' + letter;
+
+    if (answers[current] === letter) div.classList.add('selected');
+
+    if (submitted) {
+      if (letter === q.ans) div.classList.add('reveal-correct');
+      else if (answers[current] === letter && letter !== q.ans) div.classList.add('wrong');
+    }
+
+    div.innerHTML = `<span class="opt-letter">${letter}</span><span class="opt-text">${q.opts[letter]}</span>`;
+
+    if (!submitted) {
+      div.addEventListener('click', () => selectAnswer(letter));
+    }
+    container.appendChild(div);
+  });
+
+  // Explanation
+  const expEl = document.getElementById('explanation');
+  if (submitted) {
+    expEl.innerHTML = '<strong>' + (answers[current] === q.ans ? '✅ Correct! ' : answers[current] ? '❌ Incorrect. ' : '⏭ Unanswered. ') + '</strong>' + q.exp;
+    expEl.classList.add('show');
+  } else if (answers[current] !== null) {
+    expEl.classList.remove('show');
+  } else {
+    expEl.classList.remove('show');
+  }
+
+  // Buttons
+  document.getElementById('btnPrev').disabled = current === 0;
+  const isLast = current === QUESTIONS.length - 1;
+
+  if (submitted) {
+    document.getElementById('btnNext').style.display = isLast ? 'none' : '';
+    document.getElementById('btnSkip').style.display = 'none';
+    document.getElementById('btnSubmit').style.display = 'none';
+    if (!isLast) document.getElementById('btnNext').style.display = '';
+  } else {
+    const hasAnswer = answers[current] !== null;
+    document.getElementById('btnNext').style.display = (hasAnswer && !isLast) ? '' : 'none';
+    document.getElementById('btnSkip').style.display = (!hasAnswer && !isLast) ? '' : 'none';
+    // Show submit on last question if all answered or just show it if on last
+    const allAnswered = answers.every(a => a !== null);
+    document.getElementById('btnSubmit').style.display = isLast && (hasAnswer || allAnswered) ? '' : 'none';
+  }
+
+  updateMiniGrid();
+  updateSidebar();
+}
+
+function selectAnswer(letter) {
+  if (submitted) return;
+  answers[current] = letter;
+  renderQuestion();
+}
+
+function navigate(dir) {
+  current = Math.max(0, Math.min(QUESTIONS.length - 1, current + dir));
+  renderQuestion();
+}
+
+function skipQuestion() {
+  if (current < QUESTIONS.length - 1) {
+    current++;
+    renderQuestion();
+  }
+}
+
+function submitExam() {
+  if (!submitted) {
+    const unanswered = answers.filter(a => a === null).length;
+    if (unanswered > 0) {
+      const go = confirm(`You have ${unanswered} unanswered question${unanswered>1?'s':''}. Submit anyway?`);
+      if (!go) return;
+    }
+    submitted = true;
+  }
+  // Show results banner
+  const correct = answers.filter((a,i) => a === QUESTIONS[i].ans).length;
+  const wrong = answers.filter((a,i) => a !== null && a !== QUESTIONS[i].ans).length;
+  const skipped = answers.filter(a => a === null).length;
+  const pct = Math.round(correct / QUESTIONS.length * 100);
+
+  document.getElementById('rScore').textContent = pct + '%';
+  document.getElementById('rCorrect').textContent = correct;
+  document.getElementById('rWrong').textContent = wrong;
+  document.getElementById('rSkipped').textContent = skipped;
+
+  let title = pct >= 70 ? '🎉 Well Done!' : pct >= 50 ? '📚 Keep Studying' : '💪 More Practice Needed';
+  document.getElementById('resultsTitle').textContent = title;
+  document.getElementById('resultsSubtitle').textContent = `You scored ${pct}% (${correct} of ${QUESTIONS.length} correct)`;
+  document.getElementById('resultsBanner').classList.add('show');
+
+  // Scroll to top
+  document.getElementById('resultsBanner').scrollIntoView({behavior:'smooth'});
+  renderQuestion();
+}
+
+function restartExam() {
+  answers = new Array(QUESTIONS.length).fill(null);
+  submitted = false;
+  current = 0;
+  document.getElementById('resultsBanner').classList.remove('show');
+  renderQuestion();
+}
+
+function updateSidebar() {
+  const correct = answers.filter((a,i) => a === QUESTIONS[i].ans).length;
+  const wrong = answers.filter((a,i) => a !== null && a !== QUESTIONS[i].ans).length;
+  const answered = answers.filter(a => a !== null).length;
+  const skipped = answers.filter(a => a === null).length;
+  const pct = answered > 0 ? Math.round(correct / answered * 100) : 0;
+
+  document.getElementById('sideScore').innerHTML = (submitted ? pct : Math.round(correct/Math.max(answered,1)*100)) + '<span>%</span>';
+  document.getElementById('sideScoreSub').textContent = answered + ' of ' + QUESTIONS.length + ' answered';
+  document.getElementById('sCorrect').textContent = correct;
+  document.getElementById('sWrong').textContent = wrong;
+  document.getElementById('sSkipped').textContent = skipped;
+  document.getElementById('sRemain').textContent = skipped + (submitted ? 0 : answers.filter(a=>a===null).length - skipped);
+  document.getElementById('sRemain').textContent = answers.filter(a => a === null).length;
+}
+
+function updateMiniGrid() {
+  const grid = document.getElementById('miniGrid');
+  grid.innerHTML = '';
+  QUESTIONS.forEach((q, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'mini-dot';
+    btn.title = 'Q' + (i+1);
+    if (i === current) btn.classList.add('current');
+    if (submitted) {
+      if (answers[i] === q.ans) btn.classList.add('correct');
+      else if (answers[i] !== null) btn.classList.add('wrong');
+      else btn.classList.add('answered');
+    } else {
+      if (answers[i] !== null) btn.classList.add('answered');
+    }
+    btn.addEventListener('click', () => { current = i; renderQuestion(); });
+    grid.appendChild(btn);
+  });
+}
+
+// ═══════════════════════════════════════
+// CHAPTER SUMMARY RENDERER
+// ═══════════════════════════════════════
+const CHAPTER_SUMMARIES = {
+  ch1: `
+  <div class="sum-hero">
+    <div class="sum-hero-label">2026 CFA® Program · Level I · Reading 1</div>
+    <h1>Introduction to <em>Financial Statement Analysis</em></h1>
+    <div class="sum-hero-tags">
+      <span class="sum-hero-tag">5 Learning Outcomes</span>
+      <span class="sum-hero-tag">6-Phase Framework</span>
+      <span class="sum-hero-tag">IFRS vs US GAAP</span>
+      <span class="sum-hero-tag">Audit Opinions</span>
+      <span class="sum-hero-tag">SEC Filings</span>
+      <span class="sum-hero-tag">Information Sources</span>
+    </div>
+  </div>
+  <div class="sum-body">
+
+    <div class="s-header">
+      <div class="s-icon">🎯</div>
+      <h2><span>Learning Outcomes</span>What You Need to Master</h2>
+    </div>
+    <div class="lo-list">
+      <div class="lo-item"><span class="lo-num">LO 1</span><span class="lo-text">Describe the steps in the <strong>financial statement analysis framework</strong></span></div>
+      <div class="lo-item"><span class="lo-num">LO 2</span><span class="lo-text">Describe the <strong>roles</strong> of financial statement analysis</span></div>
+      <div class="lo-item"><span class="lo-num">LO 3</span><span class="lo-text">Describe the importance of <strong>regulatory filings, financial notes, management commentary, and audit reports</strong></span></div>
+      <div class="lo-item"><span class="lo-num">LO 4</span><span class="lo-text">Describe implications of <strong>alternative financial reporting systems</strong> (IFRS vs US GAAP) and monitoring standard developments</span></div>
+      <div class="lo-item"><span class="lo-num">LO 5</span><span class="lo-text">Describe <strong>other information sources</strong> analysts use beyond annual and interim reports</span></div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="s-header">
+      <div class="s-icon">🔄</div>
+      <h2><span>The Framework</span>6-Phase Financial Statement Analysis Process</h2>
+    </div>
+    <div class="phases">
+      <div class="phase"><div class="phase-num">1</div><div class="phase-content"><div class="phase-title">Articulate Purpose &amp; Context</div><div class="phase-desc">Define why you're doing the analysis. Who is the audience? What decisions will it support? Resist the urge to start calculating ratios before understanding what's relevant.</div><span class="phase-out">→ Purpose statement + specific questions to answer</span></div></div>
+      <div class="phase"><div class="phase-num">2</div><div class="phase-content"><div class="phase-title">Collect Data</div><div class="phase-desc">Gather financial statements, industry/economic data, management discussions. Analysts take a <strong>top-down approach</strong>: macroeconomic → industry → company. Site visits and management discussions are valid data sources.</div><span class="phase-out">→ Financial data in usable form (spreadsheets)</span></div></div>
+      <div class="phase"><div class="phase-num">3</div><div class="phase-content"><div class="phase-title">Process Data</div><div class="phase-desc">Compute ratios, growth rates, and common-size statements. Adjust financial statements for comparability. Apply statistical analyses, regressions, Monte Carlo simulations, and sensitivity analyses.</div><span class="phase-out">→ Adjusted statements, ratios, common-size data, graphs</span></div></div>
+      <div class="phase"><div class="phase-num">4</div><div class="phase-content"><div class="phase-title">Analyze / Interpret Data</div><div class="phase-desc">The numerical output alone is never the answer. The analyst must interpret results in context to support a conclusion — buy/sell ratings, credit decisions, valuations.</div><span class="phase-out">→ Analytical results, forecasts, valuations</span></div></div>
+      <div class="phase"><div class="phase-num">5</div><div class="phase-content"><div class="phase-title">Communicate Conclusions &amp; Recommendations</div><div class="phase-desc">Report in the appropriate format for the audience. Equity reports include: investment conclusion, industry overview, financial model, valuation, and risks. CFA Standard V(B) requires clearly distinguishing opinions from facts.</div><span class="phase-out">→ Analytical report + investment/credit recommendation</span></div></div>
+      <div class="phase"><div class="phase-num">6</div><div class="phase-content"><div class="phase-title">Follow-Up</div><div class="phase-desc">Periodically repeat prior steps as new information arrives. Update forecasts and recommendations. Even rejected investments may require monitoring if prices or conditions change.</div><span class="phase-out">→ Actual vs. expected comparison, revised forecasts, updated reports</span></div></div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="s-header">
+      <div class="s-icon">🔢</div>
+      <h2><span>Key Numbers</span>Critical Thresholds to Memorize</h2>
+    </div>
+    <div class="stats-row">
+      <div class="stat-box"><div class="stat-num">95<sup>%</sup></div><div class="stat-label">of world's financial markets covered by IOSCO members</div></div>
+      <div class="stat-box"><div class="stat-num">115<sup>+</sup></div><div class="stat-label">jurisdictions represented in IOSCO membership</div></div>
+      <div class="stat-box"><div class="stat-num">75<sup>%</sup></div><div class="stat-label">of IOSCO ordinary members from emerging markets</div></div>
+      <div class="stat-box"><div class="stat-num">10<sup>%</sup></div><div class="stat-label">threshold for mandatory segment disclosure (revenue, assets, or profit)</div></div>
+      <div class="stat-box"><div class="stat-num">75<sup>%</sup></div><div class="stat-label">minimum external revenue coverage by reportable segments</div></div>
+      <div class="stat-box"><div class="stat-num">10<sup>%</sup></div><div class="stat-label">single-customer concentration that triggers disclosure</div></div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="s-header">
+      <div class="s-icon">📋</div>
+      <h2><span>SEC Filings</span>Key Forms Analysts Use</h2>
+    </div>
+    <div class="card-grid">
+      <div class="s-card"><div class="s-card-icon">📄</div><h3>Form 10-K / 20-F / 40-F</h3><p>Annual reports. <strong>10-K</strong> for US registrants, <strong>20-F</strong> for non-US registrants, <strong>40-F</strong> for certain Canadian registrants. Contains audited financials, MD&amp;A, and risk factors.</p></div>
+      <div class="s-card"><div class="s-card-icon">📅</div><h3>Form 10-Q / 6-K</h3><p>Interim reports. <strong>10-Q</strong> filed quarterly by US companies. <strong>6-K</strong> filed semi-annually by many non-US companies. Contains <em>unaudited</em> financial statements and MD&amp;A.</p></div>
+      <div class="s-card"><div class="s-card-icon">⚡</div><h3>Form 8-K</h3><p>Current report for material events — acquisitions, management changes, accounting changes, Reg FD disclosures. Must be filed promptly when triggering events occur.</p></div>
+      <div class="s-card"><div class="s-card-icon">🗳️</div><h3>Form DEF-14A (Proxy)</h3><p>Contains executive compensation, security ownership by management, director biographies, and shareholder vote items.</p></div>
+      <div class="s-card"><div class="s-card-icon">🔏</div><h3>Forms 3, 4, 5 &amp; 144</h3><p>Insider ownership filings. Forms 3/4/5 track beneficial ownership by directors, officers, and &gt;10% holders. Form 144 covers proposed sale of restricted securities.</p></div>
+      <div class="s-card"><div class="s-card-icon">📝</div><h3>Registration Statement</h3><p>Filed for new securities offerings (1933 Act). Includes risk factors, audited financial statements, use of proceeds, and relationship of new securities to existing capital.</p></div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="s-header">
+      <div class="s-icon">✅</div>
+      <h2><span>Audit Reports</span>Four Types of Audit Opinions</h2>
+    </div>
+    <div class="audit-list">
+      <div class="audit-item"><div class="audit-dot" style="background:#1a7a4a"></div><div><h4>Unqualified (Clean / Unmodified) ✓ — Preferred</h4><p>Financial statements present fairly in accordance with applicable accounting standards. This is the opinion analysts want to see. Also called "true and fair view" (internationally) or "fairly presented" (US).</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#b98a1c"></div><div><h4>Qualified — Some Exception or Scope Limitation</h4><p>The financial statements are fairly presented <em>except</em> for a specific issue or scope limitation. The exception is described in additional explanatory paragraphs. Analyst must evaluate the importance of the exception.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#b91c1c"></div><div><h4>Adverse — Material Departure from Standards</h4><p>The financial statements materially depart from accounting standards and are <em>not</em> fairly presented. The most serious opinion — a major red flag for analysts.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#6b6b8a"></div><div><h4>Disclaimer — Unable to Issue an Opinion</h4><p>Due to a scope limitation or other reason, the auditor is unable to express an opinion at all.</p></div></div>
+    </div>
+    <div class="info-note gold" style="margin-top:10px"><strong>Remember:</strong> Audits use <em>sampling techniques</em> and statements involve <em>estimates</em> — auditors can only provide <strong>reasonable assurance</strong>, not absolute assurance. Always apply healthy skepticism even with a clean opinion.</div>
+
+    <hr class="divider">
+
+    <div class="s-header">
+      <div class="s-icon">⚖️</div>
+      <h2><span>Standards Comparison</span>Key IFRS vs US GAAP Differences</h2>
+    </div>
+    <table class="compare-table">
+      <thead><tr><th>Topic</th><th><span class="badge badge-us">US GAAP (FASB)</span></th><th><span class="badge badge-ifrs">IFRS (IASB)</span></th></tr></thead>
+      <tbody>
+        <tr><td>Approach</td><td>Rules-based</td><td>Principles-based</td></tr>
+        <tr><td>Inventory Methods</td><td>FIFO, LIFO, Weighted Average</td><td>FIFO, Weighted Average (LIFO <em>not permitted</em>)</td></tr>
+        <tr><td>Inventory Write-Down Reversal</td><td>Prohibited</td><td>Permitted if conditions are met</td></tr>
+        <tr><td>Development Costs</td><td>Expensed as incurred</td><td>Capitalized if certain conditions satisfied</td></tr>
+        <tr><td>Interest Paid (Cash Flow)</td><td>Operating Activities only</td><td>Financing <em>or</em> Operating Activities</td></tr>
+        <tr><td>Standard Setter</td><td>FASB</td><td>IASB</td></tr>
+      </tbody>
+    </table>
+    <div class="info-note blue" style="margin-top:10px"><strong>Convergence note:</strong> Reconciliation disclosures between IFRS and US GAAP are <strong>not required</strong>. New standards (revenue, leasing, credit losses) have largely converged.</div>
+
+    <hr class="divider">
+
+    <div class="s-header">
+      <div class="s-icon">🔍</div>
+      <h2><span>Information Sources</span>Beyond Annual Reports</h2>
+    </div>
+    <div class="sources-grid">
+      <div class="src-group"><div class="src-header">📢 Issuer Sources (Non-Filing)</div><ul class="src-items"><li>Earnings calls (quarterly webcasts)</li><li>Investor day / analyst day events</li><li>Press releases</li><li>Speaking with management / IR personnel</li><li>Company site visits &amp; product experience</li></ul></div>
+      <div class="src-group"><div class="src-header">🌐 Public Third-Party Sources</div><ul class="src-items"><li>Free industry whitepapers &amp; analyst reports</li><li>Government economic/industry indicators</li><li>General &amp; industry-specific news outlets</li><li>Social media (customer sentiment gauge)</li></ul></div>
+      <div class="src-group"><div class="src-header">💼 Proprietary Third-Party Sources</div><ul class="src-items"><li>Sell-side analyst reports &amp; credit agency reports</li><li>Bloomberg, FactSet, Wind data platforms</li><li>Industry consultancies (Rystad, Gartner, IQVIA)</li></ul></div>
+      <div class="src-group"><div class="src-header">🔬 Proprietary Primary Research</div><ul class="src-items"><li>Surveys commissioned by the analyst</li><li>Direct product evaluations &amp; comparisons</li><li>Expert conversations &amp; channel checks</li></ul></div>
+    </div>
+
+    <div class="takeaway">
+      <h3>Core Analyst Mindset</h3>
+      <p>The purpose of financial statement analysis is not to verify numbers — it is to <strong>form expectations about a company's future performance and financial position</strong> to support investment, credit, and other economic decisions. Analysts must combine quantitative outputs with <strong>qualitative interpretation</strong>, maintain <strong>healthy skepticism</strong> toward even audited figures, and continuously monitor <strong>changes in accounting standards</strong> that could affect comparability. No single information source is sufficient — the strongest analyses integrate <strong>issuer filings, management commentary, third-party data, and primary research</strong>.</p>
+    </div>
+
+  </div>`,
+};
+
+function loadChapter(chapterId) {
+  const container = document.getElementById('chapterContent');
+  if (!chapterId) {
+    container.innerHTML = '<div class="chapter-placeholder"><div class="ph-icon">📚</div><h3>Select a chapter to begin</h3><p>Choose a reading from the dropdown above to view its summary.</p></div>';
+    return;
+  }
+  if (CHAPTER_SUMMARIES[chapterId]) {
+    container.innerHTML = '<div class="fade-in">' + CHAPTER_SUMMARIES[chapterId] + '</div>';
+  } else {
+    container.innerHTML = `<div class="chapter-placeholder"><div class="ph-icon">🚧</div><h3>Coming Soon</h3><p>This chapter summary is being prepared. Check back soon!</p></div>`;
+  }
+  container.scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+// ═══════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════
+document.getElementById('pillTotal').textContent = QUESTIONS.length;
+loadChapter('ch1');
+renderQuestion();
+</script>
+</body>
+</html>
