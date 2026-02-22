@@ -1,0 +1,1502 @@
+[
+  {
+    "id": "FSA-001",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "Which of the following is the first step in the financial statement analysis framework?",
+    "options": [
+      "Collect data",
+      "Process data",
+      "Articulate the purpose and context of the analysis"
+    ],
+    "correctAnswer": "C",
+    "explanation": "The first step is to articulate the purpose and context of the analysis. Understanding the purpose is essential before any data collection or processing begins."
+  },
+  {
+    "id": "FSA-002",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "Which output is most likely to result from the 'Process Data' phase of the financial statement analysis framework?",
+    "options": [
+      "Investment recommendation",
+      "Common-size financial statements",
+      "Statement of the purpose of analysis"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Processing data produces outputs such as adjusted financial statements, common-size statements, and ratios and graphs."
+  },
+  {
+    "id": "FSA-003",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "During which phase of the financial statement analysis framework would an analyst most likely conduct company site visits?",
+    "options": [
+      "Process data",
+      "Collect data",
+      "Analyze/interpret the data"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Company site visits are a source of information used in the 'Collect Data' phase of the framework."
+  },
+  {
+    "id": "FSA-004",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "An analyst is computing growth rates and preparing charts from financial data. This activity is most consistent with which phase of the financial statement analysis framework?",
+    "options": [
+      "Collect data",
+      "Process data",
+      "Analyze/interpret the data"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Computing ratios, growth rates, and preparing charts are activities that occur during the 'Process Data' phase."
+  },
+  {
+    "id": "FSA-005",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "The output of the 'Develop and Communicate Conclusions' phase most likely includes:",
+    "options": [
+      "Completed questionnaires",
+      "Adjusted financial statements",
+      "A recommendation regarding whether to make an investment"
+    ],
+    "correctAnswer": "C",
+    "explanation": "The output of this phase includes an analytical report and a recommendation regarding the purpose of the analysis, such as whether to make an investment or extend credit."
+  },
+  {
+    "id": "FSA-006",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "A less experienced analyst is tempted to immediately start calculating ratios when facing a large amount of financial data. According to the financial statement analysis framework, this approach is best described as:",
+    "options": [
+      "Efficient, as it quickly identifies key metrics",
+      "Advisable only when peer comparisons are needed",
+      "Generally inadvisable, as it may result in unnecessary or pointless efforts"
+    ],
+    "correctAnswer": "C",
+    "explanation": "It is generally advisable to resist the temptation to immediately calculate ratios without considering what is relevant for the decision at hand, to avoid unnecessary efforts."
+  },
+  {
+    "id": "FSA-007",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "Comparing actual results to expected results is most closely associated with which phase of the financial statement analysis framework?",
+    "options": [
+      "Process data",
+      "Follow-up",
+      "Collect data"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The follow-up phase involves repeating previous steps as necessary and produces outputs such as comparison of actual to expected results and revised forecasts."
+  },
+  {
+    "id": "FSA-008",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "An equity analyst's report for external distribution would most likely include which of the following components?",
+    "options": [
+      "Internal control assessment",
+      "Summary and investment conclusion",
+      "List of specific questions answered by the analysis"
+    ],
+    "correctAnswer": "B",
+    "explanation": "An equity analyst's report for external distribution typically includes a summary and investment conclusion, industry overview, financial model, valuation, and investment risks."
+  },
+  {
+    "id": "FSA-009",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "According to CFA Institute Standards of Practice, when communicating an investment recommendation, a member must:",
+    "options": [
+      "Limit disclosures to the most favorable information",
+      "Distinguish clearly between opinions and facts",
+      "Avoid disclosing limitations to the analysis"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Standard V(B) requires that members communicate the factors instrumental in making the investment recommendation and distinguish clearly between opinions and facts."
+  },
+  {
+    "id": "FSA-010",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "An analyst adopts a top-down approach to financial analysis. Which of the following best represents the correct order of this approach?",
+    "options": [
+      "Company analysis, then industry analysis, then macroeconomic analysis",
+      "Macroeconomic analysis, then industry analysis, then company analysis",
+      "Industry analysis, then company analysis, then macroeconomic analysis"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The top-down approach involves first gaining an understanding of the macroeconomic environment, then analyzing the industry, and then determining the prospects for the specific company."
+  },
+  {
+    "id": "FSA-011",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "The primary purpose of financial statement analysis is best described as:",
+    "options": [
+      "Verifying the accuracy of financial statements",
+      "Evaluating past, current, and potential performance for economic decision making",
+      "Ensuring companies comply with accounting standards"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The role of financial statement analysis is to use financial reports to evaluate past, current, and potential performance and financial position for the purpose of making investment, credit, and other economic decisions."
+  },
+  {
+    "id": "FSA-012",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "Which of the following is least likely to be a use of financial statement analysis?",
+    "options": [
+      "Assigning a debt rating to a bond issue",
+      "Evaluating whether to make a venture capital investment",
+      "Preparing a company's financial statements for regulatory filing"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Preparing financial statements is the role of the company's management, not financial statement analysts. Analysts use the statements; they do not prepare them."
+  },
+  {
+    "id": "FSA-013",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "A debt investor conducting financial analysis is most likely to focus on:",
+    "options": [
+      "Per-share value of the company's equity",
+      "The company's ability to pay interest and repay principal",
+      "The company's dividend growth prospects"
+    ],
+    "correctAnswer": "B",
+    "explanation": "A debt investor is primarily concerned with a company's ability to pay interest and repay the principal lent."
+  },
+  {
+    "id": "FSA-014",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "An equity investor conducting financial analysis is most concerned with:",
+    "options": [
+      "The company's credit rating and debt covenants",
+      "The company's profitability and per-share value",
+      "The auditor's opinion on internal controls"
+    ],
+    "correctAnswer": "B",
+    "explanation": "An equity investor is interested in a company's profitability and per-share value."
+  },
+  {
+    "id": "FSA-015",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "A central focus of financial analysis is evaluating a company's ability to:",
+    "options": [
+      "Minimize tax obligations and regulatory disclosures",
+      "Earn a return on capital at least equal to the cost of that capital",
+      "Achieve zero leverage on its balance sheet"
+    ],
+    "correctAnswer": "B",
+    "explanation": "A central focus of financial analysis is evaluating the company's ability to earn a return on capital at least equal to the cost of capital, to profitably grow, and to generate enough cash to meet obligations."
+  },
+  {
+    "id": "FSA-016",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "Managers within a company perform financial analysis to make operating, investing, and financing decisions. Compared to external analysts, they:",
+    "options": [
+      "Rely exclusively on public financial statements",
+      "Have access to non-public financial information",
+      "Are required to follow stricter analytical frameworks"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Managers within a company do not exclusively rely on analysis of financial statements because they have access to non-public financial information."
+  },
+  {
+    "id": "FSA-017",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "An analyst uses price-to-earnings (P/E) ratios to value shares of a company. This is an example of which use of financial analysis?",
+    "options": [
+      "Assessing creditworthiness for loan extension",
+      "Using earnings in valuation",
+      "Evaluating internal control effectiveness"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Earnings are frequently used by analysts in valuation, for example by comparing a company's P/E ratio to peer companies or using forecasted earnings in discounted cash flow models."
+  },
+  {
+    "id": "FSA-018",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "A credit analyst's assessment of a company's financial position is most likely to be used for:",
+    "options": [
+      "Determining an appropriate equity purchase price",
+      "Deciding whether to extend a loan and on what terms",
+      "Evaluating the performance of a subsidiary"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Credit analysts evaluate the creditworthiness of a company to decide whether and on what terms a debt investment should be made or what credit rating should be assigned."
+  },
+  {
+    "id": "FSA-019",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "An analyst seeks to understand a company's profitability, defined as:",
+    "options": [
+      "Cash receipts in excess of cash disbursements",
+      "The ability to earn a profit from delivering goods and services",
+      "The ratio of net income to total assets"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Profitability is defined as the ability to earn a profit from delivering goods and services."
+  },
+  {
+    "id": "FSA-020",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "The ability to generate positive cash flows refers to:",
+    "options": [
+      "Maintaining a current ratio above 1.0",
+      "Cash receipts in excess of cash disbursements",
+      "Earnings per share exceeding analyst estimates"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The ability to generate positive cash flows refers to cash receipts in excess of cash disbursements."
+  },
+  {
+    "id": "FSA-021",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "Regulatory authorities require publicly traded companies to prepare financial reports in accordance with:",
+    "options": [
+      "Internal guidelines set by management",
+      "Specified accounting standards and other securities laws and regulations",
+      "Recommendations from credit rating agencies"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Regulatory authorities require publicly traded issuers to prepare financial reports in accordance with specified accounting standards and other securities laws and regulations."
+  },
+  {
+    "id": "FSA-022",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "The International Organization of Securities Commissions (IOSCO) has ordinary members that represent securities regulators in more than how many jurisdictions?",
+    "options": [
+      "50 jurisdictions",
+      "75 jurisdictions",
+      "115 jurisdictions"
+    ],
+    "correctAnswer": "C",
+    "explanation": "IOSCO members regulate more than 95 percent of the world's financial capital markets in more than 115 jurisdictions."
+  },
+  {
+    "id": "FSA-023",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "Which of the following is NOT one of IOSCO's three core objectives?",
+    "options": [
+      "Protecting investors",
+      "Ensuring that markets are fair, efficient, and transparent",
+      "Eliminating systemic risk"
+    ],
+    "correctAnswer": "C",
+    "explanation": "IOSCO's core objectives are to protect investors, ensure markets are fair/efficient/transparent, and reduce (not eliminate) systemic risk."
+  },
+  {
+    "id": "FSA-024",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "IOSCO's principle for issuers related to accounting standards states that standards used to prepare financial statements should be:",
+    "options": [
+      "Based solely on each country's cultural and economic norms",
+      "Of a high and internationally acceptable quality",
+      "Established by national regulators without international input"
+    ],
+    "correctAnswer": "B",
+    "explanation": "An IOSCO principle states that accounting standards used by issuers to prepare financial statements should be of a high and internationally acceptable quality."
+  },
+  {
+    "id": "FSA-025",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "The US Securities and Exchange Commission (SEC) was created as a result of:",
+    "options": [
+      "The Sarbanes-Oxley Act of 2002",
+      "The Securities Exchange Act of 1934",
+      "The Securities Act of 1933"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The Securities Exchange Act of 1934 created the SEC and gave it authority over all aspects of the securities industry."
+  },
+  {
+    "id": "FSA-026",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "The Securities Act of 1933 primarily:",
+    "options": [
+      "Created the SEC and gave it authority over the securities industry",
+      "Required the creation of the Public Company Accounting Oversight Board",
+      "Requires initial registration of all public issuances of securities"
+    ],
+    "correctAnswer": "C",
+    "explanation": "The Securities Act of 1933 specifies financial information investors must receive when securities are sold, prohibits misrepresentations, and requires initial registration of all public issuances of securities."
+  },
+  {
+    "id": "FSA-027",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "The Sarbanes-Oxley Act of 2002 created which oversight body?",
+    "options": [
+      "Financial Accounting Standards Board (FASB)",
+      "Public Company Accounting Oversight Board (PCAOB)",
+      "International Auditing and Assurance Standards Board (IAASB)"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The Sarbanes-Oxley Act of 2002 created the Public Company Accounting Oversight Board (PCAOB) to oversee auditors."
+  },
+  {
+    "id": "FSA-028",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "Under the Sarbanes-Oxley Act, executive management is required to:",
+    "options": [
+      "Conduct their own independent audit of financial statements",
+      "Certify that the company's financial reports fairly present the company's condition",
+      "Personally certify that no errors exist in the financial statements"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The Sarbanes-Oxley Act strengthens corporate responsibility for financial reports by requiring executive management to certify that the company's financial reports fairly present the company's condition."
+  },
+  {
+    "id": "FSA-029",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "A US domestic registrant is required to file which annual form with the SEC?",
+    "options": [
+      "Form 20-F",
+      "Form 40-F",
+      "Form 10-K"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Form 10-K is required for US registrants, Form 40-F is for certain Canadian registrants, and Form 20-F is for all other non-US registrants."
+  },
+  {
+    "id": "FSA-030",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "Form 20-F must be filed with the SEC by:",
+    "options": [
+      "US domestic registrants",
+      "Certain Canadian registrants",
+      "Non-US registrants other than certain Canadian registrants"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Form 20-F is required for all non-US registrants except certain Canadian registrants, who file Form 40-F."
+  },
+  {
+    "id": "FSA-031",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "Which SEC form is used by companies to report material corporate events such as acquisitions on a current basis?",
+    "options": [
+      "Form 10-Q",
+      "Form 8-K",
+      "Form DEF-14A"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Form 8-K (or 6-K for non-US registrants) is the 'current report' companies must file to announce major events such as acquisitions or changes in management."
+  },
+  {
+    "id": "FSA-032",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "A proxy statement filed with the SEC as Form DEF-14A most likely contains information about:",
+    "options": [
+      "Quarterly unaudited financial statements",
+      "Details of security ownership by management and executive compensation",
+      "Registration of initial public offerings of securities"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Proxy statements typically include proposals requiring shareholder votes, details of security ownership by management and principal owners, biographical information on directors, and disclosure of executive compensation."
+  },
+  {
+    "id": "FSA-033",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "US companies are required to file interim financial reports on which form?",
+    "options": [
+      "Form 10-K",
+      "Form 10-Q",
+      "Form 8-K"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Form 10-Q is required quarterly for US companies to submit interim period financial information, including unaudited financial statements and an MD&A."
+  },
+  {
+    "id": "FSA-034",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "Forms 3, 4, and 5 filed with the SEC are primarily used to:",
+    "options": [
+      "Report annual earnings results",
+      "Report beneficial ownership of securities by directors and officers",
+      "Announce changes in accounting policies"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Forms 3, 4, and 5 are required to report beneficial ownership of securities by directors, officers, and beneficial owners of greater than 10 percent of a class of registered equity securities."
+  },
+  {
+    "id": "FSA-035",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "An annual report to shareholders prepared by most companies is:",
+    "options": [
+      "Required by the SEC and must contain audited financial statements",
+      "Not a requirement of the SEC and is often a polished marketing document",
+      "Required and must follow the same format as Form 10-K"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The annual report to shareholders is not a requirement of the SEC and is often a highly polished marketing document. In contrast, Form 10-K is a more legal type of document."
+  },
+  {
+    "id": "FSA-036",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "In the European Union, consolidated accounts of EU-listed companies have been required to use IFRS since:",
+    "options": [
+      "1997",
+      "2001",
+      "2005"
+    ],
+    "correctAnswer": "C",
+    "explanation": "The EU agreed that from 2005, consolidated accounts of EU-listed companies would use International Financial Reporting Standards."
+  },
+  {
+    "id": "FSA-037",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "The European Securities and Market Authority (ESMA) is best described as:",
+    "options": [
+      "An EU regulatory body with exclusive power over individual member states' securities laws",
+      "An EU cross-border supervisor established to coordinate supervision of the EU market",
+      "The body responsible for setting accounting standards for all EU listed companies"
+    ],
+    "correctAnswer": "B",
+    "explanation": "ESMA is an EU cross-border supervisor established to coordinate supervision of the EU market, though regulation still rests with individual member states."
+  },
+  {
+    "id": "FSA-038",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "The notes accompanying financial statements are required primarily because they:",
+    "options": [
+      "Allow analysts to bypass the primary financial statements",
+      "Provide information essential to understanding the primary financial statements",
+      "Replace the need for management commentary"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The notes provide information that is essential to understanding the information provided in the primary financial statements."
+  },
+  {
+    "id": "FSA-039",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "Which of the following is most likely found in the notes to financial statements?",
+    "options": [
+      "The auditor's opinion on the fairness of financial statements",
+      "Management's forward-looking discussion of capital expenditure plans",
+      "Accounting policies, methods, and estimates used in preparing the statements"
+    ],
+    "correctAnswer": "C",
+    "explanation": "The notes disclose the accounting policies, methods, and estimates used to prepare the financial statements, among other information essential to understanding the statements."
+  },
+  {
+    "id": "FSA-040",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "An operating segment must be disclosed separately if it constitutes what minimum percentage of the combined operating segments' revenue, assets, or profit?",
+    "options": [
+      "5 percent",
+      "10 percent",
+      "15 percent"
+    ],
+    "correctAnswer": "B",
+    "explanation": "A company must disclose separate information about any operating segment that constitutes 10 percent or more of the combined operating segments' revenue, assets, or profit."
+  },
+  {
+    "id": "FSA-041",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "Under segment reporting requirements, the combined revenue from external customers for all reportable segments must represent at least what percentage of total company revenue?",
+    "options": [
+      "50 percent",
+      "65 percent",
+      "75 percent"
+    ],
+    "correctAnswer": "C",
+    "explanation": "If the combined revenue from external customers for all reportable segments is less than 75 percent of total company revenue, the company must identify additional reportable segments until the 75 percent level is reached."
+  },
+  {
+    "id": "FSA-042",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "Which of the following must be disclosed for each reportable operating segment?",
+    "options": [
+      "Names of the segment's top 10 customers",
+      "Revenue distinguishing between external customers and inter-segment revenue",
+      "Detailed employee headcount by segment"
+    ],
+    "correctAnswer": "B",
+    "explanation": "For each reportable segment, companies must disclose revenue, distinguishing between revenue to external customers and revenue from other segments, among other items."
+  },
+  {
+    "id": "FSA-043",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "Under segment reporting rules, a company must disclose if any single customer represents:",
+    "options": [
+      "5 percent or more of total revenues",
+      "10 percent or more of total revenues",
+      "15 percent or more of total revenues"
+    ],
+    "correctAnswer": "B",
+    "explanation": "If any single customer represents 10 percent or more of the company's total revenues, the company must disclose that fact (though not the identity of that customer)."
+  },
+  {
+    "id": "FSA-044",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "Management commentary, or MD&A, is best described as:",
+    "options": [
+      "Audited information that provides the basis for the audit opinion",
+      "Typically unaudited discussion by management about the company's operations and prospects",
+      "A technical analysis of financial ratios required by accounting standards"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The discussion by management is one of the most useful parts of a company's annual report; however, other than excerpts from the financial statements, information in the management commentary is typically unaudited."
+  },
+  {
+    "id": "FSA-045",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "The IASB's IFRS Practice Statement on Management Commentary identifies five content elements of 'decision-useful' management commentary. Which of the following is one of those elements?",
+    "options": [
+      "Segment-by-segment audit findings",
+      "Management's objectives and strategies",
+      "Detailed tax reconciliation tables"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The IASB framework identifies five content elements: nature of the business, management's objectives and strategies, significant resources/risks/relationships, results of operations, and critical performance measures."
+  },
+  {
+    "id": "FSA-046",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "In the United States, the SEC requires listed companies to provide an MD&A that must highlight:",
+    "options": [
+      "Favorable trends only, to maintain investor confidence",
+      "Any favorable or unfavorable trends and significant events affecting liquidity and operations",
+      "Only events that have already materially affected the company's financial results"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The SEC requires the MD&A to highlight any favorable or unfavorable trends and identify significant events and uncertainties affecting the company's liquidity, capital resources, and results of operations."
+  },
+  {
+    "id": "FSA-047",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "An unqualified audit opinion is also referred to as:",
+    "options": [
+      "An adverse opinion",
+      "A disclaimer of opinion",
+      "A clean or unmodified opinion"
+    ],
+    "correctAnswer": "C",
+    "explanation": "An unqualified audit opinion states that the financial statements give a 'true and fair view' or are 'fairly presented,' and is also referred to as an 'unmodified' or 'clean' opinion."
+  },
+  {
+    "id": "FSA-048",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "An adverse audit opinion is issued when:",
+    "options": [
+      "The auditor has a minor scope limitation in testing",
+      "The financial statements materially depart from accounting standards and are not fairly presented",
+      "The auditor is unable to issue an opinion due to scope limitations"
+    ],
+    "correctAnswer": "B",
+    "explanation": "An adverse audit opinion is issued when an auditor determines that the financial statements materially depart from accounting standards and are not fairly presented."
+  },
+  {
+    "id": "FSA-049",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "A disclaimer of opinion in an audit report occurs when:",
+    "options": [
+      "The auditor finds a minor exception to accounting standards",
+      "For some reason such as a scope limitation, auditors are unable to issue an opinion",
+      "The financial statements depart materially from accounting standards"
+    ],
+    "correctAnswer": "B",
+    "explanation": "A disclaimer of opinion occurs when, for some reason such as a scope limitation, the auditors are unable to issue an opinion."
+  },
+  {
+    "id": "FSA-050",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "International Standards on Auditing (ISAs) have been developed by:",
+    "options": [
+      "The International Accounting Standards Board (IASB)",
+      "The International Auditing and Assurance Standards Board (IAASB)",
+      "The Public Company Accounting Oversight Board (PCAOB)"
+    ],
+    "correctAnswer": "B",
+    "explanation": "International Standards on Auditing (ISAs) have been developed by the International Auditing and Assurance Standards Board (IAASB), which emerged from the International Federation of Accountants."
+  },
+  {
+    "id": "FSA-051",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "An independent audit provides what level of assurance about the accuracy of financial statements?",
+    "options": [
+      "Absolute assurance that the financial statements are error-free",
+      "Reasonable assurance that the financial statements are fairly presented",
+      "Limited assurance that the statements comply with local regulations"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Because audits use sampling techniques and financial statements may be based on estimates, auditors can only provide reasonable assurance—not absolute assurance—that financial statements are fairly presented."
+  },
+  {
+    "id": "FSA-052",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "Key Audit Matters, as described in international auditing standards, are best described as:",
+    "options": [
+      "Issues the auditor considers most important, such as those with higher risk of misstatement or involving significant management judgment",
+      "Automatically the most important factors for analysts and investors",
+      "Minor issues noted during the audit that do not affect the audit opinion"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Key Audit Matters (international) and Critical Audit Matters (US) include issues with higher risk of misstatement, involving significant management judgment, or reporting the effects of significant transactions. However, they are not necessarily the most important factors for analysts and investors."
+  },
+  {
+    "id": "FSA-053",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "Under the Sarbanes-Oxley Act, management of publicly traded US companies is required to:",
+    "options": [
+      "Conduct their own independent audit of financial statements",
+      "Explicitly accept responsibility for the effectiveness of internal control",
+      "Personally certify that no errors exist in the financial statements"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Management of publicly traded US companies is required to explicitly accept responsibility for the effectiveness of internal control, evaluate its effectiveness, support the evaluation with evidence, and provide a report on internal control."
+  },
+  {
+    "id": "FSA-054",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "A financial analyst should treat audited financial statements with:",
+    "options": [
+      "Absolute trust, as the audit provides a guarantee of accuracy",
+      "A degree of healthy skepticism, even after reviewing audit opinions",
+      "No skepticism, because the PCAOB standards eliminate the risk of errors"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Although audit reports and attestations provide some assurances to analysts, they are not infallible. The analyst must always use a degree of healthy skepticism when analyzing financial statements."
+  },
+  {
+    "id": "FSA-055",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "Which of the following represents a key difference between IFRS and US GAAP regarding the classification of interest paid on the cash flow statement?",
+    "options": [
+      "Under US GAAP, interest paid can be classified as either financing or operating activities",
+      "Under IFRS, interest paid must be classified as operating activities only",
+      "Under IFRS, interest paid may be classified as either financing or operating activities"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Under IFRS, interest paid may be classified as Cash Flows from Financing Activities or Cash Flows from Operating Activities, while under US GAAP it is classified as Cash Flows from Operating Activities."
+  },
+  {
+    "id": "FSA-056",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "Which inventory valuation method is permitted under US GAAP but not under IFRS?",
+    "options": [
+      "First In, First Out (FIFO)",
+      "Last In, First Out (LIFO)",
+      "Weighted Average Method"
+    ],
+    "correctAnswer": "B",
+    "explanation": "US GAAP permits FIFO, LIFO, and Weighted Average Method, while IFRS only permits FIFO and Weighted Average Method."
+  },
+  {
+    "id": "FSA-057",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "Under IFRS, development costs are:",
+    "options": [
+      "Always expensed as incurred",
+      "Capitalized only if certain conditions are satisfied",
+      "Capitalized in all circumstances"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Under IFRS, development costs are capitalized if certain conditions are satisfied, while under US GAAP they are treated as an expense."
+  },
+  {
+    "id": "FSA-058",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "The reversal of inventory write-downs is:",
+    "options": [
+      "Prohibited under both IFRS and US GAAP",
+      "Permissible under IFRS if specified conditions are met, but prohibited under US GAAP",
+      "Permissible under US GAAP but prohibited under IFRS"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Under IFRS, reversal of inventory write-downs is permissible if specified conditions are met. Under US GAAP, such reversals are prohibited."
+  },
+  {
+    "id": "FSA-059",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "US GAAP is best described as a:",
+    "options": [
+      "Principles-based system of accounting standards",
+      "Rules-based system of accounting standards",
+      "Hybrid of rules and principles with equal emphasis on both"
+    ],
+    "correctAnswer": "B",
+    "explanation": "US GAAP is generally described as rules-based, while IFRS is described as principles-based."
+  },
+  {
+    "id": "FSA-060",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "When analyzing two companies that use different reporting standards (IFRS vs. US GAAP), an analyst should:",
+    "options": [
+      "Assume financial statements are comparable without adjustment",
+      "Maintain caution and be aware of areas where accounting standards have not converged",
+      "Ignore differences since the IASB and FASB have achieved full convergence"
+    ],
+    "correctAnswer": "B",
+    "explanation": "An analyst must maintain caution in interpreting comparative financial measures produced under different accounting standards and monitor significant developments in financial reporting standards."
+  },
+  {
+    "id": "FSA-061",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "Reconciliation disclosures between IFRS and US GAAP:",
+    "options": [
+      "Are required for all cross-border filings",
+      "Are not required, making analyst adjustments challenging",
+      "Are only required for companies listed on US exchanges"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Because reconciliation disclosures between IFRS and US GAAP are not required, an analyst comparing two companies that use different reporting standards must be aware of areas where accounting standards have not converged."
+  },
+  {
+    "id": "FSA-062",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "Convergence between IFRS and US GAAP means that new accounting standards issued jointly:",
+    "options": [
+      "Have achieved identical treatment for all major accounting areas",
+      "Have been mostly or entirely converged, resulting in increasing uniformity over time",
+      "Are effective only after approval by national governments"
+    ],
+    "correctAnswer": "B",
+    "explanation": "New accounting standards have been mostly or entirely converged (e.g., revenue recognition, leasing, credit losses), resulting in increasing uniformity over time."
+  },
+  {
+    "id": "FSA-063",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "Analysts need to monitor developments in financial reporting standards from:",
+    "options": [
+      "A preparer's perspective to ensure compliance",
+      "A user's perspective to understand how developments affect financial reports",
+      "An auditor's perspective to ensure standards are enforced"
+    ],
+    "correctAnswer": "B",
+    "explanation": "An accountant monitors developments from a preparer's perspective; an analyst needs to monitor them from a user's perspective to know how developments will affect financial reports."
+  },
+  {
+    "id": "FSA-064",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "An example of a regulatory change that affected financial statements was the requirement for companies to:",
+    "options": [
+      "Disclose inventory write-downs in the income statement",
+      "Include stock option expense in the income statement",
+      "Eliminate intercompany transactions in consolidated statements"
+    ],
+    "correctAnswer": "B",
+    "explanation": "One regulatory change required companies to include a provision for expenses associated with the grant and vesting of employee stock option grants as an expense in the income statement."
+  },
+  {
+    "id": "FSA-065",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "CFA Institute's involvement in financial reporting standard setting is best characterized as:",
+    "options": [
+      "Direct authority to set accounting standards",
+      "Active support for improvements to financial reporting through advocacy and liaison committees",
+      "Enforcement of compliance with IFRS standards globally"
+    ],
+    "correctAnswer": "B",
+    "explanation": "CFA Institute is active in supporting improvements to financial reporting. Volunteer members serve on liaison committees that meet to make recommendations to the IASB and FASB and draft comment letters and position papers."
+  },
+  {
+    "id": "FSA-066",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "When a new accounting standard is proposed by the IASB or FASB, stakeholders can provide input by:",
+    "options": [
+      "Voting directly on proposed changes at shareholder meetings",
+      "Drafting comment letters and position papers in response to exposure drafts",
+      "Lobbying government officials to reject or approve standards"
+    ],
+    "correctAnswer": "B",
+    "explanation": "When a new standard is proposed, an exposure draft is made available and users of financial statements can draft comment letters and position papers for submission to the IASB and FASB."
+  },
+  {
+    "id": "FSA-067",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "CFA Institute's position paper on financial reporting emphasized the importance of:",
+    "options": [
+      "Simplifying disclosures to reduce the volume of information provided to investors",
+      "Timeliness, transparency, comparability, and consistency in financial reporting",
+      "Shifting financial reporting to a cash-based rather than accrual-based system"
+    ],
+    "correctAnswer": "B",
+    "explanation": "CFA Institute's position paper states that investors require timeliness, transparency, comparability, and consistency in financial reporting."
+  },
+  {
+    "id": "FSA-068",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "Earnings calls hosted by company management are primarily intended for which audience?",
+    "options": [
+      "Internal employees and human resources departments",
+      "Analysts, investors, and members of the media",
+      "Regulatory authorities and auditors"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The primary audience for earnings calls are analysts, investors, and members of the media."
+  },
+  {
+    "id": "FSA-069",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "Which of the following is best described as an issuer source of information other than regulatory filings?",
+    "options": [
+      "Industry whitepapers from a consultancy",
+      "Analyst reports from credit rating agencies",
+      "Investor day presentations by management"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Investor day presentations are issuer sources of information (other than regulatory filings). Industry whitepapers and credit rating agency reports are third-party sources."
+  },
+  {
+    "id": "FSA-070",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "Proprietary primary research used by analysts most likely includes:",
+    "options": [
+      "Government-released economic indicators",
+      "Surveys and product comparisons commissioned directly by the analyst",
+      "Free industry whitepapers accessed via internet search engines"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Proprietary primary research includes surveys, conversations, product comparisons, and other studies commissioned by the analyst or conducted directly."
+  },
+  {
+    "id": "FSA-071",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "Which of the following is an example of a proprietary third-party source of information for financial analysts?",
+    "options": [
+      "A company's investor relations website",
+      "Reports and data from platforms such as Bloomberg or FactSet",
+      "A government statistical agency's monthly retail sales data"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Proprietary third-party sources include analyst reports, credit rating agency communications, and reports/data from platforms such as Bloomberg, Wind, and FactSet."
+  },
+  {
+    "id": "FSA-072",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "Social media is most useful to financial analysts as a gauge of:",
+    "options": [
+      "A company's compliance with accounting standards",
+      "Customer sentiment for a company's products",
+      "The accuracy of a company's disclosed financial results"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Social media may be a useful gauge of customer sentiment for a company's products."
+  },
+  {
+    "id": "FSA-073",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "When analysts speak with company management or investor relations personnel during the course of analysis, this is best categorized as:",
+    "options": [
+      "A public third-party source of information",
+      "A proprietary third-party source of information",
+      "An issuer source of information"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Speaking with management, investor relations, or other company personnel is classified as an issuer source of information."
+  },
+  {
+    "id": "FSA-074",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "An analyst following a consumer-oriented company who visits the company's stores to gain direct experience with its products is using which type of information source?",
+    "options": [
+      "Proprietary third-party source",
+      "Issuer source via direct company or product experience",
+      "Public third-party source"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Company website or properties that the analyst can visit as a customer or an investor are issuer sources. Analysts typically seek direct experience with products (visit stores, taste food, etc.)."
+  },
+  {
+    "id": "FSA-075",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "Information on the economy and industry used in financial analysis is most useful for:",
+    "options": [
+      "Verifying the mathematical accuracy of financial ratios",
+      "Putting a company's financial performance in perspective and assessing its future",
+      "Replacing the need to read the company's own financial disclosures"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Information from sources apart from the company is crucial to an analyst's effectiveness, as it helps put the company's financial performance and position in perspective and assess its future."
+  },
+  {
+    "id": "FSA-076",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "Press releases issued by companies are commonly distributed via:",
+    "options": [
+      "Only the SEC's EDGAR database",
+      "The company's investor relations website and third-party news sources",
+      "Encrypted channels accessible only to institutional investors"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Press releases are often distributed not only on issuers' websites but also on third-party news sources."
+  },
+  {
+    "id": "FSA-077",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "An analyst who is aware that management is biased toward their own perspective should:",
+    "options": [
+      "Avoid using management commentary entirely in their analysis",
+      "Ask probing questions to gain further information and sharpen estimates",
+      "Report management to the relevant regulatory authorities"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Analysts must be aware that management is biased toward their perspective, and often need to ask questions to get the information they want, especially during earnings calls and investor events."
+  },
+  {
+    "id": "FSA-078",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "The flexibility in accounting choices under both IFRS and US GAAP is necessary because:",
+    "options": [
+      "It allows companies to manipulate financial statements to appear more profitable",
+      "Different policies, methods, and estimates can better reflect the unique economic environment of each business",
+      "It reduces the need for auditors to express opinions on financial statements"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Flexibility in accounting choices is necessary because, ideally, a company will select those policies, methods, and estimates that are allowable and most relevant and that fairly reflect the unique economic environment of its business and industry."
+  },
+  {
+    "id": "FSA-079",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "An analyst comparing two companies that use different depreciation methods faces which primary challenge?",
+    "options": [
+      "Determining the market value of the companies' fixed assets",
+      "Reduced comparability of the companies' financial positions and performance",
+      "Inability to access the companies' financial statements"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Different accounting policies, methods, and estimates—such as different depreciation methods—reduce comparability across different companies' financial statements."
+  },
+  {
+    "id": "FSA-080",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "Off-balance-sheet obligations must be disclosed in which section of a company's regulatory filing?",
+    "options": [
+      "The audit report",
+      "The management commentary or MD&A",
+      "The proxy statement"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The SEC requires the MD&A to provide information about off-balance-sheet obligations and about contractual commitments, such as purchase obligations."
+  },
+  {
+    "id": "FSA-081",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "Which body oversees auditing standards for public companies in the United States?",
+    "options": [
+      "The American Institute of Certified Public Accountants (AICPA)",
+      "The Public Company Accounting Oversight Board (PCAOB)",
+      "The Financial Accounting Standards Board (FASB)"
+    ],
+    "correctAnswer": "B",
+    "explanation": "With the enactment of the Sarbanes-Oxley Act of 2002, auditing standards for public companies are promulgated by the PCAOB."
+  },
+  {
+    "id": "FSA-082",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "According to the IASB's IFRS Practice Statement on Management Commentary, the framework provides:",
+    "options": [
+      "Mandatory requirements set forth in an accounting standard",
+      "Guidance rather than requirements, as it is a practice statement not a standard",
+      "Regulations that must be adopted by all IFRS-reporting jurisdictions"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The IASB's IFRS Practice Statement on Management Commentary provides guidance rather than sets forth requirements in a standard."
+  },
+  {
+    "id": "FSA-083",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "Sea Ltd.'s 2021 financial statements are described as being prepared on a consolidated basis, meaning:",
+    "options": [
+      "Only Sea Ltd. parent company accounts are included",
+      "The financial records of Sea Ltd. and all its controlled subsidiaries are aggregated after eliminating intercompany items",
+      "Financial statements of only the two largest subsidiaries are included"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Consolidated financial statements aggregate the financial records of all subsidiaries the company controls, after eliminating intercompany balances and transactions."
+  },
+  {
+    "id": "FSA-084",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "From the Sea Ltd. segment data presented in the chapter, which segment was the only profitable one in 2021?",
+    "options": [
+      "E-Commerce",
+      "Digital Entertainment",
+      "Digital Financial Services"
+    ],
+    "correctAnswer": "B",
+    "explanation": "From the segment data, the e-commerce segment generated a large operating loss, and the digital entertainment segment was the only profitable segment."
+  },
+  {
+    "id": "FSA-085",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "In the context of financial statement analysis, common-size financial statements are primarily used to:",
+    "options": [
+      "Convert financial statements to a foreign currency",
+      "Scale data to directly reflect percentages or changes to facilitate comparisons",
+      "Adjust financial statements for seasonal fluctuations"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Common-size financial statements scale data to directly reflect percentages (e.g., of sales) or changes (e.g., from the prior year) to facilitate comparison."
+  },
+  {
+    "id": "FSA-086",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "Financial ratios are best described as:",
+    "options": [
+      "Standardized amounts required by regulatory authorities for annual filings",
+      "Measures of various aspects of corporate performance based on financial statement elements",
+      "Tools used exclusively by credit analysts to assess debt repayment ability"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Financial ratios are measures of various aspects of corporate performance based on financial statement elements, used to evaluate a company's relative profitability, liquidity, leverage, efficiency, and valuation."
+  },
+  {
+    "id": "FSA-087",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "An analyst's ability to compare the depreciation expense of two companies that use different depreciation methods is best described as:",
+    "options": [
+      "Unaffected, because depreciation always equals the same amount over the asset's life",
+      "Hindered by the difference in methods and assumptions used to record expense over time",
+      "Enhanced by the fact that both companies must disclose their methods in the notes"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Two companies may acquire similar equipment but use different methods and assumptions. An analyst's ability to compare the companies' performance is hindered by the difference."
+  },
+  {
+    "id": "FSA-088",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "A company's Form 11-K filed with the SEC is most relevant for analysts interested in:",
+    "options": [
+      "The company's insider stock transactions",
+      "The company's employee stock purchase, savings, and similar plans",
+      "The company's current report on material corporate events"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Form 11-K is the annual report of employee stock purchase, savings, and similar plans. It might be of interest for companies with significant employee benefit plans."
+  },
+  {
+    "id": "FSA-089",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "Under Regulation Fair Disclosure (FD), when an issuer discloses material non-public information to securities market professionals, the issuer must:",
+    "options": [
+      "Report the disclosure to the SEC within 30 days",
+      "Make simultaneous or prompt public disclosure of that information",
+      "Obtain written consent from each recipient before disclosing"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Regulation FD provides that when an issuer discloses material non-public information to certain individuals, the issuer must make public disclosure of that information to promote full and fair disclosure."
+  },
+  {
+    "id": "FSA-090",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "Which entity is described as a self-regulatory organization (SRO) in the context of IOSCO principles?",
+    "options": [
+      "An organization that sets government fiscal policy",
+      "An organization that exercises some direct oversight for its area of competence and is subject to oversight of the relevant regulator",
+      "An organization that exclusively focuses on consumer protection"
+    ],
+    "correctAnswer": "B",
+    "explanation": "SROs exercise some direct oversight for their areas of competence and should be subject to the oversight of the relevant regulator and observe fairness and confidentiality."
+  },
+  {
+    "id": "FSA-091",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "The International Federation of Accountants is most closely associated with the development of:",
+    "options": [
+      "US GAAP standards through the FASB",
+      "International Standards on Auditing through the IAASB",
+      "IFRS standards through the IASB"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The International Auditing and Assurance Standards Board (IAASB), which developed International Standards on Auditing, emerged from the International Federation of Accountants."
+  },
+  {
+    "id": "FSA-092",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "For an analyst assessing a company's financial position for credit analysis purposes, which type of information is most relevant?",
+    "options": [
+      "The company's earnings per share growth rate over the last five years",
+      "The company's debt leverage ratios, interest coverage, and free cash flow generation",
+      "The company's dividend payout history and stock price performance"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Credit analysts focus on financial position, particularly debt leverage, interest coverage, and free cash flow generation to assess creditworthiness and the ability to repay debt."
+  },
+  {
+    "id": "FSA-093",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "When the IASB issues a new standard, the process for adoption within the European Union involves:",
+    "options": [
+      "Automatic adoption without review by EU bodies",
+      "A review and endorsement process involving the European Financial Reporting Advisory Group, European Commission, and Parliament",
+      "Direct approval by each individual EU member state without any coordinated EU review"
+    ],
+    "correctAnswer": "B",
+    "explanation": "When the IASB issues a new standard, it goes through an endorsement process involving the European Financial Reporting Advisory Group, the Standards Advice Review Group, the European Commission, the Accounting Regulatory Committee, the European Parliament, and the Council of the European Union."
+  },
+  {
+    "id": "FSA-094",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "Which of the following best describes the purpose of the financial statement analysis framework presented in the reading?",
+    "options": [
+      "To provide a rigid, step-by-step process with no flexibility for analyst judgment",
+      "To provide a generic, adaptable structure used across various analytical roles and tasks",
+      "To replace the need for analysts to gather information beyond financial statements"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The framework is presented as a generic framework used in various roles—equity analysis, credit analysis, performance evaluation, etc.—that guides but does not rigidly constrain the analytical process."
+  },
+  {
+    "id": "FSA-095",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "Sea Ltd. is listed on the New York Stock Exchange. As a non-US registrant, it is required to file which annual form with the SEC?",
+    "options": [
+      "Form 10-K",
+      "Form 40-F",
+      "Form 20-F"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Form 20-F is required for all non-US registrants other than certain Canadian registrants. Sea Ltd., being a Singapore-based company, would file Form 20-F."
+  },
+  {
+    "id": "FSA-096",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "A company's annual report is often described as a 'highly polished marketing document.' This contrasts most with:",
+    "options": [
+      "The company's Form 10-K, which is a more legal type of document with minimal marketing emphasis",
+      "The company's proxy statement, which is required for all shareholder meetings",
+      "The auditor's report, which contains management's forward-looking commentary"
+    ],
+    "correctAnswer": "A",
+    "explanation": "The annual report is often a highly polished marketing document. In contrast, Form 10-K is a more legal type of document with minimal marketing emphasis."
+  },
+  {
+    "id": "FSA-097",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "Which type of information disclosed in management commentary is described as particularly useful for projecting a company's future performance?",
+    "options": [
+      "Historical financial results and prior-year comparisons",
+      "Forward-looking disclosures, such as planned capital expenditures and new store openings",
+      "Accounting policy elections made under IFRS or US GAAP"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Forward-looking disclosures in the management commentary, such as those about planned capital expenditures, new store openings, or divestitures, can be useful in projecting a company's future performance."
+  },
+  {
+    "id": "FSA-098",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "An analyst identifies that a company has recently begun using a new type of financial instrument for which no explicit guidance in financial reporting standards exists. To understand the business purpose of this instrument, the analyst should most likely:",
+    "options": [
+      "Assume the instrument is being used for financial statement window dressing",
+      "Obtain further information from the company's management",
+      "Ignore the instrument until the IASB issues specific guidance"
+    ],
+    "correctAnswer": "B",
+    "explanation": "If necessary, an analyst can obtain further information from company management, which should be able to describe the economic purpose, financial statement reporting, significant estimates and judgments, and future cash flow implications."
+  },
+  {
+    "id": "FSA-099",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "When identifying operating segments, which of the following is NOT one of the required characteristics?",
+    "options": [
+      "The segment engages in activities that may generate revenue and create expenses",
+      "Results are regularly reviewed by senior management",
+      "The segment must be a wholly-owned subsidiary of the parent company"
+    ],
+    "correctAnswer": "C",
+    "explanation": "An operating segment must engage in activities generating revenue and expenses, have results regularly reviewed by senior management, and have discrete financial information available. Being a wholly-owned subsidiary is not a requirement."
+  },
+  {
+    "id": "FSA-100",
+    "chapter": "FSA",
+    "chapterName": "Financial Statement Analysis",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "Medium",
+    "question": "Securities regulators in emerging markets account for approximately what percentage of IOSCO's ordinary membership?",
+    "options": [
+      "25 percent",
+      "50 percent",
+      "75 percent"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Securities regulators in emerging markets account for 75 percent of IOSCO's ordinary membership."
+  }
+]

@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Session</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        
+        html { font-size: 16px; }
+        h1, h2, h3 { letter-spacing: -0.02em; }
+        .card-shadow { box-shadow: 0 10px 25px rgba(2, 6, 23, 0.08); }
+    .eliminated {
+            opacity: 0.35;
+            text-decoration: line-through;
+        }
+        
+        .gradient-bg {
+background: linear-gradient(135deg, #064E3B 0%, #10B981 100%);
+}
+        
+        .gradient-bg-2 {
+background: linear-gradient(135deg, #10B981 0%, #34D399 100%);
+}
+        
+        .bg-slate-50 {
+background: linear-gradient(135deg, #0F172A 0%, #334155 100%);
+}
+
+        .card-shadow {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .option-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .option-card {
+            transition: all 0.2s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div id="app"></div>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        // Questions are loaded from ./questions.json (kept in the same folder as this HTML)
+async function fetchQuestions() {
+    const res = await fetch("./questions.json", { cache: "no-store" });
+    if (!res.ok) {
+        throw new Error(`Could not load questions.json (HTTP ${res.status})`);
+    }
+    const data = await res.json();
+    if (!Array.isArray(data)) {
+        throw new Error("questions.json is not an array");
+    }
+    return data;
+}
+
+// Shuffle helper (Fisher–Yates)
+function shuffleArray(array) {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+}
+function FinanceExamApp() {
+            // allQuestions: full bank loaded from questions.json
+            // questions: active exam set (after chapter filter / shuffle)
+            const [allQuestions, setAllQuestions] = useState([]);
+            const [questions, setQuestions] = useState([]);
+            const [isLoadingQuestions, setIsLoadingQuestions] = useState(false);
+            const [loadError, setLoadError] = useState('');
+            const [selectedChapters, setSelectedChapters] = useState(new Set());
+            const [chapterSelection, setChapterSelection] = useState('ALL');
+            const [shuffleEnabled, setShuffleEnabled] = useState(true);
+            const [examStarted, setExamStarted] = useState(false);
+            const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+            const [selectedAnswer, setSelectedAnswer] = useState('');
+            const [answers, setAnswers] = useState({});
+            const [markedForReview, setMarkedForReview] = useState(new Set());
+            const [eliminatedOptions, setEliminatedOptions] = useState({});
+            const [showResults, setShowResults] = useState(false);
+            const [timeElapsed, setTimeElapsed] = useState(0);
+
+
+            // Load questions.json once when the page opens (so chapter list is available)
+            useEffect(() => {
+                if (allQuestions.length > 0 || isLoadingQuestions) return;
+                (async () => {
+                    try {
+                        setIsLoadingQuestions(true);
+                        setLoadError('');
+                        const data = await fetchQuestions();
+                        setAllQuestions(data);
+
+                        // Default: all chapters selected
+                        const chapters = new Set(data.map(q => String(q.chapter)));
+                        setSelectedChapters(chapters);
+                        setChapterSelection('ALL');
+                    } catch (e) {
+                        console.error(e);
+                        setLoadError(e?.message || 'Failed to load questions.json');
+                    } finally {
+                        setIsLoadingQuestions(false);
+                    }
+                })();
+            }, []);
+
+            // Timer
+            useEffect(() => {
+                if (examStarted && !showResults) {
+                    const timer = setInterval(() => {
+                        setTimeElapsed(prev => prev + 1);
+                    }, 1000);
+                    return () => clearInterval(timer);
+                }
+            }, [examStarted, showResults]);
+
+            const formatTime = (seconds) => {
+                const hrs = Math.floor(seconds / 3600);
+                const mins = Math.floor((seconds % 3600) / 60);
+                const secs = seconds % 60;
+                return `${hrs.toString().padStart(2, '0')}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+            };
+
+            const currentQuestion = questions[currentQuestionIndex];
+            const totalQuestions = questions.length;
+            const progress = ((currentQuestionIndex + 1) / totalQuestions) * 100;
+            const answeredCount = Object.keys(answers).length;
+
+            const handleAnswerSelect = (option) => {
+                setSelectedAnswer(option);
+            };
+
+            const handleConfirm = () => {
+                if (selectedAnswer) {
+                    setAnswers({
+                        ...answers,
+                        [currentQuestion.id]: {
+                            selected: selectedAnswer,
+                            timeSpent: timeElapsed
+                        }
+                    });
+                    
+                    // Auto-advance
+                    if (currentQuestionIndex < totalQuestions - 1) {
+                        setTimeout(() => {
+                            setCurrentQuestionIndex(currentQuestionIndex + 1);
+                            setSelectedAnswer('');
+                        }, 200);
+                    }
+                }
+            };
+
+            const handlePrevious = () => {
+                if (currentQuestionIndex > 0) {
+                    setCurrentQuestionIndex(currentQuestionIndex - 1);
+                    const prevAnswer = answers[questions[currentQuestionIndex - 1].id];
+                    setSelectedAnswer(prevAnswer?.selected || '');
+                }
+            };
+
+            const handleNext = () => {
+                if (currentQuestionIndex < totalQuestions - 1) {
+                    setCurrentQuestionIndex(currentQuestionIndex + 1);
+                    const nextAnswer = answers[questions[currentQuestionIndex + 1].id];
+                    setSelectedAnswer(nextAnswer?.selected || '');
+                }
+            };
+
+            const toggleEliminate = (questionId, option) => {
+                const key = `${questionId}-${option}`;
+                setEliminatedOptions({
+                    ...eliminatedOptions,
+                    [key]: !eliminatedOptions[key]
+                });
+            };
+
+            const toggleRevisit = () => {
+                const newMarked = new Set(markedForReview);
+                if (newMarked.has(currentQuestion.id)) {
+                    newMarked.delete(currentQuestion.id);
+                } else {
+                    newMarked.add(currentQuestion.id);
+                }
+                setMarkedForReview(newMarked);
+            };
+
+            const markedCount = markedForReview.size;
+
+            const goToNextMarked = () => {
+                if (markedForReview.size === 0) return;
+                // Find next marked question after current index (wrap around)
+                const n = questions.length;
+                for (let step = 1; step <= n; step++) {
+                    const j = (currentQuestionIndex + step) % n;
+                    if (markedForReview.has(questions[j].id)) {
+                        setCurrentQuestionIndex(j);
+                        setSelectedAnswer('');
+                        return;
+                    }
+                }
+            };
+
+            const clearAllMarked = () => {
+                if (markedForReview.size === 0) return;
+                const ok = window.confirm("Clear all review marks?");
+                if (!ok) return;
+                setMarkedForReview(new Set());
+            };
+
+
+            const calculateScore = () => {
+                let correct = 0;
+                let total = 0;
+                
+                questions.forEach(q => {
+                    if (answers[q.id]) {
+                        total++;
+                        if (answers[q.id].selected === q.correctAnswer) {
+                            correct++;
+                        }
+                    }
+                });
+                
+                return { 
+                    correct, 
+                    total, 
+                    percentage: total > 0 ? ((correct / total) * 100).toFixed(1) : 0,
+                    unanswered: questions.length - total
+                };
+            };
+
+            const getAnalysisByDifficulty = () => {
+                const byDifficulty = { 
+                    Easy: { correct: 0, total: 0 }, 
+                    Moderate: { correct: 0, total: 0 }, 
+                    Difficult: { correct: 0, total: 0 } 
+                };
+                
+                questions.forEach(q => {
+                    if (answers[q.id]) {
+                        byDifficulty[q.difficulty].total++;
+                        if (answers[q.id].selected === q.correctAnswer) {
+                            byDifficulty[q.difficulty].correct++;
+                        }
+                    }
+                });
+                
+                return byDifficulty;
+            };
+
+            const getAnalysisByChapter = () => {
+                const byChapter = {};
+                
+                questions.forEach(q => {
+                    if (!byChapter[q.chapter]) {
+                        byChapter[q.chapter] = { 
+                            name: q.chapterName, 
+                            correct: 0, 
+                            total: 0 
+                        };
+                    }
+                    if (answers[q.id]) {
+                        byChapter[q.chapter].total++;
+                        if (answers[q.id].selected === q.correctAnswer) {
+                            byChapter[q.chapter].correct++;
+                        }
+                    }
+                });
+                
+                return byChapter;
+            };
+
+
+            // Chapter list for chapter-wise practice mode
+            const chapterOptions = (() => {
+                const map = new Map();
+                allQuestions.forEach(q => {
+                    const key = String(q.chapter);
+                    const name = q.chapterName ? String(q.chapterName) : `Chapter ${key}`;
+                    if (!map.has(key)) map.set(key, name);
+                });
+                return Array.from(map.entries())
+                    .map(([chapter, chapterName]) => ({ chapter, chapterName }))
+                    .sort((a, b) => Number(a.chapter) - Number(b.chapter));
+            })();
+
+            
+const handleChapterSelection = (value) => {
+    setChapterSelection(value);
+    if (value === 'ALL') {
+        setSelectedChapters(new Set(chapterOptions.map(c => c.chapter)));
+    } else {
+        setSelectedChapters(new Set([value]));
+    }
+};
+
+            const startExamWithSettings = () => {
+                // Build filtered set
+                const filtered = (allQuestions.length ? allQuestions : []).filter(q => selectedChapters.has(String(q.chapter)));
+                if (filtered.length === 0) {
+                    setLoadError('Please select at least one chapter to start.');
+                    return;
+                }
+
+                const active = shuffleEnabled ? shuffleArray(filtered) : filtered;
+
+                // Reset exam state
+                setQuestions(active);
+                setExamStarted(true);
+                setCurrentQuestionIndex(0);
+                setSelectedAnswer('');
+                setAnswers({});
+                setMarkedForReview(new Set());
+                setEliminatedOptions({});
+                setShowResults(false);
+                setTimeElapsed(0);
+                setLoadError('');
+            };
+
+            const exitExam = () => {
+                const ok = window.confirm("Exit the practice exam and view results & solutions?");
+                if (!ok) return;
+
+                // Show results/review screen for the questions attempted so far
+                setShowResults(true);
+            };
+
+            // Start Screen
+            if (!examStarted) {
+                return (
+                    <div className="min-h-screen gradient-bg flex items-center justify-center p-4">
+                        <div className="bg-white rounded-3xl card-shadow p-12 max-w-3xl w-full">
+                            <div className="text-center">
+                                <div className="w-24 h-24 bg-slate-50 rounded-3xl flex items-center justify-center mx-auto mb-6 transform rotate-12">
+                                    <svg className="w-12 h-12 text-white transform -rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                    </svg>
+                                </div>
+                                <h1 className="text-3xl font-bold text-gray-800 mb-3">Practice Session</h1>
+                                <p className="text-lg text-gray-600 mb-10">Test Your Knowledge</p>
+                                
+                                <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 mb-10">
+                                    <div className="grid grid-cols-2 gap-8">
+                                        <div className="text-left">
+                                            <p className="text-sm text-gray-600 mb-2 font-medium">Questions</p>
+                                            <p className="text-4xl font-bold text-emerald-600">{allQuestions.length ? allQuestions.filter(q => selectedChapters.has(String(q.chapter))).length : '—'}</p>
+                                        </div>
+                                        <div className="text-left">
+                                            <p className="text-sm text-gray-600 mb-2 font-medium">Time Limit</p>
+                                            <p className="text-4xl font-bold text-emerald-600">None</p>
+                                        </div>
+                                        <div className="col-span-2 text-left">
+                                            <p className="text-sm text-gray-600 mb-3 font-medium">Topics Covered</p>
+                                            <div className="flex flex-wrap gap-2">
+                                                <span className="bg-white px-4 py-2 rounded-full text-sm font-semibold text-emerald-700 shadow-sm">Financial Statement Analysis</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="text-left bg-gray-50 rounded-2xl p-6 mb-10">
+                                    <h3 className="font-bold text-gray-800 mb-4 text-lg">How it works:</h3>
+                                    <ul className="space-y-3 text-gray-700">
+                                        <li className="flex items-start">
+                                            <span className="text-2xl mr-3">✓</span>
+                                            <span>Select your answer and click <strong>Submit</strong> to move forward</span>
+                                        </li>
+                                        <li className="flex items-start">
+                                            <span className="text-2xl mr-3">✓</span>
+                                            <span>Use navigation arrows to review previous questions</span>
+                                        </li>
+                                        <li className="flex items-start">
+                                            <span className="text-2xl mr-3">✓</span>
+                                            <span>Mark tricky questions to revisit later</span>
+                                        </li>
+                                        <li className="flex items-start">
+                                            <span className="text-2xl mr-3">✓</span>
+                                            <span>Get detailed results and explanations at the end</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+
+                                {/* Practice settings */}
+                                <div className="text-left bg-white border border-gray-200 rounded-2xl p-6 mb-8">
+                                    <h3 className="font-bold text-gray-800 mb-4 text-lg">Practice settings</h3>
+
+                                    <label className="flex items-center space-x-3 mb-5 cursor-pointer select-none">
+                                        <input
+                                            type="checkbox"
+                                            checked={shuffleEnabled}
+                                            onChange={(e) => setShuffleEnabled(e.target.checked)}
+                                            className="h-5 w-5"
+                                        />
+                                        <span className="text-gray-700 font-medium">Shuffle questions</span>
+                                    </label>
+
+                                    
+<div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+    <div className="flex-1">
+        <div className="font-semibold text-gray-800 mb-2">Chapter</div>
+        <p className="text-sm text-gray-600">Pick one chapter (or All). Your exam will load questions from that selection.</p>
+    </div>
+
+    <div className="sm:w-80">
+        <select
+            value={chapterSelection}
+            onChange={(e) => handleChapterSelection(e.target.value)}
+            className="w-full border border-gray-300 rounded-xl px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-purple-300"
+        >
+            <option value="ALL">All chapters</option>
+            {chapterOptions.map(c => (
+                <option key={c.chapter} value={c.chapter}>
+                    {`Ch ${c.chapter}: ${c.chapterName === 'Financial Statement Analysis' ? 'Introduction to Financial Statement Analysis' : c.chapterName}`}
+                </option>
+            ))}
+        </select>
+
+        <div className="mt-2 text-xs text-gray-500">
+            Questions in selection: <strong>{allQuestions.length ? allQuestions.filter(q => selectedChapters.has(String(q.chapter))).length : '—'}</strong>
+        </div>
+    </div>
+</div>
+
+<div className="mt-4 text-xs text-gray-500">
+
+                                        Tip: If chapters don’t show, make sure you opened this page via <strong>http://localhost:8001/...</strong> and <strong>questions.json</strong> is in the same folder.
+                                    </div>
+                                </div>
+
+                                <button 
+                                    disabled={isLoadingQuestions || allQuestions.length === 0}
+                                    onClick={startExamWithSettings}
+                                    className="gradient-bg text-white px-16 py-5 rounded-2xl font-bold text-lg hover:shadow-2xl transition-all transform hover:scale-105"
+                                >
+                                    {isLoadingQuestions ? 'Loading Questions…' : 'Begin Practice Exam'}
+                                </button>
+
+{loadError && (
+    <div className="mt-6 text-left bg-red-50 border-2 border-red-200 text-red-700 rounded-2xl p-5">
+        <div className="font-bold mb-1">Could not start the exam</div>
+        <div className="text-sm">
+            {loadError}
+            <div className="mt-2 text-xs text-red-600">
+                Tip: Make sure <strong>questions.json</strong> is in the same folder and you opened the app via
+                <strong> http://localhost:8000/finance-practice-exam.html</strong> (not by double-clicking the HTML).
+            </div>
+        </div>
+    </div>
+)}
+
+                            </div>
+                        </div>
+                    </div>
+                );
+            }
+
+
+// If exam has started but questions haven't loaded yet (or failed), show a friendly screen
+if (examStarted && questions.length === 0) {
+    return (
+        <div className="min-h-screen gradient-bg flex items-center justify-center p-4">
+            <div className="bg-white rounded-3xl card-shadow p-10 max-w-xl w-full text-center">
+                <h2 className="text-3xl font-bold text-gray-800 mb-3">Loading questions…</h2>
+                <p className="text-gray-600 mb-6">Please wait.</p>
+                {loadError && (
+                    <div className="text-left bg-red-50 border-2 border-red-200 text-red-700 rounded-2xl p-5">
+                        <div className="font-bold mb-1">Error</div>
+                        <div className="text-sm">{loadError}</div>
+                    </div>
+                )}
+                <button
+                    onClick={() => {
+                        setExamStarted(false);
+                        setIsLoadingQuestions(false);
+                    }}
+                    className="mt-6 gradient-bg text-white px-8 py-3 rounded-2xl font-bold hover:shadow-2xl transition-all"
+                >
+                    Back
+                </button>
+            </div>
+        </div>
+    );
+}
+
+            // Results Screen
+            if (showResults) {
+                const score = calculateScore();
+                const analysisByDifficulty = getAnalysisByDifficulty();
+                const analysisByChapter = getAnalysisByChapter();
+                const passed = parseFloat(score.percentage) >= 70;
+                
+                return (
+                    <div className="min-h-screen bg-gray-100 p-6">
+                        <div className="max-w-6xl mx-auto">
+                            <div className="bg-white rounded-3xl card-shadow p-10">
+                                {/* Header */}
+                                <div className="text-center mb-10">
+                                    <div className={`w-32 h-32 ${passed ? 'bg-slate-50' : 'gradient-bg-2'} rounded-full flex items-center justify-center mx-auto mb-6 card-shadow`}>
+                                        {passed ? (
+                                            <svg className="w-20 h-20 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                            </svg>
+                                        ) : (
+                                            <svg className="w-20 h-20 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                            </svg>
+                                        )}
+                                    </div>
+                                    <h1 className="text-4xl font-bold text-gray-800 mb-3">Exam Complete!</h1>
+                                    <p className="text-2xl text-gray-600">Time: {formatTime(timeElapsed)}</p>
+                                </div>
+
+                                {/* Overall Score */}
+                                <div className="gradient-bg rounded-3xl p-10 mb-10 text-white card-shadow">
+                                    <div className="text-center">
+                                        <p className="text-2xl mb-3 opacity-90 font-medium">Your Score</p>
+                                        <p className="text-8xl font-bold mb-4">{score.percentage}%</p>
+                                        <p className="text-3xl mb-2">{score.correct} / {score.total} Correct</p>
+                                        {score.unanswered > 0 && (
+                                            <p className="text-lg opacity-75 mt-2">({score.unanswered} not answered)</p>
+                                        )}
+                                        <div className="mt-8">
+                                            <div className="bg-white bg-opacity-20 rounded-full h-5 overflow-hidden">
+                                                <div 
+                                                    className="bg-white h-full transition-all duration-1000"
+                                                    style={{ width: `${score.percentage}%` }}
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Performance Breakdown */}
+                                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
+                                    {/* By Difficulty */}
+                                    <div>
+                                        <h2 className="text-2xl font-bold text-gray-800 mb-5">By Difficulty Level</h2>
+                                        <div className="space-y-4">
+                                            {Object.entries(analysisByDifficulty).map(([difficulty, stats]) => {
+                                                const percentage = stats.total > 0 ? ((stats.correct / stats.total) * 100).toFixed(0) : 0;
+                                                const colorMap = {
+                                                    'Easy': 'from-green-400 to-green-600',
+                                                    'Moderate': 'from-yellow-400 to-orange-500',
+                                                    'Difficult': 'from-red-400 to-pink-600'
+                                                };
+                                                
+                                                return (
+                                                    <div key={difficulty} className="bg-gray-50 rounded-2xl p-5 border-2 border-gray-200">
+                                                        <div className="flex justify-between items-center mb-3">
+                                                            <h3 className="font-bold text-gray-800 text-lg">{difficulty}</h3>
+                                                            <span className="text-3xl font-bold text-gray-800">{percentage}%</span>
+                                                        </div>
+                                                        <p className="text-sm text-gray-600 mb-3">{stats.correct} of {stats.total} correct</p>
+                                                        <div className="bg-gray-200 rounded-full h-3 overflow-hidden">
+                                                            <div 
+                                                                className={`bg-gradient-to-r ${colorMap[difficulty]} h-full transition-all duration-1000`}
+                                                                style={{ width: `${percentage}%` }}
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                );
+                                            })}
+                                        </div>
+                                    </div>
+
+                                    {/* By Chapter */}
+                                    <div>
+                                        <h2 className="text-2xl font-bold text-gray-800 mb-5">By Chapter</h2>
+                                        <div className="space-y-4">
+                                            {Object.entries(analysisByChapter).map(([chapter, data]) => {
+                                                const percentage = data.total > 0 ? ((data.correct / data.total) * 100).toFixed(0) : 0;
+                                                
+                                                return (
+                                                    <div key={chapter} className="bg-gray-50 rounded-2xl p-5 border-2 border-gray-200">
+                                                        <div className="flex justify-between items-center mb-3">
+                                                            <h3 className="font-bold text-gray-800">Chapter {chapter}: {data.name}</h3>
+                                                            <span className="text-3xl font-bold text-gray-800">{percentage}%</span>
+                                                        </div>
+                                                        <p className="text-sm text-gray-600 mb-3">{data.correct} of {data.total} correct</p>
+                                                        <div className="bg-gray-200 rounded-full h-3 overflow-hidden">
+                                                            <div 
+                                                                className="bg-gradient-to-r from-purple-400 to-pink-600 h-full transition-all duration-1000"
+                                                                style={{ width: `${percentage}%` }}
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                );
+                                            })}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                
+                                {/* Marked Review */}
+                                <div className="mb-10">
+                                    <h2 className="text-2xl font-bold text-gray-800 mb-5">Marked for Review</h2>
+                                    <div className="bg-white rounded-2xl p-5 border border-gray-200">
+                                        {questions.filter(q => markedForReview.has(q.id) && !!answers[q.id]).length === 0 ? (
+                                            <p className="text-gray-600">No answered questions are marked for review.</p>
+                                        ) : (
+                                            <div className="space-y-4 max-h-80 overflow-y-auto pr-2">
+                                                {questions.filter(q => markedForReview.has(q.id) && !!answers[q.id]).map((q, idx) => {
+                                                    const answer = answers[q.id];
+                                                    const isCorrect = answer?.selected === q.correctAnswer;
+                                                    return (
+                                                        <div
+                                                            key={q.id}
+                                                            className={`rounded-2xl p-5 border-2 ${isCorrect ? 'bg-green-50 border-green-400' : 'bg-red-50 border-red-400'}`}
+                                                        >
+                                                            <div className="flex items-start justify-between mb-3">
+                                                                <div>
+                                                                    <div className="text-sm text-gray-600 font-semibold mb-1">{q.id} • Chapter {q.chapter}</div>
+                                                                    <div className="text-gray-900 font-semibold">{q.question}</div>
+                                                                </div>
+                                                                <div className={`px-3 py-1 rounded-full text-sm font-bold ${isCorrect ? 'bg-green-200 text-green-800' : 'bg-red-200 text-red-800'}`}>
+                                                                    {isCorrect ? 'Correct' : 'Incorrect'}
+                                                                </div>
+                                                            </div>
+
+                                                            <div className="text-sm text-gray-700 mb-2">
+                                                                <span className="font-semibold">Your answer:</span> {answer?.selected || '—'} &nbsp; | &nbsp;
+                                                                <span className="font-semibold">Correct:</span> {q.correctAnswer}
+                                                            </div>
+
+                                                            <div className="text-sm text-gray-700">
+                                                                <span className="font-semibold">Explanation:</span> {q.explanation}
+                                                            </div>
+                                                        </div>
+                                                    );
+                                                })}
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
+
+{/* Question Review */}
+                                <div>
+                                    <h2 className="text-2xl font-bold text-gray-800 mb-5">Question-by-Question Review</h2>
+                                    <div className="space-y-4 max-h-96 overflow-y-auto pr-2">
+                                        {questions.filter(q => !!answers[q.id]).map((q, idx) => {
+                                            const answer = answers[q.id];
+                                            const isCorrect = answer?.selected === q.correctAnswer;
+                                            const wasAnswered = !!answer;
+                                            
+                                            return (
+                                                <div 
+                                                    key={q.id} 
+                                                    className={`rounded-2xl p-5 border-2 ${
+                                                        !wasAnswered ? 'bg-gray-50 border-gray-300' :
+                                                        isCorrect ? 'bg-green-50 border-green-400' : 'bg-red-50 border-red-400'
+                                                    }`}
+                                                >
+                                                    <div className="flex items-start justify-between mb-3">
+                                                        <div className="flex items-center">
+                                                            {wasAnswered ? (
+                                                                isCorrect ? (
+                                                                    <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-3">
+                                                                        <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                                                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                                                        </svg>
+                                                                    </div>
+                                                                ) : (
+                                                                    <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center mr-3">
+                                                                        <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                                                            <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                                                                        </svg>
+                                                                    </div>
+                                                                )
+                                                            ) : (
+                                                                <div className="w-8 h-8 bg-gray-400 rounded-full flex items-center justify-center mr-3">
+                                                                    <span className="text-white font-bold">?</span>
+                                                                </div>
+                                                            )}
+                                                            <span className="font-bold text-gray-800">Q{idx + 1}</span>
+                                                            <span className={`ml-3 text-xs px-3 py-1 rounded-full font-semibold ${
+                                                                q.difficulty === 'Easy' ? 'bg-green-100 text-green-700' :
+                                                                q.difficulty === 'Moderate' ? 'bg-yellow-100 text-yellow-700' :
+                                                                'bg-red-100 text-red-700'
+                                                            }`}>
+                                                                {q.difficulty}
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <p className="text-gray-700 mb-3 font-medium">{q.question}</p>
+                                                    
+                                                    {wasAnswered ? (
+                                                        <div className="space-y-2">
+                                                            <div className={`font-bold text-lg ${isCorrect ? 'text-green-700' : 'text-red-700'}`}>
+                                                                Your answer: {answer.selected}
+                                                            </div>
+                                                            {!isCorrect && (
+                                                                <div className="text-green-700 font-bold text-lg">
+                                                                    Correct answer: {q.correctAnswer}
+                                                                </div>
+                                                            )}
+                                                            <div className="text-gray-700 mt-3 pt-3 border-t-2 border-gray-300">
+                                                                <span className="font-semibold">💡 Explanation:</span> {q.explanation}
+                                                            </div>
+                                                        </div>
+                                                    ) : (
+                                                        <p className="text-gray-500 italic">Not answered</p>
+                                                    )}
+                                                </div>
+                                            );
+                                        })}
+                                    </div>
+                                </div>
+
+                                <div className="mt-10 text-center">
+                                    <button 
+                                        onClick={() => {
+                                            setExamStarted(false);
+                                            setCurrentQuestionIndex(0);
+                                            setAnswers({});
+                                            setMarkedForReview(new Set());
+                                            setEliminatedOptions({});
+                                            setShowResults(false);
+                                            setTimeElapsed(0);
+                                            setSelectedAnswer('');
+                                        }}
+                                        className="gradient-bg text-white px-12 py-4 rounded-2xl font-bold text-lg hover:shadow-2xl transition-all transform hover:scale-105"
+                                    >
+                                        Take Another Practice Exam
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                );
+            }
+
+            // Exam Screen
+            return (
+                <div className="min-h-screen bg-gray-100">
+                    {/* Header */}
+                    <div className="bg-white shadow-md">
+                        <div className="max-w-7xl mx-auto px-6 py-5">
+                            <div className="flex items-center justify-between">
+                                <div>
+                                    <h1 className="text-2xl font-bold text-gray-800">Practice Session</h1>
+                                    <p className="text-sm text-gray-600"> </p>
+                                </div>
+                                <div className="flex items-center space-x-8">
+                                    <div className="text-center">
+                                        <p className="text-xs text-gray-500 font-medium">TIME</p>
+                                        <p className="text-2xl font-bold text-emerald-600 font-mono">{formatTime(timeElapsed)}</p>
+                                    </div>
+                                    <div className="text-center">
+                                        <p className="text-xs text-gray-500 font-medium">PROGRESS</p>
+                                        <p className="text-2xl font-bold text-emerald-600">{answeredCount}/{totalQuestions}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Progress Bar */}
+                    <div className="bg-white shadow-sm">
+                        <div className="max-w-7xl mx-auto px-6 py-4">
+                            <div className="flex items-center justify-between mb-3">
+                                <div className="flex items-center space-x-3">
+                                    <button
+                                        onClick={handlePrevious}
+                                        disabled={currentQuestionIndex === 0}
+                                        className={`p-2 rounded-lg transition-all ${
+                                            currentQuestionIndex === 0 
+                                                ? 'text-gray-300 cursor-not-allowed' 
+                                                : 'text-emerald-600 hover:bg-emerald-50'
+                                        }`}
+                                    >
+                                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                                        </svg>
+                                    </button>
+                                    
+                                    <span className="text-lg font-bold text-gray-800">
+                                        Question {currentQuestionIndex + 1} of {totalQuestions}
+                                    </span>
+                                    
+                                    <button
+                                        onClick={handleNext}
+                                        disabled={currentQuestionIndex === totalQuestions - 1}
+                                        className={`p-2 rounded-lg transition-all ${
+                                            currentQuestionIndex === totalQuestions - 1 
+                                                ? 'text-gray-300 cursor-not-allowed' 
+                                                : 'text-emerald-600 hover:bg-emerald-50'
+                                        }`}
+                                    >
+                                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                
+                                <div className="flex items-center space-x-4">
+                                    <label className="flex items-center cursor-pointer text-gray-700 hover:text-emerald-600 font-medium">
+                                        <input 
+                                            type="checkbox"
+                                            checked={markedForReview.has(currentQuestion.id)}
+                                            onChange={toggleRevisit}
+                                            className="mr-2 w-5 h-5 text-emerald-600 rounded"
+                                        />
+                                        Mark for Review
+                                    </label>
+
+                                    <span className="text-sm text-gray-600 mr-3">Marked: <span className="font-semibold text-gray-900">{markedCount}</span></span>
+
+                                    <button
+                                        onClick={goToNextMarked}
+                                        disabled={markedCount === 0}
+                                        className={`px-4 py-2 rounded-xl font-bold transition-all ${markedCount === 0 ? 'bg-gray-100 text-gray-400 cursor-not-allowed' : 'bg-emerald-600 text-white hover:shadow-lg'}`}
+                                    >
+                                        Next Marked
+                                    </button>
+
+                                    <button
+                                        onClick={clearAllMarked}
+                                        disabled={markedCount === 0}
+                                        className={`px-4 py-2 rounded-xl font-bold transition-all ${markedCount === 0 ? 'bg-gray-100 text-gray-400 cursor-not-allowed' : 'bg-gray-200 text-gray-800 hover:bg-gray-300'}`}
+                                    >
+                                        Clear Marks
+                                    </button>
+
+                                    <button
+                                        onClick={exitExam}
+                                        className="px-6 py-2 bg-gray-200 text-gray-800 rounded-xl font-bold hover:bg-gray-300 transition-all"
+                                    >
+                                        Exit
+                                    </button>
+                                    
+                                    {answeredCount === totalQuestions && (
+                                        <button
+                                            onClick={() => setShowResults(true)}
+                                            className="px-6 py-2 gradient-bg text-white rounded-xl font-bold hover:shadow-lg transition-all"
+                                        >
+                                            Finish Exam
+                                        </button>
+                                    )}
+                                </div>
+                            </div>
+                            
+                            <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                                <div 
+                                    className="gradient-bg h-full transition-all duration-300"
+                                    style={{ width: `${progress}%` }}
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Question Content */}
+                    <div className="max-w-7xl mx-auto p-6">
+                        <div className="bg-white rounded-3xl card-shadow p-10">
+                            {/* Question Header */}
+                            <div className="mb-8">
+                                <div className="flex items-center justify-between mb-5">
+                                    <span className="bg-emerald-100 text-emerald-800 px-4 py-2 rounded-xl text-sm font-bold">
+                                        {currentQuestion.topic}
+                                    </span>
+                                    <span className={`px-4 py-2 rounded-xl text-sm font-bold ${
+                                        currentQuestion.difficulty === 'Easy' ? 'bg-green-100 text-green-800' :
+                                        currentQuestion.difficulty === 'Moderate' ? 'bg-yellow-100 text-yellow-800' :
+                                        'bg-red-100 text-red-800'
+                                    }`}>
+                                        {currentQuestion.difficulty}
+                                    </span>
+                                </div>
+                                <h2 className="text-2xl font-bold text-gray-800 leading-relaxed">
+                                    {currentQuestion.question}
+                                </h2>
+                            </div>
+
+                            {/* Answer Options */}
+                            <div className="space-y-4 mb-10">
+                                {currentQuestion.options.map((option, idx) => {
+                                    const optionLetter = String.fromCharCode(65 + idx);
+                                    const isSelected = selectedAnswer === optionLetter;
+                                    const isEliminated = eliminatedOptions[`${currentQuestion.id}-${optionLetter}`];
+                                    
+                                    return (
+                                        <div 
+                                            key={idx}
+                                            className={`option-card flex items-center border-3 rounded-2xl p-5 cursor-pointer ${
+                                                isEliminated ? 'eliminated border-gray-200' : 
+                                                isSelected ? 'border-purple-500 bg-emerald-50 shadow-lg' : 'border-gray-300 hover:border-purple-400'
+                                            }`}
+                                            onClick={() => !isEliminated && handleAnswerSelect(optionLetter)}
+                                        >
+                                            <div className={`w-12 h-12 rounded-xl flex items-center justify-center font-bold text-lg mr-5 ${
+                                                isSelected ? 'gradient-bg text-white' : 'bg-gray-200 text-gray-700'
+                                            }`}>
+                                                {optionLetter}
+                                            </div>
+                                            <span className={`flex-1 text-lg ${isEliminated ? 'line-through text-gray-400' : 'text-gray-800 font-medium'}`}>
+                                                {option}
+                                            </span>
+                                            <button
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    toggleEliminate(currentQuestion.id, optionLetter);
+                                                }}
+                                                className={`ml-4 ${isEliminated ? 'text-gray-400' : 'text-gray-400 hover:text-red-500'} transition-colors`}
+                                            >
+                                                <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+
+                            {/* Submit Button */}
+                            <button
+                                onClick={handleConfirm}
+                                disabled={!selectedAnswer}
+                                className={`w-full py-5 rounded-2xl font-bold text-lg transition-all ${
+                                    selectedAnswer
+                                        ? 'gradient-bg text-white hover:shadow-2xl transform hover:scale-[1.02]'
+                                        : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                                }`}
+                            >
+                                {currentQuestionIndex < totalQuestions - 1 ? 'Submit Answer' : 'Submit Final Answer'}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('app'));
+        root.render(<FinanceExamApp />);
+    </script>
+</body>
+</html>
