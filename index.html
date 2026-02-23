@@ -376,6 +376,122 @@ footer{
 .anim-6{animation:fadeUp .6s .5s ease both}
 
 
+
+/* ── HOME TABS ── */
+.home-tabs {
+  display:flex;gap:4px;position:relative;
+}
+.home-tab {
+  background:none;border:none;cursor:pointer;
+  padding:8px 20px;border-radius:8px;
+  font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:500;
+  color:rgba(255,255,255,.5);letter-spacing:.03em;
+  transition:all .2s;display:flex;align-items:center;gap:7px;
+}
+.home-tab:hover{color:rgba(255,255,255,.85);background:rgba(255,255,255,.06)}
+.home-tab.active{background:rgba(201,168,76,.18);color:var(--gold-light);font-weight:600}
+
+/* ── TAB PANELS ── */
+.tab-pane{display:none}
+.tab-pane.active{display:block}
+
+/* ── SUMMARY PANEL ── */
+.summary-wrap{max-width:960px;margin:0 auto;padding:48px 40px 80px}
+@media(max-width:640px){.summary-wrap{padding:32px 20px 60px}}
+
+/* Summary hero */
+.sum-hero{background:var(--navy);background-image:radial-gradient(ellipse at 20% 50%,rgba(201,168,76,.12) 0%,transparent 60%);padding:40px 40px 32px;border-radius:16px;position:relative;overflow:hidden;margin-bottom:32px}
+.sum-hero::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(201,168,76,.05) 39px,rgba(201,168,76,.05) 40px),repeating-linear-gradient(90deg,transparent,transparent 39px,rgba(201,168,76,.05) 39px,rgba(201,168,76,.05) 40px)}
+.sum-hero-label{font-size:.65rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;position:relative}
+.sum-hero h1{font-family:'Cormorant Garamond',serif;color:var(--white);font-size:clamp(1.3rem,3vw,2rem);font-weight:700;line-height:1.2;max-width:600px;position:relative}
+.sum-hero h1 em{color:var(--gold-light);font-style:italic}
+.sum-hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;position:relative}
+.sum-hero-tag{background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.3);color:var(--gold-light);font-size:.68rem;font-weight:500;padding:3px 10px;border-radius:16px}
+
+/* Summary body */
+.sum-body{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:36px;box-shadow:var(--shadow-sm)}
+@media(max-width:600px){.sum-body{padding:24px 18px}}
+
+.s-divider{border:none;border-top:1px solid var(--border);margin:28px 0}
+
+.s-header{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.s-icon{width:34px;height:34px;background:var(--navy);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.85rem}
+.s-header h2{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:700;color:var(--navy);line-height:1.2}
+.s-header h2 span{display:block;font-family:'DM Sans',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:2px}
+
+/* LOs */
+.lo-list{display:flex;flex-direction:column;gap:7px}
+.lo-item{display:flex;gap:10px;align-items:flex-start;background:var(--cream);border-left:3px solid var(--gold);padding:9px 14px;border-radius:0 7px 7px 0}
+.lo-pill{font-family:'DM Mono',monospace;font-size:.65rem;font-weight:600;color:var(--gold);background:var(--gold-pale);padding:2px 7px;border-radius:4px;flex-shrink:0;margin-top:1px}
+.lo-text{font-size:.8rem;color:var(--text-mid);line-height:1.45}
+
+/* Phases */
+.phases-table{border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.phase-row{display:grid;grid-template-columns:36px 1fr;align-items:stretch;border-bottom:1px solid var(--border)}
+.phase-row:last-child{border-bottom:none}
+.phase-row:hover{background:#f9f8ff}
+.phase-n{background:var(--navy);color:var(--gold-light);font-family:'Cormorant Garamond',serif;font-size:.9rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+.phase-body{padding:11px 16px}
+.phase-title{font-weight:600;font-size:.84rem;color:var(--navy);margin-bottom:3px}
+.phase-desc{font-size:.77rem;color:var(--text-mid);line-height:1.5}
+.phase-out{display:inline-block;margin-top:5px;font-size:.67rem;font-weight:500;color:var(--gold);background:var(--gold-pale);border-radius:4px;padding:2px 8px;font-family:'DM Mono',monospace}
+
+/* Key numbers */
+.kn-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px}
+.kn-box{background:var(--cream);border:1px solid var(--border);border-radius:10px;padding:14px 12px;text-align:center}
+.kn-num{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--navy);line-height:1}
+.kn-num sup{font-size:.85rem;color:var(--gold)}
+.kn-label{font-size:.67rem;color:var(--text-light);margin-top:5px;line-height:1.4;font-weight:500}
+
+/* Filing cards */
+.filing-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.filing-card{background:var(--cream);border:1px solid var(--border);border-radius:10px;padding:14px 16px}
+.filing-card:hover{background:#f2f0fa;border-color:var(--navy-soft)}
+.filing-card h3{font-weight:600;font-size:.82rem;color:var(--navy);margin-bottom:5px}
+.filing-card p{font-size:.75rem;color:var(--text-mid);line-height:1.5}
+
+/* Audit */
+.audit-list{display:flex;flex-direction:column;gap:9px}
+.audit-item{display:flex;align-items:flex-start;gap:12px;background:var(--cream);border:1px solid var(--border);border-radius:9px;padding:12px 14px}
+.audit-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;margin-top:5px}
+.audit-item h4{font-size:.82rem;font-weight:600;color:var(--navy);margin-bottom:2px}
+.audit-item p{font-size:.75rem;color:var(--text-mid);line-height:1.4}
+
+/* Compare table */
+.cmp-table{width:100%;border-collapse:collapse;font-size:.79rem;border-radius:10px;overflow:hidden}
+.cmp-table thead tr{background:var(--navy);color:var(--gold-light)}
+.cmp-table th{padding:10px 14px;font-weight:600;text-align:left}
+.cmp-table tbody tr{background:var(--white);border-bottom:1px solid var(--border)}
+.cmp-table tbody tr:last-child{border-bottom:none}
+.cmp-table tbody tr:nth-child(even){background:#f9f8ff}
+.cmp-table tbody tr:hover{background:var(--gold-pale)}
+.cmp-table td{padding:9px 14px;color:var(--text-mid);vertical-align:top}
+.cmp-table td:first-child{font-weight:600;color:var(--navy)}
+.badge{display:inline-block;padding:2px 7px;border-radius:4px;font-size:.67rem;font-weight:600}
+.badge-us{background:#e8f0fe;color:#1a3a8f}
+.badge-ifrs{background:#e8f7ef;color:#1a5c3a}
+
+/* Sources */
+.src-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(max-width:560px){.src-grid{grid-template-columns:1fr}}
+.src-card{background:var(--white);border:1px solid var(--border);border-radius:9px;overflow:hidden}
+.src-card-hd{background:var(--navy-soft);color:var(--white);padding:8px 14px;font-size:.71rem;font-weight:600;letter-spacing:.05em}
+.src-items{padding:10px 14px;list-style:none;display:flex;flex-direction:column;gap:5px}
+.src-items li{font-size:.75rem;color:var(--text-mid);padding-left:12px;position:relative;line-height:1.4}
+.src-items li::before{content:'›';position:absolute;left:0;color:var(--gold);font-weight:700}
+
+/* Info note */
+.info-note{padding:10px 14px;border-radius:7px;border-left:3px solid;font-size:.76rem;line-height:1.5;margin-top:10px}
+.info-note.gold{background:var(--gold-pale);border-color:var(--gold);color:var(--text-mid)}
+.info-note.blue{background:#eef1f9;border-color:var(--navy-soft);color:var(--text-mid)}
+
+/* Takeaway */
+.takeaway{background:var(--navy);border-radius:12px;padding:22px 24px;margin-top:28px;position:relative;overflow:hidden}
+.takeaway::before{content:'"';position:absolute;top:-20px;left:14px;font-family:'Cormorant Garamond',serif;font-size:9rem;color:rgba(201,168,76,.07);line-height:1;pointer-events:none}
+.takeaway h3{font-family:'Cormorant Garamond',serif;color:var(--gold-light);font-size:.95rem;margin-bottom:8px;position:relative}
+.takeaway p{color:rgba(255,255,255,.75);font-size:.79rem;line-height:1.65;position:relative}
+.takeaway strong{color:var(--gold-light)}
+
 /* ── EXAM PANEL ── */
 #examPanel {
   display: none;
@@ -413,8 +529,9 @@ footer{
       <p>CFA Level I</p>
     </div>
   </div>
-  <nav class="header-nav">
-    <a href="#" class="nav-link active">Home</a>
+  <nav class="home-tabs" id="homeTabs">
+    <button class="home-tab active" onclick="switchHomeTab('practice',this)">📝 Practice</button>
+    <button class="home-tab" onclick="switchHomeTab('summaries',this)">📖 Chapter Summaries</button>
   </nav>
 </header>
 
@@ -450,7 +567,9 @@ footer{
 <div class="wave"></div>
 
 <!-- ── MAIN ── -->
-<main class="main">
+<main>
+<!-- PRACTICE TAB -->
+<div id="tab-practice" class="tab-pane active main">
 
   <!-- HOW IT WORKS -->
   <section class="anim-3">
@@ -559,6 +678,139 @@ footer{
 
     </div>
   </section>
+
+</div><!-- /#tab-practice -->
+
+<!-- SUMMARIES TAB -->
+<div id="tab-summaries" class="tab-pane">
+<div class="summary-wrap">
+
+  <div class="sum-hero">
+    <div class="sum-hero-label">2026 CFA® Program · Level I · Reading 1</div>
+    <h1>Introduction to <em>Financial Statement Analysis</em></h1>
+    <div class="sum-hero-tags">
+      <span class="sum-hero-tag">5 Learning Outcomes</span>
+      <span class="sum-hero-tag">6-Phase Framework</span>
+      <span class="sum-hero-tag">IFRS vs US GAAP</span>
+      <span class="sum-hero-tag">Audit Opinions</span>
+      <span class="sum-hero-tag">SEC Filings</span>
+      <span class="sum-hero-tag">Information Sources</span>
+    </div>
+  </div>
+
+  <div class="sum-body">
+
+    <div class="s-header">
+      <div class="s-icon">🎯</div>
+      <h2><span>Learning Outcomes</span>What You Need to Master</h2>
+    </div>
+    <div class="lo-list">
+      <div class="lo-item"><span class="lo-pill">LO 1</span><span class="lo-text">Describe the steps in the <strong>financial statement analysis framework</strong></span></div>
+      <div class="lo-item"><span class="lo-pill">LO 2</span><span class="lo-text">Describe the <strong>roles</strong> of financial statement analysis</span></div>
+      <div class="lo-item"><span class="lo-pill">LO 3</span><span class="lo-text">Describe the importance of <strong>regulatory filings, financial notes, management commentary, and audit reports</strong></span></div>
+      <div class="lo-item"><span class="lo-pill">LO 4</span><span class="lo-text">Describe implications of <strong>alternative financial reporting systems</strong> (IFRS vs US GAAP) and monitoring standard developments</span></div>
+      <div class="lo-item"><span class="lo-pill">LO 5</span><span class="lo-text">Describe <strong>other information sources</strong> analysts use beyond annual and interim reports</span></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <div class="s-header">
+      <div class="s-icon">🔄</div>
+      <h2><span>The Framework</span>6-Phase Financial Statement Analysis Process</h2>
+    </div>
+    <div class="phases-table">
+      <div class="phase-row"><div class="phase-n">1</div><div class="phase-body"><div class="phase-title">Articulate Purpose &amp; Context</div><div class="phase-desc">Define why the analysis is being done. Who is the audience? What decisions will it support? Resist calculating ratios before understanding what's relevant.</div><span class="phase-out">→ Purpose statement + specific questions to answer</span></div></div>
+      <div class="phase-row"><div class="phase-n">2</div><div class="phase-body"><div class="phase-title">Collect Data</div><div class="phase-desc">Gather financial statements, industry and economic data, management discussions. Top-down: macroeconomic → industry → company. Site visits and management meetings are valid data sources.</div><span class="phase-out">→ Financial data in usable form</span></div></div>
+      <div class="phase-row"><div class="phase-n">3</div><div class="phase-body"><div class="phase-title">Process Data</div><div class="phase-desc">Compute ratios, growth rates, common-size statements. Adjust financial statements for comparability. Apply statistical analyses, regressions, and sensitivity analyses.</div><span class="phase-out">→ Adjusted statements, ratios, graphs</span></div></div>
+      <div class="phase-row"><div class="phase-n">4</div><div class="phase-body"><div class="phase-title">Analyze / Interpret Data</div><div class="phase-desc">Numbers alone are never the answer. Interpret results in context to support a conclusion — buy/sell ratings, credit decisions, valuations.</div><span class="phase-out">→ Analytical results, forecasts, valuations</span></div></div>
+      <div class="phase-row"><div class="phase-n">5</div><div class="phase-body"><div class="phase-title">Communicate Conclusions &amp; Recommendations</div><div class="phase-desc">Report in the appropriate format for the audience. Equity reports include: investment conclusion, industry overview, financial model, valuation, and risks. CFA Standard V(B): distinguish opinions from facts.</div><span class="phase-out">→ Analytical report + recommendation</span></div></div>
+      <div class="phase-row"><div class="phase-n">6</div><div class="phase-body"><div class="phase-title">Follow-Up</div><div class="phase-desc">Periodically repeat prior steps as new information arrives. Update forecasts and recommendations. Even rejected investments may require monitoring if conditions change.</div><span class="phase-out">→ Actual vs. expected comparison, revised forecasts</span></div></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <div class="s-header">
+      <div class="s-icon">🔢</div>
+      <h2><span>Key Numbers</span>Critical Thresholds to Memorise</h2>
+    </div>
+    <div class="kn-grid">
+      <div class="kn-box"><div class="kn-num">95<sup>%</sup></div><div class="kn-label">of world's financial markets covered by IOSCO</div></div>
+      <div class="kn-box"><div class="kn-num">115<sup>+</sup></div><div class="kn-label">jurisdictions in IOSCO membership</div></div>
+      <div class="kn-box"><div class="kn-num">75<sup>%</sup></div><div class="kn-label">of IOSCO ordinary members from emerging markets</div></div>
+      <div class="kn-box"><div class="kn-num">10<sup>%</sup></div><div class="kn-label">threshold for mandatory segment disclosure</div></div>
+      <div class="kn-box"><div class="kn-num">75<sup>%</sup></div><div class="kn-label">min. external revenue by reportable segments</div></div>
+      <div class="kn-box"><div class="kn-num">10<sup>%</sup></div><div class="kn-label">single-customer concentration trigger</div></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <div class="s-header">
+      <div class="s-icon">📋</div>
+      <h2><span>SEC Filings</span>Key Forms Analysts Use</h2>
+    </div>
+    <div class="filing-grid">
+      <div class="filing-card"><h3>10-K / 20-F / 40-F</h3><p>Annual reports. <strong>10-K</strong> for US companies, <strong>20-F</strong> for non-US registrants, <strong>40-F</strong> for certain Canadian registrants. Contains audited financials, MD&amp;A, and risk factors.</p></div>
+      <div class="filing-card"><h3>10-Q / 6-K</h3><p>Interim reports. <strong>10-Q</strong> filed quarterly by US companies (unaudited). <strong>6-K</strong> filed semi-annually by many non-US companies.</p></div>
+      <div class="filing-card"><h3>Form 8-K</h3><p>Current report for material events — acquisitions, management changes, accounting changes, Reg FD disclosures. Must be filed promptly.</p></div>
+      <div class="filing-card"><h3>DEF-14A (Proxy)</h3><p>Executive compensation, security ownership by management, director biographies, and shareholder vote items.</p></div>
+      <div class="filing-card"><h3>Forms 3, 4, 5 &amp; 144</h3><p>Insider ownership filings. Track beneficial ownership by directors, officers, and &gt;10% holders. Form 144 covers proposed sale of restricted securities.</p></div>
+      <div class="filing-card"><h3>Registration Statement</h3><p>Filed for new securities offerings. Includes risk factors, audited financial statements, use of proceeds, and capital structure.</p></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <div class="s-header">
+      <div class="s-icon">✅</div>
+      <h2><span>Audit Reports</span>Four Types of Opinion</h2>
+    </div>
+    <div class="audit-list">
+      <div class="audit-item"><div class="audit-dot" style="background:#1a7a4a"></div><div><h4>Unqualified (Clean / Unmodified) — Preferred ✓</h4><p>Financial statements are fairly presented in accordance with applicable accounting standards. Also called "true and fair view" internationally. This is the opinion analysts want to see.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#b98a1c"></div><div><h4>Qualified — Some Exception or Scope Limitation</h4><p>Fairly presented <em>except</em> for a specific issue. Exception described in additional explanatory paragraphs. Analyst must evaluate the importance of the exception.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#b91c1c"></div><div><h4>Adverse — Material Departure from Standards ⚠</h4><p>Financial statements materially depart from accounting standards and are <em>not</em> fairly presented. The most serious opinion — a major red flag.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#6b6b8a"></div><div><h4>Disclaimer — Unable to Issue an Opinion</h4><p>Due to a scope limitation or other reason, the auditor is unable to express an opinion at all.</p></div></div>
+    </div>
+    <div class="info-note gold">Audits use <em>sampling techniques</em> and statements involve <em>estimates</em> — auditors can only provide <strong>reasonable assurance</strong>, not absolute assurance. Always apply healthy scepticism even with a clean opinion.</div>
+
+    <hr class="s-divider">
+
+    <div class="s-header">
+      <div class="s-icon">⚖️</div>
+      <h2><span>Standards Comparison</span>Key IFRS vs US GAAP Differences</h2>
+    </div>
+    <table class="cmp-table">
+      <thead><tr><th>Topic</th><th><span class="badge badge-us">US GAAP (FASB)</span></th><th><span class="badge badge-ifrs">IFRS (IASB)</span></th></tr></thead>
+      <tbody>
+        <tr><td>Approach</td><td>Rules-based</td><td>Principles-based</td></tr>
+        <tr><td>Inventory Methods</td><td>FIFO, LIFO, Weighted Average</td><td>FIFO, Weighted Average (LIFO <em>prohibited</em>)</td></tr>
+        <tr><td>Inventory Write-Down Reversal</td><td>Prohibited</td><td>Permitted if conditions met</td></tr>
+        <tr><td>Development Costs</td><td>Expensed as incurred</td><td>Capitalised if conditions satisfied</td></tr>
+        <tr><td>Interest Paid (Cash Flow)</td><td>Operating Activities only</td><td>Financing <em>or</em> Operating Activities</td></tr>
+        <tr><td>Standard Setter</td><td>FASB</td><td>IASB</td></tr>
+      </tbody>
+    </table>
+    <div class="info-note blue"><strong>Convergence note:</strong> Reconciliation disclosures between IFRS and US GAAP are <strong>not required</strong>. New standards (revenue, leasing, credit losses) have largely converged.</div>
+
+    <hr class="s-divider">
+
+    <div class="s-header">
+      <div class="s-icon">🔍</div>
+      <h2><span>Information Sources</span>Beyond Annual Reports</h2>
+    </div>
+    <div class="src-grid">
+      <div class="src-card"><div class="src-card-hd">📢 Issuer Sources (Non-Filing)</div><ul class="src-items"><li>Earnings calls (quarterly webcasts)</li><li>Investor day / analyst day events</li><li>Press releases</li><li>Speaking with management / IR personnel</li><li>Company site visits &amp; product experience</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">🌐 Public Third-Party Sources</div><ul class="src-items"><li>Free industry whitepapers &amp; analyst reports</li><li>Government economic/industry indicators</li><li>General &amp; industry-specific news outlets</li><li>Social media (customer sentiment gauge)</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">💼 Proprietary Third-Party Sources</div><ul class="src-items"><li>Sell-side analyst &amp; credit agency reports</li><li>Bloomberg, FactSet, Wind data platforms</li><li>Industry consultancies (Rystad, Gartner, IQVIA)</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">🔬 Proprietary Primary Research</div><ul class="src-items"><li>Surveys commissioned by the analyst</li><li>Direct product evaluations &amp; comparisons</li><li>Expert conversations &amp; channel checks</li></ul></div>
+    </div>
+
+    <div class="takeaway">
+      <h3>Core Analyst Mindset</h3>
+      <p>Financial statement analysis is not about verifying numbers — it's about forming <strong>expectations of future performance</strong> to support investment, credit, and other economic decisions. Combine quantitative outputs with <strong>qualitative interpretation</strong>, maintain <strong>healthy scepticism</strong> toward even audited figures, and continuously monitor <strong>changes in accounting standards</strong> that could affect comparability.</p>
+    </div>
+
+  </div><!-- /.sum-body -->
+</div><!-- /.summary-wrap -->
+</div><!-- /#tab-summaries -->
 
 </main>
 
@@ -803,6 +1055,13 @@ window.goToHome = function() {
 
 buildChapterDropdown();
 updateStartBtn();
+
+function switchHomeTab(name, btn) {
+  document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.home-tab').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  btn.classList.add('active');
+}
 </script>
 
 <!-- React -->
