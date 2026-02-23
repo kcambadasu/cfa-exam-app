@@ -764,8 +764,11 @@ footer{
 
   <!-- Chapter content (hidden until selection) -->
   <div id="sum-content" style="display:none">
+
+  <!-- ── FSA-1 SUMMARY ── -->
+  <div id="sum-fsa-1" class="sum-chapter" style="display:none">
   <div class="sum-hero">
-    <div class="sum-hero-label">2026 CFA® Program · Level I · Reading 1</div>
+    <div class="sum-hero-label">2026 CFA® Program · Level I · FSA Reading 1</div>
     <h1>Introduction to <em>Financial Statement Analysis</em></h1>
     <div class="sum-hero-tags">
       <span class="sum-hero-tag">5 Learning Outcomes</span>
@@ -888,6 +891,682 @@ footer{
     </div>
 
   </div><!-- /.sum-body -->
+  </div><!-- /#sum-fsa-1 -->
+
+
+  <!-- ── QM-1 SUMMARY: RATES AND RETURNS ── -->
+  <div id="sum-qm-1" class="sum-chapter" style="display:none">
+  <div class="sum-hero">
+    <div class="sum-hero-label">2026 CFA® Program · Level I · QM Reading 1</div>
+    <h1>Rates and <em>Returns</em></h1>
+    <div class="sum-hero-tags">
+      <span class="sum-hero-tag">5 Learning Outcomes</span>
+      <span class="sum-hero-tag">Interest Rate Components</span>
+      <span class="sum-hero-tag">Return Measures</span>
+      <span class="sum-hero-tag">MWR vs TWR</span>
+      <span class="sum-hero-tag">Annualised Returns</span>
+      <span class="sum-hero-tag">Leveraged Return</span>
+    </div>
+  </div>
+
+  <div class="sum-body">
+
+    <!-- Learning Outcomes -->
+    <div class="s-header">
+      <div class="s-icon">🎯</div>
+      <h2><span>Learning Outcomes</span>What You Need to Master</h2>
+    </div>
+    <div class="lo-list">
+      <div class="lo-item"><span class="lo-pill">LO 1</span><span class="lo-text">Interpret interest rates as <strong>required rates of return, discount rates, or opportunity costs</strong> and explain an interest rate as the sum of a real risk-free rate and risk premiums</span></div>
+      <div class="lo-item"><span class="lo-pill">LO 2</span><span class="lo-text">Calculate and interpret <strong>different approaches to return measurement</strong> over time and describe their appropriate uses (arithmetic, geometric, harmonic, trimmed, winsorised means)</span></div>
+      <div class="lo-item"><span class="lo-pill">LO 3</span><span class="lo-text">Compare the <strong>money-weighted and time-weighted rates of return</strong> and evaluate portfolio performance based on these measures</span></div>
+      <div class="lo-item"><span class="lo-pill">LO 4</span><span class="lo-text">Calculate and interpret <strong>annualised return measures and continuously compounded returns</strong>, and describe their appropriate uses</span></div>
+      <div class="lo-item"><span class="lo-pill">LO 5</span><span class="lo-text">Calculate and interpret <strong>major return measures</strong> (gross/net, pre-tax/after-tax, real, leveraged) and describe their appropriate uses</span></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Interest Rate Interpretations -->
+    <div class="s-header">
+      <div class="s-icon">📐</div>
+      <h2><span>Section 1 — LO 1</span>Interest Rates: Three Interpretations</h2>
+    </div>
+    <div class="phases-table">
+      <div class="phase-row"><div class="phase-n">1</div><div class="phase-body"><div class="phase-title">Required Rate of Return</div><div class="phase-desc">The minimum return an investor must receive to accept an investment. Compensates for the time value of money and all relevant risks.</div><span class="phase-out">→ Threshold below which an investor rejects the investment</span></div></div>
+      <div class="phase-row"><div class="phase-n">2</div><div class="phase-body"><div class="phase-title">Discount Rate</div><div class="phase-desc">The rate used to find the present value of a future cash flow. A 5.26% discount rate makes USD 10,000 in one year equivalent to USD 9,500 today.</div><span class="phase-out">→ "Interest rate" and "discount rate" are used almost interchangeably</span></div></div>
+      <div class="phase-row"><div class="phase-n">3</div><div class="phase-body"><div class="phase-title">Opportunity Cost</div><div class="phase-desc">The value forgone by choosing one course of action over another. Spending USD 9,500 today forgoes earning 5.26% by saving instead.</div><span class="phase-out">→ Cost of not investing (current consumption)</span></div></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Interest Rate Components -->
+    <div class="s-header">
+      <div class="s-icon">🔢</div>
+      <h2><span>Section 1 — LO 1</span>Components of Interest Rates</h2>
+    </div>
+    <div class="info-note gold" style="margin-bottom:16px"><strong>The Formula:</strong> r = Real risk-free rate + Inflation premium + Default risk premium + Liquidity premium + Maturity premium</div>
+    <div class="audit-list">
+      <div class="audit-item"><div class="audit-dot" style="background:#1a3a8f"></div><div><h4>Real Risk-Free Rate</h4><p>Single-period rate for a completely risk-free security with no expected inflation. Reflects individuals' time preferences for current vs. future consumption. Varies continuously with economic conditions.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#b98a1c"></div><div><h4>Inflation Premium</h4><p>Compensates for the expected average inflation rate over the maturity of the debt. Inflation erodes purchasing power. Nominal risk-free rate ≈ Real risk-free rate + Inflation premium.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#b91c1c"></div><div><h4>Default Risk Premium</h4><p>Compensates investors for the possibility that the borrower fails to make promised payments. Higher for lower-quality issuers; zero for government T-bills (assumed risk-free).</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#1a7a4a"></div><div><h4>Liquidity Premium</h4><p>Compensates for the risk of loss if the investment must be sold quickly at below fair value. US T-bills have no liquidity premium; thinly traded bonds of small issuers carry significant liquidity premiums.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#6b6b8a"></div><div><h4>Maturity Premium</h4><p>Compensates for increased sensitivity of bond price to interest rate changes as maturity extends. Longer-maturity government bonds typically carry a positive maturity premium over short-term bonds.</p></div></div>
+    </div>
+    <div class="info-note blue" style="margin-top:12px"><strong>Key relationship:</strong> (1 + nominal risk-free rate) = (1 + real risk-free rate) × (1 + inflation premium). In practice approximated as: Nominal ≈ Real + Inflation premium.</div>
+
+    <hr class="s-divider">
+
+    <!-- Return Measures Overview -->
+    <div class="s-header">
+      <div class="s-icon">📊</div>
+      <h2><span>Section 2 — LO 2</span>Return Measurement: Key Formulas</h2>
+    </div>
+    <div class="kn-grid" style="margin-bottom:16px">
+      <div class="kn-box"><div class="kn-num" style="font-size:1.1rem">HPR</div><div class="kn-label">R = (P₁ − P₀ + I₁) / P₀<br>Single period, one holding period</div></div>
+      <div class="kn-box"><div class="kn-num" style="font-size:1.1rem">Arith.</div><div class="kn-label">R̄ = (1/T) Σ Rᵢₜ<br>Best for single-period estimates</div></div>
+      <div class="kn-box"><div class="kn-num" style="font-size:1.1rem">Geo.</div><div class="kn-label">R̄G = [∏(1+Rₜ)]^(1/T) − 1<br>Compound rate; multi-period</div></div>
+      <div class="kn-box"><div class="kn-num" style="font-size:1.1rem">Harm.</div><div class="kn-label">X̄H = n / Σ(1/Xᵢ)<br>Averaging rates/ratios (e.g. P/E, cost avg.)</div></div>
+    </div>
+
+    <table class="cmp-table">
+      <thead><tr><th>Measure</th><th>Best Used For</th><th>Key Property</th></tr></thead>
+      <tbody>
+        <tr><td>Holding Period Return</td><td>Single specified period (any length)</td><td>Includes capital gain + income yield</td></tr>
+        <tr><td>Arithmetic Mean</td><td>Average single-period performance; forward-looking estimates</td><td>Always ≥ geometric mean; upward biased for multi-period</td></tr>
+        <tr><td>Geometric Mean</td><td>Compound growth over multiple periods; historical performance</td><td>Always ≤ arithmetic mean; equals actual terminal wealth rate</td></tr>
+        <tr><td>Harmonic Mean</td><td>Averaging P/E ratios; cost-averaging strategies</td><td>Always ≤ geometric mean; reduces outlier influence</td></tr>
+        <tr><td>Trimmed Mean</td><td>Datasets with extreme outliers to exclude</td><td>Removes defined % of highest and lowest values before averaging</td></tr>
+        <tr><td>Winsorised Mean</td><td>Datasets with extreme outliers to include but limit</td><td>Replaces extremes with nearest non-extreme values; then averages</td></tr>
+      </tbody>
+    </table>
+
+    <div class="info-note gold" style="margin-top:12px">
+      <strong>Key inequality:</strong> Harmonic mean ≤ Geometric mean ≤ Arithmetic mean (strict inequality unless all values are equal). Also: Arithmetic mean × Harmonic mean = (Geometric mean)².
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Decision tree for mean selection -->
+    <div class="s-header">
+      <div class="s-icon">🔀</div>
+      <h2><span>Section 2 — LO 2</span>Which Mean to Use? Decision Guide</h2>
+    </div>
+    <div class="phases-table">
+      <div class="phase-row"><div class="phase-n" style="font-size:.7rem;padding:4px">Q1</div><div class="phase-body"><div class="phase-title">Is there compounding involved?</div><div class="phase-desc"><strong>Yes →</strong> Use Geometric Mean. It captures how returns compound over time and reflects the actual terminal value of an investment.</div></div></div>
+      <div class="phase-row"><div class="phase-n" style="font-size:.7rem;padding:4px">Q2</div><div class="phase-body"><div class="phase-title">Are you averaging rates or ratios (e.g. P/E)?</div><div class="phase-desc"><strong>Yes →</strong> Use Harmonic Mean. Particularly appropriate for cost-averaging strategies where a fixed amount is invested at varying prices.</div></div></div>
+      <div class="phase-row"><div class="phase-n" style="font-size:.7rem;padding:4px">Q3</div><div class="phase-body"><div class="phase-title">Are there extreme outliers you want to include but limit?</div><div class="phase-desc"><strong>Yes →</strong> Use Winsorised or Trimmed Mean to reduce the influence of outliers. Trimmed removes them; winsorised replaces them with boundary values.</div></div></div>
+      <div class="phase-row"><div class="phase-n" style="font-size:.7rem;padding:4px">Q4</div><div class="phase-body"><div class="phase-title">Single-period, symmetric data, no special concerns?</div><div class="phase-desc"><strong>Yes →</strong> Use Arithmetic Mean. Simple, has well-known statistical properties, and is the best predictor of next-period single-period returns.</div></div></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Money-Weighted vs Time-Weighted -->
+    <div class="s-header">
+      <div class="s-icon">⚖️</div>
+      <h2><span>Section 3 — LO 3</span>Money-Weighted vs Time-Weighted Return</h2>
+    </div>
+    <table class="cmp-table">
+      <thead><tr><th>Feature</th><th><span class="badge badge-us">Money-Weighted Return (MWR)</span></th><th><span class="badge badge-ifrs">Time-Weighted Return (TWR)</span></th></tr></thead>
+      <tbody>
+        <tr><td>Definition</td><td>IRR of all cash flows (outflows = investments, inflows = withdrawals + ending value)</td><td>Geometric mean of sub-period holding period returns</td></tr>
+        <tr><td>Sensitivity to cash flow timing</td><td>Yes — highly sensitive to when money is invested/withdrawn</td><td>No — eliminates the effect of cash flow timing</td></tr>
+        <tr><td>Preferred for</td><td>Investor's actual return on capital invested</td><td>Evaluating portfolio manager skill (CFA Institute standard)</td></tr>
+        <tr><td>Why managers prefer TWR</td><td>N/A</td><td>Removes effects of client-driven cash flows outside manager's control</td></tr>
+        <tr><td>Calculation method</td><td>Solve for IRR: Σ CFₜ/(1+IRR)ᵗ = 0</td><td>Step 1: Value portfolio before each cash flow. Step 2: Compute HPR per sub-period. Step 3: Geometrically link HPRs</td></tr>
+        <tr><td>When MWR &gt; TWR</td><td colspan="2">More capital was invested during high-return periods (favourable timing)</td></tr>
+        <tr><td>When MWR &lt; TWR</td><td colspan="2">More capital was invested during low-return periods (unfavourable timing, e.g. client adds funds before a market decline)</td></tr>
+      </tbody>
+    </table>
+
+    <div class="info-note blue" style="margin-top:12px">
+      <strong>Practical note:</strong> Two investors in the same fund can have different MWRs because they invested different amounts at different times. The TWR is the same for all investors regardless of when they invested.
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Annualised Returns -->
+    <div class="s-header">
+      <div class="s-icon">📅</div>
+      <h2><span>Section 4 — LO 4</span>Annualised &amp; Continuously Compounded Returns</h2>
+    </div>
+    <div class="kn-grid" style="margin-bottom:16px">
+      <div class="kn-box"><div class="kn-num" style="font-size:1rem">Daily</div><div class="kn-label">c = 365<br>R_annual = (1+R_daily)³⁶⁵ − 1</div></div>
+      <div class="kn-box"><div class="kn-num" style="font-size:1rem">Weekly</div><div class="kn-label">c = 52<br>R_annual = (1+R_weekly)⁵² − 1</div></div>
+      <div class="kn-box"><div class="kn-num" style="font-size:1rem">Monthly</div><div class="kn-label">c = 12<br>R_annual = (1+R_monthly)¹² − 1</div></div>
+      <div class="kn-box"><div class="kn-num" style="font-size:1rem">Quarterly</div><div class="kn-label">c = 4<br>R_annual = (1+R_quarterly)⁴ − 1</div></div>
+    </div>
+
+    <div class="audit-list">
+      <div class="audit-item"><div class="audit-dot" style="background:#1a3a8f"></div><div><h4>General Annualisation Formula</h4><p>R_annual = (1 + R_period)^c − 1, where c = number of compounding periods per year. For holding periods &gt;1 year (e.g. 18 months): c = 2/3, so R_annual = (1 + R_18m)^(2/3) − 1.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#b91c1c"></div><div><h4>Key Limitation of Annualisation</h4><p>Implicit assumption that the sub-period return can be repeated for the entire year — often unrealistic for very short periods. A 5% weekly return annualises to 1,164% — meaningless as a forward-looking estimate.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#1a7a4a"></div><div><h4>Continuously Compounded Return</h4><p>r_t,t+1 = ln(P_{t+1}/P_t) = ln(1 + R_{t,t+1}). Always less than the equivalent holding period return. Key property: multi-period continuously compounded returns ADD across sub-periods (vs. HPRs which multiply).</p></div></div>
+    </div>
+    <div class="info-note gold" style="margin-top:12px">
+      <strong>Continuously compounded formula:</strong> r₀,T = ln(P_T / P₀). Multi-period: r₀,T = r_{T-1,T} + r_{T-2,T-1} + … + r₀,₁ (additive property — very useful in models).
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Major Return Measures -->
+    <div class="s-header">
+      <div class="s-icon">💼</div>
+      <h2><span>Section 5 — LO 5</span>Special Return Measures</h2>
+    </div>
+    <div class="filing-grid">
+      <div class="filing-card"><h3>📈 Gross Return</h3><p>Return after deducting <em>trading costs only</em>. Excludes management fees, custody fees, taxes — as these vary by investor. Used to evaluate and <strong>compare manager skill</strong> on a like-for-like basis.</p></div>
+      <div class="filing-card"><h3>📉 Net Return</h3><p>Gross return minus all managerial and administrative expenses. Represents what the investor <strong>actually earns</strong>. Small funds disadvantaged vs. large funds (fixed costs spread over smaller AUM).</p></div>
+      <div class="filing-card"><h3>🏛️ Pre-Tax Nominal</h3><p>The default return measure — no adjustment for taxes or inflation. All return measures are <strong>pre-tax nominal unless otherwise stated</strong>.</p></div>
+      <div class="filing-card"><h3>🧾 After-Tax Nominal</h3><p>Total return minus tax on dividends, interest, and realised gains. Tax treatment varies: long-term capital gains often preferential; interest taxed as ordinary income. Managers minimise taxes via security selection and low turnover.</p></div>
+      <div class="filing-card"><h3>📊 Real Return</h3><p>(1 + real return) = (1 + nominal return) / (1 + inflation). Useful for comparing returns <strong>across time periods or across countries</strong> with different inflation rates. After-tax real return = what the investor truly receives.</p></div>
+      <div class="filing-card"><h3>🔧 Leveraged Return</h3><p>R_L = R_P + (V_B / V_E) × (R_P − r_D). Leverage amplifies <strong>both gains and losses</strong>. Increases return only if R_P &gt; r_D (portfolio return &gt; borrowing cost). Created via borrowing or futures contracts.</p></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Key Numbers to Memorise -->
+    <div class="s-header">
+      <div class="s-icon">🔢</div>
+      <h2><span>Critical Numbers</span>Exam-Tested Thresholds &amp; Examples</h2>
+    </div>
+    <div class="kn-grid">
+      <div class="kn-box"><div class="kn-num">5.26<sup>%</sup></div><div class="kn-label">USD 500 / USD 9,500 — canonical interest rate example from the reading</div></div>
+      <div class="kn-box"><div class="kn-num">−5<sup>%</sup></div><div class="kn-label">Geometric mean of −50%, +35%, +27% — arithmetic mean is +4% (biased upward)</div></div>
+      <div class="kn-box"><div class="kn-num">10.76<sup>%</sup></div><div class="kn-label">TWR for dividend-stock example (vs. MWR of 9.39%) — TWR &gt; MWR when more invested in worse year</div></div>
+      <div class="kn-box"><div class="kn-num">ln(x)</div><div class="kn-label">Continuously compounded return = ln(P₁/P₀); always smaller than the equivalent HPR</div></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Comparison: IFRS Analogue - Interest Calculations -->
+    <div class="s-header">
+      <div class="s-icon">⚡</div>
+      <h2><span>Common Pitfalls</span>Exam Traps to Avoid</h2>
+    </div>
+    <div class="src-grid">
+      <div class="src-card"><div class="src-card-hd">❌ Arithmetic vs Geometric</div><ul class="src-items"><li>Arithmetic mean is always ≥ geometric mean (except when all returns are equal)</li><li>Arithmetic is for forward-looking single-period estimates; Geometric is for multi-period historical rates</li><li>The more variable the returns, the greater the gap between arithmetic and geometric means</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ MWR vs TWR Direction</div><ul class="src-items"><li>If more capital is invested when returns are poor → MWR &lt; TWR</li><li>If more capital is invested when returns are good → MWR &gt; TWR</li><li>TWR is the CFA Institute-preferred measure for manager evaluation</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ Gross vs Net Return</div><ul class="src-items"><li>Trading expenses ARE deducted from gross return (they directly affect manager returns)</li><li>Management fees, custody fees, and taxes are NOT in gross return</li><li>Net return = gross return − management &amp; administrative expenses</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ Leverage Direction</div><ul class="src-items"><li>Leverage amplifies BOTH gains AND losses (not just gains)</li><li>If R_P &lt; r_D (portfolio return &lt; borrowing cost), leverage decreases the return</li><li>If 50% is borrowed, gross return doubles — but interest cost must still be subtracted to get net</li></ul></div>
+    </div>
+
+    <div class="takeaway">
+      <h3>Core Mindset for Rates &amp; Returns</h3>
+      <p>Every return measure has a specific purpose. <strong>Geometric mean</strong> tells you what you actually earned by compounding. <strong>Arithmetic mean</strong> gives the best single-period forward estimate. <strong>Time-weighted return</strong> reveals manager skill free of client cash-flow noise. <strong>Real after-tax return</strong> is what the investor truly keeps. Always identify the purpose before choosing a measure — the CFA exam will test whether you know which metric is appropriate, not just whether you can calculate it.</p>
+    </div>
+
+  </div><!-- /.sum-body -->
+  </div><!-- /#sum-qm-1 -->
+
+
+  <!-- ── QM-2 SUMMARY: TIME VALUE OF MONEY IN FINANCE ── -->
+  <div id="sum-qm-2" class="sum-chapter" style="display:none">
+  <div class="sum-hero">
+    <div class="sum-hero-label">2026 CFA® Program · Level I · QM Reading 2</div>
+    <h1>Time Value of Money <em>in Finance</em></h1>
+    <div class="sum-hero-tags">
+      <span class="sum-hero-tag">3 Learning Outcomes</span>
+      <span class="sum-hero-tag">Bond Pricing</span>
+      <span class="sum-hero-tag">Equity Valuation</span>
+      <span class="sum-hero-tag">Implied Return &amp; Growth</span>
+      <span class="sum-hero-tag">Cash Flow Additivity</span>
+      <span class="sum-hero-tag">No-Arbitrage Pricing</span>
+    </div>
+  </div>
+
+  <div class="sum-body">
+
+    <!-- Learning Outcomes -->
+    <div class="s-header">
+      <div class="s-icon">🎯</div>
+      <h2><span>Learning Outcomes</span>What You Need to Master</h2>
+    </div>
+    <div class="lo-list">
+      <div class="lo-item"><span class="lo-pill">LO 1</span><span class="lo-text">Calculate and interpret the <strong>present value (PV) of fixed-income and equity instruments</strong> based on expected future cash flows</span></div>
+      <div class="lo-item"><span class="lo-pill">LO 2</span><span class="lo-text">Calculate and interpret the <strong>implied return of fixed-income instruments and required return and implied growth of equity instruments</strong> given PV and cash flows</span></div>
+      <div class="lo-item"><span class="lo-pill">LO 3</span><span class="lo-text">Explain the <strong>cash flow additivity principle</strong>, its importance for the no-arbitrage condition, and its use in calculating implied forward interest rates, forward exchange rates, and option values</span></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Core TVM Formulas -->
+    <div class="s-header">
+      <div class="s-icon">📐</div>
+      <h2><span>Foundations</span>Core TVM Relationships</h2>
+    </div>
+    <div class="kn-grid" style="margin-bottom:16px">
+      <div class="kn-box"><div class="kn-num" style="font-size:.95rem">FV = PV(1+r)ᵗ</div><div class="kn-label">Discrete compounding — standard formula</div></div>
+      <div class="kn-box"><div class="kn-num" style="font-size:.95rem">FV = PVeʳᵗ</div><div class="kn-label">Continuous compounding (t → ∞ periods)</div></div>
+      <div class="kn-box"><div class="kn-num" style="font-size:.95rem">PV = FV·(1+r)⁻ᵗ</div><div class="kn-label">Present value: discount FV back t periods</div></div>
+      <div class="kn-box"><div class="kn-num" style="font-size:.95rem">PV = FV·e⁻ʳᵗ</div><div class="kn-label">Continuous discounting equivalent</div></div>
+    </div>
+    <div class="info-note blue">The discount rate <strong>r</strong> is always a <em>per-period</em> rate. For semiannual bonds: use r/2 as the periodic rate and 2N as the number of periods. Mixing annual rates with non-annual periods is a common exam error.</div>
+
+    <hr class="s-divider">
+
+    <!-- Fixed-Income Pricing: Three patterns -->
+    <div class="s-header">
+      <div class="s-icon">🏦</div>
+      <h2><span>Section 1 — LO 1</span>Fixed-Income Pricing: Three Cash Flow Patterns</h2>
+    </div>
+    <div class="phases-table">
+      <div class="phase-row">
+        <div class="phase-n">1</div>
+        <div class="phase-body">
+          <div class="phase-title">Discount (Zero-Coupon) Bond</div>
+          <div class="phase-desc">Investor pays PV today; receives a single principal (FV) at maturity. No intermediate cash flows. The spread (FV − PV) is the total interest earned.</div>
+          <span class="phase-out">→ PV = FVₜ / (1 + r)ᵗ &nbsp;|&nbsp; Excel: PV(r, t, 0, FV, 0)</span>
+        </div>
+      </div>
+      <div class="phase-row">
+        <div class="phase-n">2</div>
+        <div class="phase-body">
+          <div class="phase-title">Coupon Bond (Periodic Interest + Principal at Maturity)</div>
+          <div class="phase-desc">Investor receives PMT at each period and FV at maturity. YTM is the single discount rate applied to all cash flows. When coupon rate = YTM → PV = FV (par). When YTM &gt; coupon → PV &lt; FV (discount). When YTM &lt; coupon → PV &gt; FV (premium).</div>
+          <span class="phase-out">→ PV = PMT/(1+r)¹ + … + (PMTₙ + FVₙ)/(1+r)ᴺ &nbsp;|&nbsp; Excel: PV(r, N, PMT, FV, 0)</span>
+        </div>
+      </div>
+      <div class="phase-row">
+        <div class="phase-n">3</div>
+        <div class="phase-body">
+          <div class="phase-title">Level-Payment / Annuity (Mortgage-Type)</div>
+          <div class="phase-desc">Uniform periodic payment A covers both interest and principal repayment over the life of the loan. Interest portion declines each period as principal falls; principal portion rises. All 360 monthly payments are equal for a 30-year mortgage.</div>
+          <span class="phase-out">→ A = r·PV / [1 − (1+r)⁻ᵗ] &nbsp;|&nbsp; Excel: PMT(r, t, −PV, 0, 0)</span>
+        </div>
+      </div>
+    </div>
+    <div class="info-note gold" style="margin-top:12px">
+      <strong>Perpetual Bond:</strong> As N → ∞, coupon bond simplifies to PV = PMT / r. Used for bonds with no maturity date (e.g. preference shares, AT1 capital instruments). YTM = PMT / PV, so a price below par implies a higher yield.
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Key bond pricing numbers -->
+    <div class="s-header">
+      <div class="s-icon">🔢</div>
+      <h2><span>Section 1 — LO 1</span>Bond Pricing: Critical Relationships</h2>
+    </div>
+    <table class="cmp-table">
+      <thead><tr><th>Relationship</th><th>Direction</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td>Price vs YTM</td><td><strong>Inverse</strong> — higher YTM → lower price</td><td>Discount rate in denominator; higher rate reduces PV</td></tr>
+        <tr><td>Coupon rate = YTM</td><td>Bond priced at <strong>par</strong> (PV = FV)</td><td>Each cash flow discounted at same rate as it generates; net is exactly par</td></tr>
+        <tr><td>Discount bond price over time (if r constant)</td><td><strong>Accretes</strong> toward FV</td><td>Fewer remaining periods; PV rises as t → 0</td></tr>
+        <tr><td>Premium bond price over time (if r constant)</td><td><strong>Amortises</strong> toward FV</td><td>Overpaid relative to par; price falls back toward redemption value</td></tr>
+        <tr><td>More frequent compounding</td><td>Lower PV for same stated rate</td><td>1/(1+r)ᵗ &gt; 1/(1+r/2)²ᵗ when r ≥ 0</td></tr>
+        <tr><td>Negative YTM bond at issuance</td><td>PV <strong>&gt;</strong> FV (issued at premium)</td><td>Investor accepts a guaranteed loss on principal in exchange for safety/storage of value</td></tr>
+      </tbody>
+    </table>
+
+    <hr class="s-divider">
+
+    <!-- Equity Valuation Models -->
+    <div class="s-header">
+      <div class="s-icon">📈</div>
+      <h2><span>Section 1 — LO 1</span>Equity Valuation: Three Dividend Models</h2>
+    </div>
+    <div class="phases-table">
+      <div class="phase-row">
+        <div class="phase-n">1</div>
+        <div class="phase-body">
+          <div class="phase-title">Constant Dividend (Zero Growth)</div>
+          <div class="phase-desc">Stock pays a fixed dividend D every period forever (perpetuity). Same formula as a perpetual bond. Suitable for preferred shares or stable mature companies with fixed payouts.</div>
+          <span class="phase-out">→ PV = D / r</span>
+        </div>
+      </div>
+      <div class="phase-row">
+        <div class="phase-n">2</div>
+        <div class="phase-body">
+          <div class="phase-title">Constant Dividend Growth (Gordon Growth Model)</div>
+          <div class="phase-desc">Dividend grows at constant rate g forever. Requires r &gt; g. A higher growth rate g reduces the denominator (r − g), increasing the share price. The next dividend Dₜ₊₁ = Dₜ × (1 + g) is used (not the most recent dividend).</div>
+          <span class="phase-out">→ PV = Dₜ₊₁ / (r − g) = Dₜ(1+g) / (r − g)</span>
+        </div>
+      </div>
+      <div class="phase-row">
+        <div class="phase-n">3</div>
+        <div class="phase-body">
+          <div class="phase-title">Two-Stage (Changing) Dividend Growth</div>
+          <div class="phase-desc">High initial growth gₛ for n periods, then slower long-term growth gₗ indefinitely. Step 1: PV of each dividend in high-growth stage. Step 2: PV of terminal value E(Sₙ) = Dₙ₊₁ / (r − gₗ) discounted back n periods. Step 3: Sum both.</div>
+          <span class="phase-out">→ PV = Σᵢ₌₁ⁿ [Dₜ(1+gₛ)ⁱ / (1+r)ⁱ] + E(Sₙ)/(1+r)ⁿ</span>
+        </div>
+      </div>
+    </div>
+    <div class="info-note blue" style="margin-top:12px">
+      <strong>Sensitivity check:</strong> As long-term growth gₗ increases (0% → 2% → 4% → 6%), the share price increases non-linearly because gₗ reduces the denominator in the terminal value formula. Small changes in gₗ near r have a large effect on PV.
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Implied Return & Growth -->
+    <div class="s-header">
+      <div class="s-icon">🔍</div>
+      <h2><span>Section 2 — LO 2</span>Implied Return &amp; Growth: Key Formulas</h2>
+    </div>
+    <div class="filing-grid">
+      <div class="filing-card">
+        <h3>📉 Discount Bond Implied Return</h3>
+        <p>When price and principal are known, solve for the annualised periodic rate.<br><br><strong>r = (FV/PV)^(1/t) − 1</strong><br><br>An investor who sells before maturity earns the implied return based on <em>purchase price → sale price</em>, not original YTM. If rates rise after purchase, implied return over the holding period is below YTM.</p>
+      </div>
+      <div class="filing-card">
+        <h3>🔄 Coupon Bond YTM (Implied Return)</h3>
+        <p>YTM is the IRR of all promised cash flows. Cannot be solved algebraically — use iteration (Excel RATE or YIELD function).<br><br>Assumes: (1) all cash flows received as promised, and (2) <strong>all coupon payments reinvested at the same YTM</strong>. The reinvestment rate assumption is critical — a key limitation of YTM.</p>
+      </div>
+      <div class="filing-card">
+        <h3>📊 Equity Implied Return</h3>
+        <p>Given current price and expected dividends + growth:<br><br><strong>r = Dₜ₊₁/PVₜ + g</strong><br><br>Implied return = expected dividend yield + constant growth rate. Simple interpretation: total return = income + capital appreciation.</p>
+      </div>
+      <div class="filing-card">
+        <h3>🌱 Equity Implied Growth</h3>
+        <p>Given current price, expected dividend, and required return:<br><br><strong>g = r − Dₜ₊₁/PVₜ</strong><br><br>Implied growth = required return minus expected dividend yield. If implied growth &gt; analyst's estimate → stock may be overvalued. If implied growth &lt; analyst's estimate → stock may be undervalued.</p>
+      </div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Price-to-Earnings -->
+    <div class="s-header">
+      <div class="s-icon">💹</div>
+      <h2><span>Section 2 — LO 2</span>Price-to-Earnings (P/E) Ratio &amp; Valuation</h2>
+    </div>
+    <div class="info-note gold" style="margin-bottom:14px">
+      <strong>Forward P/E formula:</strong> PVₜ / Eₜ₊₁ = (Dₜ₊₁/Eₜ₊₁) / (r − g) = Dividend payout ratio / (r − g)
+    </div>
+    <table class="cmp-table">
+      <thead><tr><th>P/E is <em>higher</em> when...</th><th>P/E is <em>lower</em> when...</th></tr></thead>
+      <tbody>
+        <tr><td>Growth rate g is <strong>higher</strong> (reduces denominator r − g)</td><td>Required return r is <strong>higher</strong> (increases denominator)</td></tr>
+        <tr><td>Dividend payout ratio is <strong>higher</strong></td><td>Dividend payout ratio is <strong>lower</strong></td></tr>
+        <tr><td>Required return r is <strong>lower</strong></td><td>Growth rate g is <strong>lower</strong></td></tr>
+      </tbody>
+    </table>
+    <div class="audit-list" style="margin-top:14px">
+      <div class="audit-item"><div class="audit-dot" style="background:#1a7a4a"></div><div><h4>Overvalued Signal</h4><p>Observed P/E &gt; implied P/E (from fundamentals). The current price is too high relative to earnings, dividends, and growth expectations. Consider a short position or avoid.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#1a3a8f"></div><div><h4>Undervalued Signal</h4><p>Observed P/E &lt; implied P/E. Fundamentals (growth, payout, required return) justify a higher price than the market currently reflects. Consider a long position.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#b98a1c"></div><div><h4>Fairly Valued</h4><p>Observed P/E = implied P/E. Market price correctly reflects the combination of expected growth and required return embedded in the dividend payout ratio.</p></div></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Cash Flow Additivity -->
+    <div class="s-header">
+      <div class="s-icon">⚖️</div>
+      <h2><span>Section 3 — LO 3</span>Cash Flow Additivity &amp; No-Arbitrage</h2>
+    </div>
+    <div class="info-note gold" style="margin-bottom:14px">
+      <strong>Principle:</strong> The PV of any future cash flow stream equals the <em>sum</em> of the PVs of its individual cash flows (as long as they are indexed at the same point in time). Two strategies with identical cash flows must have the same price — otherwise a riskless arbitrage profit exists.
+    </div>
+    <div class="phases-table">
+      <div class="phase-row">
+        <div class="phase-n" style="font-size:.7rem;padding:4px">App 1</div>
+        <div class="phase-body">
+          <div class="phase-title">Implied Forward Interest Rates</div>
+          <div class="phase-desc">A risk-neutral investor is indifferent between (1) investing at the 2-year spot rate for 2 years, or (2) investing at the 1-year spot rate and rolling over at the implied 1-year forward rate F₁,₁. No-arbitrage requires both strategies to yield the same FV.</div>
+          <span class="phase-out">→ F₁,₁ = (1+r₂)² / (1+r₁) − 1 &nbsp;|&nbsp; F₁,₁ is the breakeven reinvestment rate in year 2</span>
+        </div>
+      </div>
+      <div class="phase-row">
+        <div class="phase-n" style="font-size:.7rem;padding:4px">App 2</div>
+        <div class="phase-body">
+          <div class="phase-title">Forward Exchange Rates (Covered Interest Parity)</div>
+          <div class="phase-desc">Investor is indifferent between (1) investing in domestic currency at domestic risk-free rate, or (2) converting to foreign currency, investing at foreign risk-free rate, and locking in a forward FX rate today. Both must yield the same domestic-currency return.</div>
+          <span class="phase-out">→ F₀ = S₀ × e^(r_d − r_f)T &nbsp;|&nbsp; If r_d &gt; r_f, domestic currency depreciates on a forward basis</span>
+        </div>
+      </div>
+      <div class="phase-row">
+        <div class="phase-n" style="font-size:.7rem;padding:4px">App 3</div>
+        <div class="phase-body">
+          <div class="phase-title">Option Pricing (Replicating Portfolio)</div>
+          <div class="phase-desc">Construct a portfolio of the underlying asset and the option such that the portfolio's value is the same in all scenarios (risk-free). Discount this known future payoff at the risk-free rate to find the no-arbitrage option price today. The proportion of underlying asset held = hedge ratio.</div>
+          <span class="phase-out">→ PV(replicating portfolio) = V₁/(1+r) &nbsp;|&nbsp; Solve for c₀ or p₀</span>
+        </div>
+      </div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Forward Rate Arbitrage mechanism -->
+    <div class="s-header">
+      <div class="s-icon">🔀</div>
+      <h2><span>Section 3 — LO 3</span>Arbitrage: How It Works &amp; Why It Fails</h2>
+    </div>
+    <div class="src-grid">
+      <div class="src-card">
+        <div class="src-card-hd">📐 Forward Rate Arbitrage (Interest Rates)</div>
+        <ul class="src-items">
+          <li>If F₁,₁ is set too high: borrow for 2 years at r₂, invest year-by-year at r₁ then F₁,₁ → riskless profit</li>
+          <li>If F₁,₁ is set too low: the reverse strategy generates riskless profit</li>
+          <li>Markets force F₁,₁ to the exact breakeven level — F₁,₁ = (1+r₂)²/(1+r₁) − 1</li>
+          <li>In a rising-rate environment: F₁,₁ &gt; r₂ &gt; r₁ (upward-sloping yield curve)</li>
+        </ul>
+      </div>
+      <div class="src-card">
+        <div class="src-card-hd">💱 FX Forward Arbitrage (Interest Rate Parity)</div>
+        <ul class="src-items">
+          <li>If forward FX rate is too favourable: convert domestic → foreign, invest, convert back → riskless profit</li>
+          <li>Higher domestic interest rate → domestic currency depreciates on a forward basis</li>
+          <li>The forward rate is the <em>only</em> rate consistent with no-arbitrage given the two risk-free rates and spot exchange rate</li>
+        </ul>
+      </div>
+      <div class="src-card">
+        <div class="src-card-hd">📊 Call Option Replication</div>
+        <ul class="src-items">
+          <li>Call option: right to BUY at exercise price X; value = Max(0, S₁ − X) at expiry</li>
+          <li>Replicating portfolio: buy h units of stock + sell call → same payoff in both up/down scenarios</li>
+          <li>Hedge ratio h = (c_up − c_down) / (S_up − S_down)</li>
+          <li>PV of replicating portfolio = risk-free payoff discounted at risk-free rate → solves for c₀</li>
+        </ul>
+      </div>
+      <div class="src-card">
+        <div class="src-card-hd">📉 Put Option Replication</div>
+        <ul class="src-items">
+          <li>Put option: right to SELL at exercise price X; value = Max(0, X − S₁) at expiry</li>
+          <li>Replicating portfolio: buy h units of stock + buy put → same payoff in both scenarios</li>
+          <li>Put increases in value when stock falls (opposite to call)</li>
+          <li>Higher put payoff in the down scenario → higher put option price vs call under same parameters</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Key Formulas Summary Table -->
+    <div class="s-header">
+      <div class="s-icon">📋</div>
+      <h2><span>Master Reference</span>All Key Formulas at a Glance</h2>
+    </div>
+    <table class="cmp-table">
+      <thead><tr><th>Instrument / Concept</th><th>Formula</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Discount bond price</td><td>PV = FV / (1+r)ᵗ</td><td>r = periodic rate; t = periods to maturity</td></tr>
+        <tr><td>Coupon bond price</td><td>PV = Σ PMTᵢ/(1+r)ⁱ + FV/(1+r)ᴺ</td><td>Use semiannual r and N for semiannual bonds</td></tr>
+        <tr><td>Perpetual bond / Preferred stock</td><td>PV = PMT / r</td><td>Valid only when r &gt; 0</td></tr>
+        <tr><td>Annuity payment</td><td>A = r·PV / [1−(1+r)⁻ᵗ]</td><td>Each payment includes interest + principal repayment</td></tr>
+        <tr><td>Constant dividend stock</td><td>PV = D / r</td><td>Identical to perpetuity formula</td></tr>
+        <tr><td>Gordon Growth Model</td><td>PV = Dₜ₊₁ / (r−g)</td><td>r &gt; g required; use NEXT period dividend</td></tr>
+        <tr><td>Two-stage dividend model</td><td>PV = Σᵢ₌₁ⁿ [Dₜ(1+gₛ)ⁱ/(1+r)ⁱ] + E(Sₙ)/(1+r)ⁿ</td><td>Terminal value: E(Sₙ) = Dₙ₊₁/(r−gₗ)</td></tr>
+        <tr><td>Implied return — discount bond</td><td>r = (FV/PV)^(1/t) − 1</td><td>Same as geometric mean of price relative</td></tr>
+        <tr><td>Equity implied return</td><td>r = Dₜ₊₁/PVₜ + g</td><td>Dividend yield + constant growth rate</td></tr>
+        <tr><td>Equity implied growth</td><td>g = r − Dₜ₊₁/PVₜ</td><td>Required return minus dividend yield</td></tr>
+        <tr><td>Forward P/E</td><td>PV/Eₜ₊₁ = Payout ratio / (r−g)</td><td>Higher g or lower r → higher P/E</td></tr>
+        <tr><td>Implied forward rate</td><td>F₁,₁ = (1+r₂)²/(1+r₁) − 1</td><td>Breakeven 1-year rate starting in 1 year</td></tr>
+        <tr><td>Forward FX (continuous)</td><td>F₀ = S₀ × e^(r_d − r_f)T</td><td>Higher r_d → domestic currency forward depreciation</td></tr>
+      </tbody>
+    </table>
+
+    <hr class="s-divider">
+
+    <!-- Common Exam Pitfalls -->
+    <div class="s-header">
+      <div class="s-icon">⚡</div>
+      <h2><span>Common Pitfalls</span>Exam Traps to Avoid</h2>
+    </div>
+    <div class="src-grid">
+      <div class="src-card"><div class="src-card-hd">❌ Semiannual Bond Compounding</div><ul class="src-items"><li>Always halve the annual coupon AND the annual YTM for semiannual bonds</li><li>Double the number of periods (20-year semiannual = 40 periods)</li><li>Using 20 annual periods with semiannual rate gives a wrong (lower) PV</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ Gordon Growth: Use Next Dividend</div><ul class="src-items"><li>PV = Dₜ₊₁/(r−g) — use the NEXT expected dividend, not the most recent</li><li>If given Dₜ (last paid), multiply by (1+g) to get Dₜ₊₁</li><li>Using last dividend instead of next dividend understates PV</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ Forward Rate vs Spot Rate</div><ul class="src-items"><li>F₁,₁ is not the expected future spot rate — it is the breakeven rate implied by current spot rates</li><li>In a rising-rate environment, F₁,₁ &gt; r₂ &gt; r₁</li><li>If F₁,₁ ≠ breakeven, an arbitrage opportunity exists</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ YTM Reinvestment Assumption</div><ul class="src-items"><li>YTM assumes coupon cash flows are reinvested at the same YTM — often unrealistic</li><li>If reinvestment rates are lower than YTM, actual return earned is less than YTM</li><li>This assumption is a key limitation of YTM as a return measure</li></ul></div>
+    </div>
+
+    <div class="takeaway">
+      <h3>Core Mindset for TVM in Finance</h3>
+      <p>Every financial asset price is simply the <strong>present value of its expected future cash flows</strong> discounted at an appropriate risk-adjusted rate. The same TVM framework applies whether you're pricing a zero-coupon government bond, a dividend-growing stock, or a complex option — only the cash flow pattern and the discount rate change. <strong>Cash flow additivity</strong> ties everything together: identical future cash flows must have identical prices today, or a riskless arbitrage profit is available. Mastering the link between <em>price, cash flows, and discount rate</em> — and being able to solve for any one given the other two — is the single most tested skill in this reading.</p>
+    </div>
+
+  </div><!-- /.sum-body -->
+  </div><!-- /#sum-qm-2 -->
+
+
+  <!-- ══════════════════════════════════════
+       QM · READING 8 — HYPOTHESIS TESTING
+  ══════════════════════════════════════ -->
+  <div id="sum-qm-8" class="sum-chapter" style="display:none">
+  <div class="sum-hero">
+    <div class="sum-hero-label">2026 CFA® Program · Level I · QM Reading 8</div>
+    <h1>Hypothesis <em>Testing</em></h1>
+    <div class="sum-hero-tags">
+      <span class="sum-hero-tag">3 Learning Outcomes</span>
+      <span class="sum-hero-tag">6-Step Process</span>
+      <span class="sum-hero-tag">Type I &amp; II Errors</span>
+      <span class="sum-hero-tag">t / chi² / F Tests</span>
+      <span class="sum-hero-tag">Power of a Test</span>
+      <span class="sum-hero-tag">Parametric vs. Nonparametric</span>
+    </div>
+  </div>
+
+  <div class="sum-body">
+
+    <!-- Learning Outcomes -->
+    <div class="s-header">
+      <div class="s-icon">🎯</div>
+      <h2><span>Learning Outcomes</span>What You Need to Master</h2>
+    </div>
+    <div class="lo-list">
+      <div class="lo-item"><span class="lo-pill">LO 1</span><span class="lo-text">Explain hypothesis testing and its components, including <strong>statistical significance, Type I and Type II errors, and the power of a test</strong></span></div>
+      <div class="lo-item"><span class="lo-pill">LO 2</span><span class="lo-text">Construct hypothesis tests and determine their <strong>statistical significance, associated errors, and power</strong> given a significance level</span></div>
+      <div class="lo-item"><span class="lo-pill">LO 3</span><span class="lo-text">Compare and contrast <strong>parametric and nonparametric tests</strong> and describe situations where each is the more appropriate type of test</span></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Six-Step Process -->
+    <div class="s-header">
+      <div class="s-icon">⚙️</div>
+      <h2><span>Section 1 — LO 1</span>The Six-Step Hypothesis Testing Process</h2>
+    </div>
+    <div class="phases-table">
+      <div class="phase-row"><div class="phase-n">1</div><div class="phase-body"><div class="phase-title">State the Hypotheses</div><div class="phase-desc">State both H&#8320; (null) and H&#7491; (alternative) in terms of <strong>population parameters</strong>. H&#8320; is what we want to reject; H&#7491; is the "suspected" or "hoped for" condition. Both must be mutually exclusive and collectively exhaustive. H&#8320; always includes an equality sign (=, ≤, or ≥).</div><span class="phase-out">→ The alternative is typically what the analyst is trying to establish</span></div></div>
+      <div class="phase-row"><div class="phase-n">2</div><div class="phase-body"><div class="phase-title">Identify the Appropriate Test Statistic</div><div class="phase-desc">Choose the test statistic and its probability distribution based on what is being tested (mean, variance, correlation) and available information (known vs. unknown population variance). The distribution drives the critical values used in Step 4.</div><span class="phase-out">→ See the master reference table below</span></div></div>
+      <div class="phase-row"><div class="phase-n">3</div><div class="phase-body"><div class="phase-title">Specify the Level of Significance</div><div class="phase-desc">Choose α — the probability of a Type I error. Common values: 1%, 5%, 10%. Confidence level = 1 − α. A smaller α reduces Type I error probability but increases Type II error probability. The only way to reduce both simultaneously is to <strong>increase sample size n</strong>.</div><span class="phase-out">→ α = 5% corresponds to a 95% confidence level</span></div></div>
+      <div class="phase-row"><div class="phase-n">4</div><div class="phase-body"><div class="phase-title">State the Decision Rule</div><div class="phase-desc">Determine critical value(s) from α and the test distribution. Reject H&#8320; if the calculated statistic exceeds the critical value(s). P-value approach: reject H&#8320; if p-value &lt; α. The p-value is the smallest α at which H&#8320; can be rejected.</div><span class="phase-out">→ One-tailed: one critical value. Two-tailed: two critical values (±)</span></div></div>
+      <div class="phase-row"><div class="phase-n">5</div><div class="phase-body"><div class="phase-title">Collect Data and Calculate the Test Statistic</div><div class="phase-desc">Use sample data to compute the numerical value of the test statistic using the appropriate formula from Step 2.</div><span class="phase-out">→ Compared to critical values in Step 6</span></div></div>
+      <div class="phase-row"><div class="phase-n">6</div><div class="phase-body"><div class="phase-title">Make a Decision</div><div class="phase-desc">If calculated statistic falls in the rejection region → reject H&#8320; (statistically significant). Otherwise → <strong>fail to reject</strong> H&#8320;. Note: we never "accept" H&#8320;. A confidence interval approach also works: if the hypothesised value falls within the interval, fail to reject H&#8320;.</div><span class="phase-out">→ "Fail to reject" does not mean H&#8320; is proven true</span></div></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Errors and Power -->
+    <div class="s-header">
+      <div class="s-icon">⚠️</div>
+      <h2><span>Section 1 — LO 1</span>Type I &amp; II Errors and the Power of a Test</h2>
+    </div>
+    <div class="info-note gold" style="margin-bottom:16px"><strong>Key insight:</strong> Type I and Type II errors are mutually exclusive — you can only commit one per decision. Reducing one increases the other. The only way to reduce both simultaneously is to increase n.</div>
+    <table class="cmp-table">
+      <thead><tr><th>Decision</th><th>H&#8320; is True</th><th>H&#8320; is False</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Fail to reject H&#8320;</strong></td><td>Correct (probability = 1 − α)</td><td><strong>Type II error</strong> — False negative (probability = β)</td></tr>
+        <tr><td><strong>Reject H&#8320;</strong></td><td><strong>Type I error</strong> — False positive (probability = α)</td><td>Correct — <strong>Power of the test</strong> (probability = 1 − β)</td></tr>
+      </tbody>
+    </table>
+    <div class="kn-grid" style="margin-top:14px">
+      <div class="kn-box"><div class="kn-num" style="font-size:.9rem">α</div><div class="kn-label">Level of significance = P(Type I error) = P(reject true H&#8320;)</div></div>
+      <div class="kn-box"><div class="kn-num" style="font-size:.9rem">β</div><div class="kn-label">P(Type II error) = P(fail to reject false H&#8320;)</div></div>
+      <div class="kn-box"><div class="kn-num" style="font-size:.9rem">1 − α</div><div class="kn-label">Confidence level = P(correctly fail to reject true H&#8320;)</div></div>
+      <div class="kn-box"><div class="kn-num" style="font-size:.9rem">1 − β</div><div class="kn-label">Power of the test = P(correctly reject false H&#8320;)</div></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Master Test Statistic Table -->
+    <div class="s-header">
+      <div class="s-icon">📐</div>
+      <h2><span>Section 2 — LO 2</span>Test Statistics: Master Reference Table</h2>
+    </div>
+    <table class="cmp-table">
+      <thead><tr><th>What You're Testing</th><th>Formula</th><th>Distribution</th><th>df</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Single mean</strong> (σ unknown)</td><td>t = (X&#772; − μ&#8320;) / (s/√n)</td><td>t</td><td>n − 1</td></tr>
+        <tr><td><strong>Difference in means</strong> — independent, equal variance</td><td>t = (X&#772;&#8321; − X&#772;&#8322;) / √(sp²/n₁ + sp²/n₂); sp² pools both samples</td><td>t</td><td>n₁ + n₂ − 2</td></tr>
+        <tr><td><strong>Mean of differences</strong> — paired/dependent</td><td>t = (d&#772; − μd&#8320;) / sd&#772;</td><td>t</td><td>n − 1</td></tr>
+        <tr><td><strong>Single variance</strong></td><td>χ² = (n − 1)s² / σ&#8320;²</td><td>Chi-square</td><td>n − 1</td></tr>
+        <tr><td><strong>Equality of two variances</strong></td><td>F = s&#8321;² / s&#8322;² (larger variance in numerator)</td><td>F</td><td>n₁ − 1, n₂ − 1</td></tr>
+        <tr><td><strong>Correlation</strong></td><td>t = r√(n − 2) / √(1 − r²)</td><td>t</td><td>n − 2</td></tr>
+        <tr><td><strong>Independence (categorical)</strong></td><td>χ² = Σ(Oᵢⱼ − Eᵢⱼ)² / Eᵢⱼ</td><td>Chi-square</td><td>(r − 1)(c − 1)</td></tr>
+      </tbody>
+    </table>
+    <div class="info-note blue" style="margin-top:12px"><strong>Independent vs. Paired:</strong> If the two samples share a common element (same time periods, same companies) → use paired comparisons (mean of differences, df = n − 1). If unrelated → use difference in means with pooled variance (df = n₁ + n₂ − 2). Paired tests are more powerful because they eliminate variation unrelated to what is being tested.</div>
+
+    <hr class="s-divider">
+
+    <!-- Key Test Details -->
+    <div class="s-header">
+      <div class="s-icon">🔬</div>
+      <h2><span>Section 2 — LO 2</span>Key Tests in Detail</h2>
+    </div>
+    <div class="audit-list">
+      <div class="audit-item"><div class="audit-dot" style="background:#1a3a8f"></div><div><h4>t-Test for a Single Mean</h4><p>Assumptions: approximately normal population, unknown variance (the standard case in practice). Formula: t = (X&#772; − μ₀) / (s/√n), df = n − 1. Two-tailed: reject if |t| &gt; t_critical. Confidence interval alternative: reject H₀ if μ₀ falls outside X&#772; ± t_crit × (s/√n).</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#b98a1c"></div><div><h4>Chi-Square Test for Single Variance</h4><p>Assumptions: normally distributed population. Formula: χ² = (n−1)s² / σ₀², df = n − 1. Chi-square distribution is always positive and asymmetric. For left-tailed tests (H&#7491;: σ² &lt; σ₀²), reject H₀ if χ² falls to the left of the lower critical value (e.g., 13.09 for df = 23 at α = 5%).</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#b91c1c"></div><div><h4>F-Test for Equality of Two Variances</h4><p>Assumptions: two independent random samples from normally distributed populations. Place the larger sample variance in the numerator. F is always positive. Two-tailed: use α/2 critical values at each tail. Reject H₀ if F &gt; upper critical value or F &lt; lower critical value. Can also compute as the reciprocal and compare to the same boundaries.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#1a7a4a"></div><div><h4>One-Tailed vs. Two-Tailed Tests</h4><p>Two-tailed (≠): critical region split equally across both tails; absolute critical value is larger — harder to reject in any specific direction. One-tailed (&gt; or &lt;): entire rejection region in one tail; smaller absolute critical value — easier to reject in the hypothesised direction. One-tailed tests more strongly reflect the analyst's directional belief.</p></div></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Parametric vs Nonparametric -->
+    <div class="s-header">
+      <div class="s-icon">⚖️</div>
+      <h2><span>Section 3 — LO 3</span>Parametric vs. Nonparametric Tests</h2>
+    </div>
+    <table class="cmp-table">
+      <thead><tr><th>Feature</th><th>Parametric</th><th>Nonparametric</th></tr></thead>
+      <tbody>
+        <tr><td>Concerned with parameters?</td><td>Yes — tests about μ, σ², ρ</td><td>Not necessarily — may test ranks, signs, or randomness</td></tr>
+        <tr><td>Distributional assumptions</td><td>Specific (e.g., normality required)</td><td>Minimal or none</td></tr>
+        <tr><td>Data requirements</td><td>Interval/ratio scale</td><td>Works with ranked (ordinal) data too</td></tr>
+        <tr><td>Preferred when?</td><td>Assumptions satisfied; large enough sample</td><td>Assumptions violated, data ranked, outliers present, or hypothesis non-parametric</td></tr>
+        <tr><td>Statistical power</td><td>Higher when assumptions hold</td><td>Lower — uses less information from the data</td></tr>
+      </tbody>
+    </table>
+
+    <div class="filing-grid" style="margin-top:16px">
+      <div class="filing-card"><h3>📊 Wilcoxon Signed-Rank Test</h3><p>Nonparametric alternative to the t-test for a single mean and for paired comparisons. Works on ranked absolute differences. Use when the population is non-normal or the sample is small.</p></div>
+      <div class="filing-card"><h3>🔢 Mann–Whitney U Test</h3><p>Nonparametric alternative for testing the difference between two independent group means (also known as Wilcoxon rank sum test). Use when normality fails or samples are small and non-normal.</p></div>
+      <div class="filing-card"><h3>➕ Sign Test</h3><p>Nonparametric paired comparisons alternative. Uses only the sign (+/−) of differences, not their magnitude. Simplest nonparametric test but the lowest power of the three.</p></div>
+      <div class="filing-card"><h3>🔀 Runs Test</h3><p>Tests whether a data series is random. Used to test the random walk hypothesis for stock prices — whether past price changes predict future changes. Purely nonparametric (no parameter involved).</p></div>
+    </div>
+    <div class="info-note gold" style="margin-top:16px"><strong>Four situations calling for nonparametric tests:</strong> (1) Data don't meet distributional assumptions; (2) Outliers distort parametric statistics; (3) Data given in ranks or ordinal scale; (4) Hypothesis doesn't concern a parameter (e.g., testing randomness). When parametric assumptions hold, parametric tests are preferred because they have greater power.</div>
+
+    <hr class="s-divider">
+
+    <!-- Exam Pitfalls -->
+    <div class="s-header">
+      <div class="s-icon">⚡</div>
+      <h2><span>Common Pitfalls</span>Exam Traps to Avoid</h2>
+    </div>
+    <div class="src-grid">
+      <div class="src-card"><div class="src-card-hd">❌ Null Hypothesis Direction</div><ul class="src-items"><li>H₀ must always contain an equality sign (=, ≤, or ≥)</li><li>The "suspected" condition goes in H&#7491;, not H₀</li><li>A "less than" alternative → left-tailed test with H₀: μ ≥ value</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ Error Trade-Off Direction</div><ul class="src-items"><li>Smaller α → fewer Type I errors but more Type II errors</li><li>Larger α → more Type I errors but fewer Type II errors</li><li>Only increasing n reduces both error types simultaneously</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ One-Tailed Critical Values</div><ul class="src-items"><li>One-tailed tests have SMALLER absolute critical values than two-tailed at the same α</li><li>Two-tailed at 5%: ±1.984; one-tailed at 5%: 1.679 (large df)</li><li>One-tailed is easier to reject H₀ in the hypothesised direction</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ Independent vs. Paired Samples</div><ul class="src-items"><li>Same companies/periods → dependent → use paired test (df = n−1)</li><li>Unrelated samples → independent → use pooled variance t-test (df = n₁+n₂−2)</li><li>Paired comparisons are more powerful than independent sample tests</li></ul></div>
+    </div>
+
+    <div class="takeaway">
+      <h3>Core Mindset for Hypothesis Testing</h3>
+      <p>Hypothesis testing is the bridge between data and decisions. The <strong>six-step process</strong> is universal — apply it consistently to any test and it will never lead you astray. The two error types reflect an unavoidable trade-off: reducing a false positive always increases the risk of a false negative. <strong>Power</strong> — catching a real effect when it exists — is the goal, and it rises with sample size, effect magnitude, and a higher α. Match your test statistic to the question: <strong>t for means</strong>, <strong>chi-square for a single variance</strong>, <strong>F for comparing two variances</strong>. And when the parametric assumptions break down — small samples, ranked data, non-normal populations, outliers — don't force it: use <strong>nonparametric alternatives</strong> designed for exactly those situations.</p>
+    </div>
+
+  </div><!-- /.sum-body -->
+  </div><!-- /#sum-qm-8 -->
+
+
   </div><!-- /#sum-content -->
 </div><!-- /.summary-wrap -->
 </div><!-- /#tab-summaries -->
@@ -1361,14 +2040,18 @@ function selectSummaryTopic(topicId) {
   sel.disabled = false;
   const topic = TOPICS.find(t => t.id === topicId);
   if (!topic) return;
+
+  // Chapters that have a written summary
+  const summaryReady = new Set(['fsa-1', 'qm-1', 'qm-2']);
+
   topic.chapters.forEach(ch => {
     const opt = document.createElement('option');
     opt.value = ch.id;
-    if (!ch.available) {
+    if (summaryReady.has(ch.id)) {
+      opt.textContent = ch.sub + '  ' + ch.label + '  ✓';
+    } else {
       opt.disabled = true;
       opt.textContent = ch.sub + '  ' + ch.label + '  (Coming Soon)';
-    } else {
-      opt.textContent = ch.sub + '  ' + ch.label;
     }
     sel.appendChild(opt);
   });
@@ -1382,12 +2065,27 @@ function loadSummary(chapterId) {
     content.style.display = 'none';
     return;
   }
-  // Only fsa-1 (Reading 1) has content for now
-  if (chapterId === 'ch1' || chapterId === 'fsa-1') {
+
+  // Map of chapter IDs that have summary content available
+  const summaryMap = {
+    'fsa-1': 'sum-fsa-1',
+    'qm-1':  'sum-qm-1',
+    'qm-2':  'sum-qm-2',
+    'qm-8':  'sum-qm-8',
+  };
+
+  const targetId = summaryMap[chapterId];
+  if (targetId) {
+    // Hide all chapter summary divs
+    document.querySelectorAll('.sum-chapter').forEach(el => el.style.display = 'none');
+    // Show the right one
+    document.getElementById(targetId).style.display = '';
     empty.style.display = 'none';
     content.style.display = '';
     content.scrollIntoView({ behavior: 'smooth', block: 'start' });
   } else {
+    // No summary yet for this chapter
+    document.querySelectorAll('.sum-chapter').forEach(el => el.style.display = 'none');
     empty.style.display = '';
     content.style.display = 'none';
   }
