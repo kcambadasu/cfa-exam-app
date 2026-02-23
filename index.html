@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CFA Level I – Practice Hub</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
 <style>
+
 :root {
   --navy:#0f1e3c; --navy-mid:#1a2f5a; --navy-soft:#243a6b; --navy-glow:#1e3a78;
   --gold:#c9a84c; --gold-light:#e8c97a; --gold-pale:#f7f0dc; --gold-dim:#a07c30;
@@ -372,9 +374,35 @@ footer{
 .anim-4{animation:fadeUp .6s .3s ease both}
 .anim-5{animation:fadeUp .6s .4s ease both}
 .anim-6{animation:fadeUp .6s .5s ease both}
+
+
+/* ── EXAM PANEL ── */
+#examPanel {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  overflow-y: auto;
+  background: #f3f4f6;
+}
+#examPanel.active { display: block; }
+#homePanel.hidden { display: none; }
+
+/* Exam specific styles from original */
+.eliminated { opacity: 0.35; text-decoration: line-through; }
+.gradient-bg { background: linear-gradient(135deg, #064E3B 0%, #10B981 100%); }
+.gradient-bg-2 { background: linear-gradient(135deg, #10B981 0%, #34D399 100%); }
+.card-shadow { box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+.option-card { transition: all 0.2s ease; }
+.option-card:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
 </style>
 </head>
 <body>
+
+<!-- ════════════════════════════════
+     HOME PANEL
+════════════════════════════════ -->
+<div id="homePanel">
 
 <!-- ── HEADER ── -->
 <header>
@@ -387,7 +415,6 @@ footer{
   </div>
   <nav class="header-nav">
     <a href="#" class="nav-link active">Home</a>
-    <a href="finance-practice-exam-fsa-final.html" class="nav-link">Exam</a>
   </nav>
 </header>
 
@@ -403,7 +430,11 @@ footer{
       </div>
       <h2>Master <em>CFA</em><br>Level I</h2>
       <p class="hero-desc">A structured practice environment for CFA Level I candidates. Work through every topic across the full curriculum — chapter by chapter or all at once — with practice questions, concept summaries, and live score tracking.</p>
-      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num">100</div>
+          <div class="hero-stat-label">Questions Available</div>
+        </div>
         <div>
           <div class="hero-stat-num">10</div>
           <div class="hero-stat-label">Chapters Covered</div>
@@ -413,7 +444,8 @@ footer{
           <div class="hero-stat-label">Chapter Active</div>
         </div>
       </div>
-    </div></div>
+    </div>
+  </div>
 </section>
 <div class="wave"></div>
 
@@ -439,22 +471,22 @@ footer{
       <div class="how-item">
         <div class="how-step">3</div>
         <div class="how-icon">📝</div>
-        <div class="how-item-text"><strong>Answer, skip, or come back</strong><p>Select an answer to lock it in. Skip freely and return before submitting. Explanations reveal on every question after submission.</p></div>
+        <div class="how-item-text"><strong>Answer, skip, or mark for review</strong><p>Select an answer and submit. Mark tricky questions to revisit. Navigate freely before finishing.</p></div>
       </div>
       <div class="how-item">
         <div class="how-step">4</div>
         <div class="how-icon">📊</div>
-        <div class="how-item-text"><strong>Track your score live</strong><p>A sidebar shows running score, correct/wrong counts, and a colour-coded question map as you go.</p></div>
+        <div class="how-item-text"><strong>Get detailed results</strong><p>Full score breakdown by difficulty, chapter, and topic — plus explanations for every question after submission.</p></div>
       </div>
       <div class="how-item">
         <div class="how-step">5</div>
         <div class="how-icon">📖</div>
-        <div class="how-item-text"><strong>Review chapter summaries</strong><p>Switch to the Summary tab anytime — learning outcomes, frameworks, tables, and key thresholds in one concise view.</p></div>
+        <div class="how-item-text"><strong>Return anytime</strong><p>Click End Test at any point to see your results so far, then come back to the home page to start a new session.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- START EXAM -->
+  <!-- CONFIGURE SESSION -->
   <section class="start-section anim-4">
     <div class="section-eyebrow"><div class="eyebrow-line"></div><span>Begin</span></div>
     <h2 class="section-title">Configure Your Session</h2>
@@ -478,7 +510,6 @@ footer{
             </select>
           </div>
 
-          <!-- Options -->
           <div class="options-row">
             <div class="toggle-wrap" onclick="toggleShuffle()">
               <div class="toggle" id="shuffleToggle"></div>
@@ -489,16 +520,10 @@ footer{
             </div>
           </div>
 
-          <!-- CTA -->
-          <a href="#" class="btn-start" id="startBtn">
+          <a href="#" class="btn-start disabled" id="startBtn">
             <span>Start Practice Exam</span>
             <span class="btn-start-arrow">→</span>
           </a>
-          <div style="text-align:center;margin-top:10px">
-            <a href="finance-practice-exam-fsa-final.html" style="font-size:.75rem;color:var(--text-light);text-decoration:none">
-              Or open exam with default settings →
-            </a>
-          </div>
         </div>
       </div>
 
@@ -516,7 +541,6 @@ footer{
             <div class="info-row"><span class="info-row-label">Est. Time</span><span class="info-row-val" id="previewTime">—</span></div>
           </div>
         </div>
-
         <div class="info-box">
           <div class="info-box-header">
             <span>💡</span>
@@ -524,10 +548,10 @@ footer{
           </div>
           <div class="info-box-body">
             <ul class="tips-list">
-              <li>Read each question carefully — CFA questions often hinge on "most likely" or "least likely."</li>
-              <li>Use the Skip button for questions you're unsure about and return before submitting.</li>
-              <li>After submitting, review every explanation — not just the ones you got wrong.</li>
-              <li>Open the Chapter Summary tab side-by-side to reinforce concepts as you review.</li>
+              <li>CFA questions often hinge on "most likely" or "least likely" — read carefully.</li>
+              <li>Mark tricky questions to revisit them before finishing.</li>
+              <li>After submitting, review every explanation — not just wrong answers.</li>
+              <li>Use the difficulty badges to spot your weak areas in the results screen.</li>
             </ul>
           </div>
         </div>
@@ -538,14 +562,141 @@ footer{
 
 </main>
 
-<!-- ── FOOTER ── -->
 <footer>
   <div class="footer-logo">CFA Level I · Practice Hub</div>
   <div class="footer-note">For study purposes only · Not affiliated with CFA Institute</div>
 </footer>
 
+</div><!-- /#homePanel -->
+
+
+<!-- ════════════════════════════════
+     EXAM PANEL (React)
+════════════════════════════════ -->
+<div id="examPanel">
+  <div id="app"></div>
+
+  <!-- End Test fixed button -->
+  <button id="endTestBtn"
+    onclick="if(confirm('End the exam and go back to Home?')) window.goToHome();"
+    style="position:fixed;top:16px;right:16px;background:#dc2626;color:white;border:none;padding:9px 18px;border-radius:8px;font-weight:700;cursor:pointer;z-index:9999;box-shadow:0 4px 10px rgba(0,0,0,0.25);font-family:'DM Sans',sans-serif;font-size:.82rem;">
+    ✕ End Test
+  </button>
+</div>
+
+
+<!-- ════════════════════════════════
+     SCRIPTS
+════════════════════════════════ -->
+
+<!-- Embedded questions data -->
 <script>
-// ── Chapter data ──
+window.EMBEDDED_QUESTIONS = [
+  {"id":"q1","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Framework","difficulty":"Easy","question":"Which of the following is the first step in the financial statement analysis framework?","options":["Collect data","Process data","Articulate the purpose and context of the analysis"],"correctAnswer":"C","explanation":"The first step is to articulate the purpose and context of the analysis. Understanding the purpose is essential before any data collection or processing begins."},
+  {"id":"q2","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Framework","difficulty":"Easy","question":"Which output is most likely to result from the 'Process Data' phase of the financial statement analysis framework?","options":["Investment recommendation","Common-size financial statements","Statement of the purpose of analysis"],"correctAnswer":"B","explanation":"Processing data produces outputs such as adjusted financial statements, common-size statements, and ratios and graphs."},
+  {"id":"q3","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Framework","difficulty":"Easy","question":"During which phase of the financial statement analysis framework would an analyst most likely conduct company site visits?","options":["Process data","Collect data","Analyze/interpret the data"],"correctAnswer":"B","explanation":"Company site visits are a source of information used in the 'Collect Data' phase of the framework."},
+  {"id":"q4","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Framework","difficulty":"Easy","question":"An analyst is computing growth rates and preparing charts from financial data. This activity is most consistent with which phase?","options":["Collect data","Process data","Analyze/interpret the data"],"correctAnswer":"B","explanation":"Computing ratios, growth rates, and preparing charts are activities that occur during the 'Process Data' phase."},
+  {"id":"q5","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Framework","difficulty":"Easy","question":"The output of the 'Develop and Communicate Conclusions' phase most likely includes:","options":["Completed questionnaires","Adjusted financial statements","A recommendation regarding whether to make an investment"],"correctAnswer":"C","explanation":"The output of this phase includes an analytical report and a recommendation regarding the purpose of the analysis."},
+  {"id":"q6","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Framework","difficulty":"Moderate","question":"A less experienced analyst is tempted to immediately start calculating ratios when facing a large amount of financial data. This approach is best described as:","options":["Efficient, as it quickly identifies key metrics","Advisable only when peer comparisons are needed","Generally inadvisable, as it may result in unnecessary or pointless efforts"],"correctAnswer":"C","explanation":"It is generally advisable to resist the temptation to immediately calculate ratios without considering what is relevant for the decision at hand."},
+  {"id":"q7","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Framework","difficulty":"Easy","question":"Comparing actual results to expected results is most closely associated with which phase of the financial statement analysis framework?","options":["Process data","Follow-up","Collect data"],"correctAnswer":"B","explanation":"The follow-up phase produces outputs such as comparison of actual to expected results and revised forecasts."},
+  {"id":"q8","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Framework","difficulty":"Moderate","question":"An equity analyst's report for external distribution would most likely include which of the following components?","options":["Internal control assessment","Summary and investment conclusion","List of specific questions answered by the analysis"],"correctAnswer":"B","explanation":"An equity analyst's report for external distribution typically includes a summary and investment conclusion, industry overview, financial model, valuation, and investment risks."},
+  {"id":"q9","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Framework","difficulty":"Moderate","question":"According to CFA Institute Standards of Practice, when communicating an investment recommendation, a member must:","options":["Limit disclosures to the most favorable information","Distinguish clearly between opinions and facts","Avoid disclosing limitations to the analysis"],"correctAnswer":"B","explanation":"Standard V(B) requires that members communicate the factors instrumental in making the investment recommendation and distinguish clearly between opinions and facts."},
+  {"id":"q10","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Framework","difficulty":"Easy","question":"An analyst adopts a top-down approach to financial analysis. Which correctly represents the order?","options":["Company analysis, then industry, then macroeconomic","Macroeconomic analysis, then industry, then company","Industry analysis, then company, then macroeconomic"],"correctAnswer":"B","explanation":"The top-down approach involves first gaining an understanding of the macroeconomic environment, then analyzing the industry, then the specific company."},
+  {"id":"q11","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Scope","difficulty":"Easy","question":"The primary purpose of financial statement analysis is best described as:","options":["Verifying the accuracy of financial statements","Evaluating past, current, and potential performance for economic decision making","Ensuring companies comply with accounting standards"],"correctAnswer":"B","explanation":"The role of financial statement analysis is to use financial reports to evaluate past, current, and potential performance and financial position for the purpose of making investment, credit, and other economic decisions."},
+  {"id":"q12","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Scope","difficulty":"Easy","question":"Which of the following is least likely to be a use of financial statement analysis?","options":["Assigning a debt rating to a bond issue","Evaluating whether to make a venture capital investment","Preparing a company's financial statements for regulatory filing"],"correctAnswer":"C","explanation":"Preparing financial statements is the role of the company's management, not financial statement analysts. Analysts use the statements; they do not prepare them."},
+  {"id":"q13","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Scope","difficulty":"Easy","question":"A debt investor conducting financial analysis is most likely to focus on:","options":["Per-share value of the company's equity","The company's ability to pay interest and repay principal","The company's dividend growth prospects"],"correctAnswer":"B","explanation":"A debt investor is primarily concerned with a company's ability to pay interest and repay the principal lent."},
+  {"id":"q14","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Scope","difficulty":"Easy","question":"An equity investor conducting financial analysis is most concerned with:","options":["The company's credit rating and debt covenants","The company's profitability and per-share value","The auditor's opinion on internal controls"],"correctAnswer":"B","explanation":"An equity investor is interested in a company's profitability and per-share value."},
+  {"id":"q15","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Scope","difficulty":"Easy","question":"A central focus of financial analysis is evaluating a company's ability to:","options":["Minimize tax obligations and regulatory disclosures","Earn a return on capital at least equal to the cost of that capital","Achieve zero leverage on its balance sheet"],"correctAnswer":"B","explanation":"A central focus of financial analysis is evaluating the company's ability to earn a return on capital at least equal to the cost of capital."},
+  {"id":"q16","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Scope","difficulty":"Easy","question":"Compared to external analysts, managers within a company:","options":["Rely exclusively on public financial statements","Have access to non-public financial information","Are required to follow stricter analytical frameworks"],"correctAnswer":"B","explanation":"Managers within a company do not exclusively rely on analysis of financial statements because they have access to non-public financial information."},
+  {"id":"q17","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Scope","difficulty":"Easy","question":"An analyst uses P/E ratios to value shares of a company. This is an example of:","options":["Assessing creditworthiness for loan extension","Using earnings in valuation","Evaluating internal control effectiveness"],"correctAnswer":"B","explanation":"Earnings are frequently used by analysts in valuation, for example by comparing a company's P/E ratio to peer companies."},
+  {"id":"q18","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Scope","difficulty":"Easy","question":"A credit analyst's assessment of a company's financial position is most likely to be used for:","options":["Determining an appropriate equity purchase price","Deciding whether to extend a loan and on what terms","Evaluating the performance of a subsidiary"],"correctAnswer":"B","explanation":"Credit analysts evaluate the creditworthiness of a company to decide whether and on what terms a debt investment should be made."},
+  {"id":"q19","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Scope","difficulty":"Easy","question":"Profitability is defined as:","options":["Cash receipts in excess of cash disbursements","The ability to earn a profit from delivering goods and services","The ratio of net income to total assets"],"correctAnswer":"B","explanation":"Profitability is defined as the ability to earn a profit from delivering goods and services."},
+  {"id":"q20","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Scope","difficulty":"Easy","question":"The ability to generate positive cash flows refers to:","options":["Maintaining a current ratio above 1.0","Cash receipts in excess of cash disbursements","Earnings per share exceeding analyst estimates"],"correctAnswer":"B","explanation":"The ability to generate positive cash flows refers to cash receipts in excess of cash disbursements."},
+  {"id":"q21","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Regulatory","difficulty":"Easy","question":"Regulatory authorities require publicly traded companies to prepare financial reports in accordance with:","options":["Internal guidelines set by management","Specified accounting standards and other securities laws and regulations","Recommendations from credit rating agencies"],"correctAnswer":"B","explanation":"Regulatory authorities require publicly traded issuers to prepare financial reports in accordance with specified accounting standards and other securities laws and regulations."},
+  {"id":"q22","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Regulatory","difficulty":"Moderate","question":"IOSCO has ordinary members representing securities regulators in more than how many jurisdictions?","options":["50 jurisdictions","75 jurisdictions","115 jurisdictions"],"correctAnswer":"C","explanation":"IOSCO members regulate more than 95 percent of the world's financial capital markets in more than 115 jurisdictions."},
+  {"id":"q23","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Regulatory","difficulty":"Moderate","question":"Which of the following is NOT one of IOSCO's three core objectives?","options":["Protecting investors","Ensuring that markets are fair, efficient, and transparent","Eliminating systemic risk"],"correctAnswer":"C","explanation":"IOSCO's core objectives are to protect investors, ensure markets are fair/efficient/transparent, and reduce (not eliminate) systemic risk."},
+  {"id":"q24","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Regulatory","difficulty":"Moderate","question":"IOSCO's principle for issuers states that accounting standards should be:","options":["Based solely on each country's cultural and economic norms","Of a high and internationally acceptable quality","Established by national regulators without international input"],"correctAnswer":"B","explanation":"An IOSCO principle states that accounting standards used by issuers to prepare financial statements should be of a high and internationally acceptable quality."},
+  {"id":"q25","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Regulatory","difficulty":"Moderate","question":"The US Securities and Exchange Commission (SEC) was created as a result of:","options":["The Sarbanes-Oxley Act of 2002","The Securities Exchange Act of 1934","The Securities Act of 1933"],"correctAnswer":"B","explanation":"The Securities Exchange Act of 1934 created the SEC and gave it authority over all aspects of the securities industry."},
+  {"id":"q26","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Regulatory","difficulty":"Moderate","question":"The Securities Act of 1933 primarily:","options":["Created the SEC and gave it authority over the securities industry","Required the creation of the Public Company Accounting Oversight Board","Requires initial registration of all public issuances of securities"],"correctAnswer":"C","explanation":"The Securities Act of 1933 specifies financial information investors must receive when securities are sold and requires initial registration of all public issuances of securities."},
+  {"id":"q27","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Regulatory","difficulty":"Moderate","question":"The Sarbanes-Oxley Act of 2002 created which oversight body?","options":["Financial Accounting Standards Board (FASB)","Public Company Accounting Oversight Board (PCAOB)","International Auditing and Assurance Standards Board (IAASB)"],"correctAnswer":"B","explanation":"The Sarbanes-Oxley Act of 2002 created the Public Company Accounting Oversight Board (PCAOB) to oversee auditors."},
+  {"id":"q28","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Regulatory","difficulty":"Easy","question":"Under the Sarbanes-Oxley Act, executive management is required to:","options":["Conduct their own independent audit","Certify that financial reports fairly present the company's condition","Personally certify that no errors exist in the financial statements"],"correctAnswer":"B","explanation":"The Sarbanes-Oxley Act requires executive management to certify that the company's financial reports fairly present the company's condition."},
+  {"id":"q29","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"SEC Filings","difficulty":"Easy","question":"A US domestic registrant is required to file which annual form with the SEC?","options":["Form 20-F","Form 40-F","Form 10-K"],"correctAnswer":"C","explanation":"Form 10-K is required for US registrants, Form 40-F is for certain Canadian registrants, and Form 20-F is for all other non-US registrants."},
+  {"id":"q30","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"SEC Filings","difficulty":"Easy","question":"Form 20-F must be filed with the SEC by:","options":["US domestic registrants","Certain Canadian registrants","Non-US registrants other than certain Canadian registrants"],"correctAnswer":"C","explanation":"Form 20-F is required for all non-US registrants except certain Canadian registrants, who file Form 40-F."},
+  {"id":"q31","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"SEC Filings","difficulty":"Easy","question":"Which SEC form is used to report material corporate events such as acquisitions on a current basis?","options":["Form 10-Q","Form 8-K","Form DEF-14A"],"correctAnswer":"B","explanation":"Form 8-K is the 'current report' companies must file to announce major events such as acquisitions or changes in management."},
+  {"id":"q32","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"SEC Filings","difficulty":"Moderate","question":"A proxy statement filed as Form DEF-14A most likely contains information about:","options":["Quarterly unaudited financial statements","Details of security ownership by management and executive compensation","Registration of initial public offerings"],"correctAnswer":"B","explanation":"Proxy statements typically include proposals requiring shareholder votes, details of security ownership by management, biographical information on directors, and disclosure of executive compensation."},
+  {"id":"q33","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"SEC Filings","difficulty":"Easy","question":"US companies are required to file interim financial reports on which form?","options":["Form 10-K","Form 10-Q","Form 8-K"],"correctAnswer":"B","explanation":"Form 10-Q is required quarterly for US companies to submit interim period financial information, including unaudited financial statements and MD&A."},
+  {"id":"q34","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"SEC Filings","difficulty":"Moderate","question":"Forms 3, 4, and 5 filed with the SEC are primarily used to:","options":["Report annual earnings results","Report beneficial ownership of securities by directors and officers","Announce changes in accounting policies"],"correctAnswer":"B","explanation":"Forms 3, 4, and 5 are required to report beneficial ownership of securities by directors, officers, and beneficial owners of greater than 10% of a class of registered equity securities."},
+  {"id":"q35","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"SEC Filings","difficulty":"Easy","question":"An annual report to shareholders prepared by most companies is:","options":["Required by the SEC and must contain audited financial statements","Not a requirement of the SEC and is often a polished marketing document","Required and must follow the same format as Form 10-K"],"correctAnswer":"B","explanation":"The annual report to shareholders is not a requirement of the SEC and is often a highly polished marketing document. In contrast, Form 10-K is a more legal type of document."},
+  {"id":"q36","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Regulatory","difficulty":"Easy","question":"In the European Union, consolidated accounts of EU-listed companies have been required to use IFRS since:","options":["1997","2001","2005"],"correctAnswer":"C","explanation":"The EU agreed that from 2005, consolidated accounts of EU-listed companies would use International Financial Reporting Standards."},
+  {"id":"q37","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Regulatory","difficulty":"Moderate","question":"The European Securities and Market Authority (ESMA) is best described as:","options":["An EU regulatory body with exclusive power over individual member states","An EU cross-border supervisor established to coordinate supervision of the EU market","The body responsible for setting accounting standards for all EU listed companies"],"correctAnswer":"B","explanation":"ESMA is an EU cross-border supervisor established to coordinate supervision of the EU market, though regulation still rests with individual member states."},
+  {"id":"q38","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Notes","difficulty":"Easy","question":"The notes accompanying financial statements are required primarily because they:","options":["Allow analysts to bypass the primary financial statements","Provide information essential to understanding the primary financial statements","Replace the need for management commentary"],"correctAnswer":"B","explanation":"The notes provide information that is essential to understanding the information provided in the primary financial statements."},
+  {"id":"q39","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Notes","difficulty":"Easy","question":"Which of the following is most likely found in the notes to financial statements?","options":["The auditor's opinion on the fairness of financial statements","Management's forward-looking discussion of capital expenditure plans","Accounting policies, methods, and estimates used in preparing the statements"],"correctAnswer":"C","explanation":"The notes disclose the accounting policies, methods, and estimates used to prepare the financial statements."},
+  {"id":"q40","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Segment Reporting","difficulty":"Moderate","question":"An operating segment must be disclosed separately if it constitutes what minimum percentage of combined operating segments' revenue, assets, or profit?","options":["5 percent","10 percent","15 percent"],"correctAnswer":"B","explanation":"A company must disclose separate information about any operating segment that constitutes 10 percent or more of the combined operating segments' revenue, assets, or profit."},
+  {"id":"q41","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Segment Reporting","difficulty":"Moderate","question":"The combined revenue from external customers for all reportable segments must represent at least what percentage of total company revenue?","options":["50 percent","65 percent","75 percent"],"correctAnswer":"C","explanation":"If the combined revenue from external customers for all reportable segments is less than 75 percent of total company revenue, the company must identify additional reportable segments."},
+  {"id":"q42","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Segment Reporting","difficulty":"Moderate","question":"Which of the following must be disclosed for each reportable operating segment?","options":["Names of the segment's top 10 customers","Revenue distinguishing between external customers and inter-segment revenue","Detailed employee headcount by segment"],"correctAnswer":"B","explanation":"For each reportable segment, companies must disclose revenue, distinguishing between revenue to external customers and revenue from other segments."},
+  {"id":"q43","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Segment Reporting","difficulty":"Moderate","question":"Under segment reporting rules, a company must disclose if any single customer represents:","options":["5 percent or more of total revenues","10 percent or more of total revenues","15 percent or more of total revenues"],"correctAnswer":"B","explanation":"If any single customer represents 10 percent or more of the company's total revenues, the company must disclose that fact."},
+  {"id":"q44","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"MD&A","difficulty":"Easy","question":"Management commentary, or MD&A, is best described as:","options":["Audited information that provides the basis for the audit opinion","Typically unaudited discussion by management about the company's operations and prospects","A technical analysis of financial ratios required by accounting standards"],"correctAnswer":"B","explanation":"The discussion by management is one of the most useful parts of a company's annual report; however, other than excerpts from the financial statements, information in the management commentary is typically unaudited."},
+  {"id":"q45","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"MD&A","difficulty":"Moderate","question":"The IASB's IFRS Practice Statement identifies which of the following as one of five content elements of management commentary?","options":["Segment-by-segment audit findings","Management's objectives and strategies","Detailed tax reconciliation tables"],"correctAnswer":"B","explanation":"The IASB framework identifies five content elements including: nature of the business, management's objectives and strategies, significant resources/risks/relationships, results of operations, and critical performance measures."},
+  {"id":"q46","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"MD&A","difficulty":"Moderate","question":"In the US, the SEC requires the MD&A to highlight:","options":["Favorable trends only, to maintain investor confidence","Any favorable or unfavorable trends and significant events affecting liquidity and operations","Only events that have already materially affected the company's financial results"],"correctAnswer":"B","explanation":"The SEC requires the MD&A to highlight any favorable or unfavorable trends and identify significant events and uncertainties affecting the company's liquidity, capital resources, and results of operations."},
+  {"id":"q47","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Audit","difficulty":"Easy","question":"An unqualified audit opinion is also referred to as:","options":["An adverse opinion","A disclaimer of opinion","A clean or unmodified opinion"],"correctAnswer":"C","explanation":"An unqualified audit opinion states that the financial statements give a 'true and fair view' or are 'fairly presented,' and is also referred to as an 'unmodified' or 'clean' opinion."},
+  {"id":"q48","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Audit","difficulty":"Moderate","question":"An adverse audit opinion is issued when:","options":["The auditor has a minor scope limitation in testing","The financial statements materially depart from accounting standards and are not fairly presented","The auditor is unable to issue an opinion due to scope limitations"],"correctAnswer":"B","explanation":"An adverse audit opinion is issued when an auditor determines that the financial statements materially depart from accounting standards and are not fairly presented."},
+  {"id":"q49","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Audit","difficulty":"Moderate","question":"A disclaimer of opinion in an audit report occurs when:","options":["The auditor finds a minor exception to accounting standards","For some reason such as a scope limitation, auditors are unable to issue an opinion","The financial statements depart materially from accounting standards"],"correctAnswer":"B","explanation":"A disclaimer of opinion occurs when, for some reason such as a scope limitation, the auditors are unable to issue an opinion."},
+  {"id":"q50","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Audit","difficulty":"Moderate","question":"International Standards on Auditing (ISAs) have been developed by:","options":["The International Accounting Standards Board (IASB)","The International Auditing and Assurance Standards Board (IAASB)","The Public Company Accounting Oversight Board (PCAOB)"],"correctAnswer":"B","explanation":"International Standards on Auditing (ISAs) have been developed by the IAASB, which emerged from the International Federation of Accountants."},
+  {"id":"q51","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Audit","difficulty":"Easy","question":"An independent audit provides what level of assurance about the accuracy of financial statements?","options":["Absolute assurance that financial statements are error-free","Reasonable assurance that financial statements are fairly presented","Limited assurance that statements comply with local regulations"],"correctAnswer":"B","explanation":"Because audits use sampling techniques and financial statements may be based on estimates, auditors can only provide reasonable assurance—not absolute assurance—that financial statements are fairly presented."},
+  {"id":"q52","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Audit","difficulty":"Difficult","question":"Key Audit Matters are best described as:","options":["Issues the auditor considers most important, such as those with higher risk of misstatement or significant management judgment","Automatically the most important factors for analysts and investors","Minor issues noted during the audit that do not affect the opinion"],"correctAnswer":"A","explanation":"Key Audit Matters include issues with higher risk of misstatement, involving significant management judgment, or reporting the effects of significant transactions. However, they are not necessarily the most important factors for analysts and investors."},
+  {"id":"q53","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Audit","difficulty":"Moderate","question":"Under the Sarbanes-Oxley Act, management of publicly traded US companies is required to:","options":["Conduct their own independent audit","Explicitly accept responsibility for the effectiveness of internal control","Personally certify that no errors exist in the financial statements"],"correctAnswer":"B","explanation":"Management of publicly traded US companies is required to explicitly accept responsibility for the effectiveness of internal control and provide a report on internal control."},
+  {"id":"q54","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Audit","difficulty":"Easy","question":"A financial analyst should treat audited financial statements with:","options":["Absolute trust, as the audit provides a guarantee of accuracy","A degree of healthy skepticism, even after reviewing audit opinions","No skepticism, because the PCAOB standards eliminate the risk of errors"],"correctAnswer":"B","explanation":"Although audit reports and attestations provide some assurances to analysts, they are not infallible. The analyst must always use a degree of healthy skepticism when analyzing financial statements."},
+  {"id":"q55","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"IFRS vs GAAP","difficulty":"Moderate","question":"Which is a key difference between IFRS and US GAAP regarding interest paid on the cash flow statement?","options":["Under US GAAP, interest paid can be classified as either financing or operating activities","Under IFRS, interest paid must be classified as operating activities only","Under IFRS, interest paid may be classified as either financing or operating activities"],"correctAnswer":"C","explanation":"Under IFRS, interest paid may be classified as Cash Flows from Financing Activities or Cash Flows from Operating Activities, while under US GAAP it is classified as Cash Flows from Operating Activities only."},
+  {"id":"q56","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"IFRS vs GAAP","difficulty":"Moderate","question":"Which inventory valuation method is permitted under US GAAP but not under IFRS?","options":["First In, First Out (FIFO)","Last In, First Out (LIFO)","Weighted Average Method"],"correctAnswer":"B","explanation":"US GAAP permits FIFO, LIFO, and Weighted Average Method, while IFRS only permits FIFO and Weighted Average Method."},
+  {"id":"q57","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"IFRS vs GAAP","difficulty":"Moderate","question":"Under IFRS, development costs are:","options":["Always expensed as incurred","Capitalized only if certain conditions are satisfied","Capitalized in all circumstances"],"correctAnswer":"B","explanation":"Under IFRS, development costs are capitalized if certain conditions are satisfied, while under US GAAP they are treated as an expense."},
+  {"id":"q58","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"IFRS vs GAAP","difficulty":"Moderate","question":"The reversal of inventory write-downs is:","options":["Prohibited under both IFRS and US GAAP","Permissible under IFRS if specified conditions are met, but prohibited under US GAAP","Permissible under US GAAP but prohibited under IFRS"],"correctAnswer":"B","explanation":"Under IFRS, reversal of inventory write-downs is permissible if specified conditions are met. Under US GAAP, such reversals are prohibited."},
+  {"id":"q59","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"IFRS vs GAAP","difficulty":"Easy","question":"US GAAP is best described as a:","options":["Principles-based system of accounting standards","Rules-based system of accounting standards","Hybrid of rules and principles with equal emphasis on both"],"correctAnswer":"B","explanation":"US GAAP is generally described as rules-based, while IFRS is described as principles-based."},
+  {"id":"q60","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"IFRS vs GAAP","difficulty":"Moderate","question":"When analyzing two companies that use different reporting standards, an analyst should:","options":["Assume financial statements are comparable without adjustment","Maintain caution and be aware of areas where standards have not converged","Ignore differences since IASB and FASB have achieved full convergence"],"correctAnswer":"B","explanation":"An analyst must maintain caution in interpreting comparative financial measures produced under different accounting standards."},
+  {"id":"q61","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"IFRS vs GAAP","difficulty":"Moderate","question":"Reconciliation disclosures between IFRS and US GAAP:","options":["Are required for all cross-border filings","Are not required, making analyst adjustments challenging","Are only required for companies listed on US exchanges"],"correctAnswer":"B","explanation":"Because reconciliation disclosures between IFRS and US GAAP are not required, an analyst comparing two companies using different standards must be aware of areas where standards have not converged."},
+  {"id":"q62","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"IFRS vs GAAP","difficulty":"Easy","question":"New accounting standards issued jointly by IASB and FASB have been:","options":["Identical in treatment for all major accounting areas","Mostly or entirely converged, resulting in increasing uniformity over time","Effective only after approval by national governments"],"correctAnswer":"B","explanation":"New accounting standards have been mostly or entirely converged (e.g., revenue recognition, leasing, credit losses), resulting in increasing uniformity over time."},
+  {"id":"q63","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"IFRS vs GAAP","difficulty":"Moderate","question":"Analysts need to monitor developments in financial reporting standards from:","options":["A preparer's perspective to ensure compliance","A user's perspective to understand how developments affect financial reports","An auditor's perspective to ensure standards are enforced"],"correctAnswer":"B","explanation":"An accountant monitors developments from a preparer's perspective; an analyst needs to monitor them from a user's perspective to know how developments will affect financial reports."},
+  {"id":"q64","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"IFRS vs GAAP","difficulty":"Moderate","question":"An example of a regulatory change that affected financial statements was the requirement to:","options":["Disclose inventory write-downs in the income statement","Include stock option expense in the income statement","Eliminate intercompany transactions in consolidated statements"],"correctAnswer":"B","explanation":"One regulatory change required companies to include a provision for expenses associated with the grant and vesting of employee stock options as an expense in the income statement."},
+  {"id":"q65","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"IFRS vs GAAP","difficulty":"Moderate","question":"CFA Institute's involvement in financial reporting standard setting is best characterized as:","options":["Direct authority to set accounting standards","Active support for improvements through advocacy and liaison committees","Enforcement of compliance with IFRS standards globally"],"correctAnswer":"B","explanation":"CFA Institute is active in supporting improvements to financial reporting. Volunteer members serve on liaison committees that meet to make recommendations to the IASB and FASB."},
+  {"id":"q66","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"IFRS vs GAAP","difficulty":"Easy","question":"When a new accounting standard is proposed, stakeholders can provide input by:","options":["Voting directly on proposed changes at shareholder meetings","Drafting comment letters and position papers in response to exposure drafts","Lobbying government officials to reject or approve standards"],"correctAnswer":"B","explanation":"When a new standard is proposed, an exposure draft is made available and users of financial statements can draft comment letters and position papers."},
+  {"id":"q67","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"IFRS vs GAAP","difficulty":"Easy","question":"CFA Institute's position paper on financial reporting emphasized the importance of:","options":["Simplifying disclosures to reduce information volume","Timeliness, transparency, comparability, and consistency in financial reporting","Shifting financial reporting to a cash-based system"],"correctAnswer":"B","explanation":"CFA Institute's position paper states that investors require timeliness, transparency, comparability, and consistency in financial reporting."},
+  {"id":"q68","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Information Sources","difficulty":"Easy","question":"Earnings calls hosted by company management are primarily intended for which audience?","options":["Internal employees and human resources departments","Analysts, investors, and members of the media","Regulatory authorities and auditors"],"correctAnswer":"B","explanation":"The primary audience for earnings calls are analysts, investors, and members of the media."},
+  {"id":"q69","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Information Sources","difficulty":"Moderate","question":"Which of the following is best described as an issuer source of information other than regulatory filings?","options":["Industry whitepapers from a consultancy","Analyst reports from credit rating agencies","Investor day presentations by management"],"correctAnswer":"C","explanation":"Investor day presentations are issuer sources of information (other than regulatory filings). Industry whitepapers and credit rating agency reports are third-party sources."},
+  {"id":"q70","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Information Sources","difficulty":"Moderate","question":"Proprietary primary research used by analysts most likely includes:","options":["Government-released economic indicators","Surveys and product comparisons commissioned directly by the analyst","Free industry whitepapers accessed via internet search engines"],"correctAnswer":"B","explanation":"Proprietary primary research includes surveys, conversations, product comparisons, and other studies commissioned by the analyst or conducted directly."},
+  {"id":"q71","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Information Sources","difficulty":"Moderate","question":"Which of the following is an example of a proprietary third-party source of information?","options":["A company's investor relations website","Reports and data from platforms such as Bloomberg or FactSet","A government statistical agency's monthly retail sales data"],"correctAnswer":"B","explanation":"Proprietary third-party sources include analyst reports, credit rating agency communications, and reports/data from platforms such as Bloomberg, Wind, and FactSet."},
+  {"id":"q72","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Information Sources","difficulty":"Easy","question":"Social media is most useful to financial analysts as a gauge of:","options":["A company's compliance with accounting standards","Customer sentiment for a company's products","The accuracy of a company's disclosed financial results"],"correctAnswer":"B","explanation":"Social media may be a useful gauge of customer sentiment for a company's products."},
+  {"id":"q73","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Information Sources","difficulty":"Moderate","question":"When analysts speak with company management or investor relations personnel, this is best categorized as:","options":["A public third-party source of information","A proprietary third-party source of information","An issuer source of information"],"correctAnswer":"C","explanation":"Speaking with management, investor relations, or other company personnel is classified as an issuer source of information."},
+  {"id":"q74","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Information Sources","difficulty":"Moderate","question":"An analyst visiting a company's stores to gain direct product experience is using which type of source?","options":["Proprietary third-party source","Issuer source via direct company or product experience","Public third-party source"],"correctAnswer":"B","explanation":"Company website or properties that the analyst can visit as a customer or an investor are issuer sources. Analysts typically seek direct experience with products."},
+  {"id":"q75","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Information Sources","difficulty":"Easy","question":"Information on the economy and industry used in financial analysis is most useful for:","options":["Verifying the mathematical accuracy of financial ratios","Putting a company's financial performance in perspective and assessing its future","Replacing the need to read the company's own financial disclosures"],"correctAnswer":"B","explanation":"Information from sources apart from the company is crucial to an analyst's effectiveness, as it helps put the company's financial performance and position in perspective and assess its future."},
+  {"id":"q76","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Information Sources","difficulty":"Easy","question":"Press releases issued by companies are commonly distributed via:","options":["Only the SEC's EDGAR database","The company's investor relations website and third-party news sources","Encrypted channels accessible only to institutional investors"],"correctAnswer":"B","explanation":"Press releases are often distributed not only on issuers' websites but also on third-party news sources."},
+  {"id":"q77","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Information Sources","difficulty":"Moderate","question":"An analyst aware that management is biased toward their own perspective should:","options":["Avoid using management commentary entirely","Ask probing questions to gain further information and sharpen estimates","Report management to the relevant regulatory authorities"],"correctAnswer":"B","explanation":"Analysts must be aware that management is biased toward their perspective, and often need to ask questions to get the information they want, especially during earnings calls and investor events."},
+  {"id":"q78","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Notes","difficulty":"Moderate","question":"The flexibility in accounting choices is necessary because:","options":["It allows companies to manipulate financial statements to appear more profitable","Different policies, methods, and estimates can better reflect the unique economic environment of each business","It reduces the need for auditors to express opinions"],"correctAnswer":"B","explanation":"Flexibility in accounting choices is necessary because, ideally, a company will select those policies, methods, and estimates that are allowable and most relevant and that fairly reflect the unique economic environment of its business."},
+  {"id":"q79","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Notes","difficulty":"Moderate","question":"An analyst comparing two companies with different depreciation methods faces which primary challenge?","options":["Determining the market value of the companies' fixed assets","Reduced comparability of the companies' financial positions and performance","Inability to access the companies' financial statements"],"correctAnswer":"B","explanation":"Different accounting policies, methods, and estimates—such as different depreciation methods—reduce comparability across different companies' financial statements."},
+  {"id":"q80","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"MD&A","difficulty":"Moderate","question":"Off-balance-sheet obligations must be disclosed in which section of a regulatory filing?","options":["The audit report","The management commentary or MD&A","The proxy statement"],"correctAnswer":"B","explanation":"The SEC requires the MD&A to provide information about off-balance-sheet obligations and about contractual commitments, such as purchase obligations."},
+  {"id":"q81","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Regulatory","difficulty":"Moderate","question":"Which body oversees auditing standards for public companies in the United States?","options":["The American Institute of Certified Public Accountants (AICPA)","The Public Company Accounting Oversight Board (PCAOB)","The Financial Accounting Standards Board (FASB)"],"correctAnswer":"B","explanation":"With the enactment of the Sarbanes-Oxley Act of 2002, auditing standards for public companies are promulgated by the PCAOB."},
+  {"id":"q82","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"MD&A","difficulty":"Moderate","question":"The IASB's IFRS Practice Statement on Management Commentary provides:","options":["Mandatory requirements set forth in an accounting standard","Guidance rather than requirements, as it is a practice statement not a standard","Regulations that must be adopted by all IFRS-reporting jurisdictions"],"correctAnswer":"B","explanation":"The IASB's IFRS Practice Statement on Management Commentary provides guidance rather than sets forth requirements in a standard."},
+  {"id":"q83","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Notes","difficulty":"Moderate","question":"Sea Ltd.'s 2021 financial statements prepared on a consolidated basis means:","options":["Only Sea Ltd. parent company accounts are included","Financial records of Sea Ltd. and all its controlled subsidiaries are aggregated after eliminating intercompany items","Financial statements of only the two largest subsidiaries are included"],"correctAnswer":"B","explanation":"Consolidated financial statements aggregate the financial records of all subsidiaries the company controls, after eliminating intercompany balances and transactions."},
+  {"id":"q84","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Segment Reporting","difficulty":"Difficult","question":"From the Sea Ltd. segment data in the chapter, which segment was the only profitable one in 2021?","options":["E-Commerce","Digital Entertainment","Digital Financial Services"],"correctAnswer":"B","explanation":"From the segment data, the e-commerce segment generated a large operating loss, and the digital entertainment segment was the only profitable segment."},
+  {"id":"q85","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Framework","difficulty":"Easy","question":"Common-size financial statements are primarily used to:","options":["Convert financial statements to a foreign currency","Scale data to directly reflect percentages or changes to facilitate comparisons","Adjust financial statements for seasonal fluctuations"],"correctAnswer":"B","explanation":"Common-size financial statements scale data to directly reflect percentages (e.g., of sales) or changes (e.g., from the prior year) to facilitate comparison."},
+  {"id":"q86","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Framework","difficulty":"Easy","question":"Financial ratios are best described as:","options":["Standardized amounts required by regulatory authorities for annual filings","Measures of various aspects of corporate performance based on financial statement elements","Tools used exclusively by credit analysts to assess debt repayment ability"],"correctAnswer":"B","explanation":"Financial ratios are measures of various aspects of corporate performance based on financial statement elements, used to evaluate profitability, liquidity, leverage, efficiency, and valuation."},
+  {"id":"q87","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Notes","difficulty":"Moderate","question":"An analyst's ability to compare the depreciation expense of two companies with different depreciation methods is best described as:","options":["Unaffected, because depreciation equals the same amount over the asset's life","Hindered by the difference in methods and assumptions used to record expense","Enhanced by the fact that both companies must disclose their methods in the notes"],"correctAnswer":"B","explanation":"Two companies may acquire similar equipment but use different methods and assumptions. An analyst's ability to compare the companies' performance is hindered by the difference."},
+  {"id":"q88","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"SEC Filings","difficulty":"Difficult","question":"A company's Form 11-K filed with the SEC is most relevant for analysts interested in:","options":["The company's insider stock transactions","The company's employee stock purchase, savings, and similar plans","The company's current report on material corporate events"],"correctAnswer":"B","explanation":"Form 11-K is the annual report of employee stock purchase, savings, and similar plans. It might be of interest for companies with significant employee benefit plans."},
+  {"id":"q89","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Regulatory","difficulty":"Difficult","question":"Under Regulation Fair Disclosure (Reg FD), when an issuer discloses material non-public information to securities market professionals, it must:","options":["Report the disclosure to the SEC within 30 days","Make simultaneous or prompt public disclosure of that information","Obtain written consent from each recipient before disclosing"],"correctAnswer":"B","explanation":"Regulation FD provides that when an issuer discloses material non-public information to certain individuals, the issuer must make public disclosure of that information."},
+  {"id":"q90","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Regulatory","difficulty":"Difficult","question":"A self-regulatory organization (SRO) in the context of IOSCO principles is best described as:","options":["An organization that sets government fiscal policy","An organization that exercises some direct oversight for its area of competence and is subject to oversight of the relevant regulator","An organization that exclusively focuses on consumer protection"],"correctAnswer":"B","explanation":"SROs exercise some direct oversight for their areas of competence and should be subject to the oversight of the relevant regulator."},
+  {"id":"q91","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Regulatory","difficulty":"Moderate","question":"The International Federation of Accountants is most closely associated with the development of:","options":["US GAAP standards through the FASB","International Standards on Auditing through the IAASB","IFRS standards through the IASB"],"correctAnswer":"B","explanation":"The International Auditing and Assurance Standards Board (IAASB), which developed International Standards on Auditing, emerged from the International Federation of Accountants."},
+  {"id":"q92","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Scope","difficulty":"Moderate","question":"For an analyst assessing a company's financial position for credit analysis, which is most relevant?","options":["The company's earnings per share growth rate over the last five years","The company's debt leverage ratios, interest coverage, and free cash flow generation","The company's dividend payout history and stock price performance"],"correctAnswer":"B","explanation":"Credit analysts focus on financial position, particularly debt leverage, interest coverage, and free cash flow generation to assess creditworthiness and the ability to repay debt."},
+  {"id":"q93","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Regulatory","difficulty":"Difficult","question":"The process for adoption of a new IASB standard within the European Union involves:","options":["Automatic adoption without review by EU bodies","A review and endorsement process involving the European Financial Reporting Advisory Group, European Commission, and Parliament","Direct approval by each individual EU member state without any coordinated EU review"],"correctAnswer":"B","explanation":"When the IASB issues a new standard, it goes through an endorsement process involving the European Financial Reporting Advisory Group, the European Commission, and the European Parliament."},
+  {"id":"q94","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Framework","difficulty":"Easy","question":"The financial statement analysis framework presented in the reading is best described as:","options":["A rigid, step-by-step process with no flexibility for analyst judgment","A generic, adaptable structure used across various analytical roles and tasks","A replacement for the need to gather information beyond financial statements"],"correctAnswer":"B","explanation":"The framework is presented as a generic framework used in various roles—equity analysis, credit analysis, performance evaluation, etc.—that guides but does not rigidly constrain the analytical process."},
+  {"id":"q95","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"SEC Filings","difficulty":"Moderate","question":"Sea Ltd. is listed on the NYSE. As a non-US registrant, it files which annual form with the SEC?","options":["Form 10-K","Form 40-F","Form 20-F"],"correctAnswer":"C","explanation":"Form 20-F is required for all non-US registrants other than certain Canadian registrants. Sea Ltd., being a Singapore-based company, would file Form 20-F."},
+  {"id":"q96","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"SEC Filings","difficulty":"Easy","question":"A company's annual report described as a 'highly polished marketing document' contrasts most with:","options":["The company's Form 10-K, which is a more legal type of document with minimal marketing emphasis","The company's proxy statement, which is required for all shareholder meetings","The auditor's report, which contains management's forward-looking commentary"],"correctAnswer":"A","explanation":"The annual report is often a highly polished marketing document. In contrast, Form 10-K is a more legal type of document with minimal marketing emphasis."},
+  {"id":"q97","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"MD&A","difficulty":"Moderate","question":"Which type of information in management commentary is particularly useful for projecting future performance?","options":["Historical financial results and prior-year comparisons","Forward-looking disclosures, such as planned capital expenditures and new store openings","Accounting policy elections made under IFRS or US GAAP"],"correctAnswer":"B","explanation":"Forward-looking disclosures in the management commentary, such as those about planned capital expenditures, new store openings, or divestitures, can be useful in projecting a company's future performance."},
+  {"id":"q98","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"IFRS vs GAAP","difficulty":"Difficult","question":"An analyst identifies a company using a new financial instrument with no explicit guidance in financial reporting standards. To understand its business purpose, the analyst should:","options":["Assume the instrument is being used for financial statement window dressing","Obtain further information from the company's management","Ignore the instrument until the IASB issues specific guidance"],"correctAnswer":"B","explanation":"If necessary, an analyst can obtain further information from company management, which should be able to describe the economic purpose, financial statement reporting, and future cash flow implications."},
+  {"id":"q99","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Segment Reporting","difficulty":"Moderate","question":"When identifying operating segments, which is NOT one of the required characteristics?","options":["The segment engages in activities that may generate revenue and create expenses","Results are regularly reviewed by senior management","The segment must be a wholly-owned subsidiary of the parent company"],"correctAnswer":"C","explanation":"An operating segment must engage in activities generating revenue and expenses, have results regularly reviewed by senior management, and have discrete financial information available. Being a wholly-owned subsidiary is not a requirement."},
+  {"id":"q100","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Regulatory","difficulty":"Moderate","question":"Securities regulators in emerging markets account for approximately what percentage of IOSCO's ordinary membership?","options":["25 percent","50 percent","75 percent"],"correctAnswer":"C","explanation":"Securities regulators in emerging markets account for 75 percent of IOSCO's ordinary membership."}
+];
+</script>
+
+<!-- Home page JS -->
+<script>
 const CHAPTERS = [
   { id:'all',   label:'All Chapters',                          sub:'',     count:100, available:true  },
   { id:'ch1',   label:'Intro to Financial Statement Analysis', sub:'R·01', count:100, available:true  },
@@ -562,22 +713,18 @@ const CHAPTERS = [
 
 let selectedChapter = null;
 let shuffleOn = false;
+let reactMounted = false;
 
 function buildChapterDropdown() {
   const sel = document.getElementById('chapterDropdown');
-  // Group: All
   const allOpt = document.createElement('option');
   allOpt.value = 'all';
   allOpt.textContent = '📚  All Chapters — ' + CHAPTERS.filter(c=>c.available && c.id!=='all').reduce((s,c)=>s+c.count,0) + ' questions';
   sel.appendChild(allOpt);
-
-  // Separator
   const sep = document.createElement('option');
   sep.disabled = true;
   sep.textContent = '──────────────────────────';
   sel.appendChild(sep);
-
-  // Individual chapters
   CHAPTERS.filter(c => c.id !== 'all').forEach(ch => {
     const opt = document.createElement('option');
     opt.value = ch.id;
@@ -610,24 +757,986 @@ function updatePreview() {
     selectedChapter === 'all' ? 'All Chapters' : ch.sub + ' · ' + ch.label.split(' ').slice(0,3).join(' ') + '…';
   const count = ch.count || 0;
   document.getElementById('previewCount').textContent = count > 0 ? count + ' questions' : '—';
-  const mins = Math.round(count * 1.5);
-  document.getElementById('previewTime').textContent = count > 0 ? `~${mins} min` : '—';
+  document.getElementById('previewTime').textContent = count > 0 ? '~' + Math.round(count * 1.5) + ' min' : '—';
 }
 
 function updateStartBtn() {
   const btn = document.getElementById('startBtn');
   if (!selectedChapter) {
     btn.classList.add('disabled');
+    btn.onclick = null;
     return;
   }
   btn.classList.remove('disabled');
-  const url = `finance-practice-exam-fsa-final.html?chapter=${selectedChapter}&shuffle=${shuffleOn}`;
-  btn.href = url;
+  window.EXAM_CONFIG = { chapter: selectedChapter, shuffle: shuffleOn };
+  btn.href = '#';
+  btn.onclick = function(e) { e.preventDefault(); launchExam(); };
 }
 
-// Init
+function launchExam() {
+  // Set config
+  window.EXAM_CONFIG = { chapter: selectedChapter, shuffle: shuffleOn };
+  // Show exam panel
+  document.getElementById('homePanel').classList.add('hidden');
+  document.getElementById('examPanel').classList.add('active');
+  document.body.style.overflow = 'hidden';
+  // Mount React if not yet done
+  if (!reactMounted) {
+    mountReact();
+    reactMounted = true;
+  } else {
+    // Re-trigger exam start by reloading the React component
+    document.getElementById('app').innerHTML = '';
+    reactMounted = false;
+    setTimeout(() => { mountReact(); reactMounted = true; }, 50);
+  }
+}
+
+window.goToHome = function() {
+  document.getElementById('examPanel').classList.remove('active');
+  document.getElementById('homePanel').classList.remove('hidden');
+  document.body.style.overflow = '';
+  // Reset React for next session
+  document.getElementById('app').innerHTML = '';
+  reactMounted = false;
+};
+
 buildChapterDropdown();
 updateStartBtn();
 </script>
+
+<!-- React -->
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<script type="text/babel">
+
+        const { useState, useEffect } = React;
+
+        // Questions are loaded from ./questions.json (kept in the same folder as this HTML)
+async function fetchQuestions() {
+    // Use embedded questions from window.EMBEDDED_QUESTIONS
+    const data = window.EMBEDDED_QUESTIONS || [];
+    if (!Array.isArray(data) || data.length === 0) {
+        throw new Error("No questions found. Please check the embedded data.");
+    }
+    return data;
+}
+
+// Shuffle helper (Fisher–Yates)
+function shuffleArray(array) {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+}
+function FinanceExamApp() {
+            // allQuestions: full bank loaded from questions.json
+            // questions: active exam set (after chapter filter / shuffle)
+            const [allQuestions, setAllQuestions] = useState([]);
+            const [questions, setQuestions] = useState([]);
+            const [isLoadingQuestions, setIsLoadingQuestions] = useState(false);
+            const [loadError, setLoadError] = useState('');
+            const [selectedChapters, setSelectedChapters] = useState(new Set());
+            const [chapterSelection, setChapterSelection] = useState('ALL');
+            const [shuffleEnabled, setShuffleEnabled] = useState(true);
+            const [examStarted, setExamStarted] = useState(false);
+            const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+            const [selectedAnswer, setSelectedAnswer] = useState('');
+            const [answers, setAnswers] = useState({});
+            const [markedForReview, setMarkedForReview] = useState(new Set());
+            const [eliminatedOptions, setEliminatedOptions] = useState({});
+            const [showResults, setShowResults] = useState(false);
+            const [timeElapsed, setTimeElapsed] = useState(0);
+
+
+            // Load and auto-start from home page config
+            useEffect(() => {
+                if (allQuestions.length > 0 || isLoadingQuestions) return;
+                (async () => {
+                    try {
+                        setIsLoadingQuestions(true);
+                        setLoadError('');
+                        const data = await fetchQuestions();
+                        setAllQuestions(data);
+
+                        // Auto-start using config from home page
+                        const config = window.EXAM_CONFIG || { chapter: 'all', shuffle: false };
+                        let filtered = data;
+                        if (config.chapter !== 'all') {
+                            filtered = data.filter(q => String(q.chapter) === String(config.chapter));
+                        }
+                        if (filtered.length === 0) filtered = data;
+                        const active = config.shuffle ? shuffleArray(filtered) : filtered;
+                        setQuestions(active);
+                        setExamStarted(true);
+                        setCurrentQuestionIndex(0);
+                        setSelectedAnswer('');
+                        setAnswers({});
+                        setMarkedForReview(new Set());
+                        setEliminatedOptions({});
+                        setShowResults(false);
+                        setTimeElapsed(0);
+
+                        const chapters = new Set(data.map(q => String(q.chapter)));
+                        setSelectedChapters(chapters);
+                        setChapterSelection('ALL');
+                    } catch (e) {
+                        console.error(e);
+                        setLoadError(e?.message || 'Failed to load questions');
+                    } finally {
+                        setIsLoadingQuestions(false);
+                    }
+                })();
+            }, []);
+
+            // Timer
+            useEffect(() => {
+                if (examStarted && !showResults) {
+                    const timer = setInterval(() => {
+                        setTimeElapsed(prev => prev + 1);
+                    }, 1000);
+                    return () => clearInterval(timer);
+                }
+            }, [examStarted, showResults]);
+
+            const formatTime = (seconds) => {
+                const hrs = Math.floor(seconds / 3600);
+                const mins = Math.floor((seconds % 3600) / 60);
+                const secs = seconds % 60;
+                return `${hrs.toString().padStart(2, '0')}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+            };
+
+            const currentQuestion = questions[currentQuestionIndex];
+            const totalQuestions = questions.length;
+            const progress = ((currentQuestionIndex + 1) / totalQuestions) * 100;
+            const answeredCount = Object.keys(answers).length;
+
+            const handleAnswerSelect = (option) => {
+                setSelectedAnswer(option);
+            };
+
+            const handleConfirm = () => {
+                if (selectedAnswer) {
+                    setAnswers({
+                        ...answers,
+                        [currentQuestion.id]: {
+                            selected: selectedAnswer,
+                            timeSpent: timeElapsed
+                        }
+                    });
+                    
+                    // Auto-advance
+                    if (currentQuestionIndex < totalQuestions - 1) {
+                        setTimeout(() => {
+                            setCurrentQuestionIndex(currentQuestionIndex + 1);
+                            setSelectedAnswer('');
+                        }, 200);
+                    }
+                }
+            };
+
+            const handlePrevious = () => {
+                if (currentQuestionIndex > 0) {
+                    setCurrentQuestionIndex(currentQuestionIndex - 1);
+                    const prevAnswer = answers[questions[currentQuestionIndex - 1].id];
+                    setSelectedAnswer(prevAnswer?.selected || '');
+                }
+            };
+
+            const handleNext = () => {
+                if (currentQuestionIndex < totalQuestions - 1) {
+                    setCurrentQuestionIndex(currentQuestionIndex + 1);
+                    const nextAnswer = answers[questions[currentQuestionIndex + 1].id];
+                    setSelectedAnswer(nextAnswer?.selected || '');
+                }
+            };
+
+            const toggleEliminate = (questionId, option) => {
+                const key = `${questionId}-${option}`;
+                setEliminatedOptions({
+                    ...eliminatedOptions,
+                    [key]: !eliminatedOptions[key]
+                });
+            };
+
+            const toggleRevisit = () => {
+                const newMarked = new Set(markedForReview);
+                if (newMarked.has(currentQuestion.id)) {
+                    newMarked.delete(currentQuestion.id);
+                } else {
+                    newMarked.add(currentQuestion.id);
+                }
+                setMarkedForReview(newMarked);
+            };
+
+            const markedCount = markedForReview.size;
+
+            const goToNextMarked = () => {
+                if (markedForReview.size === 0) return;
+                // Find next marked question after current index (wrap around)
+                const n = questions.length;
+                for (let step = 1; step <= n; step++) {
+                    const j = (currentQuestionIndex + step) % n;
+                    if (markedForReview.has(questions[j].id)) {
+                        setCurrentQuestionIndex(j);
+                        setSelectedAnswer('');
+                        return;
+                    }
+                }
+            };
+
+            const clearAllMarked = () => {
+                if (markedForReview.size === 0) return;
+                const ok = window.confirm("Clear all review marks?");
+                if (!ok) return;
+                setMarkedForReview(new Set());
+            };
+
+
+            const calculateScore = () => {
+                let correct = 0;
+                let total = 0;
+                
+                questions.forEach(q => {
+                    if (answers[q.id]) {
+                        total++;
+                        if (answers[q.id].selected === q.correctAnswer) {
+                            correct++;
+                        }
+                    }
+                });
+                
+                return { 
+                    correct, 
+                    total, 
+                    percentage: total > 0 ? ((correct / total) * 100).toFixed(1) : 0,
+                    unanswered: questions.length - total
+                };
+            };
+
+            const getAnalysisByDifficulty = () => {
+                const byDifficulty = { 
+                    Easy: { correct: 0, total: 0 }, 
+                    Moderate: { correct: 0, total: 0 }, 
+                    Difficult: { correct: 0, total: 0 } 
+                };
+                
+                questions.forEach(q => {
+                    if (answers[q.id]) {
+                        byDifficulty[q.difficulty].total++;
+                        if (answers[q.id].selected === q.correctAnswer) {
+                            byDifficulty[q.difficulty].correct++;
+                        }
+                    }
+                });
+                
+                return byDifficulty;
+            };
+
+            const getAnalysisByChapter = () => {
+                const byChapter = {};
+                
+                questions.forEach(q => {
+                    if (!byChapter[q.chapter]) {
+                        byChapter[q.chapter] = { 
+                            name: q.chapterName, 
+                            correct: 0, 
+                            total: 0 
+                        };
+                    }
+                    if (answers[q.id]) {
+                        byChapter[q.chapter].total++;
+                        if (answers[q.id].selected === q.correctAnswer) {
+                            byChapter[q.chapter].correct++;
+                        }
+                    }
+                });
+                
+                return byChapter;
+            };
+
+
+            // Chapter list for chapter-wise practice mode
+            const chapterOptions = (() => {
+                const map = new Map();
+                allQuestions.forEach(q => {
+                    const key = String(q.chapter);
+                    const name = q.chapterName ? String(q.chapterName) : `Chapter ${key}`;
+                    if (!map.has(key)) map.set(key, name);
+                });
+                return Array.from(map.entries())
+                    .map(([chapter, chapterName]) => ({ chapter, chapterName }))
+                    .sort((a, b) => Number(a.chapter) - Number(b.chapter));
+            })();
+
+            
+const handleChapterSelection = (value) => {
+    setChapterSelection(value);
+    if (value === 'ALL') {
+        setSelectedChapters(new Set(chapterOptions.map(c => c.chapter)));
+    } else {
+        setSelectedChapters(new Set([value]));
+    }
+};
+
+            const startExamWithSettings = () => {
+                // Build filtered set
+                const filtered = (allQuestions.length ? allQuestions : []).filter(q => selectedChapters.has(String(q.chapter)));
+                if (filtered.length === 0) {
+                    setLoadError('Please select at least one chapter to start.');
+                    return;
+                }
+
+                const active = shuffleEnabled ? shuffleArray(filtered) : filtered;
+
+                // Reset exam state
+                setQuestions(active);
+                setExamStarted(true);
+                setCurrentQuestionIndex(0);
+                setSelectedAnswer('');
+                setAnswers({});
+                setMarkedForReview(new Set());
+                setEliminatedOptions({});
+                setShowResults(false);
+                setTimeElapsed(0);
+                setLoadError('');
+            };
+
+            const exitExam = () => {
+                const ok = window.confirm("Exit the practice exam?");
+                if (!ok) return;
+                window.goToHome && window.goToHome();
+            };
+
+            // Auto-start from home page config (no internal start screen)
+            if (!examStarted) {
+                // This should not normally appear; home page handles selection
+                return (
+                    <div className="min-h-screen gradient-bg flex items-center justify-center">
+                        <div className="text-white text-center">
+                            <div className="text-6xl mb-6">📚</div>
+                            <p className="text-xl font-medium opacity-75">Loading exam…</p>
+                        </div>
+                    </div>
+                );
+            }
+            if (false && !examStarted) {
+                return (
+                    <div className="min-h-screen gradient-bg flex items-center justify-center p-4">
+                        <div className="bg-white rounded-3xl card-shadow p-12 max-w-3xl w-full">
+                            <div className="text-center">
+                                <div className="w-24 h-24 bg-slate-50 rounded-3xl flex items-center justify-center mx-auto mb-6 transform rotate-12">
+                                    <svg className="w-12 h-12 text-white transform -rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                    </svg>
+                                </div>
+                                <h1 className="text-3xl font-bold text-gray-800 mb-3">Practice Session</h1>
+                                <p className="text-lg text-gray-600 mb-10">Test Your Knowledge</p>
+                                
+                                <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 mb-10">
+                                    <div className="grid grid-cols-2 gap-8">
+                                        <div className="text-left">
+                                            <p className="text-sm text-gray-600 mb-2 font-medium">Questions</p>
+                                            <p className="text-4xl font-bold text-emerald-600">{allQuestions.length ? allQuestions.filter(q => selectedChapters.has(String(q.chapter))).length : '—'}</p>
+                                        </div>
+                                        <div className="text-left">
+                                            <p className="text-sm text-gray-600 mb-2 font-medium">Time Limit</p>
+                                            <p className="text-4xl font-bold text-emerald-600">None</p>
+                                        </div>
+                                        <div className="col-span-2 text-left">
+                                            <p className="text-sm text-gray-600 mb-3 font-medium">Topics Covered</p>
+                                            <div className="flex flex-wrap gap-2">
+                                                <span className="bg-white px-4 py-2 rounded-full text-sm font-semibold text-emerald-700 shadow-sm">Quantitative Methods</span>
+                                                                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="text-left bg-gray-50 rounded-2xl p-6 mb-10">
+                                    <h3 className="font-bold text-gray-800 mb-4 text-lg">How it works:</h3>
+                                    <ul className="space-y-3 text-gray-700">
+                                        <li className="flex items-start">
+                                            <span className="text-2xl mr-3">✓</span>
+                                            <span>Select your answer and click <strong>Submit</strong> to move forward</span>
+                                        </li>
+                                        <li className="flex items-start">
+                                            <span className="text-2xl mr-3">✓</span>
+                                            <span>Use navigation arrows to review previous questions</span>
+                                        </li>
+                                        <li className="flex items-start">
+                                            <span className="text-2xl mr-3">✓</span>
+                                            <span>Mark tricky questions to revisit later</span>
+                                        </li>
+                                        <li className="flex items-start">
+                                            <span className="text-2xl mr-3">✓</span>
+                                            <span>Get detailed results and explanations at the end</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+
+                                {/* Practice settings */}
+                                <div className="text-left bg-white border border-gray-200 rounded-2xl p-6 mb-8">
+                                    <h3 className="font-bold text-gray-800 mb-4 text-lg">Practice settings</h3>
+
+                                    <label className="flex items-center space-x-3 mb-5 cursor-pointer select-none">
+                                        <input
+                                            type="checkbox"
+                                            checked={shuffleEnabled}
+                                            onChange={(e) => setShuffleEnabled(e.target.checked)}
+                                            className="h-5 w-5"
+                                        />
+                                        <span className="text-gray-700 font-medium">Shuffle questions</span>
+                                    </label>
+
+                                    
+<div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+    <div className="flex-1">
+        <div className="font-semibold text-gray-800 mb-2">Chapter</div>
+        <p className="text-sm text-gray-600">Pick one chapter (or All). Your exam will load questions from that selection.</p>
+    </div>
+
+    <div className="sm:w-80">
+        <select
+            value={chapterSelection}
+            onChange={(e) => handleChapterSelection(e.target.value)}
+            className="w-full border border-gray-300 rounded-xl px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-purple-300"
+        >
+            <option value="ALL">All chapters</option>
+            {chapterOptions.map(c => (
+                <option key={c.chapter} value={c.chapter}>
+                    {`Ch ${c.chapter}: ${c.chapterName}`}
+                </option>
+            ))}
+        </select>
+
+        <div className="mt-2 text-xs text-gray-500">
+            Questions in selection: <strong>{allQuestions.length ? allQuestions.filter(q => selectedChapters.has(String(q.chapter))).length : '—'}</strong>
+        </div>
+    </div>
+</div>
+
+<div className="mt-4 text-xs text-gray-500">
+
+                                        Tip: If chapters don’t show, make sure you opened this page via <strong>http://localhost:8001/...</strong> and <strong>questions.json</strong> is in the same folder.
+                                    </div>
+                                </div>
+
+                                <button 
+                                    disabled={isLoadingQuestions || allQuestions.length === 0}
+                                    onClick={startExamWithSettings}
+                                    className="gradient-bg text-white px-16 py-5 rounded-2xl font-bold text-lg hover:shadow-2xl transition-all transform hover:scale-105"
+                                >
+                                    {isLoadingQuestions ? 'Loading Questions…' : 'Begin Practice Exam'}
+                                </button>
+
+{loadError && (
+    <div className="mt-6 text-left bg-red-50 border-2 border-red-200 text-red-700 rounded-2xl p-5">
+        <div className="font-bold mb-1">Could not start the exam</div>
+        <div className="text-sm">
+            {loadError}
+            <div className="mt-2 text-xs text-red-600">
+                Tip: Make sure <strong>questions.json</strong> is in the same folder and you opened the app via
+                <strong> http://localhost:8000/finance-practice-exam.html</strong> (not by double-clicking the HTML).
+            </div>
+        </div>
+    </div>
+)}
+
+                            </div>
+                        </div>
+                    </div>
+                );
+            }
+
+
+// If exam has started but questions haven't loaded yet (or failed), show a friendly screen
+if (examStarted && questions.length === 0) {
+    return (
+        <div className="min-h-screen gradient-bg flex items-center justify-center p-4">
+            <div className="bg-white rounded-3xl card-shadow p-10 max-w-xl w-full text-center">
+                <h2 className="text-3xl font-bold text-gray-800 mb-3">Loading questions…</h2>
+                <p className="text-gray-600 mb-6">Please wait.</p>
+                {loadError && (
+                    <div className="text-left bg-red-50 border-2 border-red-200 text-red-700 rounded-2xl p-5">
+                        <div className="font-bold mb-1">Error</div>
+                        <div className="text-sm">{loadError}</div>
+                    </div>
+                )}
+                <button
+                    onClick={() => {
+                        setExamStarted(false);
+                        setIsLoadingQuestions(false);
+                    }}
+                    className="mt-6 gradient-bg text-white px-8 py-3 rounded-2xl font-bold hover:shadow-2xl transition-all"
+                >
+                    Back
+                </button>
+            </div>
+        </div>
+    );
+}
+
+            // Results Screen
+            if (showResults) {
+                const score = calculateScore();
+                const analysisByDifficulty = getAnalysisByDifficulty();
+                const analysisByChapter = getAnalysisByChapter();
+                const passed = parseFloat(score.percentage) >= 70;
+                
+                return (
+                    <div className="min-h-screen bg-gray-100 p-6">
+                        <div className="max-w-6xl mx-auto">
+                            <div className="bg-white rounded-3xl card-shadow p-10">
+                                {/* Header */}
+                                <div className="text-center mb-10">
+                                    <div className={`w-32 h-32 ${passed ? 'bg-slate-50' : 'gradient-bg-2'} rounded-full flex items-center justify-center mx-auto mb-6 card-shadow`}>
+                                        {passed ? (
+                                            <svg className="w-20 h-20 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                            </svg>
+                                        ) : (
+                                            <svg className="w-20 h-20 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                            </svg>
+                                        )}
+                                    </div>
+                                    <h1 className="text-4xl font-bold text-gray-800 mb-3">Exam Complete!</h1>
+                                    <p className="text-2xl text-gray-600">Time: {formatTime(timeElapsed)}</p>
+                                </div>
+
+                                {/* Overall Score */}
+                                <div className="gradient-bg rounded-3xl p-10 mb-10 text-white card-shadow">
+                                    <div className="text-center">
+                                        <p className="text-2xl mb-3 opacity-90 font-medium">Your Score</p>
+                                        <p className="text-8xl font-bold mb-4">{score.percentage}%</p>
+                                        <p className="text-3xl mb-2">{score.correct} / {score.total} Correct</p>
+                                        {score.unanswered > 0 && (
+                                            <p className="text-lg opacity-75 mt-2">({score.unanswered} not answered)</p>
+                                        )}
+                                        <div className="mt-8">
+                                            <div className="bg-white bg-opacity-20 rounded-full h-5 overflow-hidden">
+                                                <div 
+                                                    className="bg-white h-full transition-all duration-1000"
+                                                    style={{ width: `${score.percentage}%` }}
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Performance Breakdown */}
+                                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
+                                    {/* By Difficulty */}
+                                    <div>
+                                        <h2 className="text-2xl font-bold text-gray-800 mb-5">By Difficulty Level</h2>
+                                        <div className="space-y-4">
+                                            {Object.entries(analysisByDifficulty).map(([difficulty, stats]) => {
+                                                const percentage = stats.total > 0 ? ((stats.correct / stats.total) * 100).toFixed(0) : 0;
+                                                const colorMap = {
+                                                    'Easy': 'from-green-400 to-green-600',
+                                                    'Moderate': 'from-yellow-400 to-orange-500',
+                                                    'Difficult': 'from-red-400 to-pink-600'
+                                                };
+                                                
+                                                return (
+                                                    <div key={difficulty} className="bg-gray-50 rounded-2xl p-5 border-2 border-gray-200">
+                                                        <div className="flex justify-between items-center mb-3">
+                                                            <h3 className="font-bold text-gray-800 text-lg">{difficulty}</h3>
+                                                            <span className="text-3xl font-bold text-gray-800">{percentage}%</span>
+                                                        </div>
+                                                        <p className="text-sm text-gray-600 mb-3">{stats.correct} of {stats.total} correct</p>
+                                                        <div className="bg-gray-200 rounded-full h-3 overflow-hidden">
+                                                            <div 
+                                                                className={`bg-gradient-to-r ${colorMap[difficulty]} h-full transition-all duration-1000`}
+                                                                style={{ width: `${percentage}%` }}
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                );
+                                            })}
+                                        </div>
+                                    </div>
+
+                                    {/* By Chapter */}
+                                    <div>
+                                        <h2 className="text-2xl font-bold text-gray-800 mb-5">By Chapter</h2>
+                                        <div className="space-y-4">
+                                            {Object.entries(analysisByChapter).map(([chapter, data]) => {
+                                                const percentage = data.total > 0 ? ((data.correct / data.total) * 100).toFixed(0) : 0;
+                                                
+                                                return (
+                                                    <div key={chapter} className="bg-gray-50 rounded-2xl p-5 border-2 border-gray-200">
+                                                        <div className="flex justify-between items-center mb-3">
+                                                            <h3 className="font-bold text-gray-800">Chapter {chapter}: {data.name}</h3>
+                                                            <span className="text-3xl font-bold text-gray-800">{percentage}%</span>
+                                                        </div>
+                                                        <p className="text-sm text-gray-600 mb-3">{data.correct} of {data.total} correct</p>
+                                                        <div className="bg-gray-200 rounded-full h-3 overflow-hidden">
+                                                            <div 
+                                                                className="bg-gradient-to-r from-purple-400 to-pink-600 h-full transition-all duration-1000"
+                                                                style={{ width: `${percentage}%` }}
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                );
+                                            })}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                
+                                {/* Marked Review */}
+                                <div className="mb-10">
+                                    <h2 className="text-2xl font-bold text-gray-800 mb-5">Marked for Review</h2>
+                                    <div className="bg-white rounded-2xl p-5 border border-gray-200">
+                                        {questions.filter(q => markedForReview.has(q.id) && !!answers[q.id]).length === 0 ? (
+                                            <p className="text-gray-600">No answered questions are marked for review.</p>
+                                        ) : (
+                                            <div className="space-y-4 max-h-80 overflow-y-auto pr-2">
+                                                {questions.filter(q => markedForReview.has(q.id) && !!answers[q.id]).map((q, idx) => {
+                                                    const answer = answers[q.id];
+                                                    const isCorrect = answer?.selected === q.correctAnswer;
+                                                    return (
+                                                        <div
+                                                            key={q.id}
+                                                            className={`rounded-2xl p-5 border-2 ${isCorrect ? 'bg-green-50 border-green-400' : 'bg-red-50 border-red-400'}`}
+                                                        >
+                                                            <div className="flex items-start justify-between mb-3">
+                                                                <div>
+                                                                    <div className="text-sm text-gray-600 font-semibold mb-1">{q.id} • Chapter {q.chapter}</div>
+                                                                    <div className="text-gray-900 font-semibold">{q.question}</div>
+                                                                </div>
+                                                                <div className={`px-3 py-1 rounded-full text-sm font-bold ${isCorrect ? 'bg-green-200 text-green-800' : 'bg-red-200 text-red-800'}`}>
+                                                                    {isCorrect ? 'Correct' : 'Incorrect'}
+                                                                </div>
+                                                            </div>
+
+                                                            <div className="text-sm text-gray-700 mb-2">
+                                                                <span className="font-semibold">Your answer:</span> {answer?.selected || '—'} &nbsp; | &nbsp;
+                                                                <span className="font-semibold">Correct:</span> {q.correctAnswer}
+                                                            </div>
+
+                                                            <div className="text-sm text-gray-700">
+                                                                <span className="font-semibold">Explanation:</span> {q.explanation}
+                                                            </div>
+                                                        </div>
+                                                    );
+                                                })}
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
+
+{/* Question Review */}
+                                <div>
+                                    <h2 className="text-2xl font-bold text-gray-800 mb-5">Question-by-Question Review</h2>
+                                    <div className="space-y-4 max-h-96 overflow-y-auto pr-2">
+                                        {questions.filter(q => !!answers[q.id]).map((q, idx) => {
+                                            const answer = answers[q.id];
+                                            const isCorrect = answer?.selected === q.correctAnswer;
+                                            const wasAnswered = !!answer;
+                                            
+                                            return (
+                                                <div 
+                                                    key={q.id} 
+                                                    className={`rounded-2xl p-5 border-2 ${
+                                                        !wasAnswered ? 'bg-gray-50 border-gray-300' :
+                                                        isCorrect ? 'bg-green-50 border-green-400' : 'bg-red-50 border-red-400'
+                                                    }`}
+                                                >
+                                                    <div className="flex items-start justify-between mb-3">
+                                                        <div className="flex items-center">
+                                                            {wasAnswered ? (
+                                                                isCorrect ? (
+                                                                    <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-3">
+                                                                        <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                                                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                                                        </svg>
+                                                                    </div>
+                                                                ) : (
+                                                                    <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center mr-3">
+                                                                        <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                                                            <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                                                                        </svg>
+                                                                    </div>
+                                                                )
+                                                            ) : (
+                                                                <div className="w-8 h-8 bg-gray-400 rounded-full flex items-center justify-center mr-3">
+                                                                    <span className="text-white font-bold">?</span>
+                                                                </div>
+                                                            )}
+                                                            <span className="font-bold text-gray-800">Q{idx + 1}</span>
+                                                            <span className={`ml-3 text-xs px-3 py-1 rounded-full font-semibold ${
+                                                                q.difficulty === 'Easy' ? 'bg-green-100 text-green-700' :
+                                                                q.difficulty === 'Moderate' ? 'bg-yellow-100 text-yellow-700' :
+                                                                'bg-red-100 text-red-700'
+                                                            }`}>
+                                                                {q.difficulty}
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <p className="text-gray-700 mb-3 font-medium">{q.question}</p>
+                                                    
+                                                    {wasAnswered ? (
+                                                        <div className="space-y-2">
+                                                            <div className={`font-bold text-lg ${isCorrect ? 'text-green-700' : 'text-red-700'}`}>
+                                                                Your answer: {answer.selected}
+                                                            </div>
+                                                            {!isCorrect && (
+                                                                <div className="text-green-700 font-bold text-lg">
+                                                                    Correct answer: {q.correctAnswer}
+                                                                </div>
+                                                            )}
+                                                            <div className="text-gray-700 mt-3 pt-3 border-t-2 border-gray-300">
+                                                                <span className="font-semibold">💡 Explanation:</span> {q.explanation}
+                                                            </div>
+                                                        </div>
+                                                    ) : (
+                                                        <p className="text-gray-500 italic">Not answered</p>
+                                                    )}
+                                                </div>
+                                            );
+                                        })}
+                                    </div>
+                                </div>
+
+                                <div className="mt-10 text-center">
+                                    <button 
+                                        onClick={() => {
+                                            setExamStarted(false);
+                                            setCurrentQuestionIndex(0);
+                                            setAnswers({});
+                                            setMarkedForReview(new Set());
+                                            setEliminatedOptions({});
+                                            setShowResults(false);
+                                            setTimeElapsed(0);
+                                            setSelectedAnswer('');
+                                        }}
+                                        className="gradient-bg text-white px-12 py-4 rounded-2xl font-bold text-lg hover:shadow-2xl transition-all transform hover:scale-105"
+                                    >
+                                        Take Another Practice Exam
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                );
+            }
+
+            // Exam Screen
+            return (
+                <div className="min-h-screen bg-gray-100">
+                    {/* Header */}
+                    <div className="bg-white shadow-md">
+                        <div className="max-w-7xl mx-auto px-6 py-5">
+                            <div className="flex items-center justify-between">
+                                <div>
+                                    <h1 className="text-2xl font-bold text-gray-800">Practice Session</h1>
+                                    <p className="text-sm text-gray-600"> </p>
+                                </div>
+                                <div className="flex items-center space-x-8">
+                                    <div className="text-center">
+                                        <p className="text-xs text-gray-500 font-medium">TIME</p>
+                                        <p className="text-2xl font-bold text-emerald-600 font-mono">{formatTime(timeElapsed)}</p>
+                                    </div>
+                                    <div className="text-center">
+                                        <p className="text-xs text-gray-500 font-medium">PROGRESS</p>
+                                        <p className="text-2xl font-bold text-emerald-600">{answeredCount}/{totalQuestions}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Progress Bar */}
+                    <div className="bg-white shadow-sm">
+                        <div className="max-w-7xl mx-auto px-6 py-4">
+                            <div className="flex items-center justify-between mb-3">
+                                <div className="flex items-center space-x-3">
+                                    <button
+                                        onClick={handlePrevious}
+                                        disabled={currentQuestionIndex === 0}
+                                        className={`p-2 rounded-lg transition-all ${
+                                            currentQuestionIndex === 0 
+                                                ? 'text-gray-300 cursor-not-allowed' 
+                                                : 'text-emerald-600 hover:bg-emerald-50'
+                                        }`}
+                                    >
+                                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                                        </svg>
+                                    </button>
+                                    
+                                    <span className="text-lg font-bold text-gray-800">
+                                        Question {currentQuestionIndex + 1} of {totalQuestions}
+                                    </span>
+                                    
+                                    <button
+                                        onClick={handleNext}
+                                        disabled={currentQuestionIndex === totalQuestions - 1}
+                                        className={`p-2 rounded-lg transition-all ${
+                                            currentQuestionIndex === totalQuestions - 1 
+                                                ? 'text-gray-300 cursor-not-allowed' 
+                                                : 'text-emerald-600 hover:bg-emerald-50'
+                                        }`}
+                                    >
+                                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                
+                                <div className="flex items-center space-x-4">
+                                    <label className="flex items-center cursor-pointer text-gray-700 hover:text-emerald-600 font-medium">
+                                        <input 
+                                            type="checkbox"
+                                            checked={markedForReview.has(currentQuestion.id)}
+                                            onChange={toggleRevisit}
+                                            className="mr-2 w-5 h-5 text-emerald-600 rounded"
+                                        />
+                                        Mark for Review
+                                    </label>
+
+                                    <span className="text-sm text-gray-600 mr-3">Marked: <span className="font-semibold text-gray-900">{markedCount}</span></span>
+
+                                    <button
+                                        onClick={goToNextMarked}
+                                        disabled={markedCount === 0}
+                                        className={`px-4 py-2 rounded-xl font-bold transition-all ${markedCount === 0 ? 'bg-gray-100 text-gray-400 cursor-not-allowed' : 'bg-emerald-600 text-white hover:shadow-lg'}`}
+                                    >
+                                        Next Marked
+                                    </button>
+
+                                    <button
+                                        onClick={clearAllMarked}
+                                        disabled={markedCount === 0}
+                                        className={`px-4 py-2 rounded-xl font-bold transition-all ${markedCount === 0 ? 'bg-gray-100 text-gray-400 cursor-not-allowed' : 'bg-gray-200 text-gray-800 hover:bg-gray-300'}`}
+                                    >
+                                        Clear Marks
+                                    </button>
+
+                                    <button
+                                        onClick={exitExam}
+                                        className="px-6 py-2 bg-gray-200 text-gray-800 rounded-xl font-bold hover:bg-gray-300 transition-all"
+                                    >
+                                        Exit
+                                    </button>
+                                    
+                                    {answeredCount === totalQuestions && (
+                                        <button
+                                            onClick={() => setShowResults(true)}
+                                            className="px-6 py-2 gradient-bg text-white rounded-xl font-bold hover:shadow-lg transition-all"
+                                        >
+                                            Finish Exam
+                                        </button>
+                                    )}
+                                </div>
+                            </div>
+                            
+                            <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                                <div 
+                                    className="gradient-bg h-full transition-all duration-300"
+                                    style={{ width: `${progress}%` }}
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Question Content */}
+                    <div className="max-w-7xl mx-auto p-6">
+                        <div className="bg-white rounded-3xl card-shadow p-10">
+                            {/* Question Header */}
+                            <div className="mb-8">
+                                <div className="flex items-center justify-between mb-5">
+                                    <span className="bg-emerald-100 text-emerald-800 px-4 py-2 rounded-xl text-sm font-bold">
+                                        {currentQuestion.topic}
+                                    </span>
+                                    <span className={`px-4 py-2 rounded-xl text-sm font-bold ${
+                                        currentQuestion.difficulty === 'Easy' ? 'bg-green-100 text-green-800' :
+                                        currentQuestion.difficulty === 'Moderate' ? 'bg-yellow-100 text-yellow-800' :
+                                        'bg-red-100 text-red-800'
+                                    }`}>
+                                        {currentQuestion.difficulty}
+                                    </span>
+                                </div>
+                                <h2 className="text-2xl font-bold text-gray-800 leading-relaxed">
+                                    {currentQuestion.question}
+                                </h2>
+                            </div>
+
+                            {/* Answer Options */}
+                            <div className="space-y-4 mb-10">
+                                {currentQuestion.options.map((option, idx) => {
+                                    const optionLetter = String.fromCharCode(65 + idx);
+                                    const isSelected = selectedAnswer === optionLetter;
+                                    const isEliminated = eliminatedOptions[`${currentQuestion.id}-${optionLetter}`];
+                                    
+                                    return (
+                                        <div 
+                                            key={idx}
+                                            className={`option-card flex items-center border-3 rounded-2xl p-5 cursor-pointer ${
+                                                isEliminated ? 'eliminated border-gray-200' : 
+                                                isSelected ? 'border-purple-500 bg-emerald-50 shadow-lg' : 'border-gray-300 hover:border-purple-400'
+                                            }`}
+                                            onClick={() => !isEliminated && handleAnswerSelect(optionLetter)}
+                                        >
+                                            <div className={`w-12 h-12 rounded-xl flex items-center justify-center font-bold text-lg mr-5 ${
+                                                isSelected ? 'gradient-bg text-white' : 'bg-gray-200 text-gray-700'
+                                            }`}>
+                                                {optionLetter}
+                                            </div>
+                                            <span className={`flex-1 text-lg ${isEliminated ? 'line-through text-gray-400' : 'text-gray-800 font-medium'}`}>
+                                                {option}
+                                            </span>
+                                            <button
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    toggleEliminate(currentQuestion.id, optionLetter);
+                                                }}
+                                                className={`ml-4 ${isEliminated ? 'text-gray-400' : 'text-gray-400 hover:text-red-500'} transition-colors`}
+                                            >
+                                                <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+
+                            {/* Submit Button */}
+                            <button
+                                onClick={handleConfirm}
+                                disabled={!selectedAnswer}
+                                className={`w-full py-5 rounded-2xl font-bold text-lg transition-all ${
+                                    selectedAnswer
+                                        ? 'gradient-bg text-white hover:shadow-2xl transform hover:scale-[1.02]'
+                                        : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                                }`}
+                            >
+                                {currentQuestionIndex < totalQuestions - 1 ? 'Submit Answer' : 'Submit Final Answer'}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('app'));
+        root.render(<FinanceExamApp />);
+    
+
+function mountReact() {
+  const root = ReactDOM.createRoot(document.getElementById('app'));
+  root.render(<FinanceExamApp />);
+}
+</script>
+
 </body>
 </html>
