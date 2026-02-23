@@ -492,6 +492,32 @@ footer{
 .takeaway p{color:rgba(255,255,255,.75);font-size:.79rem;line-height:1.65;position:relative}
 .takeaway strong{color:var(--gold-light)}
 
+
+/* ── SUMMARY SELECTOR BAR ── */
+.sum-selector-bar {
+  display:flex;align-items:flex-end;justify-content:space-between;
+  gap:24px;flex-wrap:wrap;
+  margin-bottom:28px;
+}
+.sum-selector-left{flex:1;min-width:200px}
+.sum-selector-right{flex-shrink:0}
+.sum-selector-right .chapter-select-wrap{min-width:340px}
+@media(max-width:640px){
+  .sum-selector-bar{flex-direction:column;align-items:flex-start}
+  .sum-selector-right{width:100%}
+  .sum-selector-right .chapter-select-wrap{min-width:0;width:100%}
+}
+
+/* ── SUMMARY EMPTY STATE ── */
+.sum-empty{
+  text-align:center;padding:80px 40px;
+  background:var(--white);border:1px solid var(--border);
+  border-radius:16px;box-shadow:var(--shadow-sm);
+}
+.sum-empty-icon{font-size:3rem;margin-bottom:16px;opacity:.3}
+.sum-empty h3{font-family:'Cormorant Garamond',serif;color:var(--navy);font-size:1.3rem;opacity:.5;margin-bottom:8px}
+.sum-empty p{color:var(--text-light);font-size:.85rem;max-width:400px;margin:0 auto;line-height:1.6}
+
 /* ── EXAM PANEL ── */
 #examPanel {
   display: none;
@@ -685,6 +711,40 @@ footer{
 <div id="tab-summaries" class="tab-pane">
 <div class="summary-wrap">
 
+  <!-- Chapter selector -->
+  <div class="sum-selector-bar">
+    <div class="sum-selector-left">
+      <div class="section-eyebrow"><div class="eyebrow-line"></div><span>Chapter Summaries</span></div>
+      <h2 class="section-title" style="margin-bottom:0">Select a Reading</h2>
+    </div>
+    <div class="sum-selector-right">
+      <div class="chapter-select-wrap">
+        <select id="summaryChapterDropdown" onchange="loadSummary(this.value)">
+          <option value="" disabled selected>— Select a reading —</option>
+          <option value="ch1">R·01  Intro to Financial Statement Analysis</option>
+          <option value="ch2" disabled>R·02  Financial Reporting Standards (Coming Soon)</option>
+          <option value="ch3" disabled>R·03  Understanding Income Statements (Coming Soon)</option>
+          <option value="ch4" disabled>R·04  Understanding Balance Sheets (Coming Soon)</option>
+          <option value="ch5" disabled>R·05  Understanding Cash Flow Statements (Coming Soon)</option>
+          <option value="ch6" disabled>R·06  Financial Analysis Techniques (Coming Soon)</option>
+          <option value="ch7" disabled>R·07  Inventories (Coming Soon)</option>
+          <option value="ch8" disabled>R·08  Long-Lived Assets (Coming Soon)</option>
+          <option value="ch9" disabled>R·09  Income Taxes (Coming Soon)</option>
+          <option value="ch10" disabled>R·10  Non-Current Liabilities (Coming Soon)</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Empty state (shown by default) -->
+  <div id="sum-empty" class="sum-empty">
+    <div class="sum-empty-icon">📖</div>
+    <h3>Select a reading above to view its summary</h3>
+    <p>Concise notes covering learning outcomes, key frameworks, thresholds, and comparison tables — ready to read before or after your practice session.</p>
+  </div>
+
+  <!-- Chapter content (hidden until selection) -->
+  <div id="sum-content" style="display:none">
   <div class="sum-hero">
     <div class="sum-hero-label">2026 CFA® Program · Level I · Reading 1</div>
     <h1>Introduction to <em>Financial Statement Analysis</em></h1>
@@ -809,6 +869,7 @@ footer{
     </div>
 
   </div><!-- /.sum-body -->
+  </div><!-- /#sum-content -->
 </div><!-- /.summary-wrap -->
 </div><!-- /#tab-summaries -->
 
@@ -1055,6 +1116,25 @@ window.goToHome = function() {
 
 buildChapterDropdown();
 updateStartBtn();
+
+function loadSummary(chapterId) {
+  const empty = document.getElementById('sum-empty');
+  const content = document.getElementById('sum-content');
+  if (!chapterId) {
+    empty.style.display = '';
+    content.style.display = 'none';
+    return;
+  }
+  // Only ch1 has content for now
+  if (chapterId === 'ch1') {
+    empty.style.display = 'none';
+    content.style.display = '';
+    content.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  } else {
+    empty.style.display = '';
+    content.style.display = 'none';
+  }
+}
 
 function switchHomeTab(name, btn) {
   document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
