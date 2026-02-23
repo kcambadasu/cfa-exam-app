@@ -263,7 +263,10 @@ header::before {
   content:'▾';position:absolute;right:14px;top:50%;transform:translateY(-50%);
   color:var(--gold);font-size:.85rem;pointer-events:none;
 }
-select#chapterDropdown {
+select#chapterDropdown,
+select#topicDropdown,
+select#summaryTopicDropdown,
+select#summaryChapterDropdown {
   appearance:none;-webkit-appearance:none;
   width:100%;background:var(--white);
   border:2px solid var(--border);border-radius:10px;
@@ -271,9 +274,19 @@ select#chapterDropdown {
   font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:500;color:var(--text);
   cursor:pointer;outline:none;transition:border-color .18s;
 }
-select#chapterDropdown:focus{border-color:var(--navy)}
-select#chapterDropdown option{font-size:.85rem}
-select#chapterDropdown option:disabled{color:var(--text-light)}
+select#chapterDropdown:focus,
+select#topicDropdown:focus,
+select#summaryTopicDropdown:focus,
+select#summaryChapterDropdown:focus{border-color:var(--navy)}
+select#chapterDropdown option,
+select#topicDropdown option,
+select#summaryTopicDropdown option,
+select#summaryChapterDropdown option{font-size:.85rem}
+select#chapterDropdown option:disabled,
+select#topicDropdown option:disabled,
+select#summaryTopicDropdown option:disabled,
+select#summaryChapterDropdown option:disabled{color:var(--text-light)}
+select:disabled{opacity:.55;cursor:not-allowed}
 
 /* Options row */
 .options-row {
@@ -580,11 +593,11 @@ footer{
         </div>
         <div>
           <div class="hero-stat-num">10</div>
-          <div class="hero-stat-label">Chapters Covered</div>
+          <div class="hero-stat-label">Topic Areas</div>
         </div>
         <div>
-          <div class="hero-stat-num">1</div>
-          <div class="hero-stat-label">Chapter Active</div>
+          <div class="hero-stat-num">100+</div>
+          <div class="hero-stat-label">Chapters Mapped</div>
         </div>
       </div>
     </div>
@@ -606,7 +619,7 @@ footer{
       <div class="how-item">
         <div class="how-step">1</div>
         <div class="how-icon">🎯</div>
-        <div class="how-item-text"><strong>Choose your scope</strong><p>Pick a specific chapter to drill one reading, or select <em>All</em> to mix questions across the full curriculum.</p></div>
+        <div class="how-item-text"><strong>Choose your scope</strong><p>Pick a topic area, then a specific chapter to drill one reading — or select <em>All</em> within a topic to mix questions across it.</p></div>
       </div>
       <div class="how-item">
         <div class="how-step">2</div>
@@ -643,15 +656,22 @@ footer{
       <div class="selector-card">
         <div class="selector-header">
           <div>
-            <h3>Select Chapter</h3>
+            <h3>Select Topic &amp; Chapter</h3>
             <p>Browse the full CFA Level I curriculum</p>
           </div>
         </div>
         <div class="selector-body">
+          <span class="field-label">Topic Area</span>
+          <div class="chapter-select-wrap" style="margin-bottom:12px">
+            <select id="topicDropdown" onchange="selectTopic(this.value)">
+              <option value="" disabled selected>— Select a topic —</option>
+            </select>
+          </div>
+
           <span class="field-label">Chapter / Reading</span>
           <div class="chapter-select-wrap">
-            <select id="chapterDropdown" onchange="selectChapter(this.value)">
-              <option value="" disabled selected>— Select a chapter —</option>
+            <select id="chapterDropdown" onchange="selectChapter(this.value)" disabled>
+              <option value="" disabled selected>— Select a topic first —</option>
             </select>
           </div>
 
@@ -718,19 +738,14 @@ footer{
       <h2 class="section-title" style="margin-bottom:0">Select a Reading</h2>
     </div>
     <div class="sum-selector-right">
+      <div class="chapter-select-wrap" style="margin-bottom:10px">
+        <select id="summaryTopicDropdown" onchange="selectSummaryTopic(this.value)">
+          <option value="" disabled selected>— Select a topic —</option>
+        </select>
+      </div>
       <div class="chapter-select-wrap">
-        <select id="summaryChapterDropdown" onchange="loadSummary(this.value)">
-          <option value="" disabled selected>— Select a reading —</option>
-          <option value="ch1">R·01  Intro to Financial Statement Analysis</option>
-          <option value="ch2" disabled>R·02  Financial Reporting Standards (Coming Soon)</option>
-          <option value="ch3" disabled>R·03  Understanding Income Statements (Coming Soon)</option>
-          <option value="ch4" disabled>R·04  Understanding Balance Sheets (Coming Soon)</option>
-          <option value="ch5" disabled>R·05  Understanding Cash Flow Statements (Coming Soon)</option>
-          <option value="ch6" disabled>R·06  Financial Analysis Techniques (Coming Soon)</option>
-          <option value="ch7" disabled>R·07  Inventories (Coming Soon)</option>
-          <option value="ch8" disabled>R·08  Long-Lived Assets (Coming Soon)</option>
-          <option value="ch9" disabled>R·09  Income Taxes (Coming Soon)</option>
-          <option value="ch10" disabled>R·10  Non-Current Liabilities (Coming Soon)</option>
+        <select id="summaryChapterDropdown" onchange="loadSummary(this.value)" disabled>
+          <option value="" disabled selected>— Select a topic first —</option>
         </select>
       </div>
     </div>
@@ -1010,35 +1025,225 @@ window.EMBEDDED_QUESTIONS = [
 
 <!-- Home page JS -->
 <script>
-const CHAPTERS = [
-  { id:'all',   label:'All Chapters',                          sub:'',     count:100, available:true  },
-  { id:'ch1',   label:'Intro to Financial Statement Analysis', sub:'R·01', count:100, available:true  },
-  { id:'ch2',   label:'Financial Reporting Standards',         sub:'R·02', count:0,   available:false },
-  { id:'ch3',   label:'Understanding Income Statements',       sub:'R·03', count:0,   available:false },
-  { id:'ch4',   label:'Understanding Balance Sheets',          sub:'R·04', count:0,   available:false },
-  { id:'ch5',   label:'Understanding Cash Flow Statements',    sub:'R·05', count:0,   available:false },
-  { id:'ch6',   label:'Financial Analysis Techniques',         sub:'R·06', count:0,   available:false },
-  { id:'ch7',   label:'Inventories',                           sub:'R·07', count:0,   available:false },
-  { id:'ch8',   label:'Long-Lived Assets',                     sub:'R·08', count:0,   available:false },
-  { id:'ch9',   label:'Income Taxes',                          sub:'R·09', count:0,   available:false },
-  { id:'ch10',  label:'Non-Current Liabilities',               sub:'R·10', count:0,   available:false },
+const TOPICS = [
+  {
+    id: 'fsa', label: 'Financial Statement Analysis', code: 'FSA', icon: '📊',
+    chapters: [
+      { id:'fsa-1',  label:'Intro to Financial Statement Analysis', sub:'R·01', count:100, available:true  },
+      { id:'fsa-2',  label:'Analyzing Income Statements',           sub:'R·02', count:0,   available:false },
+      { id:'fsa-3',  label:'Analyzing Balance Sheets',              sub:'R·03', count:0,   available:false },
+      { id:'fsa-4',  label:'Analyzing Cash Flow Statements',        sub:'R·04', count:0,   available:false },
+      { id:'fsa-5',  label:'Financial Analysis Techniques',         sub:'R·05', count:0,   available:false },
+      { id:'fsa-6',  label:'Inventories',                           sub:'R·06', count:0,   available:false },
+      { id:'fsa-7',  label:'Long-Lived Assets',                     sub:'R·07', count:0,   available:false },
+      { id:'fsa-8',  label:'Income Taxes',                          sub:'R·08', count:0,   available:false },
+      { id:'fsa-9',  label:'Non-Current Liabilities',               sub:'R·09', count:0,   available:false },
+      { id:'fsa-10', label:'Financial Reporting Quality',           sub:'R·10', count:0,   available:false },
+      { id:'fsa-11', label:'Financial Statement Analysis Applications', sub:'R·11', count:0, available:false },
+    ]
+  },
+  {
+    id: 'quant', label: 'Quantitative Methods', code: 'QM', icon: '📐',
+    chapters: [
+      { id:'qm-1',  label:'Rates and Returns',                      sub:'R·01', count:0,   available:false },
+      { id:'qm-2',  label:'Time Value of Money in Finance',         sub:'R·02', count:0,   available:false },
+      { id:'qm-3',  label:'Statistical Measures of Asset Returns',  sub:'R·03', count:0,   available:false },
+      { id:'qm-4',  label:'Probability Trees and Conditional Expectations', sub:'R·04', count:0, available:false },
+      { id:'qm-5',  label:'Portfolio Mathematics',                  sub:'R·05', count:0,   available:false },
+      { id:'qm-6',  label:'Simulation Methods',                     sub:'R·06', count:0,   available:false },
+      { id:'qm-7',  label:'Estimation and Inference',               sub:'R·07', count:0,   available:false },
+      { id:'qm-8',  label:'Hypothesis Testing',                     sub:'R·08', count:0,   available:false },
+      { id:'qm-9',  label:'Parametric and Non-Parametric Tests',    sub:'R·09', count:0,   available:false },
+      { id:'qm-10', label:'Simple Linear Regression',               sub:'R·10', count:0,   available:false },
+      { id:'qm-11', label:'Introduction to Machine Learning',       sub:'R·11', count:0,   available:false },
+      { id:'qm-12', label:'Organized Data and Applications',        sub:'R·12', count:0,   available:false },
+    ]
+  },
+  {
+    id: 'econ', label: 'Economics', code: 'ECON', icon: '🌐',
+    chapters: [
+      { id:'ec-1',  label:'The Firm and Market Structures',         sub:'R·01', count:0,   available:false },
+      { id:'ec-2',  label:'Understanding Business Cycles',          sub:'R·02', count:0,   available:false },
+      { id:'ec-3',  label:'Fiscal Policy',                          sub:'R·03', count:0,   available:false },
+      { id:'ec-4',  label:'Monetary Policy',                        sub:'R·04', count:0,   available:false },
+      { id:'ec-5',  label:'Introduction to Geopolitics',            sub:'R·05', count:0,   available:false },
+      { id:'ec-6',  label:'International Trade and Capital Flows',  sub:'R·06', count:0,   available:false },
+      { id:'ec-7',  label:'Currency Exchange Rates',                sub:'R·07', count:0,   available:false },
+    ]
+  },
+  {
+    id: 'corp', label: 'Corporate Issuers', code: 'CI', icon: '🏢',
+    chapters: [
+      { id:'ci-1',  label:'Organizational Forms, Corporate Issuers', sub:'R·01', count:0,  available:false },
+      { id:'ci-2',  label:'Investors and Other Stakeholders',        sub:'R·02', count:0,  available:false },
+      { id:'ci-3',  label:'Corporate Governance',                    sub:'R·03', count:0,  available:false },
+      { id:'ci-4',  label:'Working Capital and Liquidity',           sub:'R·04', count:0,  available:false },
+      { id:'ci-5',  label:'Capital Investments',                     sub:'R·05', count:0,  available:false },
+      { id:'ci-6',  label:'Capital Structure',                       sub:'R·06', count:0,  available:false },
+      { id:'ci-7',  label:'Business Models',                         sub:'R·07', count:0,  available:false },
+    ]
+  },
+  {
+    id: 'equity', label: 'Equity Investments', code: 'EI', icon: '📈',
+    chapters: [
+      { id:'ei-1',  label:'Market Organization and Structure',       sub:'R·01', count:0,  available:false },
+      { id:'ei-2',  label:'Security Market Indexes',                 sub:'R·02', count:0,  available:false },
+      { id:'ei-3',  label:'Market Efficiency',                       sub:'R·03', count:0,  available:false },
+      { id:'ei-4',  label:'Overview of Equity Securities',           sub:'R·04', count:0,  available:false },
+      { id:'ei-5',  label:'Introduction to Industry and Company Analysis', sub:'R·05', count:0, available:false },
+      { id:'ei-6',  label:'Equity Valuation: Concepts and Tools',    sub:'R·06', count:0,  available:false },
+      { id:'ei-7',  label:'Industry and Company Analysis in Practice', sub:'R·07', count:0, available:false },
+    ]
+  },
+  {
+    id: 'fi', label: 'Fixed Income', code: 'FI', icon: '🏦',
+    chapters: [
+      { id:'fi-1',  label:'Fixed-Income Instrument Features',        sub:'R·01', count:0,  available:false },
+      { id:'fi-2',  label:'Fixed-Income Cash Flows and Types',       sub:'R·02', count:0,  available:false },
+      { id:'fi-3',  label:'Fixed-Income Issuance and Trading',       sub:'R·03', count:0,  available:false },
+      { id:'fi-4',  label:'Fixed-Income Markets for Corporate Issuers', sub:'R·04', count:0, available:false },
+      { id:'fi-5',  label:'Fixed-Income Markets for Government Issuers', sub:'R·05', count:0, available:false },
+      { id:'fi-6',  label:'Introduction to Fixed-Income Valuation',  sub:'R·06', count:0,  available:false },
+      { id:'fi-7',  label:'Yield-Based Bond Duration Measures',      sub:'R·07', count:0,  available:false },
+      { id:'fi-8',  label:'Yield-Based Bond Convexity',              sub:'R·08', count:0,  available:false },
+      { id:'fi-9',  label:'Curve-Based and Empirical Fixed-Income Risk', sub:'R·09', count:0, available:false },
+      { id:'fi-10', label:'Credit Risk',                             sub:'R·10', count:0,  available:false },
+      { id:'fi-11', label:'Credit Analysis for Government Issuers',  sub:'R·11', count:0,  available:false },
+      { id:'fi-12', label:'Securitization',                          sub:'R·12', count:0,  available:false },
+    ]
+  },
+  {
+    id: 'deriv', label: 'Derivatives', code: 'DERIV', icon: '🔀',
+    chapters: [
+      { id:'dv-1',  label:'Derivative Instrument and Derivative Market Features', sub:'R·01', count:0, available:false },
+      { id:'dv-2',  label:'Forward Commitment and Contingent Claim Features', sub:'R·02', count:0, available:false },
+      { id:'dv-3',  label:'Derivative Benefits, Risks, and Issuer Uses', sub:'R·03', count:0, available:false },
+      { id:'dv-4',  label:'Arbitrage, Replication, and the Cost of Carry', sub:'R·04', count:0, available:false },
+      { id:'dv-5',  label:'Pricing and Valuation of Forward Contracts', sub:'R·05', count:0, available:false },
+      { id:'dv-6',  label:'Pricing and Valuation of Futures Contracts', sub:'R·06', count:0, available:false },
+      { id:'dv-7',  label:'Pricing and Valuation of Interest Rates and Swaps', sub:'R·07', count:0, available:false },
+      { id:'dv-8',  label:'Pricing and Valuation of Options',         sub:'R·08', count:0, available:false },
+      { id:'dv-9',  label:'Option Replication Using Put-Call Parity', sub:'R·09', count:0, available:false },
+    ]
+  },
+  {
+    id: 'alts', label: 'Alternative Investments', code: 'AI', icon: '🏛️',
+    chapters: [
+      { id:'ai-1',  label:'Alternative Investment Features',          sub:'R·01', count:0,  available:false },
+      { id:'ai-2',  label:'Alternative Investment Performance',       sub:'R·02', count:0,  available:false },
+      { id:'ai-3',  label:'Investments in Private Capital',           sub:'R·03', count:0,  available:false },
+      { id:'ai-4',  label:'Real Estate and Infrastructure',           sub:'R·04', count:0,  available:false },
+      { id:'ai-5',  label:'Natural Resources',                        sub:'R·05', count:0,  available:false },
+      { id:'ai-6',  label:'Hedge Funds',                              sub:'R·06', count:0,  available:false },
+      { id:'ai-7',  label:'Introduction to Digital Assets',           sub:'R·07', count:0,  available:false },
+    ]
+  },
+  {
+    id: 'pm', label: 'Portfolio Management', code: 'PM', icon: '🎯',
+    chapters: [
+      { id:'pm-1',  label:'Portfolio Risk and Return: Part I',        sub:'R·01', count:0,  available:false },
+      { id:'pm-2',  label:'Portfolio Risk and Return: Part II',       sub:'R·02', count:0,  available:false },
+      { id:'pm-3',  label:'Portfolio Management: An Overview',        sub:'R·03', count:0,  available:false },
+      { id:'pm-4',  label:'Basics of Portfolio Planning and Construction', sub:'R·04', count:0, available:false },
+      { id:'pm-5',  label:'The Behavioral Biases of Individuals',     sub:'R·05', count:0,  available:false },
+      { id:'pm-6',  label:'Introduction to Risk Management',          sub:'R·06', count:0,  available:false },
+      { id:'pm-7',  label:'Technical Analysis',                       sub:'R·07', count:0,  available:false },
+      { id:'pm-8',  label:'Fintech in Investment Management',         sub:'R·08', count:0,  available:false },
+    ]
+  },
+  {
+    id: 'ethics', label: 'Ethical & Professional Standards', code: 'EPS', icon: '⚖️',
+    chapters: [
+      { id:'ep-1',  label:'Ethics and Trust in the Investment Profession', sub:'R·01', count:0, available:false },
+      { id:'ep-2',  label:'Code of Ethics and Standards of Professional Conduct', sub:'R·02', count:0, available:false },
+      { id:'ep-3',  label:'Guidance for Standards I–VII',             sub:'R·03', count:0,  available:false },
+      { id:'ep-4',  label:'Introduction to the Global Investment Performance Standards', sub:'R·04', count:0, available:false },
+      { id:'ep-5',  label:'Ethics Application',                       sub:'R·05', count:0,  available:false },
+    ]
+  },
 ];
 
+// Helper: get all chapters flat
+function allChapters() {
+  return TOPICS.flatMap(t => t.chapters);
+}
+// Helper: total available questions
+function totalAvailableQuestions() {
+  return allChapters().filter(c => c.available).reduce((s, c) => s + c.count, 0);
+}
+
+// Expose to React app
+window.TOPICS_REF = Object.fromEntries(TOPICS.map(t => [t.id, t.chapters]));
+// Map new chapter ids to legacy chapter field values in question data
+// fsa-1 → '1', fsa-2 → '2', etc. (based on questions.json chapter field)
+window.CHAPTER_ID_MAP = {
+  'fsa-1':'1','fsa-2':'2','fsa-3':'3','fsa-4':'4','fsa-5':'5',
+  'fsa-6':'6','fsa-7':'7','fsa-8':'8','fsa-9':'9','fsa-10':'10','fsa-11':'11',
+  'qm-1':'1','qm-2':'2','qm-3':'3','qm-4':'4','qm-5':'5',
+  'qm-6':'6','qm-7':'7','qm-8':'8','qm-9':'9','qm-10':'10','qm-11':'11','qm-12':'12',
+};
+
+let selectedTopic = null;
 let selectedChapter = null;
 let shuffleOn = false;
 let reactMounted = false;
 
-function buildChapterDropdown() {
-  const sel = document.getElementById('chapterDropdown');
+function buildTopicDropdown() {
+  const sel = document.getElementById('topicDropdown');
+  sel.innerHTML = '<option value="" disabled selected>— Select a topic —</option>';
   const allOpt = document.createElement('option');
   allOpt.value = 'all';
-  allOpt.textContent = '📚  All Chapters — ' + CHAPTERS.filter(c=>c.available && c.id!=='all').reduce((s,c)=>s+c.count,0) + ' questions';
+  const totalQ = totalAvailableQuestions();
+  allOpt.textContent = '📚  All Topics — ' + totalQ + ' questions';
   sel.appendChild(allOpt);
   const sep = document.createElement('option');
-  sep.disabled = true;
-  sep.textContent = '──────────────────────────';
+  sep.disabled = true; sep.textContent = '──────────────────────────';
   sel.appendChild(sep);
-  CHAPTERS.filter(c => c.id !== 'all').forEach(ch => {
+  TOPICS.forEach(t => {
+    const opt = document.createElement('option');
+    opt.value = t.id;
+    const avail = t.chapters.filter(c => c.available).reduce((s,c) => s+c.count, 0);
+    opt.textContent = t.icon + '  ' + t.label + (avail > 0 ? '  — ' + avail + ' Qs' : '  (Coming Soon)');
+    sel.appendChild(opt);
+  });
+}
+
+function selectTopic(topicId) {
+  selectedTopic = topicId || null;
+  selectedChapter = null;
+  // Reset chapter dropdown
+  buildChapterDropdownForTopic(topicId);
+  updatePreview();
+  updateStartBtn();
+}
+
+function buildChapterDropdownForTopic(topicId) {
+  const sel = document.getElementById('chapterDropdown');
+  sel.innerHTML = '<option value="" disabled selected>— Select a chapter —</option>';
+  sel.disabled = !topicId;
+  if (!topicId) return;
+  if (topicId === 'all') {
+    // "All within each topic" option
+    const allOpt = document.createElement('option');
+    allOpt.value = 'all';
+    allOpt.textContent = '📚  All Chapters — ' + totalAvailableQuestions() + ' questions';
+    sel.appendChild(allOpt);
+    return;
+  }
+  const topic = TOPICS.find(t => t.id === topicId);
+  if (!topic) return;
+  // All chapters in topic
+  const topicTotal = topic.chapters.filter(c => c.available).reduce((s,c) => s+c.count, 0);
+  if (topicTotal > 0) {
+    const allOpt = document.createElement('option');
+    allOpt.value = topicId + '-all';
+    allOpt.textContent = '📚  All ' + topic.label + ' — ' + topicTotal + ' Qs';
+    sel.appendChild(allOpt);
+    const sep = document.createElement('option');
+    sep.disabled = true; sep.textContent = '──────────────────────────';
+    sel.appendChild(sep);
+  }
+  topic.chapters.forEach(ch => {
     const opt = document.createElement('option');
     opt.value = ch.id;
     if (!ch.available) {
@@ -1064,11 +1269,24 @@ function toggleShuffle() {
 }
 
 function updatePreview() {
-  if (!selectedChapter) return;
-  const ch = CHAPTERS.find(c => c.id === selectedChapter);
-  document.getElementById('previewChapter').textContent =
-    selectedChapter === 'all' ? 'All Chapters' : ch.sub + ' · ' + ch.label.split(' ').slice(0,3).join(' ') + '…';
-  const count = ch.count || 0;
+  if (!selectedChapter) {
+    document.getElementById('previewChapter').textContent = selectedTopic ? (TOPICS.find(t=>t.id===selectedTopic)||{label:'—'}).label : '—';
+    document.getElementById('previewCount').textContent = '—';
+    document.getElementById('previewTime').textContent = '—';
+    return;
+  }
+  let label = '—', count = 0;
+  if (selectedChapter === 'all') {
+    label = 'All Chapters'; count = totalAvailableQuestions();
+  } else if (selectedChapter.endsWith('-all')) {
+    const tId = selectedChapter.replace('-all','');
+    const t = TOPICS.find(x => x.id === tId);
+    if (t) { label = 'All ' + t.label; count = t.chapters.filter(c=>c.available).reduce((s,c)=>s+c.count,0); }
+  } else {
+    const ch = allChapters().find(c => c.id === selectedChapter);
+    if (ch) { label = ch.sub + ' · ' + ch.label.split(' ').slice(0,4).join(' ') + (ch.label.split(' ').length > 4 ? '…' : ''); count = ch.count; }
+  }
+  document.getElementById('previewChapter').textContent = label;
   document.getElementById('previewCount').textContent = count > 0 ? count + ' questions' : '—';
   document.getElementById('previewTime').textContent = count > 0 ? '~' + Math.round(count * 1.5) + ' min' : '—';
 }
@@ -1114,8 +1332,43 @@ window.goToHome = function() {
   reactMounted = false;
 };
 
-buildChapterDropdown();
+buildTopicDropdown();
+document.getElementById('chapterDropdown').disabled = true;
+// Also build summaries topic dropdown
+buildSummaryTopicDropdown();
 updateStartBtn();
+
+function buildSummaryTopicDropdown() {
+  const sel = document.getElementById('summaryTopicDropdown');
+  if (!sel) return;
+  sel.innerHTML = '<option value="" disabled selected>— Select a topic —</option>';
+  TOPICS.forEach(t => {
+    const opt = document.createElement('option');
+    opt.value = t.id;
+    const hasContent = t.chapters.some(c => c.available);
+    opt.textContent = t.icon + '  ' + t.label + (hasContent ? '' : '  (Coming Soon)');
+    sel.appendChild(opt);
+  });
+}
+
+function selectSummaryTopic(topicId) {
+  const sel = document.getElementById('summaryChapterDropdown');
+  sel.innerHTML = '<option value="" disabled selected>— Select a chapter —</option>';
+  sel.disabled = false;
+  const topic = TOPICS.find(t => t.id === topicId);
+  if (!topic) return;
+  topic.chapters.forEach(ch => {
+    const opt = document.createElement('option');
+    opt.value = ch.id;
+    if (!ch.available) {
+      opt.disabled = true;
+      opt.textContent = ch.sub + '  ' + ch.label + '  (Coming Soon)';
+    } else {
+      opt.textContent = ch.sub + '  ' + ch.label;
+    }
+    sel.appendChild(opt);
+  });
+}
 
 function loadSummary(chapterId) {
   const empty = document.getElementById('sum-empty');
@@ -1125,8 +1378,8 @@ function loadSummary(chapterId) {
     content.style.display = 'none';
     return;
   }
-  // Only ch1 has content for now
-  if (chapterId === 'ch1') {
+  // Only fsa-1 (Reading 1) has content for now
+  if (chapterId === 'ch1' || chapterId === 'fsa-1') {
     empty.style.display = 'none';
     content.style.display = '';
     content.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -1205,8 +1458,21 @@ function FinanceExamApp() {
                         // Auto-start using config from home page
                         const config = window.EXAM_CONFIG || { chapter: 'all', shuffle: false };
                         let filtered = data;
-                        if (config.chapter !== 'all') {
-                            filtered = data.filter(q => String(q.chapter) === String(config.chapter));
+                        if (config.chapter && config.chapter !== 'all') {
+                          if (config.chapter.endsWith('-all')) {
+                            // All chapters within a topic e.g. 'fsa-all'
+                            const topicId = config.chapter.replace('-all','');
+                            const topicChIds = (window.TOPICS_REF[topicId]||[]).map(c=>c.id);
+                            filtered = data.filter(q => topicChIds.includes(q.chapter) || topicChIds.includes(String(q.chapter)));
+                          } else {
+                            // Single chapter — try matching by new id OR old numeric/string chapter field
+                            const chapterIdMap = window.CHAPTER_ID_MAP || {};
+                            const legacyChapter = chapterIdMap[config.chapter] || config.chapter;
+                            filtered = data.filter(q =>
+                              String(q.chapter) === String(config.chapter) ||
+                              String(q.chapter) === String(legacyChapter)
+                            );
+                          }
                         }
                         if (filtered.length === 0) filtered = data;
                         const active = config.shuffle ? shuffleArray(filtered) : filtered;
