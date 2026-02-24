@@ -1416,6 +1416,933 @@ footer{
 
 
   <!-- ══════════════════════════════════════
+       QM · READING 3 — STATISTICAL MEASURES OF ASSET RETURNS
+  ══════════════════════════════════════ -->
+  <div id="sum-qm-3" class="sum-chapter" style="display:none">
+  <div class="sum-hero">
+    <div class="sum-hero-label">2026 CFA® Program · Level I · QM Reading 3</div>
+    <h1>Statistical Measures of <em>Asset Returns</em></h1>
+    <div class="sum-hero-tags">
+      <span class="sum-hero-tag">4 Learning Outcomes</span>
+      <span class="sum-hero-tag">Central Tendency</span>
+      <span class="sum-hero-tag">Dispersion</span>
+      <span class="sum-hero-tag">Skewness &amp; Kurtosis</span>
+      <span class="sum-hero-tag">Correlation</span>
+      <span class="sum-hero-tag">Quantiles</span>
+    </div>
+  </div>
+
+  <div class="sum-body">
+
+    <!-- Learning Outcomes -->
+    <div class="s-header">
+      <div class="s-icon">🎯</div>
+      <h2><span>Learning Outcomes</span>What You Need to Master</h2>
+    </div>
+    <div class="lo-list">
+      <div class="lo-item"><span class="lo-pill">LO 1</span><span class="lo-text">Calculate, interpret, and evaluate <strong>measures of central tendency and location</strong> to address an investment problem</span></div>
+      <div class="lo-item"><span class="lo-pill">LO 2</span><span class="lo-text">Calculate, interpret, and evaluate <strong>measures of dispersion</strong> to address an investment problem</span></div>
+      <div class="lo-item"><span class="lo-pill">LO 3</span><span class="lo-text">Interpret and evaluate <strong>measures of skewness and kurtosis</strong> to address an investment problem</span></div>
+      <div class="lo-item"><span class="lo-pill">LO 4</span><span class="lo-text">Interpret <strong>correlation between two variables</strong> to address an investment problem</span></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Central Tendency -->
+    <div class="s-header">
+      <div class="s-icon">📍</div>
+      <h2><span>Section 1 — LO 1</span>Measures of Central Tendency</h2>
+    </div>
+    <div class="phases-table">
+      <div class="phase-row"><div class="phase-n">1</div><div class="phase-body"><div class="phase-title">Arithmetic Mean <span style="font-weight:400;font-size:.85em">( X̄ = Σ Xᵢ / n )</span></div><div class="phase-desc">Sum of all observations divided by the number of observations. Most common measure; used as default. <strong>Sensitive to outliers</strong> — a single extreme value pulls the mean significantly.</div><span class="phase-out">→ Best for symmetric distributions without extreme outliers</span></div></div>
+      <div class="phase-row"><div class="phase-n">2</div><div class="phase-body"><div class="phase-title">Median</div><div class="phase-desc">Middle value when data are sorted. For odd n: value at position (n+1)/2. For even n: average of values at positions n/2 and (n+2)/2. <strong>Not affected by outliers</strong> — preferred for skewed distributions.</div><span class="phase-out">→ Preferred when outliers or skewness are present</span></div></div>
+      <div class="phase-row"><div class="phase-n">3</div><div class="phase-body"><div class="phase-title">Mode</div><div class="phase-desc">Most frequently occurring value. A dataset can be unimodal (one mode), bimodal, trimodal, or have no mode. The only measure usable with nominal/categorical data.</div><span class="phase-out">→ Histogram bar with highest frequency = modal interval</span></div></div>
+      <div class="phase-row"><div class="phase-n">4</div><div class="phase-body"><div class="phase-title">Trimmed Mean</div><div class="phase-desc">Arithmetic mean computed after removing a stated percentage of the extreme high and low values (e.g., 5% trimmed mean removes the bottom 2.5% and top 2.5% of values). Reduces the influence of outliers.</div><span class="phase-out">→ Used in sports scoring and robust return estimation</span></div></div>
+      <div class="phase-row"><div class="phase-n">5</div><div class="phase-body"><div class="phase-title">Winsorized Mean</div><div class="phase-desc">Extreme values are replaced (not removed) by a specified percentile boundary. A 95% winsorized mean substitutes the 2.5th percentile value for all observations below it and the 97.5th percentile value for all above.</div><span class="phase-out">→ Preserves sample size; reduces distortion from extremes</span></div></div>
+    </div>
+    <div class="info-note gold"><strong>Skewness and means:</strong> In a positively skewed distribution: Mode &lt; Median &lt; Mean. In a negatively skewed distribution: Mean &lt; Median &lt; Mode. In a symmetric distribution all three are equal.</div>
+
+    <hr class="s-divider">
+
+    <!-- Quantiles -->
+    <div class="s-header">
+      <div class="s-icon">📊</div>
+      <h2><span>Section 1 — LO 1</span>Quantiles and Location Measures</h2>
+    </div>
+    <table class="cmp-table">
+      <thead><tr><th>Quantile Type</th><th>Divides Into</th><th>Key Points</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Percentiles</strong></td><td>100 equal parts</td><td>90th percentile = value at/below which 90% of data falls. Location: Lᵧ = (n+1) × (y/100)</td></tr>
+        <tr><td><strong>Deciles</strong></td><td>10 equal parts</td><td>Each decile = 10% of data. Used to rank companies by size (e.g., market cap deciles)</td></tr>
+        <tr><td><strong>Quintiles</strong></td><td>5 equal parts</td><td>Each quintile = 20% of data. 4th quintile = 80th percentile</td></tr>
+        <tr><td><strong>Quartiles</strong></td><td>4 equal parts</td><td>Q1 = 25th pct; Q2 = 50th pct (median); Q3 = 75th pct</td></tr>
+        <tr><td><strong>IQR</strong></td><td>—</td><td>IQR = Q3 − Q1. Middle 50% of data. Box in a box-and-whisker plot</td></tr>
+      </tbody>
+    </table>
+    <div class="info-note blue" style="margin-top:12px"><strong>Box &amp; Whisker Plot:</strong> The box spans Q1 to Q3 (= IQR). Whisker fences are often set at Q1 − 1.5×IQR (lower) and Q3 + 1.5×IQR (upper). Data points beyond the fences are plotted individually as <strong>outliers</strong>. The median and arithmetic mean are marked within the box.</div>
+
+    <hr class="s-divider">
+
+    <!-- Measures of Dispersion -->
+    <div class="s-header">
+      <div class="s-icon">📏</div>
+      <h2><span>Section 2 — LO 2</span>Measures of Dispersion</h2>
+    </div>
+    <div class="audit-list">
+      <div class="audit-item"><div class="audit-dot" style="background:#1a3a8f"></div><div><h4>Range</h4><p>Maximum value − Minimum value. Simple but uses only two observations; highly sensitive to outliers. Limited informational value about the shape of the distribution.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#b98a1c"></div><div><h4>Mean Absolute Deviation (MAD)</h4><p>MAD = Σ|Xᵢ − X̄| / n. Average of the absolute deviations from the mean. Uses all observations. Technically harder to manipulate mathematically than variance.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#b91c1c"></div><div><h4>Sample Variance (s²)</h4><p>s² = Σ(Xᵢ − X̄)² / (n−1). Squared deviations from the mean, averaged using n−1 (degrees of freedom). The divisor n−1 makes s² an unbiased estimator of population variance. Units are squared.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#1a7a4a"></div><div><h4>Sample Standard Deviation (s)</h4><p>s = √[Σ(Xᵢ − X̄)² / (n−1)]. Square root of the variance; same units as the data. Most widely used dispersion measure. Always reported alongside the arithmetic mean.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#6b3a8f"></div><div><h4>Target Downside Deviation (Semideviation)</h4><p>S_Target = √[Σ(Xᵢ − B)² / (n−1)] for all Xᵢ ≤ B. Only counts observations <em>below</em> the target B. Higher target → more observations included → larger semideviation. Captures downside risk only.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#3a7a8f"></div><div><h4>Coefficient of Variation (CV)</h4><p>CV = s / X̄. Risk per unit of mean return. Scale-free — allows comparison across datasets with different means or units. Higher CV = more risk per unit of reward. Meaningless if X̄ is negative.</p></div></div>
+    </div>
+    <div class="info-note gold" style="margin-top:16px"><strong>Key relationship:</strong> For any distribution, Geometric Mean ≤ Arithmetic Mean. The greater the dispersion (higher variance), the larger the gap between them. This is why Portfolio B with higher standard deviation has a lower geometric mean than Portfolio A despite equal arithmetic means.</div>
+
+    <hr class="s-divider">
+
+    <!-- Key Formulas -->
+    <div class="s-header">
+      <div class="s-icon">📋</div>
+      <h2><span>Master Reference</span>All Key Formulas at a Glance</h2>
+    </div>
+    <table class="cmp-table">
+      <thead><tr><th>Measure</th><th>Formula</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Sample Mean</td><td>X̄ = Σ Xᵢ / n</td><td>Equal weight to all observations</td></tr>
+        <tr><td>MAD</td><td>Σ|Xᵢ − X̄| / n</td><td>Uses absolute value; avoids sign cancellation</td></tr>
+        <tr><td>Sample Variance</td><td>s² = Σ(Xᵢ − X̄)² / (n−1)</td><td>Divide by n−1, not n</td></tr>
+        <tr><td>Sample Std Dev</td><td>s = √[Σ(Xᵢ − X̄)² / (n−1)]</td><td>Same units as original data</td></tr>
+        <tr><td>Target Semideviation</td><td>√[Σ(Xᵢ−B)² / (n−1)], Xᵢ ≤ B</td><td>n = total sample size (not just below-target obs)</td></tr>
+        <tr><td>Coefficient of Variation</td><td>CV = s / X̄</td><td>Higher = riskier per unit of return</td></tr>
+        <tr><td>Skewness (approx.)</td><td>(1/n) Σ[(Xᵢ − X̄)³ / s³]</td><td>Positive = right tail; Negative = left tail</td></tr>
+        <tr><td>Excess Kurtosis</td><td>(1/n) Σ[(Xᵢ − X̄)⁴ / s⁴] − 3</td><td>Normal = 0; Fat-tailed &gt; 0; Thin-tailed &lt; 0</td></tr>
+        <tr><td>Sample Covariance</td><td>sXY = Σ(Xᵢ−X̄)(Yᵢ−Ȳ) / (n−1)</td><td>Positive: move together; Negative: move oppositely</td></tr>
+        <tr><td>Correlation Coefficient</td><td>r = sXY / (sX × sY)</td><td>Range: −1 to +1; 0 = no linear relationship</td></tr>
+        <tr><td>IQR</td><td>Q3 − Q1</td><td>Middle 50% of data; box height in box plot</td></tr>
+        <tr><td>Percentile Location</td><td>Lᵧ = (n+1) × (y/100)</td><td>Interpolate between adjacent values if non-integer</td></tr>
+      </tbody>
+    </table>
+
+    <hr class="s-divider">
+
+    <!-- Skewness & Kurtosis -->
+    <div class="s-header">
+      <div class="s-icon">📐</div>
+      <h2><span>Section 3 — LO 3</span>Skewness and Kurtosis</h2>
+    </div>
+    <div class="phases-table">
+      <div class="phase-row"><div class="phase-n">+</div><div class="phase-body"><div class="phase-title">Positive Skewness (Right-Skewed)</div><div class="phase-desc">Long tail on the right. Frequent small losses, occasional large gains. Mode &lt; Median &lt; Mean. Investors generally <em>prefer</em> positive skew — upside is less frequent but larger.</div><span class="phase-out">→ Mean is pulled upward by extreme positive values</span></div></div>
+      <div class="phase-row"><div class="phase-n">−</div><div class="phase-body"><div class="phase-title">Negative Skewness (Left-Skewed)</div><div class="phase-desc">Long tail on the left. Frequent small gains, occasional large losses. Mean &lt; Median &lt; Mode. Most equity index daily returns exhibit negative skewness — catastrophic drawdowns are possible.</div><span class="phase-out">→ Mean is pulled downward by extreme negative values</span></div></div>
+      <div class="phase-row"><div class="phase-n">0</div><div class="phase-body"><div class="phase-title">Zero Skewness (Symmetric)</div><div class="phase-desc">Mirror-image distribution around the mean. Mean = Median = Mode. The normal distribution is the classic example.</div><span class="phase-out">→ Equal probability of equivalent positive and negative deviations</span></div></div>
+    </div>
+    <table class="cmp-table" style="margin-top:24px">
+      <thead><tr><th>Kurtosis Type</th><th>Excess Kurtosis</th><th>Kurtosis Value</th><th>Tail Shape</th><th>Investment Implication</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Leptokurtic</strong> (fat-tailed)</td><td>&gt; 0</td><td>&gt; 3</td><td>Fatter than normal</td><td>More frequent extreme events — <strong>underestimates tail risk</strong> if normal assumed</td></tr>
+        <tr><td><strong>Mesokurtic</strong> (normal)</td><td>= 0</td><td>= 3</td><td>Normal</td><td>Standard benchmark; normal distribution</td></tr>
+        <tr><td><strong>Platykurtic</strong> (thin-tailed)</td><td>&lt; 0</td><td>&lt; 3</td><td>Thinner than normal</td><td>Fewer extreme outcomes than normal distribution</td></tr>
+      </tbody>
+    </table>
+    <div class="info-note blue" style="margin-top:12px"><strong>Practical note:</strong> Most equity return distributions are fat-tailed (leptokurtic) with negative skewness. Using a normal distribution model for such returns <strong>underestimates</strong> the probability of both very bad outcomes (crashes) and very good outcomes (rallies). This is a key limitation of mean–variance analysis.</div>
+
+    <hr class="s-divider">
+
+    <!-- Correlation -->
+    <div class="s-header">
+      <div class="s-icon">🔗</div>
+      <h2><span>Section 4 — LO 4</span>Correlation Between Two Variables</h2>
+    </div>
+    <div class="audit-list">
+      <div class="audit-item"><div class="audit-dot" style="background:#1a3a8f"></div><div><h4>Correlation = +1 (Perfect Positive)</h4><p>All scatter plot points lie on a positively sloped straight line. Every unit increase in X is associated with a fixed increase in Y. No diversification benefit.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#1a7a4a"></div><div><h4>Correlation near +1 (Strong Positive)</h4><p>Variables move together most of the time. Tightly clustered scatter around an upward-sloping line. Example: IT sector vs. S&amp;P 500 returns.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#b98a1c"></div><div><h4>Correlation = 0 (Uncorrelated)</h4><p>No linear relationship. Knowing X tells you nothing about Y. Points scatter randomly. Example: utilities sector vs. S&amp;P 500 in some periods.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#b91c1c"></div><div><h4>Correlation = −1 (Perfect Negative / Inverse)</h4><p>All points on a negatively sloped straight line. Every increase in X is associated with a fixed decrease in Y. Maximum diversification benefit.</p></div></div>
+    </div>
+    <div class="info-note gold" style="margin-top:16px">
+      <strong>Key limitations of correlation:</strong>
+      <ul style="margin-top:8px;padding-left:18px;line-height:1.9">
+        <li><strong>Outliers</strong> — a single extreme observation can dramatically change the correlation coefficient.</li>
+        <li><strong>Non-linear relationships</strong> — correlation measures only <em>linear</em> association; two variables perfectly associated in a non-linear way can have r ≈ 0.</li>
+        <li><strong>Spurious correlation</strong> — high correlation may arise by chance, from dividing by a shared variable, or from a common third-variable driver. Correlation does not imply causation.</li>
+        <li><strong>Anscombe's Quartet</strong> — four very different datasets can share identical means, standard deviations, and correlations. Always visualize data with a scatter plot before interpreting r.</li>
+      </ul>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Common Exam Pitfalls -->
+    <div class="s-header">
+      <div class="s-icon">⚡</div>
+      <h2><span>Common Pitfalls</span>Exam Traps to Avoid</h2>
+    </div>
+    <div class="src-grid">
+      <div class="src-card"><div class="src-card-hd">❌ Variance Divisor: n vs n−1</div><ul class="src-items"><li>Sample variance and standard deviation use n−1 (degrees of freedom), not n</li><li>Using n gives a biased (lower) estimate of population variance</li><li>Sample covariance also uses n−1 in the denominator</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ Target Semideviation: Wrong n</div><ul class="src-items"><li>Denominator is n−1 where n = <em>total</em> sample observations, not just observations below the target</li><li>Only the squared deviations are restricted to below-target observations in the numerator</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ Skewness Signs and Tail Direction</div><ul class="src-items"><li>Positive skew → right/upper tail is longer; mean &gt; median &gt; mode</li><li>Negative skew → left/lower tail is longer; mean &lt; median &lt; mode</li><li>Don't confuse skewness sign with which side investors prefer</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ Excess Kurtosis vs Kurtosis</div><ul class="src-items"><li>Normal distribution kurtosis = 3; excess kurtosis = 0</li><li>Statistical packages often report excess kurtosis labelled simply as "kurtosis"</li><li>Fat-tailed: excess kurtosis &gt; 0; Thin-tailed: excess kurtosis &lt; 0</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ Correlation ≠ Causation</div><ul class="src-items"><li>A high correlation does not imply one variable causes the other</li><li>Always suspect spurious correlation when the relationship has no logical basis</li><li>Correlation is only valid for <em>linear</em> relationships</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ Percentile Location Formula</div><ul class="src-items"><li>Use Lᵧ = (n+1) × (y/100) to find the position, then interpolate if non-integer</li><li>The 4th quintile = 80th percentile, NOT the top 20% group</li><li>Interpolation: Pᵧ = X_floor + (Lᵧ − floor) × (X_ceil − X_floor)</li></ul></div>
+    </div>
+
+    <div class="takeaway">
+      <h3>Core Mindset for Statistical Measures of Asset Returns</h3>
+      <p>Return distributions almost never follow a perfect normal distribution. Real asset returns tend to be <strong>negatively skewed</strong> (catastrophic crashes are more likely than equivalent windfalls) and <strong>fat-tailed</strong> (extreme events occur more often than the normal curve predicts). This means that using only the mean and standard deviation to describe returns <em>systematically underestimates tail risk</em>. A complete picture requires examining skewness, kurtosis, downside semideviation, and visual tools like histograms and box plots. Similarly, when evaluating relationships between two assets, correlation summarizes only the <strong>linear</strong> part of the story — always supplement with a scatter plot and be alert to outliers and spurious correlations before drawing investment conclusions.</p>
+    </div>
+
+  </div><!-- /.sum-body -->
+  </div><!-- /#sum-qm-3 -->
+
+
+  <!-- ══════════════════════════════════════
+       QM · READING 4 — PROBABILITY TREES AND CONDITIONAL EXPECTATIONS
+  ══════════════════════════════════════ -->
+  <div id="sum-qm-4" class="sum-chapter" style="display:none">
+  <div class="sum-hero">
+    <div class="sum-hero-label">2026 CFA® Program · Level I · QM Reading 4</div>
+    <h1>Probability Trees and <em>Conditional Expectations</em></h1>
+    <div class="sum-hero-tags">
+      <span class="sum-hero-tag">3 Learning Outcomes</span>
+      <span class="sum-hero-tag">Expected Value &amp; Variance</span>
+      <span class="sum-hero-tag">Probability Trees</span>
+      <span class="sum-hero-tag">Total Probability Rule</span>
+      <span class="sum-hero-tag">Bayes' Formula</span>
+      <span class="sum-hero-tag">Posterior Probabilities</span>
+    </div>
+  </div>
+
+  <div class="sum-body">
+
+    <!-- Learning Outcomes -->
+    <div class="s-header">
+      <div class="s-icon">🎯</div>
+      <h2><span>Learning Outcomes</span>What You Need to Master</h2>
+    </div>
+    <div class="lo-list">
+      <div class="lo-item"><span class="lo-pill">LO 1</span><span class="lo-text">Calculate <strong>expected values, variances, and standard deviations</strong> and demonstrate their application to investment problems</span></div>
+      <div class="lo-item"><span class="lo-pill">LO 2</span><span class="lo-text">Formulate an investment problem as a <strong>probability tree</strong> and explain the use of <strong>conditional expectations</strong> in investment applications</span></div>
+      <div class="lo-item"><span class="lo-pill">LO 3</span><span class="lo-text">Calculate and interpret an <strong>updated probability</strong> in an investment setting using <strong>Bayes' formula</strong></span></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Expected Value & Variance -->
+    <div class="s-header">
+      <div class="s-icon">📐</div>
+      <h2><span>Section 1 — LO 1</span>Expected Value, Variance &amp; Standard Deviation</h2>
+    </div>
+    <div class="phases-table">
+      <div class="phase-row"><div class="phase-n">1</div><div class="phase-body"><div class="phase-title">Expected Value — E(X)</div><div class="phase-desc">The probability-weighted average of all possible outcomes of a random variable. It is a forward-looking <em>forecast</em> — not the same as a historical sample mean, which is an equally weighted average of past observations.</div><span class="phase-out">E(X) = P(X₁)X₁ + P(X₂)X₂ + … + P(Xₙ)Xₙ = Σ P(Xᵢ)Xᵢ</span></div></div>
+      <div class="phase-row"><div class="phase-n">2</div><div class="phase-body"><div class="phase-title">Variance — σ²(X)</div><div class="phase-desc">The probability-weighted average of squared deviations from the expected value. Always ≥ 0. Variance = 0 means certainty (no risk). Variance is measured in <em>squared</em> units of X (e.g., percent²).</div><span class="phase-out">σ²(X) = Σ P(Xᵢ)[Xᵢ − E(X)]²</span></div></div>
+      <div class="phase-row"><div class="phase-n">3</div><div class="phase-body"><div class="phase-title">Standard Deviation — σ(X)</div><div class="phase-desc">The positive square root of variance. Measured in the <em>same units</em> as X (e.g., percent), making it directly interpretable as a risk measure. Always reported alongside expected value.</div><span class="phase-out">σ(X) = √[Σ P(Xᵢ)(Xᵢ − E(X))²]</span></div></div>
+    </div>
+    <div class="info-note gold"><strong>Calculation order is always:</strong> (1) Expected Value → (2) Variance → (3) Standard Deviation. You must have E(X) before you can compute variance.</div>
+
+    <hr class="s-divider">
+
+    <!-- Key Formulas -->
+    <div class="s-header">
+      <div class="s-icon">📋</div>
+      <h2><span>Master Reference</span>All Key Formulas at a Glance</h2>
+    </div>
+    <table class="cmp-table">
+      <thead><tr><th>Concept</th><th>Formula</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Expected Value</td><td>E(X) = Σ P(Xᵢ) · Xᵢ</td><td>Probability-weighted average of outcomes</td></tr>
+        <tr><td>Variance</td><td>σ²(X) = Σ P(Xᵢ)[Xᵢ − E(X)]²</td><td>Always ≥ 0; units are squared</td></tr>
+        <tr><td>Standard Deviation</td><td>σ(X) = √σ²(X)</td><td>Same units as X; more interpretable than variance</td></tr>
+        <tr><td>Conditional Expected Value</td><td>E(X | S) = Σ P(Xᵢ | S) · Xᵢ</td><td>Expected value given scenario S has occurred</td></tr>
+        <tr><td>Total Probability Rule (2 scenarios)</td><td>E(X) = E(X|S)·P(S) + E(X|Sᶜ)·P(Sᶜ)</td><td>Sᶜ = complement of S (S does not occur)</td></tr>
+        <tr><td>Total Probability Rule (n scenarios)</td><td>E(X) = Σ E(X|Sᵢ)·P(Sᵢ)</td><td>Scenarios must be mutually exclusive &amp; exhaustive</td></tr>
+        <tr><td>Conditional Probability</td><td>P(A|B) = P(AB) / P(B)</td><td>Probability of A given B; P(B) ≠ 0</td></tr>
+        <tr><td>Joint Probability</td><td>P(AB) = P(A|B) · P(B)</td><td>Rearrangement of conditional probability definition</td></tr>
+        <tr><td>Bayes' Formula</td><td>P(Event|Info) = [P(Info|Event) / P(Info)] · P(Event)</td><td>Updates prior using new information</td></tr>
+        <tr><td>Unconditional Probability (denominator)</td><td>P(Info) = Σ P(Info|Eᵢ) · P(Eᵢ)</td><td>Required denominator in Bayes' formula</td></tr>
+      </tbody>
+    </table>
+
+    <hr class="s-divider">
+
+    <!-- Probability Trees -->
+    <div class="s-header">
+      <div class="s-icon">🌳</div>
+      <h2><span>Section 2 — LO 2</span>Probability Trees &amp; Conditional Expectations</h2>
+    </div>
+    <div class="phases-table">
+      <div class="phase-row"><div class="phase-n">1</div><div class="phase-body"><div class="phase-title">Structure of a Probability Tree</div><div class="phase-desc">A probability tree has a root node (starting point), branches leading to scenario nodes (e.g., high growth / low growth), and terminal nodes showing final outcomes with their probabilities. The probability of any terminal node = product of all probabilities along its branch path.</div><span class="phase-out">→ Terminal node probability = P(scenario) × P(outcome | scenario)</span></div></div>
+      <div class="phase-row"><div class="phase-n">2</div><div class="phase-body"><div class="phase-title">Conditional Expected Value</div><div class="phase-desc">The expected value of X computed using only the probabilities and outcomes applicable within a specific scenario S, written E(X | S). Each scenario produces its own conditional expected value and conditional variance, enabling scenario-specific risk assessment.</div><span class="phase-out">→ E(X | S) = Σ P(Xᵢ | S) · Xᵢ, summing only within scenario S</span></div></div>
+      <div class="phase-row"><div class="phase-n">3</div><div class="phase-body"><div class="phase-title">Total Probability Rule for E(X)</div><div class="phase-desc">The unconditional expected value equals the probability-weighted sum of all conditional expected values. Conditional and unconditional expectations must be internally consistent — inconsistency creates arbitrage opportunities for other investors.</div><span class="phase-out">→ E(X) = E(X|S₁)·P(S₁) + E(X|S₂)·P(S₂) + … + E(X|Sₙ)·P(Sₙ)</span></div></div>
+      <div class="phase-row"><div class="phase-n">4</div><div class="phase-body"><div class="phase-title">Conditional Variance</div><div class="phase-desc">σ²(X | S) measures the dispersion of outcomes within a specific scenario. It uses E(X | S) — not the overall E(X) — as the reference mean. Useful for stress-testing: "What is my risk if the economy enters recession?"</div><span class="phase-out">→ σ²(X|S) = Σ P(Xᵢ|S)[Xᵢ − E(X|S)]²</span></div></div>
+    </div>
+    <div class="info-note blue"><strong>Investment application:</strong> Probability trees break a complex forecast (e.g., EPS, operating costs) into stages driven by underlying factors (e.g., interest rate environment, growth rate). Work <em>left to right</em> to assign probabilities at each branch; work <em>right to left</em> to aggregate conditional expected values into a single unconditional forecast at the root.</div>
+
+    <hr class="s-divider">
+
+    <!-- Bayes' Formula -->
+    <div class="s-header">
+      <div class="s-icon">🔄</div>
+      <h2><span>Section 3 — LO 3</span>Bayes' Formula — Updating Probabilities</h2>
+    </div>
+    <div class="phases-table">
+      <div class="phase-row"><div class="phase-n">1</div><div class="phase-body"><div class="phase-title">Prior Probability</div><div class="phase-desc">The probability of an event based on existing knowledge <em>before</em> receiving new information. Reflects the analyst's current belief or base rate. All prior probabilities across the mutually exclusive and exhaustive event list must sum to 1.</div><span class="phase-out">→ Starting point; based on research and historical data</span></div></div>
+      <div class="phase-row"><div class="phase-n">2</div><div class="phase-body"><div class="phase-title">Likelihood: P(Information | Event)</div><div class="phase-desc">The conditional probability of observing the new information, given that a specific event occurred. Must be assessed for <em>every</em> event in the list. This is the key input that reflects how strongly the new information points toward each possible event.</div><span class="phase-out">→ "How likely is this announcement if EPS already beat consensus?"</span></div></div>
+      <div class="phase-row"><div class="phase-n">3</div><div class="phase-body"><div class="phase-title">Unconditional Probability of the Information: P(Info)</div><div class="phase-desc">Computed via the total probability rule: P(Info) = Σ P(Info | Eventᵢ) · P(Eventᵢ). This is the normalising denominator in Bayes' formula. It represents the overall chance of observing the new information, averaged across all possible events.</div><span class="phase-out">→ Must be calculated before applying Bayes' formula</span></div></div>
+      <div class="phase-row"><div class="phase-n">4</div><div class="phase-body"><div class="phase-title">Posterior Probability</div><div class="phase-desc">The updated probability of the event after incorporating the new information. The ratio P(Info|Event) / P(Info) is the Bayes' multiplier — if greater than 1, the information raises the probability of that event; if less than 1, it lowers it. All posterior probabilities must sum to 1.</div><span class="phase-out">→ Posterior = [P(Info|Event) / P(Info)] × Prior</span></div></div>
+    </div>
+
+    <div class="info-note gold" style="margin-top:16px">
+      <strong>Step-by-step Bayes' process:</strong>
+      <ol style="margin-top:8px;padding-left:18px;line-height:2">
+        <li>List all <strong>mutually exclusive and exhaustive</strong> events — prior probabilities must sum to 1</li>
+        <li>Assess the <strong>likelihood</strong> P(Information | Event) for each event</li>
+        <li>Compute <strong>P(Information)</strong> via the total probability rule: Σ P(Info|Eᵢ)·P(Eᵢ)</li>
+        <li>Apply Bayes' formula to each event: <strong>Posterior = [Likelihood / P(Info)] × Prior</strong></li>
+        <li><strong>Verify</strong>: all posterior probabilities must sum to 1</li>
+      </ol>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Diffuse Priors & Multiplier Table -->
+    <div class="s-header">
+      <div class="s-icon">⚖️</div>
+      <h2><span>Section 3 — LO 3</span>How the Bayes' Multiplier Works</h2>
+    </div>
+    <table class="cmp-table">
+      <thead><tr><th>Condition</th><th>Bayes' Multiplier = P(Info|Event) / P(Info)</th><th>Effect on Prior</th></tr></thead>
+      <tbody>
+        <tr><td>Information is <strong>much more likely</strong> given this event</td><td>&gt; 1</td><td>Posterior &gt; Prior — probability <strong>increases</strong></td></tr>
+        <tr><td>Information is <strong>equally likely</strong> regardless of event</td><td>= 1</td><td>Posterior = Prior — information is <strong>irrelevant</strong></td></tr>
+        <tr><td>Information is <strong>much less likely</strong> given this event</td><td>&lt; 1</td><td>Posterior &lt; Prior — probability <strong>decreases</strong></td></tr>
+        <tr><td><strong>Diffuse (equal) priors</strong> across all events</td><td>Simplifies to P(Info|Event)</td><td>Posterior = Likelihood; prior beliefs have no influence</td></tr>
+      </tbody>
+    </table>
+    <div class="info-note blue" style="margin-top:12px"><strong>Diffuse priors special case:</strong> When all prior probabilities are equal (e.g., 1/3 each for three events), P(Information) = average of the likelihoods, and the posterior probability of each event equals its likelihood P(Info | Event). The new information alone drives the result.</div>
+
+    <hr class="s-divider">
+
+    <!-- Common Exam Pitfalls -->
+    <div class="s-header">
+      <div class="s-icon">⚡</div>
+      <h2><span>Common Pitfalls</span>Exam Traps to Avoid</h2>
+    </div>
+    <div class="src-grid">
+      <div class="src-card"><div class="src-card-hd">❌ Confusing E(X) with Sample Mean</div><ul class="src-items"><li>E(X) is a forward-looking probability-weighted forecast (population concept)</li><li>Sample mean is an equally weighted average of past observations (historical)</li><li>Do not substitute the sample mean for E(X) in variance calculations</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ Terminal Node Probability Errors</div><ul class="src-items"><li>Terminal probability = P(scenario) × P(outcome | scenario)</li><li>Do not use the conditional probability alone as the terminal probability</li><li>All terminal node probabilities must sum to 1 — use this as a check</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ Skipping P(Information) Calculation</div><ul class="src-items"><li>Bayes' requires P(Information) as the normalising denominator</li><li>It must be calculated via the total probability rule across all scenarios</li><li>This is the most commonly missed step in Bayes' exam questions</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ Non-Exhaustive Event Lists</div><ul class="src-items"><li>All events must be mutually exclusive AND exhaustive</li><li>If prior probabilities don't sum to 1, the problem setup is incorrect</li><li>Posterior probabilities must also sum to 1 — always verify at the end</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ Reversing P(A|B) and P(B|A)</div><ul class="src-items"><li>P(EPS beats | expands) ≠ P(expands | EPS beats) — order matters critically</li><li>Bayes' formula reverses the conditioning: it converts likelihoods into posteriors</li><li>The entire purpose of Bayes' is this "inverse probability" interpretation</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ Conditional Variance Uses Wrong Mean</div><ul class="src-items"><li>σ²(X|S) must use E(X|S) — not overall E(X) — as the deviation reference</li><li>The unconditional variance is NOT simply the weighted average of conditional variances</li><li>The full law of total variance is a more advanced topic beyond this reading</li></ul></div>
+    </div>
+
+    <div class="takeaway">
+      <h3>Core Mindset for Probability Trees and Conditional Expectations</h3>
+      <p>The two key ideas in this reading are deeply connected. <strong>Probability trees</strong> are a structured way to compute unconditional expected values by decomposing a problem into conditional scenarios — work left to right to assign probabilities at each branch, then right to left to aggregate conditional expected values into a single unconditional forecast at the root. <strong>Bayes' formula</strong> is the mathematically rigorous mechanism for updating beliefs when new information arrives: multiply the prior probability by the ratio of how likely the observed information is under that specific event versus overall. The two tools complement each other perfectly — trees visualize the forward-looking structure of a problem, while Bayes' provides the engine for backward inference from observation to cause. On the exam, set up the mutually exclusive and exhaustive event list carefully, verify that prior probabilities sum to 1, compute P(Information) via the total probability rule, apply the formula, and always confirm that posteriors sum to 1 as a final check.</p>
+    </div>
+
+  </div><!-- /.sum-body -->
+  </div><!-- /#sum-qm-4 -->
+
+
+  <!-- ══════════════════════════════════════
+       QM · READING 5 — PORTFOLIO MATHEMATICS
+  ══════════════════════════════════════ -->
+  <div id="sum-qm-5" class="sum-chapter" style="display:none">
+  <div class="sum-hero">
+    <div class="sum-hero-label">2026 CFA® Program · Level I · QM Reading 5</div>
+    <h1>Portfolio <em>Mathematics</em></h1>
+    <div class="sum-hero-tags">
+      <span class="sum-hero-tag">3 Learning Outcomes</span>
+      <span class="sum-hero-tag">Portfolio Expected Return</span>
+      <span class="sum-hero-tag">Portfolio Variance</span>
+      <span class="sum-hero-tag">Covariance &amp; Correlation</span>
+      <span class="sum-hero-tag">Joint Probability Function</span>
+      <span class="sum-hero-tag">Safety-First Ratio</span>
+      <span class="sum-hero-tag">Roy's Criterion</span>
+    </div>
+  </div>
+
+  <div class="sum-body">
+
+    <!-- Learning Outcomes -->
+    <div class="s-header">
+      <div class="s-icon">🎯</div>
+      <h2><span>Learning Outcomes</span>What You Need to Master</h2>
+    </div>
+    <div class="lo-list">
+      <div class="lo-item"><span class="lo-pill">LO 1</span><span class="lo-text">Calculate and interpret the <strong>expected value, variance, standard deviation, covariances, and correlations</strong> of portfolio returns</span></div>
+      <div class="lo-item"><span class="lo-pill">LO 2</span><span class="lo-text">Calculate and interpret the <strong>covariance and correlation of portfolio returns</strong> using a joint probability function for returns</span></div>
+      <div class="lo-item"><span class="lo-pill">LO 3</span><span class="lo-text">Define <strong>shortfall risk</strong>, calculate the <strong>safety-first ratio</strong>, and identify an optimal portfolio using <strong>Roy's safety-first criterion</strong></span></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Portfolio Expected Return -->
+    <div class="s-header">
+      <div class="s-icon">📈</div>
+      <h2><span>Section 1 — LO 1</span>Portfolio Expected Return</h2>
+    </div>
+    <div class="info-note gold"><strong>Core formula:</strong> E(Rp) = w₁E(R₁) + w₂E(R₂) + … + wₙE(Rₙ) = Σ wᵢE(Rᵢ). Portfolio expected return is simply the <strong>weighted average</strong> of individual asset expected returns. The weights wᵢ are the proportions of the portfolio invested in each asset and must sum to 1.</div>
+    <div class="audit-list" style="margin-top:16px">
+      <div class="audit-item"><div class="audit-dot" style="background:#1a3a8f"></div><div><h4>Two-Asset Portfolio</h4><p>E(Rp) = w₁E(R₁) + (1 − w₁)E(R₂). As w₁ increases from 0 to 1, expected return moves linearly between E(R₂) and E(R₁). No need for covariance to compute expected return.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#b98a1c"></div><div><h4>n-Asset Portfolio</h4><p>E(Rp) = Σ wᵢE(Rᵢ). Weights can be positive (long positions) or negative (short positions). The formula holds exactly regardless of the number of assets or correlations between them.</p></div></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Covariance and Correlation -->
+    <div class="s-header">
+      <div class="s-icon">🔗</div>
+      <h2><span>Section 1 — LO 1</span>Covariance and Correlation</h2>
+    </div>
+    <div class="phases-table">
+      <div class="phase-row"><div class="phase-n">1</div><div class="phase-body"><div class="phase-title">Covariance — Cov(Rᵢ, Rⱼ)</div><div class="phase-desc">The probability-weighted average of cross-products of deviations from expected values. Measures the direction of co-movement between two returns. Can be negative (inverse), zero (unrelated), or positive (moves together). Units are returns squared. Own covariance = variance: Cov(R,R) = σ²(R).</div><span class="phase-out">Cov(Rᵢ,Rⱼ) = E[(Rᵢ − E(Rᵢ))(Rⱼ − E(Rⱼ))]</span></div></div>
+      <div class="phase-row"><div class="phase-n">2</div><div class="phase-body"><div class="phase-title">Correlation — ρ(Rᵢ, Rⱼ)</div><div class="phase-desc">Covariance standardised by the product of standard deviations. Ranges from −1 (perfect inverse) to +1 (perfect positive). Scale-free — allows comparison across different asset pairs. Key relationship: Cov(Rᵢ,Rⱼ) = ρ(Rᵢ,Rⱼ) · σ(Rᵢ) · σ(Rⱼ). This rearrangement is essential for computing covariance from correlation inputs.</div><span class="phase-out">ρ(Rᵢ,Rⱼ) = Cov(Rᵢ,Rⱼ) / [σ(Rᵢ) · σ(Rⱼ)] → range: [−1, +1]</span></div></div>
+      <div class="phase-row"><div class="phase-n">3</div><div class="phase-body"><div class="phase-title">Covariance Matrix</div><div class="phase-desc">An n × n matrix where diagonal entries are variances (σ²) and off-diagonal entries are covariances. The matrix is symmetric: Cov(Rᵢ,Rⱼ) = Cov(Rⱼ,Rᵢ). For n assets: n variance terms + n(n−1)/2 unique covariances. As n grows, covariance terms vastly outnumber variance terms (e.g., 20 assets → 20 variances but 190 unique covariances).</div><span class="phase-out">→ n² total entries; n diagonal (variances); n(n−1)/2 unique off-diagonal covariances</span></div></div>
+    </div>
+    <div class="info-note blue"><strong>Key insight on diversification:</strong> As correlations between assets decrease toward −1, portfolio variance decreases while expected return is unchanged. This is the fundamental benefit of diversification — the same reward at lower risk. When ρ = +1, there is no diversification benefit.</div>
+
+    <hr class="s-divider">
+
+    <!-- Portfolio Variance -->
+    <div class="s-header">
+      <div class="s-icon">📐</div>
+      <h2><span>Section 1 — LO 1</span>Portfolio Variance</h2>
+    </div>
+    <div class="info-note gold" style="margin-bottom:16px"><strong>General formula (n assets):</strong> σ²(Rp) = Σᵢ Σⱼ wᵢ wⱼ Cov(Rᵢ,Rⱼ). Every pair of assets (including each asset with itself) contributes. Diagonal pairs (i = j) contribute the variance terms w²ᵢ σ²ᵢ; off-diagonal pairs contribute 2 wᵢ wⱼ Cov(Rᵢ,Rⱼ) (the factor of 2 comes from symmetry).</div>
+    <table class="cmp-table">
+      <thead><tr><th>Portfolio Size</th><th>Expanded Formula</th><th>Unique Covariance Terms</th></tr></thead>
+      <tbody>
+        <tr><td><strong>2 Assets</strong></td><td>w₁²σ₁² + w₂²σ₂² + 2w₁w₂Cov(R₁,R₂)</td><td>1</td></tr>
+        <tr><td><strong>3 Assets</strong></td><td>w₁²σ₁² + w₂²σ₂² + w₃²σ₃² + 2w₁w₂Cov₁₂ + 2w₁w₃Cov₁₃ + 2w₂w₃Cov₂₃</td><td>3</td></tr>
+        <tr><td><strong>n Assets</strong></td><td>Σᵢ Σⱼ wᵢwⱼCov(Rᵢ,Rⱼ)</td><td>n(n−1)/2</td></tr>
+      </tbody>
+    </table>
+    <div class="info-note blue" style="margin-top:12px"><strong>Correlation substitute:</strong> Since Cov(Rᵢ,Rⱼ) = ρᵢⱼ · σᵢ · σⱼ, the two-asset portfolio variance can be written as: σ²(Rp) = w₁²σ₁² + w₂²σ₂² + 2w₁w₂ρ₁₂σ₁σ₂. This form is commonly used in exam questions that give correlation instead of covariance.</div>
+
+    <hr class="s-divider">
+
+    <!-- Joint Probability Function -->
+    <div class="s-header">
+      <div class="s-icon">🎲</div>
+      <h2><span>Section 2 — LO 2</span>Covariance via Joint Probability Function</h2>
+    </div>
+    <div class="phases-table">
+      <div class="phase-row"><div class="phase-n">1</div><div class="phase-body"><div class="phase-title">Joint Probability Function P(X, Y)</div><div class="phase-desc">Gives the probability of simultaneously observing specific values of two random variables. For example, P(Rₐ = 25%, R_b = 20%) = 0.20 means there is a 20% probability that asset A returns 25% AND asset B returns 20% in the same period. All joint probabilities must sum to 1.</div><span class="phase-out">→ Used when historical data is unavailable and scenarios are modelled directly</span></div></div>
+      <div class="phase-row"><div class="phase-n">2</div><div class="phase-body"><div class="phase-title">Computing Covariance from Joint Probabilities</div><div class="phase-desc">First compute E(Rₐ) and E(R_b) using the marginal probabilities. Then, for each joint outcome, compute the product of deviations from expected values, weight by the joint probability, and sum all terms. This approach is especially useful for stress-testing under discrete scenarios.</div><span class="phase-out">Cov(Rₐ,R_b) = Σᵢ Σⱼ P(Rₐᵢ, R_bⱼ) · (Rₐᵢ − E(Rₐ)) · (R_bⱼ − E(R_b))</span></div></div>
+      <div class="phase-row"><div class="phase-n">3</div><div class="phase-body"><div class="phase-title">Independent Random Variables</div><div class="phase-desc">Two variables X and Y are independent if and only if P(X,Y) = P(X) · P(Y) for all values. Independence implies zero correlation, but zero correlation does NOT imply independence (independence is the stronger condition — it rules out all relationships, not just linear ones). For uncorrelated variables: E(XY) = E(X) · E(Y).</div><span class="phase-out">→ Independence → Uncorrelated, but Uncorrelated ≠ Independent</span></div></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Safety-First -->
+    <div class="s-header">
+      <div class="s-icon">🛡️</div>
+      <h2><span>Section 3 — LO 3</span>Shortfall Risk &amp; Roy's Safety-First Criterion</h2>
+    </div>
+    <div class="phases-table">
+      <div class="phase-row"><div class="phase-n">1</div><div class="phase-body"><div class="phase-title">Shortfall Risk</div><div class="phase-desc">The risk that portfolio return (or value) falls below a minimum acceptable threshold level R_L over some time horizon. Examples include a pension fund's assets falling below liabilities, or a client needing to preserve capital while making a withdrawal. It is a one-sided (downside-only) risk measure.</div><span class="phase-out">→ R_L is determined by the client's specific liability or capital preservation need</span></div></div>
+      <div class="phase-row"><div class="phase-n">2</div><div class="phase-body"><div class="phase-title">Safety-First Ratio (SFRatio)</div><div class="phase-desc">Measures how many standard deviations separate the expected portfolio return from the shortfall level. The higher the SFRatio, the lower the probability of falling below R_L (assuming normally distributed returns). When R_L = Rᶠ (risk-free rate), SFRatio = Sharpe Ratio.</div><span class="phase-out">SFRatio = [E(Rp) − R_L] / σp</span></div></div>
+      <div class="phase-row"><div class="phase-n">3</div><div class="phase-body"><div class="phase-title">Roy's Safety-First Criterion (Optimal Portfolio Selection)</div><div class="phase-desc">The safety-first optimal portfolio is the one that <em>minimises</em> the probability of falling below R_L, which is equivalent to <em>maximising</em> the SFRatio. Under normality, P(Rp &lt; R_L) = N(−SFRatio). The portfolio with the highest SFRatio has the smallest left-tail probability below R_L.</div><span class="phase-out">→ Step 1: Calculate SFRatio for each portfolio. Step 2: Select the portfolio with the highest SFRatio.</span></div></div>
+    </div>
+    <div class="info-note gold" style="margin-top:16px"><strong>Computing shortfall level R_L from a cash need:</strong> If a client with a portfolio of value V needs to withdraw amount W at year-end without invading principal, then R_L = W / V. For example, a GBP1,350,000 portfolio needing GBP50,000: R_L = 50,000 / 1,350,000 = 3.7%.</div>
+
+    <hr class="s-divider">
+
+    <!-- Key Formulas -->
+    <div class="s-header">
+      <div class="s-icon">📋</div>
+      <h2><span>Master Reference</span>All Key Formulas at a Glance</h2>
+    </div>
+    <table class="cmp-table">
+      <thead><tr><th>Concept</th><th>Formula</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Portfolio Expected Return</td><td>E(Rp) = Σ wᵢ E(Rᵢ)</td><td>Weighted average; weights must sum to 1</td></tr>
+        <tr><td>Covariance (population)</td><td>Cov(Rᵢ,Rⱼ) = E[(Rᵢ−E(Rᵢ))(Rⱼ−E(Rⱼ))]</td><td>Forward-looking; can be negative, zero, or positive</td></tr>
+        <tr><td>Covariance (sample)</td><td>Cov(Rᵢ,Rⱼ) = Σ(Rᵢ,ₜ−R̄ᵢ)(Rⱼ,ₜ−R̄ⱼ) / (n−1)</td><td>Historical estimate; uses n−1 divisor</td></tr>
+        <tr><td>Covariance from correlation</td><td>Cov(Rᵢ,Rⱼ) = ρᵢⱼ · σᵢ · σⱼ</td><td>Key rearrangement used in most exam questions</td></tr>
+        <tr><td>Correlation</td><td>ρ(Rᵢ,Rⱼ) = Cov(Rᵢ,Rⱼ) / [σ(Rᵢ)·σ(Rⱼ)]</td><td>Range: [−1, +1]; scale-free</td></tr>
+        <tr><td>Unique covariances (n assets)</td><td>n(n−1)/2</td><td>e.g., 5 assets → 10; 20 assets → 190</td></tr>
+        <tr><td>2-Asset Portfolio Variance</td><td>w₁²σ₁² + w₂²σ₂² + 2w₁w₂ρ₁₂σ₁σ₂</td><td>Substitute Cov = ρσ₁σ₂ for the covariance term</td></tr>
+        <tr><td>3-Asset Portfolio Variance</td><td>Σwᵢ²σᵢ² + 2Σwᵢwⱼ Cov(Rᵢ,Rⱼ) for i&lt;j</td><td>3 variance terms + 3 covariance cross-products</td></tr>
+        <tr><td>n-Asset Portfolio Variance</td><td>σ²(Rp) = Σᵢ Σⱼ wᵢwⱼ Cov(Rᵢ,Rⱼ)</td><td>Most general form; diagonal terms are variances</td></tr>
+        <tr><td>Covariance via Joint Prob.</td><td>Cov(Rₐ,R_b) = Σᵢ Σⱼ P(Rₐᵢ,R_bⱼ)(Rₐᵢ−E(Rₐ))(R_bⱼ−E(R_b))</td><td>Used when scenarios and joint probabilities are given</td></tr>
+        <tr><td>Shortfall Level</td><td>R_L = Cash need / Portfolio value</td><td>Minimum return to avoid invading principal</td></tr>
+        <tr><td>Safety-First Ratio</td><td>SFRatio = [E(Rp) − R_L] / σp</td><td>Higher SFRatio → lower probability of shortfall</td></tr>
+        <tr><td>Shortfall Probability</td><td>P(Rp &lt; R_L) = N(−SFRatio)</td><td>Assumes normally distributed portfolio returns</td></tr>
+        <tr><td>SFRatio = Sharpe Ratio when</td><td>R_L = Rᶠ (risk-free rate)</td><td>Sharpe ratio minimises P(Rp &lt; Rᶠ)</td></tr>
+      </tbody>
+    </table>
+
+    <hr class="s-divider">
+
+    <!-- Diversification insight -->
+    <div class="s-header">
+      <div class="s-icon">💡</div>
+      <h2><span>Key Insight</span>Diversification and the Role of Correlation</h2>
+    </div>
+    <table class="cmp-table">
+      <thead><tr><th>Correlation ρ</th><th>Portfolio Variance Effect</th><th>Diversification Benefit</th></tr></thead>
+      <tbody>
+        <tr><td>ρ = +1 (perfect positive)</td><td>σp = w₁σ₁ + w₂σ₂ (weighted average of std devs)</td><td>None — portfolio risk = weighted average of individual risks</td></tr>
+        <tr><td>0 &lt; ρ &lt; +1</td><td>σp &lt; w₁σ₁ + w₂σ₂</td><td>Partial — some risk reduction from combining assets</td></tr>
+        <tr><td>ρ = 0 (uncorrelated)</td><td>σp² = w₁²σ₁² + w₂²σ₂²</td><td>Significant — covariance terms drop out entirely</td></tr>
+        <tr><td>−1 &lt; ρ &lt; 0</td><td>σp further reduced</td><td>Large — negative co-movements cancel out risk</td></tr>
+        <tr><td>ρ = −1 (perfect inverse)</td><td>σp can = 0 with right weights</td><td>Maximum — portfolio can be made risk-free</td></tr>
+      </tbody>
+    </table>
+    <div class="info-note blue" style="margin-top:12px"><strong>Why covariance dominates with more assets:</strong> For n = 2, there is 1 covariance vs 2 variances. For n = 10, there are 45 covariances vs 10 variances. For n = 100, there are 4,950 covariances vs 100 variances. As the portfolio grows, the average covariance between assets becomes the dominant driver of portfolio risk — not individual asset variances.</div>
+
+    <hr class="s-divider">
+
+    <!-- Common Exam Pitfalls -->
+    <div class="s-header">
+      <div class="s-icon">⚡</div>
+      <h2><span>Common Pitfalls</span>Exam Traps to Avoid</h2>
+    </div>
+    <div class="src-grid">
+      <div class="src-card"><div class="src-card-hd">❌ Missing the Factor of 2 in Variance</div><ul class="src-items"><li>For two assets: σ²(Rp) = w₁²σ₁² + w₂²σ₂² + <strong>2</strong>w₁w₂Cov(R₁,R₂)</li><li>The double-counting arises because Cov(R₁,R₂) = Cov(R₂,R₁) — each off-diagonal pair appears twice in the full summation</li><li>Forgetting the factor of 2 understates portfolio variance</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ Confusing Covariance and Variance Inputs</div><ul class="src-items"><li>Covariance matrix diagonal = <strong>variances</strong> (σ²), not standard deviations</li><li>To get σ from the diagonal: take the square root of the diagonal entry</li><li>Off-diagonal entries are already covariances — do not square them</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ Counting Covariance Terms</div><ul class="src-items"><li>For n assets: n² total entries, n variances, n(n−1) off-diagonal, n(n−1)/2 unique covariances</li><li>5 stocks → 10 unique covariances (NOT 20 or 25)</li><li>Always divide off-diagonal count by 2 to get unique terms</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ Safety-First: Wrong R_L or Wrong Sign</div><ul class="src-items"><li>R_L is the minimum return needed — compute it as cash need / portfolio value</li><li>SFRatio = [E(Rp) − R_L] / σp — higher is better (maximise, not minimise)</li><li>Probability of shortfall = N(−SFRatio), not N(+SFRatio)</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ Independence vs Uncorrelated</div><ul class="src-items"><li>Independence implies uncorrelated, but uncorrelated does NOT imply independence</li><li>For uncorrelated (or independent) variables: E(XY) = E(X)·E(Y)</li><li>Two variables can have zero correlation but a strong non-linear relationship</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ Expected Return vs Standard Deviation Tradeoff</div><ul class="src-items"><li>A portfolio with the highest expected return is NOT necessarily safety-first optimal</li><li>The SFRatio rewards higher E(Rp) AND lower σp relative to R_L — both matter</li><li>A lower-return, lower-volatility portfolio can dominate a higher-return one under Roy's criterion</li></ul></div>
+    </div>
+
+    <div class="takeaway">
+      <h3>Core Mindset for Portfolio Mathematics</h3>
+      <p>This reading establishes the quantitative foundation of modern portfolio theory. Two fundamental ideas dominate. First, <strong>portfolio expected return is simply the weighted average of individual asset expected returns</strong> — correlations and covariances play no role here. But <strong>portfolio variance is profoundly affected by covariances</strong>: as the portfolio grows, the average pairwise covariance between assets becomes the overwhelming driver of portfolio risk, dwarfing individual asset variances. The practical implication is that diversification — adding assets with low or negative correlations — reduces risk without sacrificing expected return. Second, <strong>Roy's safety-first criterion</strong> translates this framework into a practical decision rule for investors with minimum return constraints: choose the portfolio that maximises the safety-first ratio, which is simply the number of standard deviations between the expected return and the shortfall threshold. When returns are normally distributed, this portfolio minimises the probability of disaster. Recognising that the Sharpe ratio is a special case of the SFRatio (with the risk-free rate as the threshold) connects these two powerful tools.</p>
+    </div>
+
+  </div><!-- /.sum-body -->
+  </div><!-- /#sum-qm-5 -->
+
+
+  <!-- ══════════════════════════════════════
+       QM · READING 6 — SIMULATION METHODS
+  ══════════════════════════════════════ -->
+  <div id="sum-qm-6" class="sum-chapter" style="display:none">
+  <div class="sum-hero">
+    <div class="sum-hero-label">2026 CFA® Program · Level I · QM Reading 6</div>
+    <h1>Simulation <em>Methods</em></h1>
+    <div class="sum-hero-tags">
+      <span class="sum-hero-tag">3 Learning Outcomes</span>
+      <span class="sum-hero-tag">Lognormal Distribution</span>
+      <span class="sum-hero-tag">Continuously Compounded Returns</span>
+      <span class="sum-hero-tag">Monte Carlo Simulation</span>
+      <span class="sum-hero-tag">Bootstrap Resampling</span>
+      <span class="sum-hero-tag">Volatility Estimation</span>
+    </div>
+  </div>
+
+  <div class="sum-body">
+
+    <!-- Learning Outcomes -->
+    <div class="s-header">
+      <div class="s-icon">🎯</div>
+      <h2><span>Learning Outcomes</span>What You Need to Master</h2>
+    </div>
+    <div class="lo-list">
+      <div class="lo-item"><span class="lo-pill">LO 1</span><span class="lo-text">Explain the relationship between <strong>normal and lognormal distributions</strong> and why the lognormal distribution is used to model asset prices when using <strong>continuously compounded asset returns</strong></span></div>
+      <div class="lo-item"><span class="lo-pill">LO 2</span><span class="lo-text">Describe <strong>Monte Carlo simulation</strong> and explain how it can be used in investment applications</span></div>
+      <div class="lo-item"><span class="lo-pill">LO 3</span><span class="lo-text">Describe the use of <strong>bootstrap resampling</strong> in conducting a simulation based on observed data in investment applications</span></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Lognormal Distribution -->
+    <div class="s-header">
+      <div class="s-icon">📊</div>
+      <h2><span>Section 1 — LO 1</span>The Lognormal Distribution</h2>
+    </div>
+    <div class="info-note gold"><strong>Definition:</strong> A random variable Y is lognormally distributed if its natural logarithm ln(Y) is normally distributed. Conversely, if X is normal and Y = exp(X), then Y is lognormal. Think of it as: <em>"the log is normal."</em></div>
+    <div class="phases-table" style="margin-top:16px">
+      <div class="phase-row"><div class="phase-n">1</div><div class="phase-body"><div class="phase-title">Bounded Below by Zero</div><div class="phase-desc">Lognormal random variables cannot take negative values. This is critical for modelling asset prices — a stock price can fall toward zero but can never go below it. Normal distributions allow negative values, making them unsuitable as a direct model for prices.</div><span class="phase-out">→ P(Y &lt; 0) = 0 for any lognormal variable Y</span></div></div>
+      <div class="phase-row"><div class="phase-n">2</div><div class="phase-body"><div class="phase-title">Right-Skewed (Long Right Tail)</div><div class="phase-desc">Lognormal distributions are skewed to the right. The upside for asset prices is theoretically unlimited (a stock can rise many multiples), but the downside is capped at zero. This asymmetry creates the characteristic long right tail seen in the lognormal distribution and in empirical asset price data.</div><span class="phase-out">→ Skewness &gt; 0; mean &gt; median &gt; mode</span></div></div>
+      <div class="phase-row"><div class="phase-n">3</div><div class="phase-body"><div class="phase-title">Two Parameters (from the Underlying Normal)</div><div class="phase-desc">A lognormal distribution is fully described by the mean (μ) and variance (σ²) of its associated normal distribution — these are the parameters of ln(Y), not Y itself. Keep track of both sets: the parameters of the normal (μ, σ²) and the mean and variance of the lognormal variable Y.</div><span class="phase-out">→ Mean of Y = exp(μ + 0.5σ²); Variance of Y = exp(2μ + σ²) × [exp(σ²) − 1]</span></div></div>
+    </div>
+    <div class="info-note blue" style="margin-top:12px"><strong>Why is the lognormal mean larger than exp(μ)?</strong> As σ² increases, the distribution spreads out. Because it is bounded below by 0, it can only spread upward — pushing the mean to the right. The lognormal mean exp(μ + 0.5σ²) is always greater than exp(μ) by a factor of exp(0.5σ²) &gt; 1.</div>
+
+    <hr class="s-divider">
+
+    <!-- Lognormal Mean and Variance Formulas -->
+    <div class="s-header">
+      <div class="s-icon">📐</div>
+      <h2><span>Section 1 — LO 1</span>Lognormal Mean &amp; Variance Formulas</h2>
+    </div>
+    <table class="cmp-table">
+      <thead><tr><th>Parameter</th><th>Formula</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Mean of lognormal Y</td><td>μ<sub>L</sub> = exp(μ + 0.5σ²)</td><td>μ, σ² are the mean and variance of ln(Y)</td></tr>
+        <tr><td>Variance of lognormal Y</td><td>σ²<sub>L</sub> = exp(2μ + σ²) × [exp(σ²) − 1]</td><td>Increases rapidly as σ² grows</td></tr>
+        <tr><td>Future price from return</td><td>P<sub>T</sub> = P<sub>0</sub> · exp(r<sub>0,T</sub>)</td><td>r<sub>0,T</sub> is the continuously compounded return</td></tr>
+      </tbody>
+    </table>
+
+    <hr class="s-divider">
+
+    <!-- Continuously Compounded Returns -->
+    <div class="s-header">
+      <div class="s-icon">🔄</div>
+      <h2><span>Section 1 — LO 1</span>Continuously Compounded Returns</h2>
+    </div>
+    <div class="info-note gold"><strong>Core relationship:</strong> If a stock's continuously compounded return r<sub>0,T</sub> is normally distributed, then the future stock price P<sub>T</sub> = P<sub>0</sub> · exp(r<sub>0,T</sub>) is lognormally distributed. This is the theoretical foundation for using the lognormal model in finance.</div>
+    <div class="audit-list" style="margin-top:16px">
+      <div class="audit-item"><div class="audit-dot" style="background:#1a3a8f"></div><div><h4>Multi-Period Return is a Sum</h4><p>The T-period continuously compounded return r<sub>0,T</sub> equals the sum of one-period returns: r<sub>0,T</sub> = r<sub>T−1,T</sub> + r<sub>T−2,T−1</sub> + … + r<sub>0,1</sub>. If one-period returns are i.i.d. normal, their sum is also normal, so r<sub>0,T</sub> is normal and P<sub>T</sub> is lognormal.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#b98a1c"></div><div><h4>Mean and Variance Scale Linearly with T</h4><p>E(r<sub>0,T</sub>) = μT and σ²(r<sub>0,T</sub>) = σ²T (from the i.i.d. assumption). Standard deviation scales as σ√T — the square-root-of-time rule. This is foundational in risk management and options pricing.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#1a7a4a"></div><div><h4>Central Limit Theorem Backup</h4><p>Even if individual period returns are not normally distributed, their sum r<sub>0,T</sub> is approximately normal by the Central Limit Theorem when T is large. This justifies the lognormal model for prices even when returns are not perfectly normal.</p></div></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Volatility Estimation -->
+    <div class="s-header">
+      <div class="s-icon">📉</div>
+      <h2><span>Section 1 — LO 1</span>Estimating Volatility from Historical Returns</h2>
+    </div>
+    <div class="info-note gold"><strong>Annualizing volatility:</strong> σ̂<sub>annual</sub> = σ̂<sub>daily</sub> × √250. Financial markets typically have ≈250 trading days per year. Volatility is the standard deviation of continuously compounded returns, always quoted on an annualised basis.</div>
+    <div class="phases-table" style="margin-top:14px">
+      <div class="phase-row"><div class="phase-n">1</div><div class="phase-body"><div class="phase-title">Step 1 — Compute Daily Continuously Compounded Returns</div><div class="phase-desc">For each day t, calculate r<sub>t</sub> = ln(P<sub>t</sub> / P<sub>t−1</sub>). This converts holding-period price changes into continuously compounded daily returns. Use natural logarithm (ln), not log base 10.</div><span class="phase-out">→ r<sub>t</sub> = ln(P<sub>t</sub> / P<sub>t−1</sub>)</span></div></div>
+      <div class="phase-row"><div class="phase-n">2</div><div class="phase-body"><div class="phase-title">Step 2 — Compute Sample Standard Deviation</div><div class="phase-desc">Calculate the mean of the daily returns, then the sample standard deviation using divisor (n − 1). This is σ̂<sub>daily</sub>, the sample estimate of one-period volatility.</div><span class="phase-out">→ σ̂<sub>daily</sub> = sample std dev of {r<sub>1</sub>, r<sub>2</sub>, …, r<sub>n</sub>}</span></div></div>
+      <div class="phase-row"><div class="phase-n">3</div><div class="phase-body"><div class="phase-title">Step 3 — Annualise Using the Square-Root Rule</div><div class="phase-desc">Multiply daily volatility by √250 to obtain annualised volatility. For example, if σ̂<sub>daily</sub> = 0.021261, then annualised volatility = 0.021261 × √250 = 0.3362 = 33.6%. This follows directly from σ²(r<sub>0,T</sub>) = σ²T.</div><span class="phase-out">→ σ̂<sub>annual</sub> = σ̂<sub>daily</sub> × √250 ≈ σ̂<sub>daily</sub> × 15.81</span></div></div>
+    </div>
+    <div class="info-note blue" style="margin-top:12px"><strong>Key exam note:</strong> Always annualise based on <strong>250 trading days</strong>, not 365 calendar days. The mean continuously compounded annual return is estimated as μ̂ × 250 (where μ̂ is the sample mean of daily returns), but with only a few days of data this estimate is extremely unreliable — the variance in daily returns overwhelms the signal in expected return.</div>
+
+    <hr class="s-divider">
+
+    <!-- Monte Carlo Simulation -->
+    <div class="s-header">
+      <div class="s-icon">🎲</div>
+      <h2><span>Section 2 — LO 2</span>Monte Carlo Simulation</h2>
+    </div>
+    <div class="info-note gold"><strong>Definition:</strong> Monte Carlo simulation generates a large number of random samples from a specified probability distribution (or distributions) to obtain the likelihood of a range of results. It is used when analytical solutions are unavailable or impractical.</div>
+    <div class="audit-list" style="margin-top:16px">
+      <div class="audit-item"><div class="audit-dot" style="background:#1a3a8f"></div><div><h4>Investment Risk &amp; Return Estimation</h4><p>Simulate portfolio profit and loss over a specified horizon — either asset-by-asset or at the aggregate portfolio level. Repeated trials produce a simulated frequency distribution of returns from which performance and risk measures (VaR, CVaR, expected return) are derived.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#b98a1c"></div><div><h4>Valuing Complex Securities</h4><p>Monte Carlo is particularly valuable for securities with complex embedded options (e.g., mortgage-backed securities, Asian options, lookback options) where no closed-form analytical pricing formula exists. The analyst controls assumptions and can test model sensitivity.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#8b1a1a"></div><div><h4>Sensitivity &amp; Scenario Analysis</h4><p>Because the analyst specifies all inputs, Monte Carlo is ideal for "what-if" analysis — examining how changes in key distributional assumptions (mean, volatility, correlation) affect outcomes. This makes it a powerful complement to analytical models.</p></div></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Monte Carlo Steps -->
+    <div class="s-header">
+      <div class="s-icon">⚙️</div>
+      <h2><span>Section 2 — LO 2</span>Six Steps of Monte Carlo Simulation</h2>
+    </div>
+    <div class="phases-table">
+      <div class="phase-row"><div class="phase-n">1</div><div class="phase-body"><div class="phase-title">Specify the Quantity of Interest</div><div class="phase-desc">Define what you are trying to value or estimate (e.g., value of a contingent claim C<sub>iT</sub>) and identify the underlying variables (e.g., stock price). Specify the starting values of all underlying variables.</div><span class="phase-out">→ e.g., Asian option value = max(Final Price − Average Price, 0)</span></div></div>
+      <div class="phase-row"><div class="phase-n">2</div><div class="phase-body"><div class="phase-title">Specify a Time Grid</div><div class="phase-desc">Divide the total horizon into K sub-periods. The time increment Δt = Calendar time / K. For a 1-year option simulated monthly: K = 12, Δt = 1 month. The granularity of the time grid affects accuracy and computation time.</div><span class="phase-out">→ Δt = T / K; e.g., 1 year ÷ 12 months = 1/12 year per step</span></div></div>
+      <div class="phase-row"><div class="phase-n">3</div><div class="phase-body"><div class="phase-title">Specify Distributional Assumptions &amp; Draw Random Numbers</div><div class="phase-desc">Choose a model for the key risk factor and its distribution. For stock prices, a standard model is: ΔStock price = (μ × Prior price × Δt) + (σ × Prior price × Z<sub>k</sub>), where Z<sub>k</sub> ~ N(0,1). Draw K random values of Z<sub>k</sub> per simulation trial.</div><span class="phase-out">→ ΔS = μS·Δt + σS·Z<sub>k</sub>; draw K standard normal values per trial</span></div></div>
+      <div class="phase-row"><div class="phase-n">4</div><div class="phase-body"><div class="phase-title">Convert Random Numbers to Asset Price Path</div><div class="phase-desc">Use the drawn random numbers and the stock price model to generate a sequence of K stock prices for the trial. Starting from P<sub>0</sub>, apply ΔStock price at each sub-period to build the full price path.</div><span class="phase-out">→ Produces one simulated price path: P<sub>0</sub>, P<sub>1</sub>, …, P<sub>K</sub></span></div></div>
+      <div class="phase-row"><div class="phase-n">5</div><div class="phase-body"><div class="phase-title">Calculate the Payoff for This Trial</div><div class="phase-desc">For each simulated price path, compute the average stock price and the value of the contingent claim at maturity C<sub>iT</sub>. Then discount to t = 0 to get C<sub>i0</sub>. This completes one simulation trial (one iteration).</div><span class="phase-out">→ C<sub>iT</sub> = max(P<sub>K</sub> − avg(P<sub>1</sub>…P<sub>K</sub>), 0); C<sub>i0</sub> = PV(C<sub>iT</sub>)</span></div></div>
+      <div class="phase-row"><div class="phase-n">6</div><div class="phase-body"><div class="phase-title">Repeat &amp; Compute Summary Statistics</div><div class="phase-desc">Repeat Steps 4–5 for the required number of trials (e.g., I = 1,000). The Monte Carlo estimate of the security's value is the mean of all C<sub>i0</sub> values across all trials. Other statistics (std dev, percentiles) characterise the distribution of outcomes.</div><span class="phase-out">→ Monte Carlo value = (1/I) × ΣC<sub>i0</sub> over all I trials</span></div></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Strengths and Weaknesses of Monte Carlo -->
+    <div class="s-header">
+      <div class="s-icon">⚖️</div>
+      <h2><span>Section 2 — LO 2</span>Monte Carlo: Strengths vs. Weaknesses</h2>
+    </div>
+    <table class="cmp-table">
+      <thead><tr><th>Dimension</th><th>Strengths</th><th>Weaknesses</th></tr></thead>
+      <tbody>
+        <tr><td>Applicability</td><td>Handles complex securities with no closed-form solution (Asian options, MBS, lookbacks)</td><td>Overkill for simple securities with analytical solutions</td></tr>
+        <tr><td>Accuracy</td><td>Can be made very accurate by increasing the number of trials</td><td>Provides only statistical estimates, not exact results</td></tr>
+        <tr><td>Insight</td><td>Excellent for sensitivity and scenario analysis — analyst controls all inputs</td><td>Cannot independently reveal cause-and-effect relationships (unlike analytical methods)</td></tr>
+        <tr><td>Data requirements</td><td>Works with assumed distributions; no historical data required</td><td>Results are only as good as the distributional assumptions made</td></tr>
+        <tr><td>Computation</td><td>Scalable to multiple risk factors and complex path dependencies</td><td>Computationally intensive for large numbers of trials or complex models</td></tr>
+      </tbody>
+    </table>
+
+    <hr class="s-divider">
+
+    <!-- Bootstrap -->
+    <div class="s-header">
+      <div class="s-icon">🔁</div>
+      <h2><span>Section 3 — LO 3</span>Bootstrap Resampling</h2>
+    </div>
+    <div class="info-note gold"><strong>Core idea:</strong> Bootstrap mimics the process of drawing random samples from a population by instead sampling (with replacement) from the observed sample, treating it as a proxy for the population. It builds a sampling distribution empirically — no distributional assumptions required.</div>
+    <div class="phases-table" style="margin-top:16px">
+      <div class="phase-row"><div class="phase-n">1</div><div class="phase-body"><div class="phase-title">Sampling With Replacement</div><div class="phase-desc">From an original sample of size n, repeatedly draw a new resample of size n. Crucially, each item drawn is returned before the next draw — so the same observation can appear multiple times in one resample, and some observations may not appear at all. This is the defining feature of bootstrapping.</div><span class="phase-out">→ Each bootstrap resample has the same size n as the original sample</span></div></div>
+      <div class="phase-row"><div class="phase-n">2</div><div class="phase-body"><div class="phase-title">Empirical Distribution as Population Proxy</div><div class="phase-desc">Instead of specifying a theoretical distribution (as in Monte Carlo), bootstrap uses the observed historical data (e.g., past stock returns) as the empirical distribution. The quality of bootstrap inference depends on how representative the original sample is of the true population.</div><span class="phase-out">→ No need to assume normality or any other parametric form</span></div></div>
+      <div class="phase-row"><div class="phase-n">3</div><div class="phase-body"><div class="phase-title">Constructing the Bootstrap Sampling Distribution</div><div class="phase-desc">For each of B resamples, calculate the statistic of interest (mean, variance, skewness, etc.). The distribution of these B estimates forms the bootstrap sampling distribution, which approximates the true sampling distribution. Summary statistics of this distribution (mean, standard error, confidence intervals) are the bootstrap estimates.</div><span class="phase-out">→ B bootstrap estimates → sampling distribution → population inference</span></div></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Monte Carlo vs Bootstrap Comparison -->
+    <div class="s-header">
+      <div class="s-icon">🔄</div>
+      <h2><span>Key Comparison</span>Monte Carlo vs. Bootstrap</h2>
+    </div>
+    <table class="cmp-table">
+      <thead><tr><th>Feature</th><th>Monte Carlo Simulation</th><th>Bootstrap Resampling</th></tr></thead>
+      <tbody>
+        <tr><td>Data source</td><td>Random draws from a <strong>specified theoretical distribution</strong></td><td>Random draws (with replacement) from <strong>observed historical data</strong></td></tr>
+        <tr><td>Distributional assumption</td><td>Analyst specifies μ, σ, distribution type (e.g., normal)</td><td>No parametric assumption — uses empirical distribution</td></tr>
+        <tr><td>Population knowledge</td><td>Known statistical parameters assumed</td><td>Population unknown; sample treated as population proxy</td></tr>
+        <tr><td>Primary use</td><td>Valuing complex securities; risk estimation with assumed distributions</td><td>Estimating sampling distributions; inferring population parameters</td></tr>
+        <tr><td>Output</td><td>Statistical estimates of security value or risk measures</td><td>Statistical estimates with empirically derived confidence intervals</td></tr>
+        <tr><td>Common ground</td><td colspan="2" style="color:#1a3a8f;font-weight:600">Both rely on repetitive sampling; neither provides exact analytical results; both complement analytical methods</td></tr>
+      </tbody>
+    </table>
+    <div class="info-note blue" style="margin-top:12px"><strong>Key distinction for the exam:</strong> In Monte Carlo, the analyst <em>specifies</em> the probability distribution for risk factors (requires distributional assumptions). In bootstrap, the analyst simply uses the observed historical data as the distribution — no specification needed. Bootstrap Step 3 differs from Monte Carlo Step 3 in this exact way.</div>
+
+    <hr class="s-divider">
+
+    <!-- Key Formulas Reference -->
+    <div class="s-header">
+      <div class="s-icon">📋</div>
+      <h2><span>Master Reference</span>All Key Formulas at a Glance</h2>
+    </div>
+    <table class="cmp-table">
+      <thead><tr><th>Concept</th><th>Formula</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Future stock price (continuous)</td><td>P<sub>T</sub> = P<sub>0</sub> · exp(r<sub>0,T</sub>)</td><td>r<sub>0,T</sub> is the total continuously compounded return</td></tr>
+        <tr><td>Multi-period return (sum)</td><td>r<sub>0,T</sub> = r<sub>0,1</sub> + r<sub>1,2</sub> + … + r<sub>T−1,T</sub></td><td>Holds exactly for continuously compounded returns</td></tr>
+        <tr><td>Expected return (i.i.d.)</td><td>E(r<sub>0,T</sub>) = μT</td><td>Scales linearly with horizon T</td></tr>
+        <tr><td>Variance of return (i.i.d.)</td><td>σ²(r<sub>0,T</sub>) = σ²T</td><td>From independence assumption; std dev scales as σ√T</td></tr>
+        <tr><td>Continuously compounded daily return</td><td>r<sub>t</sub> = ln(P<sub>t</sub> / P<sub>t−1</sub>)</td><td>Natural log of the price relative</td></tr>
+        <tr><td>Annualised volatility</td><td>σ̂<sub>annual</sub> = σ̂<sub>daily</sub> × √250</td><td>250 trading days per year convention</td></tr>
+        <tr><td>Lognormal mean</td><td>μ<sub>L</sub> = exp(μ + 0.5σ²)</td><td>μ, σ² are parameters of the underlying normal</td></tr>
+        <tr><td>Lognormal variance</td><td>σ²<sub>L</sub> = exp(2μ + σ²) × [exp(σ²) − 1]</td><td>Always reference, do not memorise</td></tr>
+        <tr><td>Monte Carlo stock price model</td><td>ΔS = μ · S · Δt + σ · S · Z<sub>k</sub></td><td>Z<sub>k</sub> ~ N(0,1); μ = drift; σ = volatility</td></tr>
+        <tr><td>Asian option payoff</td><td>max(P<sub>Final</sub> − P<sub>Average</sub>, 0)</td><td>No analytical solution → requires Monte Carlo</td></tr>
+        <tr><td>Lookback option payoff</td><td>max(P<sub>Final</sub> − P<sub>Minimum</sub>, 0)</td><td>Path-dependent; no analytical solution</td></tr>
+      </tbody>
+    </table>
+
+    <hr class="s-divider">
+
+    <!-- Common Exam Pitfalls -->
+    <div class="s-header">
+      <div class="s-icon">⚡</div>
+      <h2><span>Common Pitfalls</span>Exam Traps to Avoid</h2>
+    </div>
+    <div class="src-grid">
+      <div class="src-card"><div class="src-card-hd">❌ Confusing Normal vs. Lognormal Model</div><ul class="src-items"><li>Returns ≈ normal; prices ≈ lognormal</li><li>Lognormal is used for prices because prices are bounded at 0; normal is used for returns because returns can be negative</li><li>The BSM model assumes lognormally distributed asset prices (not returns)</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ Monte Carlo Provides Exact Values</div><ul class="src-items"><li>Monte Carlo gives <strong>statistical estimates</strong>, not exact results</li><li>The estimate improves with more trials but never becomes exact</li><li>Analytical methods (when available) are more precise and reveal cause-and-effect</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ Bootstrap Draws From a New Distribution</div><ul class="src-items"><li>Bootstrap draws with replacement from the <strong>original observed sample</strong> — it does not generate new data</li><li>It does NOT require specifying a distribution (unlike Monte Carlo)</li><li>Each resample has the same size as the original sample</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ Using 365 Instead of 250 for Annualisation</div><ul class="src-items"><li>Financial markets are open ≈ 250 trading days per year</li><li>Always annualise volatility by multiplying daily σ by √250</li><li>Using 365 overstates annualised volatility</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ Multi-Period Continuously Compounded Returns</div><ul class="src-items"><li>r<sub>0,T</sub> is the <strong>sum</strong> of sub-period continuously compounded returns</li><li>This is different from holding-period returns, which compound multiplicatively</li><li>Only continuous returns add; discrete returns do not add directly</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ Bootstrap vs. Monte Carlo Key Difference</div><ul class="src-items"><li>The critical difference is the data source: Monte Carlo uses theoretical distributions; bootstrap uses observed historical data</li><li>Exam questions often test whether you can identify which method requires distributional assumptions (Monte Carlo does; bootstrap does not)</li></ul></div>
+    </div>
+
+    <div class="takeaway">
+      <h3>Core Mindset for Simulation Methods</h3>
+      <p>This reading ties together two essential ideas. First, the <strong>lognormal distribution is the natural model for asset prices</strong> because continuously compounded returns are approximately normal (via the CLT and i.i.d. assumptions), and a lognormal variable is simply the exponential of a normal — bounded below by zero with a long right tail that matches observed price behaviour. Second, when analytical formulas are unavailable — as is the case for path-dependent options or complex structured products — <strong>simulation fills the gap</strong>. Monte Carlo builds synthetic price paths from distributional assumptions; bootstrap builds them from historical data without any parametric assumptions. Both produce statistical estimates, not exact answers, and both complement rather than replace analytical methods when those methods exist.</p>
+    </div>
+
+  </div><!-- /.sum-body -->
+  </div><!-- /#sum-qm-6 -->
+
+
+  <!-- ══════════════════════════════════════
+       QM · READING 7 — ESTIMATION AND INFERENCE
+  ══════════════════════════════════════ -->
+  <div id="sum-qm-7" class="sum-chapter" style="display:none">
+  <div class="sum-hero">
+    <div class="sum-hero-label">2026 CFA® Program · Level I · QM Reading 7</div>
+    <h1>Estimation and <em>Inference</em></h1>
+    <div class="sum-hero-tags">
+      <span class="sum-hero-tag">3 Learning Outcomes</span>
+      <span class="sum-hero-tag">Sampling Methods</span>
+      <span class="sum-hero-tag">Sampling Error</span>
+      <span class="sum-hero-tag">Central Limit Theorem</span>
+      <span class="sum-hero-tag">Standard Error</span>
+      <span class="sum-hero-tag">Bootstrap Resampling</span>
+      <span class="sum-hero-tag">Jackknife</span>
+    </div>
+  </div>
+
+  <div class="sum-body">
+
+    <!-- Learning Outcomes -->
+    <div class="s-header">
+      <div class="s-icon">🎯</div>
+      <h2><span>Learning Outcomes</span>What You Need to Master</h2>
+    </div>
+    <div class="lo-list">
+      <div class="lo-item"><span class="lo-pill">LO 1</span><span class="lo-text">Compare and contrast <strong>simple random, stratified random, cluster, convenience, and judgmental sampling</strong> and their implications for sampling error in an investment problem</span></div>
+      <div class="lo-item"><span class="lo-pill">LO 2</span><span class="lo-text">Explain the <strong>central limit theorem</strong> and its importance for the distribution and standard error of the sample mean</span></div>
+      <div class="lo-item"><span class="lo-pill">LO 3</span><span class="lo-text">Describe the use of <strong>resampling (bootstrap, jackknife)</strong> to estimate the sampling distribution of a statistic</span></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Sampling Overview -->
+    <div class="s-header">
+      <div class="s-icon">📊</div>
+      <h2><span>Section 1 — LO 1</span>Why We Sample</h2>
+    </div>
+    <div class="info-note gold"><strong>Purpose of sampling:</strong> We sample either because it is impossible to examine every member of a population, or because doing so would not be economically efficient. The analyst trades time and money for sampling error.</div>
+    <div class="phases-table" style="margin-top:14px">
+      <div class="phase-row"><div class="phase-n">1</div><div class="phase-body"><div class="phase-title">Probability Sampling</div><div class="phase-desc">Every member of the population has an equal chance of being selected. Creates a representative sample and supports statistically valid inferences about population parameters. Generally yields higher accuracy and reliability than non-probability sampling.</div><span class="phase-out">→ Includes: simple random, stratified random, cluster, systematic</span></div></div>
+      <div class="phase-row"><div class="phase-n">2</div><div class="phase-body"><div class="phase-title">Non-Probability Sampling</div><div class="phase-desc">Selection depends on factors other than probability — researcher judgment or data accessibility. Significant risk of producing a non-representative sample. Faster and cheaper, but less statistically rigorous. Suitable for pilot studies, time-constrained research, or when expert judgment is essential.</div><span class="phase-out">→ Includes: convenience sampling, judgmental sampling</span></div></div>
+      <div class="phase-row"><div class="phase-n">3</div><div class="phase-body"><div class="phase-title">Sampling Error</div><div class="phase-desc">The difference between the observed value of a statistic (e.g., sample mean) and the quantity it is intended to estimate (population mean), arising because only a subset of the population is observed. Sampling error decreases as sample size increases. Cannot be eliminated, only minimised.</div><span class="phase-out">→ Sampling error = statistic − parameter; reduced by larger n</span></div></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Sampling Methods Detail -->
+    <div class="s-header">
+      <div class="s-icon">🗂️</div>
+      <h2><span>Section 1 — LO 1</span>Five Sampling Methods Compared</h2>
+    </div>
+    <table class="cmp-table">
+      <thead><tr><th>Method</th><th>How It Works</th><th>Key Advantage</th><th>Key Limitation</th><th>Investment Example</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Simple Random</strong></td><td>Each element has an equal probability of selection; drawn randomly from full population</td><td>Unbiased; statistically rigorous; easy to implement for homogeneous populations</td><td>May under-represent important subgroups; less efficient for heterogeneous populations</td><td>Survey of wireless equipment customers to estimate average capex spending</td></tr>
+        <tr><td><strong>Stratified Random</strong></td><td>Population divided into strata by key characteristic; random samples drawn from each stratum proportional to its size</td><td>Guarantees representation of all subgroups; lower variance / greater precision than simple random</td><td>Requires knowledge of relevant strata in advance; more complex to implement</td><td>Bond index replication — strata by duration, sector, credit quality, coupon level</td></tr>
+        <tr><td><strong>Cluster</strong></td><td>Population divided into clusters (mini-representations of population); whole clusters randomly selected (one-stage) or subsampled (two-stage)</td><td>Most cost-efficient and time-efficient for large, geographically dispersed populations</td><td>Lower accuracy than other probability methods for the same sample size — cluster sample may be less representative</td><td>Survey of individual investor sentiment across US states (clusters = states)</td></tr>
+        <tr><td><strong>Systematic</strong></td><td>Select every kth member of the population until desired size is reached; starting point typically random</td><td>Simple to implement when population cannot be fully enumerated; approximates random sampling</td><td>Risk of periodicity bias if population has a regular pattern at interval k</td><td>Select every 5th pharmaceutical company from a commercial database</td></tr>
+        <tr><td><strong>Convenience</strong></td><td>Elements selected based on accessibility or ease of collection for the researcher</td><td>Very fast and cheap; useful for preliminary/pilot research</td><td>High risk of non-representative sample; may introduce significant bias</td><td>Using an in-house database of a few dozen researched stocks as the sample</td></tr>
+        <tr><td><strong>Judgmental</strong></td><td>Researcher handpicks elements based on expertise and professional knowledge</td><td>Leverages domain expertise; efficient when target population requires specialist knowledge to identify</td><td>Subject to researcher bias; results may not represent the full population</td><td>Auditor selecting transactions most likely to reveal material misstatement</td></tr>
+      </tbody>
+    </table>
+    <div class="info-note blue" style="margin-top:12px"><strong>Cluster vs. Stratified — critical distinction:</strong> In <strong>cluster sampling</strong>, a whole cluster is the sampling unit and only selected clusters are included. In <strong>stratified sampling</strong>, <em>all</em> strata are included and individual elements within each stratum are sampled. Cluster excludes some groups entirely; stratified includes all groups.</div>
+
+    <hr class="s-divider">
+
+    <!-- Sampling from Different Distributions -->
+    <div class="s-header">
+      <div class="s-icon">⚠️</div>
+      <h2><span>Section 1 — LO 1</span>Sampling from Different Distributions</h2>
+    </div>
+    <div class="info-note gold"><strong>Key principle:</strong> Samples must be drawn from a single, homogeneous population. Combining data from two different distributions (e.g., different investment strategies across time) creates a sample that represents no actual population — any conclusions drawn are invalid.</div>
+    <div class="audit-list" style="margin-top:14px">
+      <div class="audit-item"><div class="audit-dot" style="background:#8b1a1a"></div><div><h4>The Sharpe Ratio Trap</h4><p>If a manager uses a low-risk strategy in Year 1 and a high-risk strategy in Year 2, pooling eight quarters of returns mixes two different distributions. The combined Sharpe ratio will differ from — and can be lower than — the separate yearly Sharpe ratios, producing misleading conclusions about performance.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#1a3a8f"></div><div><h4>Larger is Not Always Better</h4><p>A larger sample is only superior when it remains representative of a single homogeneous population. When the underlying distribution changes over time (e.g., regime change, strategy shift), a smaller, more recent sample may be more informative than a larger pooled one.</p></div></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Central Limit Theorem -->
+    <div class="s-header">
+      <div class="s-icon">📈</div>
+      <h2><span>Section 2 — LO 2</span>The Central Limit Theorem (CLT)</h2>
+    </div>
+    <div class="info-note gold"><strong>Formal statement:</strong> Given a population with mean μ and finite variance σ², the sampling distribution of the sample mean X̄, computed from random samples of size n, will be approximately normal with mean μ and variance σ²/n when sample size n is large (generally n ≥ 30).</div>
+    <div class="phases-table" style="margin-top:14px">
+      <div class="phase-row"><div class="phase-n">1</div><div class="phase-body"><div class="phase-title">Property 1 — Approximate Normality</div><div class="phase-desc">The sampling distribution of X̄ will be approximately normally distributed regardless of the shape of the underlying population distribution, provided the population has finite variance and the sample size is large (n ≥ 30 as a rule of thumb). Highly non-normal populations may require n well above 30.</div><span class="phase-out">→ CLT holds for any distribution with finite variance — normal, skewed, uniform, etc.</span></div></div>
+      <div class="phase-row"><div class="phase-n">2</div><div class="phase-body"><div class="phase-title">Property 2 — Mean of X̄ Equals Population Mean</div><div class="phase-desc">The mean of the sampling distribution of X̄ equals the population mean μ. The sample mean is an unbiased estimator of the population mean — on average across many samples, it hits the target.</div><span class="phase-out">→ E(X̄) = μ</span></div></div>
+      <div class="phase-row"><div class="phase-n">3</div><div class="phase-body"><div class="phase-title">Property 3 — Variance of X̄ Equals σ²/n</div><div class="phase-desc">The variance of the sampling distribution is the population variance divided by sample size. As n increases, σ²/n decreases — the distribution of X̄ concentrates more tightly around μ. This is why larger samples give more precise estimates of the population mean.</div><span class="phase-out">→ Var(X̄) = σ²/n; as n → ∞, Var(X̄) → 0</span></div></div>
+    </div>
+    <div class="info-note blue" style="margin-top:12px"><strong>Why the CLT matters:</strong> It allows analysts to make precise probability statements about the population mean using the sample mean — and to construct confidence intervals and conduct hypothesis tests — even when the population distribution is unknown, as long as the sample is large enough.</div>
+
+    <hr class="s-divider">
+
+    <!-- Standard Error -->
+    <div class="s-header">
+      <div class="s-icon">📐</div>
+      <h2><span>Section 2 — LO 2</span>Standard Error of the Sample Mean</h2>
+    </div>
+    <div class="info-note gold"><strong>Definition:</strong> The standard error of the sample mean (σ<sub>X̄</sub>) is the standard deviation of the sampling distribution of X̄. It measures how precise the sample mean is as an estimate of the population mean — smaller standard error = more precise estimate.</div>
+    <table class="cmp-table" style="margin-top:14px">
+      <thead><tr><th>Situation</th><th>Formula</th><th>When to Use</th></tr></thead>
+      <tbody>
+        <tr><td>Population σ known</td><td>σ<sub>X̄</sub> = σ / √n</td><td>Rarely in practice; used for theoretical examples</td></tr>
+        <tr><td>Population σ unknown (typical)</td><td>s<sub>X̄</sub> = s / √n</td><td>Almost always in practice; s is the sample standard deviation</td></tr>
+        <tr><td>Sample variance</td><td>s² = Σ(X<sub>i</sub> − X̄)² / (n − 1)</td><td>Use n − 1 divisor (Bessel's correction) for unbiased estimate</td></tr>
+      </tbody>
+    </table>
+    <div class="audit-list" style="margin-top:14px">
+      <div class="audit-item"><div class="audit-dot" style="background:#1a3a8f"></div><div><h4>Standard Deviation vs. Standard Error — Key Distinction</h4><p><strong>Standard deviation</strong> measures the dispersion of individual data points around the mean — it describes the spread of the data. <strong>Standard error</strong> measures the precision of the sample mean as an estimate of the population mean — it describes inferential accuracy. They are not interchangeable concepts.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#b98a1c"></div><div><h4>Effect of Sample Size on Standard Error</h4><p>Standard error falls with √n: doubling the sample size reduces standard error by a factor of √2 ≈ 1.41. To halve the standard error, you must quadruple the sample size. This diminishing return means there is a point beyond which adding more observations yields little additional precision.</p></div></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Key Formulas -->
+    <div class="s-header">
+      <div class="s-icon">📋</div>
+      <h2><span>Section 2 — LO 2</span>Key Formulas</h2>
+    </div>
+    <table class="cmp-table">
+      <thead><tr><th>Concept</th><th>Formula</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Standard error (σ known)</td><td>σ<sub>X̄</sub> = σ / √n</td><td>Theoretical; population σ rarely known</td></tr>
+        <tr><td>Standard error (σ unknown)</td><td>s<sub>X̄</sub> = s / √n</td><td>Practical formula; most exam questions use this</td></tr>
+        <tr><td>Sample variance</td><td>s² = Σ(X<sub>i</sub> − X̄)² / (n − 1)</td><td>Divisor n − 1 gives unbiased estimate of σ²</td></tr>
+        <tr><td>Required n for target SE</td><td>n = (σ / σ<sub>X̄</sub>)²</td><td>Rearrange σ<sub>X̄</sub> = σ / √n → √n = σ / σ<sub>X̄</sub> → square both sides</td></tr>
+        <tr><td>Bootstrap SE estimate</td><td>s<sub>X̄</sub> = √[ (1/(B−1)) · Σ(θ̂<sub>b</sub> − θ̄)² ]</td><td>B = number of resamples; θ̂<sub>b</sub> = mean of resample b; θ̄ = mean of all resample means</td></tr>
+      </tbody>
+    </table>
+
+    <hr class="s-divider">
+
+    <!-- Resampling Methods -->
+    <div class="s-header">
+      <div class="s-icon">🔁</div>
+      <h2><span>Section 3 — LO 3</span>Resampling: Bootstrap and Jackknife</h2>
+    </div>
+    <div class="info-note gold"><strong>What is resampling?</strong> Resampling repeatedly draws samples from the original observed data to perform statistical inference about population parameters — without relying on analytical formulas (z-statistics, t-statistics). It is particularly powerful when no closed-form formula exists for the statistic of interest (e.g., the median).</div>
+    <div class="phases-table" style="margin-top:14px">
+      <div class="phase-row"><div class="phase-n">1</div><div class="phase-body"><div class="phase-title">Bootstrap — With Replacement</div><div class="phase-desc">Draw B resamples from the original sample, each of size n, <em>with replacement</em>. The same observation can appear multiple times in one resample; some observations may not appear at all. Compute the statistic of interest (e.g., mean, median) for each resample. The distribution of these B estimates approximates the true sampling distribution. Often called model-free or non-parametric resampling.</div><span class="phase-out">→ Each resample has same size n as original; with replacement; B determined by analyst</span></div></div>
+      <div class="phase-row"><div class="phase-n">2</div><div class="phase-body"><div class="phase-title">Jackknife — Leave-One-Out</div><div class="phase-desc">For a sample of size n, create n sub-samples, each formed by leaving out one different observation at a time (without replacement). Compute the statistic for each sub-sample. Jackknife is deterministic — it always produces the same results for the same dataset. Primarily used to reduce estimator bias and to estimate standard errors and confidence intervals.</div><span class="phase-out">→ Exactly n repetitions for sample of size n; without replacement; deterministic</span></div></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Bootstrap vs Jackknife Comparison -->
+    <div class="s-header">
+      <div class="s-icon">⚖️</div>
+      <h2><span>Section 3 — LO 3</span>Bootstrap vs. Jackknife</h2>
+    </div>
+    <table class="cmp-table">
+      <thead><tr><th>Feature</th><th>Bootstrap</th><th>Jackknife</th></tr></thead>
+      <tbody>
+        <tr><td>Sampling mechanism</td><td>With replacement from original sample</td><td>Leave one out at a time, without replacement</td></tr>
+        <tr><td>Number of repetitions</td><td>Analyst-determined (B); typically hundreds to thousands</td><td>Always exactly n (sample size)</td></tr>
+        <tr><td>Reproducibility</td><td>Gives different results each run (random draws)</td><td>Gives identical results every run (deterministic)</td></tr>
+        <tr><td>Primary uses</td><td>Standard error of any estimator; confidence intervals; historical simulation in finance; strategy performance vs. benchmark</td><td>Bias reduction of an estimator; standard error and confidence interval estimation</td></tr>
+        <tr><td>Flexibility</td><td>Works for virtually any statistic (mean, median, Sharpe ratio, etc.)</td><td>More specialised; best for bias correction</td></tr>
+        <tr><td>Common ground</td><td colspan="2" style="color:#1a3a8f;font-weight:600">Both are non-parametric resampling methods that build empirical sampling distributions from observed data without assuming a theoretical distribution</td></tr>
+      </tbody>
+    </table>
+
+    <hr class="s-divider">
+
+    <!-- Bootstrap Step-by-Step -->
+    <div class="s-header">
+      <div class="s-icon">⚙️</div>
+      <h2><span>Section 3 — LO 3</span>Bootstrap Standard Error — Step by Step</h2>
+    </div>
+    <div class="phases-table">
+      <div class="phase-row"><div class="phase-n">1</div><div class="phase-body"><div class="phase-title">Draw B resamples with replacement</div><div class="phase-desc">From the original sample of size n, draw B random samples (each of size n) with replacement. B is chosen by the analyst — larger B gives a more stable estimate of the sampling distribution. Typical values range from 500 to 10,000+.</div><span class="phase-out">→ Each resample is independently drawn; same n as original</span></div></div>
+      <div class="phase-row"><div class="phase-n">2</div><div class="phase-body"><div class="phase-title">Compute the statistic for each resample</div><div class="phase-desc">Calculate the statistic of interest (e.g., mean θ̂<sub>b</sub>) for each of the B resamples. These B values form the bootstrap sampling distribution — the empirical approximation of the true sampling distribution of the statistic.</div><span class="phase-out">→ Obtain θ̂<sub>1</sub>, θ̂<sub>2</sub>, …, θ̂<sub>B</sub></span></div></div>
+      <div class="phase-row"><div class="phase-n">3</div><div class="phase-body"><div class="phase-title">Compute the mean of all resample statistics</div><div class="phase-desc">Calculate θ̄ = (1/B) × Σθ̂<sub>b</sub> — the mean across all B resample means. This is the centre of the bootstrap sampling distribution.</div><span class="phase-out">→ θ̄ = average of all B resample statistics</span></div></div>
+      <div class="phase-row"><div class="phase-n">4</div><div class="phase-body"><div class="phase-title">Calculate the bootstrap standard error</div><div class="phase-desc">Apply the formula: s<sub>X̄</sub> = √[ (1/(B−1)) · Σ(θ̂<sub>b</sub> − θ̄)² ]. This is the standard deviation of the bootstrap sampling distribution, which approximates the standard error of the statistic. Note the divisor is B − 1, not B (analogous to sample standard deviation).</div><span class="phase-out">→ s<sub>X̄</sub> = √[ (1/(B−1)) · Σ(θ̂<sub>b</sub> − θ̄)² ]</span></div></div>
+    </div>
+    <div class="info-note blue" style="margin-top:12px"><strong>Bootstrap advantage:</strong> The formula s / √n only works for the sample mean. Bootstrap works for <em>any</em> statistic — including the median, Sharpe ratio, or other complex estimators — without requiring an analytical formula.</div>
+
+    <hr class="s-divider">
+
+    <!-- Common Exam Pitfalls -->
+    <div class="s-header">
+      <div class="s-icon">⚡</div>
+      <h2><span>Common Pitfalls</span>Exam Traps to Avoid</h2>
+    </div>
+    <div class="src-grid">
+      <div class="src-card"><div class="src-card-hd">❌ Cluster vs. Stratified Confusion</div><ul class="src-items"><li>Stratified: <strong>all</strong> strata included; elements sampled within each stratum</li><li>Cluster: <strong>only selected</strong> clusters included; all (or sampled) elements within chosen clusters</li><li>Cluster excludes some groups entirely; stratified never excludes a group</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ Misidentifying Sampling Methods</div><ul class="src-items"><li>Convenience = using whatever is easy to access (internal database)</li><li>Judgmental = expert hand-picks based on knowledge (auditor selecting transactions)</li><li>Systematic = every kth element from a list (every 5th company)</li><li>These are frequently tested — know each definition precisely</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ CLT — Population Must Be Normal</div><ul class="src-items"><li>FALSE: CLT applies to <strong>any</strong> distribution with finite variance</li><li>The population can be skewed, bimodal, uniform — CLT still works for large n</li><li>Exception: if population is very non-normal, n may need to be much larger than 30</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ Standard Error vs. Standard Deviation</div><ul class="src-items"><li><strong>Standard deviation</strong>: spread of individual data points (data description)</li><li><strong>Standard error</strong>: precision of the sample mean as an estimate (inference)</li><li>SE = σ/√n; SD = σ. They are <em>not</em> interchangeable — a common exam trap</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ Bootstrap vs. Jackknife Repetitions</div><ul class="src-items"><li>Jackknife: always <strong>exactly n repetitions</strong> for a sample of size n</li><li>Bootstrap: analyst <strong>determines B</strong> — not fixed at n</li><li>Bootstrap gives different results each run; jackknife is deterministic (same result every time)</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ Larger Sample Always Better</div><ul class="src-items"><li>Only true when the additional data come from the <strong>same population</strong></li><li>Pooling data from different regimes/strategies mixes distributions → invalid inference</li><li>A smaller, homogeneous sample can be more informative than a larger mixed one</li></ul></div>
+    </div>
+
+    <div class="takeaway">
+      <h3>Core Mindset for Estimation and Inference</h3>
+      <p>This reading builds the statistical bridge between samples and populations. The key insight is that every sample statistic is itself a random variable with a probability distribution — the sampling distribution. The <strong>central limit theorem</strong> is the engine that makes inference tractable: regardless of how the underlying population is distributed (so long as it has finite variance), the distribution of the sample mean becomes approximately normal as sample size grows, with mean equal to the population mean and variance equal to σ²/n. This single result underpins confidence intervals and hypothesis testing. Sampling method choice matters too: <strong>stratified sampling</strong> improves precision over simple random by ensuring all subgroups are represented — critical in fixed-income indexing. And when no analytical formula exists for a statistic's standard error, <strong>bootstrap resampling</strong> provides a model-free solution that works for any estimator, from the mean to the median to the Sharpe ratio.</p>
+    </div>
+
+  </div><!-- /.sum-body -->
+  </div><!-- /#sum-qm-7 -->
+
+
+  <!-- ══════════════════════════════════════
        QM · READING 8 — HYPOTHESIS TESTING
   ══════════════════════════════════════ -->
   <div id="sum-qm-8" class="sum-chapter" style="display:none">
@@ -1733,8 +2660,8 @@ const TOPICS = [
       { id:'qm-3',  label:'Statistical Measures of Asset Returns',  sub:'R·03', count:70,   available:true  },
       { id:'qm-4',  label:'Probability Trees and Conditional Expectations', sub:'R·04', count:70, available:true },
       { id:'qm-5',  label:'Portfolio Mathematics',                  sub:'R·05', count:100,  available:true  },
-      { id:'qm-6',  label:'Simulation Methods',                     sub:'R·06', count:0,    available:false },
-      { id:'qm-7',  label:'Estimation and Inference',               sub:'R·07', count:0,    available:false },
+      { id:'qm-6',  label:'Simulation Methods',                     sub:'R·06', count:40,   available:true  },
+      { id:'qm-7',  label:'Estimation and Inference',               sub:'R·07', count:50,   available:true  },
       { id:'qm-8',  label:'Hypothesis Testing',                     sub:'R·08', count:0,    available:false },
       { id:'qm-9',  label:'Parametric and Non-Parametric Tests',    sub:'R·09', count:0,    available:false },
       { id:'qm-10', label:'Simple Linear Regression',               sub:'R·10', count:0,    available:false },
@@ -2042,7 +2969,7 @@ function selectSummaryTopic(topicId) {
   if (!topic) return;
 
   // Chapters that have a written summary
-  const summaryReady = new Set(['fsa-1', 'qm-1', 'qm-2']);
+  const summaryReady = new Set(['fsa-1', 'qm-1', 'qm-2', 'qm-3', 'qm-4', 'qm-5', 'qm-6', 'qm-7', 'qm-8']);
 
   topic.chapters.forEach(ch => {
     const opt = document.createElement('option');
@@ -2071,6 +2998,11 @@ function loadSummary(chapterId) {
     'fsa-1': 'sum-fsa-1',
     'qm-1':  'sum-qm-1',
     'qm-2':  'sum-qm-2',
+    'qm-3':  'sum-qm-3',
+    'qm-4':  'sum-qm-4',
+    'qm-5':  'sum-qm-5',
+    'qm-6':  'sum-qm-6',
+    'qm-7':  'sum-qm-7',
     'qm-8':  'sum-qm-8',
   };
 

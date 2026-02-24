@@ -9338,5 +9338,1355 @@
     ],
     "correctAnswer": "B",
     "explanation": "RL = USD25,000 / USD500,000 = 0.05 = 5.0%. Any return below 5% means the investor cannot withdraw USD25,000 without reducing the initial USD500,000 principal."
+  },
+  {
+    "id": "CH06-001",
+    "chapter": "6",
+    "chapterName": "Simulation Methods",
+    "topic": "Lognormal Distribution",
+    "difficulty": "Easy",
+    "question": "A random variable Y follows a lognormal distribution if:",
+    "options": [
+      "Y itself is normally distributed",
+      "The natural logarithm of Y is normally distributed",
+      "The square of Y is normally distributed"
+    ],
+    "correctAnswer": "B",
+    "explanation": "By definition, Y is lognormally distributed if ln(Y) is normally distributed. The reverse is also true: if ln(Y) is normal, Y is lognormal. A useful memory device: 'the log is normal.'"
+  },
+  {
+    "id": "CH06-002",
+    "chapter": "6",
+    "chapterName": "Simulation Methods",
+    "topic": "Lognormal Distribution",
+    "difficulty": "Easy",
+    "question": "Which property makes the lognormal distribution most appropriate for modeling asset prices?",
+    "options": [
+      "It is symmetric around its mean",
+      "It is bounded below by zero",
+      "It allows values from negative infinity to positive infinity"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The lognormal distribution is bounded below by zero, matching the economic reality that asset prices cannot be negative. The normal distribution allows negative values, making it unsuitable as a direct model for prices."
+  },
+  {
+    "id": "CH06-003",
+    "chapter": "6",
+    "chapterName": "Simulation Methods",
+    "topic": "Lognormal Distribution",
+    "difficulty": "Easy",
+    "question": "The lognormal distribution is best described as:",
+    "options": [
+      "Symmetric and unbounded",
+      "Skewed to the left with a long left tail",
+      "Skewed to the right with a long right tail"
+    ],
+    "correctAnswer": "C",
+    "explanation": "The lognormal distribution is skewed to the right (positive skew) with a long right tail. This reflects the asymmetry of asset prices: upside is theoretically unlimited while downside is capped at zero."
+  },
+  {
+    "id": "CH06-004",
+    "chapter": "6",
+    "chapterName": "Simulation Methods",
+    "topic": "Lognormal Distribution",
+    "difficulty": "Moderate",
+    "question": "If a normal random variable X has mean \u03bc = 0.08 and variance \u03c3\u00b2 = 0.04, the mean of the lognormal variable Y = exp(X) is closest to:",
+    "options": [
+      "exp(0.08) \u2248 1.083",
+      "exp(0.08 + 0.5 \u00d7 0.04) \u2248 1.105",
+      "exp(0.08 \u2212 0.5 \u00d7 0.04) \u2248 1.062"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The mean of a lognormal variable is exp(\u03bc + 0.5\u03c3\u00b2) = exp(0.08 + 0.5 \u00d7 0.04) = exp(0.10) \u2248 1.105. The factor of exp(0.5\u03c3\u00b2) > 1 reflects that the distribution can only spread upward past its lower bound of zero."
+  },
+  {
+    "id": "CH06-005",
+    "chapter": "6",
+    "chapterName": "Simulation Methods",
+    "topic": "Lognormal Distribution",
+    "difficulty": "Moderate",
+    "question": "As the variance \u03c3\u00b2 of the underlying normal distribution increases, the mean of the associated lognormal distribution will:",
+    "options": [
+      "Decrease, because higher volatility lowers expected returns",
+      "Stay the same, because the mean only depends on \u03bc",
+      "Increase, because the distribution can only spread upward past its lower bound of zero"
+    ],
+    "correctAnswer": "C",
+    "explanation": "The lognormal mean is exp(\u03bc + 0.5\u03c3\u00b2). As \u03c3\u00b2 increases, the distribution spreads out, but it cannot spread downward past zero \u2014 so the center shifts rightward, increasing the mean. This is why the lognormal mean exp(\u03bc + 0.5\u03c3\u00b2) is always greater than exp(\u03bc)."
+  },
+  {
+    "id": "CH06-006",
+    "chapter": "6",
+    "chapterName": "Simulation Methods",
+    "topic": "Lognormal Distribution",
+    "difficulty": "Easy",
+    "question": "The Black\u2013Scholes\u2013Merton option pricing model assumes that the price of the underlying asset follows which distribution?",
+    "options": [
+      "Normal distribution",
+      "Lognormal distribution",
+      "Uniform distribution"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The BSM model assumes that the price of the asset underlying the option is lognormally distributed. This is directly consistent with the assumption that the asset's continuously compounded returns are normally distributed."
+  },
+  {
+    "id": "CH06-007",
+    "chapter": "6",
+    "chapterName": "Simulation Methods",
+    "topic": "Lognormal Distribution",
+    "difficulty": "Moderate",
+    "question": "A lognormal distribution is completely described by:",
+    "options": [
+      "The mean and variance of the lognormal variable itself",
+      "The mean and variance of the associated underlying normal distribution",
+      "Only the mean of the lognormal variable"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Unlike most distributions, a lognormal distribution is defined in terms of the parameters of a different distribution \u2014 specifically, the mean (\u03bc) and variance (\u03c3\u00b2) of the associated normal distribution ln(Y). Analysts must track two sets of statistics: those for the normal and those for the lognormal variable itself."
+  },
+  {
+    "id": "CH06-008",
+    "chapter": "6",
+    "chapterName": "Simulation Methods",
+    "topic": "Lognormal Distribution",
+    "difficulty": "Easy",
+    "question": "For which type of distribution is the normal distribution generally a good approximation?",
+    "options": [
+      "The distribution of asset prices",
+      "The distribution of asset returns",
+      "The distribution of future portfolio values"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The normal distribution is often a good approximation for returns, while the lognormal distribution is typically used for prices. Both distributions are therefore important in finance \u2014 the normal for returns and the lognormal for prices."
+  },
+  {
+    "id": "CH06-009",
+    "chapter": "6",
+    "chapterName": "Simulation Methods",
+    "topic": "Continuously Compounded Returns",
+    "difficulty": "Easy",
+    "question": "The continuously compounded return from time 0 to time T can be expressed as:",
+    "options": [
+      "The product of one-period continuously compounded returns",
+      "The sum of one-period continuously compounded returns",
+      "The average of one-period continuously compounded returns"
+    ],
+    "correctAnswer": "B",
+    "explanation": "A key property of continuously compounded returns is that the multi-period return is the sum of one-period returns: r\u2080,T = r\u2080,\u2081 + r\u2081,\u2082 + \u2026 + r_{T-1,T}. This additive property makes continuously compounded returns analytically convenient."
+  },
+  {
+    "id": "CH06-010",
+    "chapter": "6",
+    "chapterName": "Simulation Methods",
+    "topic": "Continuously Compounded Returns",
+    "difficulty": "Easy",
+    "question": "If today's stock price is P\u2080 and the continuously compounded return over the period is r\u2080,T, the stock price at time T equals:",
+    "options": [
+      "P\u2080 \u00d7 (1 + r\u2080,T)",
+      "P\u2080 \u00d7 exp(r\u2080,T)",
+      "P\u2080 + r\u2080,T"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The future stock price is P_T = P\u2080 \u00d7 exp(r\u2080,T). Since r\u2080,T is approximately normally distributed, and P_T is proportional to the exponential of a normal variable, P_T follows a lognormal distribution."
+  },
+  {
+    "id": "CH06-011",
+    "chapter": "6",
+    "chapterName": "Simulation Methods",
+    "topic": "Continuously Compounded Returns",
+    "difficulty": "Moderate",
+    "question": "Assume one-period continuously compounded returns are i.i.d. with mean \u03bc and variance \u03c3\u00b2. The variance of the T-period continuously compounded return r\u2080,T is:",
+    "options": [
+      "\u03c3\u00b2",
+      "\u03c3\u00b2 / T",
+      "\u03c3\u00b2T"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Because the returns are i.i.d. (independent), variances add: Var(r\u2080,T) = \u03c3\u00b2T. As a result, the standard deviation of the T-period return scales as \u03c3\u221aT \u2014 the square-root-of-time rule fundamental in risk management."
+  },
+  {
+    "id": "CH06-012",
+    "chapter": "6",
+    "chapterName": "Simulation Methods",
+    "topic": "Continuously Compounded Returns",
+    "difficulty": "Moderate",
+    "question": "An i.i.d. assumption for continuously compounded returns captures two properties. The independence component captures the proposition that:",
+    "options": [
+      "Mean and variance of return do not change from period to period",
+      "Investors cannot predict future returns using past returns",
+      "Returns are always positively correlated across periods"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Independence captures the proposition that investors cannot predict future returns using past returns. The 'identical distribution' component captures stationarity \u2014 that mean and variance do not change over time."
+  },
+  {
+    "id": "CH06-013",
+    "chapter": "6",
+    "chapterName": "Simulation Methods",
+    "topic": "Continuously Compounded Returns",
+    "difficulty": "Moderate",
+    "question": "Daily closing prices for a stock are USD 50, USD 52, and USD 49. The total two-day continuously compounded return is closest to:",
+    "options": [
+      "\u22122.04%",
+      "\u22122.00%",
+      "+4.00%"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Total continuously compounded return = ln(49/50) = ln(0.98) \u2248 \u22120.0202 = \u22122.02%. Equivalently: ln(52/50) + ln(49/52) = 0.0392 + (\u22120.0594) = \u22120.0202. The two approaches give the same answer because cc returns are additive."
+  },
+  {
+    "id": "CH06-014",
+    "chapter": "6",
+    "chapterName": "Simulation Methods",
+    "topic": "Continuously Compounded Returns",
+    "difficulty": "Moderate",
+    "question": "A stock's daily volatility (standard deviation of continuously compounded returns) is 0.018. Using 250 trading days per year, the annualised volatility is closest to:",
+    "options": [
+      "4.5%",
+      "28.5%",
+      "45.0%"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Annualised volatility = \u03c3_daily \u00d7 \u221a250 = 0.018 \u00d7 15.811 \u2248 0.2846 = 28.5%. The convention is to use 250 trading days (not 365 calendar days) when annualising financial market volatility."
+  },
+  {
+    "id": "CH06-015",
+    "chapter": "6",
+    "chapterName": "Simulation Methods",
+    "topic": "Continuously Compounded Returns",
+    "difficulty": "Easy",
+    "question": "The convention for annualising volatility of financial market returns is based on approximately how many trading days per year?",
+    "options": [
+      "365",
+      "300",
+      "250"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Annualising is based on 250 trading days \u2014 the approximate number of days financial markets are open for trading in a year. Using 365 calendar days would overstate annualised volatility."
+  },
+  {
+    "id": "CH06-016",
+    "chapter": "6",
+    "chapterName": "Simulation Methods",
+    "topic": "Continuously Compounded Returns",
+    "difficulty": "Moderate",
+    "question": "Even if one-period continuously compounded returns are not normally distributed, the T-period return r\u2080,T will be approximately normal for large T because of:",
+    "options": [
+      "The law of large numbers",
+      "The central limit theorem",
+      "The lognormal approximation theorem"
+    ],
+    "correctAnswer": "B",
+    "explanation": "By the central limit theorem, the sum of a large number of i.i.d. random variables is approximately normally distributed, regardless of the distribution of the individual variables (provided finite variance). This justifies using the lognormal model for asset prices even when individual period returns are not perfectly normal."
+  },
+  {
+    "id": "CH06-017",
+    "chapter": "6",
+    "chapterName": "Simulation Methods",
+    "topic": "Continuously Compounded Returns",
+    "difficulty": "Difficult",
+    "question": "A stock has annualised continuously compounded mean return of 10% and annualised volatility of 20%. Using 250 trading days, the standard deviation of the daily continuously compounded return is closest to:",
+    "options": [
+      "0.40%",
+      "1.26%",
+      "20.00%"
+    ],
+    "correctAnswer": "B",
+    "explanation": "From \u03c3_annual = \u03c3_daily \u00d7 \u221a250, rearranging: \u03c3_daily = 0.20 / \u221a250 = 0.20 / 15.81 \u2248 0.01265 = 1.265%. This reverses the annualisation formula to recover daily volatility."
+  },
+  {
+    "id": "CH06-018",
+    "chapter": "6",
+    "chapterName": "Simulation Methods",
+    "topic": "Monte Carlo Simulation",
+    "difficulty": "Easy",
+    "question": "Monte Carlo simulation is best described as a method that:",
+    "options": [
+      "Derives an exact analytical solution for complex financial problems",
+      "Generates a large number of random samples from specified probability distributions to estimate the likelihood of a range of results",
+      "Resamples from observed historical data to build an empirical sampling distribution"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Monte Carlo simulation generates a large number of random samples from specified probability distributions to obtain the likelihood of a range of results. It is a statistical estimation tool, not an exact analytical method. Resampling from observed data describes bootstrap."
+  },
+  {
+    "id": "CH06-019",
+    "chapter": "6",
+    "chapterName": "Simulation Methods",
+    "topic": "Monte Carlo Simulation",
+    "difficulty": "Easy",
+    "question": "Monte Carlo simulation is particularly valuable for valuing securities with complex features because:",
+    "options": [
+      "It provides exact valuations that are always more accurate than analytical formulas",
+      "It can be applied when no analytical pricing formula is available",
+      "It requires no assumptions about the distribution of risk factors"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Monte Carlo simulation is especially useful when no analytic pricing formula is available \u2014 for example, for securities with complex embedded options such as Asian options, lookback options, and mortgage-backed securities."
+  },
+  {
+    "id": "CH06-020",
+    "chapter": "6",
+    "chapterName": "Simulation Methods",
+    "topic": "Monte Carlo Simulation",
+    "difficulty": "Moderate",
+    "question": "In Monte Carlo simulation of stock prices, the formula \u0394Stock price = (\u03bc \u00d7 Prior price \u00d7 \u0394t) + (\u03c3 \u00d7 Prior price \u00d7 Z_k) uses Z_k drawn from a standard normal distribution. What role does Z_k serve?",
+    "options": [
+      "Z_k represents the drift component of the price change",
+      "Z_k is the key risk factor that introduces randomness into the simulation",
+      "Z_k controls the time increment of the simulation"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Z_k is the key risk factor \u2014 it is drawn from a standard normal distribution each period to introduce randomness. The analyst controls the distribution of the stock price by choosing \u03bc (mean/drift) and \u03c3 (volatility). Multiple key risk factors can be used in more complex simulations."
+  },
+  {
+    "id": "CH06-021",
+    "chapter": "6",
+    "chapterName": "Simulation Methods",
+    "topic": "Monte Carlo Simulation",
+    "difficulty": "Moderate",
+    "question": "In the Monte Carlo six-step process, what is the correct order for steps 2 and 3?",
+    "options": [
+      "Specify a time grid, then specify distributional assumptions and draw random numbers",
+      "Draw random numbers, then specify the time grid",
+      "Specify the quantity of interest, then immediately run all trials"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Step 2 is to specify a time grid (divide the horizon into K sub-periods). Step 3 is to specify the method for generating data \u2014 including distributional assumptions for risk factors \u2014 and draw random numbers. The time grid must be defined before drawing random values for each sub-period."
+  },
+  {
+    "id": "CH06-022",
+    "chapter": "6",
+    "chapterName": "Simulation Methods",
+    "topic": "Monte Carlo Simulation",
+    "difficulty": "Moderate",
+    "question": "An analyst runs a Monte Carlo simulation for an Asian option (payoff = max(Final Price \u2212 Average Price, 0)) using 1,000 trials. In 640 of the trials the final price was below the average price. The Monte Carlo estimate of the option's value is:",
+    "options": [
+      "The maximum payoff across all 1,000 trials",
+      "The mean of the present values of the payoffs across all 1,000 trials",
+      "The payoff from the median trial"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The Monte Carlo estimate is the mean of the present values of the simulated payoffs across all trials: (1/I) \u00d7 \u03a3 C_{i0}. In 640 of 1,000 trials the payoff is zero; the average incorporates both the zero-payoff and positive-payoff trials."
+  },
+  {
+    "id": "CH06-023",
+    "chapter": "6",
+    "chapterName": "Simulation Methods",
+    "topic": "Monte Carlo Simulation",
+    "difficulty": "Moderate",
+    "question": "A key limitation of Monte Carlo simulation compared with analytical methods is that it:",
+    "options": [
+      "Cannot be used for securities with path-dependent payoffs",
+      "Provides only statistical estimates, not exact results",
+      "Requires the analyst to observe historical prices directly"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Monte Carlo provides statistical estimates, not exact results. Analytical methods, when available, provide more insight into cause-and-effect relationships. However, Monte Carlo is indispensable when no analytical formula exists. Its precision improves with more trials but never becomes exact."
+  },
+  {
+    "id": "CH06-024",
+    "chapter": "6",
+    "chapterName": "Simulation Methods",
+    "topic": "Monte Carlo Simulation",
+    "difficulty": "Easy",
+    "question": "Monte Carlo simulation is best described as a complement to analytical methods because:",
+    "options": [
+      "It always outperforms analytical methods in accuracy",
+      "It can handle complex problems without analytical solutions but does not provide the causal insight that analytical methods offer",
+      "It eliminates the need for probability distribution assumptions"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Monte Carlo complements analytical methods \u2014 it handles complex cases where no formula exists, but analytical methods (where available) remain preferred because they provide exact results and insight into cause-and-effect relationships."
+  },
+  {
+    "id": "CH06-025",
+    "chapter": "6",
+    "chapterName": "Simulation Methods",
+    "topic": "Monte Carlo Simulation",
+    "difficulty": "Moderate",
+    "question": "A lookback option pays off max(Final Price \u2212 Minimum Price over the life of the option, 0). To value this using Monte Carlo simulation, the analyst must:",
+    "options": [
+      "Calculate the average price over the simulation trial instead of the minimum",
+      "Track the minimum stock price achieved in each simulation trial",
+      "Use an analytical formula, as Monte Carlo cannot handle path-dependent options"
+    ],
+    "correctAnswer": "B",
+    "explanation": "For a lookback option, the analyst tracks the minimum stock price achieved across each simulation trial's price path. The payoff for trial i is then max(P_T \u2212 P_min, 0). Discounting and averaging these payoffs across all trials gives the Monte Carlo value. Monte Carlo is well-suited to such path-dependent options."
+  },
+  {
+    "id": "CH06-026",
+    "chapter": "6",
+    "chapterName": "Simulation Methods",
+    "topic": "Monte Carlo Simulation",
+    "difficulty": "Moderate",
+    "question": "Which of the following is a major strength of Monte Carlo simulation in investment applications?",
+    "options": [
+      "It provides exact, rather than approximate, measures of risk",
+      "It enables sensitivity analysis by allowing the analyst to change key distributional assumptions",
+      "It eliminates sampling error entirely when enough trials are run"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Because the analyst controls all inputs, Monte Carlo is excellent for sensitivity and scenario analysis \u2014 examining how changes in distributional assumptions (e.g., mean return, volatility) affect outcomes. This is one of its most valuable investment applications."
+  },
+  {
+    "id": "CH06-027",
+    "chapter": "6",
+    "chapterName": "Simulation Methods",
+    "topic": "Monte Carlo Simulation",
+    "difficulty": "Difficult",
+    "question": "An Asian option simulation runs monthly over one year (K = 12) for 1,000 trials. In a given trial, the analyst generates 12 draws of Z_k ~ N(0,1) and computes the price path. What is computed at the end of that single trial?",
+    "options": [
+      "The final Monte Carlo option value (average of all discounted payoffs)",
+      "One simulated payoff: max(P_final \u2212 P_average, 0), then discounted to today",
+      "The probability that the final price exceeds the average price"
+    ],
+    "correctAnswer": "B",
+    "explanation": "One trial produces one simulated payoff: max(P_T \u2212 avg(P_1,...,P_K), 0). This is then discounted to t=0 to get C_{i0}. After all I = 1,000 trials, the analyst averages all C_{i0} values to obtain the Monte Carlo estimate of the option's value."
+  },
+  {
+    "id": "CH06-028",
+    "chapter": "6",
+    "chapterName": "Simulation Methods",
+    "topic": "Monte Carlo Simulation",
+    "difficulty": "Moderate",
+    "question": "In a Monte Carlo simulation of a one-year option with monthly steps, the time increment \u0394t is:",
+    "options": [
+      "12 months",
+      "1 month (1/12 of a year)",
+      "1 day (1/250 of a year)"
+    ],
+    "correctAnswer": "B",
+    "explanation": "\u0394t = calendar time / K = 1 year / 12 months = 1 month (or 1/12 year). The time grid divides the full horizon into K equal sub-periods; each sub-period has length \u0394t."
+  },
+  {
+    "id": "CH06-029",
+    "chapter": "6",
+    "chapterName": "Simulation Methods",
+    "topic": "Bootstrap Resampling",
+    "difficulty": "Easy",
+    "question": "The bootstrap method mimics random sampling from a population by:",
+    "options": [
+      "Generating random draws from a specified theoretical distribution",
+      "Treating the observed sample as if it were the population and resampling from it",
+      "Removing one observation at a time and recomputing the statistic"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Bootstrap mimics sampling from a population by treating the observed sample as a proxy for the population and resampling from it. Because a random sample is a good representation of the population, this provides a valid approximation. Removing one observation at a time describes the jackknife method."
+  },
+  {
+    "id": "CH06-030",
+    "chapter": "6",
+    "chapterName": "Simulation Methods",
+    "topic": "Bootstrap Resampling",
+    "difficulty": "Easy",
+    "question": "In bootstrap resampling, each resample drawn from the original sample:",
+    "options": [
+      "Must contain only observations not seen in prior resamples",
+      "Has the same size as the original sample and is drawn with replacement",
+      "Is smaller than the original sample to avoid overfitting"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Each bootstrap resample has the same size n as the original sample and is drawn with replacement. This means the same observation can appear multiple times in one resample, and some observations may not appear at all."
+  },
+  {
+    "id": "CH06-031",
+    "chapter": "6",
+    "chapterName": "Simulation Methods",
+    "topic": "Bootstrap Resampling",
+    "difficulty": "Moderate",
+    "question": "The fundamental difference between bootstrap resampling and Monte Carlo simulation is the source of the random draws. In bootstrap, the random variable is drawn from:",
+    "options": [
+      "A specified parametric distribution such as the normal",
+      "The observed historical sample (the empirical distribution)",
+      "A uniform distribution scaled to match the range of observed values"
+    ],
+    "correctAnswer": "B",
+    "explanation": "In bootstrap, the random variable is drawn directly from the observed sample (the empirical distribution). In Monte Carlo, the analyst specifies a theoretical probability distribution. Bootstrap requires no parametric assumption \u2014 it is model-free (non-parametric) resampling."
+  },
+  {
+    "id": "CH06-032",
+    "chapter": "6",
+    "chapterName": "Simulation Methods",
+    "topic": "Bootstrap Resampling",
+    "difficulty": "Moderate",
+    "question": "Which step of the bootstrap simulation process differs most from the equivalent Monte Carlo step?",
+    "options": [
+      "Specifying the time grid",
+      "Specifying the method for generating data used in the simulation",
+      "Calculating the average stock price and payoff within each trial"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Step 3 \u2014 specifying the data generation method \u2014 is the key difference. Monte Carlo requires the analyst to specify a probability distribution (e.g., normal with given \u03bc and \u03c3). Bootstrap uses the observed historical price changes as the empirical distribution, with no parametric assumption needed."
+  },
+  {
+    "id": "CH06-033",
+    "chapter": "6",
+    "chapterName": "Simulation Methods",
+    "topic": "Bootstrap Resampling",
+    "difficulty": "Moderate",
+    "question": "A strength of bootstrap resampling relative to Monte Carlo simulation is that bootstrap:",
+    "options": [
+      "Always produces more accurate estimates regardless of sample size",
+      "Does not require the analyst to specify a theoretical probability distribution",
+      "Generates exact analytical results rather than statistical estimates"
+    ],
+    "correctAnswer": "B",
+    "explanation": "A key advantage of bootstrap is that it does not require the analyst to specify distributional assumptions \u2014 it uses the empirical distribution of observed data directly. Monte Carlo requires specifying a distribution, which introduces model risk if the assumed distribution is incorrect."
+  },
+  {
+    "id": "CH06-034",
+    "chapter": "6",
+    "chapterName": "Simulation Methods",
+    "topic": "Bootstrap Resampling",
+    "difficulty": "Easy",
+    "question": "Like Monte Carlo simulation, bootstrap resampling is a complement to analytical methods. This means bootstrap:",
+    "options": [
+      "Provides exact results superior to any analytical formula",
+      "Provides only statistical estimates based on empirical data, not exact results",
+      "Can replace analytical methods entirely in modern finance"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Bootstrap, like Monte Carlo, provides statistical estimates rather than exact results. Analytical methods (where available) provide more precise results and greater insight into cause-and-effect relationships. Bootstrap is most valuable when no analytical formula exists."
+  },
+  {
+    "id": "CH06-035",
+    "chapter": "6",
+    "chapterName": "Simulation Methods",
+    "topic": "Bootstrap Resampling",
+    "difficulty": "Moderate",
+    "question": "In a bootstrap simulation to value a contingent claim, the analyst uses K = 12 monthly draws. These draws are taken from:",
+    "options": [
+      "A standard normal distribution with \u03bc=0 and \u03c3=1",
+      "The observed historical stock price changes or returns",
+      "A uniform distribution between the minimum and maximum observed prices"
+    ],
+    "correctAnswer": "B",
+    "explanation": "In bootstrap simulation, the K random values of the stock price process are drawn from the observed historical stock price changes \u2014 the empirical distribution. This is the defining feature distinguishing bootstrap from Monte Carlo, where draws come from a specified theoretical distribution."
+  },
+  {
+    "id": "CH06-036",
+    "chapter": "6",
+    "chapterName": "Simulation Methods",
+    "topic": "Monte Carlo vs Bootstrap",
+    "difficulty": "Moderate",
+    "question": "An analyst wants to estimate the value of a complex bond with an embedded option. No closed-form formula exists. Which method is most appropriate if the analyst has strong theoretical beliefs about the distribution of interest rate movements?",
+    "options": [
+      "Bootstrap resampling, because it avoids distributional assumptions",
+      "Monte Carlo simulation, because the analyst can specify the theoretical distribution",
+      "Simple analytical approximation using duration"
+    ],
+    "correctAnswer": "B",
+    "explanation": "When the analyst has strong theoretical beliefs about the distribution of the key risk factor (interest rates), Monte Carlo simulation is appropriate \u2014 the analyst can specify the distribution directly. Bootstrap is preferred when the analyst does not want to impose distributional assumptions and has sufficient historical data."
+  },
+  {
+    "id": "CH06-037",
+    "chapter": "6",
+    "chapterName": "Simulation Methods",
+    "topic": "Monte Carlo vs Bootstrap",
+    "difficulty": "Moderate",
+    "question": "Both Monte Carlo simulation and bootstrap resampling share which characteristic?",
+    "options": [
+      "Both require the analyst to specify a parametric probability distribution",
+      "Both rely on repetitive sampling and provide statistical estimates rather than exact results",
+      "Both use observed historical data as the sole source of randomness"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Both methods rely on repetitive sampling and produce statistical estimates, not exact results. They differ in their data source: Monte Carlo uses theoretical distributions specified by the analyst; bootstrap uses observed historical data. Both complement analytical methods."
+  },
+  {
+    "id": "CH06-038",
+    "chapter": "6",
+    "chapterName": "Simulation Methods",
+    "topic": "Monte Carlo vs Bootstrap",
+    "difficulty": "Difficult",
+    "question": "An analyst uses Monte Carlo to simulate a stock with \u03bc = 0.07 and \u03c3 = 0.12 (annual, continuous), generating 2,000 one-year scenarios. A colleague uses bootstrap on 10 years of monthly returns for the same stock. Which statement best describes the key trade-off between the two approaches?",
+    "options": [
+      "Monte Carlo can produce scenarios outside the historically observed range; bootstrap is constrained to the empirical distribution of past returns",
+      "Bootstrap always produces more reliable estimates because it uses real data",
+      "Monte Carlo will always underestimate tail risk relative to bootstrap"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Monte Carlo can generate scenarios that have never historically occurred, including extreme tail events, because it draws from a continuous theoretical distribution. Bootstrap is constrained to the empirical distribution of observed data \u2014 it cannot generate returns outside the historical range. This trade-off is central: Monte Carlo allows richer scenario generation but depends on distributional assumptions; bootstrap is model-free but limited by history."
+  },
+  {
+    "id": "CH06-039",
+    "chapter": "6",
+    "chapterName": "Simulation Methods",
+    "topic": "Lognormal Distribution",
+    "difficulty": "Difficult",
+    "question": "A stock's continuously compounded annual return is normally distributed with \u03bc = 0.10 and \u03c3 = 0.25. The current price is USD 100. Which statement about the distribution of the price one year from now is correct?",
+    "options": [
+      "The price is normally distributed with mean USD 110",
+      "The price is lognormally distributed with mean exp(0.10 + 0.5 \u00d7 0.0625) \u00d7 100 \u2248 USD 113.88",
+      "The price is normally distributed with mean exp(0.10) \u00d7 100 \u2248 USD 110.52"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Because r\u2080,\u2081 ~ N(0.10, 0.25\u00b2), the future price P\u2081 = 100 \u00d7 exp(r\u2080,\u2081) is lognormally distributed. The mean of a lognormal variable is exp(\u03bc + 0.5\u03c3\u00b2) = exp(0.10 + 0.5 \u00d7 0.0625) = exp(0.13125) \u2248 1.1403, so the expected price \u2248 USD 114.03. This illustrates why the lognormal mean exceeds exp(\u03bc) \u00d7 P\u2080."
+  },
+  {
+    "id": "CH06-040",
+    "chapter": "6",
+    "chapterName": "Simulation Methods",
+    "topic": "Monte Carlo Simulation",
+    "difficulty": "Difficult",
+    "question": "A Monte Carlo simulation of an Asian option produces the following summary: in 700 of 1,000 trials the payoff was USD 0; in the remaining 300 trials the average payoff was USD 8.50. Using a discount rate of 5% per year for a one-year option, the Monte Carlo estimate of the option's value today is closest to:",
+    "options": [
+      "USD 2.55",
+      "USD 2.43",
+      "USD 8.10"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Average undiscounted payoff = (700 \u00d7 0 + 300 \u00d7 8.50) / 1,000 = 2,550 / 1,000 = USD 2.55. Discounting at 5% for one year: 2.55 / 1.05 \u2248 USD 2.43. This is the Monte Carlo estimate of the option's present value \u2014 the mean of all discounted trial payoffs."
+  },
+  {
+    "id": "CH07-001",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Sampling Methods",
+    "difficulty": "Easy",
+    "question": "A simple random sample is best described as a subset of a population in which:",
+    "options": [
+      "Each element is selected based on the researcher's judgment",
+      "Each element of the population has an equal probability of being selected",
+      "Elements are selected at fixed intervals from a list"
+    ],
+    "correctAnswer": "B",
+    "explanation": "A simple random sample gives every element of the population an equal probability of being selected. This distinguishes it from judgmental sampling (researcher selects) and systematic sampling (fixed intervals)."
+  },
+  {
+    "id": "CH07-002",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Sampling Methods",
+    "difficulty": "Easy",
+    "question": "Sampling error is best defined as:",
+    "options": [
+      "An error caused by poor data quality in the population",
+      "The difference between the observed value of a statistic and the quantity it is intended to estimate",
+      "The error introduced when the wrong statistical test is applied"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Sampling error is the difference between the observed value of a statistic (e.g., sample mean) and the quantity it is intended to estimate (e.g., population mean), arising because only a subset of the population is observed. It cannot be eliminated, only reduced by increasing sample size."
+  },
+  {
+    "id": "CH07-003",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Sampling Methods",
+    "difficulty": "Easy",
+    "question": "In stratified random sampling, simple random samples are drawn from each stratum in sizes:",
+    "options": [
+      "Equal across all strata regardless of stratum size",
+      "Proportional to the relative size of each stratum in the population",
+      "Chosen at the researcher's discretion for each stratum"
+    ],
+    "correctAnswer": "B",
+    "explanation": "In stratified random sampling, simple random samples are drawn from each stratum in sizes proportional to the relative size of each stratum in the population. These samples are then pooled to form the stratified random sample."
+  },
+  {
+    "id": "CH07-004",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Sampling Methods",
+    "difficulty": "Moderate",
+    "question": "Compared with simple random sampling, a key advantage of stratified random sampling is that it:",
+    "options": [
+      "Is always faster and cheaper to implement",
+      "Guarantees that population subdivisions of interest are represented and produces estimates with smaller variance",
+      "Requires no prior knowledge of the population structure"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Stratified random sampling guarantees that all population subdivisions (strata) are represented in the sample. It also produces estimates with greater precision (smaller variance) than simple random sampling because the stratification reduces variability within groups."
+  },
+  {
+    "id": "CH07-005",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Sampling Methods",
+    "difficulty": "Moderate",
+    "question": "Bond index replication using stratified sampling typically divides the population of index bonds into strata based on which characteristics?",
+    "options": [
+      "Only the coupon rate and maturity",
+      "Duration, cash flow distribution, sector, credit quality, and call exposure",
+      "Alphabetical order of issuer names"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Bond indexing using stratified sampling divides the population into groups of similar duration, cash flow distribution, sector, credit quality, and call exposure. Each group is a stratum, and the portfolio includes bonds sampled from each stratum proportional to its market weight in the index."
+  },
+  {
+    "id": "CH07-006",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Sampling Methods",
+    "difficulty": "Moderate",
+    "question": "The critical difference between cluster sampling and stratified random sampling is that in cluster sampling:",
+    "options": [
+      "All clusters are included and individual elements are sampled within each",
+      "Only selected clusters are included, whereas in stratified sampling all strata are included",
+      "Clusters are formed based on measurable characteristics of individual elements"
+    ],
+    "correctAnswer": "B",
+    "explanation": "In cluster sampling, only the selected clusters are included in the sample \u2014 the unselected clusters contribute no observations. In stratified sampling, all strata are included and elements are sampled within each stratum. This is the fundamental structural difference between the two methods."
+  },
+  {
+    "id": "CH07-007",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Sampling Methods",
+    "difficulty": "Easy",
+    "question": "Systematic sampling involves selecting:",
+    "options": [
+      "Every kth member of the population until the desired sample size is reached",
+      "Members of the population based on their accessibility to the researcher",
+      "An equal number of elements from each subgroup of the population"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Systematic sampling selects every kth member of the population until the desired sample size is reached. The starting point is typically chosen at random. It is useful when the full population cannot be enumerated and produces approximately random samples."
+  },
+  {
+    "id": "CH07-008",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Sampling Methods",
+    "difficulty": "Easy",
+    "question": "Convenience sampling is best described as a method where elements are selected based on:",
+    "options": [
+      "Fixed probability weights assigned to each population member",
+      "Accessibility and ease of collection for the researcher",
+      "A researcher's expert knowledge of which elements are most representative"
+    ],
+    "correctAnswer": "B",
+    "explanation": "In convenience sampling, elements are selected based on whether they are accessible to, or convenient for, the researcher. Samples may not be representative of the population, limiting accuracy. It is typically used for pilot studies or preliminary research under cost or time constraints."
+  },
+  {
+    "id": "CH07-009",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Sampling Methods",
+    "difficulty": "Moderate",
+    "question": "A seasoned auditor selects specific accounts for review using professional judgment about which transactions are most likely to reveal material misstatements. This is an example of:",
+    "options": [
+      "Simple random sampling",
+      "Cluster sampling",
+      "Judgmental sampling"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Judgmental sampling involves hand-picking elements based on a researcher's expertise and professional judgment. It is appropriate when the researcher's specialty is critical to identifying the most relevant subset, such as an auditor selecting high-risk transactions. A key risk is researcher bias."
+  },
+  {
+    "id": "CH07-010",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Sampling Methods",
+    "difficulty": "Moderate",
+    "question": "A research institute surveys individual investors about stock market sentiment by first grouping investors by US state, randomly selecting several states, and then randomly surveying investors within those states. This is an example of:",
+    "options": [
+      "Stratified random sampling",
+      "Two-stage cluster sampling",
+      "Systematic sampling"
+    ],
+    "correctAnswer": "B",
+    "explanation": "This describes two-stage cluster sampling: in the first stage, the population is divided into clusters (states) and clusters are randomly selected; in the second stage, a random sample is drawn from within each selected cluster. All investors in non-selected states are excluded entirely."
+  },
+  {
+    "id": "CH07-011",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Sampling Methods",
+    "difficulty": "Easy",
+    "question": "Relative to other probability sampling methods, cluster sampling's primary advantage is that it:",
+    "options": [
+      "Produces the most accurate estimates for a given sample size",
+      "Is the most time-efficient and cost-efficient option for large, dispersed populations",
+      "Requires no division of the population into subgroups"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Cluster sampling's primary advantage is efficiency \u2014 it is the most time-efficient and cost-efficient probability sampling method for large populations. Its main disadvantage is lower accuracy relative to other probability sampling methods of equal sample size, because a cluster sample may be less representative of the entire population."
+  },
+  {
+    "id": "CH07-012",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Sampling Methods",
+    "difficulty": "Moderate",
+    "question": "An analyst uses all data available in her internal database \u2014 built while researching several dozen representative stocks \u2014 to estimate average R&D spending in the pharmaceutical sector. This is an example of:",
+    "options": [
+      "Simple random sampling",
+      "Stratified random sampling",
+      "Convenience sampling"
+    ],
+    "correctAnswer": "C",
+    "explanation": "The analyst is selecting data because it is easily accessible from an internal database, not through a probability-based process. This is convenience sampling \u2014 data collected quickly from whatever is at hand. There is significant risk that the sample is not representative of all pharmaceutical companies."
+  },
+  {
+    "id": "CH07-013",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Sampling Methods",
+    "difficulty": "Moderate",
+    "question": "When an analyst pools data from an investment manager's low-risk strategy period and high-risk strategy period to compute a single Sharpe ratio, the primary problem is:",
+    "options": [
+      "The sample size is too large for a reliable Sharpe ratio",
+      "The two periods represent different underlying distributions, making the pooled sample unrepresentative of any population",
+      "The Sharpe ratio cannot be computed from more than one year of data"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Pooling returns from two periods where the manager used fundamentally different strategies mixes two different distributions. The combined sample is representative of no actual population, and any inferences drawn from it are invalid. A smaller, homogeneous sample may be more informative than a larger pooled one."
+  },
+  {
+    "id": "CH07-014",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Sampling Methods",
+    "difficulty": "Easy",
+    "question": "The two broad categories of sampling methods are:",
+    "options": [
+      "Simple and complex sampling",
+      "Probability sampling and non-probability sampling",
+      "Parametric and non-parametric sampling"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Sampling methods are classified as probability sampling (every member has an equal chance of selection \u2014 e.g., simple random, stratified, cluster) and non-probability sampling (selection depends on judgment or convenience \u2014 e.g., convenience sampling, judgmental sampling)."
+  },
+  {
+    "id": "CH07-015",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Sampling Methods",
+    "difficulty": "Moderate",
+    "question": "A bond portfolio manager uses stratified sampling to replicate a bond index with 60 strata defined by 3 issuer types, 10 maturity brackets, and 2 coupon bands. The minimum number of bonds the portfolio must hold is:",
+    "options": [
+      "15",
+      "60",
+      "120"
+    ],
+    "correctAnswer": "B",
+    "explanation": "With 3 \u00d7 10 \u00d7 2 = 60 strata, each stratum must contain at least one bond. Therefore the minimum number of bonds in the portfolio is 60. Each stratum represents a distinct combination of issuer type, maturity, and coupon level."
+  },
+  {
+    "id": "CH07-016",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Sampling Methods",
+    "difficulty": "Moderate",
+    "question": "Which of the following is a significant risk associated with non-probability sampling methods?",
+    "options": [
+      "They are always more expensive to implement than probability sampling methods",
+      "They carry a significant risk of generating a sample that is not representative of the population",
+      "They cannot be used when the population size is unknown"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Non-probability sampling methods depend on factors other than probability \u2014 such as researcher judgment or data accessibility \u2014 which creates significant risk that the resulting sample is not representative of the population. This limits the reliability of statistical inferences drawn from such samples."
+  },
+  {
+    "id": "CH07-017",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Central Limit Theorem",
+    "difficulty": "Easy",
+    "question": "The central limit theorem states that for a population with mean \u03bc and finite variance \u03c3\u00b2, the sampling distribution of the sample mean X\u0304 computed from large random samples will be:",
+    "options": [
+      "Approximately normal with mean \u03bc and variance \u03c3\u00b2",
+      "Approximately normal with mean \u03bc and variance \u03c3\u00b2/n",
+      "Exactly normal with mean 0 and variance 1"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The CLT states that X\u0304 is approximately normally distributed with mean \u03bc (same as the population) and variance \u03c3\u00b2/n (population variance divided by sample size). The variance shrinks as n increases, making X\u0304 concentrate around \u03bc with larger samples."
+  },
+  {
+    "id": "CH07-018",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Central Limit Theorem",
+    "difficulty": "Easy",
+    "question": "The central limit theorem is remarkable because it applies regardless of:",
+    "options": [
+      "The sample size used",
+      "The shape of the underlying population distribution, as long as the population has finite variance",
+      "Whether the population mean is known"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The CLT applies to any population distribution \u2014 normal, skewed, bimodal, uniform \u2014 as long as the population has finite variance and the sample size is sufficiently large (generally n \u2265 30). This universality is what makes the CLT one of the most important theorems in statistics."
+  },
+  {
+    "id": "CH07-019",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Central Limit Theorem",
+    "difficulty": "Easy",
+    "question": "As a rule of thumb, the sampling distribution of the sample mean can be assumed to be approximately normal when the sample size n is at least:",
+    "options": [
+      "10",
+      "30",
+      "100"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The general rule of thumb is that n \u2265 30 is sufficient for the CLT to apply. However, when the underlying population is very non-normal (e.g., highly skewed), a larger sample size \u2014 well in excess of 30 \u2014 may be required for the normal approximation to be reliable."
+  },
+  {
+    "id": "CH07-020",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Central Limit Theorem",
+    "difficulty": "Moderate",
+    "question": "A colleague claims that because of the central limit theorem, diversifying across a very large number of investments will eventually drive portfolio standard deviation to zero. This claim is:",
+    "options": [
+      "Correct, because the CLT guarantees convergence to zero variance",
+      "Incorrect, because the CLT applies to sampling distributions of means, not to the elimination of portfolio risk",
+      "Correct only if all assets are perfectly negatively correlated"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The CLT describes the behavior of the sampling distribution of the sample mean \u2014 it does not describe the behavior of portfolio risk. Diversification reduces unsystematic risk, but systematic risk remains regardless of the number of holdings. The CLT cannot be invoked to claim portfolio variance goes to zero."
+  },
+  {
+    "id": "CH07-021",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Central Limit Theorem",
+    "difficulty": "Moderate",
+    "question": "An analyst draws repeated samples of size n = 50 from a skewed distribution with mean \u03bc = 0.035% and finite variance. What will the distribution of the sample means look like?",
+    "options": [
+      "Skewed in the same direction as the population distribution",
+      "Approximately normal with mean 0.035% due to the central limit theorem",
+      "Uniform, because the samples are drawn randomly"
+    ],
+    "correctAnswer": "B",
+    "explanation": "By the CLT, the distribution of the sample mean X\u0304 will be approximately normal with mean \u03bc = 0.035%, regardless of the skewness of the underlying population, because n = 50 \u2265 30. The sample mean distribution has a different (narrower) shape than the population distribution."
+  },
+  {
+    "id": "CH07-022",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Central Limit Theorem",
+    "difficulty": "Moderate",
+    "question": "The variance of the sampling distribution of the sample mean is \u03c3\u00b2/n. What does this imply about the relationship between sample size and estimation precision?",
+    "options": [
+      "Doubling the sample size halves the variance and therefore halves the standard error",
+      "Doubling the sample size halves the variance of X\u0304, reducing the standard error by a factor of \u221a2",
+      "Sample size has no effect on the variance of X\u0304 when the population variance is large"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Variance of X\u0304 = \u03c3\u00b2/n. Doubling n halves the variance, but standard error = \u03c3/\u221an, so doubling n reduces standard error by \u221a2 \u2248 1.41. To halve the standard error, the sample size must be quadrupled. This diminishing return means there is a point beyond which adding observations yields little additional precision."
+  },
+  {
+    "id": "CH07-023",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Central Limit Theorem",
+    "difficulty": "Moderate",
+    "question": "Why is the central limit theorem particularly important for financial analysts?",
+    "options": [
+      "It guarantees that all financial return distributions are normally distributed",
+      "It allows analysts to make probability statements about population means using sample means, even when the population distribution is unknown",
+      "It proves that large portfolios always outperform small ones"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The CLT is crucial because financial return distributions are often non-normal (skewed, fat-tailed). The CLT allows analysts to use normal-distribution-based inference (confidence intervals, hypothesis tests) for the sample mean regardless of the population shape, as long as samples are sufficiently large."
+  },
+  {
+    "id": "CH07-024",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Central Limit Theorem",
+    "difficulty": "Difficult",
+    "question": "Which statement correctly identifies an error in the following claim? 'The central limit theorem states that for any sample size, the distribution of X\u0304 will be exactly normal with standard deviation \u03c3/\u221an.'",
+    "options": [
+      "The formula \u03c3/\u221an is incorrect; the correct formula is \u03c3/n",
+      "The CLT requires large sample sizes (generally n \u2265 30) and produces an approximate, not exact, normal distribution",
+      "The claim is entirely correct"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The claim contains two errors: (1) the CLT requires large sample sizes \u2014 for small n the approximation may be poor; (2) the resulting distribution is approximately, not exactly, normal. The standard deviation formula \u03c3/\u221an is correct."
+  },
+  {
+    "id": "CH07-025",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Standard Error",
+    "difficulty": "Easy",
+    "question": "The standard error of the sample mean is best described as:",
+    "options": [
+      "The standard deviation of individual observations in the sample",
+      "The standard deviation of the sampling distribution of the sample mean",
+      "The variance of the population divided by the population mean"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The standard error of the sample mean is the standard deviation of the sampling distribution of X\u0304. It measures how precisely the sample mean estimates the population mean \u2014 a smaller standard error indicates a more precise estimate."
+  },
+  {
+    "id": "CH07-026",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Standard Error",
+    "difficulty": "Easy",
+    "question": "When the population standard deviation \u03c3 is unknown (the typical case in practice), the standard error of the sample mean is estimated as:",
+    "options": [
+      "s / n",
+      "s / \u221an",
+      "\u03c3 / \u221an"
+    ],
+    "correctAnswer": "B",
+    "explanation": "When \u03c3 is unknown, the standard error is estimated as s/\u221an, where s is the sample standard deviation. The formula \u03c3/\u221an requires knowledge of the true population standard deviation, which is rarely available in practice."
+  },
+  {
+    "id": "CH07-027",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Standard Error",
+    "difficulty": "Moderate",
+    "question": "A population has variance \u03c3\u00b2 = 2.45 and a sample of size n = 40 is drawn. The standard error of the sample mean is closest to:",
+    "options": [
+      "0.039",
+      "0.247",
+      "0.387"
+    ],
+    "correctAnswer": "B",
+    "explanation": "\u03c3 = \u221a2.45 = 1.565. Standard error = \u03c3/\u221an = 1.565/\u221a40 = 1.565/6.325 \u2248 0.247. This uses the population standard deviation formula since \u03c3 is given."
+  },
+  {
+    "id": "CH07-028",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Standard Error",
+    "difficulty": "Moderate",
+    "question": "Peter Biggs wants the standard deviation of sample means (standard error) to be 1 percent. The population standard deviation of growth manager returns is 6 percent. The minimum sample size required is:",
+    "options": [
+      "6",
+      "36",
+      "576"
+    ],
+    "correctAnswer": "B",
+    "explanation": "From \u03c3_X\u0304 = \u03c3/\u221an: 1% = 6%/\u221an \u2192 \u221an = 6 \u2192 n = 36. To achieve standard error of 0.25%, n = (6/0.25)\u00b2 = 576. For 1%, the answer is 36."
+  },
+  {
+    "id": "CH07-029",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Standard Error",
+    "difficulty": "Moderate",
+    "question": "To halve the standard error of the sample mean, an analyst must:",
+    "options": [
+      "Double the sample size",
+      "Quadruple the sample size",
+      "Increase the sample size by 50 percent"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Standard error = \u03c3/\u221an. To halve the standard error: \u03c3/\u221a(4n) = \u03c3/(2\u221an) = (1/2) \u00d7 original standard error. Therefore, the sample size must be quadrupled. This reflects the diminishing returns to sampling \u2014 each unit of precision improvement requires exponentially more data."
+  },
+  {
+    "id": "CH07-030",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Standard Error",
+    "difficulty": "Moderate",
+    "question": "The key distinction between standard deviation and standard error is that:",
+    "options": [
+      "Standard deviation measures inference precision; standard error measures data dispersion",
+      "Standard deviation measures dispersion of individual data values; standard error measures the precision of the sample mean as an estimate of the population mean",
+      "Standard deviation is used for populations; standard error is used for samples only"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Standard deviation measures how spread out individual data points are (data description). Standard error measures how precisely the sample mean estimates the population mean (statistical inference). They are distinct concepts and not interchangeable \u2014 a common exam error."
+  },
+  {
+    "id": "CH07-031",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Standard Error",
+    "difficulty": "Moderate",
+    "question": "The sample variance is calculated using a divisor of n \u2212 1 rather than n. This is because:",
+    "options": [
+      "Using n \u2212 1 simplifies the computation",
+      "Using n \u2212 1 produces an unbiased estimate of the population variance",
+      "Using n \u2212 1 is required only when the population is normal"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The divisor n \u2212 1 (Bessel's correction) is used to produce an unbiased estimate of the population variance \u03c3\u00b2. Using n in the denominator would systematically underestimate the population variance because the sample mean is used instead of the true (unknown) population mean, consuming one degree of freedom."
+  },
+  {
+    "id": "CH07-032",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Standard Error",
+    "difficulty": "Moderate",
+    "question": "A sample of 25 growth manager returns yields a sample standard deviation of 8 percent. The standard error of the sample mean is closest to:",
+    "options": [
+      "0.32%",
+      "1.60%",
+      "8.00%"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Standard error = s/\u221an = 8%/\u221a25 = 8%/5 = 1.60%. The standard deviation (8%) measures dispersion of individual manager returns, while the standard error (1.60%) measures how precisely the sample mean estimates the population mean return."
+  },
+  {
+    "id": "CH07-033",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Standard Error",
+    "difficulty": "Difficult",
+    "question": "An analyst needs the standard error of the sample mean to be at most 0.5 percent. The population standard deviation is estimated at 5 percent. The required sample size is closest to:",
+    "options": [
+      "10",
+      "100",
+      "200"
+    ],
+    "correctAnswer": "B",
+    "explanation": "From \u03c3/\u221an \u2264 0.005: \u221an \u2265 5/0.005 = 100 \u2192 n \u2265 10,000? Wait: \u03c3 = 5% = 0.05, target SE = 0.5% = 0.005. \u221an \u2265 0.05/0.005 = 10 \u2192 n \u2265 100. The required sample size is 100."
+  },
+  {
+    "id": "CH07-034",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Bootstrap Resampling",
+    "difficulty": "Easy",
+    "question": "Bootstrap resampling is best described as a method that:",
+    "options": [
+      "Leaves out one observation at a time to estimate the sampling distribution",
+      "Repeatedly draws samples of the same size as the original sample with replacement from the original sample",
+      "Draws random samples from a specified theoretical distribution"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Bootstrap repeatedly draws samples of the same size as the original sample, with replacement, from the original observed sample. Each item drawn is replaced before the next draw, so the same observation can appear multiple times in a resample and some may not appear at all."
+  },
+  {
+    "id": "CH07-035",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Bootstrap Resampling",
+    "difficulty": "Easy",
+    "question": "A key advantage of bootstrap resampling over conventional parametric methods is that bootstrap:",
+    "options": [
+      "Always produces smaller standard error estimates",
+      "Does not rely on an analytical formula and can be applied to any estimator, including those with no closed-form standard error",
+      "Requires a larger initial sample to produce valid results"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Bootstrap does not rely on analytical formulas such as z- or t-statistics. It is a simple but powerful method that works for any estimator \u2014 including complex ones like the median, Sharpe ratio, or other statistics where no analytical formula for the standard error exists."
+  },
+  {
+    "id": "CH07-036",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Bootstrap Resampling",
+    "difficulty": "Moderate",
+    "question": "In a bootstrap procedure to estimate the standard error of the sample mean, 1,000 resamples are drawn. The mean across all resample means (\u03b8\u0304) is \u22120.01367, and the sum of squared deviations \u03a3(\u03b8\u0302_b \u2212 \u03b8\u0304)\u00b2 = 1.94143. The bootstrap standard error is closest to:",
+    "options": [
+      "0.00194",
+      "0.04408",
+      "0.44080"
+    ],
+    "correctAnswer": "B",
+    "explanation": "s_X\u0304 = \u221a[(1/(B\u22121)) \u00d7 \u03a3(\u03b8\u0302_b \u2212 \u03b8\u0304)\u00b2] = \u221a[(1/999) \u00d7 1.94143] = \u221a0.001944 \u2248 0.04408. Note the divisor is B \u2212 1 = 999, analogous to sample standard deviation using n \u2212 1."
+  },
+  {
+    "id": "CH07-037",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Bootstrap Resampling",
+    "difficulty": "Moderate",
+    "question": "Otema Chi has 108 monthly returns and creates 200 bootstrap resamples. The mean of the 200 resample means is 0.0261, and the sum of squared deviations is 0.835. The estimated standard error of the sample mean is closest to:",
+    "options": [
+      "0.0115",
+      "0.0648",
+      "0.0883"
+    ],
+    "correctAnswer": "B",
+    "explanation": "s_X\u0304 = \u221a[(1/(B\u22121)) \u00d7 \u03a3(\u03b8\u0302_b \u2212 \u03b8\u0304)\u00b2] = \u221a[(1/199) \u00d7 0.835] = \u221a0.004196 \u2248 0.0648. This is the bootstrap estimate of the standard error of the sample mean computed from 200 resamples."
+  },
+  {
+    "id": "CH07-038",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Bootstrap Resampling",
+    "difficulty": "Moderate",
+    "question": "An analyst wants to find the standard error of the sample median of house prices. Which approach is most appropriate?",
+    "options": [
+      "Use s/\u221an, where s is the sample standard deviation",
+      "Apply bootstrap resampling to construct the sampling distribution of the sample median",
+      "Use the formula \u03c3/\u221an with the population standard deviation"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The formula s/\u221an estimates the standard error of the sample mean, not the median. No simple closed-form formula exists for the standard error of the sample median. Bootstrap resampling provides a model-free way to estimate the standard error of any statistic, including the median."
+  },
+  {
+    "id": "CH07-039",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Bootstrap Resampling",
+    "difficulty": "Moderate",
+    "question": "Bootstrap resampling is often called model-free or non-parametric resampling because it:",
+    "options": [
+      "Requires the analyst to specify a parametric distribution for the population",
+      "Does not require any assumption about the parametric form of the population distribution",
+      "Works only when the population is known to be non-normally distributed"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Bootstrap is called model-free or non-parametric because it makes no assumptions about the parametric form of the population distribution. Instead of drawing from a theoretical distribution, it draws from the observed sample itself. This distinguishes it from Monte Carlo simulation, which requires distributional specification."
+  },
+  {
+    "id": "CH07-040",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Bootstrap Resampling",
+    "difficulty": "Moderate",
+    "question": "In a bootstrap resample from an original sample of 12 monthly returns, which of the following is possible?",
+    "options": [
+      "A resample containing only 10 observations",
+      "A resample in which one of the original returns appears three times",
+      "A resample drawn without replacement"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Because bootstrap draws with replacement, the same observation can appear multiple times in a single resample \u2014 including three or more times. Each resample has the same size n = 12 as the original. Drawing without replacement is not bootstrap; it is another resampling approach."
+  },
+  {
+    "id": "CH07-041",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Bootstrap Resampling",
+    "difficulty": "Difficult",
+    "question": "Bootstrap resampling is particularly valuable in finance for which of the following applications?",
+    "options": [
+      "Deriving exact theoretical distributions for complex portfolio statistics",
+      "Historical simulations in asset allocation and gauging investment strategy performance against a benchmark",
+      "Replacing the need for large sample sizes in hypothesis testing"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Bootstrap is widely applied in finance for historical simulations in asset allocation and for gauging an investment strategy's performance against a benchmark. It is powerful for any complicated estimator and especially useful when no analytical formula is available or when the distribution of the estimator is unknown."
+  },
+  {
+    "id": "CH07-042",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Jackknife Resampling",
+    "difficulty": "Easy",
+    "question": "Jackknife resampling creates subsamples by:",
+    "options": [
+      "Drawing samples of the same size with replacement from the original data",
+      "Leaving out one observation at a time from the original sample without replacement",
+      "Dividing the original sample into equal-sized sub-groups"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Jackknife takes the original sample of size n and creates n subsamples, each formed by leaving out one different observation. This leave-one-out approach is deterministic \u2014 it always produces the same results for the same dataset, unlike bootstrap which is random."
+  },
+  {
+    "id": "CH07-043",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Jackknife Resampling",
+    "difficulty": "Easy",
+    "question": "For a sample of size n, how many repetitions does jackknife resampling require?",
+    "options": [
+      "The analyst determines the number, similar to bootstrap",
+      "Exactly n repetitions",
+      "n\u00b2 repetitions"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Jackknife requires exactly n repetitions for a sample of size n \u2014 one for each observation left out. This is a fixed, deterministic number. In contrast, bootstrap leaves the number of repetitions B to the analyst's judgment."
+  },
+  {
+    "id": "CH07-044",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Jackknife Resampling",
+    "difficulty": "Moderate",
+    "question": "Compared with bootstrap, jackknife resampling produces:",
+    "options": [
+      "Different results each run because subsamples are randomly drawn",
+      "Identical results for every run because it is a deterministic procedure",
+      "More resamples, because it requires n\u00b2 iterations"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Jackknife is deterministic \u2014 for a given dataset, it always produces exactly the same n subsamples (each formed by leaving out a different observation). This contrasts with bootstrap, which randomly draws resamples and therefore gives different results each run."
+  },
+  {
+    "id": "CH07-045",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Jackknife Resampling",
+    "difficulty": "Moderate",
+    "question": "Jackknife resampling is most commonly used for which purpose?",
+    "options": [
+      "Generating synthetic price paths for option valuation",
+      "Reducing the bias of an estimator and estimating standard errors and confidence intervals",
+      "Assessing whether a sample comes from a normal distribution"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Jackknife is primarily used to reduce the bias of an estimator (bias correction) and to estimate standard errors and confidence intervals. It is not used for synthetic price path generation (that is Monte Carlo) or normality testing."
+  },
+  {
+    "id": "CH07-046",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Jackknife Resampling",
+    "difficulty": "Moderate",
+    "question": "Which statement best contrasts bootstrap and jackknife resampling?",
+    "options": [
+      "Bootstrap samples with replacement; jackknife leaves out one observation at a time without replacement",
+      "Bootstrap is deterministic; jackknife is random",
+      "Jackknife requires more iterations than bootstrap for the same sample size"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Bootstrap draws samples with replacement (same n, random). Jackknife leaves out one observation at a time without replacement (always n iterations, deterministic). Bootstrap is random (different results each run); jackknife is deterministic (same results every run)."
+  },
+  {
+    "id": "CH07-047",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Central Limit Theorem",
+    "difficulty": "Difficult",
+    "question": "An analyst draws samples of increasing size (n = 10, 50, 100, 300) from a non-normal population and plots histograms of the sample means. As n increases from 10 to 300, the histograms of sample means will:",
+    "options": [
+      "Remain skewed in the same direction as the population distribution",
+      "Progressively more closely approximate a normal distribution and become narrower",
+      "Become wider and more dispersed because more values are included"
+    ],
+    "correctAnswer": "B",
+    "explanation": "By the CLT, as sample size increases, the sampling distribution of X\u0304 becomes more approximately normal (regardless of population shape) and more tightly concentrated around \u03bc (because variance = \u03c3\u00b2/n decreases). Larger n produces a narrower, more bell-shaped histogram of sample means."
+  },
+  {
+    "id": "CH07-048",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Standard Error",
+    "difficulty": "Difficult",
+    "question": "A fund of funds manager wants to estimate the mean annual return of venture capital funds. From a sample of 64 funds, the sample mean is 12.4% and the sample standard deviation is 18.4%. The standard error of the sample mean is closest to:",
+    "options": [
+      "0.29%",
+      "2.30%",
+      "18.40%"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Standard error = s/\u221an = 18.4%/\u221a64 = 18.4%/8 = 2.30%. The standard error (2.30%) is much smaller than the standard deviation of individual fund returns (18.40%), reflecting the benefit of averaging across 64 observations. If the analyst doubled the sample to 128, SE = 18.4/\u221a128 \u2248 1.63%."
+  },
+  {
+    "id": "CH07-049",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Sampling Methods",
+    "difficulty": "Difficult",
+    "question": "Which of the following scenarios would most clearly violate the assumption that data are drawn from a single homogeneous population, invalidating the use of a larger pooled sample?",
+    "options": [
+      "Increasing the sample of mutual funds from 100 to 200 funds over the same time period",
+      "Combining quarterly returns of a portfolio manager who switched from a momentum strategy to a value strategy midway through the sample period",
+      "Drawing a stratified sample from bond issuers across three credit rating categories"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Combining returns from two different strategy periods violates the homogeneous population assumption \u2014 the two sub-periods represent different distributions (different means and variances). Any pooled statistics would be representative of no actual population. This is the core problem illustrated by the Sharpe ratio example in the reading."
+  },
+  {
+    "id": "CH07-050",
+    "chapter": "7",
+    "chapterName": "Estimation and Inference",
+    "topic": "Bootstrap Resampling",
+    "difficulty": "Difficult",
+    "question": "An analyst is computing the bootstrap standard error of the sample mean from B = 500 resamples. She calculates \u03a3(\u03b8\u0302_b \u2212 \u03b8\u0304)\u00b2 = 12.25. The bootstrap standard error is closest to:",
+    "options": [
+      "0.025",
+      "0.157",
+      "0.245"
+    ],
+    "correctAnswer": "B",
+    "explanation": "s_X\u0304 = \u221a[(1/(B\u22121)) \u00d7 \u03a3(\u03b8\u0302_b \u2212 \u03b8\u0304)\u00b2] = \u221a[(1/499) \u00d7 12.25] = \u221a0.02454 \u2248 0.1567 \u2248 0.157. The divisor is B \u2212 1 = 499. Bootstrap standard errors are computed exactly like sample standard deviations \u2014 just applied to the distribution of resample statistics."
   }
 ]
