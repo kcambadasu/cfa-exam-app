@@ -762,7 +762,7 @@ window.QUESTIONS_DATA = [
       "Limited assurance that the statements comply with local regulations"
     ],
     "correctAnswer": "B",
-    "explanation": "Because audits use sampling techniques and financial statements may be based on estimates, auditors can only provide reasonable assurance—not absolute assurance—that financial statements are fairly presented."
+    "explanation": "Because audits use sampling techniques and financial statements may be based on estimates, auditors can only provide reasonable assurance\u2014not absolute assurance\u2014that financial statements are fairly presented."
   },
   {
     "id": "FSA-052",
@@ -1182,7 +1182,7 @@ window.QUESTIONS_DATA = [
       "Inability to access the companies' financial statements"
     ],
     "correctAnswer": "B",
-    "explanation": "Different accounting policies, methods, and estimates—such as different depreciation methods—reduce comparability across different companies' financial statements."
+    "explanation": "Different accounting policies, methods, and estimates\u2014such as different depreciation methods\u2014reduce comparability across different companies' financial statements."
   },
   {
     "id": "FSA-080",
@@ -1407,7 +1407,7 @@ window.QUESTIONS_DATA = [
       "To replace the need for analysts to gather information beyond financial statements"
     ],
     "correctAnswer": "B",
-    "explanation": "The framework is presented as a generic framework used in various roles—equity analysis, credit analysis, performance evaluation, etc.—that guides but does not rigidly constrain the analytical process."
+    "explanation": "The framework is presented as a generic framework used in various roles\u2014equity analysis, credit analysis, performance evaluation, etc.\u2014that guides but does not rigidly constrain the analytical process."
   },
   {
     "id": "FSA-095",
@@ -1509,10 +1509,9 @@ window.QUESTIONS_DATA = [
     "options": [
       "A required rate of return",
       "A discount rate",
-      "An opportunity cost",
       "A guaranteed return"
     ],
-    "correctAnswer": "D",
+    "correctAnswer": "C",
     "explanation": "Interest rates can be: (1) required rate of return, (2) discount rate, (3) opportunity cost. NOT a guaranteed return."
   },
   {
@@ -1525,11 +1524,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "Real rate + default premium",
       "Real rate + inflation premium",
-      "Inflation + liquidity premium",
-      "Default + maturity premium"
+      "Inflation + liquidity premium"
     ],
     "correctAnswer": "B",
-    "explanation": "Nominal risk-free rate ≈ Real risk-free rate + Inflation premium."
+    "explanation": "Nominal risk-free rate \u2248 Real risk-free rate + Inflation premium."
   },
   {
     "id": "CH01-C003",
@@ -1541,8 +1539,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Expected inflation",
       "Borrower failing to make promised payments",
-      "Converting to cash quickly",
-      "Time to maturity"
+      "Converting to cash quickly"
     ],
     "correctAnswer": "B",
     "explanation": "Default risk premium compensates for possibility of borrower default."
@@ -1557,8 +1554,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Inflation",
       "Default risk",
-      "Difficulty converting to cash quickly",
-      "Time to maturity"
+      "Difficulty converting to cash quickly"
     ],
     "correctAnswer": "C",
     "explanation": "Liquidity premium compensates for the risk of not being able to convert investment to cash quickly."
@@ -1573,10 +1569,9 @@ window.QUESTIONS_DATA = [
     "options": [
       "Inflation",
       "Default",
-      "Liquidity",
       "Increased price sensitivity of longer-term instruments"
     ],
-    "correctAnswer": "D",
+    "correctAnswer": "C",
     "explanation": "Maturity premium compensates for increased price sensitivity (risk) of longer-maturity bonds."
   },
   {
@@ -1589,8 +1584,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Over multiple periods",
       "For a single specified period",
-      "After expenses",
-      "On leveraged position"
+      "After expenses"
     ],
     "correctAnswer": "B",
     "explanation": "Holding period return = return earned for a single specified period of time."
@@ -1605,11 +1599,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "< Geometric mean",
       "= Geometric mean",
-      "≥ Geometric mean",
-      "Unrelated to geometric"
+      "\u2265 Geometric mean"
     ],
     "correctAnswer": "C",
-    "explanation": "Arithmetic mean ≥ geometric mean (equal only when all observations identical). Difference increases with variability."
+    "explanation": "Arithmetic mean \u2265 geometric mean (equal only when all observations identical). Difference increases with variability."
   },
   {
     "id": "CH01-C008",
@@ -1621,8 +1614,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Average one-period returns",
       "Compound rate of growth over time",
-      "Average prices",
-      "Simple average"
+      "Average prices"
     ],
     "correctAnswer": "B",
     "explanation": "Geometric mean = compound rate of growth of one unit of currency over time."
@@ -1637,8 +1629,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "HPR calculations",
       "Averaging P/E ratios and cost averaging",
-      "Compound growth",
-      "Money-weighted returns"
+      "Compound growth"
     ],
     "correctAnswer": "B",
     "explanation": "Harmonic mean appropriate for averaging ratios/rates (P/Es) and cost averaging."
@@ -1653,8 +1644,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Removes outliers from calculation",
       "Replaces outliers with less extreme values",
-      "Weights by importance",
-      "Uses only median"
+      "Weights by importance"
     ],
     "correctAnswer": "A",
     "explanation": "Trimmed mean removes a specified percentage of extreme values from both ends before calculating."
@@ -1669,8 +1659,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Removes outliers",
       "Replaces extreme values with next less extreme values",
-      "Weights by size",
-      "Uses only mode"
+      "Weights by size"
     ],
     "correctAnswer": "B",
     "explanation": "Winsorized mean replaces extreme values with next less extreme values, retaining all observations."
@@ -1685,8 +1674,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Arithmetic mean",
       "Geometric mean",
-      "IRR",
-      "Harmonic mean"
+      "IRR"
     ],
     "correctAnswer": "C",
     "explanation": "Money-weighted return = IRR (accounts for timing and amount of cash flows)."
@@ -1701,8 +1689,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Accounts for cash flow timing",
       "Not sensitive to cash flows outside manager control",
-      "Easier to calculate",
-      "Higher returns"
+      "Easier to calculate"
     ],
     "correctAnswer": "B",
     "explanation": "TWR not sensitive to cash flow timing/amounts outside manager control."
@@ -1717,8 +1704,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "After all expenses",
       "Before managerial/administrative expenses",
-      "After taxes",
-      "Inflation-adjusted"
+      "After taxes"
     ],
     "correctAnswer": "B",
     "explanation": "Gross return = before managerial/administrative expenses."
@@ -1733,8 +1719,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Gross + expenses",
       "Gross - managerial/admin expenses",
-      "Gross × leverage",
-      "Gross ÷ inflation"
+      "Gross \u00d7 leverage"
     ],
     "correctAnswer": "B",
     "explanation": "Net return = Gross - managerial/admin expenses."
@@ -1749,8 +1734,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "After all taxes",
       "Before deduction of taxes",
-      "Only on capital gains",
-      "Only on dividends"
+      "Only on capital gains"
     ],
     "correctAnswer": "B",
     "explanation": "Pre-tax return = before deduction of taxes on dividends, interest, capital gains."
@@ -1765,8 +1749,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Adding taxes",
       "Subtracting taxes on income/gains",
-      "Dividing by tax rate",
-      "Ignoring taxes"
+      "Dividing by tax rate"
     ],
     "correctAnswer": "B",
     "explanation": "After-tax = Total return - taxes on dividends, interest, realized gains."
@@ -1781,8 +1764,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Current portfolio value",
       "Comparing across periods with varying inflation",
-      "Tax calculations",
-      "Gross returns"
+      "Tax calculations"
     ],
     "correctAnswer": "B",
     "explanation": "Real returns useful for comparing across time periods with varying inflation."
@@ -1797,8 +1779,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Only amplifies gains",
       "Only amplifies losses",
-      "Amplifies both gains and losses",
-      "Eliminates risk"
+      "Amplifies both gains and losses"
     ],
     "correctAnswer": "C",
     "explanation": "Leverage amplifies BOTH gains AND losses."
@@ -1813,8 +1794,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Risk elimination",
       "Comparison across different holding periods",
-      "Tax avoidance",
-      "Guaranteed returns"
+      "Tax avoidance"
     ],
     "correctAnswer": "B",
     "explanation": "Annualizing = compare across different holding periods on common annual basis."
@@ -1829,11 +1809,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "Decreases",
       "Increases",
-      "Stays constant",
-      "Becomes negative"
+      "Stays constant"
     ],
     "correctAnswer": "B",
-    "explanation": "More frequent compounding → higher effective annual rate for same stated rate."
+    "explanation": "More frequent compounding \u2192 higher effective annual rate for same stated rate."
   },
   {
     "id": "CH01-C022",
@@ -1845,8 +1824,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Always positive",
       "Multi-period returns calculated by addition",
-      "Risk eliminated",
-      "Easier to understand"
+      "Risk eliminated"
     ],
     "correctAnswer": "B",
     "explanation": "Continuous: r(0,T) = r(0,1) + r(1,2) + ... (additive property)."
@@ -1861,11 +1839,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "Lower variability",
       "Higher variability",
-      "Periods only",
-      "Initial value"
+      "Periods only"
     ],
     "correctAnswer": "B",
-    "explanation": "Greater variability → larger arithmetic-geometric difference."
+    "explanation": "Greater variability \u2192 larger arithmetic-geometric difference."
   },
   {
     "id": "CH01-C024",
@@ -1877,8 +1854,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Use IRR",
       "Value portfolio before each cash flow and link HPRs",
-      "Sum all returns",
-      "Take harmonic mean"
+      "Sum all returns"
     ],
     "correctAnswer": "B",
     "explanation": "TWR: value before each cash flow, calculate HPRs, link (compound) them."
@@ -1893,8 +1869,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Performance only",
       "Timing and amount of cash flows",
-      "Periods only",
-      "Security type"
+      "Periods only"
     ],
     "correctAnswer": "B",
     "explanation": "MWR (IRR) sensitive to timing AND amount of cash flows."
@@ -1909,8 +1884,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Any positive return",
       "Portfolio return > borrowing cost",
-      "Return < cost",
-      "Return = risk-free"
+      "Return < cost"
     ],
     "correctAnswer": "B",
     "explanation": "Leverage increases returns when portfolio return exceeds borrowing cost."
@@ -1925,8 +1899,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "(1+nominal)/(1+inflation)-1",
       "Nominal-inflation",
-      "Nominal×inflation",
-      "Nominal/inflation"
+      "Nominal\u00d7inflation"
     ],
     "correctAnswer": "A",
     "explanation": "Real = [(1+nominal)/(1+inflation)] - 1 (Fisher equation). Approximation (nominal-inflation) works for low inflation."
@@ -1941,11 +1914,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "Prices vary, quantities constant",
       "Quantities vary, prices constant",
-      "Both vary",
-      "Neither varies"
+      "Both vary"
     ],
     "correctAnswer": "A",
-    "explanation": "Cost averaging: buy constant currency amount → quantities vary, prices vary → harmonic mean appropriate."
+    "explanation": "Cost averaging: buy constant currency amount \u2192 quantities vary, prices vary \u2192 harmonic mean appropriate."
   },
   {
     "id": "CH01-C029",
@@ -1957,8 +1929,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Only total return",
       "Sources of portfolio return",
-      "Only risk",
-      "Only fees"
+      "Only risk"
     ],
     "correctAnswer": "B",
     "explanation": "Return attribution = breaking down portfolio return into sources (asset allocation, security selection, etc.)."
@@ -1973,8 +1944,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Unambiguous and investable",
       "High historical returns",
-      "Low volatility",
-      "Tax-free"
+      "Low volatility"
     ],
     "correctAnswer": "A",
     "explanation": "Good benchmark = unambiguous, investable, measurable, appropriate, reflective of current opinions, specified in advance."
@@ -1989,11 +1959,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "TWR = MWR",
       "TWR > MWR",
-      "MWR > TWR",
-      "Cannot determine"
+      "MWR > TWR"
     ],
     "correctAnswer": "B",
-    "explanation": "Adding funds after strong performance: more capital exposed to potentially lower subsequent returns → MWR < TWR."
+    "explanation": "Adding funds after strong performance: more capital exposed to potentially lower subsequent returns \u2192 MWR < TWR."
   },
   {
     "id": "CH01-C032",
@@ -2005,11 +1974,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "TWR",
       "MWR",
-      "Arithmetic mean",
-      "Geometric mean"
+      "Arithmetic mean"
     ],
     "correctAnswer": "B",
-    "explanation": "MWR (IRR) accounts for cash flow timing → appropriate for evaluating investor decisions about when to invest/withdraw."
+    "explanation": "MWR (IRR) accounts for cash flow timing \u2192 appropriate for evaluating investor decisions about when to invest/withdraw."
   },
   {
     "id": "CH01-C033",
@@ -2021,8 +1989,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "r_c = ln(1+r)",
       "r_c = e^r - 1",
-      "r_c = r",
-      "r_c = r/e"
+      "r_c = r"
     ],
     "correctAnswer": "A",
     "explanation": "Continuously compounded: r_c = ln(1+r). Discrete: r = e^(r_c) - 1."
@@ -2037,11 +2004,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "Arithmetic",
       "Geometric",
-      "Harmonic",
       "Trimmed"
     ],
-    "correctAnswer": "D",
-    "explanation": "Trimmed mean removes outliers entirely → least affected. Winsorized also reduces impact but retains observations."
+    "correctAnswer": "C",
+    "explanation": "Trimmed mean removes outliers entirely \u2192 least affected. Winsorized also reduces impact but retains observations."
   },
   {
     "id": "CH01-C035",
@@ -2053,8 +2019,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "9.8%",
       "10%",
-      "10.2%",
-      "Cannot determine"
+      "10.2%"
     ],
     "correctAnswer": "B",
     "explanation": "Continuous compounded returns are additive: r_combined = 0.5(8%) + 0.5(12%) = 10%."
@@ -2069,11 +2034,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "2.5%",
       "5%",
-      "7.5%",
-      "10%"
+      "7.5%"
     ],
     "correctAnswer": "B",
-    "explanation": "Breakeven when leveraged return = 0: 1.5×r_p - 0.5×5% = 0 → r_p = 5%. Portfolio must equal borrowing cost."
+    "explanation": "Breakeven when leveraged return = 0: 1.5\u00d7r_p - 0.5\u00d75% = 0 \u2192 r_p = 5%. Portfolio must equal borrowing cost."
   },
   {
     "id": "CH01-C037",
@@ -2085,8 +2049,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Only income",
       "Income + capital gain/loss",
-      "Only capital gain",
-      "Only dividends"
+      "Only capital gain"
     ],
     "correctAnswer": "B",
     "explanation": "Total return = Income return (divs/interest) + Capital return (price change)."
@@ -2101,11 +2064,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "Eliminates taxes",
       "Delays tax payment (time value of money)",
-      "Reduces tax rate",
-      "Doubles returns"
+      "Reduces tax rate"
     ],
     "correctAnswer": "B",
-    "explanation": "Deferring gains = delay tax payment → benefit from time value of money (can invest tax payment amount)."
+    "explanation": "Deferring gains = delay tax payment \u2192 benefit from time value of money (can invest tax payment amount)."
   },
   {
     "id": "CH01-C039",
@@ -2117,11 +2079,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "Sum of returns",
       "Terminal wealth per unit invested",
-      "Arithmetic mean",
-      "Harmonic mean"
+      "Arithmetic mean"
     ],
     "correctAnswer": "B",
-    "explanation": "Geometric mean produces terminal wealth: $1×[(1+r_1)(1+r_2)...(1+r_n)]."
+    "explanation": "Geometric mean produces terminal wealth: $1\u00d7[(1+r_1)(1+r_2)...(1+r_n)]."
   },
   {
     "id": "CH01-C040",
@@ -2133,8 +2094,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Eliminate risk",
       "Overstate volatility and compound small differences",
-      "Guarantee accuracy",
-      "Reduce returns"
+      "Guarantee accuracy"
     ],
     "correctAnswer": "B",
     "explanation": "Annualizing very short periods can overstate volatility and compound small percentage differences."
@@ -2149,8 +2109,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Periodic interest only",
       "Single principal at maturity, no intermediate cash flows",
-      "Equal principal+interest",
-      "Variable rates"
+      "Equal principal+interest"
     ],
     "correctAnswer": "B",
     "explanation": "Discount bond (zero-coupon) = only single principal (FV) at maturity. (FV-PV) = interest."
@@ -2165,8 +2124,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Nothing until maturity",
       "Periodic interest + principal at maturity",
-      "Only principal",
-      "Variable payments"
+      "Only principal"
     ],
     "correctAnswer": "B",
     "explanation": "Coupon bond = periodic interest (coupons) + final interest and principal at maturity."
@@ -2181,11 +2139,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "Below par",
       "At par",
-      "Above par",
-      "Cannot determine"
+      "Above par"
     ],
     "correctAnswer": "B",
-    "explanation": "Coupon rate = YTM → bond price = par (PV = FV) on coupon date."
+    "explanation": "Coupon rate = YTM \u2192 bond price = par (PV = FV) on coupon date."
   },
   {
     "id": "CH02-C004",
@@ -2197,11 +2154,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "Positive relationship",
       "Inverse relationship",
-      "No relationship",
-      "Variable relationship"
+      "No relationship"
     ],
     "correctAnswer": "B",
-    "explanation": "Inverse relationship: rates rise → prices fall; rates fall → prices rise."
+    "explanation": "Inverse relationship: rates rise \u2192 prices fall; rates fall \u2192 prices rise."
   },
   {
     "id": "CH02-C005",
@@ -2211,10 +2167,9 @@ window.QUESTIONS_DATA = [
     "difficulty": "Easy",
     "question": "PV of perpetual bond paying PMT at YTM r is:",
     "options": [
-      "PMT×r",
+      "PMT\u00d7r",
       "PMT/r",
-      "PMT/(1+r)",
-      "PMT×(1+r)"
+      "PMT/(1+r)"
     ],
     "correctAnswer": "B",
     "explanation": "Perpetuity: PV = PMT/r (r>0)."
@@ -2229,8 +2184,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Single payment",
       "Fixed periodic payments over finite period",
-      "Variable payments",
-      "Infinite payments"
+      "Variable payments"
     ],
     "correctAnswer": "B",
     "explanation": "Annuity = fixed periodic cash flows over finite period (e.g., mortgage)."
@@ -2245,8 +2199,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Interest increases",
       "Principal portion increases",
-      "Both constant",
-      "Both decrease"
+      "Both constant"
     ],
     "correctAnswer": "B",
     "explanation": "Constant payment: interest declines, principal increases as balance decreases."
@@ -2261,8 +2214,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Have maturity",
       "No maturity - dividends indefinitely",
-      "Fixed cash flows",
-      "Principal repayment"
+      "Fixed cash flows"
     ],
     "correctAnswer": "B",
     "explanation": "Stocks: no maturity, dividends assumed indefinitely (or until liquidation)."
@@ -2275,10 +2227,9 @@ window.QUESTIONS_DATA = [
     "difficulty": "Easy",
     "question": "Stock with constant D, required r, valued at:",
     "options": [
-      "D×r",
+      "D\u00d7r",
       "D/r",
-      "D/(1+r)",
-      "r/D"
+      "D/(1+r)"
     ],
     "correctAnswer": "B",
     "explanation": "Constant dividend perpetuity: PV = D/r."
@@ -2293,8 +2244,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "r>g",
       "r<g",
-      "r=g",
-      "g=0"
+      "r=g"
     ],
     "correctAnswer": "A",
     "explanation": "Gordon: r-g>0 (required return exceeds growth), else negative/infinite value."
@@ -2309,8 +2259,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Constant growth",
       "High growth then lower perpetual growth",
-      "Declining growth",
-      "No growth"
+      "Declining growth"
     ],
     "correctAnswer": "B",
     "explanation": "Two-stage: initial high growth (g_s) for n periods, then lower perpetual (g_l), g_s>g_l."
@@ -2325,8 +2274,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Coupon rate",
       "Discount rate equating price to PV of cash flows",
-      "Current yield",
-      "Nominal rate"
+      "Current yield"
     ],
     "correctAnswer": "B",
     "explanation": "YTM = IRR that sets PV of all cash flows = current bond price."
@@ -2341,8 +2289,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Rates fall",
       "All cash flows reinvested at YTM",
-      "Bond defaults",
-      "No reinvestment"
+      "Bond defaults"
     ],
     "correctAnswer": "B",
     "explanation": "YTM: receive all cash flows, reinvest at same YTM."
@@ -2357,8 +2304,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Div yield only",
       "Growth only",
-      "Div yield + growth",
-      "Div yield - growth"
+      "Div yield + growth"
     ],
     "correctAnswer": "C",
     "explanation": "r = (D1/P) + g = dividend yield + growth."
@@ -2373,8 +2319,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "All flows equal",
       "PV of stream = sum of individual PVs",
-      "FVs add up",
-      "Cannot compare"
+      "FVs add up"
     ],
     "correctAnswer": "B",
     "explanation": "PV(stream) = sum of PV(individual flows) at same point in time."
@@ -2389,8 +2334,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Equal returns",
       "No riskless profit opportunity",
-      "Same prices",
-      "No trading"
+      "Same prices"
     ],
     "correctAnswer": "B",
     "explanation": "No-arbitrage: no possibility of riskless profit (without transaction costs)."
@@ -2405,8 +2349,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Current rate",
       "Breakeven future reinvestment rate",
-      "Historical rate",
-      "Average rate"
+      "Historical rate"
     ],
     "correctAnswer": "B",
     "explanation": "Forward = breakeven future reinvestment rate from current spot rates."
@@ -2421,8 +2364,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Discount",
       "Premium",
-      "Par",
-      "Zero-coupon"
+      "Par"
     ],
     "correctAnswer": "B",
     "explanation": "Premium bond: price > par. Occurs when coupon > YTM."
@@ -2437,8 +2379,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Falls to par",
       "Rises (accretes) to par",
-      "Stays constant",
-      "Random"
+      "Stays constant"
     ],
     "correctAnswer": "B",
     "explanation": "Discount bond accretes (rises) to par at maturity (if rates constant)."
@@ -2453,8 +2394,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Rises to par",
       "Falls (amortizes) to par",
-      "Stays above par",
-      "Random"
+      "Stays above par"
     ],
     "correctAnswer": "B",
     "explanation": "Premium bond amortizes (falls) to par at maturity (if rates constant)."
@@ -2469,11 +2409,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "Higher PV",
       "Lower PV",
-      "Same PV",
-      "Double PV"
+      "Same PV"
     ],
     "correctAnswer": "B",
-    "explanation": "More frequent compounding → lower PV: 1/(1+r)^t > 1/(1+r/2)^(2t) when r≥0."
+    "explanation": "More frequent compounding \u2192 lower PV: 1/(1+r)^t > 1/(1+r/2)^(2t) when r\u22650."
   },
   {
     "id": "CH02-C022",
@@ -2484,12 +2423,11 @@ window.QUESTIONS_DATA = [
     "question": "Continuous compounding formula:",
     "options": [
       "FV=PV(1+r)^t",
-      "FV=PV×e^(rt)",
-      "FV=PV/e^(rt)",
-      "FV=PV×ln(r)"
+      "FV=PV\u00d7e^(rt)",
+      "FV=PV/e^(rt)"
     ],
     "correctAnswer": "B",
-    "explanation": "Continuous: FV=PV×e^(rt), PV=FV×e^(-rt)."
+    "explanation": "Continuous: FV=PV\u00d7e^(rt), PV=FV\u00d7e^(-rt)."
   },
   {
     "id": "CH02-C023",
@@ -2501,8 +2439,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Initial price",
       "Stock value at end of high growth",
-      "Final dividend",
-      "Average price"
+      "Final dividend"
     ],
     "correctAnswer": "B",
     "explanation": "Terminal value E(S_n) = stock value when high growth ends: D_(n+1)/(r-g_l)."
@@ -2517,8 +2454,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Earnings/Dividends",
       "Dividends/Earnings",
-      "Price/Dividends",
-      "Dividends/Price"
+      "Price/Dividends"
     ],
     "correctAnswer": "B",
     "explanation": "Payout = Dividends/Earnings (proportion of earnings paid as dividends)."
@@ -2533,8 +2469,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Earnings/Price",
       "Price/Earnings per share",
-      "Dividends/Price",
-      "Price/Dividends"
+      "Dividends/Price"
     ],
     "correctAnswer": "B",
     "explanation": "P/E = Price/Earnings per share (valuation multiple)."
@@ -2549,8 +2484,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Sell at exercise price",
       "Buy at exercise price",
-      "Hold asset",
-      "Nothing"
+      "Hold asset"
     ],
     "correctAnswer": "B",
     "explanation": "Call = right (not obligation) to BUY at predetermined exercise price."
@@ -2565,8 +2499,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Buy at exercise price",
       "Sell at exercise price",
-      "Hold asset",
-      "Nothing"
+      "Hold asset"
     ],
     "correctAnswer": "B",
     "explanation": "Put = right (not obligation) to SELL at predetermined exercise price."
@@ -2581,8 +2514,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Increase coupon",
       "Redeem before maturity",
-      "Extend maturity",
-      "Skip coupons"
+      "Extend maturity"
     ],
     "correctAnswer": "B",
     "explanation": "Callable = issuer can redeem before maturity (typically when rates fall)."
@@ -2597,8 +2529,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Annual coupon/Price",
       "Price/Annual coupon",
-      "YTM/Price",
-      "Price/Par"
+      "YTM/Price"
     ],
     "correctAnswer": "A",
     "explanation": "Current yield = Annual coupon/Current price (doesn't account for capital gains/losses)."
@@ -2613,8 +2544,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Future rate",
       "Current rate for specific maturity",
-      "Average rate",
-      "Forward rate"
+      "Average rate"
     ],
     "correctAnswer": "B",
     "explanation": "Spot = current interest rate for specific maturity (vs forward = future rate)."
@@ -2629,11 +2559,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "Less price sensitivity",
       "Greater price sensitivity to rate changes",
-      "No price change",
-      "Constant sensitivity"
+      "No price change"
     ],
     "correctAnswer": "B",
-    "explanation": "Duration measures rate sensitivity: longer duration → greater price sensitivity to rate changes."
+    "explanation": "Duration measures rate sensitivity: longer duration \u2192 greater price sensitivity to rate changes."
   },
   {
     "id": "CH02-C032",
@@ -2645,11 +2574,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "Strong fundamentals",
       "Dividends may not be sustainable",
-      "No concerns",
-      "Guaranteed growth"
+      "No concerns"
     ],
     "correctAnswer": "B",
-    "explanation": "Payout >100% = paying more than earnings → typically unsustainable unless temporary."
+    "explanation": "Payout >100% = paying more than earnings \u2192 typically unsustainable unless temporary."
   },
   {
     "id": "CH02-C033",
@@ -2661,11 +2589,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "Rises by dividend",
       "Falls by approximately dividend amount",
-      "Unchanged",
-      "Doubles"
+      "Unchanged"
     ],
     "correctAnswer": "B",
-    "explanation": "Ex-dividend: price typically falls ≈ dividend amount (new buyers don't get upcoming dividend)."
+    "explanation": "Ex-dividend: price typically falls \u2248 dividend amount (new buyers don't get upcoming dividend)."
   },
   {
     "id": "CH02-C034",
@@ -2676,12 +2603,11 @@ window.QUESTIONS_DATA = [
     "question": "Reinvestment risk is:",
     "options": [
       "Bond defaults",
-      "Coupons reinvested at rates ≠ YTM",
-      "Price falls",
-      "Rates fixed"
+      "Coupons reinvested at rates \u2260 YTM",
+      "Price falls"
     ],
     "correctAnswer": "B",
-    "explanation": "Reinvestment risk = future coupons reinvested at different rates than YTM → affects total return."
+    "explanation": "Reinvestment risk = future coupons reinvested at different rates than YTM \u2192 affects total return."
   },
   {
     "id": "CH02-C035",
@@ -2693,8 +2619,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Rates never change",
       "Bond prices change due to rate movements",
-      "All bonds default",
-      "Dividends cut"
+      "All bonds default"
     ],
     "correctAnswer": "B",
     "explanation": "Interest rate (price) risk = bond prices change when market rates change (inverse relationship)."
@@ -2709,11 +2634,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "Forward discount",
       "Forward premium",
-      "Par forward",
-      "No forward"
+      "Par forward"
     ],
     "correctAnswer": "B",
-    "explanation": "Forward > spot → foreign currency at forward premium (appreciating forward)."
+    "explanation": "Forward > spot \u2192 foreign currency at forward premium (appreciating forward)."
   },
   {
     "id": "CH02-C037",
@@ -2725,8 +2649,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Stock and bond prices",
       "Spot/forward rates and interest differentials",
-      "Past and future prices",
-      "Dividends and earnings"
+      "Past and future prices"
     ],
     "correctAnswer": "B",
     "explanation": "Covered interest parity = no-arbitrage linking spot, forward, and interest rate differential."
@@ -2741,8 +2664,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Future interest",
       "Interest earned but not yet paid since last coupon",
-      "Total bond value",
-      "Defaulted interest"
+      "Total bond value"
     ],
     "correctAnswer": "B",
     "explanation": "Accrued = interest earned since last coupon but not yet paid. Buyer pays seller this amount."
@@ -2757,8 +2679,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Clean price only",
       "Clean price + accrued interest",
-      "Clean - accrued",
-      "Par value"
+      "Clean - accrued"
     ],
     "correctAnswer": "B",
     "explanation": "Dirty (invoice) price = Clean (quoted) price + Accrued interest = actual amount paid."
@@ -2773,8 +2694,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Adding securities",
       "Separating individual cash flows from bonds",
-      "Reducing coupons",
-      "Increasing maturity"
+      "Reducing coupons"
     ],
     "correctAnswer": "B",
     "explanation": "Strips = individual cash flows separated from bonds, traded as separate zero-coupon securities."
@@ -2789,8 +2709,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "10.0%",
       "14.0%",
-      "10.0%",
-      "16.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(55-50)+2]/50 = 7/50 = 14.00%"
@@ -2805,8 +2724,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "7.0%",
       "11.0%",
-      "8.0%",
-      "13.0%"
+      "8.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(108-100)+3]/100 = 11/100 = 11.00%"
@@ -2821,8 +2739,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "13.5%",
       "17.5%",
-      "12.5%",
-      "19.5%"
+      "12.5%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(90-80)+4]/80 = 14/80 = 17.50%"
@@ -2837,8 +2754,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "9.3%",
       "13.3%",
-      "8.3%",
-      "15.3%"
+      "8.3%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(65-60)+3]/60 = 8/60 = 13.33%"
@@ -2853,8 +2769,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "15.0%",
-      "10.0%",
-      "17.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(132-120)+6]/120 = 18/120 = 15.00%"
@@ -2869,8 +2784,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "15.0%",
-      "10.0%",
-      "17.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(44-40)+2]/40 = 6/40 = 15.00%"
@@ -2885,8 +2799,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "10.0%",
       "14.0%",
-      "9.0%",
-      "16.0%"
+      "9.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(218-200)+10]/200 = 28/200 = 14.00%"
@@ -2901,8 +2814,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "8.0%",
       "12.0%",
-      "8.0%",
-      "14.0%"
+      "8.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(540-500)+20]/500 = 60/500 = 12.00%"
@@ -2917,8 +2829,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "8.0%",
       "12.0%",
-      "8.0%",
-      "14.0%"
+      "8.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(27-25)+1]/25 = 3/25 = 12.00%"
@@ -2933,8 +2844,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "8.0%",
       "12.0%",
-      "8.0%",
-      "14.0%"
+      "8.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(81-75)+3]/75 = 9/75 = 12.00%"
@@ -2949,8 +2859,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "15.0%",
-      "10.0%",
-      "17.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(165-150)+7.5]/150 = 22.5/150 = 15.00%"
@@ -2965,8 +2874,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "15.0%",
-      "10.0%",
-      "17.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(99-90)+4.5]/90 = 13.5/90 = 15.00%"
@@ -2981,8 +2889,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "15.0%",
-      "10.0%",
-      "17.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(121-110)+5.5]/110 = 16.5/110 = 15.00%"
@@ -2997,8 +2904,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "15.0%",
-      "10.0%",
-      "17.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(198-180)+9]/180 = 27/180 = 15.00%"
@@ -3013,8 +2919,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "15.0%",
-      "10.0%",
-      "17.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(242-220)+11]/220 = 33/220 = 15.00%"
@@ -3029,8 +2934,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "15.0%",
-      "10.0%",
-      "17.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(33-30)+1.5]/30 = 4.5/30 = 15.00%"
@@ -3045,8 +2949,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "15.0%",
-      "10.0%",
-      "17.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(176-160)+8]/160 = 24/160 = 15.00%"
@@ -3061,8 +2964,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "15.0%",
-      "10.0%",
-      "17.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(154-140)+7]/140 = 21/140 = 15.00%"
@@ -3077,8 +2979,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "15.0%",
-      "10.0%",
-      "17.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(275-250)+12.5]/250 = 37.5/250 = 15.00%"
@@ -3093,8 +2994,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "15.0%",
-      "10.0%",
-      "17.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(330-300)+15]/300 = 45/300 = 15.00%"
@@ -3109,8 +3009,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "15.0%",
-      "10.0%",
-      "17.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(49.5-45)+2.25]/45 = 6.75/45 = 15.00%"
@@ -3125,8 +3024,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "15.0%",
-      "10.0%",
-      "17.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(93.5-85)+4.25]/85 = 12.75/85 = 15.00%"
@@ -3141,8 +3039,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "15.0%",
-      "10.0%",
-      "17.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(137.5-125)+6.25]/125 = 18.75/125 = 15.00%"
@@ -3157,8 +3054,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "15.0%",
-      "10.0%",
-      "17.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(60.5-55)+2.75]/55 = 8.25/55 = 15.00%"
@@ -3173,8 +3069,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "15.0%",
-      "10.0%",
-      "17.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(104.5-95)+4.75]/95 = 14.25/95 = 15.00%"
@@ -3189,8 +3084,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "15.0%",
-      "10.0%",
-      "17.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(38.5-35)+1.75]/35 = 5.25/35 = 15.00%"
@@ -3205,8 +3099,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "15.0%",
-      "10.0%",
-      "17.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(71.5-65)+3.25]/65 = 9.75/65 = 15.00%"
@@ -3221,8 +3114,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "15.0%",
-      "10.0%",
-      "17.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(126.5-115)+5.75]/115 = 17.25/115 = 15.00%"
@@ -3237,8 +3129,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "15.0%",
-      "10.0%",
-      "17.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(148.5-135)+6.75]/135 = 20.25/135 = 15.00%"
@@ -3253,8 +3144,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "15.0%",
-      "10.0%",
-      "17.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(192.5-175)+8.75]/175 = 26.25/175 = 15.00%"
@@ -3269,8 +3159,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "15.0%",
-      "10.0%",
-      "17.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(46.2-42)+2.1]/42 = 6.3000000000000025/42 = 15.00%"
@@ -3285,8 +3174,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "15.0%",
-      "10.0%",
-      "17.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(57.2-52)+2.6]/52 = 7.8000000000000025/52 = 15.00%"
@@ -3301,8 +3189,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "15.0%",
-      "10.0%",
-      "17.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(79.2-72)+3.6]/72 = 10.800000000000002/72 = 15.00%"
@@ -3317,8 +3204,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "15.0%",
-      "10.0%",
-      "17.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(90.2-82)+4.1]/82 = 12.300000000000002/82 = 15.00%"
@@ -3333,8 +3219,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "15.0%",
-      "10.0%",
-      "17.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(112.2-102)+5.1]/102 = 15.300000000000002/102 = 15.00%"
@@ -3349,8 +3234,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "15.0%",
-      "10.0%",
-      "17.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(52.8-48)+2.4]/48 = 7.1999999999999975/48 = 15.00%"
@@ -3365,8 +3249,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "15.0%",
-      "10.0%",
-      "17.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(63.8-58)+2.9]/58 = 8.699999999999998/58 = 15.00%"
@@ -3381,8 +3264,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "15.0%",
-      "10.0%",
-      "17.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(74.8-68)+3.4]/68 = 10.199999999999998/68 = 15.00%"
@@ -3397,8 +3279,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "15.0%",
-      "10.0%",
-      "17.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(85.8-78)+3.9]/78 = 11.699999999999998/78 = 15.00%"
@@ -3413,8 +3294,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "15.0%",
-      "10.0%",
-      "17.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(96.8-88)+4.4]/88 = 13.199999999999998/88 = 15.00%"
@@ -3429,8 +3309,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "15.0%",
-      "10.0%",
-      "17.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(77-70)+3.5]/70 = 10.5/70 = 15.00%"
@@ -3445,8 +3324,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "15.0%",
-      "10.0%",
-      "17.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(143-130)+6.5]/130 = 19.5/130 = 15.00%"
@@ -3461,8 +3339,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "15.0%",
-      "10.0%",
-      "17.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(187-170)+8.5]/170 = 25.5/170 = 15.00%"
@@ -3477,8 +3354,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "15.0%",
-      "10.0%",
-      "17.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(231-210)+10.5]/210 = 31.5/210 = 15.00%"
@@ -3493,8 +3369,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "15.0%",
-      "10.0%",
-      "17.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(253-230)+11.5]/230 = 34.5/230 = 15.00%"
@@ -3509,8 +3384,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "15.0%",
-      "10.0%",
-      "17.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(41.8-38)+1.9]/38 = 5.6999999999999975/38 = 15.00%"
@@ -3525,8 +3399,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "15.0%",
-      "10.0%",
-      "17.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(68.2-62)+3.1]/62 = 9.300000000000002/62 = 15.00%"
@@ -3541,8 +3414,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "15.0%",
-      "10.0%",
-      "17.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(101.2-92)+4.6]/92 = 13.800000000000002/92 = 15.00%"
@@ -3557,8 +3429,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "15.0%",
-      "10.0%",
-      "17.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(134.2-122)+6.1]/122 = 18.29999999999999/122 = 15.00%"
@@ -3573,8 +3444,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "15.0%",
-      "10.0%",
-      "17.0%"
+      "10.0%"
     ],
     "correctAnswer": "B",
     "explanation": "HPR = [(P1-P0)+D]/P0 = [(167.2-152)+7.6]/152 = 22.79999999999999/152 = 15.00%"
@@ -3589,8 +3459,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "$68.35",
       "$78.35",
-      "$83.35",
-      "$95.00"
+      "$83.35"
     ],
     "correctAnswer": "B",
     "explanation": "PV = FV/(1+r)^t = 100/(1+0.05)^5 = $78.35"
@@ -3605,8 +3474,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "$45.84",
       "$55.84",
-      "$60.84",
-      "$94.00"
+      "$60.84"
     ],
     "correctAnswer": "B",
     "explanation": "PV = FV/(1+r)^t = 100/(1+0.06)^10 = $55.84"
@@ -3621,8 +3489,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "$78.90",
       "$88.90",
-      "$93.90",
-      "$96.00"
+      "$93.90"
     ],
     "correctAnswer": "B",
     "explanation": "PV = FV/(1+r)^t = 100/(1+0.04)^3 = $88.90"
@@ -3637,8 +3504,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "$48.20",
       "$58.20",
-      "$63.20",
-      "$93.00"
+      "$63.20"
     ],
     "correctAnswer": "B",
     "explanation": "PV = FV/(1+r)^t = 100/(1+0.07)^8 = $58.20"
@@ -3653,8 +3519,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "$78.85",
       "$88.85",
-      "$93.85",
-      "$97.00"
+      "$93.85"
     ],
     "correctAnswer": "B",
     "explanation": "PV = FV/(1+r)^t = 100/(1+0.03)^4 = $88.85"
@@ -3669,8 +3534,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "$773.53",
       "$783.53",
-      "$788.53",
-      "$950.00"
+      "$788.53"
     ],
     "correctAnswer": "B",
     "explanation": "PV = FV/(1+r)^t = 1000/(1+0.05)^5 = $783.53"
@@ -3685,8 +3549,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "$548.39",
       "$558.39",
-      "$563.39",
-      "$940.00"
+      "$563.39"
     ],
     "correctAnswer": "B",
     "explanation": "PV = FV/(1+r)^t = 1000/(1+0.06)^10 = $558.39"
@@ -3701,8 +3564,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "$879.00",
       "$889.00",
-      "$894.00",
-      "$960.00"
+      "$894.00"
     ],
     "correctAnswer": "B",
     "explanation": "PV = FV/(1+r)^t = 1000/(1+0.04)^3 = $889.00"
@@ -3717,8 +3579,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "$572.01",
       "$582.01",
-      "$587.01",
-      "$930.00"
+      "$587.01"
     ],
     "correctAnswer": "B",
     "explanation": "PV = FV/(1+r)^t = 1000/(1+0.07)^8 = $582.01"
@@ -3733,8 +3594,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "$878.49",
       "$888.49",
-      "$893.49",
-      "$970.00"
+      "$893.49"
     ],
     "correctAnswer": "B",
     "explanation": "PV = FV/(1+r)^t = 1000/(1+0.03)^4 = $888.49"
@@ -3749,8 +3609,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "$58.74",
       "$68.74",
-      "$73.74",
-      "$94.50"
+      "$73.74"
     ],
     "correctAnswer": "B",
     "explanation": "PV = FV/(1+r)^t = 100/(1+0.055)^7 = $68.74"
@@ -3765,8 +3624,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "$677.44",
       "$687.44",
-      "$692.44",
-      "$945.00"
+      "$692.44"
     ],
     "correctAnswer": "B",
     "explanation": "PV = FV/(1+r)^t = 1000/(1+0.055)^7 = $687.44"
@@ -3781,8 +3639,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "$29.71",
       "$39.71",
-      "$44.71",
-      "$92.00"
+      "$44.71"
     ],
     "correctAnswer": "B",
     "explanation": "PV = FV/(1+r)^t = 100/(1+0.08)^12 = $39.71"
@@ -3797,8 +3654,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "$387.11",
       "$397.11",
-      "$402.11",
-      "$920.00"
+      "$402.11"
     ],
     "correctAnswer": "B",
     "explanation": "PV = FV/(1+r)^t = 1000/(1+0.08)^12 = $397.11"
@@ -3813,8 +3669,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "$23.80",
       "$33.80",
-      "$38.80",
-      "$92.50"
+      "$38.80"
     ],
     "correctAnswer": "B",
     "explanation": "PV = FV/(1+r)^t = 100/(1+0.075)^15 = $33.80"
@@ -3829,8 +3684,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "$800",
       "$1000",
-      "$1100",
-      "$250"
+      "$1100"
     ],
     "correctAnswer": "B",
     "explanation": "PV = PMT/r = 50/0.05 = $1000"
@@ -3845,8 +3699,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "$800",
       "$1000",
-      "$1100",
-      "$160"
+      "$1100"
     ],
     "correctAnswer": "B",
     "explanation": "PV = PMT/r = 40/0.04 = $1000"
@@ -3861,8 +3714,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "$800",
       "$1000",
-      "$1100",
-      "$360"
+      "$1100"
     ],
     "correctAnswer": "B",
     "explanation": "PV = PMT/r = 60/0.06 = $1000"
@@ -3877,8 +3729,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "$800",
       "$1000",
-      "$1100",
-      "$202"
+      "$1100"
     ],
     "correctAnswer": "B",
     "explanation": "PV = PMT/r = 45/0.045 = $1000"
@@ -3893,8 +3744,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "$800",
       "$1000",
-      "$1100",
-      "$302"
+      "$1100"
     ],
     "correctAnswer": "B",
     "explanation": "PV = PMT/r = 55/0.055 = $1000"
@@ -3909,8 +3759,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "$800",
       "$1000",
-      "$1100",
-      "$90"
+      "$1100"
     ],
     "correctAnswer": "B",
     "explanation": "PV = PMT/r = 30/0.03 = $1000"
@@ -3925,8 +3774,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "$800",
       "$1000",
-      "$1100",
-      "$490"
+      "$1100"
     ],
     "correctAnswer": "B",
     "explanation": "PV = PMT/r = 70/0.07 = $1000"
@@ -3941,8 +3789,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "$800",
       "$1000",
-      "$1100",
-      "$122"
+      "$1100"
     ],
     "correctAnswer": "B",
     "explanation": "PV = PMT/r = 35/0.035 = $1000"
@@ -3957,8 +3804,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "$800",
       "$1000",
-      "$1100",
-      "$422"
+      "$1100"
     ],
     "correctAnswer": "B",
     "explanation": "PV = PMT/r = 65/0.065 = $1000"
@@ -3973,8 +3819,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "$800",
       "$1000",
-      "$1100",
-      "$230"
+      "$1100"
     ],
     "correctAnswer": "B",
     "explanation": "PV = PMT/r = 48/0.048 = $1000"
@@ -3989,8 +3834,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "$800",
       "$1000",
-      "$1100",
-      "$176"
+      "$1100"
     ],
     "correctAnswer": "B",
     "explanation": "PV = PMT/r = 42/0.042 = $1000"
@@ -4005,8 +3849,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "$800",
       "$1000",
-      "$1100",
-      "$270"
+      "$1100"
     ],
     "correctAnswer": "B",
     "explanation": "PV = PMT/r = 52/0.052000000000000005 = $1000"
@@ -4021,8 +3864,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "$800",
       "$1000",
-      "$1100",
-      "$336"
+      "$1100"
     ],
     "correctAnswer": "B",
     "explanation": "PV = PMT/r = 58/0.057999999999999996 = $1000"
@@ -4037,8 +3879,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "$800",
       "$1000",
-      "$1100",
-      "$144"
+      "$1100"
     ],
     "correctAnswer": "B",
     "explanation": "PV = PMT/r = 38/0.038 = $1000"
@@ -4053,8 +3894,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "$800",
       "$1000",
-      "$1100",
-      "$384"
+      "$1100"
     ],
     "correctAnswer": "B",
     "explanation": "PV = PMT/r = 62/0.062 = $1000"
@@ -4069,8 +3909,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "$40.00",
       "$50.00",
-      "$55.00",
-      "$32.00"
+      "$55.00"
     ],
     "correctAnswer": "B",
     "explanation": "PV = D/r = 4/0.08 = $50.00"
@@ -4085,8 +3924,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "$23.33",
       "$33.33",
-      "$38.33",
-      "$27.00"
+      "$38.33"
     ],
     "correctAnswer": "B",
     "explanation": "PV = D/r = 3/0.09 = $33.33"
@@ -4101,8 +3939,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "$40.00",
       "$50.00",
-      "$55.00",
-      "$50.00"
+      "$55.00"
     ],
     "correctAnswer": "B",
     "explanation": "PV = D/r = 5/0.1 = $50.00"
@@ -4117,8 +3954,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "$40.00",
       "$50.00",
-      "$55.00",
-      "$24.50"
+      "$55.00"
     ],
     "correctAnswer": "B",
     "explanation": "PV = D/r = 3.5/0.07 = $50.00"
@@ -4133,8 +3969,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "$40.00",
       "$50.00",
-      "$55.00",
-      "$40.50"
+      "$55.00"
     ],
     "correctAnswer": "B",
     "explanation": "PV = D/r = 4.5/0.09 = $50.00"
@@ -4149,8 +3984,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "$40.00",
       "$50.00",
-      "$55.00",
-      "$12.50"
+      "$55.00"
     ],
     "correctAnswer": "B",
     "explanation": "PV = D/r = 2.5/0.05 = $50.00"
@@ -4165,8 +3999,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "$40.00",
       "$50.00",
-      "$55.00",
-      "$72.00"
+      "$55.00"
     ],
     "correctAnswer": "B",
     "explanation": "PV = D/r = 6/0.12 = $50.00"
@@ -4181,8 +4014,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "$30.00",
       "$40.00",
-      "$45.00",
-      "$25.60"
+      "$45.00"
     ],
     "correctAnswer": "B",
     "explanation": "PV = D/r = 3.2/0.08 = $40.00"
@@ -4197,8 +4029,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "$30.00",
       "$40.00",
-      "$45.00",
-      "$57.60"
+      "$45.00"
     ],
     "correctAnswer": "B",
     "explanation": "PV = D/r = 4.8/0.12 = $40.00"
@@ -4213,8 +4044,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "$40.00",
       "$50.00",
-      "$55.00",
-      "$60.50"
+      "$55.00"
     ],
     "correctAnswer": "B",
     "explanation": "PV = D/r = 5.5/0.11 = $50.00"
@@ -4229,11 +4059,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "$32.00",
       "$42.00",
-      "$47.00",
-      "$20.00"
+      "$47.00"
     ],
     "correctAnswer": "B",
-    "explanation": "D1 = 2×(1+0.05) = $2.10. PV = D1/(r-g) = 2.10/(10-5)% = $42.00"
+    "explanation": "D1 = 2\u00d7(1+0.05) = $2.10. PV = D1/(r-g) = 2.10/(10-5)% = $42.00"
   },
   {
     "id": "CH02-P042",
@@ -4245,11 +4074,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "$43.00",
       "$53.00",
-      "$58.00",
-      "$25.00"
+      "$58.00"
     ],
     "correctAnswer": "B",
-    "explanation": "D1 = 3×(1+0.06) = $3.18. PV = D1/(r-g) = 3.18/(12-6)% = $53.00"
+    "explanation": "D1 = 3\u00d7(1+0.06) = $3.18. PV = D1/(r-g) = 3.18/(12-6)% = $53.00"
   },
   {
     "id": "CH02-P043",
@@ -4261,11 +4089,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "$37.95",
       "$47.95",
-      "$52.95",
-      "$22.73"
+      "$52.95"
     ],
     "correctAnswer": "B",
-    "explanation": "D1 = 2.5×(1+0.055) = $2.64. PV = D1/(r-g) = 2.64/(11-5.5)% = $47.95"
+    "explanation": "D1 = 2.5\u00d7(1+0.055) = $2.64. PV = D1/(r-g) = 2.64/(11-5.5)% = $47.95"
   },
   {
     "id": "CH02-P044",
@@ -4277,11 +4104,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "$21.20",
       "$31.20",
-      "$36.20",
-      "$16.67"
+      "$36.20"
     ],
     "correctAnswer": "B",
-    "explanation": "D1 = 1.5×(1+0.04) = $1.56. PV = D1/(r-g) = 1.56/(9-4)% = $31.20"
+    "explanation": "D1 = 1.5\u00d7(1+0.04) = $1.56. PV = D1/(r-g) = 1.56/(9-4)% = $31.20"
   },
   {
     "id": "CH02-P045",
@@ -4293,11 +4119,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "$51.14",
       "$61.14",
-      "$66.14",
-      "$28.57"
+      "$66.14"
     ],
     "correctAnswer": "B",
-    "explanation": "D1 = 4×(1+0.07) = $4.28. PV = D1/(r-g) = 4.28/(14-7)% = $61.14"
+    "explanation": "D1 = 4\u00d7(1+0.07) = $4.28. PV = D1/(r-g) = 4.28/(14-7)% = $61.14"
   },
   {
     "id": "CH02-P046",
@@ -4309,11 +4134,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "$47.35",
       "$57.35",
-      "$62.35",
-      "$26.92"
+      "$62.35"
     ],
     "correctAnswer": "B",
-    "explanation": "D1 = 3.5×(1+0.065) = $3.73. PV = D1/(r-g) = 3.73/(13-6.5)% = $57.35"
+    "explanation": "D1 = 3.5\u00d7(1+0.065) = $3.73. PV = D1/(r-g) = 3.73/(13-6.5)% = $57.35"
   },
   {
     "id": "CH02-P047",
@@ -4325,11 +4149,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "$33.67",
       "$43.67",
-      "$48.67",
-      "$20.95"
+      "$48.67"
     ],
     "correctAnswer": "B",
-    "explanation": "D1 = 2.2×(1+0.052000000000000005) = $2.31. PV = D1/(r-g) = 2.31/(10.5-5.2)% = $43.67"
+    "explanation": "D1 = 2.2\u00d7(1+0.052000000000000005) = $2.31. PV = D1/(r-g) = 2.31/(10.5-5.2)% = $43.67"
   },
   {
     "id": "CH02-P048",
@@ -4341,11 +4164,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "$27.62",
       "$37.62",
-      "$42.62",
-      "$18.95"
+      "$42.62"
     ],
     "correctAnswer": "B",
-    "explanation": "D1 = 1.8×(1+0.045) = $1.88. PV = D1/(r-g) = 1.88/(9.5-4.5)% = $37.62"
+    "explanation": "D1 = 1.8\u00d7(1+0.045) = $1.88. PV = D1/(r-g) = 1.88/(9.5-4.5)% = $37.62"
   },
   {
     "id": "CH02-P049",
@@ -4357,11 +4179,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "$54.50",
       "$64.50",
-      "$69.50",
-      "$30.00"
+      "$69.50"
     ],
     "correctAnswer": "B",
-    "explanation": "D1 = 4.5×(1+0.075) = $4.84. PV = D1/(r-g) = 4.84/(15-7.5)% = $64.50"
+    "explanation": "D1 = 4.5\u00d7(1+0.075) = $4.84. PV = D1/(r-g) = 4.84/(15-7.5)% = $64.50"
   },
   {
     "id": "CH02-P050",
@@ -4373,11 +4194,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "$43.94",
       "$53.94",
-      "$58.94",
-      "$25.60"
+      "$58.94"
     ],
     "correctAnswer": "B",
-    "explanation": "D1 = 3.2×(1+0.062) = $3.40. PV = D1/(r-g) = 3.40/(12.5-6.2)% = $53.94"
+    "explanation": "D1 = 3.2\u00d7(1+0.062) = $3.40. PV = D1/(r-g) = 3.40/(12.5-6.2)% = $53.94"
   },
   {
     "id": "CH02-P051",
@@ -4389,11 +4209,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "$41.97",
       "$51.97",
-      "$56.97",
-      "$24.35"
+      "$56.97"
     ],
     "correctAnswer": "B",
-    "explanation": "D1 = 2.8×(1+0.057999999999999996) = $2.96. PV = D1/(r-g) = 2.96/(11.5-5.8)% = $51.97"
+    "explanation": "D1 = 2.8\u00d7(1+0.057999999999999996) = $2.96. PV = D1/(r-g) = 2.96/(11.5-5.8)% = $51.97"
   },
   {
     "id": "CH02-P052",
@@ -4405,11 +4224,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "$38.72",
       "$48.72",
-      "$53.72",
-      "$24.44"
+      "$53.72"
     ],
     "correctAnswer": "B",
-    "explanation": "D1 = 3.3×(1+0.063) = $3.51. PV = D1/(r-g) = 3.51/(13.5-6.3)% = $48.72"
+    "explanation": "D1 = 3.3\u00d7(1+0.063) = $3.51. PV = D1/(r-g) = 3.51/(13.5-6.3)% = $48.72"
   },
   {
     "id": "CH02-P053",
@@ -4421,11 +4239,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "$36.84",
       "$46.84",
-      "$51.84",
-      "$22.22"
+      "$51.84"
     ],
     "correctAnswer": "B",
-    "explanation": "D1 = 2.4×(1+0.054000000000000006) = $2.53. PV = D1/(r-g) = 2.53/(10.8-5.4)% = $46.84"
+    "explanation": "D1 = 2.4\u00d7(1+0.054000000000000006) = $2.53. PV = D1/(r-g) = 2.53/(10.8-5.4)% = $46.84"
   },
   {
     "id": "CH02-P054",
@@ -4437,11 +4254,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "$45.80",
       "$55.80",
-      "$60.80",
-      "$26.21"
+      "$60.80"
     ],
     "correctAnswer": "B",
-    "explanation": "D1 = 3.8×(1+0.07200000000000001) = $4.07. PV = D1/(r-g) = 4.07/(14.5-7.2)% = $55.80"
+    "explanation": "D1 = 3.8\u00d7(1+0.07200000000000001) = $4.07. PV = D1/(r-g) = 4.07/(14.5-7.2)% = $55.80"
   },
   {
     "id": "CH02-P055",
@@ -4453,11 +4269,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "$39.03",
       "$49.03",
-      "$54.03",
-      "$23.21"
+      "$54.03"
     ],
     "correctAnswer": "B",
-    "explanation": "D1 = 2.6×(1+0.055999999999999994) = $2.75. PV = D1/(r-g) = 2.75/(11.2-5.6)% = $49.03"
+    "explanation": "D1 = 2.6\u00d7(1+0.055999999999999994) = $2.75. PV = D1/(r-g) = 2.75/(11.2-5.6)% = $49.03"
   },
   {
     "id": "CH02-P056",
@@ -4469,11 +4284,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "$48.15",
       "$58.15",
-      "$63.15",
-      "$27.27"
+      "$63.15"
     ],
     "correctAnswer": "B",
-    "explanation": "D1 = 3.6×(1+0.066) = $3.84. PV = D1/(r-g) = 3.84/(13.2-6.6)% = $58.15"
+    "explanation": "D1 = 3.6\u00d7(1+0.066) = $3.84. PV = D1/(r-g) = 3.84/(13.2-6.6)% = $58.15"
   },
   {
     "id": "CH02-P057",
@@ -4485,11 +4299,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "$36.49",
       "$46.49",
-      "$51.49",
-      "$22.33"
+      "$51.49"
     ],
     "correctAnswer": "B",
-    "explanation": "D1 = 2.3×(1+0.051) = $2.42. PV = D1/(r-g) = 2.42/(10.3-5.1)% = $46.49"
+    "explanation": "D1 = 2.3\u00d7(1+0.051) = $2.42. PV = D1/(r-g) = 2.42/(10.3-5.1)% = $46.49"
   },
   {
     "id": "CH02-P058",
@@ -4501,11 +4314,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "$53.35",
       "$63.35",
-      "$68.35",
-      "$29.58"
+      "$68.35"
     ],
     "correctAnswer": "B",
-    "explanation": "D1 = 4.2×(1+0.071) = $4.50. PV = D1/(r-g) = 4.50/(14.2-7.1)% = $63.35"
+    "explanation": "D1 = 4.2\u00d7(1+0.071) = $4.50. PV = D1/(r-g) = 4.50/(14.2-7.1)% = $63.35"
   },
   {
     "id": "CH02-P059",
@@ -4517,11 +4329,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "$42.05",
       "$52.05",
-      "$57.05",
-      "$24.58"
+      "$57.05"
     ],
     "correctAnswer": "B",
-    "explanation": "D1 = 2.9×(1+0.059000000000000004) = $3.07. PV = D1/(r-g) = 3.07/(11.8-5.9)% = $52.05"
+    "explanation": "D1 = 2.9\u00d7(1+0.059000000000000004) = $3.07. PV = D1/(r-g) = 3.07/(11.8-5.9)% = $52.05"
   },
   {
     "id": "CH02-P060",
@@ -4533,11 +4344,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "$46.52",
       "$56.52",
-      "$61.52",
-      "$26.56"
+      "$61.52"
     ],
     "correctAnswer": "B",
-    "explanation": "D1 = 3.4×(1+0.064) = $3.62. PV = D1/(r-g) = 3.62/(12.8-6.4)% = $56.52"
+    "explanation": "D1 = 3.4\u00d7(1+0.064) = $3.62. PV = D1/(r-g) = 3.62/(12.8-6.4)% = $56.52"
   },
   {
     "id": "CH01-P051",
@@ -4549,8 +4359,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "6.0%",
       "8.0%",
-      "9.0%",
-      "11.0%"
+      "9.0%"
     ],
     "correctAnswer": "B",
     "explanation": "Mean = (5+8+11)/3 = 24/3 = 8.0%"
@@ -4565,8 +4374,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "4.0%",
       "6.0%",
-      "7.0%",
-      "9.0%"
+      "7.0%"
     ],
     "correctAnswer": "B",
     "explanation": "Mean = (12+-4+10)/3 = 18/3 = 6.0%"
@@ -4581,8 +4389,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "10.5%",
       "12.5%",
-      "13.5%",
-      "15.5%"
+      "13.5%"
     ],
     "correctAnswer": "B",
     "explanation": "Mean = (15+20+10+5)/4 = 50/4 = 12.5%"
@@ -4597,8 +4404,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "5.0%",
       "7.0%",
-      "8.0%",
-      "10.0%"
+      "8.0%"
     ],
     "correctAnswer": "B",
     "explanation": "Mean = (8+12+-6+14)/4 = 28/4 = 7.0%"
@@ -4613,8 +4419,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "8.0%",
       "10.0%",
-      "11.0%",
-      "13.0%"
+      "11.0%"
     ],
     "correctAnswer": "B",
     "explanation": "Mean = (6+9+12+15+8)/5 = 50/5 = 10.0%"
@@ -4629,8 +4434,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "8.0%",
       "10.0%",
-      "11.0%",
-      "13.0%"
+      "11.0%"
     ],
     "correctAnswer": "B",
     "explanation": "Mean = (10+15+5)/3 = 30/3 = 10.0%"
@@ -4645,8 +4449,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "6.0%",
       "8.0%",
-      "9.0%",
-      "11.0%"
+      "9.0%"
     ],
     "correctAnswer": "B",
     "explanation": "Mean = (20+-10+14)/3 = 24/3 = 8.0%"
@@ -4661,8 +4464,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "8.0%",
       "10.0%",
-      "11.0%",
-      "13.0%"
+      "11.0%"
     ],
     "correctAnswer": "B",
     "explanation": "Mean = (7+11+13+9)/4 = 40/4 = 10.0%"
@@ -4677,8 +4479,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "13.0%",
       "15.0%",
-      "16.0%",
-      "18.0%"
+      "16.0%"
     ],
     "correctAnswer": "B",
     "explanation": "Mean = (18+22+12+8)/4 = 60/4 = 15.0%"
@@ -4693,8 +4494,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "6.0%",
       "8.0%",
-      "9.0%",
-      "11.0%"
+      "9.0%"
     ],
     "correctAnswer": "B",
     "explanation": "Mean = (4+6+10+12+8)/5 = 40/5 = 8.0%"
@@ -4709,11 +4509,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "3.9%",
       "5.9%",
-      "6.9%",
-      "7.9%"
+      "6.9%"
     ],
     "correctAnswer": "B",
-    "explanation": "Geometric = [(1+0.10)×(1+0.20)×(1+-0.10)]^(1/3) - 1 ≈ 5.9%"
+    "explanation": "Geometric = [(1+0.10)\u00d7(1+0.20)\u00d7(1+-0.10)]^(1/3) - 1 \u2248 5.9%"
   },
   {
     "id": "CH01-P062",
@@ -4723,13 +4522,12 @@ window.QUESTIONS_DATA = [
     "difficulty": "Moderate",
     "question": "Returns: 15%, -5%, 8%. Geometric mean:",
     "options": [
-      "5.5%",
-      "5.7%",
+      "3.9%",
       "5.9%",
-      "6.1%"
+      "6.9%"
     ],
     "correctAnswer": "B",
-    "explanation": "Geometric mean = [(1.15 × 0.95 × 1.08)^(1/3)] − 1 = (1.1781)^(1/3) − 1 ≈ 5.7%."
+    "explanation": "Geometric = [(1+0.15)\u00d7(1+-0.05)\u00d7(1+0.08)]^(1/3) - 1 \u2248 5.9%"
   },
   {
     "id": "CH01-P063",
@@ -4739,13 +4537,12 @@ window.QUESTIONS_DATA = [
     "difficulty": "Moderate",
     "question": "Returns: 12%, 18%, -6%. Geometric mean:",
     "options": [
-      "7.1%",
-      "7.3%",
-      "7.5%",
-      "7.7%"
+      "5.7%",
+      "7.7%",
+      "8.7%"
     ],
-    "correctAnswer": "C",
-    "explanation": "Geometric mean = [(1.12 × 1.18 × 0.94)^(1/3)] − 1 = (1.242304)^(1/3) − 1 ≈ 7.5%."
+    "correctAnswer": "B",
+    "explanation": "Geometric = [(1+0.12)\u00d7(1+0.18)\u00d7(1+-0.06)]^(1/3) - 1 \u2248 7.7%"
   },
   {
     "id": "CH01-P064",
@@ -4757,11 +4554,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "3.1%",
       "5.1%",
-      "6.1%",
-      "7.1%"
+      "6.1%"
     ],
     "correctAnswer": "B",
-    "explanation": "Geometric = [(1+0.08)×(1+0.12)×(1+0.05)×(1+-0.04)]^(1/4) - 1 ≈ 5.1%"
+    "explanation": "Geometric = [(1+0.08)\u00d7(1+0.12)\u00d7(1+0.05)\u00d7(1+-0.04)]^(1/4) - 1 \u2248 5.1%"
   },
   {
     "id": "CH01-P065",
@@ -4771,13 +4567,12 @@ window.QUESTIONS_DATA = [
     "difficulty": "Moderate",
     "question": "Returns: 25%, -10%, 15%, -5%. Geometric mean:",
     "options": [
-      "4.9%",
-      "5.1%",
-      "5.3%",
-      "5.5%"
+      "3.4%",
+      "5.4%",
+      "6.4%"
     ],
-    "correctAnswer": "C",
-    "explanation": "Geometric mean = [(1.25 × 0.90 × 1.15 × 0.95)^(1/4)] − 1 = (1.228125)^(1/4) − 1 ≈ 5.3%."
+    "correctAnswer": "B",
+    "explanation": "Geometric = [(1+0.25)\u00d7(1+-0.10)\u00d7(1+0.15)\u00d7(1+-0.05)]^(1/4) - 1 \u2248 5.4%"
   },
   {
     "id": "CH01-P066",
@@ -4789,11 +4584,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "5.5%",
       "7.5%",
-      "8.5%",
-      "9.5%"
+      "8.5%"
     ],
     "correctAnswer": "B",
-    "explanation": "Geometric = [(1+0.06)×(1+0.09)×(1+0.11)×(1+0.04)]^(1/4) - 1 ≈ 7.5%"
+    "explanation": "Geometric = [(1+0.06)\u00d7(1+0.09)\u00d7(1+0.11)\u00d7(1+0.04)]^(1/4) - 1 \u2248 7.5%"
   },
   {
     "id": "CH01-P067",
@@ -4803,13 +4597,12 @@ window.QUESTIONS_DATA = [
     "difficulty": "Moderate",
     "question": "Returns: 14%, -8%, 10%, 6%. Geometric mean:",
     "options": [
-      "4.9%",
-      "5.1%",
-      "5.2%",
-      "5.4%"
+      "5.3%",
+      "7.3%",
+      "8.3%"
     ],
-    "correctAnswer": "C",
-    "explanation": "Geometric mean = [(1.14 × 0.92 × 1.10 × 1.06)^(1/4)] − 1 = (1.223568)^(1/4) − 1 ≈ 5.2%."
+    "correctAnswer": "B",
+    "explanation": "Geometric = [(1+0.14)\u00d7(1+-0.08)\u00d7(1+0.10)\u00d7(1+0.06)]^(1/4) - 1 \u2248 7.3%"
   },
   {
     "id": "CH01-P068",
@@ -4819,13 +4612,12 @@ window.QUESTIONS_DATA = [
     "difficulty": "Moderate",
     "question": "Returns: 20%, -12%, 12%. Geometric mean:",
     "options": [
-      "5.6%",
-      "5.8%",
-      "6.0%",
-      "6.2%"
+      "4.2%",
+      "6.2%",
+      "7.2%"
     ],
     "correctAnswer": "B",
-    "explanation": "Geometric mean = [(1.20 × 0.88 × 1.12)^(1/3)] − 1 = (1.18272)^(1/3) − 1 ≈ 5.8%."
+    "explanation": "Geometric = [(1+0.20)\u00d7(1+-0.12)\u00d7(1+0.12)]^(1/3) - 1 \u2248 6.2%"
   },
   {
     "id": "CH01-P069",
@@ -4837,11 +4629,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "4.4%",
       "6.4%",
-      "7.4%",
-      "8.4%"
+      "7.4%"
     ],
     "correctAnswer": "B",
-    "explanation": "Geometric = [(1+0.18)×(1+0.05)×(1+-0.03)]^(1/3) - 1 ≈ 6.4%"
+    "explanation": "Geometric = [(1+0.18)\u00d7(1+0.05)\u00d7(1+-0.03)]^(1/3) - 1 \u2248 6.4%"
   },
   {
     "id": "CH01-P070",
@@ -4853,11 +4644,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "4.9%",
       "6.9%",
-      "7.9%",
-      "8.9%"
+      "7.9%"
     ],
     "correctAnswer": "B",
-    "explanation": "Geometric = [(1+0.10)×(1+0.15)×(1+0.05)×(1+-0.02)]^(1/4) - 1 ≈ 6.9%"
+    "explanation": "Geometric = [(1+0.10)\u00d7(1+0.15)\u00d7(1+0.05)\u00d7(1+-0.02)]^(1/4) - 1 \u2248 6.9%"
   },
   {
     "id": "CH01-P071",
@@ -4869,8 +4659,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "9.7%",
       "11.7%",
-      "12.7%",
-      "12.0%"
+      "12.7%"
     ],
     "correctAnswer": "B",
     "explanation": "Annualized = (1+18%)^(12/18) - 1 = 11.67%"
@@ -4885,8 +4674,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "10.0%",
       "12.0%",
-      "13.0%",
-      "12.0%"
+      "13.0%"
     ],
     "correctAnswer": "B",
     "explanation": "Annualized = (1+12%)^(12/12) - 1 = 12.00%"
@@ -4901,8 +4689,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "9.1%",
       "11.1%",
-      "12.1%",
-      "12.0%"
+      "12.1%"
     ],
     "correctAnswer": "B",
     "explanation": "Annualized = (1+30%)^(12/30) - 1 = 11.07%"
@@ -4917,8 +4704,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "1.9%",
       "3.9%",
-      "4.9%",
-      "4.0%"
+      "4.9%"
     ],
     "correctAnswer": "B",
     "explanation": "Annualized = (1+8%)^(4/8) - 1 = 3.92%"
@@ -4933,8 +4719,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "1.8%",
       "3.8%",
-      "4.8%",
-      "4.0%"
+      "4.8%"
     ],
     "correctAnswer": "B",
     "explanation": "Annualized = (1+14%)^(4/14) - 1 = 3.81%"
@@ -4949,8 +4734,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "1.7%",
       "3.7%",
-      "4.7%",
-      "4.0%"
+      "4.7%"
     ],
     "correctAnswer": "B",
     "explanation": "Annualized = (1+21%)^(4/21) - 1 = 3.70%"
@@ -4965,8 +4749,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "10.4%",
       "12.4%",
-      "13.4%",
-      "12.0%"
+      "13.4%"
     ],
     "correctAnswer": "B",
     "explanation": "Annualized = (1+6%)^(12/6) - 1 = 12.36%"
@@ -4981,8 +4764,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "9.6%",
       "11.6%",
-      "12.6%",
-      "12.0%"
+      "12.6%"
     ],
     "correctAnswer": "B",
     "explanation": "Annualized = (1+20%)^(12/20) - 1 = 11.56%"
@@ -4997,8 +4779,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "9.3%",
       "11.3%",
-      "12.3%",
-      "12.0%"
+      "12.3%"
     ],
     "correctAnswer": "B",
     "explanation": "Annualized = (1+25%)^(12/25) - 1 = 11.31%"
@@ -5013,8 +4794,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "8.8%",
       "10.8%",
-      "11.8%",
-      "12.0%"
+      "11.8%"
     ],
     "correctAnswer": "B",
     "explanation": "Annualized = (1+36%)^(12/36) - 1 = 10.79%"
@@ -5029,8 +4809,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "4.01%",
       "5.01%",
-      "6.01%",
-      "3.50%"
+      "6.01%"
     ],
     "correctAnswer": "B",
     "explanation": "F(1,1) = [(1+4%)^2/(1+3%)] - 1 = 5.01%"
@@ -5045,8 +4824,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "3.51%",
       "4.51%",
-      "5.51%",
-      "3.00%"
+      "5.51%"
     ],
     "correctAnswer": "B",
     "explanation": "F(1,1) = [(1+3.5%)^2/(1+2.5%)] - 1 = 4.51%"
@@ -5061,8 +4839,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "5.01%",
       "6.01%",
-      "7.01%",
-      "4.50%"
+      "7.01%"
     ],
     "correctAnswer": "B",
     "explanation": "F(1,1) = [(1+5%)^2/(1+4%)] - 1 = 6.01%"
@@ -5077,8 +4854,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "4.51%",
       "5.51%",
-      "6.51%",
-      "4.00%"
+      "6.51%"
     ],
     "correctAnswer": "B",
     "explanation": "F(1,1) = [(1+4.5%)^2/(1+3.5%)] - 1 = 5.51%"
@@ -5093,8 +4869,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "3.01%",
       "4.01%",
-      "5.01%",
-      "2.50%"
+      "5.01%"
     ],
     "correctAnswer": "B",
     "explanation": "F(1,1) = [(1+3%)^2/(1+2%)] - 1 = 4.01%"
@@ -5109,8 +4884,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "4.21%",
       "5.21%",
-      "6.21%",
-      "3.70%"
+      "6.21%"
     ],
     "correctAnswer": "B",
     "explanation": "F(1,1) = [(1+4.2%)^2/(1+3.2%)] - 1 = 5.21%"
@@ -5125,8 +4899,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "3.81%",
       "4.81%",
-      "5.81%",
-      "3.30%"
+      "5.81%"
     ],
     "correctAnswer": "B",
     "explanation": "F(1,1) = [(1+3.8%)^2/(1+2.8%)] - 1 = 4.81%"
@@ -5141,8 +4914,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "4.81%",
       "5.81%",
-      "6.81%",
-      "4.30%"
+      "6.81%"
     ],
     "correctAnswer": "B",
     "explanation": "F(1,1) = [(1+4.8%)^2/(1+3.8%)] - 1 = 5.81%"
@@ -5157,8 +4929,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "3.21%",
       "4.21%",
-      "5.21%",
-      "2.70%"
+      "5.21%"
     ],
     "correctAnswer": "B",
     "explanation": "F(1,1) = [(1+3.2%)^2/(1+2.2%)] - 1 = 4.21%"
@@ -5173,8 +4944,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "5.21%",
       "6.21%",
-      "7.21%",
-      "4.70%"
+      "7.21%"
     ],
     "correctAnswer": "B",
     "explanation": "F(1,1) = [(1+5.2%)^2/(1+4.2%)] - 1 = 6.21%"
@@ -5189,11 +4959,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "9.2%",
       "11.2%",
-      "12.2%",
-      "-10.0%"
+      "12.2%"
     ],
     "correctAnswer": "B",
-    "explanation": "After-tax = 15% × (1-25%) = 15% × 0.75 = 11.2%"
+    "explanation": "After-tax = 15% \u00d7 (1-25%) = 15% \u00d7 0.75 = 11.2%"
   },
   {
     "id": "CH01-P082",
@@ -5205,11 +4974,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "7.6%",
       "9.6%",
-      "10.6%",
-      "-8.0%"
+      "10.6%"
     ],
     "correctAnswer": "B",
-    "explanation": "After-tax = 12% × (1-20%) = 12% × 0.8 = 9.6%"
+    "explanation": "After-tax = 12% \u00d7 (1-20%) = 12% \u00d7 0.8 = 9.6%"
   },
   {
     "id": "CH01-P083",
@@ -5221,11 +4989,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "10.6%",
       "12.6%",
-      "13.6%",
-      "-12.0%"
+      "13.6%"
     ],
     "correctAnswer": "B",
-    "explanation": "After-tax = 18% × (1-30%) = 18% × 0.7 = 12.6%"
+    "explanation": "After-tax = 18% \u00d7 (1-30%) = 18% \u00d7 0.7 = 12.6%"
   },
   {
     "id": "CH01-P084",
@@ -5237,11 +5004,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "6.5%",
       "8.5%",
-      "9.5%",
-      "-5.0%"
+      "9.5%"
     ],
     "correctAnswer": "B",
-    "explanation": "After-tax = 10% × (1-15%) = 10% × 0.85 = 8.5%"
+    "explanation": "After-tax = 10% \u00d7 (1-15%) = 10% \u00d7 0.85 = 8.5%"
   },
   {
     "id": "CH01-P085",
@@ -5253,11 +5019,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.0%",
       "13.0%",
-      "14.0%",
-      "-15.0%"
+      "14.0%"
     ],
     "correctAnswer": "B",
-    "explanation": "After-tax = 20% × (1-35%) = 20% × 0.65 = 13.0%"
+    "explanation": "After-tax = 20% \u00d7 (1-35%) = 20% \u00d7 0.65 = 13.0%"
   },
   {
     "id": "CH01-P086",
@@ -5269,11 +5034,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "8.1%",
       "10.1%",
-      "11.1%",
-      "-14.0%"
+      "11.1%"
     ],
     "correctAnswer": "B",
-    "explanation": "After-tax = 14% × (1-28%) = 14% × 0.72 = 10.1%"
+    "explanation": "After-tax = 14% \u00d7 (1-28%) = 14% \u00d7 0.72 = 10.1%"
   },
   {
     "id": "CH01-P087",
@@ -5285,11 +5049,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "8.9%",
       "10.9%",
-      "11.9%",
-      "-16.0%"
+      "11.9%"
     ],
     "correctAnswer": "B",
-    "explanation": "After-tax = 16% × (1-32%) = 16% × 0.6799999999999999 = 10.9%"
+    "explanation": "After-tax = 16% \u00d7 (1-32%) = 16% \u00d7 0.6799999999999999 = 10.9%"
   },
   {
     "id": "CH01-P088",
@@ -5301,11 +5064,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "6.6%",
       "8.6%",
-      "9.6%",
-      "-11.0%"
+      "9.6%"
     ],
     "correctAnswer": "B",
-    "explanation": "After-tax = 11% × (1-22%) = 11% × 0.78 = 8.6%"
+    "explanation": "After-tax = 11% \u00d7 (1-22%) = 11% \u00d7 0.78 = 8.6%"
   },
   {
     "id": "CH01-P089",
@@ -5317,11 +5079,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "7.6%",
       "9.6%",
-      "10.6%",
-      "-13.0%"
+      "10.6%"
     ],
     "correctAnswer": "B",
-    "explanation": "After-tax = 13% × (1-26%) = 13% × 0.74 = 9.6%"
+    "explanation": "After-tax = 13% \u00d7 (1-26%) = 13% \u00d7 0.74 = 9.6%"
   },
   {
     "id": "CH01-P090",
@@ -5333,11 +5094,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "9.2%",
       "11.2%",
-      "12.2%",
-      "-17.0%"
+      "12.2%"
     ],
     "correctAnswer": "B",
-    "explanation": "After-tax = 17% × (1-34%) = 17% × 0.6599999999999999 = 11.2%"
+    "explanation": "After-tax = 17% \u00d7 (1-34%) = 17% \u00d7 0.6599999999999999 = 11.2%"
   },
   {
     "id": "CH01-P091",
@@ -5349,8 +5109,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "7.74%",
       "8.74%",
-      "9.74%",
-      "9.00%"
+      "9.74%"
     ],
     "correctAnswer": "B",
     "explanation": "Real = [(1+12%)/(1+3%)] - 1 = [(1.12)/(1.30)] - 1 = 8.74%"
@@ -5365,8 +5124,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "9.58%",
       "10.58%",
-      "11.58%",
-      "11.00%"
+      "11.58%"
     ],
     "correctAnswer": "B",
     "explanation": "Real = [(1+15%)/(1+4%)] - 1 = [(1.15)/(1.40)] - 1 = 10.58%"
@@ -5381,8 +5139,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "6.84%",
       "7.84%",
-      "8.84%",
-      "8.00%"
+      "8.84%"
     ],
     "correctAnswer": "B",
     "explanation": "Real = [(1+10%)/(1+2%)] - 1 = [(1.10)/(1.20)] - 1 = 7.84%"
@@ -5397,8 +5154,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.38%",
       "12.38%",
-      "13.38%",
-      "13.00%"
+      "13.38%"
     ],
     "correctAnswer": "B",
     "explanation": "Real = [(1+18%)/(1+5%)] - 1 = [(1.18)/(1.50)] - 1 = 12.38%"
@@ -5413,8 +5169,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "4.88%",
       "5.88%",
-      "6.88%",
-      "6.00%"
+      "6.88%"
     ],
     "correctAnswer": "B",
     "explanation": "Real = [(1+8%)/(1+2%)] - 1 = [(1.08)/(1.20)] - 1 = 5.88%"
@@ -5429,8 +5184,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "9.14%",
       "10.14%",
-      "11.14%",
-      "10.50%"
+      "11.14%"
     ],
     "correctAnswer": "B",
     "explanation": "Real = [(1+14%)/(1+3.5%)] - 1 = [(1.14)/(1.35)] - 1 = 10.14%"
@@ -5445,8 +5199,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "12.21%",
       "13.21%",
-      "14.21%",
-      "14.00%"
+      "14.21%"
     ],
     "correctAnswer": "B",
     "explanation": "Real = [(1+20%)/(1+6%)] - 1 = [(1.20)/(1.60)] - 1 = 13.21%"
@@ -5461,8 +5214,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "7.29%",
       "8.29%",
-      "9.29%",
-      "8.50%"
+      "9.29%"
     ],
     "correctAnswer": "B",
     "explanation": "Real = [(1+11%)/(1+2.5%)] - 1 = [(1.11)/(1.25)] - 1 = 8.29%"
@@ -5477,8 +5229,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "10.00%",
       "11.00%",
-      "12.00%",
-      "11.50%"
+      "12.00%"
     ],
     "correctAnswer": "B",
     "explanation": "Real = [(1+16%)/(1+4.5%)] - 1 = [(1.16)/(1.45)] - 1 = 11.00%"
@@ -5493,8 +5244,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "5.86%",
       "6.86%",
-      "7.86%",
-      "7.00%"
+      "7.86%"
     ],
     "correctAnswer": "B",
     "explanation": "Real = [(1+9%)/(1+2%)] - 1 = [(1.09)/(1.20)] - 1 = 6.86%"
@@ -5509,8 +5259,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "The middle value when data are sorted",
       "The most frequently occurring value",
-      "The sum of observations divided by the number of observations",
-      "The square root of the variance"
+      "The sum of observations divided by the number of observations"
     ],
     "correctAnswer": "C",
     "explanation": "The arithmetic mean = sum of all observations / number of observations. It is the most commonly used measure of central tendency."
@@ -5525,8 +5274,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Uses all observations in its calculation",
       "Is more mathematically tractable",
-      "Is not affected by extreme values (outliers)",
-      "Is always greater than the mean"
+      "Is not affected by extreme values (outliers)"
     ],
     "correctAnswer": "C",
     "explanation": "The median is not affected by outliers, making it the preferred measure of central tendency for skewed distributions or datasets with extreme values."
@@ -5541,8 +5289,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Unimodal",
       "Bimodal",
-      "Trimodal",
-      "Having no mode"
+      "Trimodal"
     ],
     "correctAnswer": "B",
     "explanation": "A distribution with two most-frequently occurring values is bimodal. The mode is the only measure of central tendency usable with nominal/categorical data."
@@ -5557,8 +5304,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Replacing the lowest and highest 5% of values with less extreme values",
       "Discarding the lowest 2.5% and highest 2.5% of values, then computing the mean",
-      "Discarding the lowest 5% and highest 5% of values, then computing the mean",
-      "Weighting the middle 95% of observations more heavily"
+      "Discarding the lowest 5% and highest 5% of values, then computing the mean"
     ],
     "correctAnswer": "B",
     "explanation": "A 5% trimmed mean discards the lowest 2.5% and highest 2.5% of values (5% total) and computes the arithmetic mean of the remaining 95% of observations."
@@ -5573,8 +5319,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Removes outliers from the dataset entirely",
       "Replaces extreme values with specified percentile values rather than removing them",
-      "Uses only the middle 95% of observations",
-      "Weights central observations more heavily"
+      "Uses only the middle 95% of observations"
     ],
     "correctAnswer": "B",
     "explanation": "The winsorized mean substitutes extreme values with less extreme ones (e.g., replaces values below the 2.5th percentile with that percentile value), retaining all observations in the count."
@@ -5589,8 +5334,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Tenths",
       "Fifths",
-      "Quarters",
-      "Hundredths"
+      "Quarters"
     ],
     "correctAnswer": "C",
     "explanation": "Quartiles divide a distribution into quarters (4 equal parts). Quintiles=fifths, deciles=tenths, percentiles=hundredths."
@@ -5605,8 +5349,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Maximum value minus minimum value",
       "Q3 minus Q1",
-      "Q2 minus Q1",
-      "Mean minus median"
+      "Q2 minus Q1"
     ],
     "correctAnswer": "B",
     "explanation": "IQR = Q3 - Q1. It represents the spread of the middle 50% of the data and is depicted by the height of the box in a box-and-whisker plot."
@@ -5621,8 +5364,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "The range between the minimum and maximum values",
       "The interquartile range (Q1 to Q3)",
-      "Two standard deviations around the mean",
-      "The 10th to 90th percentile range"
+      "Two standard deviations around the mean"
     ],
     "correctAnswer": "B",
     "explanation": "The box in a box-and-whisker plot represents the interquartile range (from Q1 to Q3), with the median and/or arithmetic mean marked within the box."
@@ -5637,8 +5379,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Cannot be calculated for skewed distributions",
       "Uses information from only two observations",
-      "Is always larger than the standard deviation",
-      "Requires knowledge of the mean"
+      "Is always larger than the standard deviation"
     ],
     "correctAnswer": "B",
     "explanation": "Range = Maximum - Minimum. Its major limitation is that it uses only two data points (the extremes), ignoring all other observations."
@@ -5653,8 +5394,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Amplify the effect of outliers",
       "Prevent positive and negative deviations from canceling each other out",
-      "Make it easier to calculate than the variance",
-      "Ensure the measure is always larger than the standard deviation"
+      "Make it easier to calculate than the variance"
     ],
     "correctAnswer": "B",
     "explanation": "Deviations around the mean always sum to zero. Taking absolute values prevents positive and negative deviations from canceling, allowing a meaningful measure of dispersion."
@@ -5669,8 +5409,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "It produces a smaller, more conservative estimate",
       "It ensures the sample variance is an unbiased estimator of population variance",
-      "It makes the formula consistent with the MAD formula",
-      "It ensures the variance is always positive"
+      "It makes the formula consistent with the MAD formula"
     ],
     "correctAnswer": "B",
     "explanation": "Dividing by (n-1) rather than n corrects for the fact that the sample mean is itself an estimate, yielding an unbiased estimator of the population variance. The n-1 is the degrees of freedom."
@@ -5685,8 +5424,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Standard deviation is always smaller than variance",
       "Standard deviation is expressed in the same units as the original data",
-      "Standard deviation is easier to compute",
-      "Standard deviation can be negative, reflecting downside risk"
+      "Standard deviation is easier to compute"
     ],
     "correctAnswer": "B",
     "explanation": "Standard deviation (square root of variance) is expressed in the same units as the data (e.g., percent returns), making it more interpretable than variance, which is in squared units."
@@ -5701,8 +5439,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Includes only observations above the target return",
       "Includes only observations below the target return",
-      "Is always larger than the standard deviation",
-      "Uses the median instead of the mean as reference"
+      "Is always larger than the standard deviation"
     ],
     "correctAnswer": "B",
     "explanation": "Target semideviation focuses only on observations below a specified target return, making it a measure of downside risk rather than total variability."
@@ -5717,8 +5454,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Standard deviation divided by variance",
       "Risk (standard deviation) per unit of mean return",
-      "Mean return divided by standard deviation",
-      "The ratio of median to mean"
+      "Mean return divided by standard deviation"
     ],
     "correctAnswer": "B",
     "explanation": "CV = s / X-bar. It measures risk per unit of expected return, enabling comparison of dispersion across datasets with different means or units of measurement."
@@ -5733,8 +5469,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Lower risk relative to the mean",
       "Higher return per unit of risk",
-      "Greater risk per unit of mean return",
-      "A more normally distributed return series"
+      "Greater risk per unit of mean return"
     ],
     "correctAnswer": "C",
     "explanation": "A higher CV means more risk (standard deviation) per unit of mean return. When comparing investments, the one with the lower CV offers less risk per unit of return."
@@ -5749,8 +5484,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Frequent large gains and a few extreme losses",
       "Frequent small losses and a few extreme gains",
-      "A mean less than its median",
-      "Equal probability in both tails"
+      "A mean less than its median"
     ],
     "correctAnswer": "B",
     "explanation": "Positive skew = long right tail. The distribution has frequent small losses and a few large extreme gains. Mean > Median > Mode for a positively skewed unimodal distribution."
@@ -5765,8 +5499,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Mean > Median > Mode",
       "Mode > Median > Mean",
-      "Median > Mean > Mode",
-      "Mean = Median = Mode"
+      "Median > Mean > Mode"
     ],
     "correctAnswer": "B",
     "explanation": "For a negatively skewed (left-tailed) distribution: Mean < Median < Mode, which is equivalent to Mode > Median > Mean."
@@ -5781,8 +5514,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Thinner tails than the normal distribution",
       "Fatter tails and more peaked center than the normal distribution",
-      "Excess kurtosis less than zero",
-      "Kurtosis exactly equal to 3"
+      "Excess kurtosis less than zero"
     ],
     "correctAnswer": "B",
     "explanation": "Leptokurtic (fat-tailed) distributions have kurtosis > 3 and excess kurtosis > 0. They generate extreme deviations from the mean more frequently than the normal distribution."
@@ -5797,10 +5529,9 @@ window.QUESTIONS_DATA = [
     "options": [
       "0",
       "1",
-      "2",
       "3"
     ],
-    "correctAnswer": "D",
+    "correctAnswer": "C",
     "explanation": "A normal (mesokurtic) distribution has kurtosis = 3 and excess kurtosis = 0. Fat-tailed distributions have kurtosis > 3; thin-tailed have kurtosis < 3."
   },
   {
@@ -5813,10 +5544,9 @@ window.QUESTIONS_DATA = [
     "options": [
       "0",
       "1",
-      "2",
       "3"
     ],
-    "correctAnswer": "D",
+    "correctAnswer": "C",
     "explanation": "Excess kurtosis = kurtosis - 3. This centers the measure on the normal distribution, so normal = 0, fat-tailed > 0, thin-tailed < 0."
   },
   {
@@ -5829,8 +5559,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Thin-tailed (platykurtic) with excess kurtosis < 0",
       "Mesokurtic with excess kurtosis = 0",
-      "Fat-tailed (leptokurtic) with excess kurtosis > 0",
-      "Symmetric with zero skewness"
+      "Fat-tailed (leptokurtic) with excess kurtosis > 0"
     ],
     "correctAnswer": "C",
     "explanation": "Empirically, most equity return series are fat-tailed (leptokurtic), meaning extreme returns occur more frequently than predicted by a normal distribution."
@@ -5845,8 +5574,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "0 and 1",
       "-1 and 0",
-      "-1 and +1",
-      "-infinity and +infinity"
+      "-1 and +1"
     ],
     "correctAnswer": "C",
     "explanation": "The sample correlation coefficient rXY always falls between -1 and +1, inclusive. A value of 0 indicates no linear relationship; +/-1 indicates a perfect linear relationship."
@@ -5861,8 +5589,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "A perfect negative relationship",
       "No linear relationship between the two variables",
-      "A non-linear relationship must exist",
-      "One variable causes changes in the other"
+      "A non-linear relationship must exist"
     ],
     "correctAnswer": "B",
     "explanation": "Correlation = 0 means no linear relationship. A non-linear relationship may still exist, so zero correlation does not necessarily mean independence."
@@ -5877,8 +5604,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Multiplying covariance by the two standard deviations",
       "Dividing covariance by the product of the two standard deviations",
-      "Subtracting the two means from the covariance",
-      "Dividing covariance by the sample size"
+      "Subtracting the two means from the covariance"
     ],
     "correctAnswer": "B",
     "explanation": "rXY = sXY / (sX * sY). Dividing covariance by the product of the two standard deviations standardizes it to a unitless measure between -1 and +1."
@@ -5893,8 +5619,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Correlation that is statistically significant and economically meaningful",
       "Correlation between variables that does not reflect a true causal or meaningful relationship",
-      "Correlation that is always caused by a third variable",
-      "Correlation that equals exactly zero"
+      "Correlation that is always caused by a third variable"
     ],
     "correctAnswer": "B",
     "explanation": "Spurious correlation arises from chance relationships, calculation artifacts, or a shared third variable, not from a genuine direct relationship between the two variables."
@@ -5909,8 +5634,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Changes in one variable cause changes in the other",
       "The variables are always positively associated in the future",
-      "A positive linear association, but not necessarily causation",
-      "The variables have the same mean and standard deviation"
+      "A positive linear association, but not necessarily causation"
     ],
     "correctAnswer": "C",
     "explanation": "Correlation measures linear association, not causation. Two variables may be highly correlated due to a third common factor or by coincidence, with no causal link."
@@ -5925,8 +5649,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Mean, median, and mode",
       "Mean and variance (or standard deviation)",
-      "Mean, variance, and skewness",
-      "Median and interquartile range"
+      "Mean, variance, and skewness"
     ],
     "correctAnswer": "B",
     "explanation": "The normal distribution is completely described by just two parameters: its mean and variance (or standard deviation). It is symmetric with mean = median = mode."
@@ -5941,8 +5664,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Positive skew implies higher average returns",
       "Positive skew means limited frequent downside with potentially large but less frequent upside",
-      "Positive skew indicates lower variance",
-      "Positive skew means the distribution is closer to normal"
+      "Positive skew indicates lower variance"
     ],
     "correctAnswer": "B",
     "explanation": "With positive skew, the mean lies above the median, implying frequent small losses but rare, large gains. Investors prefer this asymmetry: limited, frequent downside vs. less frequent but large upside."
@@ -5957,8 +5679,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "A strong negative linear relationship",
       "No relationship between the variables",
-      "A strong positive linear relationship",
-      "A non-linear relationship"
+      "A strong positive linear relationship"
     ],
     "correctAnswer": "C",
     "explanation": "Tight clustering around a positively sloped line signals a strong positive linear relationship (high positive correlation). Loose clustering indicates a weaker relationship."
@@ -5973,8 +5694,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Decrease the target semideviation because fewer extreme values are captured",
       "Have no effect on the target semideviation",
-      "Increase the target semideviation because more observations fall below the higher target",
-      "Only affect observations above the mean"
+      "Increase the target semideviation because more observations fall below the higher target"
     ],
     "correctAnswer": "C",
     "explanation": "A higher target means more observations fall below it and each deviation from the target is larger, resulting in a higher target semideviation. This reflects the greater risk of missing the higher target."
@@ -5989,8 +5709,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Positively skewed with a long right tail",
       "Negatively skewed with a long left tail",
-      "Symmetric (normal)",
-      "Leptokurtic with fat tails"
+      "Symmetric (normal)"
     ],
     "correctAnswer": "B",
     "explanation": "When mean < median, the distribution is negatively skewed (left-tailed). Extreme negative returns pull the mean below the median."
@@ -6005,8 +5724,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Smaller, because volatility reduces compounding benefits",
       "Zero, because both measures use the same data",
-      "Larger, because higher volatility creates a greater drag on compounded returns",
-      "Unaffected, as the gap depends only on the level of returns"
+      "Larger, because higher volatility creates a greater drag on compounded returns"
     ],
     "correctAnswer": "C",
     "explanation": "The arithmetic mean always exceeds the geometric mean (unless all returns are identical), and the gap grows with increasing dispersion/volatility. This is the volatility drag on compound returns."
@@ -6021,8 +5739,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Portfolio A, with CV of 0.40",
       "Portfolio B, with CV of 0.50",
-      "Both portfolios have equal risk per unit of return",
-      "Cannot be determined without knowing the skewness"
+      "Both portfolios have equal risk per unit of return"
     ],
     "correctAnswer": "B",
     "explanation": "CV(A) = 4/10 = 0.40; CV(B) = 2/4 = 0.50. Portfolio B has higher CV (0.50 > 0.40), meaning more risk per unit of mean return despite having a lower absolute standard deviation."
@@ -6037,8 +5754,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Overestimate the likelihood of extreme returns",
       "Underestimate the likelihood of very bad or very good outcomes",
-      "Correctly estimate average returns but overestimate the median",
-      "Correctly model all aspects of the return distribution"
+      "Correctly estimate average returns but overestimate the median"
     ],
     "correctAnswer": "B",
     "explanation": "Fat-tailed distributions produce extreme outcomes more frequently than normal distributions. Using a normal model will underestimate tail probabilities, leading to underestimation of extreme risk."
@@ -6053,8 +5769,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Identical underlying distributions",
       "No meaningful differences in investment risk",
-      "Very different visual patterns and underlying relationships",
-      "The same skewness and kurtosis"
+      "Very different visual patterns and underlying relationships"
     ],
     "correctAnswer": "C",
     "explanation": "Anscombe's Quartet shows that summary statistics alone (mean, SD, correlation) are insufficient. Datasets with identical statistics can have very different graphical relationships, highlighting the importance of visualization."
@@ -6069,8 +5784,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "More than 2 standard deviations from the mean",
       "Below Q1 or above Q3",
-      "Beyond the upper or lower fence defined as Q3 + 1.5xIQR or Q1 - 1.5xIQR",
-      "In the lowest or highest 5% of the distribution"
+      "Beyond the upper or lower fence defined as Q3 + 1.5xIQR or Q1 - 1.5xIQR"
     ],
     "correctAnswer": "C",
     "explanation": "With 1.5xIQR fences: upper fence = Q3 + 1.5xIQR; lower fence = Q1 - 1.5xIQR. Observations beyond these fences are considered outliers."
@@ -6085,8 +5799,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Remove it using a trimmed mean to reduce noise",
       "Replace it using winsorizing to limit its influence",
-      "Keep it, as it contains meaningful information about tail risk",
-      "Replace it with the median of the dataset"
+      "Keep it, as it contains meaningful information about tail risk"
     ],
     "correctAnswer": "C",
     "explanation": "Legitimate extreme observations contain valuable information. Removing or replacing them could understate tail risk and reduce the information available to the analyst."
@@ -6101,8 +5814,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "X and Y tend to move in the same direction",
       "When X is above its mean, Y tends to be below its mean",
-      "The correlation between X and Y is exactly -1",
-      "Both X and Y have negative means"
+      "The correlation between X and Y is exactly -1"
     ],
     "correctAnswer": "B",
     "explanation": "Negative covariance means the variables tend to move in opposite directions: when X is above its mean, Y tends to be below its mean, and vice versa."
@@ -6117,8 +5829,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Position 8.0",
       "Position 8.8",
-      "Position 9.0",
-      "Position 7.8"
+      "Position 9.0"
     ],
     "correctAnswer": "B",
     "explanation": "L80 = (10+1) x (80/100) = 11 x 0.80 = 8.8. This means the 80th percentile lies between the 8th and 9th observations, requiring linear interpolation."
@@ -6133,8 +5844,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Cubing amplifies all deviations equally",
       "Cubing preserves the sign of deviations, unlike squaring",
-      "Cubing makes the measure scale-dependent",
-      "Cubing reduces the influence of outliers"
+      "Cubing makes the measure scale-dependent"
     ],
     "correctAnswer": "B",
     "explanation": "Squaring always yields positive values, losing directional information. Cubing preserves sign, so positive deviations remain positive and negative deviations remain negative, capturing asymmetry."
@@ -6149,8 +5859,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "5.0%",
       "6.0%",
-      "8.0%",
-      "7.0%"
+      "8.0%"
     ],
     "correctAnswer": "B",
     "explanation": "Mean = (10 - 5 + 8 + 12 + 5) / 5 = 30 / 5 = 6.0%."
@@ -6165,8 +5874,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "1%",
       "4%",
-      "6%",
-      "3.4%"
+      "6%"
     ],
     "correctAnswer": "B",
     "explanation": "With 5 observations, the median is the (5+1)/2 = 3rd value. The 3rd observation in the sorted list is 4%."
@@ -6181,8 +5889,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "3%",
       "4%",
-      "5%",
-      "6%"
+      "5%"
     ],
     "correctAnswer": "B",
     "explanation": "With 6 observations, the median = average of the 3rd and 4th values = (3% + 5%) / 2 = 4%."
@@ -6197,8 +5904,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "22%",
       "26%",
-      "28%",
-      "18%"
+      "28%"
     ],
     "correctAnswer": "C",
     "explanation": "Range = Maximum - Minimum = 20% - (-8%) = 28%."
@@ -6213,8 +5919,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "2.0%",
       "3.0%",
-      "4.0%",
-      "5.0%"
+      "4.0%"
     ],
     "correctAnswer": "C",
     "explanation": "Absolute deviations from mean: |2-4|=2, |6-4|=2, |10-4|=6, |-2-4|=6. MAD = (2+2+6+6)/4 = 16/4 = 4.0%."
@@ -6229,8 +5934,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "16.67% squared",
       "25.00% squared",
-      "33.33% squared",
-      "50.00% squared"
+      "33.33% squared"
     ],
     "correctAnswer": "B",
     "explanation": "Squared deviations: (5-10)^2=25, (10-10)^2=0, (15-10)^2=25. Sample variance = (25+0+25)/(3-1) = 50/2 = 25.00% squared."
@@ -6245,8 +5949,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "2.5%",
       "5.0%",
-      "6.25%",
-      "12.5%"
+      "6.25%"
     ],
     "correctAnswer": "B",
     "explanation": "Standard deviation = sqrt(25) = 5.0%. Standard deviation is always the positive square root of variance, expressed in the same units as the original data."
@@ -6261,8 +5964,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "0.50",
       "0.75",
-      "1.50",
-      "2.00"
+      "1.50"
     ],
     "correctAnswer": "C",
     "explanation": "CV = s / mean = 12% / 8% = 1.50. The fund has 1.5 units of risk per unit of mean return."
@@ -6277,8 +5979,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "1.73%",
       "2.55%",
-      "2.94%",
-      "4.00%"
+      "2.94%"
     ],
     "correctAnswer": "C",
     "explanation": "Returns below target: -3% (deviation=-5, sq=25) and 1% (deviation=-1, sq=1). Sum of squared deviations = 26. Target semideviation = sqrt(26/(4-1)) = sqrt(8.667) = 2.94%."
@@ -6293,8 +5994,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "IQR = 5.0%, upper fence = 5.0%",
       "IQR = 5.0%, upper fence = 11.0%",
-      "IQR = 2.0%, upper fence = 6.5%",
-      "IQR = 5.0%, upper fence = 8.5%"
+      "IQR = 2.0%, upper fence = 6.5%"
     ],
     "correctAnswer": "B",
     "explanation": "IQR = Q3 - Q1 = 3.5 - (-1.5) = 5.0%. Upper fence = Q3 + 1.5xIQR = 3.5 + 7.5 = 11.0%."
@@ -6309,8 +6009,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "0.22",
       "0.42",
-      "0.52",
-      "0.62"
+      "0.52"
     ],
     "correctAnswer": "B",
     "explanation": "rXY = sXY / (sX x sY) = 0.0045 / (0.09 x 0.12) = 0.0045 / 0.0108 = 0.4167, approximately 0.42."
@@ -6325,8 +6024,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Position 4.00",
       "Position 5.00",
-      "Position 5.25",
-      "Position 6.00"
+      "Position 5.25"
     ],
     "correctAnswer": "C",
     "explanation": "L25 = (n+1) x (y/100) = (20+1) x 0.25 = 21 x 0.25 = 5.25. The value lies between the 5th and 6th observations, requiring linear interpolation."
@@ -6341,8 +6039,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Thin-tailed (platykurtic) with less frequent extreme returns than normal",
       "Mesokurtic, similar to the normal distribution",
-      "Fat-tailed (leptokurtic) with more frequent extreme returns than normal",
-      "Negatively skewed with a long left tail"
+      "Fat-tailed (leptokurtic) with more frequent extreme returns than normal"
     ],
     "correctAnswer": "C",
     "explanation": "Kurtosis = 5.2 > 3 (excess kurtosis = 2.2 > 0), so the distribution is leptokurtic (fat-tailed). Extreme returns occur more frequently than under a normal distribution."
@@ -6357,8 +6054,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Frequent small losses and rare large gains",
       "A symmetric distribution of gains and losses",
-      "Frequent small gains and rare but large losses",
-      "Fatter tails than a normal distribution"
+      "Frequent small gains and rare but large losses"
     ],
     "correctAnswer": "C",
     "explanation": "Negative skewness means the distribution has a long left tail: frequent small gains (right-of-mean cluster) but occasional severe losses (left tail). Mean < Median < Mode."
@@ -6373,8 +6069,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "The value below which 20% of returns fall",
       "The value below which 30% of returns fall",
-      "The value below which 33% of returns fall",
-      "The value below which 40% of returns fall"
+      "The value below which 33% of returns fall"
     ],
     "correctAnswer": "B",
     "explanation": "Deciles divide a distribution into tenths. The 3rd decile is the 30th percentile, the value below which 30% of observations fall."
@@ -6389,8 +6084,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "60th percentile",
       "70th percentile",
-      "80th percentile",
-      "75th percentile"
+      "80th percentile"
     ],
     "correctAnswer": "C",
     "explanation": "Quintiles divide data into fifths. The 4th quintile is at the 80th percentile, the point below which 80% of observations fall."
@@ -6405,8 +6099,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "2.44%",
       "3.16%",
-      "3.46%",
-      "4.00%"
+      "3.46%"
     ],
     "correctAnswer": "B",
     "explanation": "Squared deviations: (4-8)^2=16, (8-8)^2=0, (12-8)^2=16, (6-8)^2=4, (10-8)^2=4. Sum=40. s^2=40/(5-1)=10. s=sqrt(10)=3.16%."
@@ -6421,8 +6114,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Fund X, CV = 0.67 vs Fund Y, CV = 0.75",
       "Fund Y, CV = 1.33 vs Fund X, CV = 1.50",
-      "Fund X, CV = 1.50 vs Fund Y, CV = 1.33",
-      "Both funds have equal CV of 1.33"
+      "Fund X, CV = 1.50 vs Fund Y, CV = 1.33"
     ],
     "correctAnswer": "C",
     "explanation": "CV(X) = 9/6 = 1.50; CV(Y) = 12/9 = 1.33. Fund Y has the lower CV (1.33 < 1.50), meaning less risk per unit of return despite a higher absolute standard deviation."
@@ -6437,8 +6129,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "MAD uses absolute values while standard deviation uses squared deviations",
       "Standard deviation amplifies large deviations through squaring",
-      "Both A and B are correct",
-      "They are always equal for symmetric distributions"
+      "Both A and B are correct"
     ],
     "correctAnswer": "C",
     "explanation": "Squaring deviations (as in standard deviation) amplifies large deviations more than taking absolute values (as in MAD), causing standard deviation >= MAD in general."
@@ -6453,8 +6144,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "4.5%",
       "5.5%",
-      "6.0%",
-      "7.0%"
+      "6.0%"
     ],
     "correctAnswer": "B",
     "explanation": "Without outlier: (4+5+6+7)/4 = 22/4 = 5.5%. This illustrates how a single extreme value can significantly distort the arithmetic mean."
@@ -6469,8 +6159,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Within the normal range of the distribution",
       "An outlier, falling above the upper fence",
-      "The third quartile value",
-      "Equal to 1.5 times the IQR above Q3"
+      "The third quartile value"
     ],
     "correctAnswer": "B",
     "explanation": "32% > upper fence of 27.5%, so it is classified as an outlier. Outliers lie beyond the whisker fences in a box-and-whisker plot."
@@ -6485,8 +6174,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Negatively skewed; mean < median < mode",
       "Positively skewed; mode < median < mean",
-      "Symmetric; mean = median = mode",
-      "Platykurtic; thin-tailed relative to normal"
+      "Symmetric; mean = median = mode"
     ],
     "correctAnswer": "B",
     "explanation": "Mode (6%) < Median (9%) < Mean (12%) indicates a positively skewed distribution with a long right tail."
@@ -6501,8 +6189,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Positive",
       "Zero",
-      "Negative",
-      "Cannot be determined"
+      "Negative"
     ],
     "correctAnswer": "C",
     "explanation": "Correlation = covariance / (sX x sY). Since covariance is negative and both standard deviations are positive (their product is positive), the correlation must be negative."
@@ -6517,8 +6204,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Trimmed: 1,000; Winsorized: 1,000",
       "Trimmed: 950; Winsorized: 1,000",
-      "Trimmed: 950; Winsorized: 950",
-      "Trimmed: 1,000; Winsorized: 950"
+      "Trimmed: 950; Winsorized: 950"
     ],
     "correctAnswer": "B",
     "explanation": "Trimming removes the bottom 2.5% and top 2.5% (50 observations total), leaving 950 for calculation. Winsorizing replaces those extreme values but retains all 1,000 observations in the count."
@@ -6533,8 +6219,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Mean > Median > Mode",
       "Mean < Median < Mode",
-      "Mean = Median = Mode",
-      "Median = Mode but Mean differs"
+      "Mean = Median = Mode"
     ],
     "correctAnswer": "C",
     "explanation": "For a normal (symmetric) distribution, the mean, median, and mode are all equal and located at the center of the distribution."
@@ -6549,8 +6234,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Fat-tailed (leptokurtic) relative to the normal distribution",
       "Similar to the normal distribution in tail behavior",
-      "Thin-tailed (platykurtic) relative to the normal distribution",
-      "Positively skewed with a long right tail"
+      "Thin-tailed (platykurtic) relative to the normal distribution"
     ],
     "correctAnswer": "C",
     "explanation": "Excess kurtosis = -0.8 < 0, so the distribution is platykurtic (thin-tailed). It generates fewer extreme observations than the normal distribution."
@@ -6565,8 +6249,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Outperformed 20% of peers",
       "Underperformed 80% of peers",
-      "Outperformed 80% of peers",
-      "Performed at the median of the peer group"
+      "Outperformed 80% of peers"
     ],
     "correctAnswer": "C",
     "explanation": "The 80th percentile means 80% of observations (peer managers) fall below this level. The manager has outperformed 80% of peers."
@@ -6581,8 +6264,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Equal to the standard deviation",
       "Greater than the standard deviation",
-      "Less than the standard deviation",
-      "Unrelated to the standard deviation"
+      "Less than the standard deviation"
     ],
     "correctAnswer": "C",
     "explanation": "When target = mean, the target semideviation captures only downside deviations (approximately half the data for a symmetric distribution), while standard deviation captures all deviations. So target semideviation < standard deviation."
@@ -6597,8 +6279,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Both assets have negative means",
       "The relationship between the assets is non-linear",
-      "The sample size is too large",
-      "The covariance between the assets is exactly zero"
+      "The sample size is too large"
     ],
     "correctAnswer": "B",
     "explanation": "The correlation coefficient measures only linear association. A strong non-linear relationship (e.g., quadratic) can produce a near-zero linear correlation coefficient."
@@ -6613,8 +6294,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "2.00% squared",
       "3.50% squared",
-      "4.50% squared",
-      "5.00% squared"
+      "4.50% squared"
     ],
     "correctAnswer": "C",
     "explanation": "Products of deviations: (+2)(+3)=6, (-1)(-2)=2, (-1)(-1)=1. Sum=9. Sample covariance = 9/(3-1) = 9/2 = 4.50% squared."
@@ -6629,8 +6309,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "The most likely single outcome",
       "The probability-weighted average of all possible outcomes",
-      "The simple arithmetic average of observed outcomes",
-      "The outcome with the highest assigned probability"
+      "The simple arithmetic average of observed outcomes"
     ],
     "correctAnswer": "B",
     "explanation": "E(X) = sum of P(Xi) * Xi for all i. The expected value is the probability-weighted average of the possible outcomes, not necessarily the most likely or most frequent outcome."
@@ -6645,8 +6324,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Expected value uses squared deviations while the sample mean does not",
       "Expected value is a forward-looking forecast while the sample mean is a historical average",
-      "The sample mean is probability-weighted while expected value is equally weighted",
-      "Expected value and sample mean are always equal for large samples"
+      "The sample mean is probability-weighted while expected value is equally weighted"
     ],
     "correctAnswer": "B",
     "explanation": "Expected value is a forward-looking probability-weighted forecast (or population mean). The sample mean is a historical equally-weighted average of past observations. The contrast is forecast vs. historical, or population vs. sample."
@@ -6661,8 +6339,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "The expected value of deviations from the mean",
       "The probability-weighted average of squared deviations from the expected value",
-      "The square root of the standard deviation",
-      "The range of possible outcomes multiplied by their probabilities"
+      "The square root of the standard deviation"
     ],
     "correctAnswer": "B",
     "explanation": "Variance = E{[X - E(X)]^2} = sum of P(Xi)*[Xi - E(X)]^2. It is the probability-weighted average of squared deviations from the expected value."
@@ -6677,8 +6354,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "The expected value is zero",
       "There is no dispersion; the outcome is certain",
-      "The variable has a symmetric distribution",
-      "The standard deviation equals the expected value"
+      "The variable has a symmetric distribution"
     ],
     "correctAnswer": "B",
     "explanation": "Variance >= 0. If variance = 0, there is no dispersion and the outcome is certain (not random at all). Every outcome equals the expected value."
@@ -6693,8 +6369,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Standard deviation is always smaller than variance",
       "Standard deviation is expressed in the same units as the random variable",
-      "Standard deviation is easier to compute than variance",
-      "Standard deviation can be negative, while variance cannot"
+      "Standard deviation is easier to compute than variance"
     ],
     "correctAnswer": "B",
     "explanation": "Standard deviation = sqrt(variance). If returns are in percent, the standard deviation is also in percent, while variance is in percent-squared. This makes standard deviation more intuitive."
@@ -6709,8 +6384,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "The probability of both A and B occurring",
       "The probability of A given that B has occurred",
-      "The probability of A or B occurring",
-      "The probability of A divided by the probability of B"
+      "The probability of A or B occurring"
     ],
     "correctAnswer": "B",
     "explanation": "P(A | B) is the conditional probability of event A given event B. It equals P(AB)/P(B), where P(AB) is the joint probability of both A and B."
@@ -6725,8 +6399,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "P(A | S1) + P(A | S2) + ... + P(A | Sn)",
       "P(A | S1)P(S1) + P(A | S2)P(S2) + ... + P(A | Sn)P(Sn)",
-      "P(A) x [P(S1) + P(S2) + ... + P(Sn)]",
-      "max[P(A | S1), P(A | S2), ..., P(A | Sn)]"
+      "P(A) x [P(S1) + P(S2) + ... + P(Sn)]"
     ],
     "correctAnswer": "B",
     "explanation": "The total probability rule: P(A) = sum of P(A|Si)*P(Si) for all i. The unconditional probability is a weighted average of conditional probabilities, weighted by the probability of each scenario."
@@ -6741,8 +6414,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "A table of joint probabilities for all possible outcomes",
       "A visual tool illustrating results of two or more events, showing probabilities at each branch",
-      "A histogram showing the frequency distribution of returns",
-      "A scatter plot of conditional vs. unconditional probabilities"
+      "A histogram showing the frequency distribution of returns"
     ],
     "correctAnswer": "B",
     "explanation": "A probability tree (or tree diagram) visually maps out sequences of events with their associated probabilities at each branch, making it easier to calculate joint and conditional probabilities."
@@ -6757,8 +6429,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Adding the probabilities along the path to that node",
       "Multiplying the probabilities along the path to that node",
-      "Dividing the final branch probability by the initial probability",
-      "Averaging the probabilities along the path to that node"
+      "Dividing the final branch probability by the initial probability"
     ],
     "correctAnswer": "B",
     "explanation": "Joint probability of a specific path = product of all branch probabilities along that path. For example, P(S1) x P(A|S1) gives the joint probability of scenario S1 and outcome A."
@@ -6773,8 +6444,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "The unconditional expected value adjusted by scenario S's probability",
       "The probability-weighted average of outcomes using only probabilities conditioned on S",
-      "Always equal to the unconditional expected value",
-      "The expected value calculated using only the most likely outcomes in scenario S"
+      "Always equal to the unconditional expected value"
     ],
     "correctAnswer": "B",
     "explanation": "E(X|S) = sum of P(Xi|S)*Xi. It is the expected value of X computed using probabilities conditional on scenario S, not the unconditional probabilities."
@@ -6789,8 +6459,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "The largest conditional expected value across all scenarios",
       "The sum of conditional expected values E(X|Si) weighted by P(Si)",
-      "The average of all conditional expected values regardless of probability",
-      "E(X|S) + E(X|S^C) for any two complementary scenarios"
+      "The average of all conditional expected values regardless of probability"
     ],
     "correctAnswer": "B",
     "explanation": "E(X) = sum of E(X|Si)*P(Si). The unconditional expected value equals the probability-weighted average of the conditional expected values across all mutually exclusive and exhaustive scenarios."
@@ -6805,8 +6474,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Calculate the variance of a random variable given a scenario",
       "Update prior probabilities using new information to obtain posterior probabilities",
-      "Convert conditional probabilities to unconditional probabilities",
-      "Determine the expected value of a variable given its standard deviation"
+      "Convert conditional probabilities to unconditional probabilities"
     ],
     "correctAnswer": "B",
     "explanation": "Bayes' formula provides a rational method for updating (revising) prior probabilities when new information arrives, yielding posterior (updated) probabilities."
@@ -6821,8 +6489,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Prior probability x unconditional probability of new information",
       "[P(new information | event) / P(new information)] x prior probability of event",
-      "[P(event | new information) / P(event)] x P(new information)",
-      "P(new information | event) + prior probability of event"
+      "[P(event | new information) / P(event)] x P(new information)"
     ],
     "correctAnswer": "B",
     "explanation": "Bayes' formula: P(Event|Info) = [P(Info|Event) / P(Info)] x P(Event). The ratio P(Info|Event)/P(Info) adjusts the prior probability upward if the new information is more likely given the event than in general."
@@ -6837,8 +6504,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "The probability calculated after all information has been incorporated",
       "The probability of an event before new information is incorporated",
-      "The conditional probability given the most recent observation",
-      "The probability that the new information is correct"
+      "The conditional probability given the most recent observation"
     ],
     "correctAnswer": "B",
     "explanation": "Prior probability reflects beliefs about an event before new information arrives. After applying Bayes' formula with the new information, the updated result is called the posterior probability."
@@ -6853,8 +6519,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "The prior probability before any information is received",
       "The unconditional probability of the new information",
-      "The updated probability of an event after incorporating new information",
-      "The joint probability of the event and the new information"
+      "The updated probability of an event after incorporating new information"
     ],
     "correctAnswer": "C",
     "explanation": "The posterior probability is the result of applying Bayes' formula: it is the updated (revised) probability of an event after incorporating new information. It replaces the prior probability."
@@ -6869,8 +6534,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "The prior probability of the event",
       "The posterior probability of the event",
-      "P(new information | event) — the probability of observing the new information given the event",
-      "P(event | new information) — the posterior probability"
+      "P(new information | event) \u2014 the probability of observing the new information given the event"
     ],
     "correctAnswer": "C",
     "explanation": "Likelihoods are the conditional probabilities of the new information given each possible event: P(information | event). They are the key inputs for updating probabilities using Bayes' formula."
@@ -6885,8 +6549,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Independent and normally distributed",
       "Mutually exclusive and exhaustive",
-      "Equally likely and independent",
-      "Conditional and complementary"
+      "Equally likely and independent"
     ],
     "correctAnswer": "B",
     "explanation": "The total probability rule and Bayes' formula require that the scenarios are mutually exclusive (cannot occur together) and exhaustive (cover all possibilities). This ensures probabilities sum to 1."
@@ -6901,8 +6564,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Each equal the corresponding prior probability",
       "Sum to 1.0",
-      "Each be larger than their corresponding prior probability",
-      "Sum to the unconditional probability of the new information"
+      "Each be larger than their corresponding prior probability"
     ],
     "correctAnswer": "B",
     "explanation": "Whether prior or posterior, probabilities across a complete set of mutually exclusive and exhaustive events must always sum to 1. This is a useful check when applying Bayes' formula."
@@ -6917,8 +6579,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Zero, because no prior information is available",
       "The unconditional probability of the new information",
-      "The likelihood P(new information | event)",
-      "1 divided by the number of possible events"
+      "The likelihood P(new information | event)"
     ],
     "correctAnswer": "C",
     "explanation": "With equal prior probabilities, Bayes' formula simplifies so that the posterior probability equals the likelihood P(information | event). The posterior is driven entirely by the information, not prior beliefs."
@@ -6933,11 +6594,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "The posterior probability is smaller than the prior probability",
       "The new information makes the event less likely",
-      "The posterior probability is larger than the prior probability",
-      "The prior and posterior probabilities are equal"
+      "The posterior probability is larger than the prior probability"
     ],
     "correctAnswer": "C",
-    "explanation": "When P(info|event) > P(info), the ratio exceeds 1, multiplying the prior probability by a factor greater than 1. This means the new information increases the probability of the event — the posterior > prior."
+    "explanation": "When P(info|event) > P(info), the ratio exceeds 1, multiplying the prior probability by a factor greater than 1. This means the new information increases the probability of the event \u2014 the posterior > prior."
   },
   {
     "id": "CH04-C021",
@@ -6949,8 +6609,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Inverts the prior probability to get the posterior probability",
       "Reverses the conditional: it uses the occurrence of an event to infer the probability of the scenario that generated it",
-      "Converts joint probabilities into unconditional probabilities",
-      "Calculates probabilities in reverse chronological order"
+      "Converts joint probabilities into unconditional probabilities"
     ],
     "correctAnswer": "B",
     "explanation": "The total probability rule goes from scenarios to events: P(A|S)*P(S) gives P(A). Bayes' formula reverses this: given the occurrence of A, it infers P(S|A), hence 'inverse probability'."
@@ -6965,8 +6624,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Always equals the unconditional variance of X",
       "Measures the dispersion of X given that scenario S has occurred",
-      "Is calculated using unconditional probabilities",
-      "Cannot be computed when the conditional expected value is non-zero"
+      "Is calculated using unconditional probabilities"
     ],
     "correctAnswer": "B",
     "explanation": "Conditional variance measures dispersion of X conditioned on a specific scenario S. It uses conditional probabilities P(Xi|S) and the conditional expected value E(X|S), similar to how unconditional variance is computed."
@@ -6981,8 +6639,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Reporting historical portfolio returns",
       "Estimating future returns, earnings, and other forward-looking quantities",
-      "Calculating the sample mean of past observations",
-      "Measuring actual deviations from benchmarks"
+      "Calculating the sample mean of past observations"
     ],
     "correctAnswer": "B",
     "explanation": "Expected values are forward-looking: analysts use them when forecasting EPS, future returns, and any uncertain quantity. This is distinct from the sample mean, which summarizes historical data."
@@ -6997,8 +6654,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Higher expected return",
       "Greater dispersion (risk) around the expected return",
-      "Lower probability of achieving the expected return",
-      "A negatively skewed return distribution"
+      "Lower probability of achieving the expected return"
     ],
     "correctAnswer": "B",
     "explanation": "Variance measures how spread out returns are around the expected value. Higher variance means greater uncertainty/risk. It does not directly imply higher expected returns or any particular skewness."
@@ -7013,8 +6669,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Each be greater than 0.50",
       "Equal the corresponding conditional probability",
-      "Sum to 1.0",
-      "Sum to the probability of the first branch"
+      "Sum to 1.0"
     ],
     "correctAnswer": "C",
     "explanation": "Since the terminal nodes represent all possible mutually exclusive outcomes, their joint probabilities must sum to 1.0. This consistency check ensures the probability tree is correctly constructed."
@@ -7029,8 +6684,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Bayesian statistics uses sample means while classical uses population means",
       "Bayesian probabilities are subject to continual updating as new information arrives",
-      "Classical statistics allows for prior beliefs while Bayesian does not",
-      "Bayesian statistics only applies to discrete random variables"
+      "Classical statistics allows for prior beliefs while Bayesian does not"
     ],
     "correctAnswer": "B",
     "explanation": "Bayesian statisticians treat probabilities as beliefs subject to revision as new information arrives. Probabilities are continually updated via Bayes' formula rather than being treated as fixed true values."
@@ -7045,8 +6699,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Taking the maximum conditional probability P(A|Si)",
       "Summing P(A|Si) x P(Si) over all mutually exclusive and exhaustive scenarios Si",
-      "Averaging all conditional probabilities P(A|Si)",
-      "Multiplying P(A|S1) by P(A|S2) for two scenarios"
+      "Averaging all conditional probabilities P(A|Si)"
     ],
     "correctAnswer": "B",
     "explanation": "Total probability rule: P(A) = sum of P(A|Si) x P(Si). This decomposes the unconditional probability into a probability-weighted average of conditional probabilities across all scenarios."
@@ -7061,11 +6714,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "Calculating unconditional expected value",
       "Using conditional expected value based on new scenario information",
-      "Applying the sample mean to a new dataset",
-      "Computing variance conditional on economic conditions"
+      "Applying the sample mean to a new dataset"
     ],
     "correctAnswer": "B",
-    "explanation": "When new information (rising interest rates) arrives, analysts revise their expectations. The revised EPS forecast is E(EPS | rising rates), a conditional expected value — the expected value given the new scenario."
+    "explanation": "When new information (rising interest rates) arrives, analysts revise their expectations. The revised EPS forecast is E(EPS | rising rates), a conditional expected value \u2014 the expected value given the new scenario."
   },
   {
     "id": "CH04-C029",
@@ -7077,8 +6729,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "The largest conditional expected value",
       "The probability-weighted average of conditional expected values",
-      "The median of all conditional expected values",
-      "The conditional expected value under the most likely scenario"
+      "The median of all conditional expected values"
     ],
     "correctAnswer": "B",
     "explanation": "E(X) = sum of E(X|Si)*P(Si). The unconditional and conditional expectations must be internally consistent; otherwise investors' models would imply mispricing and profit opportunities for others."
@@ -7093,8 +6744,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Percent",
       "Percent squared",
-      "Decimal form (e.g., 0.04)",
-      "The same units as standard deviation"
+      "Decimal form (e.g., 0.04)"
     ],
     "correctAnswer": "B",
     "explanation": "Variance involves squaring deviations, so if returns are in percent, variance is in percent-squared. This is why standard deviation (in percent) is often preferred for interpretation."
@@ -7109,8 +6759,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "The unconditional probability of low GDP was greater than 50%",
       "New information (low GDP) has updated the expected EPS to reflect the specific scenario",
-      "The unconditional and conditional forecasts must always differ",
-      "A lower GDP always results in a lower stock price"
+      "The unconditional and conditional forecasts must always differ"
     ],
     "correctAnswer": "B",
     "explanation": "Conditional expected value E(EPS | low GDP) = 1.80 reflects the revised forecast given the specific scenario. The original 2.50 is the probability-weighted average across all GDP scenarios; the 1.80 is conditioned on one particular scenario."
@@ -7125,8 +6774,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Less than 30% because the signal may be false",
       "Equal to 70% because the likelihood dominates",
-      "Greater than 30% because the signal is more likely given outperformance",
-      "Equal to 30% because prior beliefs cannot be changed"
+      "Greater than 30% because the signal is more likely given outperformance"
     ],
     "correctAnswer": "C",
     "explanation": "P(signal|outperform) = 0.70 > P(signal|underperform) = 0.20. The signal is more likely if the company outperforms, so the ratio P(signal|outperform)/P(signal) > 1, and the posterior exceeds the prior of 30%."
@@ -7141,8 +6789,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "0.60",
       "0.20",
-      "0.33",
-      "0.15"
+      "0.33"
     ],
     "correctAnswer": "B",
     "explanation": "Each expansion terminal node probability = P(expansion) x P(outcome|expansion) = 0.60 x (1/3) = 0.20. Joint probabilities are found by multiplying along the branch."
@@ -7157,8 +6804,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "It allows calculation of the unconditional variance directly",
       "It enables assessment of how risk changes depending on which scenario prevails",
-      "Conditional variances always exceed unconditional variance",
-      "It eliminates the need to estimate prior probabilities"
+      "Conditional variances always exceed unconditional variance"
     ],
     "correctAnswer": "B",
     "explanation": "Conditional variance measures risk within a specific scenario. Comparing conditional variances across scenarios shows how uncertainty about outcomes differs between, for example, a bull vs. bear market environment."
@@ -7173,8 +6819,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "The unconditional probability of the event",
       "The posterior probability of the event",
-      "The joint probability of both the event and the information",
-      "The prior probability adjusted for the information"
+      "The joint probability of both the event and the information"
     ],
     "correctAnswer": "C",
     "explanation": "P(Info|Event) x P(Event) = P(Info AND Event), the joint probability that both the event occurs and the information is observed. Dividing by P(Info) conditions on the information having been observed."
@@ -7189,8 +6834,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "The prior probability of the event of interest",
       "The total probability rule: summing P(Info|Si) x P(Si) over all scenarios",
-      "The posterior probability from the previous period",
-      "The likelihood of the most probable scenario"
+      "The posterior probability from the previous period"
     ],
     "correctAnswer": "B",
     "explanation": "P(Information) = sum of P(Info|Si) x P(Si) over all mutually exclusive and exhaustive scenarios. This is the total probability rule applied to the new information."
@@ -7205,8 +6849,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Variance, then expected value, then standard deviation",
       "Standard deviation, then variance, then expected value",
-      "Expected value, then variance, then standard deviation",
-      "Expected value, then standard deviation, then variance"
+      "Expected value, then variance, then standard deviation"
     ],
     "correctAnswer": "C",
     "explanation": "The correct sequence is: (1) compute E(X), (2) use E(X) to compute variance as E{[X - E(X)]^2}, (3) take the square root of variance to get standard deviation. Expected value must be known before variance can be calculated."
@@ -7221,8 +6864,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "The scenario with the highest prior probability",
       "The scenario with the highest likelihood P(information | scenario)",
-      "The scenario with the lowest unconditional probability",
-      "All scenarios will still have equal posterior probabilities"
+      "The scenario with the lowest unconditional probability"
     ],
     "correctAnswer": "B",
     "explanation": "With equal priors, the posterior is proportional to the likelihood P(info|scenario). The scenario for which the new information is most probable will have the highest posterior probability."
@@ -7237,8 +6879,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "0.05",
       "0.30",
-      "0.48",
-      "0.52"
+      "0.48"
     ],
     "correctAnswer": "B",
     "explanation": "P(A|B) = P(AB)/P(B) = 0.12/0.40 = 0.30. The conditional probability of A given B is 30%, higher than the joint probability because we are now in the smaller probability space where B has occurred."
@@ -7253,8 +6894,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "The prior probability of outperformance is above 50%",
       "Positive surprises are more common among outperformers than in the overall market",
-      "The unconditional probability of a positive surprise is very high",
-      "The analyst has strong prior beliefs about future performance"
+      "The unconditional probability of a positive surprise is very high"
     ],
     "correctAnswer": "B",
     "explanation": "Bayes' formula increases the posterior above the prior when P(positive surprise | outperform) > P(positive surprise overall). The ratio [P(info|event)/P(info)] exceeds 1 only when the information is relatively more likely given the event."
@@ -7269,8 +6909,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "1.5%",
       "2.5%",
-      "3.5%",
-      "5.0%"
+      "3.5%"
     ],
     "correctAnswer": "B",
     "explanation": "E(R) = 0.20(15%) + 0.50(5%) + 0.30(-10%) = 3.0% + 2.5% - 3.0% = 2.5%."
@@ -7285,8 +6924,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "USD0.625",
       "USD0.680",
-      "USD0.705",
-      "USD0.750"
+      "USD0.705"
     ],
     "correctAnswer": "C",
     "explanation": "E(recovery) = 0.40(0.90) + 0.35(0.70) + 0.25(0.40) = 0.360 + 0.245 + 0.100 = USD0.705."
@@ -7301,10 +6939,9 @@ window.QUESTIONS_DATA = [
     "options": [
       "27.0% squared",
       "36.0% squared",
-      "42.0% squared",
       "54.0% squared"
     ],
-    "correctAnswer": "D",
+    "correctAnswer": "C",
     "explanation": "Variance = 0.60*(10-4)^2 + 0.40*(-5-4)^2 = 0.60*36 + 0.40*81 = 21.6 + 32.4 = 54.0% squared."
   },
   {
@@ -7317,8 +6954,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "4.74%",
       "10.00%",
-      "15.00%",
-      "22.50%"
+      "15.00%"
     ],
     "correctAnswer": "C",
     "explanation": "Standard deviation = sqrt(variance) = sqrt(0.0225) = 0.15 = 15.0%. Standard deviation is the positive square root of variance and is in the same units as the original variable."
@@ -7333,8 +6969,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "USD2.4875",
       "USD2.5250",
-      "USD2.4500",
-      "USD2.5375"
+      "USD2.4500"
     ],
     "correctAnswer": "A",
     "explanation": "E(EPS|declining rates) = 0.25(2.60) + 0.75(2.45) = 0.65 + 1.8375 = USD2.4875."
@@ -7349,8 +6984,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "USD2.2988",
       "USD2.3405",
-      "USD2.2850",
-      "USD2.4000"
+      "USD2.2850"
     ],
     "correctAnswer": "B",
     "explanation": "E(EPS) = 2.4875(0.60) + 2.12(0.40) = 1.4925 + 0.848 = USD2.3405."
@@ -7365,8 +6999,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "0.14",
       "0.56",
-      "0.70",
-      "0.80"
+      "0.70"
     ],
     "correctAnswer": "B",
     "explanation": "Joint probability = P(high growth) x P(strong earnings | high growth) = 0.70 x 0.80 = 0.56."
@@ -7381,8 +7014,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "0.28",
       "0.40",
-      "0.56",
-      "0.70"
+      "0.56"
     ],
     "correctAnswer": "C",
     "explanation": "P(event|info) = [P(info|event)/P(info)] x P(event) = (0.70/0.50) x 0.40 = 1.40 x 0.40 = 0.56."
@@ -7397,8 +7029,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "0.24",
       "0.36",
-      "0.40",
-      "0.48"
+      "0.40"
     ],
     "correctAnswer": "B",
     "explanation": "P(signal) = P(signal|outperform)*P(outperform) + P(signal|underperform)*P(underperform) = 0.60*0.40 + 0.20*0.60 = 0.24 + 0.12 = 0.36."
@@ -7413,8 +7044,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "0.450",
       "0.637",
-      "0.823",
-      "0.750"
+      "0.823"
     ],
     "correctAnswer": "C",
     "explanation": "P(S1|info) = [P(info|S1)/P(info)] x P(S1) = (0.75/0.41) x 0.45 = 1.8293 x 0.45 = 0.8232, approximately 0.823."
@@ -7429,8 +7059,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "0.9500",
       "0.9900",
-      "1.0000",
-      "1.0500"
+      "1.0000"
     ],
     "correctAnswer": "C",
     "explanation": "0.8232 + 0.1463 + 0.0305 = 1.0000. The posterior probabilities across all mutually exclusive and exhaustive events must sum to exactly 1.0, which serves as a useful verification check."
@@ -7445,8 +7074,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "USD2.20",
       "USD2.30",
-      "USD2.34",
-      "USD2.45"
+      "USD2.34"
     ],
     "correctAnswer": "C",
     "explanation": "E(EPS) = 0.15(2.60)+0.45(2.45)+0.24(2.20)+0.16(2.00) = 0.39+1.1025+0.528+0.32 = USD2.3405, approximately USD2.34."
@@ -7461,8 +7089,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "0.0194",
       "0.0244",
-      "0.0388",
-      "0.0489"
+      "0.0388"
     ],
     "correctAnswer": "C",
     "explanation": "Variance = 0.15*(2.60-2.34)^2 + 0.45*(2.45-2.34)^2 + 0.24*(2.20-2.34)^2 + 0.16*(2.00-2.34)^2 = 0.15*0.0676 + 0.45*0.0121 + 0.24*0.0196 + 0.16*0.1156 = 0.01014 + 0.005445 + 0.004704 + 0.018496 = 0.038785, approximately 0.0388."
@@ -7477,8 +7104,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "USD0.10",
       "USD0.15",
-      "USD0.20",
-      "USD0.25"
+      "USD0.20"
     ],
     "correctAnswer": "C",
     "explanation": "Standard deviation = sqrt(0.038785) = 0.19694, approximately USD0.20. This is in the same units (USD) as the original EPS values."
@@ -7493,8 +7119,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "0.720",
       "0.850",
-      "0.956",
-      "0.944"
+      "0.956"
     ],
     "correctAnswer": "C",
     "explanation": "P(timely|good credit) = [P(good credit|timely)/P(good credit)] x P(timely) = (0.85/0.80) x 0.90 = 1.0625 x 0.90 = 0.956."
@@ -7509,8 +7134,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "5.7%",
       "10.0%",
-      "14.3%",
-      "28.6%"
+      "14.3%"
     ],
     "correctAnswer": "C",
     "explanation": "P(failure|good) = [P(good|failure)/P(good)] x P(failure) = (0.50/0.70) x 0.20 = 0.7143 x 0.20 = 0.1429, approximately 14.3%."
@@ -7525,8 +7149,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "USD0.650",
       "USD0.700",
-      "USD0.755",
-      "USD0.845"
+      "USD0.755"
     ],
     "correctAnswer": "C",
     "explanation": "E(recovery|S1) = 0.45*0.90 + 0.55*0.80 = 0.405+0.44 = 0.845. E(recovery|S2) = 0.85*0.50+0.15*0.40 = 0.425+0.06 = 0.485. E(recovery) = 0.75*0.845+0.25*0.485 = 0.63375+0.12125 = USD0.755."
@@ -7541,8 +7164,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "USD33.75M",
       "USD37.00M",
-      "USD37.75M",
-      "USD40.00M"
+      "USD37.75M"
     ],
     "correctAnswer": "C",
     "explanation": "E(sales) = 0.05*70 + 0.70*40 + 0.25*25 = 3.50 + 28.00 + 6.25 = USD37.75 million."
@@ -7557,8 +7179,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "USD6.50M",
       "USD9.81M",
-      "USD12.20M",
-      "USD15.60M"
+      "USD12.20M"
     ],
     "correctAnswer": "B",
     "explanation": "Variance = 0.05*(70-37.75)^2+0.70*(40-37.75)^2+0.25*(25-37.75)^2 = 0.05*1040.06+0.70*5.0625+0.25*162.5625 = 52.003+3.544+40.641 = 96.188. SD = sqrt(96.188) = USD9.81M."
@@ -7573,8 +7194,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "USD36,400",
       "USD55,000",
-      "USD63,600",
-      "USD70,000"
+      "USD63,600"
     ],
     "correctAnswer": "C",
     "explanation": "E(S1) = 0.60*50,000+0.40*30,000 = 30,000+12,000 = 42,000. E(S2) = 0.90*80,000+0.10*60,000 = 72,000+6,000 = 78,000. E = 0.40*42,000+0.60*78,000 = 16,800+46,800 = USD63,600."
@@ -7589,8 +7209,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "0.08",
       "0.20",
-      "0.40",
-      "0.63"
+      "0.40"
     ],
     "correctAnswer": "C",
     "explanation": "P(A|B) = P(A and B)/P(B) = 0.18/0.45 = 0.40."
@@ -7605,8 +7224,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "1.5%",
       "2.5%",
-      "3.0%",
-      "5.0%"
+      "3.0%"
     ],
     "correctAnswer": "C",
     "explanation": "P(fired|good) = [P(good|fired)/P(good)] x P(fired) = (0.30/0.50) x 0.05 = 0.60 x 0.05 = 0.03 = 3.0%."
@@ -7621,8 +7239,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "USD74.575M",
       "USD79.805M",
-      "USD81.205M",
-      "USD85.625M"
+      "USD81.205M"
     ],
     "correctAnswer": "C",
     "explanation": "E(costs) = 85.625*0.80 + 63.525*0.20 = 68.50 + 12.705 = USD81.205M."
@@ -7637,8 +7254,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "0.600",
       "0.750",
-      "0.927",
-      "0.990"
+      "0.927"
     ],
     "correctAnswer": "C",
     "explanation": "P(survivor)=0.60. P(survivor|pass) = [P(pass|survivor)/P(pass)] x P(survivor) = (0.85/0.55)*0.60 = 1.5455*0.60 = 0.9273, approximately 0.927."
@@ -7653,8 +7269,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "0.0048",
       "0.0064",
-      "0.0096",
-      "0.0120"
+      "0.0096"
     ],
     "correctAnswer": "C",
     "explanation": "Var(EPS|stable) = 0.60*(2.20-2.12)^2 + 0.40*(2.00-2.12)^2 = 0.60*0.0064 + 0.40*0.0144 = 0.00384 + 0.00576 = 0.0096."
@@ -7669,8 +7284,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "USD400",
       "USD500",
-      "USD610",
-      "USD800"
+      "USD610"
     ],
     "correctAnswer": "C",
     "explanation": "E = 0.50*1000 + 0.30*500 + 0.20*(-200) = 500 + 150 - 40 = USD610."
@@ -7685,8 +7299,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "0.3775",
       "0.4375",
-      "0.5075",
-      "0.5675"
+      "0.5075"
     ],
     "correctAnswer": "C",
     "explanation": "P(market up) = P(up|expansion)*P(expansion) + P(up|recession)*P(recession) = 0.80*0.55 + 0.15*0.45 = 0.44 + 0.0675 = 0.5075."
@@ -7701,8 +7314,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "0.55",
       "0.75",
-      "0.87",
-      "0.92"
+      "0.87"
     ],
     "correctAnswer": "C",
     "explanation": "P(expansion|up) = [P(up|expansion)/P(up)] x P(expansion) = (0.80/0.5075) x 0.55 = 1.5764 x 0.55 = 0.8670, approximately 0.87."
@@ -7717,8 +7329,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "16",
       "20",
-      "21",
-      "23"
+      "21"
     ],
     "correctAnswer": "C",
     "explanation": "E(X) = 0.20*10 + 0.50*20 + 0.30*30 = 2 + 10 + 9 = 21."
@@ -7733,8 +7344,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "39",
       "49",
-      "59",
-      "69"
+      "59"
     ],
     "correctAnswer": "B",
     "explanation": "Var(X) = 0.20*(10-21)^2 + 0.50*(20-21)^2 + 0.30*(30-21)^2 = 0.20*121 + 0.50*1 + 0.30*81 = 24.2 + 0.5 + 24.3 = 49."
@@ -7749,8 +7359,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "The simple average of the individual asset expected returns",
       "A weighted average of the individual asset expected returns, using portfolio weights",
-      "The geometric mean of the individual asset expected returns",
-      "The expected return of the asset with the highest portfolio weight"
+      "The geometric mean of the individual asset expected returns"
     ],
     "correctAnswer": "B",
     "explanation": "E(Rp) = w1E(R1) + w2E(R2) + ... + wnE(Rn). Portfolio expected return is a weighted average of individual asset expected returns, where the weights are the proportions invested in each asset."
@@ -7765,8 +7374,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Each weight equals 1/n",
       "All weights are positive",
-      "The sum of all weights equals 1",
-      "Each weight is between 0 and 1"
+      "The sum of all weights equals 1"
     ],
     "correctAnswer": "C",
     "explanation": "Portfolio weights represent the fraction of total portfolio value invested in each asset. For a fully invested portfolio (no cash held separately), the weights must sum to 1. Individual weights can be negative (short positions)."
@@ -7781,8 +7389,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "The sum of the squared deviations of each return from its mean",
       "The probability-weighted average of the cross-products of each return's deviation from its expected value",
-      "The correlation between Ri and Rj divided by the product of their standard deviations",
-      "The average of the two assets' variances"
+      "The correlation between Ri and Rj divided by the product of their standard deviations"
     ],
     "correctAnswer": "B",
     "explanation": "Cov(Ri, Rj) = E[(Ri - E(Ri))(Rj - E(Rj))]. Covariance is the probability-weighted average of the cross-products of each asset's deviation from its own expected value."
@@ -7797,8 +7404,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Both assets have negative expected returns",
       "When one asset's return is above its expected value, the other tends to be below its expected value",
-      "The two assets always move in opposite directions",
-      "The portfolio variance is negative"
+      "The two assets always move in opposite directions"
     ],
     "correctAnswer": "B",
     "explanation": "Negative covariance means an average inverse relationship: when one asset's return is above its mean, the other tends to be below its mean. This does NOT mean they always move opposite, only on average."
@@ -7813,8 +7419,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Zero",
       "One",
-      "The variance of R, sigma^2(R)",
-      "The standard deviation of R"
+      "The variance of R, sigma^2(R)"
     ],
     "correctAnswer": "C",
     "explanation": "Cov(R, R) = E{[R - E(R)][R - E(R)]} = E{[R - E(R)]^2} = sigma^2(R). The own covariance of a variable is its variance. This is why variance terms appear on the diagonal of a covariance matrix."
@@ -7829,8 +7434,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "0 and +1",
       "-infinity and +infinity",
-      "-1 and +1",
-      "-1 and 0"
+      "-1 and +1"
     ],
     "correctAnswer": "C",
     "explanation": "Correlation rho(Ri, Rj) = Cov(Ri, Rj) / [sigma(Ri) * sigma(Rj)] always lies between -1 and +1. The standardization by the product of standard deviations removes the unit dependency of covariance."
@@ -7845,8 +7449,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Cov(Ri, Rj) = rho(Ri, Rj) / [sigma(Ri) * sigma(Rj)]",
       "Cov(Ri, Rj) = rho(Ri, Rj) * sigma(Ri) * sigma(Rj)",
-      "rho(Ri, Rj) = Cov(Ri, Rj) * sigma(Ri) * sigma(Rj)",
-      "rho(Ri, Rj) = Cov(Ri, Rj) + sigma(Ri) + sigma(Rj)"
+      "rho(Ri, Rj) = Cov(Ri, Rj) * sigma(Ri) * sigma(Rj)"
     ],
     "correctAnswer": "B",
     "explanation": "From the correlation formula rho = Cov / (sigma_i * sigma_j), rearranging gives Cov(Ri, Rj) = rho(Ri, Rj) * sigma(Ri) * sigma(Rj). This form is frequently used to compute covariance from known correlation and standard deviations."
@@ -7861,8 +7464,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Covariances between different assets",
       "Correlations between assets",
-      "The variances of each individual asset",
-      "The portfolio weights assigned to each asset"
+      "The variances of each individual asset"
     ],
     "correctAnswer": "C",
     "explanation": "Diagonal entries of the covariance matrix are Cov(Ri, Ri) = sigma^2(Ri), the variances of each asset. Off-diagonal entries are the covariances between pairs of different assets."
@@ -7877,10 +7479,9 @@ window.QUESTIONS_DATA = [
     "options": [
       "n",
       "n^2",
-      "n*(n-1)",
       "n*(n-1)/2"
     ],
-    "correctAnswer": "D",
+    "correctAnswer": "C",
     "explanation": "A covariance matrix has n^2 total entries. Subtracting n diagonal (variance) terms leaves n*(n-1) off-diagonal entries. Because Cov(Ri, Rj) = Cov(Rj, Ri), there are only n*(n-1)/2 unique covariance terms."
   },
   {
@@ -7893,8 +7494,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Decreases, because individual variances dominate",
       "Stays the same",
-      "Increases, because off-diagonal covariance terms grow in number faster than variance terms",
-      "Becomes irrelevant beyond 10 assets"
+      "Increases, because off-diagonal covariance terms grow in number faster than variance terms"
     ],
     "correctAnswer": "C",
     "explanation": "For n assets: n variance terms and n*(n-1)/2 unique covariance terms. With 20 assets, there are 20 variances but 190 unique covariances. Covariance becomes increasingly dominant as n grows."
@@ -7909,8 +7509,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Asset correlations increase toward +1",
       "Asset correlations decrease (become more negative)",
-      "Portfolio weights are equal across all assets",
-      "The number of assets decreases"
+      "Portfolio weights are equal across all assets"
     ],
     "correctAnswer": "B",
     "explanation": "Diversification reduces portfolio variance. The reduction in variance relative to the weighted sum of individual variances comes from negative or low covariance/correlation. Lower correlation = greater diversification benefit."
@@ -7925,8 +7524,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Increase because the portfolio expected return also rises",
       "Stay the same because expected return is unaffected",
-      "Decrease because the assets move together more closely",
-      "Are eliminated only when correlation exactly equals +1"
+      "Decrease because the assets move together more closely"
     ],
     "correctAnswer": "C",
     "explanation": "As correlation approaches +1, the assets move together more and more. Diversification is most effective when assets move in opposite directions. With correlation = +1, holding both assets provides no variance reduction beyond the weighted variance."
@@ -7941,8 +7539,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "w1^2 * sigma1^2 + w2^2 * sigma2^2",
       "w1^2 * sigma1^2 + w2^2 * sigma2^2 + Cov(R1, R2)",
-      "w1^2 * sigma1^2 + w2^2 * sigma2^2 + 2*w1*w2*Cov(R1, R2)",
-      "w1 * sigma1^2 + w2 * sigma2^2 + w1*w2*Cov(R1, R2)"
+      "w1^2 * sigma1^2 + w2^2 * sigma2^2 + 2*w1*w2*Cov(R1, R2)"
     ],
     "correctAnswer": "C",
     "explanation": "Portfolio variance for two assets = w1^2*sigma1^2 + w2^2*sigma2^2 + 2*w1*w2*Cov(R1, R2). The factor of 2 arises because Cov(R1,R2) = Cov(R2,R1), so the cross term appears twice in the full double summation."
@@ -7957,8 +7554,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "The variance of portfolio returns below the mean",
       "The risk that portfolio value or return will fall below some minimum acceptable level",
-      "The difference between actual and expected portfolio returns",
-      "The probability that a portfolio will underperform the market index"
+      "The difference between actual and expected portfolio returns"
     ],
     "correctAnswer": "B",
     "explanation": "Shortfall risk is the risk that portfolio value (or return) falls below a minimum acceptable level (threshold RL) over a specified time horizon. It is a measure of downside risk."
@@ -7973,8 +7569,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "[E(Rp) - RF] / sigma_p",
       "[E(Rp) - RL] / sigma_p",
-      "[RL - E(Rp)] / sigma_p",
-      "E(Rp) / [sigma_p + RL]"
+      "[RL - E(Rp)] / sigma_p"
     ],
     "correctAnswer": "B",
     "explanation": "SFRatio = [E(Rp) - RL] / sigma_p, where RL is the minimum acceptable (threshold) return and sigma_p is portfolio standard deviation. It measures how many standard deviations the threshold is below the expected return."
@@ -7989,8 +7584,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Maximizes expected return for a given level of standard deviation",
       "Minimizes variance subject to a minimum expected return",
-      "Minimizes the probability that portfolio return falls below the threshold level RL",
-      "Maximizes the probability of exceeding the risk-free rate"
+      "Minimizes the probability that portfolio return falls below the threshold level RL"
     ],
     "correctAnswer": "C",
     "explanation": "Roy's criterion: minimize P(Rp < RL). Assuming normally distributed returns, this is equivalent to maximizing the SFRatio = [E(Rp) - RL] / sigma_p. Choose the portfolio with the highest SFRatio."
@@ -8005,8 +7599,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "The threshold return RL equals zero",
       "The threshold return RL equals the risk-free rate RF",
-      "The portfolio standard deviation equals 1",
-      "The expected return equals twice the threshold return"
+      "The portfolio standard deviation equals 1"
     ],
     "correctAnswer": "B",
     "explanation": "Sharpe ratio = [E(Rp) - RF] / sigma_p. When RL = RF in the SFRatio formula, SFRatio = Sharpe ratio. Maximizing the Sharpe ratio minimizes the probability of earning less than the risk-free rate."
@@ -8021,8 +7614,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Choose the portfolio with the lowest standard deviation",
       "Choose the portfolio with the highest expected return",
-      "Calculate each portfolio's SFRatio and choose the one with the highest SFRatio",
-      "Choose the portfolio with RL closest to the expected return"
+      "Calculate each portfolio's SFRatio and choose the one with the highest SFRatio"
     ],
     "correctAnswer": "C",
     "explanation": "Implementation: (1) Calculate SFRatio = [E(Rp) - RL] / sigma_p for each candidate portfolio; (2) Select the portfolio with the highest SFRatio. This portfolio minimizes P(Rp < RL) under the normality assumption."
@@ -8037,8 +7629,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "N(SFRatio)",
       "1 - N(SFRatio)",
-      "N(-SFRatio)",
-      "SFRatio / N(1)"
+      "N(-SFRatio)"
     ],
     "correctAnswer": "C",
     "explanation": "P(Rp < RL) = N(-SFRatio), where N() is the standard normal cumulative distribution function. Since N(-x) = 1 - N(x), a higher SFRatio means a lower probability of falling below RL."
@@ -8053,8 +7644,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "The probability that X occurs given Y has occurred",
       "The probability of simultaneous (joint) occurrences of specific values of X and Y",
-      "The marginal probability of X plus the marginal probability of Y",
-      "The product of the expected values of X and Y"
+      "The marginal probability of X plus the marginal probability of Y"
     ],
     "correctAnswer": "B",
     "explanation": "P(X=x, Y=y) gives the probability that X takes value x AND Y takes value y simultaneously. For example, P(X=3, Y=2) is the joint probability that X equals 3 and Y equals 2."
@@ -8069,8 +7659,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Cov(X, Y) = 0",
       "P(X, Y) = P(X) + P(Y)",
-      "P(X, Y) = P(X) * P(Y) for all values",
-      "E(XY) = E(X) + E(Y)"
+      "P(X, Y) = P(X) * P(Y) for all values"
     ],
     "correctAnswer": "C",
     "explanation": "Independence requires P(X,Y) = P(X)*P(Y) for all possible values of X and Y. Independence is a stronger condition than zero covariance (uncorrelated): independent variables are always uncorrelated, but uncorrelated variables may not be independent."
@@ -8085,8 +7674,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "E(X) + E(Y)",
       "E(X) * E(Y)",
-      "Cov(X, Y)",
-      "E(X^2) * E(Y^2)"
+      "Cov(X, Y)"
     ],
     "correctAnswer": "B",
     "explanation": "E(XY) = E(X)*E(Y) when X and Y are uncorrelated (or independent). This simplification is very useful when computing expected values of products of financial variables such as revenue = price * quantity."
@@ -8101,8 +7689,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "All covariance values are positive",
       "Cov(Ri, Rj) = Cov(Rj, Ri) for all i and j",
-      "The diagonal entries equal 1",
-      "The off-diagonal entries sum to zero"
+      "The diagonal entries equal 1"
     ],
     "correctAnswer": "B",
     "explanation": "By definition, Cov(Ri, Rj) = E[(Ri - ERi)(Rj - ERj)] = Cov(Rj, Ri). The covariance is symmetric in its arguments, so the matrix above the diagonal mirrors the matrix below the diagonal."
@@ -8117,8 +7704,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "2",
       "3",
-      "6",
-      "9"
+      "6"
     ],
     "correctAnswer": "B",
     "explanation": "Using n*(n-1)/2 = 3*2/2 = 3 distinct covariances for n=3 assets. The full formula includes 3 variance terms and 3 unique covariance terms (each multiplied by 2 in the expanded formula, giving 6 total covariance appearances)."
@@ -8133,8 +7719,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Sum of wi^2 * sigma_i^2 for all i",
       "Sum over all i of Sum over all j of wi*wj*Cov(Ri, Rj)",
-      "Sum of wi * sigma_i^2 + Sum of Cov(Ri, Rj)",
-      "n * average variance + n*(n-1) * average covariance"
+      "Sum of wi * sigma_i^2 + Sum of Cov(Ri, Rj)"
     ],
     "correctAnswer": "B",
     "explanation": "sigma^2(Rp) = sum_i sum_j wi*wj*Cov(Ri, Rj). When i=j, Cov(Ri, Ri) = sigma_i^2. This double summation captures all variance and covariance terms, weighted by the products of portfolio weights."
@@ -8149,8 +7734,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "The expected loss over one day",
       "The minimum loss expected with 5% probability over one day",
-      "The maximum possible loss over one day",
-      "The standard deviation of daily returns"
+      "The maximum possible loss over one day"
     ],
     "correctAnswer": "B",
     "explanation": "A 95% one-day VaR = the minimum value of losses expected with 5% probability (i.e., the loss that will be exceeded only 5% of the time). A VaR of EUR5 million means there is a 5% chance of losing EUR5 million or more in one day."
@@ -8165,8 +7749,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Returns are uniformly distributed",
       "All assets have equal weights",
-      "Returns are normally distributed OR investors have quadratic utility functions",
-      "The portfolio contains at least 30 assets"
+      "Returns are normally distributed OR investors have quadratic utility functions"
     ],
     "correctAnswer": "C",
     "explanation": "Mean-variance analysis holds exactly when either (1) returns are normally distributed or (2) investors have quadratic utility functions. It can still be a useful approximation even when these assumptions are not exactly met."
@@ -8181,8 +7764,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "The products of each asset's returns weighted by joint probabilities",
       "All possible deviation cross-products weighted by the appropriate joint probability",
-      "The joint probabilities multiplied by the sum of returns",
-      "The marginal probabilities of each return outcome"
+      "The joint probabilities multiplied by the sum of returns"
     ],
     "correctAnswer": "B",
     "explanation": "Cov(RA, RB) = sum_i sum_j P(RA,i, RB,j)*(RA,i - E(RA))*(RB,j - E(RB)). For each combination of outcomes, multiply the joint probability by the product of the two deviations from their respective expected values."
@@ -8197,8 +7779,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "4.0%",
       "2.0%",
-      "40.0%",
-      "1.0%"
+      "40.0%"
     ],
     "correctAnswer": "A",
     "explanation": "RL = withdrawal / portfolio value = USD40,000 / USD1,000,000 = 4.0%. Any return below 4% means the withdrawal cannot be funded without reducing the initial principal."
@@ -8213,10 +7794,9 @@ window.QUESTIONS_DATA = [
     "options": [
       "The variance of Ri",
       "Zero",
-      "The standard deviation of Ri",
       "One"
     ],
-    "correctAnswer": "D",
+    "correctAnswer": "C",
     "explanation": "rho(Ri, Ri) = Cov(Ri, Ri) / [sigma(Ri)*sigma(Ri)] = sigma^2(Ri) / sigma^2(Ri) = 1. Every variable is perfectly positively correlated with itself. This is why diagonal entries of a correlation matrix are always 1."
   },
   {
@@ -8229,8 +7809,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Equal, because independence does not affect standard deviation",
       "Higher, because more assets increase risk",
-      "Lower, because zero covariance eliminates cross-term risk contributions",
-      "Zero, because independent assets have no portfolio risk"
+      "Lower, because zero covariance eliminates cross-term risk contributions"
     ],
     "correctAnswer": "C",
     "explanation": "With zero covariances, portfolio variance = sum of wi^2*sigma_i^2, which is less than the full variance including positive covariance terms. The portfolio is less risky than when assets co-move positively."
@@ -8245,8 +7824,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "The assets have equal expected returns",
       "The assets have no linear relationship on average",
-      "The assets are independent",
-      "The portfolio variance equals the sum of the individual variances"
+      "The assets are independent"
     ],
     "correctAnswer": "B",
     "explanation": "Covariance = 0 means no average linear relationship between the returns. This is uncorrelatedness, which is a weaker condition than independence. The portfolio variance still equals sum of wi^2*sigma_i^2 when all pairwise covariances are zero."
@@ -8261,8 +7839,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Computing the expected return under normal market conditions",
       "Estimating losses under extremely unfavorable combinations of events",
-      "Calculating the Sharpe ratio for each possible portfolio allocation",
-      "Testing whether a portfolio satisfies the safety-first criterion"
+      "Calculating the Sharpe ratio for each possible portfolio allocation"
     ],
     "correctAnswer": "B",
     "explanation": "Stress testing/scenario analysis estimates losses in extremely adverse scenarios or combinations of events, complementing statistical measures like VaR that rely on distributional assumptions."
@@ -8277,8 +7854,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "The causal relationship between two asset returns",
       "The strength and direction of the linear association between two variables",
-      "The total variation in one variable explained by the other",
-      "The non-linear dependence between two variables"
+      "The total variation in one variable explained by the other"
     ],
     "correctAnswer": "B",
     "explanation": "Like covariance, correlation measures linear association. Its advantage over covariance is being a pure (unitless) number bounded between -1 and +1, making it easier to interpret the strength of the relationship."
@@ -8293,8 +7869,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "20",
       "190",
-      "380",
-      "400"
+      "380"
     ],
     "correctAnswer": "B",
     "explanation": "Unique covariances = n*(n-1)/2 = 20*19/2 = 190. The full covariance matrix has 400 entries; 20 are on the diagonal (variances); 380 are off-diagonal, but because the matrix is symmetric, only 190 are unique."
@@ -8309,8 +7884,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Covariances are always larger than variances",
       "The number of unique pairwise relationships grows quadratically while the number of assets grows linearly",
-      "Variance terms cancel out in the double summation formula",
-      "Each asset's weight appears twice in the formula"
+      "Variance terms cancel out in the double summation formula"
     ],
     "correctAnswer": "B",
     "explanation": "With n assets, there are n variance terms but n*(n-1)/2 unique covariances. For n=3: 3 variances vs. 3 covariances; for n=10: 10 variances vs. 45 covariances. The covariances grow as n^2 while variances grow as n."
@@ -8325,8 +7899,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "That negative correlation always improves the Sharpe ratio",
       "The fundamental diversification benefit: lower correlation reduces portfolio variance for the same expected return",
-      "That negatively correlated assets have higher individual expected returns",
-      "The safety-first principle applied to downside risk"
+      "That negatively correlated assets have higher individual expected returns"
     ],
     "correctAnswer": "B",
     "explanation": "Negative covariance terms in the portfolio variance formula reduce overall variance. Expected return (a weighted average) is unaffected by covariance. This is a core insight of modern portfolio theory: diversification reduces risk without sacrificing expected return."
@@ -8341,8 +7914,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Variance and correlation always move in the same direction",
       "Correlation is the standardized version of covariance; dividing by larger standard deviations can produce a lower correlation despite higher covariance",
-      "Equity returns are always less correlated than bond returns by definition",
-      "The bond classes have different maturities, which inflates their correlation artificially"
+      "Equity returns are always less correlated than bond returns by definition"
     ],
     "correctAnswer": "B",
     "explanation": "rho = Cov / (sigma_i * sigma_j). Even if Cov is large, dividing by large standard deviations can produce a lower correlation. Conversely, small Cov divided by very small standard deviations can produce high correlation."
@@ -8357,8 +7929,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Portfolio B, because higher sigma implies more upside potential above RL",
       "Portfolio A, because lower sigma means the threshold is further below the mean in standard deviation units",
-      "Both have the same SFRatio because they have the same expected return",
-      "Neither; the SFRatio cannot be computed without knowing the portfolio weights"
+      "Both have the same SFRatio because they have the same expected return"
     ],
     "correctAnswer": "B",
     "explanation": "SFRatio(A) = (10-2)/8 = 1.00; SFRatio(B) = (10-2)/12 = 0.67. Portfolio A has the higher SFRatio. With the same E(Rp), lower sigma places the threshold RL further below the mean in standard deviation units, reducing the probability of shortfall."
@@ -8373,8 +7944,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Minimizing portfolio variance regardless of expected return",
       "Maximizing the probability of earning at least the risk-free rate, which is equivalent to maximizing the Sharpe ratio",
-      "Selecting a portfolio with zero shortfall risk",
-      "Choosing the portfolio with the highest expected return"
+      "Selecting a portfolio with zero shortfall risk"
     ],
     "correctAnswer": "B",
     "explanation": "When RL = RF, SFRatio = [E(Rp) - RF] / sigma_p = Sharpe ratio. Maximizing the Sharpe ratio = maximizing the SFRatio = minimizing P(Rp < RF). Roy's criterion with RL = RF is conceptually identical to Sharpe ratio maximization."
@@ -8389,8 +7959,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Zero",
       "The sum of all individual variances",
-      "The sum of wi^2 * sigma_i^2 for all assets",
-      "The average individual variance divided by n"
+      "The sum of wi^2 * sigma_i^2 for all assets"
     ],
     "correctAnswer": "C",
     "explanation": "With all covariances = 0, sigma^2(Rp) = sum of wi^2*sigma_i^2. This is less than the sum of individual variances (which would require wi = 1 for all i, which is impossible for a diversified portfolio)."
@@ -8405,11 +7974,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "The two returns are dependent because P(RA,RB) does not equal P(RA) alone",
       "The two returns appear independent at this pair of values since P(RA,RB) = P(RA)*P(RB) = 0.04, but 0.20 does not equal 0.04, so they are NOT independent",
-      "The two returns are correlated because both have probability 0.20",
-      "Independence cannot be determined from a single pair of outcome probabilities alone"
+      "The two returns are correlated because both have probability 0.20"
     ],
     "correctAnswer": "B",
-    "explanation": "For independence, P(RA=25%, RB=20%) must equal P(RA=25%)*P(RB=20%) = 0.20*0.20 = 0.04. Since the joint probability is 0.20 not 0.04, these variables are NOT independent — they are strongly positively dependent at this pair of values."
+    "explanation": "For independence, P(RA=25%, RB=20%) must equal P(RA=25%)*P(RB=20%) = 0.20*0.20 = 0.04. Since the joint probability is 0.20 not 0.04, these variables are NOT independent \u2014 they are strongly positively dependent at this pair of values."
   },
   {
     "id": "CH05-C043",
@@ -8421,8 +7989,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Portfolio X has higher expected return than Portfolio Y",
       "Portfolio X has lower probability of falling below RL than Portfolio Y",
-      "Portfolio Y has lower standard deviation than Portfolio X",
-      "Portfolio X is safer only if RL equals the risk-free rate"
+      "Portfolio Y has lower standard deviation than Portfolio X"
     ],
     "correctAnswer": "B",
     "explanation": "P(Rp < RL) = N(-SFRatio). N(-1.5) < N(-0.8), so Portfolio X has the lower probability of falling below RL. The safety-first optimal portfolio has the highest SFRatio and lowest shortfall probability."
@@ -8437,8 +8004,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "n expected returns and n standard deviations",
       "n variances only",
-      "n variances and n*(n-1)/2 unique covariances",
-      "n^2 covariance terms including all diagonal terms"
+      "n variances and n*(n-1)/2 unique covariances"
     ],
     "correctAnswer": "C",
     "explanation": "Portfolio variance requires the full covariance matrix: n diagonal (variance) terms plus n*(n-1)/2 unique off-diagonal (covariance) terms. Expected returns are needed for portfolio expected return, not variance."
@@ -8453,8 +8019,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "The covariance matrix of all assets",
       "The correlation between each pair of assets",
-      "The portfolio weights for each asset",
-      "The standard deviations of all individual assets"
+      "The portfolio weights for each asset"
     ],
     "correctAnswer": "C",
     "explanation": "E(Rp) = sum of wi * E(Ri). Only the portfolio weights (wi) are needed in addition to individual expected returns. Covariance, correlation, and standard deviation are required for portfolio VARIANCE, not expected return."
@@ -8469,8 +8034,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Higher variance and higher expected return",
       "Lower variance and the same expected return",
-      "Higher variance and the same expected return",
-      "The same variance but higher Sharpe ratio"
+      "Higher variance and the same expected return"
     ],
     "correctAnswer": "B",
     "explanation": "Negative covariance reduces portfolio variance (a negative number is added to the variance formula) without affecting expected return (which depends only on weights and individual expected returns). This is the core diversification benefit."
@@ -8485,11 +8049,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "The expected return of the optimal portfolio",
       "The minimum acceptable return below which the fund will not meet its obligations (shortfall level)",
-      "The risk-free rate used to compute the Sharpe ratio",
-      "The standard deviation threshold for the portfolio"
+      "The risk-free rate used to compute the Sharpe ratio"
     ],
     "correctAnswer": "B",
-    "explanation": "RL is the threshold or shortfall level — the minimum return required to meet obligations. Any return below RL results in shortfall risk materializing. Roy's criterion minimizes P(Rp < RL) = P(Rp < 5%)."
+    "explanation": "RL is the threshold or shortfall level \u2014 the minimum return required to meet obligations. Any return below RL results in shortfall risk materializing. Roy's criterion minimizes P(Rp < RL) = P(Rp < 5%)."
   },
   {
     "id": "CH05-C048",
@@ -8501,8 +8064,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Definitely decrease due to greater diversification",
       "Definitely increase because the high-variance asset contributes more to portfolio variance through both its own variance term and its covariance terms",
-      "Stay the same because the expected return also changes",
-      "Decrease only if the high-variance asset has negative covariances with all other assets"
+      "Stay the same because the expected return also changes"
     ],
     "correctAnswer": "B",
     "explanation": "Increasing wi increases the wi^2*sigma_i^2 term directly and also increases all wi*wj*Cov(Ri,Rj) cross terms involving asset i. Unless all covariances with asset i are sufficiently negative, portfolio variance will increase."
@@ -8517,8 +8079,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Positive",
       "Between 0 and 1",
-      "Between -1 and +1 inclusive",
-      "Equal to the corresponding covariance"
+      "Between -1 and +1 inclusive"
     ],
     "correctAnswer": "C",
     "explanation": "Off-diagonal entries of a correlation matrix are correlation coefficients, which are bounded by -1 and +1. They can be positive (co-movement), negative (opposing movement), or zero (no linear relationship)."
@@ -8532,9 +8093,8 @@ window.QUESTIONS_DATA = [
     "question": "Standard mean-variance analysis treats risk symmetrically (above and below the mean). Safety-first rules differ because they:",
     "options": [
       "Use the geometric mean instead of the arithmetic mean",
-      "Focus exclusively on downside risk — the probability of falling below a specific threshold",
-      "Maximize variance to seek higher expected returns",
-      "Require returns to be log-normally rather than normally distributed"
+      "Focus exclusively on downside risk \u2014 the probability of falling below a specific threshold",
+      "Maximize variance to seek higher expected returns"
     ],
     "correctAnswer": "B",
     "explanation": "Standard deviation/variance captures variability both above and below the mean symmetrically. Safety-first rules focus only on downside risk: the probability that returns fall below RL. This asymmetric view is more relevant when investors care primarily about minimum acceptable outcomes."
@@ -8549,8 +8109,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "10.00%",
       "11.50%",
-      "11.75%",
-      "13.00%"
+      "11.75%"
     ],
     "correctAnswer": "C",
     "explanation": "E(Rp) = 0.50(13%) + 0.25(6%) + 0.25(15%) = 6.50% + 1.50% + 3.75% = 11.75%."
@@ -8565,8 +8124,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "5.6%",
       "6.0%",
-      "6.4%",
-      "7.2%"
+      "6.4%"
     ],
     "correctAnswer": "C",
     "explanation": "E(Rp) = 0.40(4%) + 0.60(8%) = 1.6% + 4.8% = 6.4%."
@@ -8581,8 +8139,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "0.086",
       "0.150",
-      "0.335",
-      "0.390"
+      "0.335"
     ],
     "correctAnswer": "A",
     "explanation": "Cov = rho * sigma_1 * sigma_2 = 0.24 * 0.64 * 0.56 = 0.086."
@@ -8597,8 +8154,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "2.70",
       "8.10",
-      "27.00",
-      "45.00"
+      "27.00"
     ],
     "correctAnswer": "C",
     "explanation": "Cov(R1, R2) = rho * sigma_1 * sigma_2 = 0.30 * 6 * 15 = 27. (In percent-squared units.)"
@@ -8613,8 +8169,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "81.00",
       "91.44",
-      "99.72",
-      "108.36"
+      "99.72"
     ],
     "correctAnswer": "C",
     "explanation": "sigma^2(Rp) = (0.40)^2*(36) + (0.60)^2*(225) + 2*(0.40)*(0.60)*(27) = 0.16*36 + 0.36*225 + 0.48*27 = 5.76 + 81 + 12.96 = 99.72."
@@ -8629,8 +8184,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "8.50%",
       "9.99%",
-      "11.20%",
-      "12.50%"
+      "11.20%"
     ],
     "correctAnswer": "B",
     "explanation": "sigma(Rp) = sqrt(99.72) = 9.986%, approximately 9.99%."
@@ -8645,8 +8199,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "0.073",
       "0.427",
-      "0.764",
-      "0.858"
+      "0.764"
     ],
     "correctAnswer": "C",
     "explanation": "sigma(HF) = sqrt(256) = 16; sigma(MI) = sqrt(81) = 9. rho = Cov / (sigma_HF * sigma_MI) = 110 / (16*9) = 110/144 = 0.764."
@@ -8661,8 +8214,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "5",
       "10",
-      "20",
-      "25"
+      "20"
     ],
     "correctAnswer": "B",
     "explanation": "Unique covariances = n*(n-1)/2 = 5*4/2 = 10. The 5x5 covariance matrix has 25 entries; 5 are on the diagonal (variances); 20 are off-diagonal; since the matrix is symmetric, only 10 are unique."
@@ -8677,8 +8229,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "171.00",
       "185.50",
-      "213.69",
-      "241.00"
+      "213.69"
     ],
     "correctAnswer": "C",
     "explanation": "sigma^2(Rp) = 0.04*196 + 0.09*225 + 0.25*400 + 2*0.06*105 + 2*0.10*140 + 2*0.15*150 = 7.84 + 20.25 + 100 + 12.60 + 28.00 + 45.00 = 213.69."
@@ -8693,8 +8244,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "13.07%",
       "13.88%",
-      "14.62%",
-      "15.30%"
+      "14.62%"
     ],
     "correctAnswer": "C",
     "explanation": "sigma(Rp) = sqrt(213.69) = 14.618%, approximately 14.62%."
@@ -8709,8 +8259,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "165.50",
       "178.25",
-      "195.88",
-      "210.40"
+      "195.88"
     ],
     "correctAnswer": "C",
     "explanation": "sigma^2(Rp) = 0.25*400 + 0.0625*81 + 0.0625*441 + 2*0.125*45 + 2*0.125*189 + 2*0.0625*38 = 100 + 5.0625 + 27.5625 + 11.25 + 47.25 + 4.75 = 195.875."
@@ -8725,8 +8274,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "12.0%",
       "13.0%",
-      "14.0%",
-      "15.0%"
+      "14.0%"
     ],
     "correctAnswer": "C",
     "explanation": "sigma(Rp) = sqrt(195.875) = 13.995%, approximately 14.0%."
@@ -8741,8 +8289,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "14.91%",
       "18.56%",
-      "21.10%",
-      "22.50%"
+      "21.10%"
     ],
     "correctAnswer": "B",
     "explanation": "Cov = 0.20*12*25 = 60. sigma^2(Rp) = 0.09*144 + 0.49*625 + 2*0.21*60 = 12.96 + 306.25 + 25.2 = 344.41. sigma(Rp) = sqrt(344.41) = 18.56%."
@@ -8757,8 +8304,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "0.533",
       "0.667",
-      "0.750",
-      "0.800"
+      "0.750"
     ],
     "correctAnswer": "B",
     "explanation": "SFRatio = [E(Rp) - RL] / sigma = (12% - 2%) / 15% = 10/15 = 0.667."
@@ -8773,8 +8319,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Portfolio 1, because it has a lower standard deviation",
       "Portfolio 2, because it has the higher SFRatio of 0.750",
-      "Portfolio 1, because it has the lower expected return and so is more conservative",
-      "Cannot determine without knowing the portfolio weights"
+      "Portfolio 1, because it has the lower expected return and so is more conservative"
     ],
     "correctAnswer": "B",
     "explanation": "Roy's safety-first criterion: choose the portfolio with the highest SFRatio. Portfolio 2's SFRatio of 0.750 exceeds Portfolio 1's 0.667, so Portfolio 2 minimizes P(Rp < 2%)."
@@ -8789,8 +8334,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "2.5%",
       "3.7%",
-      "4.5%",
-      "5.0%"
+      "4.5%"
     ],
     "correctAnswer": "B",
     "explanation": "RL = 50,000 / 1,350,000 = 0.0370 = 3.7%. Any portfolio return below 3.7% means the withdrawal would require invading principal."
@@ -8805,8 +8349,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Portfolio A: SFRatio = 0.513",
       "Portfolio B: SFRatio = 0.488",
-      "Portfolio C: SFRatio = 0.525",
-      "Portfolio A has the highest SFRatio because it has the highest expected return"
+      "Portfolio C: SFRatio = 0.525"
     ],
     "correctAnswer": "C",
     "explanation": "SFRatio(A) = (16-3.7)/24 = 0.513; SFRatio(B) = (12-3.7)/17 = 0.488; SFRatio(C) = (10-3.7)/12 = 0.525. Portfolio C has the highest SFRatio and is safety-first optimal despite having the lowest expected return."
@@ -8821,8 +8364,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "9.1%",
       "14.0%",
-      "18.2%",
-      "24.6%"
+      "18.2%"
     ],
     "correctAnswer": "C",
     "explanation": "P(Rp < 3.75%) = N(-0.906). From standard normal tables, N(-0.91) = 1 - N(0.91) = 1 - 0.8186 = 0.1814, approximately 18.2%."
@@ -8837,8 +8379,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "3.5%",
       "4.5%",
-      "5.5%",
-      "9.0%"
+      "5.5%"
     ],
     "correctAnswer": "B",
     "explanation": "RL = 90,000 / 2,000,000 = 0.045 = 4.5%."
@@ -8853,8 +8394,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Allocation A with SFRatio = 0.240",
       "Allocation B with SFRatio = 0.294",
-      "Allocation C with SFRatio = 0.279",
-      "Allocation A because it has the lowest standard deviation"
+      "Allocation C with SFRatio = 0.279"
     ],
     "correctAnswer": "B",
     "explanation": "SFRatio(A) = (6.5-4.5)/8.35 = 0.240; SFRatio(B) = (7.5-4.5)/10.21 = 0.294; SFRatio(C) = (8.5-4.5)/14.34 = 0.279. Allocation B has the highest SFRatio and is optimal."
@@ -8869,8 +8409,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "8",
       "12",
-      "16",
-      "20"
+      "16"
     ],
     "correctAnswer": "C",
     "explanation": "Cov = 0.20*(25-14)*(20-15) + 0.50*(12-14)*(16-15) + 0.30*(10-14)*(10-15) = 0.20*55 + 0.50*(-2) + 0.30*20 = 11 - 1 + 6 = 16."
@@ -8885,8 +8424,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "0.10",
       "0.20",
-      "0.30",
-      "0.45"
+      "0.30"
     ],
     "correctAnswer": "B",
     "explanation": "sigma(bonds) = sqrt(81) = 9%; sigma(EAFE) = sqrt(441) = 21%. rho = 38 / (9*21) = 38/189 = 0.201, approximately 0.20."
@@ -8901,8 +8439,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "5.5%",
       "6.0%",
-      "6.3%",
-      "7.0%"
+      "6.3%"
     ],
     "correctAnswer": "C",
     "explanation": "E(Rp) = 0.20*5% + 0.30*6% + 0.50*7% = 1.0% + 1.8% + 3.5% = 6.3%."
@@ -8917,8 +8454,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "5.76",
       "86.76",
-      "99.72",
-      "132.63"
+      "99.72"
     ],
     "correctAnswer": "B",
     "explanation": "With Cov=0: sigma^2(Rp) = w1^2*sigma1^2 + w2^2*sigma2^2 = (0.40)^2*36 + (0.60)^2*225 = 5.76 + 81 = 86.76. Compare to 99.72 when Cov=27, showing diversification benefit."
@@ -8933,8 +8469,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "21.09",
       "26.56",
-      "31.25",
-      "35.00"
+      "31.25"
     ],
     "correctAnswer": "B",
     "explanation": "Cov = 0.25*(25-16.25)*(30-23.75) + 0.50*(15-16.25)*(25-23.75) + 0.25*(10-16.25)*(15-23.75) = 0.25*54.6875 + 0.50*(-1.5625) + 0.25*54.6875 = 13.672 - 0.781 + 13.672 = 26.56."
@@ -8949,8 +8484,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Allocation A, because it has the highest expected return",
       "Allocation B, because it has the highest SFRatio of 0.906",
-      "Allocation C, because it balances return and risk",
-      "Allocation A, because it has the highest expected return per unit of risk"
+      "Allocation C, because it balances return and risk"
     ],
     "correctAnswer": "B",
     "explanation": "Roy's criterion: choose highest SFRatio. B's SFRatio of 0.906 > A's 0.787 > C's 0.513. Despite having the lowest expected return, B's low sigma makes it the safety-first optimal allocation."
@@ -8965,8 +8499,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "100.00",
       "117.35",
-      "132.63",
-      "195.88"
+      "132.63"
     ],
     "correctAnswer": "C",
     "explanation": "Variance terms only: w1^2*400 + w2^2*81 + w3^2*441 = 0.25*400 + 0.0625*81 + 0.0625*441 = 100 + 5.0625 + 27.5625 = 132.625. The remaining 195.875 - 132.625 = 63.25 comes from covariance terms."
@@ -8981,8 +8514,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "10.50%",
       "11.52%",
-      "12.75%",
-      "14.00%"
+      "12.75%"
     ],
     "correctAnswer": "B",
     "explanation": "sigma(Rp) = sqrt(132.625) = 11.52%. Compare to 14% with positive covariances. Positive covariances increase portfolio variance and risk beyond what individual variances alone suggest."
@@ -8997,8 +8529,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "10",
       "50",
-      "100",
-      "200"
+      "100"
     ],
     "correctAnswer": "C",
     "explanation": "Cov(X,Y) = rho * sigma_X * sigma_Y = 0.50 * 10 * 20 = 100 (in %^2 units)."
@@ -9013,8 +8544,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "100.00",
       "148.00",
-      "182.80",
-      "220.00"
+      "182.80"
     ],
     "correctAnswer": "B",
     "explanation": "sigma^2(Rp) = (0.60)^2*100 + (0.40)^2*400 + 2*(0.60)*(0.40)*100 = 36 + 64 + 48 = 148."
@@ -9029,8 +8559,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "1.00 to 0.75",
       "1.50 to 1.25",
-      "1.00 to 0.50",
-      "1.25 to 0.75"
+      "1.00 to 0.50"
     ],
     "correctAnswer": "A",
     "explanation": "SFRatio at RL=2%: (10-2)/8 = 1.00. SFRatio at RL=4%: (10-4)/8 = 0.75. Higher RL reduces the SFRatio and increases the probability of shortfall."
@@ -9045,8 +8574,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "6.9%",
       "8.9%",
-      "9.0%",
-      "9.5%"
+      "9.0%"
     ],
     "correctAnswer": "B",
     "explanation": "E(Rp) = 0.30*4% + 0.70*11% = 1.2% + 7.7% = 8.9%."
@@ -9061,8 +8589,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "14.0%",
       "15.0%",
-      "20.0%",
-      "22.0%"
+      "20.0%"
     ],
     "correctAnswer": "B",
     "explanation": "sigma_2 = sqrt(Var_2) = sqrt(225) = 15.0%. The diagonal entries of a covariance matrix are the variances of each asset."
@@ -9077,8 +8604,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "0%",
       "10%",
-      "20%",
-      "40%"
+      "20%"
     ],
     "correctAnswer": "C",
     "explanation": "With w1=1, all other wi=0: sigma^2(Rp) = 1^2*sigma_1^2 + 0 = sigma_1^2. sigma(Rp) = sigma_1 = 20%. A single-asset portfolio has no diversification benefit."
@@ -9093,8 +8619,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Portfolio X with SFRatio = 0.50",
       "Portfolio Y with SFRatio = 0.90",
-      "Both have the same SFRatio because sigma is equal",
-      "Portfolio X because it is more conservative"
+      "Both have the same SFRatio because sigma is equal"
     ],
     "correctAnswer": "B",
     "explanation": "SFRatio(X) = (8-3)/10 = 0.50; SFRatio(Y) = (12-3)/10 = 0.90. With identical sigma, the portfolio with higher expected return has a higher SFRatio and lower shortfall probability."
@@ -9109,8 +8634,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "11.52",
       "17.28",
-      "28.80",
-      "43.20"
+      "28.80"
     ],
     "correctAnswer": "C",
     "explanation": "E(RA)=0.60*15+0.40*(-5)=7%. E(RB)=0.60*8+0.40*2=5.6%. Cov=0.60*(15-7)*(8-5.6)+0.40*(-5-7)*(2-5.6)=0.60*8*2.4+0.40*(-12)*(-3.6)=11.52+17.28=28.80."
@@ -9125,8 +8649,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "10",
       "45",
-      "90",
-      "100"
+      "90"
     ],
     "correctAnswer": "B",
     "explanation": "Unique covariances = n*(n-1)/2 = 10*9/2 = 45. For 10 assets, the covariance matrix has 100 entries; 10 diagonal variance terms; 90 off-diagonal entries; 45 unique off-diagonal covariances."
@@ -9141,8 +8664,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "25",
       "50",
-      "75",
-      "100"
+      "75"
     ],
     "correctAnswer": "A",
     "explanation": "sigma^2(Rp) = w1^2*sigma1^2 + w2^2*sigma2^2 + 2*w1*w2*Cov = 0.25*100 + 0.25*100 + 2*0.25*(-50) = 25 + 25 - 25 = 25. Negative covariance significantly reduces portfolio variance."
@@ -9157,8 +8679,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "P1, P2, P3",
       "P3, P2, P1",
-      "P2, P3, P1",
-      "P2, P1, P3"
+      "P2, P3, P1"
     ],
     "correctAnswer": "C",
     "explanation": "SFRatio(P1) = (9-5)/6 = 0.667; SFRatio(P2) = (12-5)/9 = 0.778; SFRatio(P3) = (15-5)/14 = 0.714. Ranked highest to lowest: P2 (0.778) > P3 (0.714) > P1 (0.667)."
@@ -9173,8 +8694,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "0.40",
       "0.60",
-      "0.75",
-      "0.90"
+      "0.75"
     ],
     "correctAnswer": "B",
     "explanation": "rho = Cov / (sigma_A * sigma_B) = 108 / (15 * 12) = 108 / 180 = 0.60."
@@ -9189,8 +8709,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "10.0%",
       "11.2%",
-      "12.0%",
-      "13.0%"
+      "12.0%"
     ],
     "correctAnswer": "B",
     "explanation": "E(Rp) = 0.20*6 + 0.30*10 + 0.50*14 = 1.2 + 3.0 + 7.0 = 11.2%."
@@ -9205,8 +8724,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "0.80",
       "1.00",
-      "1.25",
-      "1.50"
+      "1.25"
     ],
     "correctAnswer": "B",
     "explanation": "Sharpe = [E(Rp) - RF] / sigma = (10-2)/8 = 1.00. SFRatio (with RL=RF=2%) = (10-2)/8 = 1.00. Both are identical when RL = RF, confirming the relationship between the two measures."
@@ -9221,8 +8739,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Decrease portfolio variance and increase expected return",
       "Increase portfolio variance without affecting expected return",
-      "Decrease both portfolio variance and expected return",
-      "Have no effect on either portfolio variance or expected return"
+      "Decrease both portfolio variance and expected return"
     ],
     "correctAnswer": "B",
     "explanation": "Positive covariance adds a positive term to the portfolio variance formula, increasing total portfolio variance. Expected return = weighted average of individual expected returns, which is unaffected by covariance."
@@ -9237,8 +8754,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "10.0%",
       "12.0%",
-      "15.0%",
-      "20.0%"
+      "15.0%"
     ],
     "correctAnswer": "C",
     "explanation": "Cov = rho*sigma1*sigma2 = 1*10*20 = 200. sigma^2(Rp) = 0.25*100 + 0.25*400 + 2*0.25*200 = 25+100+100 = 225. sigma(Rp) = sqrt(225) = 15%. With rho=+1, sigma(Rp) = w1*sigma1 + w2*sigma2 = 0.5*10 + 0.5*20 = 15%."
@@ -9253,8 +8769,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "Decreases from N(-1.0) to N(-0.5)",
       "Increases because the SFRatio drops from 1.0 to 0.5",
-      "Stays the same because only expected return and sigma matter",
-      "Decreases because a higher RL means a more achievable goal"
+      "Stays the same because only expected return and sigma matter"
     ],
     "correctAnswer": "B",
     "explanation": "SFRatio at RL=2%: (12-2)/10 = 1.0, P(shortfall) = N(-1.0). SFRatio at RL=7%: (12-7)/10 = 0.5, P(shortfall) = N(-0.5). N(-0.5) > N(-1.0), so the shortfall probability increases when RL rises."
@@ -9269,8 +8784,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "12",
       "24",
-      "144",
-      "288"
+      "144"
     ],
     "correctAnswer": "C",
     "explanation": "Cov(R,R) = sigma^2(R) = 12^2 = 144. The covariance of a variable with itself equals its own variance."
@@ -9285,8 +8799,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "0",
       "25",
-      "50",
-      "100"
+      "50"
     ],
     "correctAnswer": "A",
     "explanation": "Cov = rho*sigma1*sigma2 = -1*10*10 = -100. sigma^2(Rp) = 0.25*100 + 0.25*100 + 2*0.25*(-100) = 25+25-50 = 0. With rho=-1 and equal weights and equal sigmas, the portfolio can be made riskless!"
@@ -9301,8 +8814,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "8.5%",
       "9.5%",
-      "9.0%",
-      "10.0%"
+      "9.0%"
     ],
     "correctAnswer": "B",
     "explanation": "E(Rp) = 0.25*(5+8+11+14) = 0.25*38 = 9.5%. With equal weights, portfolio expected return equals the simple average of individual expected returns."
@@ -9317,8 +8829,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "5.0%",
       "10.0%",
-      "15.0%",
-      "20.0%"
+      "15.0%"
     ],
     "correctAnswer": "B",
     "explanation": "N(-1.28) = 1 - N(1.28) = 1 - 0.8997 = 0.1003, approximately 10.0%. For reference, the commonly used 90th percentile of the standard normal is approximately 1.28."
@@ -9333,8 +8844,7 @@ window.QUESTIONS_DATA = [
     "options": [
       "2.5%",
       "5.0%",
-      "7.5%",
-      "10.0%"
+      "7.5%"
     ],
     "correctAnswer": "B",
     "explanation": "RL = USD25,000 / USD500,000 = 0.05 = 5.0%. Any return below 5% means the investor cannot withdraw USD25,000 without reducing the initial USD500,000 principal."
@@ -9390,14 +8900,14 @@ window.QUESTIONS_DATA = [
     "chapterName": "Simulation Methods",
     "topic": "Lognormal Distribution",
     "difficulty": "Moderate",
-    "question": "If a normal random variable X has mean μ = 0.08 and variance σ² = 0.04, the mean of the lognormal variable Y = exp(X) is closest to:",
+    "question": "If a normal random variable X has mean \u03bc = 0.08 and variance \u03c3\u00b2 = 0.04, the mean of the lognormal variable Y = exp(X) is closest to:",
     "options": [
-      "exp(0.08) ≈ 1.083",
-      "exp(0.08 + 0.5 × 0.04) ≈ 1.105",
-      "exp(0.08 − 0.5 × 0.04) ≈ 1.062"
+      "exp(0.08) \u2248 1.083",
+      "exp(0.08 + 0.5 \u00d7 0.04) \u2248 1.105",
+      "exp(0.08 \u2212 0.5 \u00d7 0.04) \u2248 1.062"
     ],
     "correctAnswer": "B",
-    "explanation": "The mean of a lognormal variable is exp(μ + 0.5σ²) = exp(0.08 + 0.5 × 0.04) = exp(0.10) ≈ 1.105. The factor of exp(0.5σ²) > 1 reflects that the distribution can only spread upward past its lower bound of zero."
+    "explanation": "The mean of a lognormal variable is exp(\u03bc + 0.5\u03c3\u00b2) = exp(0.08 + 0.5 \u00d7 0.04) = exp(0.10) \u2248 1.105. The factor of exp(0.5\u03c3\u00b2) > 1 reflects that the distribution can only spread upward past its lower bound of zero."
   },
   {
     "id": "CH06-005",
@@ -9405,14 +8915,14 @@ window.QUESTIONS_DATA = [
     "chapterName": "Simulation Methods",
     "topic": "Lognormal Distribution",
     "difficulty": "Moderate",
-    "question": "As the variance σ² of the underlying normal distribution increases, the mean of the associated lognormal distribution will:",
+    "question": "As the variance \u03c3\u00b2 of the underlying normal distribution increases, the mean of the associated lognormal distribution will:",
     "options": [
       "Decrease, because higher volatility lowers expected returns",
-      "Stay the same, because the mean only depends on μ",
+      "Stay the same, because the mean only depends on \u03bc",
       "Increase, because the distribution can only spread upward past its lower bound of zero"
     ],
     "correctAnswer": "C",
-    "explanation": "The lognormal mean is exp(μ + 0.5σ²). As σ² increases, the distribution spreads out, but it cannot spread downward past zero — so the center shifts rightward, increasing the mean. This is why the lognormal mean exp(μ + 0.5σ²) is always greater than exp(μ)."
+    "explanation": "The lognormal mean is exp(\u03bc + 0.5\u03c3\u00b2). As \u03c3\u00b2 increases, the distribution spreads out, but it cannot spread downward past zero \u2014 so the center shifts rightward, increasing the mean. This is why the lognormal mean exp(\u03bc + 0.5\u03c3\u00b2) is always greater than exp(\u03bc)."
   },
   {
     "id": "CH06-006",
@@ -9420,7 +8930,7 @@ window.QUESTIONS_DATA = [
     "chapterName": "Simulation Methods",
     "topic": "Lognormal Distribution",
     "difficulty": "Easy",
-    "question": "The Black–Scholes–Merton option pricing model assumes that the price of the underlying asset follows which distribution?",
+    "question": "The Black\u2013Scholes\u2013Merton option pricing model assumes that the price of the underlying asset follows which distribution?",
     "options": [
       "Normal distribution",
       "Lognormal distribution",
@@ -9442,7 +8952,7 @@ window.QUESTIONS_DATA = [
       "Only the mean of the lognormal variable"
     ],
     "correctAnswer": "B",
-    "explanation": "Unlike most distributions, a lognormal distribution is defined in terms of the parameters of a different distribution — specifically, the mean (μ) and variance (σ²) of the associated normal distribution ln(Y). Analysts must track two sets of statistics: those for the normal and those for the lognormal variable itself."
+    "explanation": "Unlike most distributions, a lognormal distribution is defined in terms of the parameters of a different distribution \u2014 specifically, the mean (\u03bc) and variance (\u03c3\u00b2) of the associated normal distribution ln(Y). Analysts must track two sets of statistics: those for the normal and those for the lognormal variable itself."
   },
   {
     "id": "CH06-008",
@@ -9457,7 +8967,7 @@ window.QUESTIONS_DATA = [
       "The distribution of future portfolio values"
     ],
     "correctAnswer": "B",
-    "explanation": "The normal distribution is often a good approximation for returns, while the lognormal distribution is typically used for prices. Both distributions are therefore important in finance — the normal for returns and the lognormal for prices."
+    "explanation": "The normal distribution is often a good approximation for returns, while the lognormal distribution is typically used for prices. Both distributions are therefore important in finance \u2014 the normal for returns and the lognormal for prices."
   },
   {
     "id": "CH06-009",
@@ -9472,7 +8982,7 @@ window.QUESTIONS_DATA = [
       "The average of one-period continuously compounded returns"
     ],
     "correctAnswer": "B",
-    "explanation": "A key property of continuously compounded returns is that the multi-period return is the sum of one-period returns: r₀,T = r₀,₁ + r₁,₂ + … + r_{T-1,T}. This additive property makes continuously compounded returns analytically convenient."
+    "explanation": "A key property of continuously compounded returns is that the multi-period return is the sum of one-period returns: r\u2080,T = r\u2080,\u2081 + r\u2081,\u2082 + \u2026 + r_{T-1,T}. This additive property makes continuously compounded returns analytically convenient."
   },
   {
     "id": "CH06-010",
@@ -9480,14 +8990,14 @@ window.QUESTIONS_DATA = [
     "chapterName": "Simulation Methods",
     "topic": "Continuously Compounded Returns",
     "difficulty": "Easy",
-    "question": "If today's stock price is P₀ and the continuously compounded return over the period is r₀,T, the stock price at time T equals:",
+    "question": "If today's stock price is P\u2080 and the continuously compounded return over the period is r\u2080,T, the stock price at time T equals:",
     "options": [
-      "P₀ × (1 + r₀,T)",
-      "P₀ × exp(r₀,T)",
-      "P₀ + r₀,T"
+      "P\u2080 \u00d7 (1 + r\u2080,T)",
+      "P\u2080 \u00d7 exp(r\u2080,T)",
+      "P\u2080 + r\u2080,T"
     ],
     "correctAnswer": "B",
-    "explanation": "The future stock price is P_T = P₀ × exp(r₀,T). Since r₀,T is approximately normally distributed, and P_T is proportional to the exponential of a normal variable, P_T follows a lognormal distribution."
+    "explanation": "The future stock price is P_T = P\u2080 \u00d7 exp(r\u2080,T). Since r\u2080,T is approximately normally distributed, and P_T is proportional to the exponential of a normal variable, P_T follows a lognormal distribution."
   },
   {
     "id": "CH06-011",
@@ -9495,14 +9005,14 @@ window.QUESTIONS_DATA = [
     "chapterName": "Simulation Methods",
     "topic": "Continuously Compounded Returns",
     "difficulty": "Moderate",
-    "question": "Assume one-period continuously compounded returns are i.i.d. with mean μ and variance σ². The variance of the T-period continuously compounded return r₀,T is:",
+    "question": "Assume one-period continuously compounded returns are i.i.d. with mean \u03bc and variance \u03c3\u00b2. The variance of the T-period continuously compounded return r\u2080,T is:",
     "options": [
-      "σ²",
-      "σ² / T",
-      "σ²T"
+      "\u03c3\u00b2",
+      "\u03c3\u00b2 / T",
+      "\u03c3\u00b2T"
     ],
     "correctAnswer": "C",
-    "explanation": "Because the returns are i.i.d. (independent), variances add: Var(r₀,T) = σ²T. As a result, the standard deviation of the T-period return scales as σ√T — the square-root-of-time rule fundamental in risk management."
+    "explanation": "Because the returns are i.i.d. (independent), variances add: Var(r\u2080,T) = \u03c3\u00b2T. As a result, the standard deviation of the T-period return scales as \u03c3\u221aT \u2014 the square-root-of-time rule fundamental in risk management."
   },
   {
     "id": "CH06-012",
@@ -9517,7 +9027,7 @@ window.QUESTIONS_DATA = [
       "Returns are always positively correlated across periods"
     ],
     "correctAnswer": "B",
-    "explanation": "Independence captures the proposition that investors cannot predict future returns using past returns. The 'identical distribution' component captures stationarity — that mean and variance do not change over time."
+    "explanation": "Independence captures the proposition that investors cannot predict future returns using past returns. The 'identical distribution' component captures stationarity \u2014 that mean and variance do not change over time."
   },
   {
     "id": "CH06-013",
@@ -9527,12 +9037,12 @@ window.QUESTIONS_DATA = [
     "difficulty": "Moderate",
     "question": "Daily closing prices for a stock are USD 50, USD 52, and USD 49. The total two-day continuously compounded return is closest to:",
     "options": [
-      "−2.04%",
-      "−2.00%",
+      "\u22122.04%",
+      "\u22122.00%",
       "+4.00%"
     ],
     "correctAnswer": "A",
-    "explanation": "Total continuously compounded return = ln(49/50) = ln(0.98) ≈ −0.0202 = −2.02%. Equivalently: ln(52/50) + ln(49/52) = 0.0392 + (−0.0594) = −0.0202. The two approaches give the same answer because cc returns are additive."
+    "explanation": "Total continuously compounded return = ln(49/50) = ln(0.98) \u2248 \u22120.0202 = \u22122.02%. Equivalently: ln(52/50) + ln(49/52) = 0.0392 + (\u22120.0594) = \u22120.0202. The two approaches give the same answer because cc returns are additive."
   },
   {
     "id": "CH06-014",
@@ -9547,7 +9057,7 @@ window.QUESTIONS_DATA = [
       "45.0%"
     ],
     "correctAnswer": "B",
-    "explanation": "Annualised volatility = σ_daily × √250 = 0.018 × 15.811 ≈ 0.2846 = 28.5%. The convention is to use 250 trading days (not 365 calendar days) when annualising financial market volatility."
+    "explanation": "Annualised volatility = \u03c3_daily \u00d7 \u221a250 = 0.018 \u00d7 15.811 \u2248 0.2846 = 28.5%. The convention is to use 250 trading days (not 365 calendar days) when annualising financial market volatility."
   },
   {
     "id": "CH06-015",
@@ -9562,7 +9072,7 @@ window.QUESTIONS_DATA = [
       "250"
     ],
     "correctAnswer": "C",
-    "explanation": "Annualising is based on 250 trading days — the approximate number of days financial markets are open for trading in a year. Using 365 calendar days would overstate annualised volatility."
+    "explanation": "Annualising is based on 250 trading days \u2014 the approximate number of days financial markets are open for trading in a year. Using 365 calendar days would overstate annualised volatility."
   },
   {
     "id": "CH06-016",
@@ -9570,7 +9080,7 @@ window.QUESTIONS_DATA = [
     "chapterName": "Simulation Methods",
     "topic": "Continuously Compounded Returns",
     "difficulty": "Moderate",
-    "question": "Even if one-period continuously compounded returns are not normally distributed, the T-period return r₀,T will be approximately normal for large T because of:",
+    "question": "Even if one-period continuously compounded returns are not normally distributed, the T-period return r\u2080,T will be approximately normal for large T because of:",
     "options": [
       "The law of large numbers",
       "The central limit theorem",
@@ -9592,7 +9102,7 @@ window.QUESTIONS_DATA = [
       "20.00%"
     ],
     "correctAnswer": "B",
-    "explanation": "From σ_annual = σ_daily × √250, rearranging: σ_daily = 0.20 / √250 = 0.20 / 15.81 ≈ 0.01265 = 1.265%. This reverses the annualisation formula to recover daily volatility."
+    "explanation": "From \u03c3_annual = \u03c3_daily \u00d7 \u221a250, rearranging: \u03c3_daily = 0.20 / \u221a250 = 0.20 / 15.81 \u2248 0.01265 = 1.265%. This reverses the annualisation formula to recover daily volatility."
   },
   {
     "id": "CH06-018",
@@ -9622,7 +9132,7 @@ window.QUESTIONS_DATA = [
       "It requires no assumptions about the distribution of risk factors"
     ],
     "correctAnswer": "B",
-    "explanation": "Monte Carlo simulation is especially useful when no analytic pricing formula is available — for example, for securities with complex embedded options such as Asian options, lookback options, and mortgage-backed securities."
+    "explanation": "Monte Carlo simulation is especially useful when no analytic pricing formula is available \u2014 for example, for securities with complex embedded options such as Asian options, lookback options, and mortgage-backed securities."
   },
   {
     "id": "CH06-020",
@@ -9630,14 +9140,14 @@ window.QUESTIONS_DATA = [
     "chapterName": "Simulation Methods",
     "topic": "Monte Carlo Simulation",
     "difficulty": "Moderate",
-    "question": "In Monte Carlo simulation of stock prices, the formula ΔStock price = (μ × Prior price × Δt) + (σ × Prior price × Z_k) uses Z_k drawn from a standard normal distribution. What role does Z_k serve?",
+    "question": "In Monte Carlo simulation of stock prices, the formula \u0394Stock price = (\u03bc \u00d7 Prior price \u00d7 \u0394t) + (\u03c3 \u00d7 Prior price \u00d7 Z_k) uses Z_k drawn from a standard normal distribution. What role does Z_k serve?",
     "options": [
       "Z_k represents the drift component of the price change",
       "Z_k is the key risk factor that introduces randomness into the simulation",
       "Z_k controls the time increment of the simulation"
     ],
     "correctAnswer": "B",
-    "explanation": "Z_k is the key risk factor — it is drawn from a standard normal distribution each period to introduce randomness. The analyst controls the distribution of the stock price by choosing μ (mean/drift) and σ (volatility). Multiple key risk factors can be used in more complex simulations."
+    "explanation": "Z_k is the key risk factor \u2014 it is drawn from a standard normal distribution each period to introduce randomness. The analyst controls the distribution of the stock price by choosing \u03bc (mean/drift) and \u03c3 (volatility). Multiple key risk factors can be used in more complex simulations."
   },
   {
     "id": "CH06-021",
@@ -9652,7 +9162,7 @@ window.QUESTIONS_DATA = [
       "Specify the quantity of interest, then immediately run all trials"
     ],
     "correctAnswer": "A",
-    "explanation": "Step 2 is to specify a time grid (divide the horizon into K sub-periods). Step 3 is to specify the method for generating data — including distributional assumptions for risk factors — and draw random numbers. The time grid must be defined before drawing random values for each sub-period."
+    "explanation": "Step 2 is to specify a time grid (divide the horizon into K sub-periods). Step 3 is to specify the method for generating data \u2014 including distributional assumptions for risk factors \u2014 and draw random numbers. The time grid must be defined before drawing random values for each sub-period."
   },
   {
     "id": "CH06-022",
@@ -9660,14 +9170,14 @@ window.QUESTIONS_DATA = [
     "chapterName": "Simulation Methods",
     "topic": "Monte Carlo Simulation",
     "difficulty": "Moderate",
-    "question": "An analyst runs a Monte Carlo simulation for an Asian option (payoff = max(Final Price − Average Price, 0)) using 1,000 trials. In 640 of the trials the final price was below the average price. The Monte Carlo estimate of the option's value is:",
+    "question": "An analyst runs a Monte Carlo simulation for an Asian option (payoff = max(Final Price \u2212 Average Price, 0)) using 1,000 trials. In 640 of the trials the final price was below the average price. The Monte Carlo estimate of the option's value is:",
     "options": [
       "The maximum payoff across all 1,000 trials",
       "The mean of the present values of the payoffs across all 1,000 trials",
       "The payoff from the median trial"
     ],
     "correctAnswer": "B",
-    "explanation": "The Monte Carlo estimate is the mean of the present values of the simulated payoffs across all trials: (1/I) × Σ C_{i0}. In 640 of 1,000 trials the payoff is zero; the average incorporates both the zero-payoff and positive-payoff trials."
+    "explanation": "The Monte Carlo estimate is the mean of the present values of the simulated payoffs across all trials: (1/I) \u00d7 \u03a3 C_{i0}. In 640 of 1,000 trials the payoff is zero; the average incorporates both the zero-payoff and positive-payoff trials."
   },
   {
     "id": "CH06-023",
@@ -9697,7 +9207,7 @@ window.QUESTIONS_DATA = [
       "It eliminates the need for probability distribution assumptions"
     ],
     "correctAnswer": "B",
-    "explanation": "Monte Carlo complements analytical methods — it handles complex cases where no formula exists, but analytical methods (where available) remain preferred because they provide exact results and insight into cause-and-effect relationships."
+    "explanation": "Monte Carlo complements analytical methods \u2014 it handles complex cases where no formula exists, but analytical methods (where available) remain preferred because they provide exact results and insight into cause-and-effect relationships."
   },
   {
     "id": "CH06-025",
@@ -9705,14 +9215,14 @@ window.QUESTIONS_DATA = [
     "chapterName": "Simulation Methods",
     "topic": "Monte Carlo Simulation",
     "difficulty": "Moderate",
-    "question": "A lookback option pays off max(Final Price − Minimum Price over the life of the option, 0). To value this using Monte Carlo simulation, the analyst must:",
+    "question": "A lookback option pays off max(Final Price \u2212 Minimum Price over the life of the option, 0). To value this using Monte Carlo simulation, the analyst must:",
     "options": [
       "Calculate the average price over the simulation trial instead of the minimum",
       "Track the minimum stock price achieved in each simulation trial",
       "Use an analytical formula, as Monte Carlo cannot handle path-dependent options"
     ],
     "correctAnswer": "B",
-    "explanation": "For a lookback option, the analyst tracks the minimum stock price achieved across each simulation trial's price path. The payoff for trial i is then max(P_T − P_min, 0). Discounting and averaging these payoffs across all trials gives the Monte Carlo value. Monte Carlo is well-suited to such path-dependent options."
+    "explanation": "For a lookback option, the analyst tracks the minimum stock price achieved across each simulation trial's price path. The payoff for trial i is then max(P_T \u2212 P_min, 0). Discounting and averaging these payoffs across all trials gives the Monte Carlo value. Monte Carlo is well-suited to such path-dependent options."
   },
   {
     "id": "CH06-026",
@@ -9727,7 +9237,7 @@ window.QUESTIONS_DATA = [
       "It eliminates sampling error entirely when enough trials are run"
     ],
     "correctAnswer": "B",
-    "explanation": "Because the analyst controls all inputs, Monte Carlo is excellent for sensitivity and scenario analysis — examining how changes in distributional assumptions (e.g., mean return, volatility) affect outcomes. This is one of its most valuable investment applications."
+    "explanation": "Because the analyst controls all inputs, Monte Carlo is excellent for sensitivity and scenario analysis \u2014 examining how changes in distributional assumptions (e.g., mean return, volatility) affect outcomes. This is one of its most valuable investment applications."
   },
   {
     "id": "CH06-027",
@@ -9738,11 +9248,11 @@ window.QUESTIONS_DATA = [
     "question": "An Asian option simulation runs monthly over one year (K = 12) for 1,000 trials. In a given trial, the analyst generates 12 draws of Z_k ~ N(0,1) and computes the price path. What is computed at the end of that single trial?",
     "options": [
       "The final Monte Carlo option value (average of all discounted payoffs)",
-      "One simulated payoff: max(P_final − P_average, 0), then discounted to today",
+      "One simulated payoff: max(P_final \u2212 P_average, 0), then discounted to today",
       "The probability that the final price exceeds the average price"
     ],
     "correctAnswer": "B",
-    "explanation": "One trial produces one simulated payoff: max(P_T − avg(P_1,...,P_K), 0). This is then discounted to t=0 to get C_{i0}. After all I = 1,000 trials, the analyst averages all C_{i0} values to obtain the Monte Carlo estimate of the option's value."
+    "explanation": "One trial produces one simulated payoff: max(P_T \u2212 avg(P_1,...,P_K), 0). This is then discounted to t=0 to get C_{i0}. After all I = 1,000 trials, the analyst averages all C_{i0} values to obtain the Monte Carlo estimate of the option's value."
   },
   {
     "id": "CH06-028",
@@ -9750,14 +9260,14 @@ window.QUESTIONS_DATA = [
     "chapterName": "Simulation Methods",
     "topic": "Monte Carlo Simulation",
     "difficulty": "Moderate",
-    "question": "In a Monte Carlo simulation of a one-year option with monthly steps, the time increment Δt is:",
+    "question": "In a Monte Carlo simulation of a one-year option with monthly steps, the time increment \u0394t is:",
     "options": [
       "12 months",
       "1 month (1/12 of a year)",
       "1 day (1/250 of a year)"
     ],
     "correctAnswer": "B",
-    "explanation": "Δt = calendar time / K = 1 year / 12 months = 1 month (or 1/12 year). The time grid divides the full horizon into K equal sub-periods; each sub-period has length Δt."
+    "explanation": "\u0394t = calendar time / K = 1 year / 12 months = 1 month (or 1/12 year). The time grid divides the full horizon into K equal sub-periods; each sub-period has length \u0394t."
   },
   {
     "id": "CH06-029",
@@ -9802,7 +9312,7 @@ window.QUESTIONS_DATA = [
       "A uniform distribution scaled to match the range of observed values"
     ],
     "correctAnswer": "B",
-    "explanation": "In bootstrap, the random variable is drawn directly from the observed sample (the empirical distribution). In Monte Carlo, the analyst specifies a theoretical probability distribution. Bootstrap requires no parametric assumption — it is model-free (non-parametric) resampling."
+    "explanation": "In bootstrap, the random variable is drawn directly from the observed sample (the empirical distribution). In Monte Carlo, the analyst specifies a theoretical probability distribution. Bootstrap requires no parametric assumption \u2014 it is model-free (non-parametric) resampling."
   },
   {
     "id": "CH06-032",
@@ -9817,7 +9327,7 @@ window.QUESTIONS_DATA = [
       "Calculating the average stock price and payoff within each trial"
     ],
     "correctAnswer": "B",
-    "explanation": "Step 3 — specifying the data generation method — is the key difference. Monte Carlo requires the analyst to specify a probability distribution (e.g., normal with given μ and σ). Bootstrap uses the observed historical price changes as the empirical distribution, with no parametric assumption needed."
+    "explanation": "Step 3 \u2014 specifying the data generation method \u2014 is the key difference. Monte Carlo requires the analyst to specify a probability distribution (e.g., normal with given \u03bc and \u03c3). Bootstrap uses the observed historical price changes as the empirical distribution, with no parametric assumption needed."
   },
   {
     "id": "CH06-033",
@@ -9832,7 +9342,7 @@ window.QUESTIONS_DATA = [
       "Generates exact analytical results rather than statistical estimates"
     ],
     "correctAnswer": "B",
-    "explanation": "A key advantage of bootstrap is that it does not require the analyst to specify distributional assumptions — it uses the empirical distribution of observed data directly. Monte Carlo requires specifying a distribution, which introduces model risk if the assumed distribution is incorrect."
+    "explanation": "A key advantage of bootstrap is that it does not require the analyst to specify distributional assumptions \u2014 it uses the empirical distribution of observed data directly. Monte Carlo requires specifying a distribution, which introduces model risk if the assumed distribution is incorrect."
   },
   {
     "id": "CH06-034",
@@ -9857,12 +9367,12 @@ window.QUESTIONS_DATA = [
     "difficulty": "Moderate",
     "question": "In a bootstrap simulation to value a contingent claim, the analyst uses K = 12 monthly draws. These draws are taken from:",
     "options": [
-      "A standard normal distribution with μ=0 and σ=1",
+      "A standard normal distribution with \u03bc=0 and \u03c3=1",
       "The observed historical stock price changes or returns",
       "A uniform distribution between the minimum and maximum observed prices"
     ],
     "correctAnswer": "B",
-    "explanation": "In bootstrap simulation, the K random values of the stock price process are drawn from the observed historical stock price changes — the empirical distribution. This is the defining feature distinguishing bootstrap from Monte Carlo, where draws come from a specified theoretical distribution."
+    "explanation": "In bootstrap simulation, the K random values of the stock price process are drawn from the observed historical stock price changes \u2014 the empirical distribution. This is the defining feature distinguishing bootstrap from Monte Carlo, where draws come from a specified theoretical distribution."
   },
   {
     "id": "CH06-036",
@@ -9877,7 +9387,7 @@ window.QUESTIONS_DATA = [
       "Simple analytical approximation using duration"
     ],
     "correctAnswer": "B",
-    "explanation": "When the analyst has strong theoretical beliefs about the distribution of the key risk factor (interest rates), Monte Carlo simulation is appropriate — the analyst can specify the distribution directly. Bootstrap is preferred when the analyst does not want to impose distributional assumptions and has sufficient historical data."
+    "explanation": "When the analyst has strong theoretical beliefs about the distribution of the key risk factor (interest rates), Monte Carlo simulation is appropriate \u2014 the analyst can specify the distribution directly. Bootstrap is preferred when the analyst does not want to impose distributional assumptions and has sufficient historical data."
   },
   {
     "id": "CH06-037",
@@ -9900,14 +9410,14 @@ window.QUESTIONS_DATA = [
     "chapterName": "Simulation Methods",
     "topic": "Monte Carlo vs Bootstrap",
     "difficulty": "Difficult",
-    "question": "An analyst uses Monte Carlo to simulate a stock with μ = 0.07 and σ = 0.12 (annual, continuous), generating 2,000 one-year scenarios. A colleague uses bootstrap on 10 years of monthly returns for the same stock. Which statement best describes the key trade-off between the two approaches?",
+    "question": "An analyst uses Monte Carlo to simulate a stock with \u03bc = 0.07 and \u03c3 = 0.12 (annual, continuous), generating 2,000 one-year scenarios. A colleague uses bootstrap on 10 years of monthly returns for the same stock. Which statement best describes the key trade-off between the two approaches?",
     "options": [
       "Monte Carlo can produce scenarios outside the historically observed range; bootstrap is constrained to the empirical distribution of past returns",
       "Bootstrap always produces more reliable estimates because it uses real data",
       "Monte Carlo will always underestimate tail risk relative to bootstrap"
     ],
     "correctAnswer": "A",
-    "explanation": "Monte Carlo can generate scenarios that have never historically occurred, including extreme tail events, because it draws from a continuous theoretical distribution. Bootstrap is constrained to the empirical distribution of observed data — it cannot generate returns outside the historical range. This trade-off is central: Monte Carlo allows richer scenario generation but depends on distributional assumptions; bootstrap is model-free but limited by history."
+    "explanation": "Monte Carlo can generate scenarios that have never historically occurred, including extreme tail events, because it draws from a continuous theoretical distribution. Bootstrap is constrained to the empirical distribution of observed data \u2014 it cannot generate returns outside the historical range. This trade-off is central: Monte Carlo allows richer scenario generation but depends on distributional assumptions; bootstrap is model-free but limited by history."
   },
   {
     "id": "CH06-039",
@@ -9915,14 +9425,14 @@ window.QUESTIONS_DATA = [
     "chapterName": "Simulation Methods",
     "topic": "Lognormal Distribution",
     "difficulty": "Difficult",
-    "question": "A stock's continuously compounded annual return is normally distributed with μ = 0.10 and σ = 0.25. The current price is USD 100. Which statement about the distribution of the price one year from now is correct?",
+    "question": "A stock's continuously compounded annual return is normally distributed with \u03bc = 0.10 and \u03c3 = 0.25. The current price is USD 100. Which statement about the distribution of the price one year from now is correct?",
     "options": [
       "The price is normally distributed with mean USD 110",
-      "The price is lognormally distributed with mean exp(0.10 + 0.5 × 0.0625) × 100 ≈ USD 113.88",
-      "The price is normally distributed with mean exp(0.10) × 100 ≈ USD 110.52"
+      "The price is lognormally distributed with mean exp(0.10 + 0.5 \u00d7 0.0625) \u00d7 100 \u2248 USD 113.88",
+      "The price is normally distributed with mean exp(0.10) \u00d7 100 \u2248 USD 110.52"
     ],
     "correctAnswer": "B",
-    "explanation": "Because r₀,₁ ~ N(0.10, 0.25²), the future price P₁ = 100 × exp(r₀,₁) is lognormally distributed. The mean of a lognormal variable is exp(μ + 0.5σ²) = exp(0.10 + 0.5 × 0.0625) = exp(0.13125) ≈ 1.1403, so the expected price ≈ USD 114.03. This illustrates why the lognormal mean exceeds exp(μ) × P₀."
+    "explanation": "Because r\u2080,\u2081 ~ N(0.10, 0.25\u00b2), the future price P\u2081 = 100 \u00d7 exp(r\u2080,\u2081) is lognormally distributed. The mean of a lognormal variable is exp(\u03bc + 0.5\u03c3\u00b2) = exp(0.10 + 0.5 \u00d7 0.0625) = exp(0.13125) \u2248 1.1403, so the expected price \u2248 USD 114.03. This illustrates why the lognormal mean exceeds exp(\u03bc) \u00d7 P\u2080."
   },
   {
     "id": "CH06-040",
@@ -9937,7 +9447,7 @@ window.QUESTIONS_DATA = [
       "USD 8.10"
     ],
     "correctAnswer": "B",
-    "explanation": "Average undiscounted payoff = (700 × 0 + 300 × 8.50) / 1,000 = 2,550 / 1,000 = USD 2.55. Discounting at 5% for one year: 2.55 / 1.05 ≈ USD 2.43. This is the Monte Carlo estimate of the option's present value — the mean of all discounted trial payoffs."
+    "explanation": "Average undiscounted payoff = (700 \u00d7 0 + 300 \u00d7 8.50) / 1,000 = 2,550 / 1,000 = USD 2.55. Discounting at 5% for one year: 2.55 / 1.05 \u2248 USD 2.43. This is the Monte Carlo estimate of the option's present value \u2014 the mean of all discounted trial payoffs."
   },
   {
     "id": "CH07-001",
@@ -10027,7 +9537,7 @@ window.QUESTIONS_DATA = [
       "Clusters are formed based on measurable characteristics of individual elements"
     ],
     "correctAnswer": "B",
-    "explanation": "In cluster sampling, only the selected clusters are included in the sample — the unselected clusters contribute no observations. In stratified sampling, all strata are included and elements are sampled within each stratum. This is the fundamental structural difference between the two methods."
+    "explanation": "In cluster sampling, only the selected clusters are included in the sample \u2014 the unselected clusters contribute no observations. In stratified sampling, all strata are included and elements are sampled within each stratum. This is the fundamental structural difference between the two methods."
   },
   {
     "id": "CH07-007",
@@ -10102,7 +9612,7 @@ window.QUESTIONS_DATA = [
       "Requires no division of the population into subgroups"
     ],
     "correctAnswer": "B",
-    "explanation": "Cluster sampling's primary advantage is efficiency — it is the most time-efficient and cost-efficient probability sampling method for large populations. Its main disadvantage is lower accuracy relative to other probability sampling methods of equal sample size, because a cluster sample may be less representative of the entire population."
+    "explanation": "Cluster sampling's primary advantage is efficiency \u2014 it is the most time-efficient and cost-efficient probability sampling method for large populations. Its main disadvantage is lower accuracy relative to other probability sampling methods of equal sample size, because a cluster sample may be less representative of the entire population."
   },
   {
     "id": "CH07-012",
@@ -10110,14 +9620,14 @@ window.QUESTIONS_DATA = [
     "chapterName": "Estimation and Inference",
     "topic": "Sampling Methods",
     "difficulty": "Moderate",
-    "question": "An analyst uses all data available in her internal database — built while researching several dozen representative stocks — to estimate average R&D spending in the pharmaceutical sector. This is an example of:",
+    "question": "An analyst uses all data available in her internal database \u2014 built while researching several dozen representative stocks \u2014 to estimate average R&D spending in the pharmaceutical sector. This is an example of:",
     "options": [
       "Simple random sampling",
       "Stratified random sampling",
       "Convenience sampling"
     ],
     "correctAnswer": "C",
-    "explanation": "The analyst is selecting data because it is easily accessible from an internal database, not through a probability-based process. This is convenience sampling — data collected quickly from whatever is at hand. There is significant risk that the sample is not representative of all pharmaceutical companies."
+    "explanation": "The analyst is selecting data because it is easily accessible from an internal database, not through a probability-based process. This is convenience sampling \u2014 data collected quickly from whatever is at hand. There is significant risk that the sample is not representative of all pharmaceutical companies."
   },
   {
     "id": "CH07-013",
@@ -10147,7 +9657,7 @@ window.QUESTIONS_DATA = [
       "Parametric and non-parametric sampling"
     ],
     "correctAnswer": "B",
-    "explanation": "Sampling methods are classified as probability sampling (every member has an equal chance of selection — e.g., simple random, stratified, cluster) and non-probability sampling (selection depends on judgment or convenience — e.g., convenience sampling, judgmental sampling)."
+    "explanation": "Sampling methods are classified as probability sampling (every member has an equal chance of selection \u2014 e.g., simple random, stratified, cluster) and non-probability sampling (selection depends on judgment or convenience \u2014 e.g., convenience sampling, judgmental sampling)."
   },
   {
     "id": "CH07-015",
@@ -10162,7 +9672,7 @@ window.QUESTIONS_DATA = [
       "120"
     ],
     "correctAnswer": "B",
-    "explanation": "With 3 × 10 × 2 = 60 strata, each stratum must contain at least one bond. Therefore the minimum number of bonds in the portfolio is 60. Each stratum represents a distinct combination of issuer type, maturity, and coupon level."
+    "explanation": "With 3 \u00d7 10 \u00d7 2 = 60 strata, each stratum must contain at least one bond. Therefore the minimum number of bonds in the portfolio is 60. Each stratum represents a distinct combination of issuer type, maturity, and coupon level."
   },
   {
     "id": "CH07-016",
@@ -10177,7 +9687,7 @@ window.QUESTIONS_DATA = [
       "They cannot be used when the population size is unknown"
     ],
     "correctAnswer": "B",
-    "explanation": "Non-probability sampling methods depend on factors other than probability — such as researcher judgment or data accessibility — which creates significant risk that the resulting sample is not representative of the population. This limits the reliability of statistical inferences drawn from such samples."
+    "explanation": "Non-probability sampling methods depend on factors other than probability \u2014 such as researcher judgment or data accessibility \u2014 which creates significant risk that the resulting sample is not representative of the population. This limits the reliability of statistical inferences drawn from such samples."
   },
   {
     "id": "CH07-017",
@@ -10185,14 +9695,14 @@ window.QUESTIONS_DATA = [
     "chapterName": "Estimation and Inference",
     "topic": "Central Limit Theorem",
     "difficulty": "Easy",
-    "question": "The central limit theorem states that for a population with mean μ and finite variance σ², the sampling distribution of the sample mean X̄ computed from large random samples will be:",
+    "question": "The central limit theorem states that for a population with mean \u03bc and finite variance \u03c3\u00b2, the sampling distribution of the sample mean X\u0304 computed from large random samples will be:",
     "options": [
-      "Approximately normal with mean μ and variance σ²",
-      "Approximately normal with mean μ and variance σ²/n",
+      "Approximately normal with mean \u03bc and variance \u03c3\u00b2",
+      "Approximately normal with mean \u03bc and variance \u03c3\u00b2/n",
       "Exactly normal with mean 0 and variance 1"
     ],
     "correctAnswer": "B",
-    "explanation": "The CLT states that X̄ is approximately normally distributed with mean μ (same as the population) and variance σ²/n (population variance divided by sample size). The variance shrinks as n increases, making X̄ concentrate around μ with larger samples."
+    "explanation": "The CLT states that X\u0304 is approximately normally distributed with mean \u03bc (same as the population) and variance \u03c3\u00b2/n (population variance divided by sample size). The variance shrinks as n increases, making X\u0304 concentrate around \u03bc with larger samples."
   },
   {
     "id": "CH07-018",
@@ -10207,7 +9717,7 @@ window.QUESTIONS_DATA = [
       "Whether the population mean is known"
     ],
     "correctAnswer": "B",
-    "explanation": "The CLT applies to any population distribution — normal, skewed, bimodal, uniform — as long as the population has finite variance and the sample size is sufficiently large (generally n ≥ 30). This universality is what makes the CLT one of the most important theorems in statistics."
+    "explanation": "The CLT applies to any population distribution \u2014 normal, skewed, bimodal, uniform \u2014 as long as the population has finite variance and the sample size is sufficiently large (generally n \u2265 30). This universality is what makes the CLT one of the most important theorems in statistics."
   },
   {
     "id": "CH07-019",
@@ -10222,7 +9732,7 @@ window.QUESTIONS_DATA = [
       "100"
     ],
     "correctAnswer": "B",
-    "explanation": "The general rule of thumb is that n ≥ 30 is sufficient for the CLT to apply. However, when the underlying population is very non-normal (e.g., highly skewed), a larger sample size — well in excess of 30 — may be required for the normal approximation to be reliable."
+    "explanation": "The general rule of thumb is that n \u2265 30 is sufficient for the CLT to apply. However, when the underlying population is very non-normal (e.g., highly skewed), a larger sample size \u2014 well in excess of 30 \u2014 may be required for the normal approximation to be reliable."
   },
   {
     "id": "CH07-020",
@@ -10237,7 +9747,7 @@ window.QUESTIONS_DATA = [
       "Correct only if all assets are perfectly negatively correlated"
     ],
     "correctAnswer": "B",
-    "explanation": "The CLT describes the behavior of the sampling distribution of the sample mean — it does not describe the behavior of portfolio risk. Diversification reduces unsystematic risk, but systematic risk remains regardless of the number of holdings. The CLT cannot be invoked to claim portfolio variance goes to zero."
+    "explanation": "The CLT describes the behavior of the sampling distribution of the sample mean \u2014 it does not describe the behavior of portfolio risk. Diversification reduces unsystematic risk, but systematic risk remains regardless of the number of holdings. The CLT cannot be invoked to claim portfolio variance goes to zero."
   },
   {
     "id": "CH07-021",
@@ -10245,14 +9755,14 @@ window.QUESTIONS_DATA = [
     "chapterName": "Estimation and Inference",
     "topic": "Central Limit Theorem",
     "difficulty": "Moderate",
-    "question": "An analyst draws repeated samples of size n = 50 from a skewed distribution with mean μ = 0.035% and finite variance. What will the distribution of the sample means look like?",
+    "question": "An analyst draws repeated samples of size n = 50 from a skewed distribution with mean \u03bc = 0.035% and finite variance. What will the distribution of the sample means look like?",
     "options": [
       "Skewed in the same direction as the population distribution",
       "Approximately normal with mean 0.035% due to the central limit theorem",
       "Uniform, because the samples are drawn randomly"
     ],
     "correctAnswer": "B",
-    "explanation": "By the CLT, the distribution of the sample mean X̄ will be approximately normal with mean μ = 0.035%, regardless of the skewness of the underlying population, because n = 50 ≥ 30. The sample mean distribution has a different (narrower) shape than the population distribution."
+    "explanation": "By the CLT, the distribution of the sample mean X\u0304 will be approximately normal with mean \u03bc = 0.035%, regardless of the skewness of the underlying population, because n = 50 \u2265 30. The sample mean distribution has a different (narrower) shape than the population distribution."
   },
   {
     "id": "CH07-022",
@@ -10260,14 +9770,14 @@ window.QUESTIONS_DATA = [
     "chapterName": "Estimation and Inference",
     "topic": "Central Limit Theorem",
     "difficulty": "Moderate",
-    "question": "The variance of the sampling distribution of the sample mean is σ²/n. What does this imply about the relationship between sample size and estimation precision?",
+    "question": "The variance of the sampling distribution of the sample mean is \u03c3\u00b2/n. What does this imply about the relationship between sample size and estimation precision?",
     "options": [
       "Doubling the sample size halves the variance and therefore halves the standard error",
-      "Doubling the sample size halves the variance of X̄, reducing the standard error by a factor of √2",
-      "Sample size has no effect on the variance of X̄ when the population variance is large"
+      "Doubling the sample size halves the variance of X\u0304, reducing the standard error by a factor of \u221a2",
+      "Sample size has no effect on the variance of X\u0304 when the population variance is large"
     ],
     "correctAnswer": "B",
-    "explanation": "Variance of X̄ = σ²/n. Doubling n halves the variance, but standard error = σ/√n, so doubling n reduces standard error by √2 ≈ 1.41. To halve the standard error, the sample size must be quadrupled. This diminishing return means there is a point beyond which adding observations yields little additional precision."
+    "explanation": "Variance of X\u0304 = \u03c3\u00b2/n. Doubling n halves the variance, but standard error = \u03c3/\u221an, so doubling n reduces standard error by \u221a2 \u2248 1.41. To halve the standard error, the sample size must be quadrupled. This diminishing return means there is a point beyond which adding observations yields little additional precision."
   },
   {
     "id": "CH07-023",
@@ -10290,14 +9800,14 @@ window.QUESTIONS_DATA = [
     "chapterName": "Estimation and Inference",
     "topic": "Central Limit Theorem",
     "difficulty": "Difficult",
-    "question": "Which statement correctly identifies an error in the following claim? 'The central limit theorem states that for any sample size, the distribution of X̄ will be exactly normal with standard deviation σ/√n.'",
+    "question": "Which statement correctly identifies an error in the following claim? 'The central limit theorem states that for any sample size, the distribution of X\u0304 will be exactly normal with standard deviation \u03c3/\u221an.'",
     "options": [
-      "The formula σ/√n is incorrect; the correct formula is σ/n",
-      "The CLT requires large sample sizes (generally n ≥ 30) and produces an approximate, not exact, normal distribution",
+      "The formula \u03c3/\u221an is incorrect; the correct formula is \u03c3/n",
+      "The CLT requires large sample sizes (generally n \u2265 30) and produces an approximate, not exact, normal distribution",
       "The claim is entirely correct"
     ],
     "correctAnswer": "B",
-    "explanation": "The claim contains two errors: (1) the CLT requires large sample sizes — for small n the approximation may be poor; (2) the resulting distribution is approximately, not exactly, normal. The standard deviation formula σ/√n is correct."
+    "explanation": "The claim contains two errors: (1) the CLT requires large sample sizes \u2014 for small n the approximation may be poor; (2) the resulting distribution is approximately, not exactly, normal. The standard deviation formula \u03c3/\u221an is correct."
   },
   {
     "id": "CH07-025",
@@ -10312,7 +9822,7 @@ window.QUESTIONS_DATA = [
       "The variance of the population divided by the population mean"
     ],
     "correctAnswer": "B",
-    "explanation": "The standard error of the sample mean is the standard deviation of the sampling distribution of X̄. It measures how precisely the sample mean estimates the population mean — a smaller standard error indicates a more precise estimate."
+    "explanation": "The standard error of the sample mean is the standard deviation of the sampling distribution of X\u0304. It measures how precisely the sample mean estimates the population mean \u2014 a smaller standard error indicates a more precise estimate."
   },
   {
     "id": "CH07-026",
@@ -10320,14 +9830,14 @@ window.QUESTIONS_DATA = [
     "chapterName": "Estimation and Inference",
     "topic": "Standard Error",
     "difficulty": "Easy",
-    "question": "When the population standard deviation σ is unknown (the typical case in practice), the standard error of the sample mean is estimated as:",
+    "question": "When the population standard deviation \u03c3 is unknown (the typical case in practice), the standard error of the sample mean is estimated as:",
     "options": [
       "s / n",
-      "s / √n",
-      "σ / √n"
+      "s / \u221an",
+      "\u03c3 / \u221an"
     ],
     "correctAnswer": "B",
-    "explanation": "When σ is unknown, the standard error is estimated as s/√n, where s is the sample standard deviation. The formula σ/√n requires knowledge of the true population standard deviation, which is rarely available in practice."
+    "explanation": "When \u03c3 is unknown, the standard error is estimated as s/\u221an, where s is the sample standard deviation. The formula \u03c3/\u221an requires knowledge of the true population standard deviation, which is rarely available in practice."
   },
   {
     "id": "CH07-027",
@@ -10335,14 +9845,14 @@ window.QUESTIONS_DATA = [
     "chapterName": "Estimation and Inference",
     "topic": "Standard Error",
     "difficulty": "Moderate",
-    "question": "A population has variance σ² = 2.45 and a sample of size n = 40 is drawn. The standard error of the sample mean is closest to:",
+    "question": "A population has variance \u03c3\u00b2 = 2.45 and a sample of size n = 40 is drawn. The standard error of the sample mean is closest to:",
     "options": [
       "0.039",
       "0.247",
       "0.387"
     ],
     "correctAnswer": "B",
-    "explanation": "σ = √2.45 = 1.565. Standard error = σ/√n = 1.565/√40 = 1.565/6.325 ≈ 0.247. This uses the population standard deviation formula since σ is given."
+    "explanation": "\u03c3 = \u221a2.45 = 1.565. Standard error = \u03c3/\u221an = 1.565/\u221a40 = 1.565/6.325 \u2248 0.247. This uses the population standard deviation formula since \u03c3 is given."
   },
   {
     "id": "CH07-028",
@@ -10357,7 +9867,7 @@ window.QUESTIONS_DATA = [
       "576"
     ],
     "correctAnswer": "B",
-    "explanation": "From σ_X̄ = σ/√n: 1% = 6%/√n → √n = 6 → n = 36. To achieve standard error of 0.25%, n = (6/0.25)² = 576. For 1%, the answer is 36."
+    "explanation": "From \u03c3_X\u0304 = \u03c3/\u221an: 1% = 6%/\u221an \u2192 \u221an = 6 \u2192 n = 36. To achieve standard error of 0.25%, n = (6/0.25)\u00b2 = 576. For 1%, the answer is 36."
   },
   {
     "id": "CH07-029",
@@ -10372,7 +9882,7 @@ window.QUESTIONS_DATA = [
       "Increase the sample size by 50 percent"
     ],
     "correctAnswer": "B",
-    "explanation": "Standard error = σ/√n. To halve the standard error: σ/√(4n) = σ/(2√n) = (1/2) × original standard error. Therefore, the sample size must be quadrupled. This reflects the diminishing returns to sampling — each unit of precision improvement requires exponentially more data."
+    "explanation": "Standard error = \u03c3/\u221an. To halve the standard error: \u03c3/\u221a(4n) = \u03c3/(2\u221an) = (1/2) \u00d7 original standard error. Therefore, the sample size must be quadrupled. This reflects the diminishing returns to sampling \u2014 each unit of precision improvement requires exponentially more data."
   },
   {
     "id": "CH07-030",
@@ -10387,7 +9897,7 @@ window.QUESTIONS_DATA = [
       "Standard deviation is used for populations; standard error is used for samples only"
     ],
     "correctAnswer": "B",
-    "explanation": "Standard deviation measures how spread out individual data points are (data description). Standard error measures how precisely the sample mean estimates the population mean (statistical inference). They are distinct concepts and not interchangeable — a common exam error."
+    "explanation": "Standard deviation measures how spread out individual data points are (data description). Standard error measures how precisely the sample mean estimates the population mean (statistical inference). They are distinct concepts and not interchangeable \u2014 a common exam error."
   },
   {
     "id": "CH07-031",
@@ -10395,14 +9905,14 @@ window.QUESTIONS_DATA = [
     "chapterName": "Estimation and Inference",
     "topic": "Standard Error",
     "difficulty": "Moderate",
-    "question": "The sample variance is calculated using a divisor of n − 1 rather than n. This is because:",
+    "question": "The sample variance is calculated using a divisor of n \u2212 1 rather than n. This is because:",
     "options": [
-      "Using n − 1 simplifies the computation",
-      "Using n − 1 produces an unbiased estimate of the population variance",
-      "Using n − 1 is required only when the population is normal"
+      "Using n \u2212 1 simplifies the computation",
+      "Using n \u2212 1 produces an unbiased estimate of the population variance",
+      "Using n \u2212 1 is required only when the population is normal"
     ],
     "correctAnswer": "B",
-    "explanation": "The divisor n − 1 (Bessel's correction) is used to produce an unbiased estimate of the population variance σ². Using n in the denominator would systematically underestimate the population variance because the sample mean is used instead of the true (unknown) population mean, consuming one degree of freedom."
+    "explanation": "The divisor n \u2212 1 (Bessel's correction) is used to produce an unbiased estimate of the population variance \u03c3\u00b2. Using n in the denominator would systematically underestimate the population variance because the sample mean is used instead of the true (unknown) population mean, consuming one degree of freedom."
   },
   {
     "id": "CH07-032",
@@ -10417,7 +9927,7 @@ window.QUESTIONS_DATA = [
       "8.00%"
     ],
     "correctAnswer": "B",
-    "explanation": "Standard error = s/√n = 8%/√25 = 8%/5 = 1.60%. The standard deviation (8%) measures dispersion of individual manager returns, while the standard error (1.60%) measures how precisely the sample mean estimates the population mean return."
+    "explanation": "Standard error = s/\u221an = 8%/\u221a25 = 8%/5 = 1.60%. The standard deviation (8%) measures dispersion of individual manager returns, while the standard error (1.60%) measures how precisely the sample mean estimates the population mean return."
   },
   {
     "id": "CH07-033",
@@ -10432,7 +9942,7 @@ window.QUESTIONS_DATA = [
       "200"
     ],
     "correctAnswer": "B",
-    "explanation": "From σ/√n ≤ 0.005: √n ≥ 5/0.005 = 100 → n ≥ 10,000? Wait: σ = 5% = 0.05, target SE = 0.5% = 0.005. √n ≥ 0.05/0.005 = 10 → n ≥ 100. The required sample size is 100."
+    "explanation": "From \u03c3/\u221an \u2264 0.005: \u221an \u2265 5/0.005 = 100 \u2192 n \u2265 10,000? Wait: \u03c3 = 5% = 0.05, target SE = 0.5% = 0.005. \u221an \u2265 0.05/0.005 = 10 \u2192 n \u2265 100. The required sample size is 100."
   },
   {
     "id": "CH07-034",
@@ -10462,7 +9972,7 @@ window.QUESTIONS_DATA = [
       "Requires a larger initial sample to produce valid results"
     ],
     "correctAnswer": "B",
-    "explanation": "Bootstrap does not rely on analytical formulas such as z- or t-statistics. It is a simple but powerful method that works for any estimator — including complex ones like the median, Sharpe ratio, or other statistics where no analytical formula for the standard error exists."
+    "explanation": "Bootstrap does not rely on analytical formulas such as z- or t-statistics. It is a simple but powerful method that works for any estimator \u2014 including complex ones like the median, Sharpe ratio, or other statistics where no analytical formula for the standard error exists."
   },
   {
     "id": "CH07-036",
@@ -10470,14 +9980,14 @@ window.QUESTIONS_DATA = [
     "chapterName": "Estimation and Inference",
     "topic": "Bootstrap Resampling",
     "difficulty": "Moderate",
-    "question": "In a bootstrap procedure to estimate the standard error of the sample mean, 1,000 resamples are drawn. The mean across all resample means (θ̄) is −0.01367, and the sum of squared deviations Σ(θ̂_b − θ̄)² = 1.94143. The bootstrap standard error is closest to:",
+    "question": "In a bootstrap procedure to estimate the standard error of the sample mean, 1,000 resamples are drawn. The mean across all resample means (\u03b8\u0304) is \u22120.01367, and the sum of squared deviations \u03a3(\u03b8\u0302_b \u2212 \u03b8\u0304)\u00b2 = 1.94143. The bootstrap standard error is closest to:",
     "options": [
       "0.00194",
       "0.04408",
       "0.44080"
     ],
     "correctAnswer": "B",
-    "explanation": "s_X̄ = √[(1/(B−1)) × Σ(θ̂_b − θ̄)²] = √[(1/999) × 1.94143] = √0.001944 ≈ 0.04408. Note the divisor is B − 1 = 999, analogous to sample standard deviation using n − 1."
+    "explanation": "s_X\u0304 = \u221a[(1/(B\u22121)) \u00d7 \u03a3(\u03b8\u0302_b \u2212 \u03b8\u0304)\u00b2] = \u221a[(1/999) \u00d7 1.94143] = \u221a0.001944 \u2248 0.04408. Note the divisor is B \u2212 1 = 999, analogous to sample standard deviation using n \u2212 1."
   },
   {
     "id": "CH07-037",
@@ -10492,7 +10002,7 @@ window.QUESTIONS_DATA = [
       "0.0883"
     ],
     "correctAnswer": "B",
-    "explanation": "s_X̄ = √[(1/(B−1)) × Σ(θ̂_b − θ̄)²] = √[(1/199) × 0.835] = √0.004196 ≈ 0.0648. This is the bootstrap estimate of the standard error of the sample mean computed from 200 resamples."
+    "explanation": "s_X\u0304 = \u221a[(1/(B\u22121)) \u00d7 \u03a3(\u03b8\u0302_b \u2212 \u03b8\u0304)\u00b2] = \u221a[(1/199) \u00d7 0.835] = \u221a0.004196 \u2248 0.0648. This is the bootstrap estimate of the standard error of the sample mean computed from 200 resamples."
   },
   {
     "id": "CH07-038",
@@ -10502,12 +10012,12 @@ window.QUESTIONS_DATA = [
     "difficulty": "Moderate",
     "question": "An analyst wants to find the standard error of the sample median of house prices. Which approach is most appropriate?",
     "options": [
-      "Use s/√n, where s is the sample standard deviation",
+      "Use s/\u221an, where s is the sample standard deviation",
       "Apply bootstrap resampling to construct the sampling distribution of the sample median",
-      "Use the formula σ/√n with the population standard deviation"
+      "Use the formula \u03c3/\u221an with the population standard deviation"
     ],
     "correctAnswer": "B",
-    "explanation": "The formula s/√n estimates the standard error of the sample mean, not the median. No simple closed-form formula exists for the standard error of the sample median. Bootstrap resampling provides a model-free way to estimate the standard error of any statistic, including the median."
+    "explanation": "The formula s/\u221an estimates the standard error of the sample mean, not the median. No simple closed-form formula exists for the standard error of the sample median. Bootstrap resampling provides a model-free way to estimate the standard error of any statistic, including the median."
   },
   {
     "id": "CH07-039",
@@ -10537,7 +10047,7 @@ window.QUESTIONS_DATA = [
       "A resample drawn without replacement"
     ],
     "correctAnswer": "B",
-    "explanation": "Because bootstrap draws with replacement, the same observation can appear multiple times in a single resample — including three or more times. Each resample has the same size n = 12 as the original. Drawing without replacement is not bootstrap; it is another resampling approach."
+    "explanation": "Because bootstrap draws with replacement, the same observation can appear multiple times in a single resample \u2014 including three or more times. Each resample has the same size n = 12 as the original. Drawing without replacement is not bootstrap; it is another resampling approach."
   },
   {
     "id": "CH07-041",
@@ -10567,7 +10077,7 @@ window.QUESTIONS_DATA = [
       "Dividing the original sample into equal-sized sub-groups"
     ],
     "correctAnswer": "B",
-    "explanation": "Jackknife takes the original sample of size n and creates n subsamples, each formed by leaving out one different observation. This leave-one-out approach is deterministic — it always produces the same results for the same dataset, unlike bootstrap which is random."
+    "explanation": "Jackknife takes the original sample of size n and creates n subsamples, each formed by leaving out one different observation. This leave-one-out approach is deterministic \u2014 it always produces the same results for the same dataset, unlike bootstrap which is random."
   },
   {
     "id": "CH07-043",
@@ -10579,10 +10089,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "The analyst determines the number, similar to bootstrap",
       "Exactly n repetitions",
-      "n² repetitions"
+      "n\u00b2 repetitions"
     ],
     "correctAnswer": "B",
-    "explanation": "Jackknife requires exactly n repetitions for a sample of size n — one for each observation left out. This is a fixed, deterministic number. In contrast, bootstrap leaves the number of repetitions B to the analyst's judgment."
+    "explanation": "Jackknife requires exactly n repetitions for a sample of size n \u2014 one for each observation left out. This is a fixed, deterministic number. In contrast, bootstrap leaves the number of repetitions B to the analyst's judgment."
   },
   {
     "id": "CH07-044",
@@ -10594,10 +10104,10 @@ window.QUESTIONS_DATA = [
     "options": [
       "Different results each run because subsamples are randomly drawn",
       "Identical results for every run because it is a deterministic procedure",
-      "More resamples, because it requires n² iterations"
+      "More resamples, because it requires n\u00b2 iterations"
     ],
     "correctAnswer": "B",
-    "explanation": "Jackknife is deterministic — for a given dataset, it always produces exactly the same n subsamples (each formed by leaving out a different observation). This contrasts with bootstrap, which randomly draws resamples and therefore gives different results each run."
+    "explanation": "Jackknife is deterministic \u2014 for a given dataset, it always produces exactly the same n subsamples (each formed by leaving out a different observation). This contrasts with bootstrap, which randomly draws resamples and therefore gives different results each run."
   },
   {
     "id": "CH07-045",
@@ -10642,7 +10152,7 @@ window.QUESTIONS_DATA = [
       "Become wider and more dispersed because more values are included"
     ],
     "correctAnswer": "B",
-    "explanation": "By the CLT, as sample size increases, the sampling distribution of X̄ becomes more approximately normal (regardless of population shape) and more tightly concentrated around μ (because variance = σ²/n decreases). Larger n produces a narrower, more bell-shaped histogram of sample means."
+    "explanation": "By the CLT, as sample size increases, the sampling distribution of X\u0304 becomes more approximately normal (regardless of population shape) and more tightly concentrated around \u03bc (because variance = \u03c3\u00b2/n decreases). Larger n produces a narrower, more bell-shaped histogram of sample means."
   },
   {
     "id": "CH07-048",
@@ -10657,7 +10167,7 @@ window.QUESTIONS_DATA = [
       "18.40%"
     ],
     "correctAnswer": "B",
-    "explanation": "Standard error = s/√n = 18.4%/√64 = 18.4%/8 = 2.30%. The standard error (2.30%) is much smaller than the standard deviation of individual fund returns (18.40%), reflecting the benefit of averaging across 64 observations. If the analyst doubled the sample to 128, SE = 18.4/√128 ≈ 1.63%."
+    "explanation": "Standard error = s/\u221an = 18.4%/\u221a64 = 18.4%/8 = 2.30%. The standard error (2.30%) is much smaller than the standard deviation of individual fund returns (18.40%), reflecting the benefit of averaging across 64 observations. If the analyst doubled the sample to 128, SE = 18.4/\u221a128 \u2248 1.63%."
   },
   {
     "id": "CH07-049",
@@ -10672,7 +10182,7 @@ window.QUESTIONS_DATA = [
       "Drawing a stratified sample from bond issuers across three credit rating categories"
     ],
     "correctAnswer": "B",
-    "explanation": "Combining returns from two different strategy periods violates the homogeneous population assumption — the two sub-periods represent different distributions (different means and variances). Any pooled statistics would be representative of no actual population. This is the core problem illustrated by the Sharpe ratio example in the reading."
+    "explanation": "Combining returns from two different strategy periods violates the homogeneous population assumption \u2014 the two sub-periods represent different distributions (different means and variances). Any pooled statistics would be representative of no actual population. This is the core problem illustrated by the Sharpe ratio example in the reading."
   },
   {
     "id": "CH07-050",
@@ -10680,13 +10190,13 @@ window.QUESTIONS_DATA = [
     "chapterName": "Estimation and Inference",
     "topic": "Bootstrap Resampling",
     "difficulty": "Difficult",
-    "question": "An analyst is computing the bootstrap standard error of the sample mean from B = 500 resamples. She calculates Σ(θ̂_b − θ̄)² = 12.25. The bootstrap standard error is closest to:",
+    "question": "An analyst is computing the bootstrap standard error of the sample mean from B = 500 resamples. She calculates \u03a3(\u03b8\u0302_b \u2212 \u03b8\u0304)\u00b2 = 12.25. The bootstrap standard error is closest to:",
     "options": [
       "0.025",
       "0.157",
       "0.245"
     ],
     "correctAnswer": "B",
-    "explanation": "s_X̄ = √[(1/(B−1)) × Σ(θ̂_b − θ̄)²] = √[(1/499) × 12.25] = √0.02454 ≈ 0.1567 ≈ 0.157. The divisor is B − 1 = 499. Bootstrap standard errors are computed exactly like sample standard deviations — just applied to the distribution of resample statistics."
+    "explanation": "s_X\u0304 = \u221a[(1/(B\u22121)) \u00d7 \u03a3(\u03b8\u0302_b \u2212 \u03b8\u0304)\u00b2] = \u221a[(1/499) \u00d7 12.25] = \u221a0.02454 \u2248 0.1567 \u2248 0.157. The divisor is B \u2212 1 = 499. Bootstrap standard errors are computed exactly like sample standard deviations \u2014 just applied to the distribution of resample statistics."
   }
 ];
