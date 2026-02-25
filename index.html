@@ -588,7 +588,7 @@ footer{
       <p class="hero-desc">A structured practice environment for CFA Level I candidates. Work through every topic across the full curriculum — chapter by chapter or all at once — with practice questions, concept summaries, and live score tracking.</p>
       <div class="hero-stats">
         <div>
-          <div class="hero-stat-num">590</div>
+          <div class="hero-stat-num">680</div>
           <div class="hero-stat-label">Questions Available</div>
         </div>
         <div>
@@ -643,7 +643,7 @@ footer{
       <div class="how-item">
         <div class="how-step">5</div>
         <div class="how-icon">📖</div>
-        <div class="how-item-text"><strong>Return anytime</strong><p>Click End Test at any point to see your results so far, then come back to the home page to start a new session.</p></div>
+        <div class="how-item-text"><strong>Return anytime</strong><p>Click Exit at any point to see your score, answers, and explanations for all questions attempted so far.</p></div>
       </div>
     </div>
   </section>
@@ -2493,6 +2493,589 @@ footer{
   </div><!-- /.sum-body -->
   </div><!-- /#sum-qm-8 -->
 
+  <!-- ── QM-9 SUMMARY: PARAMETRIC AND NON-PARAMETRIC TESTS OF INDEPENDENCE ── -->
+  <div id="sum-qm-9" class="sum-chapter" style="display:none">
+  <div class="sum-hero">
+    <div class="sum-hero-label">2026 CFA® Program · Level I · QM Reading 9</div>
+    <h1>Tests of <em>Independence</em></h1>
+    <div class="sum-hero-tags">
+      <span class="sum-hero-tag">2 Learning Outcomes</span>
+      <span class="sum-hero-tag">Pearson Correlation</span>
+      <span class="sum-hero-tag">Spearman Rank</span>
+      <span class="sum-hero-tag">t-Test for ρ = 0</span>
+      <span class="sum-hero-tag">Contingency Tables</span>
+      <span class="sum-hero-tag">Chi-Square Test</span>
+    </div>
+  </div>
+
+  <div class="sum-body">
+
+    <!-- Learning Outcomes -->
+    <div class="s-header">
+      <div class="s-icon">🎯</div>
+      <h2><span>Learning Outcomes</span>What You Need to Master</h2>
+    </div>
+    <div class="lo-list">
+      <div class="lo-item"><span class="lo-pill">LO 1</span><span class="lo-text">Explain <strong>parametric and nonparametric tests of the hypothesis that the population correlation coefficient equals zero</strong>, and determine whether the hypothesis is rejected at a given level of significance</span></div>
+      <div class="lo-item"><span class="lo-pill">LO 2</span><span class="lo-text">Explain <strong>tests of independence based on contingency table data</strong> using the chi-square test statistic</span></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Parametric Correlation Test -->
+    <div class="s-header">
+      <div class="s-icon">📐</div>
+      <h2><span>Section 1 — LO 1</span>Parametric Test: Pearson Correlation</h2>
+    </div>
+    <div class="info-note gold" style="margin-bottom:16px"><strong>Formula:</strong> r<sub>XY</sub> = s<sub>XY</sub> / (s<sub>X</sub> · s<sub>Y</sub>) &nbsp;·&nbsp; Test statistic: <strong>t = r√(n − 2) / √(1 − r²)</strong> &nbsp;·&nbsp; Distribution: t with <strong>n − 2</strong> degrees of freedom</div>
+    <div class="audit-list">
+      <div class="audit-item"><div class="audit-dot" style="background:#1a3a8f"></div><div><h4>Hypotheses</h4><p>Two-sided: H₀: ρ = 0 vs. H&#7491;: ρ ≠ 0 &nbsp;|&nbsp; One-sided right: H₀: ρ ≤ 0 vs. H&#7491;: ρ > 0 &nbsp;|&nbsp; One-sided left: H₀: ρ ≥ 0 vs. H&#7491;: ρ &lt; 0. The most common test asks whether any relationship exists at all, which implies H₀: ρ = 0.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#1a7a4a"></div><div><h4>Effect of Sample Size on Significance</h4><p>As n increases, the same sample correlation r becomes easier to reject. Two reasons: (1) degrees of freedom increase so the critical t-value decreases; (2) the numerator r√(n−2) grows. E.g., r = 0.35 with n = 12 gives t = 1.182 (not significant at 5%); with n = 32 gives t = 2.046 (just significant). As datasets become ever larger, nearly any correlation becomes statistically significant — other analytical tools must be applied.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#b98a1c"></div><div><h4>Assumptions</h4><p>The two variables must be <strong>normally distributed</strong> (parametric assumption). The correlation measures the <strong>linear</strong> relationship only. The sign of the correlation is driven by the covariance; each observation is compared to its variable mean.</p></div></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Spearman Rank Correlation -->
+    <div class="s-header">
+      <div class="s-icon">🔢</div>
+      <h2><span>Section 1 — LO 1</span>Nonparametric Test: Spearman Rank Correlation</h2>
+    </div>
+    <div class="info-note gold" style="margin-bottom:16px"><strong>Formula:</strong> r<sub>S</sub> = 1 − 6Σd²<sub>i</sub> / [n(n² − 1)] &nbsp;·&nbsp; Same t-test statistic applies for <strong>n > 30</strong>: t = r<sub>S</sub>√(n − 2) / √(1 − r<sub>S</sub>²), df = n − 2</div>
+    <div class="phases-table">
+      <div class="phase-row"><div class="phase-n">1</div><div class="phase-body"><div class="phase-title">Rank Each Variable</div><div class="phase-desc">Rank observations on X from largest (rank 1) to smallest. Repeat for Y. For tied values, assign the average of the tied ranks (e.g., if 3rd and 4th values are tied, both get rank 3.5).</div><span class="phase-out">→ Produces two sets of ranks, one per variable</span></div></div>
+      <div class="phase-row"><div class="phase-n">2</div><div class="phase-body"><div class="phase-title">Calculate Rank Differences</div><div class="phase-desc">For each observation i, compute d<sub>i</sub> = Rank(X<sub>i</sub>) − Rank(Y<sub>i</sub>), then d<sub>i</sub>². Sum all d<sub>i</sub>² to get Σd².</div><span class="phase-out">→ Σd² captures the total discrepancy in rankings between the two variables</span></div></div>
+      <div class="phase-row"><div class="phase-n">3</div><div class="phase-body"><div class="phase-title">Apply the Formula</div><div class="phase-desc">r<sub>S</sub> = 1 − 6Σd² / [n(n² − 1)]. This is the Pearson correlation applied to ranks rather than raw values. For the large-sample case (n > 30), test significance using the same t-statistic as for Pearson.</div><span class="phase-out">→ Small samples (n ≤ 30) require a specialised critical value table</span></div></div>
+    </div>
+    <div class="filing-grid" style="margin-top:16px">
+      <div class="filing-card"><h3>When to Use Spearman</h3><p>Use when the population <strong>departs meaningfully from normality</strong>, when there are outliers, when data are ranked/ordinal, or when assumptions for the Pearson parametric test are not met.</p></div>
+      <div class="filing-card"><h3>Spearman vs. Pearson</h3><p>Spearman is calculated on <strong>ranks</strong>, not raw values. It is less sensitive to outliers. When normality holds, Pearson is preferred because it has greater statistical power.</p></div>
+      <div class="filing-card"><h3>Large Sample (n > 30)</h3><p>Use the <strong>same t-test</strong> as for Pearson (df = n − 2). The test statistic formula is identical: t = r<sub>S</sub>√(n − 2) / √(1 − r<sub>S</sub>²).</p></div>
+      <div class="filing-card"><h3>Small Sample (n ≤ 30)</h3><p>Require a <strong>specialised critical value table</strong> specific to the Spearman rank correlation. The standard t-distribution critical values are not appropriate.</p></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Parametric vs Nonparametric Comparison -->
+    <div class="s-header">
+      <div class="s-icon">⚖️</div>
+      <h2><span>Section 1 — LO 1</span>Parametric vs. Nonparametric: Comparison</h2>
+    </div>
+    <table class="cmp-table">
+      <thead><tr><th>Feature</th><th>Parametric (Pearson)</th><th>Nonparametric (Spearman)</th></tr></thead>
+      <tbody>
+        <tr><td>Data used</td><td>Raw values</td><td>Ranks of values</td></tr>
+        <tr><td>Distributional assumption</td><td>Bivariate normality required</td><td>Minimal — no normality assumed</td></tr>
+        <tr><td>Sensitivity to outliers</td><td>High — outliers skew covariance</td><td>Low — ranks limit outlier influence</td></tr>
+        <tr><td>Statistical power</td><td>Higher when assumptions hold</td><td>Lower — ranks use less information</td></tr>
+        <tr><td>Test statistic (large n)</td><td>t = r√(n−2) / √(1−r²), df = n−2</td><td>Same formula applied to r<sub>S</sub></td></tr>
+        <tr><td>When preferred</td><td>Normal populations, no outliers</td><td>Non-normal, ranked data, outliers present</td></tr>
+      </tbody>
+    </table>
+
+    <hr class="s-divider">
+
+    <!-- Contingency Tables -->
+    <div class="s-header">
+      <div class="s-icon">📊</div>
+      <h2><span>Section 2 — LO 2</span>Tests of Independence: Contingency Tables</h2>
+    </div>
+    <div class="info-note gold" style="margin-bottom:16px"><strong>Chi-square statistic:</strong> χ² = Σ (O<sub>ij</sub> − E<sub>ij</sub>)² / E<sub>ij</sub> &nbsp;·&nbsp; <strong>Expected frequency:</strong> E<sub>ij</sub> = (Row i total × Column j total) / Overall total &nbsp;·&nbsp; <strong>df = (r − 1)(c − 1)</strong></div>
+    <div class="audit-list">
+      <div class="audit-item"><div class="audit-dot" style="background:#1a3a8f"></div><div><h4>When to Use a Contingency Table Test</h4><p>Use when data are <strong>categorical or discrete</strong> — correlation methods cannot be applied. A contingency table (two-way table) cross-classifies observations on two categorical dimensions. Example: 1,594 ETFs classified by size (small/medium/large) AND investment type (value/growth/blend).</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#1a7a4a"></div><div><h4>Hypotheses</h4><p>H₀: The two categorical variables are <strong>independent</strong> (no relationship). H&#7491;: The two categorical variables are <strong>dependent</strong> (a relationship exists). This is always a <strong>one-sided (right-tail only)</strong> test because the chi-square statistic is always non-negative — observed equals expected gives χ² = 0; any deviation gives χ² > 0.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#b98a1c"></div><div><h4>Degrees of Freedom</h4><p>df = (r − 1)(c − 1), where r = number of rows (categories of variable 1) and c = number of columns (categories of variable 2). Example: 3 × 3 table → df = (3−1)(3−1) = 4. Critical value at 5% significance with df = 4 is 9.4877.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#b91c1c"></div><div><h4>Decision Rule</h4><p>Reject H₀ if calculated χ² > critical χ². There is <strong>only one rejection region</strong> (right tail). The test is nonparametric — it makes no distributional assumptions about the underlying populations.</p></div></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Chi-Square Step-by-Step -->
+    <div class="s-header">
+      <div class="s-icon">🔄</div>
+      <h2><span>Section 2 — LO 2</span>Chi-Square Test: Step-by-Step</h2>
+    </div>
+    <div class="phases-table">
+      <div class="phase-row"><div class="phase-n">1</div><div class="phase-body"><div class="phase-title">State the Hypotheses</div><div class="phase-desc">H₀: The two classifications are independent. H&#7491;: The two classifications are not independent (dependent).</div><span class="phase-out">→ Independence means knowing one category tells you nothing about the other</span></div></div>
+      <div class="phase-row"><div class="phase-n">2</div><div class="phase-body"><div class="phase-title">Calculate Expected Frequencies</div><div class="phase-desc">For each cell (i, j): E<sub>ij</sub> = (Row i total × Column j total) / Overall total. This is the count you would expect in that cell if the two variables were completely independent.</div><span class="phase-out">→ E<sub>ij</sub> = (Row total × Column total) / Grand total</span></div></div>
+      <div class="phase-row"><div class="phase-n">3</div><div class="phase-body"><div class="phase-title">Calculate Scaled Squared Deviations</div><div class="phase-desc">For each cell: (O<sub>ij</sub> − E<sub>ij</sub>)² / E<sub>ij</sub>. This scales each squared difference by the expected count — cells with higher expected counts get proportionally less weight per unit deviation.</div><span class="phase-out">→ Each cell contributes one term to the sum</span></div></div>
+      <div class="phase-row"><div class="phase-n">4</div><div class="phase-body"><div class="phase-title">Sum to Get χ²</div><div class="phase-desc">χ² = sum of all (O<sub>ij</sub> − E<sub>ij</sub>)² / E<sub>ij</sub> across all m cells, where m = r × c. Compare to the chi-square critical value with df = (r−1)(c−1) at the chosen significance level.</div><span class="phase-out">→ Reject H₀ if χ² > critical value (right-tail only)</span></div></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Key Numbers -->
+    <div class="s-header">
+      <div class="s-icon">🔢</div>
+      <h2><span>Critical Numbers</span>Exam-Tested Values to Memorise</h2>
+    </div>
+    <div class="kn-grid">
+      <div class="kn-box"><div class="kn-num" style="font-size:1rem">n − 2</div><div class="kn-label">Degrees of freedom for both the Pearson and Spearman t-tests</div></div>
+      <div class="kn-box"><div class="kn-num" style="font-size:1rem">(r−1)(c−1)</div><div class="kn-label">Degrees of freedom for chi-square test of independence</div></div>
+      <div class="kn-box"><div class="kn-num">9.49</div><div class="kn-label">Chi-square critical value at 5% significance with df = 4 (3×3 contingency table)</div></div>
+      <div class="kn-box"><div class="kn-num" style="font-size:1rem">1-tail</div><div class="kn-label">Chi-square test of independence always uses a right-tail rejection region only</div></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Mosaic and Standardised Residuals -->
+    <div class="s-header">
+      <div class="s-icon">🗺️</div>
+      <h2><span>Section 2 — LO 2</span>Visualising Results: Mosaics &amp; Standardised Residuals</h2>
+    </div>
+    <div class="audit-list">
+      <div class="audit-item"><div class="audit-dot" style="background:#1a3a8f"></div><div><h4>Mosaic Plot</h4><p>A grid visualisation of the contingency table. Rectangle <strong>width</strong> reflects the proportion of each column category; rectangle <strong>height</strong> reflects the proportion of each row category. Shading shows whether observed counts are above or below expected under independence.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#1a7a4a"></div><div><h4>Standardised Residual (Pearson Residual)</div><p>Formula: (O<sub>ij</sub> − E<sub>ij</sub>) / √E<sub>ij</sub>. Positive values → more observations than expected. Negative values → fewer observations than expected. Example from ETF data: medium-cap growth ETFs had a standardised residual of +3.69 (more than expected); large-cap growth had −2.72 (fewer than expected).</p></div></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Exam Pitfalls -->
+    <div class="s-header">
+      <div class="s-icon">⚡</div>
+      <h2><span>Common Pitfalls</span>Exam Traps to Avoid</h2>
+    </div>
+    <div class="src-grid">
+      <div class="src-card"><div class="src-card-hd">❌ One-Tail vs. Two-Tail Confusion</div><ul class="src-items"><li>Correlation t-tests can be one-tailed OR two-tailed depending on the hypothesis</li><li>Chi-square test of independence is ALWAYS one-tailed (right tail only)</li><li>The chi-square statistic is always ≥ 0, so there is only a right-side rejection region</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ Degrees of Freedom</div><ul class="src-items"><li>Correlation t-test: df = n − 2 (not n − 1)</li><li>Chi-square independence: df = (r − 1)(c − 1) — a 3×3 table gives df = 4, not 9</li><li>A common trap: confusing m (total cells = r × c) with degrees of freedom</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ Choosing Pearson vs. Spearman</div><ul class="src-items"><li>If the data depart from normality → use Spearman, not Pearson</li><li>If data are already in rank form → Spearman is the only option</li><li>Both use the same t-test formula for large samples (n > 30)</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ Large Sample Significance</div><ul class="src-items"><li>Very large n → almost any correlation becomes statistically significant</li><li>Statistical significance ≠ economic significance</li><li>With very large datasets, other analytical tools must supplement hypothesis tests</li></ul></div>
+    </div>
+
+    <div class="takeaway">
+      <h3>Core Mindset for Tests of Independence</h3>
+      <p>This reading has two distinct tools for two distinct data types. For <strong>continuous variables</strong>, test correlation using a <strong>t-statistic</strong> — Pearson if normality holds, Spearman ranks if it doesn't. Both use the same formula: t = r√(n−2) / √(1−r²), df = n−2. For <strong>categorical variables</strong>, test independence using the <strong>chi-square statistic</strong> on a contingency table — always a right-tail test, degrees of freedom = (r−1)(c−1). The key to this reading is knowing which tool to reach for: if the variable type is continuous and roughly normal → parametric Pearson; if non-normal or ranked → nonparametric Spearman; if categorical → chi-square. Never apply correlation methods to categorical data.</p>
+    </div>
+
+  </div><!-- /.sum-body -->
+  </div><!-- /#sum-qm-9 -->
+
+  <!-- ── QM-10 SUMMARY: SIMPLE LINEAR REGRESSION ── -->
+  <div id="sum-qm-10" class="sum-chapter" style="display:none">
+  <div class="sum-hero">
+    <div class="sum-hero-label">2026 CFA® Program · Level I · QM Reading 10</div>
+    <h1>Simple Linear <em>Regression</em></h1>
+    <div class="sum-hero-tags">
+      <span class="sum-hero-tag">6 Learning Outcomes</span>
+      <span class="sum-hero-tag">OLS / Least Squares</span>
+      <span class="sum-hero-tag">4 Assumptions (LINE)</span>
+      <span class="sum-hero-tag">ANOVA &amp; Goodness of Fit</span>
+      <span class="sum-hero-tag">t &amp; F Tests</span>
+      <span class="sum-hero-tag">Prediction Intervals</span>
+      <span class="sum-hero-tag">Log Transformations</span>
+    </div>
+  </div>
+
+  <div class="sum-body">
+
+    <!-- Learning Outcomes -->
+    <div class="s-header">
+      <div class="s-icon">🎯</div>
+      <h2><span>Learning Outcomes</span>What You Need to Master</h2>
+    </div>
+    <div class="lo-list">
+      <div class="lo-item"><span class="lo-pill">LO 1</span><span class="lo-text">Describe a simple linear regression model, how the <strong>least squares criterion</strong> is used to estimate regression coefficients, and the interpretation of these coefficients</span></div>
+      <div class="lo-item"><span class="lo-pill">LO 2</span><span class="lo-text">Explain the <strong>four assumptions</strong> underlying the simple linear regression model, and describe how residuals and residual plots indicate if these assumptions may have been violated</span></div>
+      <div class="lo-item"><span class="lo-pill">LO 3</span><span class="lo-text">Calculate and interpret <strong>measures of fit</strong> (R², F-statistic, s<sub>e</sub>) and formulate and evaluate tests of fit and of regression coefficients</span></div>
+      <div class="lo-item"><span class="lo-pill">LO 4</span><span class="lo-text">Describe the use of <strong>ANOVA</strong> in regression analysis, interpret ANOVA results, and calculate and interpret the standard error of estimate</span></div>
+      <div class="lo-item"><span class="lo-pill">LO 5</span><span class="lo-text">Calculate and interpret the <strong>predicted value</strong> for the dependent variable, and a <strong>prediction interval</strong> for it, given an estimated linear regression model and a value for the independent variable</span></div>
+      <div class="lo-item"><span class="lo-pill">LO 6</span><span class="lo-text">Describe different <strong>functional forms</strong> of simple linear regressions (log-lin, lin-log, log-log)</span></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- The Model -->
+    <div class="s-header">
+      <div class="s-icon">📐</div>
+      <h2><span>Section 1 — LO 1</span>The Simple Linear Regression Model</h2>
+    </div>
+    <div class="info-note gold" style="margin-bottom:16px"><strong>Population model:</strong> Y<sub>i</sub> = b<sub>0</sub> + b<sub>1</sub>X<sub>i</sub> + ε<sub>i</sub> &nbsp;·&nbsp; <strong>Estimated line:</strong> Ŷ<sub>i</sub> = b̂<sub>0</sub> + b̂<sub>1</sub>X<sub>i</sub> &nbsp;·&nbsp; <strong>Residual:</strong> e<sub>i</sub> = Y<sub>i</sub> − Ŷ<sub>i</sub></div>
+    <div class="audit-list">
+      <div class="audit-item"><div class="audit-dot" style="background:#1a3a8f"></div><div><h4>Dependent Variable (Y)</h4><p>The variable whose variation we are trying to explain. Plotted on the vertical axis. Examples: ROA, stock return, revenue growth, inflation rate.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#b98a1c"></div><div><h4>Independent Variable (X)</h4><p>The variable used to explain variation in Y. Plotted on the horizontal axis. Must not be random (non-stochastic assumption). Examples: CAPEX, GDP growth, market return.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#1a7a4a"></div><div><h4>Intercept (b̂<sub>0</sub>)</h4><p>Value of Y when X = 0. Calculated as: b̂<sub>0</sub> = Ȳ − b̂<sub>1</sub>X̄. May be meaningless if X = 0 is unrealistic (e.g., zero money supply). In indicator variable regressions, it is the mean of Y when the indicator = 0.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#b91c1c"></div><div><h4>Slope (b̂<sub>1</sub>)</h4><p>Change in Y for a one-unit change in X. Formula: b̂<sub>1</sub> = Σ(Y<sub>i</sub>−Ȳ)(X<sub>i</sub>−X̄) / Σ(X<sub>i</sub>−X̄)² = Cov(X,Y) / Var(X). Same sign as the pairwise correlation. In indicator variable regressions, it is the difference in group means.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#6b3fa0"></div><div><h4>OLS Criterion</h4><p>Ordinary least squares minimises the <strong>sum of squared residuals (SSE)</strong> = Σe<sub>i</sub>². The resulting line is the best-fitting line through the data. By construction: (1) sum of residuals = 0; (2) regression line passes through (X̄, Ȳ).</p></div></div>
+    </div>
+    <div class="info-note blue" style="margin-top:12px"><strong>Slope vs. Correlation:</strong> Both share the same sign and same numerator Σ(Y<sub>i</sub>−Ȳ)(X<sub>i</sub>−X̄). The difference is the denominator — slope uses Var(X) only; correlation uses Std(Y) × Std(X). In SLR: r = b̂<sub>1</sub> × (s<sub>X</sub>/s<sub>Y</sub>).</div>
+
+    <hr class="s-divider">
+
+    <!-- Slope and Correlation Link -->
+    <div class="s-header">
+      <div class="s-icon">🔗</div>
+      <h2><span>Section 1 — LO 1</span>Key Formulas at a Glance</h2>
+    </div>
+    <div class="kn-grid" style="margin-bottom:16px">
+      <div class="kn-box"><div class="kn-num" style="font-size:.85rem">b̂<sub>1</sub></div><div class="kn-label">Σ(Yᵢ−Ȳ)(Xᵢ−X̄) / Σ(Xᵢ−X̄)²<br>= Cov(Y,X) / Var(X)</div></div>
+      <div class="kn-box"><div class="kn-num" style="font-size:.85rem">b̂<sub>0</sub></div><div class="kn-label">Ȳ − b̂₁X̄<br>Estimated after slope</div></div>
+      <div class="kn-box"><div class="kn-num" style="font-size:.85rem">eᵢ</div><div class="kn-label">Yᵢ − Ŷᵢ = actual − predicted<br>Residual (sample); ε = population error</div></div>
+      <div class="kn-box"><div class="kn-num" style="font-size:.85rem">r</div><div class="kn-label">Cov(X,Y) / (s<sub>X</sub>·s<sub>Y</sub>)<br>Pairwise correlation; r² = R²</div></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Four Assumptions -->
+    <div class="s-header">
+      <div class="s-icon">⚖️</div>
+      <h2><span>Section 2 — LO 2</span>Four Assumptions: LINE</h2>
+    </div>
+    <div class="info-note gold" style="margin-bottom:16px"><strong>Memory aid:</strong> <strong>L</strong>inearity · <strong>I</strong>ndependence · <strong>N</strong>ormality · <strong>E</strong>qual variance (Homoskedasticity). All four must hold for valid inference.</div>
+    <div class="phases-table">
+      <div class="phase-row"><div class="phase-n">L</div><div class="phase-body"><div class="phase-title">Linearity</div><div class="phase-desc">The relationship between Y and X is linear. X must be non-stochastic (not random). Violation sign: residuals show a curve or systematic pattern when plotted against X — under/overestimating at different ranges. Fix: use a nonlinear functional form (log transformation, etc.).</div><span class="phase-out">→ Residuals must appear random — no pattern vs. X</span></div></div>
+      <div class="phase-row"><div class="phase-n">I</div><div class="phase-body"><div class="phase-title">Independence</div><div class="phase-desc">Each (X, Y) pair is uncorrelated with other pairs — no autocorrelation. Violation sign: residuals show a repeating or seasonal pattern across time (e.g., Q4 revenue spikes). Critical for valid standard errors of b̂<sub>0</sub> and b̂<sub>1</sub>.</div><span class="phase-out">→ Residuals vs. time should look random, not seasonal</span></div></div>
+      <div class="phase-row"><div class="phase-n">N</div><div class="phase-body"><div class="phase-title">Normality</div><div class="phase-desc">Residuals (not the raw data) are normally distributed. Outliers in X or Y can distort the fitted line for all other observations. For large samples, the central limit theorem allows relaxing this assumption.</div><span class="phase-out">→ Check histogram/Q-Q plot of residuals; outliers are the main concern</span></div></div>
+      <div class="phase-row"><div class="phase-n">E</div><div class="phase-body"><div class="phase-title">Equal Variance (Homoskedasticity)</div><div class="phase-desc">E(ε<sub>i</sub>²) = σ<sub>ε</sub>² for all i. Variance of residuals is constant across all observations. Violation = heteroskedasticity. Violation sign: residuals cluster into groups with different spread widths (e.g., two regimes with different central bank policy).</div><span class="phase-out">→ Residual band width should be uniform, not widening or narrowing</span></div></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Sum of Squares and Goodness of Fit -->
+    <div class="s-header">
+      <div class="s-icon">📊</div>
+      <h2><span>Section 3 — LO 3</span>Sum of Squares Decomposition &amp; Goodness of Fit</h2>
+    </div>
+    <div class="info-note gold" style="margin-bottom:16px"><strong>Key identity:</strong> SST = SSR + SSE &nbsp;·&nbsp; Total variation = Explained variation + Unexplained variation</div>
+    <table class="cmp-table">
+      <thead><tr><th>Component</th><th>Formula</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td><strong>SST</strong> — Total</td><td>Σ(Y<sub>i</sub> − Ȳ)²</td><td>Total variation of Y to be explained. df = n − 1</td></tr>
+        <tr><td><strong>SSR</strong> — Regression</td><td>Σ(Ŷ<sub>i</sub> − Ȳ)²</td><td>Variation <em>explained</em> by X. df = k = 1 (simple LR)</td></tr>
+        <tr><td><strong>SSE</strong> — Error</td><td>Σ(Y<sub>i</sub> − Ŷ<sub>i</sub>)²</td><td>Variation <em>unexplained</em> by X. df = n − 2</td></tr>
+        <tr><td><strong>R²</strong></td><td>SSR / SST = r²</td><td>% of Y's variation explained by X. Range: 0–100%</td></tr>
+        <tr><td><strong>MSR</strong></td><td>SSR / k = SSR / 1</td><td>Mean square regression — explained variance per df</td></tr>
+        <tr><td><strong>MSE</strong></td><td>SSE / (n−2)</td><td>Mean square error — unexplained variance per df</td></tr>
+        <tr><td><strong>F-statistic</strong></td><td>MSR / MSE</td><td>Tests H<sub>0</sub>: b<sub>1</sub> = 0. One-sided (right tail only). df: 1, n−2</td></tr>
+        <tr><td><strong>s<sub>e</sub></strong></td><td>√MSE = √[SSE/(n−2)]</td><td>Standard error of estimate — absolute measure of fit</td></tr>
+      </tbody>
+    </table>
+    <div class="info-note blue" style="margin-top:12px"><strong>Key link:</strong> In SLR, t² = F. The t-statistic for testing b<sub>1</sub> = 0 squared equals the F-statistic. Also: r² = R². Both R² and F test fit, but R² is descriptive while F is a statistical test. s<sub>e</sub> is the absolute measure — unlike R² and F, it has units (same units as Y).</div>
+
+    <hr class="s-divider">
+
+    <!-- ANOVA Table -->
+    <div class="s-header">
+      <div class="s-icon">📋</div>
+      <h2><span>Section 4 — LO 4</span>ANOVA Table Structure</h2>
+    </div>
+    <table class="cmp-table">
+      <thead><tr><th>Source</th><th>SS</th><th>df</th><th>MS</th><th>F</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Regression</strong></td><td>SSR = Σ(Ŷ<sub>i</sub>−Ȳ)²</td><td>k = 1</td><td>MSR = SSR/1</td><td rowspan="2" style="vertical-align:middle"><strong>F = MSR/MSE</strong><br>df: 1, n−2<br>Right-tail only</td></tr>
+        <tr><td><strong>Error</strong></td><td>SSE = Σ(Y<sub>i</sub>−Ŷ<sub>i</sub>)²</td><td>n − 2</td><td>MSE = SSE/(n−2)</td></tr>
+        <tr><td><strong>Total</strong></td><td>SST = Σ(Y<sub>i</sub>−Ȳ)²</td><td>n − 1</td><td>s²<sub>Y</sub> = SST/(n−1)</td><td>—</td></tr>
+      </tbody>
+    </table>
+    <div class="kn-grid" style="margin-top:14px">
+      <div class="kn-box"><div class="kn-num" style="font-size:.85rem">s<sub>e</sub></div><div class="kn-label">√MSE = standard error of estimate<br>Smaller = better fit</div></div>
+      <div class="kn-box"><div class="kn-num" style="font-size:.85rem">s²<sub>Y</sub></div><div class="kn-label">SST/(n−1) = sample variance of Y<br>From ANOVA total row</div></div>
+      <div class="kn-box"><div class="kn-num" style="font-size:.85rem">R²</div><div class="kn-label">SSR/SST — relative, unitless<br>Compare across same-Y models</div></div>
+      <div class="kn-box"><div class="kn-num" style="font-size:.85rem">F</div><div class="kn-label">MSR/MSE — always right-tail<br>= t² in simple LR</div></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Hypothesis Tests -->
+    <div class="s-header">
+      <div class="s-icon">🔬</div>
+      <h2><span>Section 3 — LO 3</span>Hypothesis Tests on Regression Coefficients</h2>
+    </div>
+    <div class="audit-list">
+      <div class="audit-item"><div class="audit-dot" style="background:#1a3a8f"></div><div><h4>Test of the Slope (t-test)</h4><p>H<sub>0</sub>: b<sub>1</sub> = B<sub>1</sub> (often 0) vs. H<sub>a</sub>: b<sub>1</sub> ≠ B<sub>1</sub>. Formula: t = (b̂<sub>1</sub> − B<sub>1</sub>) / s<sub>b̂₁</sub>, where s<sub>b̂₁</sub> = s<sub>e</sub> / √Σ(X<sub>i</sub>−X̄)². df = n − 2. Greater variability in X → smaller s<sub>b̂₁</sub> → larger |t|. In SLR, the t-test for b<sub>1</sub> = 0 and the t-test for ρ = 0 produce the same statistic.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#b98a1c"></div><div><h4>Test of the Intercept (t-test)</h4><p>H<sub>0</sub>: b<sub>0</sub> = B<sub>0</sub> vs. H<sub>a</sub>: b<sub>0</sub> ≠ B<sub>0</sub>. Formula: t = (b̂<sub>0</sub> − B<sub>0</sub>) / s<sub>b̂₀</sub>, where s<sub>b̂₀</sub> = s<sub>e</sub>√[1/n + X̄² / Σ(X<sub>i</sub>−X̄)²]. df = n − 2. Intercept test is meaningful only if X = 0 is economically sensible.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#1a7a4a"></div><div><h4>Indicator (Dummy) Variables</h4><p>X takes only values 0 or 1 (e.g., earnings announcement month = 1, otherwise = 0). Intercept = mean of Y when indicator = 0. Slope = difference in means between the two groups. The test of the slope coefficient is equivalent to a two-sample t-test of means.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#b91c1c"></div><div><h4>p-Values</h4><p>The p-value is the smallest α at which H<sub>0</sub> can be rejected. Reject H<sub>0</sub> if p-value &lt; α. Most software reports p-values for the test H<sub>0</sub>: parameter = 0. For a one-sided test, divide the two-sided p-value by 2. A very small p-value does not imply economic significance — large samples can make trivially small effects significant.</p></div></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Prediction -->
+    <div class="s-header">
+      <div class="s-icon">🔭</div>
+      <h2><span>Section 5 — LO 5</span>Prediction &amp; Prediction Intervals</h2>
+    </div>
+    <div class="info-note gold" style="margin-bottom:16px"><strong>Point forecast:</strong> Ŷ<sub>f</sub> = b̂<sub>0</sub> + b̂<sub>1</sub>X<sub>f</sub> &nbsp;·&nbsp; <strong>Prediction interval:</strong> Ŷ<sub>f</sub> ± t<sub>α/2</sub> × s<sub>f</sub> &nbsp;·&nbsp; <strong>Standard error of forecast:</strong> s<sub>f</sub> = s<sub>e</sub>√[1 + 1/n + (X<sub>f</sub>−X̄)²/Σ(X<sub>i</sub>−X̄)²]</div>
+    <div class="phases-table">
+      <div class="phase-row"><div class="phase-n">1</div><div class="phase-body"><div class="phase-title">Make the Point Forecast</div><div class="phase-desc">Ŷ<sub>f</sub> = b̂<sub>0</sub> + b̂<sub>1</sub>X<sub>f</sub>. Plug the forecasted value of X into the estimated regression equation.</div><span class="phase-out">→ This is the estimated mean of Y at X = X<sub>f</sub></span></div></div>
+      <div class="phase-row"><div class="phase-n">2</div><div class="phase-body"><div class="phase-title">Compute s<sub>f</sub></div><div class="phase-desc">s<sub>f</sub> = s<sub>e</sub>√[1 + 1/n + (X<sub>f</sub>−X̄)²/Σ(X<sub>i</sub>−X̄)²]. Three factors increase s<sub>f</sub>: (1) larger s<sub>e</sub>; (2) smaller n; (3) X<sub>f</sub> further from X̄. The interval is narrowest at X<sub>f</sub> = X̄ and widens as you move away.</div><span class="phase-out">→ Forecasting outside the data range (extrapolation) increases uncertainty dramatically</span></div></div>
+      <div class="phase-row"><div class="phase-n">3</div><div class="phase-body"><div class="phase-title">Apply the Interval</div><div class="phase-desc">Prediction interval = Ŷ<sub>f</sub> ± t<sub>critical α/2</sub> × s<sub>f</sub>, with df = n − 2. This interval accounts for both estimation error in the regression line AND individual observation scatter around the line (hence the "+1" inside the square root).</div><span class="phase-out">→ Wider than a confidence interval for the mean — it must capture individual Y values</span></div></div>
+    </div>
+    <div class="info-note blue" style="margin-top:12px"><strong>Important:</strong> The "1 +" in the s<sub>f</sub> formula captures the fact that we're predicting an individual Y value, not the conditional mean of Y. This makes prediction intervals wider than confidence intervals for the mean.</div>
+
+    <hr class="s-divider">
+
+    <!-- Functional Forms -->
+    <div class="s-header">
+      <div class="s-icon">📈</div>
+      <h2><span>Section 6 — LO 6</span>Functional Forms: Log Transformations</h2>
+    </div>
+    <div class="info-note gold" style="margin-bottom:16px"><strong>Goal:</strong> Transform non-linear data so that the linear regression model fits well. Choose based on R², F-statistic, s<sub>e</sub>, and random (pattern-free) residuals.</div>
+    <table class="cmp-table">
+      <thead><tr><th>Model</th><th>Form</th><th>Slope Interpretation</th><th>Use When</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Lin-Lin</strong> (standard)</td><td>Y = b<sub>0</sub> + b<sub>1</sub>X</td><td>Absolute Δ in Y for absolute Δ in X</td><td>Both variables are linear</td></tr>
+        <tr><td><strong>Log-Lin</strong></td><td>ln Y = b<sub>0</sub> + b<sub>1</sub>X</td><td>Relative (%) Δ in Y for absolute Δ in X</td><td>Y grows exponentially; model constant growth rate</td></tr>
+        <tr><td><strong>Lin-Log</strong></td><td>Y = b<sub>0</sub> + b<sub>1</sub>ln X</td><td>Absolute Δ in Y for relative (%) Δ in X</td><td>Diminishing marginal returns in X</td></tr>
+        <tr><td><strong>Log-Log</strong></td><td>ln Y = b<sub>0</sub> + b<sub>1</sub>ln X</td><td>Relative (%) Δ in Y for relative (%) Δ in X (= elasticity)</td><td>Elasticity relationships; both variables non-linear</td></tr>
+      </tbody>
+    </table>
+    <div class="filing-grid" style="margin-top:16px">
+      <div class="filing-card"><h3>📊 Log-Lin</h3><p>ln Y = b<sub>0</sub> + b<sub>1</sub>X. Used for exponentially growing variables (e.g., revenues growing at a compound rate). To forecast Y: antilog the predicted ln Y — i.e., Y = e<sup>predicted ln Y</sup>. Cannot compare R² directly to a lin-lin model.</p></div>
+      <div class="filing-card"><h3>📉 Lin-Log</h3><p>Y = b<sub>0</sub> + b<sub>1</sub>ln X. Used when X has diminishing marginal impact on Y (e.g., operating margin vs. unit sales). Since Y is unchanged, R² and s<sub>e</sub> <strong>can</strong> be compared directly with the lin-lin model.</p></div>
+      <div class="filing-card"><h3>🔢 Log-Log</h3><p>ln Y = b<sub>0</sub> + b<sub>1</sub>ln X. The slope is a <strong>constant elasticity</strong>: 1% change in X → b<sub>1</sub>% change in Y. Used for revenue–advertising, demand models. Cannot compare R² directly to lin-lin.</p></div>
+      <div class="filing-card"><h3>🎯 Model Selection</h3><p>Compare models with the <strong>same dependent variable form</strong> using R², F, and s<sub>e</sub>. Always examine residuals: random residuals confirm correct functional form. Non-random residuals signal the wrong form.</p></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Key Numbers -->
+    <div class="s-header">
+      <div class="s-icon">🔢</div>
+      <h2><span>Critical Numbers</span>Exam-Tested Values &amp; Examples</h2>
+    </div>
+    <div class="kn-grid">
+      <div class="kn-box"><div class="kn-num" style="font-size:.85rem">n − 2</div><div class="kn-label">df for t-tests on slope and intercept; df for MSE and s<sub>e</sub></div></div>
+      <div class="kn-box"><div class="kn-num" style="font-size:.85rem">1, n−2</div><div class="kn-label">df for F-statistic in SLR (1 in numerator, n−2 in denominator)</div></div>
+      <div class="kn-box"><div class="kn-num" style="font-size:.85rem">t² = F</div><div class="kn-label">In SLR only: squared t-stat for b₁=0 equals the F-stat</div></div>
+      <div class="kn-box"><div class="kn-num" style="font-size:.85rem">r² = R²</div><div class="kn-label">Pairwise correlation squared = coefficient of determination (SLR only)</div></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Exam Pitfalls -->
+    <div class="s-header">
+      <div class="s-icon">⚡</div>
+      <h2><span>Common Pitfalls</span>Exam Traps to Avoid</h2>
+    </div>
+    <div class="src-grid">
+      <div class="src-card"><div class="src-card-hd">❌ Error vs. Residual</div><ul class="src-items"><li>Error term (ε) = population; Residual (e) = sample estimate</li><li>Sum of residuals is always zero by construction in OLS</li><li>Residuals are in the same units as Y (not standardised)</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ Normality Assumption</div><ul class="src-items"><li>Normality applies to the RESIDUALS, not to Y or X themselves</li><li>Outliers in Y or X can severely distort the fitted line</li><li>Large n → CLT allows relaxing normality requirement</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ R² vs. F vs. s<sub>e</sub></div><ul class="src-items"><li>R² is descriptive (relative); F is a statistical test (relative); s<sub>e</sub> is absolute (has units)</li><li>Only compare R² and F across models with the SAME dependent variable form</li><li>Can always compare s<sub>e</sub> if dependent variable is the same</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ Prediction Interval Width</div><ul class="src-items"><li>Narrowest at X<sub>f</sub> = X̄; wider as X<sub>f</sub> deviates from X̄</li><li>Extrapolating outside the data range → unreliable wide intervals</li><li>Larger n reduces s<sub>f</sub>; better model fit (lower s<sub>e</sub>) also reduces s<sub>f</sub></li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ Indicator Variable Interpretation</div><ul class="src-items"><li>Intercept = mean of Y when indicator = 0 (the reference group)</li><li>Slope = DIFFERENCE in means between the two groups (not the mean of group 1)</li><li>t-test on slope ≡ two-sample pooled-variance t-test</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ Log Model Forecasting</div><ul class="src-items"><li>Log-lin forecast: predicted Y = e<sup>predicted ln Y</sup> (take antilog)</li><li>Cannot compare R² between log-lin and lin-lin (different dependent variable)</li><li>Log-log slope = elasticity: % change in Y per % change in X</li></ul></div>
+    </div>
+
+    <div class="takeaway">
+      <h3>Core Mindset for Simple Linear Regression</h3>
+      <p>Simple linear regression is the CFA's primary tool for <strong>quantifying relationships and making predictions</strong>. Master four things: (1) <strong>OLS mechanics</strong> — slope = Cov(Y,X)/Var(X), intercept = Ȳ − b̂<sub>1</sub>X̄, and residuals sum to zero; (2) the <strong>LINE assumptions</strong> — violation patterns show up in residual plots; (3) the <strong>ANOVA decomposition</strong> — SST = SSR + SSE drives R², F, and s<sub>e</sub>, with t² = F in SLR; and (4) the <strong>prediction interval</strong> — it's wider than a confidence interval, narrowest at X̄, and widens with extrapolation. For functional forms, always ask: does transforming the variable improve the residual plot and the fit statistics? And remember — statistical significance ≠ economic significance, especially with large samples.</p>
+    </div>
+
+  </div><!-- /.sum-body -->
+  </div><!-- /#sum-qm-10 -->
+
+
+
+  <!-- ── QM-11 SUMMARY: INTRODUCTION TO BIG DATA TECHNIQUES ── -->
+  <div id="sum-qm-11" class="sum-chapter" style="display:none">
+  <div class="sum-hero">
+    <div class="sum-hero-label">2026 CFA® Program · Level I · QM Reading 11</div>
+    <h1>Big Data &amp; <em>Fintech</em></h1>
+    <div class="sum-hero-tags">
+      <span class="sum-hero-tag">3 Learning Outcomes</span>
+      <span class="sum-hero-tag">Fintech</span>
+      <span class="sum-hero-tag">Big Data &amp; 4 Vs</span>
+      <span class="sum-hero-tag">AI &amp; Machine Learning</span>
+      <span class="sum-hero-tag">Supervised / Unsupervised</span>
+      <span class="sum-hero-tag">NLP &amp; Text Analytics</span>
+      <span class="sum-hero-tag">Data Science</span>
+    </div>
+  </div>
+
+  <div class="sum-body">
+
+    <!-- Learning Outcomes -->
+    <div class="s-header">
+      <div class="s-icon">🎯</div>
+      <h2><span>Learning Outcomes</span>What You Need to Master</h2>
+    </div>
+    <div class="lo-list">
+      <div class="lo-item"><span class="lo-pill">LO 1</span><span class="lo-text">Describe aspects of <strong>fintech</strong> that are directly relevant for the gathering and analyzing of financial data</span></div>
+      <div class="lo-item"><span class="lo-pill">LO 2</span><span class="lo-text">Describe <strong>Big Data, artificial intelligence, and machine learning</strong> — including their characteristics, types, and limitations</span></div>
+      <div class="lo-item"><span class="lo-pill">LO 3</span><span class="lo-text">Describe applications of <strong>Big Data and Data Science</strong> to investment management, including text analytics, NLP, visualization, and data processing methods</span></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Fintech -->
+    <div class="s-header">
+      <div class="s-icon">💻</div>
+      <h2><span>Section 1 — LO 1</span>Fintech: What It Is and Why It Matters</h2>
+    </div>
+    <div class="info-note gold" style="margin-bottom:16px"><strong>Definition:</strong> Fintech = technological innovation in the design and delivery of financial services and products. Spans companies, applications, and entire business sectors challenging incumbent providers.</div>
+    <div class="phases-table">
+      <div class="phase-row"><div class="phase-n">1</div><div class="phase-body"><div class="phase-title">Early Fintech: Automation of Routine Tasks</div><div class="phase-desc">Data processing and rule-based systems that executed decisions according to specified "if–then" instructions. Limited learning; purely deterministic.</div><span class="phase-out">→ Still the backbone of many compliance and back-office systems</span></div></div>
+      <div class="phase-row"><div class="phase-n">2</div><div class="phase-body"><div class="phase-title">Modern Fintech: Machine-Learning Logic</div><div class="phase-desc">Computer programs that "learn" how to complete tasks over time from data, rather than following explicit rules. By the late 1990s, faster networks and more powerful processors enabled AI deployment in logistics, data mining, financial analysis, and medical diagnosis.</div><span class="phase-out">→ Neural networks used in credit card fraud detection since the 1980s</span></div></div>
+      <div class="phase-row"><div class="phase-n">3</div><div class="phase-body"><div class="phase-title">Investment-Relevant Applications Today</div><div class="phase-desc">Analysis of massive traditional and alternative datasets; AI-based identification of complex, non-linear relationships; NLP to parse earnings calls and filings; algorithmic and high-frequency trading; robo-advisers and financial planning tools.</div><span class="phase-out">→ Relevant to both quantitative managers AND fundamental managers (hybrid decision-making)</span></div></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Big Data -->
+    <div class="s-header">
+      <div class="s-icon">🗄️</div>
+      <h2><span>Section 2 — LO 2</span>Big Data: The Four Vs</h2>
+    </div>
+    <div class="info-note gold" style="margin-bottom:16px"><strong>Core definition:</strong> Vast amounts of information generated by industry, governments, individuals, and electronic devices — from both <em>traditional</em> and <em>alternative</em> (non-traditional) sources.</div>
+    <div class="kn-grid" style="margin-bottom:16px">
+      <div class="kn-box"><div class="kn-num" style="font-size:1.4rem">V<sub>1</sub></div><div class="kn-label"><strong>Volume</strong><br>Scale: MB → GB → TB → PB<br>Billions of data points</div></div>
+      <div class="kn-box"><div class="kn-num" style="font-size:1.4rem">V<sub>2</sub></div><div class="kn-label"><strong>Velocity</strong><br>Speed: Batch → Periodic → Near Real-Time → Real-Time</div></div>
+      <div class="kn-box"><div class="kn-num" style="font-size:1.4rem">V<sub>3</sub></div><div class="kn-label"><strong>Variety</strong><br>Structured / Semi-structured / Unstructured<br>SQL tables, HTML, video, audio, images</div></div>
+      <div class="kn-box"><div class="kn-num" style="font-size:1.4rem">V<sub>4</sub></div><div class="kn-label"><strong>Veracity</strong><br>Credibility &amp; reliability of sources<br>Critical when used for inference or prediction</div></div>
+    </div>
+    <div class="audit-list">
+      <div class="audit-item"><div class="audit-dot" style="background:#1a3a8f"></div><div><h4>Structured Data</h4><p>Organised in tables; each field represents the same type of information. Stored in traditional relational databases (SQL). Examples: stock prices, corporate financials, economic data, trade prices and volumes.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#b98a1c"></div><div><h4>Unstructured Data</h4><p>Disparate, unorganised data that cannot be represented in tabular form. Requires specialised applications before it is usable. Examples: social media posts, emails, text messages, voice recordings, images, video, satellite feeds, blog content.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#1a7a4a"></div><div><h4>Semi-Structured Data</h4><p>Has attributes of both structured and unstructured data. Partially organised but not fully conforming to a relational model. Examples: HTML code, XML, JSON files, emails with structured metadata but unstructured body text.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#b91c1c"></div><div><h4>Veracity: The Critical Fourth V</h4><p>Becomes especially important with Big Data because of the enormous variety of sources and the risk of mixing high-quality and low-quality data. Big Data amplifies the age-old challenge of disentangling quality from quantity. Requires data curation and cleaning before analysis.</p></div></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Alternative Data Sources -->
+    <div class="s-header">
+      <div class="s-icon">🌐</div>
+      <h2><span>Section 2 — LO 2</span>Sources of Big Data: Traditional vs. Alternative</h2>
+    </div>
+    <table class="cmp-table">
+      <thead><tr><th>Category</th><th>Source</th><th>Examples</th><th>Data Type</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Traditional</strong></td><td>Corporate</td><td>Annual reports, regulatory filings, earnings calls, sales &amp; earnings figures</td><td>Structured</td></tr>
+        <tr><td><strong>Traditional</strong></td><td>Market</td><td>Trade prices, trade volumes, exchange data</td><td>Structured</td></tr>
+        <tr><td><strong>Alternative</strong></td><td>Individuals</td><td>Social media, product reviews, web search logs, emails, time-on-page data</td><td>Mostly Unstructured</td></tr>
+        <tr><td><strong>Alternative</strong></td><td>Business Processes</td><td>Credit card data, corporate exhaust, supply chain info, POS scanner data, banking records</td><td>Mostly Structured</td></tr>
+        <tr><td><strong>Alternative</strong></td><td>Sensors</td><td>Satellite imagery, RFID chips, geolocation, smart phone data, IoT devices</td><td>Unstructured</td></tr>
+      </tbody>
+    </table>
+    <div class="filing-grid" style="margin-top:14px">
+      <div class="filing-card"><h3>📦 Corporate Exhaust</h3><p>Information generated as a by-product of normal business operations — supply chain data, banking records, POS scanner data. <strong>Leading or real-time indicator</strong> of business performance vs. quarterly/annual corporate metrics (lagging).</p></div>
+      <div class="filing-card"><h3>🛰️ IoT</h3><p>Internet of Things: vast network of physical devices, appliances, smart buildings, vehicles, and sensors embedded with electronics and network connections that share data. The largest-volume category of sensor data — growing exponentially.</p></div>
+      <div class="filing-card"><h3>⚖️ Legal &amp; Ethical Issues</h3><p>Web scraping may capture <strong>personal data protected by regulation</strong>. Best practices still evolving across jurisdictions. National regulations may conflict. Investment professionals must consider whether data is in the public domain.</p></div>
+      <div class="filing-card"><h3>🎯 Why Alternative Data?</h3><p>Provides additional insights about <strong>consumer behavior, firm performance, and trends</strong> not captured by traditional sources. Used to generate alpha, improve trade execution, identify new pricing factors, and uncover market trends.</p></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- AI and ML -->
+    <div class="s-header">
+      <div class="s-icon">🤖</div>
+      <h2><span>Section 2 — LO 2</span>Artificial Intelligence &amp; Machine Learning</h2>
+    </div>
+    <div class="info-note gold" style="margin-bottom:16px"><strong>AI:</strong> Computer systems capable of performing tasks that traditionally required human intelligence at comparable or superior levels. &nbsp;·&nbsp; <strong>ML:</strong> Computer-based techniques that extract knowledge from large data without assumptions about underlying probability distributions. Goal: "find the pattern, apply the pattern."</div>
+    <div class="audit-list">
+      <div class="audit-item"><div class="audit-dot" style="background:#1a3a8f"></div><div><h4>Expert Systems (Early AI)</h4><p>Simulated human expert knowledge through "if–then" rule sets. Deterministic, not learning-based. Limited to pre-programmed knowledge. Used in early fraud detection and decision support systems.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#b98a1c"></div><div><h4>ML: The Three-Dataset Split</h4><p><strong>Training set</strong> — algorithm identifies input–output relationships from historical data. <strong>Validation set</strong> — model is refined and tuned. <strong>Test set</strong> — model's predictive power on entirely new data is evaluated. Must pass all three stages before deployment.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#b91c1c"></div><div><h4>Overfitting</h4><p>Model learns the training data <em>too precisely</em> — treats noise as true signal. Result: performs well on training data but fails on new data. Indicates a model that is <strong>too complex</strong>. The primary risk in ML investment models.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#1a7a4a"></div><div><h4>Underfitting</h4><p>Model treats true signal as noise — fails to recognise genuine patterns in the training data. Result: poor performance even on training data. Indicates a model that is <strong>too simplistic</strong>.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#6b3fa0"></div><div><h4>"Black Box" Problem</h4><p>Because ML techniques are not explicitly programmed, the process by which they arrive at outcomes may be opaque and <strong>difficult to explain or interpret</strong>. A significant concern for compliance, regulatory oversight, and investment attribution.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#8b6914"></div><div><h4>Human Judgment Still Required</h4><p>Despite automation, ML still requires human expertise to: understand the underlying data, select appropriate techniques, clean data of biases and spurious points, and ensure sufficient data volume exists for training and validation.</p></div></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Three Types of ML -->
+    <div class="s-header">
+      <div class="s-icon">🔀</div>
+      <h2><span>Section 2 — LO 2</span>Three Types of Machine Learning</h2>
+    </div>
+    <div class="phases-table">
+      <div class="phase-row"><div class="phase-n">1</div><div class="phase-body"><div class="phase-title">Supervised Learning</div><div class="phase-desc">Inputs AND outputs are labelled (identified) for the algorithm. The algorithm learns how to map inputs to outputs using historical labelled data, then applies that mapping to new datasets. Requires labelled training data — the most data-intensive category.</div><span class="phase-out">→ Examples: predicting stock returns from financial variables; classifying market days as up/flat/down; credit scoring</span></div></div>
+      <div class="phase-row"><div class="phase-n">2</div><div class="phase-body"><div class="phase-title">Unsupervised Learning</div><div class="phase-desc">Only inputs (data) are provided — no labelled outputs. The algorithm identifies the underlying structure, clusters, or patterns within the data entirely on its own. Does not predict a specific output; instead, discovers hidden organisation.</div><span class="phase-out">→ Examples: grouping companies into peer groups based on characteristics (not standard sectors); customer segmentation; anomaly detection</span></div></div>
+      <div class="phase-row"><div class="phase-n">3</div><div class="phase-body"><div class="phase-title">Deep Learning (Deep Neural Networks)</div><div class="phase-desc">Uses neural networks with many hidden layers to perform multistage, non-linear data processing. Can use supervised or unsupervised approaches. Develops understanding of simple concepts that informs analysis of more complex ones — "layered" intelligence. Neural networks have existed since 1958; modern deep learning algorithms require less computing power and achieve far better performance.</div><span class="phase-out">→ Examples: image recognition (satellite parking lot counts), speech recognition, pattern recognition in market data</span></div></div>
+    </div>
+    <div class="info-note blue" style="margin-top:12px"><strong>Why now?</strong> Big Data solved the historic data shortage that constrained ML. Growth in Big Data provided the training volumes needed for neural networks to model relationships with sufficient accuracy. Combined with falling storage costs and faster processors, this unlocked broad ML deployment.</div>
+
+    <hr class="s-divider">
+
+    <!-- Data Science Applications -->
+    <div class="s-header">
+      <div class="s-icon">🔬</div>
+      <h2><span>Section 3 — LO 3</span>Data Science: Processing &amp; Visualisation</h2>
+    </div>
+    <div class="info-note gold" style="margin-bottom:16px"><strong>Data Science:</strong> Interdisciplinary field harnessing computer science (including ML), statistics, and other disciplines to extract information from Big Data for business and investment purposes.</div>
+    <div class="filing-grid" style="margin-bottom:16px">
+      <div class="filing-card"><h3>📥 Capture</h3><p>How data are collected and transformed into a usable format. <strong>Low-latency systems</strong> communicate high volumes of data with minimal delay — essential for <strong>automated/algorithmic trading</strong>. High-latency systems are acceptable for non-real-time research.</p></div>
+      <div class="filing-card"><h3>🧹 Curation</h3><p>The data <strong>cleaning</strong> exercise: reviewing all data to detect errors, bad or inaccurate data, and making adjustments for missing data. Critical first step — output quality is bounded by input data quality. Particularly difficult with unstructured alternative data.</p></div>
+      <div class="filing-card"><h3>🗄️ Storage</h3><p>How data are recorded, archived, and accessed. Key considerations: (1) structured vs. unstructured data; (2) whether analytical needs require low-latency solutions. Database type must match data structure (SQL for structured; NoSQL for unstructured).</p></div>
+      <div class="filing-card"><h3>🔍 Search</h3><p>How to query and locate specific data within very large datasets. Big Data requires <strong>advanced query applications</strong> capable of rapidly scanning massive stores — standard database queries become insufficient at Big Data scale.</p></div>
+      <div class="filing-card"><h3>🔄 Transfer</h3><p>How data move from source or storage to the analytical tool. Mechanisms include direct data feeds (e.g., exchange price feeds), APIs, and batch transfers. Latency requirements dictate transfer method.</p></div>
+      <div class="filing-card"><h3>📊 Visualisation</h3><p>Formatting and displaying data graphically to identify trends and relationships. Traditional: tables, charts. For Big Data: interactive 3D graphics, heat maps, tree diagrams, network graphs, tag clouds (word frequency), and mind maps (concept relationships).</p></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Text Analytics and NLP -->
+    <div class="s-header">
+      <div class="s-icon">📝</div>
+      <h2><span>Section 3 — LO 3</span>Text Analytics &amp; Natural Language Processing (NLP)</h2>
+    </div>
+    <div class="audit-list">
+      <div class="audit-item"><div class="audit-dot" style="background:#1a3a8f"></div><div><h4>Text Analytics</h4><p>Computer programs that analyse and derive meaning from large, unstructured text or voice-based datasets — company filings, earnings calls, social media, email, internet postings, surveys. Includes: automated information retrieval, lexical analysis (word frequency), pattern recognition (key words and phrases), and predictive analysis (identifying leading indicators).</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#b98a1c"></div><div><h4>NLP: Natural Language Processing</h4><p>A specific field within text analytics at the intersection of computer science, AI, and linguistics. Focuses on developing programs to analyse and interpret human language. Automated NLP tasks include: translation, speech recognition, text mining, sentiment analysis, and topic analysis. Used in compliance to review communications for adherence to policy, fraud detection, and confidentiality monitoring.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#1a7a4a"></div><div><h4>Sentiment Analysis in Investment Practice</h4><p>NLP assigns sentiment ratings (very negative → very positive) to analyst commentary, earnings call transcripts, and news articles. Detects and monitors shifts in sentiment <strong>ahead of explicit recommendation changes</strong> — a leading signal. Scales across thousands of companies worldwide, performing work previously done by human analysts.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#b91c1c"></div><div><h4>Central Bank &amp; Policy Maker Analysis</h4><p>NLP analyses transcripts from central banks (Fed, ECB) for subtle signals in topic selection, word choice, and inferred tone — covering interest rate policy, output, and inflation expectations. Identifies trending or waning topics of institutional focus before they are made explicit.</p></div></div>
+      <div class="audit-item"><div class="audit-dot" style="background:#6b3fa0"></div><div><h4>NLP Application: IPO and Stock Returns</h4><p>Past research has evaluated the predictive power of Twitter sentiment regarding IPO performance and the effect of positive/negative news sentiment on stock returns. Models incorporating NLP provide <strong>non-traditional information about consumer preferences, opinions, and behaviours</strong> to forecast near-term trends.</p></div></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Programming Languages and Databases -->
+    <div class="s-header">
+      <div class="s-icon">⌨️</div>
+      <h2><span>Section 3 — LO 3</span>Programming Languages &amp; Databases</h2>
+    </div>
+    <table class="cmp-table">
+      <thead><tr><th>Tool</th><th>Type</th><th>Key Use Case</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Python</strong></td><td>Language</td><td>General-purpose fintech applications; accessible to non-programmers; basis of most ML/AI tools</td></tr>
+        <tr><td><strong>R</strong></td><td>Language</td><td>Statistical analysis, ML, econometrics, financial analysis; open-source with rich mathematical packages</td></tr>
+        <tr><td><strong>Java</strong></td><td>Language</td><td>Cross-platform internet applications; underlying many web-based financial services</td></tr>
+        <tr><td><strong>C / C++</strong></td><td>Language</td><td>Optimised source code for maximum calculation speed — algorithmic and <strong>high-frequency trading</strong></td></tr>
+        <tr><td><strong>Excel VBA</strong></td><td>Language/Macro</td><td>Bridges programming and manual data processing; automates reports and queries for non-programmers</td></tr>
+        <tr><td><strong>SQL</strong></td><td>Database</td><td><strong>Structured data</strong> stored in tables with rows and columns; server-based; standard for relational data</td></tr>
+        <tr><td><strong>SQLite</strong></td><td>Database</td><td>Structured data; embedded in programs (no server needed); most common database for <strong>mobile apps</strong></td></tr>
+        <tr><td><strong>NoSQL</strong></td><td>Database</td><td><strong>Unstructured data</strong> that cannot be summarised in tables — the Big Data database solution</td></tr>
+      </tbody>
+    </table>
+
+    <hr class="s-divider">
+
+    <!-- Key Numbers and Facts -->
+    <div class="s-header">
+      <div class="s-icon">🔢</div>
+      <h2><span>Critical Facts</span>Exam-Tested Details to Know</h2>
+    </div>
+    <div class="kn-grid">
+      <div class="kn-box"><div class="kn-num" style="font-size:1rem">4 Vs</div><div class="kn-label">Volume, Velocity, Variety (the 3 core Vs) + Veracity (4th V — for inference/prediction)</div></div>
+      <div class="kn-box"><div class="kn-num" style="font-size:1rem">3 Alt.</div><div class="kn-label">Three alternative data sources: Individuals · Business Processes · Sensors</div></div>
+      <div class="kn-box"><div class="kn-num" style="font-size:1rem">3 ML</div><div class="kn-label">Three ML types: Supervised · Unsupervised · Deep Learning</div></div>
+      <div class="kn-box"><div class="kn-num" style="font-size:1rem">1958</div><div class="kn-label">Year neural networks were first developed — history the exam may reference</div></div>
+    </div>
+
+    <hr class="s-divider">
+
+    <!-- Exam Pitfalls -->
+    <div class="s-header">
+      <div class="s-icon">⚡</div>
+      <h2><span>Common Pitfalls</span>Exam Traps to Avoid</h2>
+    </div>
+    <div class="src-grid">
+      <div class="src-card"><div class="src-card-hd">❌ Veracity: When It Applies</div><ul class="src-items"><li>Veracity is the FOURTH V — only relevant when Big Data is used for inference or prediction</li><li>Volume, velocity, and variety apply to ALL Big Data; veracity is an additional concern for analysis</li><li>Big Data amplifies the quantity vs. quality challenge — more data ≠ better data</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ Supervised vs. Unsupervised</div><ul class="src-items"><li>Supervised: inputs AND outputs are labelled → used to predict specific outcomes</li><li>Unsupervised: only inputs → discovers structure/clusters with no predetermined output</li><li>Deep learning can use EITHER supervised OR unsupervised approaches</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ Overfitting vs. Underfitting</div><ul class="src-items"><li>Overfitting = too complex; learns noise as signal; fails on new data</li><li>Underfitting = too simple; misses true patterns even in training data</li><li>Both produce bad predictions — validation and test sets are designed to catch both</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ Corporate Exhaust Timing</div><ul class="src-items"><li>Business process data (including corporate exhaust) can be LEADING or real-time indicators</li><li>Traditional corporate metrics (earnings, financials) are LAGGING — reported quarterly or annually</li><li>This timing advantage is the key investment value of alternative data</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ Text Analytics vs. NLP</div><ul class="src-items"><li>Text analytics = broader field using computer programs to analyse unstructured text/voice data</li><li>NLP = specific application of text analytics using linguistic insight into human language structure</li><li>NLP is a subset of text analytics, not a synonym</li></ul></div>
+      <div class="src-card"><div class="src-card-hd">❌ SQL vs. NoSQL</div><ul class="src-items"><li>SQL → structured data in tables → server-required → relational databases</li><li>SQLite → structured data → embedded in app → no server → mobile apps</li><li>NoSQL → UNSTRUCTURED data → cannot be stored in rows/columns</li></ul></div>
+    </div>
+
+    <div class="takeaway">
+      <h3>Core Mindset for Big Data &amp; Fintech</h3>
+      <p>This reading is fundamentally about <strong>how modern technology has transformed the data available to investors and the tools used to analyse it</strong>. The four Vs frame what Big Data is — but <strong>veracity</strong> is the examiner's favourite because it separates the "gathering" Vs (volume, velocity, variety) from the "quality" concern that matters most for investment decisions. Machine learning has three types: <strong>supervised</strong> (labelled input–output, prediction), <strong>unsupervised</strong> (no labels, structure discovery), and <strong>deep learning</strong> (neural networks, layered non-linear processing). The two failure modes — <strong>overfitting</strong> (model too complex, memorises noise) and <strong>underfitting</strong> (model too simple, misses signal) — are tested directly. For applications, the key insight is that alternative data — particularly from individuals, business processes, and sensors — provides <strong>leading indicators</strong> that traditional lagging financial data cannot. NLP operationalises this by converting unstructured text into investment signals at machine scale.</p>
+    </div>
+
+  </div><!-- /.sum-body -->
+  </div><!-- /#sum-qm-11 -->
+
 
   </div><!-- /#sum-content -->
 </div><!-- /.summary-wrap -->
@@ -2514,12 +3097,7 @@ footer{
 <div id="examPanel">
   <div id="app"></div>
 
-  <!-- End Test fixed button -->
-  <button id="endTestBtn"
-    onclick="if(confirm('End the exam and go back to Home?')) window.goToHome();"
-    style="position:fixed;top:16px;right:16px;background:#dc2626;color:white;border:none;padding:9px 18px;border-radius:8px;font-weight:700;cursor:pointer;z-index:9999;box-shadow:0 4px 10px rgba(0,0,0,0.25);font-family:'DM Sans',sans-serif;font-size:.82rem;">
-    ✕ End Test
-  </button>
+
 </div>
 
 
@@ -2527,111 +3105,9 @@ footer{
      SCRIPTS
 ════════════════════════════════ -->
 
-<!-- Embedded questions data -->
-<script>
-window.EMBEDDED_QUESTIONS = [
-  {"id":"q1","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Framework","difficulty":"Easy","question":"Which of the following is the first step in the financial statement analysis framework?","options":["Collect data","Process data","Articulate the purpose and context of the analysis"],"correctAnswer":"C","explanation":"The first step is to articulate the purpose and context of the analysis. Understanding the purpose is essential before any data collection or processing begins."},
-  {"id":"q2","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Framework","difficulty":"Easy","question":"Which output is most likely to result from the 'Process Data' phase of the financial statement analysis framework?","options":["Investment recommendation","Common-size financial statements","Statement of the purpose of analysis"],"correctAnswer":"B","explanation":"Processing data produces outputs such as adjusted financial statements, common-size statements, and ratios and graphs."},
-  {"id":"q3","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Framework","difficulty":"Easy","question":"During which phase of the financial statement analysis framework would an analyst most likely conduct company site visits?","options":["Process data","Collect data","Analyze/interpret the data"],"correctAnswer":"B","explanation":"Company site visits are a source of information used in the 'Collect Data' phase of the framework."},
-  {"id":"q4","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Framework","difficulty":"Easy","question":"An analyst is computing growth rates and preparing charts from financial data. This activity is most consistent with which phase?","options":["Collect data","Process data","Analyze/interpret the data"],"correctAnswer":"B","explanation":"Computing ratios, growth rates, and preparing charts are activities that occur during the 'Process Data' phase."},
-  {"id":"q5","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Framework","difficulty":"Easy","question":"The output of the 'Develop and Communicate Conclusions' phase most likely includes:","options":["Completed questionnaires","Adjusted financial statements","A recommendation regarding whether to make an investment"],"correctAnswer":"C","explanation":"The output of this phase includes an analytical report and a recommendation regarding the purpose of the analysis."},
-  {"id":"q6","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Framework","difficulty":"Moderate","question":"A less experienced analyst is tempted to immediately start calculating ratios when facing a large amount of financial data. This approach is best described as:","options":["Efficient, as it quickly identifies key metrics","Advisable only when peer comparisons are needed","Generally inadvisable, as it may result in unnecessary or pointless efforts"],"correctAnswer":"C","explanation":"It is generally advisable to resist the temptation to immediately calculate ratios without considering what is relevant for the decision at hand."},
-  {"id":"q7","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Framework","difficulty":"Easy","question":"Comparing actual results to expected results is most closely associated with which phase of the financial statement analysis framework?","options":["Process data","Follow-up","Collect data"],"correctAnswer":"B","explanation":"The follow-up phase produces outputs such as comparison of actual to expected results and revised forecasts."},
-  {"id":"q8","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Framework","difficulty":"Moderate","question":"An equity analyst's report for external distribution would most likely include which of the following components?","options":["Internal control assessment","Summary and investment conclusion","List of specific questions answered by the analysis"],"correctAnswer":"B","explanation":"An equity analyst's report for external distribution typically includes a summary and investment conclusion, industry overview, financial model, valuation, and investment risks."},
-  {"id":"q9","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Framework","difficulty":"Moderate","question":"According to CFA Institute Standards of Practice, when communicating an investment recommendation, a member must:","options":["Limit disclosures to the most favorable information","Distinguish clearly between opinions and facts","Avoid disclosing limitations to the analysis"],"correctAnswer":"B","explanation":"Standard V(B) requires that members communicate the factors instrumental in making the investment recommendation and distinguish clearly between opinions and facts."},
-  {"id":"q10","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Framework","difficulty":"Easy","question":"An analyst adopts a top-down approach to financial analysis. Which correctly represents the order?","options":["Company analysis, then industry, then macroeconomic","Macroeconomic analysis, then industry, then company","Industry analysis, then company, then macroeconomic"],"correctAnswer":"B","explanation":"The top-down approach involves first gaining an understanding of the macroeconomic environment, then analyzing the industry, then the specific company."},
-  {"id":"q11","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Scope","difficulty":"Easy","question":"The primary purpose of financial statement analysis is best described as:","options":["Verifying the accuracy of financial statements","Evaluating past, current, and potential performance for economic decision making","Ensuring companies comply with accounting standards"],"correctAnswer":"B","explanation":"The role of financial statement analysis is to use financial reports to evaluate past, current, and potential performance and financial position for the purpose of making investment, credit, and other economic decisions."},
-  {"id":"q12","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Scope","difficulty":"Easy","question":"Which of the following is least likely to be a use of financial statement analysis?","options":["Assigning a debt rating to a bond issue","Evaluating whether to make a venture capital investment","Preparing a company's financial statements for regulatory filing"],"correctAnswer":"C","explanation":"Preparing financial statements is the role of the company's management, not financial statement analysts. Analysts use the statements; they do not prepare them."},
-  {"id":"q13","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Scope","difficulty":"Easy","question":"A debt investor conducting financial analysis is most likely to focus on:","options":["Per-share value of the company's equity","The company's ability to pay interest and repay principal","The company's dividend growth prospects"],"correctAnswer":"B","explanation":"A debt investor is primarily concerned with a company's ability to pay interest and repay the principal lent."},
-  {"id":"q14","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Scope","difficulty":"Easy","question":"An equity investor conducting financial analysis is most concerned with:","options":["The company's credit rating and debt covenants","The company's profitability and per-share value","The auditor's opinion on internal controls"],"correctAnswer":"B","explanation":"An equity investor is interested in a company's profitability and per-share value."},
-  {"id":"q15","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Scope","difficulty":"Easy","question":"A central focus of financial analysis is evaluating a company's ability to:","options":["Minimize tax obligations and regulatory disclosures","Earn a return on capital at least equal to the cost of that capital","Achieve zero leverage on its balance sheet"],"correctAnswer":"B","explanation":"A central focus of financial analysis is evaluating the company's ability to earn a return on capital at least equal to the cost of capital."},
-  {"id":"q16","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Scope","difficulty":"Easy","question":"Compared to external analysts, managers within a company:","options":["Rely exclusively on public financial statements","Have access to non-public financial information","Are required to follow stricter analytical frameworks"],"correctAnswer":"B","explanation":"Managers within a company do not exclusively rely on analysis of financial statements because they have access to non-public financial information."},
-  {"id":"q17","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Scope","difficulty":"Easy","question":"An analyst uses P/E ratios to value shares of a company. This is an example of:","options":["Assessing creditworthiness for loan extension","Using earnings in valuation","Evaluating internal control effectiveness"],"correctAnswer":"B","explanation":"Earnings are frequently used by analysts in valuation, for example by comparing a company's P/E ratio to peer companies."},
-  {"id":"q18","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Scope","difficulty":"Easy","question":"A credit analyst's assessment of a company's financial position is most likely to be used for:","options":["Determining an appropriate equity purchase price","Deciding whether to extend a loan and on what terms","Evaluating the performance of a subsidiary"],"correctAnswer":"B","explanation":"Credit analysts evaluate the creditworthiness of a company to decide whether and on what terms a debt investment should be made."},
-  {"id":"q19","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Scope","difficulty":"Easy","question":"Profitability is defined as:","options":["Cash receipts in excess of cash disbursements","The ability to earn a profit from delivering goods and services","The ratio of net income to total assets"],"correctAnswer":"B","explanation":"Profitability is defined as the ability to earn a profit from delivering goods and services."},
-  {"id":"q20","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Scope","difficulty":"Easy","question":"The ability to generate positive cash flows refers to:","options":["Maintaining a current ratio above 1.0","Cash receipts in excess of cash disbursements","Earnings per share exceeding analyst estimates"],"correctAnswer":"B","explanation":"The ability to generate positive cash flows refers to cash receipts in excess of cash disbursements."},
-  {"id":"q21","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Regulatory","difficulty":"Easy","question":"Regulatory authorities require publicly traded companies to prepare financial reports in accordance with:","options":["Internal guidelines set by management","Specified accounting standards and other securities laws and regulations","Recommendations from credit rating agencies"],"correctAnswer":"B","explanation":"Regulatory authorities require publicly traded issuers to prepare financial reports in accordance with specified accounting standards and other securities laws and regulations."},
-  {"id":"q22","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Regulatory","difficulty":"Moderate","question":"IOSCO has ordinary members representing securities regulators in more than how many jurisdictions?","options":["50 jurisdictions","75 jurisdictions","115 jurisdictions"],"correctAnswer":"C","explanation":"IOSCO members regulate more than 95 percent of the world's financial capital markets in more than 115 jurisdictions."},
-  {"id":"q23","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Regulatory","difficulty":"Moderate","question":"Which of the following is NOT one of IOSCO's three core objectives?","options":["Protecting investors","Ensuring that markets are fair, efficient, and transparent","Eliminating systemic risk"],"correctAnswer":"C","explanation":"IOSCO's core objectives are to protect investors, ensure markets are fair/efficient/transparent, and reduce (not eliminate) systemic risk."},
-  {"id":"q24","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Regulatory","difficulty":"Moderate","question":"IOSCO's principle for issuers states that accounting standards should be:","options":["Based solely on each country's cultural and economic norms","Of a high and internationally acceptable quality","Established by national regulators without international input"],"correctAnswer":"B","explanation":"An IOSCO principle states that accounting standards used by issuers to prepare financial statements should be of a high and internationally acceptable quality."},
-  {"id":"q25","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Regulatory","difficulty":"Moderate","question":"The US Securities and Exchange Commission (SEC) was created as a result of:","options":["The Sarbanes-Oxley Act of 2002","The Securities Exchange Act of 1934","The Securities Act of 1933"],"correctAnswer":"B","explanation":"The Securities Exchange Act of 1934 created the SEC and gave it authority over all aspects of the securities industry."},
-  {"id":"q26","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Regulatory","difficulty":"Moderate","question":"The Securities Act of 1933 primarily:","options":["Created the SEC and gave it authority over the securities industry","Required the creation of the Public Company Accounting Oversight Board","Requires initial registration of all public issuances of securities"],"correctAnswer":"C","explanation":"The Securities Act of 1933 specifies financial information investors must receive when securities are sold and requires initial registration of all public issuances of securities."},
-  {"id":"q27","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Regulatory","difficulty":"Moderate","question":"The Sarbanes-Oxley Act of 2002 created which oversight body?","options":["Financial Accounting Standards Board (FASB)","Public Company Accounting Oversight Board (PCAOB)","International Auditing and Assurance Standards Board (IAASB)"],"correctAnswer":"B","explanation":"The Sarbanes-Oxley Act of 2002 created the Public Company Accounting Oversight Board (PCAOB) to oversee auditors."},
-  {"id":"q28","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Regulatory","difficulty":"Easy","question":"Under the Sarbanes-Oxley Act, executive management is required to:","options":["Conduct their own independent audit","Certify that financial reports fairly present the company's condition","Personally certify that no errors exist in the financial statements"],"correctAnswer":"B","explanation":"The Sarbanes-Oxley Act requires executive management to certify that the company's financial reports fairly present the company's condition."},
-  {"id":"q29","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"SEC Filings","difficulty":"Easy","question":"A US domestic registrant is required to file which annual form with the SEC?","options":["Form 20-F","Form 40-F","Form 10-K"],"correctAnswer":"C","explanation":"Form 10-K is required for US registrants, Form 40-F is for certain Canadian registrants, and Form 20-F is for all other non-US registrants."},
-  {"id":"q30","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"SEC Filings","difficulty":"Easy","question":"Form 20-F must be filed with the SEC by:","options":["US domestic registrants","Certain Canadian registrants","Non-US registrants other than certain Canadian registrants"],"correctAnswer":"C","explanation":"Form 20-F is required for all non-US registrants except certain Canadian registrants, who file Form 40-F."},
-  {"id":"q31","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"SEC Filings","difficulty":"Easy","question":"Which SEC form is used to report material corporate events such as acquisitions on a current basis?","options":["Form 10-Q","Form 8-K","Form DEF-14A"],"correctAnswer":"B","explanation":"Form 8-K is the 'current report' companies must file to announce major events such as acquisitions or changes in management."},
-  {"id":"q32","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"SEC Filings","difficulty":"Moderate","question":"A proxy statement filed as Form DEF-14A most likely contains information about:","options":["Quarterly unaudited financial statements","Details of security ownership by management and executive compensation","Registration of initial public offerings"],"correctAnswer":"B","explanation":"Proxy statements typically include proposals requiring shareholder votes, details of security ownership by management, biographical information on directors, and disclosure of executive compensation."},
-  {"id":"q33","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"SEC Filings","difficulty":"Easy","question":"US companies are required to file interim financial reports on which form?","options":["Form 10-K","Form 10-Q","Form 8-K"],"correctAnswer":"B","explanation":"Form 10-Q is required quarterly for US companies to submit interim period financial information, including unaudited financial statements and MD&A."},
-  {"id":"q34","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"SEC Filings","difficulty":"Moderate","question":"Forms 3, 4, and 5 filed with the SEC are primarily used to:","options":["Report annual earnings results","Report beneficial ownership of securities by directors and officers","Announce changes in accounting policies"],"correctAnswer":"B","explanation":"Forms 3, 4, and 5 are required to report beneficial ownership of securities by directors, officers, and beneficial owners of greater than 10% of a class of registered equity securities."},
-  {"id":"q35","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"SEC Filings","difficulty":"Easy","question":"An annual report to shareholders prepared by most companies is:","options":["Required by the SEC and must contain audited financial statements","Not a requirement of the SEC and is often a polished marketing document","Required and must follow the same format as Form 10-K"],"correctAnswer":"B","explanation":"The annual report to shareholders is not a requirement of the SEC and is often a highly polished marketing document. In contrast, Form 10-K is a more legal type of document."},
-  {"id":"q36","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Regulatory","difficulty":"Easy","question":"In the European Union, consolidated accounts of EU-listed companies have been required to use IFRS since:","options":["1997","2001","2005"],"correctAnswer":"C","explanation":"The EU agreed that from 2005, consolidated accounts of EU-listed companies would use International Financial Reporting Standards."},
-  {"id":"q37","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Regulatory","difficulty":"Moderate","question":"The European Securities and Market Authority (ESMA) is best described as:","options":["An EU regulatory body with exclusive power over individual member states","An EU cross-border supervisor established to coordinate supervision of the EU market","The body responsible for setting accounting standards for all EU listed companies"],"correctAnswer":"B","explanation":"ESMA is an EU cross-border supervisor established to coordinate supervision of the EU market, though regulation still rests with individual member states."},
-  {"id":"q38","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Notes","difficulty":"Easy","question":"The notes accompanying financial statements are required primarily because they:","options":["Allow analysts to bypass the primary financial statements","Provide information essential to understanding the primary financial statements","Replace the need for management commentary"],"correctAnswer":"B","explanation":"The notes provide information that is essential to understanding the information provided in the primary financial statements."},
-  {"id":"q39","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Notes","difficulty":"Easy","question":"Which of the following is most likely found in the notes to financial statements?","options":["The auditor's opinion on the fairness of financial statements","Management's forward-looking discussion of capital expenditure plans","Accounting policies, methods, and estimates used in preparing the statements"],"correctAnswer":"C","explanation":"The notes disclose the accounting policies, methods, and estimates used to prepare the financial statements."},
-  {"id":"q40","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Segment Reporting","difficulty":"Moderate","question":"An operating segment must be disclosed separately if it constitutes what minimum percentage of combined operating segments' revenue, assets, or profit?","options":["5 percent","10 percent","15 percent"],"correctAnswer":"B","explanation":"A company must disclose separate information about any operating segment that constitutes 10 percent or more of the combined operating segments' revenue, assets, or profit."},
-  {"id":"q41","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Segment Reporting","difficulty":"Moderate","question":"The combined revenue from external customers for all reportable segments must represent at least what percentage of total company revenue?","options":["50 percent","65 percent","75 percent"],"correctAnswer":"C","explanation":"If the combined revenue from external customers for all reportable segments is less than 75 percent of total company revenue, the company must identify additional reportable segments."},
-  {"id":"q42","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Segment Reporting","difficulty":"Moderate","question":"Which of the following must be disclosed for each reportable operating segment?","options":["Names of the segment's top 10 customers","Revenue distinguishing between external customers and inter-segment revenue","Detailed employee headcount by segment"],"correctAnswer":"B","explanation":"For each reportable segment, companies must disclose revenue, distinguishing between revenue to external customers and revenue from other segments."},
-  {"id":"q43","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Segment Reporting","difficulty":"Moderate","question":"Under segment reporting rules, a company must disclose if any single customer represents:","options":["5 percent or more of total revenues","10 percent or more of total revenues","15 percent or more of total revenues"],"correctAnswer":"B","explanation":"If any single customer represents 10 percent or more of the company's total revenues, the company must disclose that fact."},
-  {"id":"q44","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"MD&A","difficulty":"Easy","question":"Management commentary, or MD&A, is best described as:","options":["Audited information that provides the basis for the audit opinion","Typically unaudited discussion by management about the company's operations and prospects","A technical analysis of financial ratios required by accounting standards"],"correctAnswer":"B","explanation":"The discussion by management is one of the most useful parts of a company's annual report; however, other than excerpts from the financial statements, information in the management commentary is typically unaudited."},
-  {"id":"q45","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"MD&A","difficulty":"Moderate","question":"The IASB's IFRS Practice Statement identifies which of the following as one of five content elements of management commentary?","options":["Segment-by-segment audit findings","Management's objectives and strategies","Detailed tax reconciliation tables"],"correctAnswer":"B","explanation":"The IASB framework identifies five content elements including: nature of the business, management's objectives and strategies, significant resources/risks/relationships, results of operations, and critical performance measures."},
-  {"id":"q46","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"MD&A","difficulty":"Moderate","question":"In the US, the SEC requires the MD&A to highlight:","options":["Favorable trends only, to maintain investor confidence","Any favorable or unfavorable trends and significant events affecting liquidity and operations","Only events that have already materially affected the company's financial results"],"correctAnswer":"B","explanation":"The SEC requires the MD&A to highlight any favorable or unfavorable trends and identify significant events and uncertainties affecting the company's liquidity, capital resources, and results of operations."},
-  {"id":"q47","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Audit","difficulty":"Easy","question":"An unqualified audit opinion is also referred to as:","options":["An adverse opinion","A disclaimer of opinion","A clean or unmodified opinion"],"correctAnswer":"C","explanation":"An unqualified audit opinion states that the financial statements give a 'true and fair view' or are 'fairly presented,' and is also referred to as an 'unmodified' or 'clean' opinion."},
-  {"id":"q48","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Audit","difficulty":"Moderate","question":"An adverse audit opinion is issued when:","options":["The auditor has a minor scope limitation in testing","The financial statements materially depart from accounting standards and are not fairly presented","The auditor is unable to issue an opinion due to scope limitations"],"correctAnswer":"B","explanation":"An adverse audit opinion is issued when an auditor determines that the financial statements materially depart from accounting standards and are not fairly presented."},
-  {"id":"q49","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Audit","difficulty":"Moderate","question":"A disclaimer of opinion in an audit report occurs when:","options":["The auditor finds a minor exception to accounting standards","For some reason such as a scope limitation, auditors are unable to issue an opinion","The financial statements depart materially from accounting standards"],"correctAnswer":"B","explanation":"A disclaimer of opinion occurs when, for some reason such as a scope limitation, the auditors are unable to issue an opinion."},
-  {"id":"q50","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Audit","difficulty":"Moderate","question":"International Standards on Auditing (ISAs) have been developed by:","options":["The International Accounting Standards Board (IASB)","The International Auditing and Assurance Standards Board (IAASB)","The Public Company Accounting Oversight Board (PCAOB)"],"correctAnswer":"B","explanation":"International Standards on Auditing (ISAs) have been developed by the IAASB, which emerged from the International Federation of Accountants."},
-  {"id":"q51","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Audit","difficulty":"Easy","question":"An independent audit provides what level of assurance about the accuracy of financial statements?","options":["Absolute assurance that financial statements are error-free","Reasonable assurance that financial statements are fairly presented","Limited assurance that statements comply with local regulations"],"correctAnswer":"B","explanation":"Because audits use sampling techniques and financial statements may be based on estimates, auditors can only provide reasonable assurance—not absolute assurance—that financial statements are fairly presented."},
-  {"id":"q52","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Audit","difficulty":"Difficult","question":"Key Audit Matters are best described as:","options":["Issues the auditor considers most important, such as those with higher risk of misstatement or significant management judgment","Automatically the most important factors for analysts and investors","Minor issues noted during the audit that do not affect the opinion"],"correctAnswer":"A","explanation":"Key Audit Matters include issues with higher risk of misstatement, involving significant management judgment, or reporting the effects of significant transactions. However, they are not necessarily the most important factors for analysts and investors."},
-  {"id":"q53","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Audit","difficulty":"Moderate","question":"Under the Sarbanes-Oxley Act, management of publicly traded US companies is required to:","options":["Conduct their own independent audit","Explicitly accept responsibility for the effectiveness of internal control","Personally certify that no errors exist in the financial statements"],"correctAnswer":"B","explanation":"Management of publicly traded US companies is required to explicitly accept responsibility for the effectiveness of internal control and provide a report on internal control."},
-  {"id":"q54","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Audit","difficulty":"Easy","question":"A financial analyst should treat audited financial statements with:","options":["Absolute trust, as the audit provides a guarantee of accuracy","A degree of healthy skepticism, even after reviewing audit opinions","No skepticism, because the PCAOB standards eliminate the risk of errors"],"correctAnswer":"B","explanation":"Although audit reports and attestations provide some assurances to analysts, they are not infallible. The analyst must always use a degree of healthy skepticism when analyzing financial statements."},
-  {"id":"q55","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"IFRS vs GAAP","difficulty":"Moderate","question":"Which is a key difference between IFRS and US GAAP regarding interest paid on the cash flow statement?","options":["Under US GAAP, interest paid can be classified as either financing or operating activities","Under IFRS, interest paid must be classified as operating activities only","Under IFRS, interest paid may be classified as either financing or operating activities"],"correctAnswer":"C","explanation":"Under IFRS, interest paid may be classified as Cash Flows from Financing Activities or Cash Flows from Operating Activities, while under US GAAP it is classified as Cash Flows from Operating Activities only."},
-  {"id":"q56","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"IFRS vs GAAP","difficulty":"Moderate","question":"Which inventory valuation method is permitted under US GAAP but not under IFRS?","options":["First In, First Out (FIFO)","Last In, First Out (LIFO)","Weighted Average Method"],"correctAnswer":"B","explanation":"US GAAP permits FIFO, LIFO, and Weighted Average Method, while IFRS only permits FIFO and Weighted Average Method."},
-  {"id":"q57","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"IFRS vs GAAP","difficulty":"Moderate","question":"Under IFRS, development costs are:","options":["Always expensed as incurred","Capitalized only if certain conditions are satisfied","Capitalized in all circumstances"],"correctAnswer":"B","explanation":"Under IFRS, development costs are capitalized if certain conditions are satisfied, while under US GAAP they are treated as an expense."},
-  {"id":"q58","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"IFRS vs GAAP","difficulty":"Moderate","question":"The reversal of inventory write-downs is:","options":["Prohibited under both IFRS and US GAAP","Permissible under IFRS if specified conditions are met, but prohibited under US GAAP","Permissible under US GAAP but prohibited under IFRS"],"correctAnswer":"B","explanation":"Under IFRS, reversal of inventory write-downs is permissible if specified conditions are met. Under US GAAP, such reversals are prohibited."},
-  {"id":"q59","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"IFRS vs GAAP","difficulty":"Easy","question":"US GAAP is best described as a:","options":["Principles-based system of accounting standards","Rules-based system of accounting standards","Hybrid of rules and principles with equal emphasis on both"],"correctAnswer":"B","explanation":"US GAAP is generally described as rules-based, while IFRS is described as principles-based."},
-  {"id":"q60","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"IFRS vs GAAP","difficulty":"Moderate","question":"When analyzing two companies that use different reporting standards, an analyst should:","options":["Assume financial statements are comparable without adjustment","Maintain caution and be aware of areas where standards have not converged","Ignore differences since IASB and FASB have achieved full convergence"],"correctAnswer":"B","explanation":"An analyst must maintain caution in interpreting comparative financial measures produced under different accounting standards."},
-  {"id":"q61","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"IFRS vs GAAP","difficulty":"Moderate","question":"Reconciliation disclosures between IFRS and US GAAP:","options":["Are required for all cross-border filings","Are not required, making analyst adjustments challenging","Are only required for companies listed on US exchanges"],"correctAnswer":"B","explanation":"Because reconciliation disclosures between IFRS and US GAAP are not required, an analyst comparing two companies using different standards must be aware of areas where standards have not converged."},
-  {"id":"q62","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"IFRS vs GAAP","difficulty":"Easy","question":"New accounting standards issued jointly by IASB and FASB have been:","options":["Identical in treatment for all major accounting areas","Mostly or entirely converged, resulting in increasing uniformity over time","Effective only after approval by national governments"],"correctAnswer":"B","explanation":"New accounting standards have been mostly or entirely converged (e.g., revenue recognition, leasing, credit losses), resulting in increasing uniformity over time."},
-  {"id":"q63","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"IFRS vs GAAP","difficulty":"Moderate","question":"Analysts need to monitor developments in financial reporting standards from:","options":["A preparer's perspective to ensure compliance","A user's perspective to understand how developments affect financial reports","An auditor's perspective to ensure standards are enforced"],"correctAnswer":"B","explanation":"An accountant monitors developments from a preparer's perspective; an analyst needs to monitor them from a user's perspective to know how developments will affect financial reports."},
-  {"id":"q64","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"IFRS vs GAAP","difficulty":"Moderate","question":"An example of a regulatory change that affected financial statements was the requirement to:","options":["Disclose inventory write-downs in the income statement","Include stock option expense in the income statement","Eliminate intercompany transactions in consolidated statements"],"correctAnswer":"B","explanation":"One regulatory change required companies to include a provision for expenses associated with the grant and vesting of employee stock options as an expense in the income statement."},
-  {"id":"q65","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"IFRS vs GAAP","difficulty":"Moderate","question":"CFA Institute's involvement in financial reporting standard setting is best characterized as:","options":["Direct authority to set accounting standards","Active support for improvements through advocacy and liaison committees","Enforcement of compliance with IFRS standards globally"],"correctAnswer":"B","explanation":"CFA Institute is active in supporting improvements to financial reporting. Volunteer members serve on liaison committees that meet to make recommendations to the IASB and FASB."},
-  {"id":"q66","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"IFRS vs GAAP","difficulty":"Easy","question":"When a new accounting standard is proposed, stakeholders can provide input by:","options":["Voting directly on proposed changes at shareholder meetings","Drafting comment letters and position papers in response to exposure drafts","Lobbying government officials to reject or approve standards"],"correctAnswer":"B","explanation":"When a new standard is proposed, an exposure draft is made available and users of financial statements can draft comment letters and position papers."},
-  {"id":"q67","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"IFRS vs GAAP","difficulty":"Easy","question":"CFA Institute's position paper on financial reporting emphasized the importance of:","options":["Simplifying disclosures to reduce information volume","Timeliness, transparency, comparability, and consistency in financial reporting","Shifting financial reporting to a cash-based system"],"correctAnswer":"B","explanation":"CFA Institute's position paper states that investors require timeliness, transparency, comparability, and consistency in financial reporting."},
-  {"id":"q68","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Information Sources","difficulty":"Easy","question":"Earnings calls hosted by company management are primarily intended for which audience?","options":["Internal employees and human resources departments","Analysts, investors, and members of the media","Regulatory authorities and auditors"],"correctAnswer":"B","explanation":"The primary audience for earnings calls are analysts, investors, and members of the media."},
-  {"id":"q69","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Information Sources","difficulty":"Moderate","question":"Which of the following is best described as an issuer source of information other than regulatory filings?","options":["Industry whitepapers from a consultancy","Analyst reports from credit rating agencies","Investor day presentations by management"],"correctAnswer":"C","explanation":"Investor day presentations are issuer sources of information (other than regulatory filings). Industry whitepapers and credit rating agency reports are third-party sources."},
-  {"id":"q70","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Information Sources","difficulty":"Moderate","question":"Proprietary primary research used by analysts most likely includes:","options":["Government-released economic indicators","Surveys and product comparisons commissioned directly by the analyst","Free industry whitepapers accessed via internet search engines"],"correctAnswer":"B","explanation":"Proprietary primary research includes surveys, conversations, product comparisons, and other studies commissioned by the analyst or conducted directly."},
-  {"id":"q71","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Information Sources","difficulty":"Moderate","question":"Which of the following is an example of a proprietary third-party source of information?","options":["A company's investor relations website","Reports and data from platforms such as Bloomberg or FactSet","A government statistical agency's monthly retail sales data"],"correctAnswer":"B","explanation":"Proprietary third-party sources include analyst reports, credit rating agency communications, and reports/data from platforms such as Bloomberg, Wind, and FactSet."},
-  {"id":"q72","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Information Sources","difficulty":"Easy","question":"Social media is most useful to financial analysts as a gauge of:","options":["A company's compliance with accounting standards","Customer sentiment for a company's products","The accuracy of a company's disclosed financial results"],"correctAnswer":"B","explanation":"Social media may be a useful gauge of customer sentiment for a company's products."},
-  {"id":"q73","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Information Sources","difficulty":"Moderate","question":"When analysts speak with company management or investor relations personnel, this is best categorized as:","options":["A public third-party source of information","A proprietary third-party source of information","An issuer source of information"],"correctAnswer":"C","explanation":"Speaking with management, investor relations, or other company personnel is classified as an issuer source of information."},
-  {"id":"q74","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Information Sources","difficulty":"Moderate","question":"An analyst visiting a company's stores to gain direct product experience is using which type of source?","options":["Proprietary third-party source","Issuer source via direct company or product experience","Public third-party source"],"correctAnswer":"B","explanation":"Company website or properties that the analyst can visit as a customer or an investor are issuer sources. Analysts typically seek direct experience with products."},
-  {"id":"q75","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Information Sources","difficulty":"Easy","question":"Information on the economy and industry used in financial analysis is most useful for:","options":["Verifying the mathematical accuracy of financial ratios","Putting a company's financial performance in perspective and assessing its future","Replacing the need to read the company's own financial disclosures"],"correctAnswer":"B","explanation":"Information from sources apart from the company is crucial to an analyst's effectiveness, as it helps put the company's financial performance and position in perspective and assess its future."},
-  {"id":"q76","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Information Sources","difficulty":"Easy","question":"Press releases issued by companies are commonly distributed via:","options":["Only the SEC's EDGAR database","The company's investor relations website and third-party news sources","Encrypted channels accessible only to institutional investors"],"correctAnswer":"B","explanation":"Press releases are often distributed not only on issuers' websites but also on third-party news sources."},
-  {"id":"q77","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Information Sources","difficulty":"Moderate","question":"An analyst aware that management is biased toward their own perspective should:","options":["Avoid using management commentary entirely","Ask probing questions to gain further information and sharpen estimates","Report management to the relevant regulatory authorities"],"correctAnswer":"B","explanation":"Analysts must be aware that management is biased toward their perspective, and often need to ask questions to get the information they want, especially during earnings calls and investor events."},
-  {"id":"q78","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Notes","difficulty":"Moderate","question":"The flexibility in accounting choices is necessary because:","options":["It allows companies to manipulate financial statements to appear more profitable","Different policies, methods, and estimates can better reflect the unique economic environment of each business","It reduces the need for auditors to express opinions"],"correctAnswer":"B","explanation":"Flexibility in accounting choices is necessary because, ideally, a company will select those policies, methods, and estimates that are allowable and most relevant and that fairly reflect the unique economic environment of its business."},
-  {"id":"q79","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Notes","difficulty":"Moderate","question":"An analyst comparing two companies with different depreciation methods faces which primary challenge?","options":["Determining the market value of the companies' fixed assets","Reduced comparability of the companies' financial positions and performance","Inability to access the companies' financial statements"],"correctAnswer":"B","explanation":"Different accounting policies, methods, and estimates—such as different depreciation methods—reduce comparability across different companies' financial statements."},
-  {"id":"q80","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"MD&A","difficulty":"Moderate","question":"Off-balance-sheet obligations must be disclosed in which section of a regulatory filing?","options":["The audit report","The management commentary or MD&A","The proxy statement"],"correctAnswer":"B","explanation":"The SEC requires the MD&A to provide information about off-balance-sheet obligations and about contractual commitments, such as purchase obligations."},
-  {"id":"q81","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Regulatory","difficulty":"Moderate","question":"Which body oversees auditing standards for public companies in the United States?","options":["The American Institute of Certified Public Accountants (AICPA)","The Public Company Accounting Oversight Board (PCAOB)","The Financial Accounting Standards Board (FASB)"],"correctAnswer":"B","explanation":"With the enactment of the Sarbanes-Oxley Act of 2002, auditing standards for public companies are promulgated by the PCAOB."},
-  {"id":"q82","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"MD&A","difficulty":"Moderate","question":"The IASB's IFRS Practice Statement on Management Commentary provides:","options":["Mandatory requirements set forth in an accounting standard","Guidance rather than requirements, as it is a practice statement not a standard","Regulations that must be adopted by all IFRS-reporting jurisdictions"],"correctAnswer":"B","explanation":"The IASB's IFRS Practice Statement on Management Commentary provides guidance rather than sets forth requirements in a standard."},
-  {"id":"q83","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Notes","difficulty":"Moderate","question":"Sea Ltd.'s 2021 financial statements prepared on a consolidated basis means:","options":["Only Sea Ltd. parent company accounts are included","Financial records of Sea Ltd. and all its controlled subsidiaries are aggregated after eliminating intercompany items","Financial statements of only the two largest subsidiaries are included"],"correctAnswer":"B","explanation":"Consolidated financial statements aggregate the financial records of all subsidiaries the company controls, after eliminating intercompany balances and transactions."},
-  {"id":"q84","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Segment Reporting","difficulty":"Difficult","question":"From the Sea Ltd. segment data in the chapter, which segment was the only profitable one in 2021?","options":["E-Commerce","Digital Entertainment","Digital Financial Services"],"correctAnswer":"B","explanation":"From the segment data, the e-commerce segment generated a large operating loss, and the digital entertainment segment was the only profitable segment."},
-  {"id":"q85","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Framework","difficulty":"Easy","question":"Common-size financial statements are primarily used to:","options":["Convert financial statements to a foreign currency","Scale data to directly reflect percentages or changes to facilitate comparisons","Adjust financial statements for seasonal fluctuations"],"correctAnswer":"B","explanation":"Common-size financial statements scale data to directly reflect percentages (e.g., of sales) or changes (e.g., from the prior year) to facilitate comparison."},
-  {"id":"q86","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Framework","difficulty":"Easy","question":"Financial ratios are best described as:","options":["Standardized amounts required by regulatory authorities for annual filings","Measures of various aspects of corporate performance based on financial statement elements","Tools used exclusively by credit analysts to assess debt repayment ability"],"correctAnswer":"B","explanation":"Financial ratios are measures of various aspects of corporate performance based on financial statement elements, used to evaluate profitability, liquidity, leverage, efficiency, and valuation."},
-  {"id":"q87","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Notes","difficulty":"Moderate","question":"An analyst's ability to compare the depreciation expense of two companies with different depreciation methods is best described as:","options":["Unaffected, because depreciation equals the same amount over the asset's life","Hindered by the difference in methods and assumptions used to record expense","Enhanced by the fact that both companies must disclose their methods in the notes"],"correctAnswer":"B","explanation":"Two companies may acquire similar equipment but use different methods and assumptions. An analyst's ability to compare the companies' performance is hindered by the difference."},
-  {"id":"q88","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"SEC Filings","difficulty":"Difficult","question":"A company's Form 11-K filed with the SEC is most relevant for analysts interested in:","options":["The company's insider stock transactions","The company's employee stock purchase, savings, and similar plans","The company's current report on material corporate events"],"correctAnswer":"B","explanation":"Form 11-K is the annual report of employee stock purchase, savings, and similar plans. It might be of interest for companies with significant employee benefit plans."},
-  {"id":"q89","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Regulatory","difficulty":"Difficult","question":"Under Regulation Fair Disclosure (Reg FD), when an issuer discloses material non-public information to securities market professionals, it must:","options":["Report the disclosure to the SEC within 30 days","Make simultaneous or prompt public disclosure of that information","Obtain written consent from each recipient before disclosing"],"correctAnswer":"B","explanation":"Regulation FD provides that when an issuer discloses material non-public information to certain individuals, the issuer must make public disclosure of that information."},
-  {"id":"q90","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Regulatory","difficulty":"Difficult","question":"A self-regulatory organization (SRO) in the context of IOSCO principles is best described as:","options":["An organization that sets government fiscal policy","An organization that exercises some direct oversight for its area of competence and is subject to oversight of the relevant regulator","An organization that exclusively focuses on consumer protection"],"correctAnswer":"B","explanation":"SROs exercise some direct oversight for their areas of competence and should be subject to the oversight of the relevant regulator."},
-  {"id":"q91","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Regulatory","difficulty":"Moderate","question":"The International Federation of Accountants is most closely associated with the development of:","options":["US GAAP standards through the FASB","International Standards on Auditing through the IAASB","IFRS standards through the IASB"],"correctAnswer":"B","explanation":"The International Auditing and Assurance Standards Board (IAASB), which developed International Standards on Auditing, emerged from the International Federation of Accountants."},
-  {"id":"q92","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Scope","difficulty":"Moderate","question":"For an analyst assessing a company's financial position for credit analysis, which is most relevant?","options":["The company's earnings per share growth rate over the last five years","The company's debt leverage ratios, interest coverage, and free cash flow generation","The company's dividend payout history and stock price performance"],"correctAnswer":"B","explanation":"Credit analysts focus on financial position, particularly debt leverage, interest coverage, and free cash flow generation to assess creditworthiness and the ability to repay debt."},
-  {"id":"q93","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Regulatory","difficulty":"Difficult","question":"The process for adoption of a new IASB standard within the European Union involves:","options":["Automatic adoption without review by EU bodies","A review and endorsement process involving the European Financial Reporting Advisory Group, European Commission, and Parliament","Direct approval by each individual EU member state without any coordinated EU review"],"correctAnswer":"B","explanation":"When the IASB issues a new standard, it goes through an endorsement process involving the European Financial Reporting Advisory Group, the European Commission, and the European Parliament."},
-  {"id":"q94","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Framework","difficulty":"Easy","question":"The financial statement analysis framework presented in the reading is best described as:","options":["A rigid, step-by-step process with no flexibility for analyst judgment","A generic, adaptable structure used across various analytical roles and tasks","A replacement for the need to gather information beyond financial statements"],"correctAnswer":"B","explanation":"The framework is presented as a generic framework used in various roles—equity analysis, credit analysis, performance evaluation, etc.—that guides but does not rigidly constrain the analytical process."},
-  {"id":"q95","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"SEC Filings","difficulty":"Moderate","question":"Sea Ltd. is listed on the NYSE. As a non-US registrant, it files which annual form with the SEC?","options":["Form 10-K","Form 40-F","Form 20-F"],"correctAnswer":"C","explanation":"Form 20-F is required for all non-US registrants other than certain Canadian registrants. Sea Ltd., being a Singapore-based company, would file Form 20-F."},
-  {"id":"q96","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"SEC Filings","difficulty":"Easy","question":"A company's annual report described as a 'highly polished marketing document' contrasts most with:","options":["The company's Form 10-K, which is a more legal type of document with minimal marketing emphasis","The company's proxy statement, which is required for all shareholder meetings","The auditor's report, which contains management's forward-looking commentary"],"correctAnswer":"A","explanation":"The annual report is often a highly polished marketing document. In contrast, Form 10-K is a more legal type of document with minimal marketing emphasis."},
-  {"id":"q97","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"MD&A","difficulty":"Moderate","question":"Which type of information in management commentary is particularly useful for projecting future performance?","options":["Historical financial results and prior-year comparisons","Forward-looking disclosures, such as planned capital expenditures and new store openings","Accounting policy elections made under IFRS or US GAAP"],"correctAnswer":"B","explanation":"Forward-looking disclosures in the management commentary, such as those about planned capital expenditures, new store openings, or divestitures, can be useful in projecting a company's future performance."},
-  {"id":"q98","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"IFRS vs GAAP","difficulty":"Difficult","question":"An analyst identifies a company using a new financial instrument with no explicit guidance in financial reporting standards. To understand its business purpose, the analyst should:","options":["Assume the instrument is being used for financial statement window dressing","Obtain further information from the company's management","Ignore the instrument until the IASB issues specific guidance"],"correctAnswer":"B","explanation":"If necessary, an analyst can obtain further information from company management, which should be able to describe the economic purpose, financial statement reporting, and future cash flow implications."},
-  {"id":"q99","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Segment Reporting","difficulty":"Moderate","question":"When identifying operating segments, which is NOT one of the required characteristics?","options":["The segment engages in activities that may generate revenue and create expenses","Results are regularly reviewed by senior management","The segment must be a wholly-owned subsidiary of the parent company"],"correctAnswer":"C","explanation":"An operating segment must engage in activities generating revenue and expenses, have results regularly reviewed by senior management, and have discrete financial information available. Being a wholly-owned subsidiary is not a requirement."},
-  {"id":"q100","chapter":"1","chapterName":"Intro to Financial Statement Analysis","topic":"Regulatory","difficulty":"Moderate","question":"Securities regulators in emerging markets account for approximately what percentage of IOSCO's ordinary membership?","options":["25 percent","50 percent","75 percent"],"correctAnswer":"C","explanation":"Securities regulators in emerging markets account for 75 percent of IOSCO's ordinary membership."}
-];
-</script>
+
+<!-- Questions data (loaded from questions.js) -->
+<script src="questions.js"></script>
 
 <!-- Home page JS -->
 <script>
@@ -2639,7 +3115,7 @@ const TOPICS = [
   {
     id: 'fsa', label: 'Financial Statement Analysis', code: 'FSA', icon: '📊',
     chapters: [
-      { id:'fsa-1',  label:'Intro to Financial Statement Analysis', sub:'R·01', count:100, available:true  },
+      { id:'fsa-1',  label:'Financial Statement Analysis',         sub:'R·01', count:100, available:true  },
       { id:'fsa-2',  label:'Analyzing Income Statements',           sub:'R·02', count:0,   available:false },
       { id:'fsa-3',  label:'Analyzing Balance Sheets',              sub:'R·03', count:0,   available:false },
       { id:'fsa-4',  label:'Analyzing Cash Flow Statements',        sub:'R·04', count:0,   available:false },
@@ -2655,15 +3131,15 @@ const TOPICS = [
   {
     id: 'quant', label: 'Quantitative Methods', code: 'QM', icon: '📐',
     chapters: [
-      { id:'qm-1',  label:'Rates and Returns',                      sub:'R·01', count:140,  available:true  },
-      { id:'qm-2',  label:'Time Value of Money in Finance',         sub:'R·02', count:110,  available:true  },
-      { id:'qm-3',  label:'Statistical Measures of Asset Returns',  sub:'R·03', count:70,   available:true  },
-      { id:'qm-4',  label:'Probability Trees and Conditional Expectations', sub:'R·04', count:70, available:true },
-      { id:'qm-5',  label:'Portfolio Mathematics',                  sub:'R·05', count:100,  available:true  },
-      { id:'qm-6',  label:'Simulation Methods',                     sub:'R·06', count:40,   available:true  },
-      { id:'qm-7',  label:'Estimation and Inference',               sub:'R·07', count:50,   available:true  },
-      { id:'qm-8',  label:'Hypothesis Testing',                     sub:'R·08', count:0,    available:false },
-      { id:'qm-9',  label:'Parametric and Non-Parametric Tests',    sub:'R·09', count:0,    available:false },
+      { id:'qm-1',  label:'Rates and Returns',                              sub:'R·01', count:140, available:true  },
+      { id:'qm-2',  label:'Time Value of Money',                           sub:'R·02', count:110, available:true  },
+      { id:'qm-3',  label:'Statistical Measures of Asset Returns',         sub:'R·03', count:70,  available:true  },
+      { id:'qm-4',  label:'Probability Trees and Conditional Expectations', sub:'R·04', count:70,  available:true  },
+      { id:'qm-5',  label:'Portfolio Mathematics',                         sub:'R·05', count:100, available:true  },
+      { id:'qm-6',  label:'Simulation Methods',                            sub:'R·06', count:40,  available:true  },
+      { id:'qm-7',  label:'Estimation and Inference',                      sub:'R·07', count:50,  available:true  },
+      { id:'qm-8',  label:'Hypothesis Testing',                            sub:'R·08', count:0,   available:false },
+      { id:'qm-9',  label:'Parametric and Non-Parametric Tests of Independence', sub:'R·09', count:0, available:false },
       { id:'qm-10', label:'Simple Linear Regression',               sub:'R·10', count:0,    available:false },
       { id:'qm-11', label:'Introduction to Machine Learning',       sub:'R·11', count:0,    available:false },
       { id:'qm-12', label:'Organized Data and Applications',        sub:'R·12', count:0,    available:false },
@@ -2969,7 +3445,7 @@ function selectSummaryTopic(topicId) {
   if (!topic) return;
 
   // Chapters that have a written summary
-  const summaryReady = new Set(['fsa-1', 'qm-1', 'qm-2', 'qm-3', 'qm-4', 'qm-5', 'qm-6', 'qm-7', 'qm-8']);
+  const summaryReady = new Set(['fsa-1', 'qm-1', 'qm-2', 'qm-3', 'qm-4', 'qm-5', 'qm-6', 'qm-7', 'qm-8', 'qm-9', 'qm-10', 'qm-11']);
 
   topic.chapters.forEach(ch => {
     const opt = document.createElement('option');
@@ -3004,6 +3480,9 @@ function loadSummary(chapterId) {
     'qm-6':  'sum-qm-6',
     'qm-7':  'sum-qm-7',
     'qm-8':  'sum-qm-8',
+    'qm-9':  'sum-qm-9',
+    'qm-10': 'sum-qm-10',
+    'qm-11': 'sum-qm-11',
   };
 
   const targetId = summaryMap[chapterId];
@@ -3042,20 +3521,16 @@ function switchHomeTab(name, btn) {
 
         // Questions are loaded from ./questions.json (kept in the same folder as this HTML)
 async function fetchQuestions() {
-    // Try fetching questions.json first (when used as local files)
-    try {
-        const resp = await fetch('./questions.json');
-        if (resp.ok) {
-            const data = await resp.json();
-            if (Array.isArray(data) && data.length > 0) return data;
-        }
-    } catch (e) { /* fall through to embedded */ }
-    // Fallback: use embedded questions
-    const data = window.EMBEDDED_QUESTIONS || [];
-    if (!Array.isArray(data) || data.length === 0) {
-        throw new Error("No questions found. Please ensure questions.json is in the same folder as this HTML file.");
+    // Load from window.QUESTIONS_DATA set by questions.js (works with file:// and http://)
+    const raw = window.QUESTIONS_DATA;
+    if (!Array.isArray(raw) || raw.length === 0) {
+        throw new Error('questions.js not loaded. Make sure questions.js is in the same folder as index.html.');
     }
-    return data;
+    // Normalise difficulty: "Medium" -> "Moderate" for consistent styling
+    return raw.map(q => ({
+        ...q,
+        difficulty: q.difficulty === 'Medium' ? 'Moderate' : q.difficulty
+    }));
 }
 
 // Shuffle helper (Fisher–Yates)
@@ -3100,26 +3575,36 @@ function FinanceExamApp() {
                         // Auto-start using config from home page
                         const config = window.EXAM_CONFIG || { chapter: 'all', shuffle: false };
                         let filtered = data;
+
                         if (config.chapter && config.chapter !== 'all') {
+                          // Build lookup: chapter UI id -> chapter label (e.g. 'qm-1' -> 'Rates and Returns')
+                          const allTopicChapters = Object.values(window.TOPICS_REF || {}).flat();
+                          const idToLabel = {};
+                          allTopicChapters.forEach(ch => { idToLabel[ch.id] = ch.label; });
+
                           if (config.chapter.endsWith('-all')) {
-                            // All chapters within a topic e.g. 'fsa-all'
-                            const topicId = config.chapter.replace('-all','');
-                            const topicChIds = (window.TOPICS_REF[topicId]||[]).map(c=>c.id);
-                            const chapterIdMap = window.CHAPTER_ID_MAP || {};
-                            // Resolve chapter UI ids → actual chapter field values in questions data
-                            const legacyIds = topicChIds.map(id => chapterIdMap[id] || id);
-                            filtered = data.filter(q => legacyIds.includes(String(q.chapter)));
+                            // All chapters within a topic e.g. 'quant-all'
+                            const topicId = config.chapter.replace('-all', '');
+                            const topicChapters = (window.TOPICS_REF[topicId] || []);
+                            const validLabels = new Set(topicChapters.map(ch => ch.label));
+                            filtered = data.filter(q => validLabels.has(q.chapterName));
                           } else {
-                            // Single chapter — map UI id → legacy chapter field value
-                            const chapterIdMap = window.CHAPTER_ID_MAP || {};
-                            const legacyChapter = chapterIdMap[config.chapter] || config.chapter;
-                            filtered = data.filter(q =>
-                              String(q.chapter) === String(config.chapter) ||
-                              String(q.chapter) === String(legacyChapter)
-                            );
+                            // Single chapter -- match by chapterName label
+                            const targetLabel = idToLabel[config.chapter];
+                            if (targetLabel) {
+                              filtered = data.filter(q => q.chapterName === targetLabel);
+                            } else {
+                              filtered = data.filter(q => String(q.chapter) === String(config.chapter));
+                            }
                           }
                         }
-                        if (filtered.length === 0) filtered = data;
+
+                        if (filtered.length === 0) {
+                          setLoadError('No questions found for the selected chapter. Please go back and choose a different selection.');
+                          setIsLoadingQuestions(false);
+                          return;
+                        }
+
                         const active = config.shuffle ? shuffleArray(filtered) : filtered;
                         setQuestions(active);
                         setExamStarted(true);
@@ -3171,13 +3656,14 @@ function FinanceExamApp() {
 
             const handleConfirm = () => {
                 if (selectedAnswer) {
-                    setAnswers({
+                    const newAnswers = {
                         ...answers,
                         [currentQuestion.id]: {
                             selected: selectedAnswer,
                             timeSpent: timeElapsed
                         }
-                    });
+                    };
+                    setAnswers(newAnswers);
                     
                     // Auto-advance
                     if (currentQuestionIndex < totalQuestions - 1) {
@@ -3357,14 +3843,30 @@ const handleChapterSelection = (value) => {
             };
 
             const exitExam = () => {
-                const ok = window.confirm("Exit the practice exam?");
+                const ok = window.confirm("Submit and view your results?");
                 if (!ok) return;
-                window.goToHome && window.goToHome();
+                setShowResults(true);
             };
 
             // Auto-start from home page config (no internal start screen)
             if (!examStarted) {
-                // This should not normally appear; home page handles selection
+                if (loadError) {
+                    return (
+                        <div style={{ minHeight:'100vh', background:'#faf8f3', fontFamily:"'DM Sans',sans-serif", display:'flex', alignItems:'center', justifyContent:'center', padding:24 }}>
+                            <div style={{ maxWidth:480, width:'100%', background:'#fff', border:'1px solid #ddd8cc', borderRadius:20, padding:'48px 40px', boxShadow:'0 6px 28px rgba(15,30,60,.12)', textAlign:'center' }}>
+                                <div style={{ width:56, height:56, background:'#fdecea', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center', margin:'0 auto 20px', fontSize:'1.5rem' }}>⚠️</div>
+                                <h2 style={{ fontFamily:"'Cormorant Garamond',serif", fontSize:'1.6rem', fontWeight:700, color:'#0f1e3c', marginBottom:12 }}>No Questions Found</h2>
+                                <p style={{ fontSize:'.88rem', color:'#7a7a9a', lineHeight:1.6, marginBottom:28 }}>{loadError}</p>
+                                <button
+                                    onClick={() => window.goToHome && window.goToHome()}
+                                    style={{ display:'inline-flex', alignItems:'center', gap:8, padding:'13px 32px', background:'linear-gradient(135deg,#0f1e3c,#243a6b)', color:'#e8c97a', border:'none', borderRadius:10, fontFamily:"'DM Sans',sans-serif", fontSize:'.9rem', fontWeight:700, cursor:'pointer', boxShadow:'0 4px 16px rgba(15,30,60,.2)' }}
+                                >
+                                    ← Back to Home Page
+                                </button>
+                            </div>
+                        </div>
+                    );
+                }
                 return (
                     <div className="min-h-screen gradient-bg flex items-center justify-center">
                         <div className="text-white text-center">
@@ -3537,242 +4039,258 @@ if (examStarted && questions.length === 0) {
                 const analysisByDifficulty = getAnalysisByDifficulty();
                 const analysisByChapter = getAnalysisByChapter();
                 const passed = parseFloat(score.percentage) >= 70;
-                
+
+                const difficultyMeta = {
+                    Easy:     { bar: '#1a7a4a', badge: { bg: '#e8f7ef', color: '#1a5c3a' } },
+                    Moderate: { bar: '#a07c30', badge: { bg: '#f7f0dc', color: '#7a5a10' } },
+                    Difficult:{ bar: '#8b1a1a', badge: { bg: '#fdecea', color: '#8b1a1a' } },
+                };
+
+                const SectionEyebrow = ({ label }) => (
+                    <div style={{ display:'flex', alignItems:'center', gap:10, marginBottom:10 }}>
+                        <div style={{ width:28, height:2, background:'#c9a84c', borderRadius:2, flexShrink:0 }} />
+                        <span style={{ fontSize:'.66rem', fontWeight:700, letterSpacing:'.14em', textTransform:'uppercase', color:'#c9a84c' }}>{label}</span>
+                    </div>
+                );
+
                 return (
-                    <div className="min-h-screen bg-gray-100 p-6">
-                        <div className="max-w-6xl mx-auto">
-                            <div className="bg-white rounded-3xl card-shadow p-10">
-                                {/* Header */}
-                                <div className="text-center mb-10">
-                                    <div className={`w-32 h-32 ${passed ? 'bg-slate-50' : 'gradient-bg-2'} rounded-full flex items-center justify-center mx-auto mb-6 card-shadow`}>
-                                        {passed ? (
-                                            <svg className="w-20 h-20 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                            </svg>
-                                        ) : (
-                                            <svg className="w-20 h-20 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                            </svg>
-                                        )}
-                                    </div>
-                                    <h1 className="text-4xl font-bold text-gray-800 mb-3">Exam Complete!</h1>
-                                    <p className="text-2xl text-gray-600">Time: {formatTime(timeElapsed)}</p>
-                                </div>
+                    <div style={{ minHeight:'100vh', background:'#faf8f3', fontFamily:"'DM Sans', sans-serif" }}>
 
-                                {/* Overall Score */}
-                                <div className="gradient-bg rounded-3xl p-10 mb-10 text-white card-shadow">
-                                    <div className="text-center">
-                                        <p className="text-2xl mb-3 opacity-90 font-medium">Your Score</p>
-                                        <p className="text-8xl font-bold mb-4">{score.percentage}%</p>
-                                        <p className="text-3xl mb-2">{score.correct} / {score.total} Correct</p>
-                                        {score.unanswered > 0 && (
-                                            <p className="text-lg opacity-75 mt-2">({score.unanswered} not answered)</p>
-                                        )}
-                                        <div className="mt-8">
-                                            <div className="bg-white bg-opacity-20 rounded-full h-5 overflow-hidden">
-                                                <div 
-                                                    className="bg-white h-full transition-all duration-1000"
-                                                    style={{ width: `${score.percentage}%` }}
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* Performance Breakdown */}
-                                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
-                                    {/* By Difficulty */}
-                                    <div>
-                                        <h2 className="text-2xl font-bold text-gray-800 mb-5">By Difficulty Level</h2>
-                                        <div className="space-y-4">
-                                            {Object.entries(analysisByDifficulty).map(([difficulty, stats]) => {
-                                                const percentage = stats.total > 0 ? ((stats.correct / stats.total) * 100).toFixed(0) : 0;
-                                                const colorMap = {
-                                                    'Easy': 'from-green-400 to-green-600',
-                                                    'Moderate': 'from-yellow-400 to-orange-500',
-                                                    'Difficult': 'from-red-400 to-pink-600'
-                                                };
-                                                
-                                                return (
-                                                    <div key={difficulty} className="bg-gray-50 rounded-2xl p-5 border-2 border-gray-200">
-                                                        <div className="flex justify-between items-center mb-3">
-                                                            <h3 className="font-bold text-gray-800 text-lg">{difficulty}</h3>
-                                                            <span className="text-3xl font-bold text-gray-800">{percentage}%</span>
-                                                        </div>
-                                                        <p className="text-sm text-gray-600 mb-3">{stats.correct} of {stats.total} correct</p>
-                                                        <div className="bg-gray-200 rounded-full h-3 overflow-hidden">
-                                                            <div 
-                                                                className={`bg-gradient-to-r ${colorMap[difficulty]} h-full transition-all duration-1000`}
-                                                                style={{ width: `${percentage}%` }}
-                                                            />
-                                                        </div>
-                                                    </div>
-                                                );
-                                            })}
-                                        </div>
-                                    </div>
-
-                                    {/* By Chapter */}
-                                    <div>
-                                        <h2 className="text-2xl font-bold text-gray-800 mb-5">By Chapter</h2>
-                                        <div className="space-y-4">
-                                            {Object.entries(analysisByChapter).map(([chapter, data]) => {
-                                                const percentage = data.total > 0 ? ((data.correct / data.total) * 100).toFixed(0) : 0;
-                                                
-                                                return (
-                                                    <div key={chapter} className="bg-gray-50 rounded-2xl p-5 border-2 border-gray-200">
-                                                        <div className="flex justify-between items-center mb-3">
-                                                            <h3 className="font-bold text-gray-800">Chapter {chapter}: {data.name}</h3>
-                                                            <span className="text-3xl font-bold text-gray-800">{percentage}%</span>
-                                                        </div>
-                                                        <p className="text-sm text-gray-600 mb-3">{data.correct} of {data.total} correct</p>
-                                                        <div className="bg-gray-200 rounded-full h-3 overflow-hidden">
-                                                            <div 
-                                                                className="bg-gradient-to-r from-purple-400 to-pink-600 h-full transition-all duration-1000"
-                                                                style={{ width: `${percentage}%` }}
-                                                            />
-                                                        </div>
-                                                    </div>
-                                                );
-                                            })}
-                                        </div>
-                                    </div>
-                                </div>
-
-                                
-                                {/* Marked Review */}
-                                <div className="mb-10">
-                                    <h2 className="text-2xl font-bold text-gray-800 mb-5">Marked for Review</h2>
-                                    <div className="bg-white rounded-2xl p-5 border border-gray-200">
-                                        {questions.filter(q => markedForReview.has(q.id) && !!answers[q.id]).length === 0 ? (
-                                            <p className="text-gray-600">No answered questions are marked for review.</p>
-                                        ) : (
-                                            <div className="space-y-4 max-h-80 overflow-y-auto pr-2">
-                                                {questions.filter(q => markedForReview.has(q.id) && !!answers[q.id]).map((q, idx) => {
-                                                    const answer = answers[q.id];
-                                                    const isCorrect = answer?.selected === q.correctAnswer;
-                                                    return (
-                                                        <div
-                                                            key={q.id}
-                                                            className={`rounded-2xl p-5 border-2 ${isCorrect ? 'bg-green-50 border-green-400' : 'bg-red-50 border-red-400'}`}
-                                                        >
-                                                            <div className="flex items-start justify-between mb-3">
-                                                                <div>
-                                                                    <div className="text-sm text-gray-600 font-semibold mb-1">{q.id} • Chapter {q.chapter}</div>
-                                                                    <div className="text-gray-900 font-semibold">{q.question}</div>
-                                                                </div>
-                                                                <div className={`px-3 py-1 rounded-full text-sm font-bold ${isCorrect ? 'bg-green-200 text-green-800' : 'bg-red-200 text-red-800'}`}>
-                                                                    {isCorrect ? 'Correct' : 'Incorrect'}
-                                                                </div>
-                                                            </div>
-
-                                                            <div className="text-sm text-gray-700 mb-2">
-                                                                <span className="font-semibold">Your answer:</span> {answer?.selected || '—'} &nbsp; | &nbsp;
-                                                                <span className="font-semibold">Correct:</span> {q.correctAnswer}
-                                                            </div>
-
-                                                            <div className="text-sm text-gray-700">
-                                                                <span className="font-semibold">Explanation:</span> {q.explanation}
-                                                            </div>
-                                                        </div>
-                                                    );
-                                                })}
-                                            </div>
-                                        )}
-                                    </div>
-                                </div>
-
-{/* Question Review */}
+                        {/* ── Top header bar ── */}
+                        <div style={{ background:'#0f1e3c', padding:'18px 40px', display:'flex', alignItems:'center', justifyContent:'space-between', position:'relative', overflow:'hidden' }}>
+                            {/* grid overlay */}
+                            <div style={{ position:'absolute', inset:0, backgroundImage:'repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(201,168,76,.04) 79px,rgba(201,168,76,.04) 80px),repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(201,168,76,.04) 79px,rgba(201,168,76,.04) 80px)', pointerEvents:'none' }} />
+                            <div style={{ display:'flex', alignItems:'center', gap:14, position:'relative' }}>
+                                <div style={{ width:42, height:42, background:'linear-gradient(135deg,#c9a84c,#a07c30)', borderRadius:9, display:'flex', alignItems:'center', justifyContent:'center', fontFamily:"'Cormorant Garamond',serif", fontSize:'1.1rem', fontWeight:700, color:'#0f1e3c', flexShrink:0, boxShadow:'0 4px 12px rgba(201,168,76,.35)' }}>CFA</div>
                                 <div>
-                                    <h2 className="text-2xl font-bold text-gray-800 mb-5">Question-by-Question Review</h2>
-                                    <div className="space-y-4 max-h-96 overflow-y-auto pr-2">
-                                        {questions.filter(q => !!answers[q.id]).map((q, idx) => {
+                                    <div style={{ fontFamily:"'Cormorant Garamond',serif", color:'#fff', fontSize:'1.05rem', fontWeight:600, lineHeight:1.2 }}>Practice Hub</div>
+                                    <div style={{ color:'rgba(255,255,255,.4)', fontSize:'.66rem', letterSpacing:'.12em', textTransform:'uppercase', marginTop:2 }}>Results &amp; Analysis</div>
+                                </div>
+                            </div>
+                            <button
+                                onClick={() => window.goToHome && window.goToHome()}
+                                style={{ background:'rgba(201,168,76,.15)', border:'1px solid rgba(201,168,76,.3)', color:'#e8c97a', padding:'8px 20px', borderRadius:8, fontFamily:"'DM Sans',sans-serif", fontSize:'.8rem', fontWeight:600, cursor:'pointer', position:'relative', letterSpacing:'.03em', transition:'all .2s' }}
+                                onMouseOver={e => e.currentTarget.style.background='rgba(201,168,76,.28)'}
+                                onMouseOut={e => e.currentTarget.style.background='rgba(201,168,76,.15)'}
+                            >
+                                ← Home
+                            </button>
+                        </div>
+
+                        {/* ── Hero score banner ── */}
+                        <div style={{ background:'#0f1e3c', padding:'52px 40px 0', position:'relative', overflow:'hidden' }}>
+                            <div style={{ position:'absolute', inset:0, background:'radial-gradient(ellipse 60% 80% at 10% 60%,rgba(201,168,76,.09) 0%,transparent 60%),radial-gradient(ellipse 80% 60% at 50% 100%,rgba(15,30,60,1) 0%,transparent 70%)', pointerEvents:'none' }} />
+                            <div style={{ position:'absolute', inset:0, backgroundImage:'repeating-linear-gradient(0deg,transparent,transparent 49px,rgba(201,168,76,.05) 49px,rgba(201,168,76,.05) 50px),repeating-linear-gradient(90deg,transparent,transparent 49px,rgba(201,168,76,.05) 49px,rgba(201,168,76,.05) 50px)', pointerEvents:'none' }} />
+                            <div style={{ maxWidth:1100, margin:'0 auto', position:'relative', paddingBottom:56 }}>
+
+                                {/* eyebrow */}
+                                <div style={{ display:'inline-flex', alignItems:'center', gap:8, background:'rgba(201,168,76,.12)', border:'1px solid rgba(201,168,76,.25)', borderRadius:20, padding:'5px 14px 5px 10px', marginBottom:28 }}>
+                                    <div style={{ width:6, height:6, background:'#c9a84c', borderRadius:'50%' }} />
+                                    <span style={{ fontSize:'.72rem', fontWeight:600, letterSpacing:'.1em', textTransform:'uppercase', color:'#c9a84c' }}>2026 CFA® Program · Level I · Session Results</span>
+                                </div>
+
+                                <div style={{ display:'grid', gridTemplateColumns:'1fr auto', gap:48, alignItems:'center' }}>
+                                    <div>
+                                        <h1 style={{ fontFamily:"'Cormorant Garamond',serif", color:'#fff', fontSize:'clamp(2.4rem,4.5vw,3.6rem)', fontWeight:700, lineHeight:1.08, letterSpacing:'-.02em', marginBottom:16 }}>
+                                            {passed ? <span>Well done — <em style={{ color:'#e8c97a', fontStyle:'italic' }}>keep it up!</em></span> : <span>Keep <em style={{ color:'#e8c97a', fontStyle:'italic' }}>practising</em></span>}
+                                        </h1>
+                                        <p style={{ color:'rgba(255,255,255,.55)', fontSize:'.95rem', lineHeight:1.7, maxWidth:460, marginBottom:32 }}>
+                                            You answered <strong style={{ color:'#e8c97a' }}>{score.total}</strong> of <strong style={{ color:'#e8c97a' }}>{questions.length}</strong> questions.
+                                            {score.unanswered > 0 && <span> <strong style={{ color:'rgba(255,255,255,.4)' }}>{score.unanswered} skipped.</strong></span>}
+                                            {' '}Detailed answers and explanations are below.
+                                        </p>
+                                        {/* stat row */}
+                                        <div style={{ display:'flex', gap:32, flexWrap:'wrap', paddingTop:24, borderTop:'1px solid rgba(255,255,255,.08)' }}>
+                                            {[
+                                                { num: score.correct,              label: 'Correct' },
+                                                { num: score.total - score.correct, label: 'Incorrect' },
+                                                { num: score.unanswered,            label: 'Skipped' },
+                                                { num: formatTime(timeElapsed),     label: 'Time Taken' },
+                                            ].map(s => (
+                                                <div key={s.label}>
+                                                    <div style={{ fontFamily:"'Cormorant Garamond',serif", fontSize:'1.9rem', fontWeight:700, color:'#e8c97a', lineHeight:1 }}>{s.num}</div>
+                                                    <div style={{ fontSize:'.7rem', color:'rgba(255,255,255,.4)', textTransform:'uppercase', letterSpacing:'.08em', marginTop:3 }}>{s.label}</div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    {/* Big score circle */}
+                                    <div style={{ textAlign:'center', flexShrink:0 }}>
+                                        <div style={{ width:160, height:160, borderRadius:'50%', background:'rgba(201,168,76,.12)', border:'2px solid rgba(201,168,76,.3)', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', boxShadow:'0 0 48px rgba(201,168,76,.15)' }}>
+                                            <div style={{ fontFamily:"'Cormorant Garamond',serif", fontSize:'3rem', fontWeight:700, color:'#e8c97a', lineHeight:1 }}>{score.percentage}%</div>
+                                            <div style={{ fontSize:'.65rem', fontWeight:600, letterSpacing:'.1em', textTransform:'uppercase', color:'rgba(255,255,255,.4)', marginTop:6 }}>Score</div>
+                                        </div>
+                                        {/* progress arc bar */}
+                                        <div style={{ marginTop:14, width:160, height:6, background:'rgba(255,255,255,.1)', borderRadius:3, overflow:'hidden' }}>
+                                            <div style={{ height:'100%', width:`${score.percentage}%`, background:'linear-gradient(90deg,#c9a84c,#e8c97a)', borderRadius:3, transition:'width 1s ease' }} />
+                                        </div>
+                                        <div style={{ marginTop:6, fontSize:'.7rem', color:'rgba(255,255,255,.3)', letterSpacing:'.06em' }}>
+                                            {passed ? '✓ ABOVE THRESHOLD' : '↑ TARGET: 70%'}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* wave */}
+                        <div style={{ display:'block', width:'100%', height:56, background:'#0f1e3c', clipPath:'ellipse(55% 100% at 50% 0%)', marginBottom:-2 }} />
+
+                        {/* ── Body content ── */}
+                        <div style={{ maxWidth:1100, margin:'0 auto', padding:'40px 40px 80px' }}>
+
+                            {/* ── Performance Breakdown ── */}
+                            <div style={{ marginBottom:48 }}>
+                                <SectionEyebrow label="Performance Breakdown" />
+                                <h2 style={{ fontFamily:"'Cormorant Garamond',serif", fontSize:'clamp(1.5rem,2.8vw,2rem)', fontWeight:700, color:'#0f1e3c', lineHeight:1.2, marginBottom:24 }}>Score by Difficulty &amp; Chapter</h2>
+                                <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(300px,1fr))', gap:24 }}>
+
+                                    {/* By difficulty */}
+                                    <div style={{ background:'#fff', border:'1px solid #ddd8cc', borderRadius:16, overflow:'hidden', boxShadow:'0 2px 12px rgba(15,30,60,.07)' }}>
+                                        <div style={{ background:'#0f1e3c', padding:'14px 22px', display:'flex', alignItems:'center', gap:10 }}>
+                                            <span style={{ fontSize:'.65rem', fontWeight:700, letterSpacing:'.14em', textTransform:'uppercase', color:'#e8c97a' }}>By Difficulty</span>
+                                        </div>
+                                        <div style={{ padding:'20px 22px', display:'flex', flexDirection:'column', gap:14 }}>
+                                            {Object.entries(analysisByDifficulty).map(([difficulty, stats]) => {
+                                                const pct = stats.total > 0 ? ((stats.correct / stats.total) * 100).toFixed(0) : 0;
+                                                const meta = difficultyMeta[difficulty] || difficultyMeta.Moderate;
+                                                return (
+                                                    <div key={difficulty}>
+                                                        <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:5 }}>
+                                                            <div style={{ display:'flex', alignItems:'center', gap:8 }}>
+                                                                <span style={{ display:'inline-block', background:meta.badge.bg, color:meta.badge.color, fontSize:'.68rem', fontWeight:600, padding:'2px 9px', borderRadius:4, fontFamily:"'DM Mono',monospace" }}>{difficulty}</span>
+                                                                <span style={{ fontSize:'.76rem', color:'#7a7a9a' }}>{stats.correct}/{stats.total}</span>
+                                                            </div>
+                                                            <span style={{ fontFamily:"'Cormorant Garamond',serif", fontSize:'1.35rem', fontWeight:700, color:'#0f1e3c' }}>{pct}%</span>
+                                                        </div>
+                                                        <div style={{ height:5, background:'#eceae4', borderRadius:3, overflow:'hidden' }}>
+                                                            <div style={{ height:'100%', width:`${pct}%`, background:meta.bar, borderRadius:3, transition:'width 1s ease' }} />
+                                                        </div>
+                                                    </div>
+                                                );
+                                            })}
+                                        </div>
+                                    </div>
+
+                                    {/* By chapter */}
+                                    <div style={{ background:'#fff', border:'1px solid #ddd8cc', borderRadius:16, overflow:'hidden', boxShadow:'0 2px 12px rgba(15,30,60,.07)' }}>
+                                        <div style={{ background:'#0f1e3c', padding:'14px 22px' }}>
+                                            <span style={{ fontSize:'.65rem', fontWeight:700, letterSpacing:'.14em', textTransform:'uppercase', color:'#e8c97a' }}>By Chapter</span>
+                                        </div>
+                                        <div style={{ padding:'20px 22px', display:'flex', flexDirection:'column', gap:14 }}>
+                                            {Object.entries(analysisByChapter).map(([chapter, data]) => {
+                                                const pct = data.total > 0 ? ((data.correct / data.total) * 100).toFixed(0) : 0;
+                                                return (
+                                                    <div key={chapter}>
+                                                        <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-start', marginBottom:5 }}>
+                                                            <div>
+                                                                <span style={{ display:'inline-block', fontFamily:"'DM Mono',monospace", fontSize:'.65rem', fontWeight:600, color:'#c9a84c', background:'#f7f0dc', padding:'2px 7px', borderRadius:4, marginRight:7 }}>Ch {chapter}</span>
+                                                                <span style={{ fontSize:'.76rem', color:'#3a3a5c', fontWeight:500 }}>{data.name}</span>
+                                                            </div>
+                                                            <span style={{ fontFamily:"'Cormorant Garamond',serif", fontSize:'1.35rem', fontWeight:700, color:'#0f1e3c', flexShrink:0, marginLeft:12 }}>{pct}%</span>
+                                                        </div>
+                                                        <div style={{ height:5, background:'#eceae4', borderRadius:3, overflow:'hidden' }}>
+                                                            <div style={{ height:'100%', width:`${pct}%`, background:'#1a2f5a', borderRadius:3, transition:'width 1s ease' }} />
+                                                        </div>
+                                                        <div style={{ fontSize:'.7rem', color:'#7a7a9a', marginTop:3 }}>{data.correct} of {data.total} correct</div>
+                                                    </div>
+                                                );
+                                            })}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* ── Marked for Review ── */}
+                            {questions.filter(q => markedForReview.has(q.id) && !!answers[q.id]).length > 0 && (
+                                <div style={{ marginBottom:48 }}>
+                                    <SectionEyebrow label="Flagged Questions" />
+                                    <h2 style={{ fontFamily:"'Cormorant Garamond',serif", fontSize:'clamp(1.5rem,2.8vw,2rem)', fontWeight:700, color:'#0f1e3c', lineHeight:1.2, marginBottom:20 }}>Marked for Review</h2>
+                                    <div style={{ display:'flex', flexDirection:'column', gap:12 }}>
+                                        {questions.filter(q => markedForReview.has(q.id) && !!answers[q.id]).map((q, idx) => {
                                             const answer = answers[q.id];
                                             const isCorrect = answer?.selected === q.correctAnswer;
-                                            const wasAnswered = !!answer;
-                                            
                                             return (
-                                                <div 
-                                                    key={q.id} 
-                                                    className={`rounded-2xl p-5 border-2 ${
-                                                        !wasAnswered ? 'bg-gray-50 border-gray-300' :
-                                                        isCorrect ? 'bg-green-50 border-green-400' : 'bg-red-50 border-red-400'
-                                                    }`}
-                                                >
-                                                    <div className="flex items-start justify-between mb-3">
-                                                        <div className="flex items-center">
-                                                            {wasAnswered ? (
-                                                                isCorrect ? (
-                                                                    <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-3">
-                                                                        <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                                                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                                                        </svg>
-                                                                    </div>
-                                                                ) : (
-                                                                    <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center mr-3">
-                                                                        <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                                                            <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
-                                                                        </svg>
-                                                                    </div>
-                                                                )
-                                                            ) : (
-                                                                <div className="w-8 h-8 bg-gray-400 rounded-full flex items-center justify-center mr-3">
-                                                                    <span className="text-white font-bold">?</span>
-                                                                </div>
-                                                            )}
-                                                            <span className="font-bold text-gray-800">Q{idx + 1}</span>
-                                                            <span className={`ml-3 text-xs px-3 py-1 rounded-full font-semibold ${
-                                                                q.difficulty === 'Easy' ? 'bg-green-100 text-green-700' :
-                                                                q.difficulty === 'Moderate' ? 'bg-yellow-100 text-yellow-700' :
-                                                                'bg-red-100 text-red-700'
-                                                            }`}>
-                                                                {q.difficulty}
-                                                            </span>
+                                                <div key={q.id} style={{ background:'#fff', border:`1px solid ${isCorrect ? '#b6dfc8' : '#f0bfbf'}`, borderLeft:`4px solid ${isCorrect ? '#1a7a4a' : '#c0392b'}`, borderRadius:'0 12px 12px 0', padding:'16px 20px', boxShadow:'0 2px 8px rgba(15,30,60,.06)' }}>
+                                                    <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-start', marginBottom:8, gap:12 }}>
+                                                        <div style={{ display:'flex', alignItems:'center', gap:8 }}>
+                                                            <span style={{ fontFamily:"'DM Mono',monospace", fontSize:'.68rem', color:'#c9a84c', background:'#f7f0dc', padding:'2px 8px', borderRadius:4 }}>Ch {q.chapter}</span>
+                                                            <span style={{ fontFamily:"'DM Mono',monospace", fontSize:'.68rem', color:'#7a7a9a' }}>🔖 Flagged</span>
                                                         </div>
+                                                        <span style={{ fontSize:'.72rem', fontWeight:700, padding:'3px 10px', borderRadius:4, background: isCorrect ? '#e8f7ef' : '#fdecea', color: isCorrect ? '#1a5c3a' : '#8b1a1a', flexShrink:0 }}>{isCorrect ? '✓ Correct' : '✗ Incorrect'}</span>
                                                     </div>
-                                                    
-                                                    <p className="text-gray-700 mb-3 font-medium">{q.question}</p>
-                                                    
-                                                    {wasAnswered ? (
-                                                        <div className="space-y-2">
-                                                            <div className={`font-bold text-lg ${isCorrect ? 'text-green-700' : 'text-red-700'}`}>
-                                                                Your answer: {answer.selected}
-                                                            </div>
-                                                            {!isCorrect && (
-                                                                <div className="text-green-700 font-bold text-lg">
-                                                                    Correct answer: {q.correctAnswer}
-                                                                </div>
-                                                            )}
-                                                            <div className="text-gray-700 mt-3 pt-3 border-t-2 border-gray-300">
-                                                                <span className="font-semibold">💡 Explanation:</span> {q.explanation}
-                                                            </div>
-                                                        </div>
-                                                    ) : (
-                                                        <p className="text-gray-500 italic">Not answered</p>
-                                                    )}
+                                                    <p style={{ fontSize:'.85rem', color:'#1a1a2e', fontWeight:500, marginBottom:10, lineHeight:1.5 }}>{q.question}</p>
+                                                    <div style={{ fontSize:'.79rem', color:'#3a3a5c', display:'flex', gap:16, flexWrap:'wrap', paddingTop:10, borderTop:'1px solid #eceae4' }}>
+                                                        <span>Your answer: <strong style={{ color: isCorrect ? '#1a7a4a' : '#c0392b' }}>{answer?.selected}</strong></span>
+                                                        {!isCorrect && <span>Correct: <strong style={{ color:'#1a7a4a' }}>{q.correctAnswer}</strong></span>}
+                                                    </div>
+                                                    <div style={{ marginTop:8, fontSize:'.79rem', color:'#3a3a5c', background:'#faf8f3', borderRadius:8, padding:'10px 14px', lineHeight:1.6 }}>
+                                                        <span style={{ fontWeight:600, color:'#0f1e3c' }}>Explanation: </span>{q.explanation}
+                                                    </div>
                                                 </div>
                                             );
                                         })}
                                     </div>
                                 </div>
+                            )}
 
-                                <div className="mt-10 text-center">
-                                    <button 
-                                        onClick={() => {
-                                            setExamStarted(false);
-                                            setCurrentQuestionIndex(0);
-                                            setAnswers({});
-                                            setMarkedForReview(new Set());
-                                            setEliminatedOptions({});
-                                            setShowResults(false);
-                                            setTimeElapsed(0);
-                                            setSelectedAnswer('');
-                                        }}
-                                        className="gradient-bg text-white px-12 py-4 rounded-2xl font-bold text-lg hover:shadow-2xl transition-all transform hover:scale-105"
-                                    >
-                                        Take Another Practice Exam
-                                    </button>
+                            {/* ── Question-by-Question Review ── */}
+                            <div style={{ marginBottom:48 }}>
+                                <SectionEyebrow label="Full Review" />
+                                <h2 style={{ fontFamily:"'Cormorant Garamond',serif", fontSize:'clamp(1.5rem,2.8vw,2rem)', fontWeight:700, color:'#0f1e3c', lineHeight:1.2, marginBottom:20 }}>Answers &amp; Solutions</h2>
+                                <div style={{ display:'flex', flexDirection:'column', gap:12 }}>
+                                    {questions.filter(q => !!answers[q.id]).map((q, idx) => {
+                                        const answer = answers[q.id];
+                                        const isCorrect = answer?.selected === q.correctAnswer;
+                                        const diffMeta = difficultyMeta[q.difficulty] || difficultyMeta.Moderate;
+                                        return (
+                                            <div key={q.id} style={{ background:'#fff', border:'1px solid #ddd8cc', borderLeft:`4px solid ${isCorrect ? '#1a7a4a' : '#c0392b'}`, borderRadius:'0 14px 14px 0', boxShadow:'0 2px 10px rgba(15,30,60,.06)', overflow:'hidden' }}>
+                                                {/* row header */}
+                                                <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', padding:'12px 20px', borderBottom:'1px solid #eceae4', background: isCorrect ? '#f4fbf7' : '#fff8f8' }}>
+                                                    <div style={{ display:'flex', alignItems:'center', gap:10 }}>
+                                                        <div style={{ width:28, height:28, borderRadius:'50%', background: isCorrect ? '#1a7a4a' : '#c0392b', display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0 }}>
+                                                            <span style={{ color:'#fff', fontSize:'.72rem', fontWeight:700 }}>{isCorrect ? '✓' : '✗'}</span>
+                                                        </div>
+                                                        <span style={{ fontFamily:"'DM Mono',monospace", fontSize:'.72rem', color:'#7a7a9a' }}>Q{idx + 1}</span>
+                                                        <span style={{ fontFamily:"'DM Mono',monospace", fontSize:'.65rem', color:'#c9a84c', background:'#f7f0dc', padding:'2px 7px', borderRadius:4 }}>Ch {q.chapter}</span>
+                                                        <span style={{ fontSize:'.68rem', fontWeight:600, padding:'2px 8px', borderRadius:4, background: diffMeta.badge.bg, color: diffMeta.badge.color }}>{q.difficulty}</span>
+                                                        <span style={{ fontSize:'.76rem', color:'#3a3a5c', fontWeight:500 }}>{q.topic}</span>
+                                                    </div>
+                                                    <span style={{ fontSize:'.72rem', fontWeight:700, padding:'3px 10px', borderRadius:4, background: isCorrect ? '#e8f7ef' : '#fdecea', color: isCorrect ? '#1a5c3a' : '#8b1a1a', flexShrink:0 }}>{isCorrect ? 'Correct' : 'Incorrect'}</span>
+                                                </div>
+                                                {/* body */}
+                                                <div style={{ padding:'16px 20px' }}>
+                                                    <p style={{ fontSize:'.88rem', color:'#1a1a2e', fontWeight:500, lineHeight:1.55, marginBottom:12 }}>{q.question}</p>
+                                                    <div style={{ display:'flex', gap:12, flexWrap:'wrap', marginBottom:12 }}>
+                                                        <span style={{ fontSize:'.79rem', color:'#3a3a5c' }}>
+                                                            Your answer: <strong style={{ color: isCorrect ? '#1a7a4a' : '#c0392b' }}>{answer.selected}</strong>
+                                                        </span>
+                                                        {!isCorrect && (
+                                                            <span style={{ fontSize:'.79rem', color:'#3a3a5c' }}>
+                                                                Correct answer: <strong style={{ color:'#1a7a4a' }}>{q.correctAnswer}</strong>
+                                                            </span>
+                                                        )}
+                                                    </div>
+                                                    <div style={{ background:'#faf8f3', border:'1px solid #eceae4', borderLeft:'3px solid #c9a84c', borderRadius:'0 8px 8px 0', padding:'10px 14px', fontSize:'.79rem', color:'#3a3a5c', lineHeight:1.65 }}>
+                                                        <span style={{ fontWeight:700, color:'#0f1e3c' }}>Explanation: </span>{q.explanation}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
                                 </div>
+                            </div>
+
+                            {/* ── Back to home ── */}
+                            <div style={{ textAlign:'center', paddingTop:12 }}>
+                                <button
+                                    onClick={() => window.goToHome && window.goToHome()}
+                                    style={{ display:'inline-flex', alignItems:'center', justifyContent:'center', gap:10, padding:'15px 40px', background:'linear-gradient(135deg,#0f1e3c,#243a6b)', color:'#e8c97a', border:'none', borderRadius:12, fontFamily:"'DM Sans',sans-serif", fontSize:'.95rem', fontWeight:700, letterSpacing:'.02em', cursor:'pointer', boxShadow:'0 4px 20px rgba(15,30,60,.25)', transition:'all .2s' }}
+                                    onMouseOver={e => { e.currentTarget.style.transform='translateY(-2px)'; e.currentTarget.style.boxShadow='0 8px 28px rgba(15,30,60,.32)'; }}
+                                    onMouseOut={e => { e.currentTarget.style.transform='translateY(0)'; e.currentTarget.style.boxShadow='0 4px 20px rgba(15,30,60,.25)'; }}
+                                >
+                                    ← Back to Home Page
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -3877,15 +4395,6 @@ if (examStarted && questions.length === 0) {
                                     >
                                         Exit
                                     </button>
-                                    
-                                    {answeredCount === totalQuestions && (
-                                        <button
-                                            onClick={() => setShowResults(true)}
-                                            className="px-6 py-2 gradient-bg text-white rounded-xl font-bold hover:shadow-lg transition-all"
-                                        >
-                                            Finish Exam
-                                        </button>
-                                    )}
                                 </div>
                             </div>
                             
