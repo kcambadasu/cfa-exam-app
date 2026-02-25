@@ -3412,6 +3412,16 @@ window.goToHome = function() {
   document.getElementById('examPanel').classList.remove('active');
   document.getElementById('homePanel').classList.remove('hidden');
   document.body.style.overflow = '';
+  // Always return to Practice tab
+  document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+  document.getElementById('tab-practice').classList.add('active');
+  document.querySelectorAll('.home-tab').forEach(b => {
+    b.classList.remove('active');
+    if (b.getAttribute('onclick') && b.getAttribute('onclick').indexOf('practice') !== -1) b.classList.add('active');
+  });
+  // Hide return-to-results banner if visible
+  var banner = document.getElementById('returnResultsBanner');
+  if (banner) banner.style.display = 'none';
   // Reset React for next session
   document.getElementById('app').innerHTML = '';
   reactMounted = false;
@@ -3507,6 +3517,96 @@ function switchHomeTab(name, btn) {
   document.getElementById('tab-' + name).classList.add('active');
   btn.classList.add('active');
 }
+
+// ── Summary deep-link from Results ──────────────────────────────────────────
+
+// Build chapterName → chapterId map from TOPICS (stays in sync automatically)
+window.CHAPTER_NAME_TO_ID = {};
+TOPICS.forEach(function(topic) {
+  topic.chapters.forEach(function(ch) {
+    window.CHAPTER_NAME_TO_ID[ch.label] = ch.id;
+  });
+});
+
+// Inject the floating "Back to Results" pill into <body>
+(function() {
+  var banner = document.createElement('div');
+  banner.id = 'returnResultsBanner';
+  banner.style.cssText = [
+    'display:none',
+    'position:fixed',
+    'bottom:28px',
+    'left:50%',
+    'transform:translateX(-50%)',
+    'z-index:9999',
+    'background:linear-gradient(135deg,#0f1e3c 0%,#1a3060 100%)',
+    'color:#e8c97a',
+    'padding:13px 28px',
+    'border-radius:50px',
+    'font-family:DM Sans,sans-serif',
+    'font-size:.88rem',
+    'font-weight:700',
+    'cursor:pointer',
+    'box-shadow:0 8px 36px rgba(15,30,60,.4)',
+    'align-items:center',
+    'gap:10px',
+    'border:1px solid rgba(201,168,76,.35)',
+    'letter-spacing:.04em',
+    'white-space:nowrap',
+    'transition:transform .15s,box-shadow .15s',
+    'user-select:none'
+  ].join(';');
+  banner.innerHTML = '<span style="font-size:1rem">←</span> Back to Results';
+  banner.onmouseover = function() {
+    banner.style.transform = 'translateX(-50%) translateY(-3px)';
+    banner.style.boxShadow = '0 14px 44px rgba(15,30,60,.5)';
+  };
+  banner.onmouseout = function() {
+    banner.style.transform = 'translateX(-50%)';
+    banner.style.boxShadow = '0 8px 36px rgba(15,30,60,.4)';
+  };
+  banner.onclick = function() { window.goBackToResults(); };
+  document.body.appendChild(banner);
+})();
+
+// Called from React question cards — opens the summary for a given chapterName
+window.openSummaryFromResults = function(chapterName) {
+  var chapterId = window.CHAPTER_NAME_TO_ID[chapterName];
+  if (!chapterId) return;
+  window._returnToResults = true;
+  // Hide exam, show home
+  document.getElementById('examPanel').classList.remove('active');
+  document.getElementById('homePanel').classList.remove('hidden');
+  document.body.style.overflow = '';
+  // Activate summaries tab
+  document.querySelectorAll('.tab-pane').forEach(function(p) { p.classList.remove('active'); });
+  document.getElementById('tab-summaries').classList.add('active');
+  document.querySelectorAll('.home-tab').forEach(function(b) {
+    b.classList.remove('active');
+    if (b.getAttribute('onclick') && b.getAttribute('onclick').indexOf('summaries') !== -1) {
+      b.classList.add('active');
+    }
+  });
+  // Load the summary chapter
+  loadSummary(chapterId);
+  // Show return banner
+  document.getElementById('returnResultsBanner').style.display = 'flex';
+  // Scroll to top of summary
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
+// Returns user to the results screen
+window.goBackToResults = function() {
+  window._returnToResults = false;
+  document.getElementById('returnResultsBanner').style.display = 'none';
+  document.getElementById('homePanel').classList.add('hidden');
+  document.getElementById('examPanel').classList.add('active');
+  document.body.style.overflow = 'hidden';
+  // Scroll results back to top so they can see score
+  var ep = document.getElementById('examPanel');
+  if (ep) ep.scrollTop = 0;
+};
+
 </script>
 
 <!-- React -->
@@ -4226,6 +4326,19 @@ if (examStarted && questions.length === 0) {
                                                     <div style={{ marginTop:8, fontSize:'.79rem', color:'#3a3a5c', background:'#faf8f3', borderRadius:8, padding:'10px 14px', lineHeight:1.6 }}>
                                                         <span style={{ fontWeight:600, color:'#0f1e3c' }}>Explanation: </span>{q.explanation}
                                                     </div>
+                                                    {window.CHAPTER_NAME_TO_ID && window.CHAPTER_NAME_TO_ID[q.chapterName] && (
+                                                        <div style={{ marginTop:10, textAlign:'right' }}>
+                                                            <button
+                                                                onClick={() => window.openSummaryFromResults && window.openSummaryFromResults(q.chapterName)}
+                                                                style={{ display:'inline-flex', alignItems:'center', gap:6, background:'none', border:'1px solid rgba(201,168,76,.5)', borderRadius:20, padding:'5px 14px', fontSize:'.72rem', fontWeight:700, color:'#b98a1c', cursor:'pointer', fontFamily:"'DM Sans',sans-serif", letterSpacing:'.04em', transition:'all .15s' }}
+                                                                onMouseOver={e => { e.currentTarget.style.background='rgba(201,168,76,.1)'; e.currentTarget.style.borderColor='#c9a84c'; }}
+                                                                onMouseOut={e => { e.currentTarget.style.background='none'; e.currentTarget.style.borderColor='rgba(201,168,76,.5)'; }}
+                                                                title="Open chapter summary"
+                                                            >
+                                                                📖 View in Chapter Summary
+                                                            </button>
+                                                        </div>
+                                                    )}
                                                 </div>
                                             );
                                         })}
@@ -4273,6 +4386,19 @@ if (examStarted && questions.length === 0) {
                                                     <div style={{ background:'#faf8f3', border:'1px solid #eceae4', borderLeft:'3px solid #c9a84c', borderRadius:'0 8px 8px 0', padding:'10px 14px', fontSize:'.79rem', color:'#3a3a5c', lineHeight:1.65 }}>
                                                         <span style={{ fontWeight:700, color:'#0f1e3c' }}>Explanation: </span>{q.explanation}
                                                     </div>
+                                                    {window.CHAPTER_NAME_TO_ID && window.CHAPTER_NAME_TO_ID[q.chapterName] && (
+                                                        <div style={{ marginTop:12, display:'flex', justifyContent:'flex-end' }}>
+                                                            <button
+                                                                onClick={() => window.openSummaryFromResults && window.openSummaryFromResults(q.chapterName)}
+                                                                style={{ display:'inline-flex', alignItems:'center', gap:6, background:'linear-gradient(135deg,rgba(201,168,76,.08),rgba(201,168,76,.14))', border:'1px solid rgba(201,168,76,.45)', borderRadius:20, padding:'6px 16px', fontSize:'.72rem', fontWeight:700, color:'#9a6e10', cursor:'pointer', fontFamily:"'DM Sans',sans-serif", letterSpacing:'.04em', transition:'all .15s' }}
+                                                                onMouseOver={e => { e.currentTarget.style.background='rgba(201,168,76,.22)'; e.currentTarget.style.borderColor='#c9a84c'; e.currentTarget.style.color='#7a5200'; }}
+                                                                onMouseOut={e => { e.currentTarget.style.background='linear-gradient(135deg,rgba(201,168,76,.08),rgba(201,168,76,.14))'; e.currentTarget.style.borderColor='rgba(201,168,76,.45)'; e.currentTarget.style.color='#9a6e10'; }}
+                                                                title={"Review " + q.chapterName + " in Chapter Summaries"}
+                                                            >
+                                                                📖 Review in Chapter Summary →
+                                                            </button>
+                                                        </div>
+                                                    )}
                                                 </div>
                                             </div>
                                         );
@@ -4485,10 +4611,6 @@ if (examStarted && questions.length === 0) {
                 </div>
             );
         }
-
-        const root = ReactDOM.createRoot(document.getElementById('app'));
-        root.render(<FinanceExamApp />);
-    
 
 function mountReact() {
   const root = ReactDOM.createRoot(document.getElementById('app'));
