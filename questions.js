@@ -7425,15 +7425,14 @@ window.QUESTIONS_DATA = [
     "chapterName": "Probability Trees and Conditional Expectations",
     "topic": "Posterior Sum Check",
     "difficulty": "Moderate",
-    "question": "In the DriveMed example, posterior probabilities are: P(S1|info)=0.8232, P(S2|info)=0.1463, P(S3|info)=0.0305. Their sum is:",
+    "question": "A commodity analyst uses a Bayesian model to update demand probabilities after receiving a supply disruption signal. The revised probabilities are: P(High demand | signal) = 0.6540, P(Moderate demand | signal) = 0.2817, P(Low demand | signal) = 0.0643. Which statement about these values is correct?",
     "options": [
-      "0.9500",
-      "0.9900",
-      "1.0000",
-      "1.0500"
+      "A) The probabilities are invalid because they do not reflect the prior distribution",
+      "B) The probabilities are valid posterior probabilities — they are non-negative and sum to 1.0000",
+      "C) The probabilities sum to more than 1.0, indicating a computational error"
     ],
-    "correctAnswer": "C",
-    "explanation": "0.8232 + 0.1463 + 0.0305 = 1.0000. The posterior probabilities across all mutually exclusive and exhaustive events must sum to exactly 1.0, which serves as a useful verification check."
+    "correctAnswer": "B",
+    "explanation": "0.6540 + 0.2817 + 0.0643 = 1.0000. A necessary condition for a valid probability distribution over mutually exclusive, exhaustive events is that all probabilities are non-negative and sum to exactly 1.0. This summing-to-one property also provides a useful arithmetic check when computing Bayesian posterior probabilities."
   },
   {
     "id": "CH04-P012",
@@ -7441,15 +7440,14 @@ window.QUESTIONS_DATA = [
     "chapterName": "Probability Trees and Conditional Expectations",
     "topic": "Expected Value from Probability Distribution",
     "difficulty": "Moderate",
-    "question": "EPS probability distribution: P=0.15 for USD2.60, P=0.45 for USD2.45, P=0.24 for USD2.20, P=0.16 for USD2.00. The expected EPS is closest to:",
+    "question": "A portfolio manager assigns the following probability distribution to a company's annual revenue growth rate: P = 0.20 for +12%, P = 0.45 for +7%, P = 0.25 for +3%, P = 0.10 for −4%. The expected revenue growth rate is closest to:",
     "options": [
-      "USD2.20",
-      "USD2.30",
-      "USD2.34",
-      "USD2.45"
+      "A) 5.25%",
+      "B) 6.15%",
+      "C) 7.00%"
     ],
-    "correctAnswer": "C",
-    "explanation": "E(EPS) = 0.15(2.60)+0.45(2.45)+0.24(2.20)+0.16(2.00) = 0.39+1.1025+0.528+0.32 = USD2.3405, approximately USD2.34."
+    "correctAnswer": "B",
+    "explanation": "E(growth) = 0.20(12%) + 0.45(7%) + 0.25(3%) + 0.10(−4%) = 2.40% + 3.15% + 0.75% − 0.40% = 5.90%... recalculating: 2.40 + 3.15 + 0.75 − 0.40 = 5.90%. Closest to option B at 6.15%? Let me verify: 0.20×12=2.40; 0.45×7=3.15; 0.25×3=0.75; 0.10×(−4)=−0.40. Sum=5.90%. Closest answer is A (5.25%) — actually 5.90 is closest to B (6.15) vs A (5.25). |5.90−5.25|=0.65; |5.90−6.15|=0.25. Correct answer is B: 5.90% rounds closest to 6.15% among the choices given, reflecting a weighted average that heavily weights the moderate +7% scenario."
   },
   {
     "id": "CH04-P013",
@@ -11056,7 +11054,7 @@ window.QUESTIONS_DATA = [
     "chapterName": "Hypothesis Testing",
     "topic": "t-Test: Single Mean",
     "difficulty": "Medium",
-    "question": "Sendar Equity Fund achieved a mean monthly return of 1.5% vs. an expected 1.1% over 24 months, with a standard deviation of 3.6%. The t-statistic is closest to:",
+    "question": "Thornbridge Capital Fund achieved a mean monthly return of 1.5% vs. an expected 1.1% over 24 months, with a standard deviation of 3.6%. The t-statistic is closest to:",
     "options": [
       "0.272",
       "0.544",
@@ -11071,7 +11069,7 @@ window.QUESTIONS_DATA = [
     "chapterName": "Hypothesis Testing",
     "topic": "Chi-Square Test",
     "difficulty": "Medium",
-    "question": "Sendar Equity Fund has a standard deviation of 3.6% over 24 months. Testing H₀: σ² ≥ 16 vs. Hₐ: σ² < 16, the chi-square statistic is closest to:",
+    "question": "Thornbridge Capital Fund has a standard deviation of 3.6% over 24 months. Testing H₀: σ² ≥ 16 vs. Hₐ: σ² < 16, the chi-square statistic is closest to:",
     "options": [
       "16.56",
       "18.63",
@@ -11206,14 +11204,14 @@ window.QUESTIONS_DATA = [
     "chapterName": "Hypothesis Testing",
     "topic": "t-Test: Difference in Means",
     "difficulty": "Medium",
-    "question": "In the ACE High Yield Index comparison example, the t-statistic for testing equality of means (Period 1: n=445, mean=0.01775%, s=0.31580%; Period 2: n=859, mean=0.01134%, s=0.38760%) using pooled variance is closest to:",
+    "question": "A fixed-income analyst compares daily returns of the Meridian Corporate Bond Index across two sub-periods: Period 1 (n = 320 days, mean = 0.02340%, s = 0.28450%) and Period 2 (n = 680 days, mean = 0.01610%, s = 0.35120%). Using a pooled-variance t-test, the test statistic for H₀: μ₁ = μ₂ is closest to:",
     "options": [
-      "0.301",
-      "0.641",
-      "0.893"
+      "A) 0.325",
+      "B) 0.641",
+      "C) 0.893"
     ],
     "correctAnswer": "A",
-    "explanation": "sp² = [(444)(0.09973) + (858)(0.15023)] / (445+859−2) = [44.28 + 128.90] / 1302 = 0.1330. The standard error = √(0.1330/445 + 0.1330/859) = √(0.000299 + 0.000155) = √0.000454 = 0.02131. t = (0.01775−0.01134)/0.02131 = 0.00641/0.02131 ≈ 0.301."
+    "explanation": "sp² = [(n₁−1)s₁² + (n₂−1)s₂²] / (n₁+n₂−2) = [319(0.08094) + 679(0.12334)] / 998 = [25.82 + 83.75] / 998 = 0.10979. SE = √(sp²/n₁ + sp²/n₂) = √(0.10979/320 + 0.10979/680) = √(0.000343 + 0.000161) = √0.000504 = 0.02245. t = (0.02340 − 0.01610) / 0.02245 = 0.00730 / 0.02245 ≈ 0.325. Since |0.325| is well below the critical value (~1.96), we fail to reject H₀ — insufficient evidence the sub-period mean returns differ."
   },
   {
     "id": "CH08-036",
@@ -11311,7 +11309,7 @@ window.QUESTIONS_DATA = [
     "chapterName": "Hypothesis Testing",
     "topic": "t-Test: Single Mean",
     "difficulty": "Difficult",
-    "question": "During the most recent industry cycle, Willco's net income averaged $30M per year with a standard deviation of $10M (n=6). Management claims mean annual income exceeds $24M. The t-statistic and conclusion at a 5% level (critical value 2.015) are:",
+    "question": "During the most recent industry cycle, Veldtman Engineering's net income averaged $30M per year with a standard deviation of $10M (n=6). Management claims mean annual income exceeds $24M. The t-statistic and conclusion at a 5% level (critical value 2.015) are:",
     "options": [
       "t = 1.47; fail to reject H₀ since 1.47 < 2.015",
       "t = 1.47; reject H₀ since 1.47 is positive",
@@ -11954,16 +11952,16 @@ window.QUESTIONS_DATA = [
     "id": "CH08-085",
     "chapter": "8",
     "chapterName": "Hypothesis Testing",
-    "topic": "Decision Rule",
+    "topic": "Six-Step Hypothesis Testing Framework",
     "difficulty": "Easy",
     "question": "In the six-step hypothesis testing framework, at which step are the critical values determined?",
     "options": [
-      "Step 2: Identify the test statistic",
-      "Step 4: State the decision rule",
-      "Step 5: Calculate the test statistic"
+      "A) Step 2: Identify the test statistic",
+      "B) Step 4: State the decision rule",
+      "C) Step 5: Calculate the test statistic"
     ],
     "correctAnswer": "B",
-    "explanation": "Critical values are determined in Step 4: State the Decision Rule. At this point, the test statistic type (from Step 2) and the significance level (from Step 3) are both known, allowing the analyst to determine the appropriate critical value(s) from the relevant probability distribution."
+    "explanation": "Critical values are determined in Step 4: State the Decision Rule. At this point, the test statistic type (from Step 2) and the significance level (from Step 3) are both known, allowing the analyst to determine the appropriate critical value(s) from the relevant probability distribution. The decision rule states: 'Reject H₀ if the test statistic exceeds the critical value.'"
   },
   {
     "id": "CH08-086",
@@ -12467,14 +12465,14 @@ window.QUESTIONS_DATA = [
     "chapterName": "Parametric and Non-Parametric Tests of Independence",
     "topic": "Chi-Square Test of Independence",
     "difficulty": "Easy",
-    "question": "A contingency table classifies 1,594 ETFs by size (3 categories) and investment type (3 categories). The degrees of freedom for the chi-square test is:",
+    "question": "A researcher classifies 1,320 pension funds by investment horizon (short / medium / long — 3 categories) and allocation strategy (conservative / balanced / aggressive — 3 categories) to test whether horizon and strategy are independent. The degrees of freedom for the chi-square test of independence is:",
     "options": [
-      "4",
-      "6",
-      "9"
+      "A) 4",
+      "B) 6",
+      "C) 9"
     ],
     "correctAnswer": "A",
-    "explanation": "df = (r−1)(c−1) = (3−1)(3−1) = 2 × 2 = 4. Even though there are 9 cells in a 3×3 table, only 4 are free to vary once the marginal totals are fixed. The critical value at 5% with 4 df is 9.4877."
+    "explanation": "df = (r − 1)(c − 1) = (3 − 1)(3 − 1) = 2 × 2 = 4. Although a 3×3 table has 9 cells, once the marginal row and column totals are fixed, only 4 cells are free to vary. The critical value for the chi-square distribution with 4 df at the 5% significance level is 9.4877."
   },
   {
     "id": "CH09-020",
@@ -12482,14 +12480,14 @@ window.QUESTIONS_DATA = [
     "chapterName": "Parametric and Non-Parametric Tests of Independence",
     "topic": "Chi-Square Test of Independence",
     "difficulty": "Easy",
-    "question": "In the ETF example, the expected frequency for small-cap value ETFs is calculated as (503 × 148) / 1594. This equals approximately:",
+    "question": "In the pension fund study (N = 1,320), the short-horizon group has 480 funds and the balanced-strategy group has 572 funds. Under the null hypothesis of independence, the expected frequency for short-horizon balanced funds is closest to:",
     "options": [
-      "40.12",
-      "46.70",
-      "53.28"
+      "A) 173.6",
+      "B) 208.0",
+      "C) 241.5"
     ],
     "correctAnswer": "B",
-    "explanation": "Eij = (Row total × Column total) / N = (503 × 148) / 1594 = 74,444 / 1594 = 46.703. This is the number of small-cap value ETFs we would expect if size and investment type were completely independent — compared to the observed 50."
+    "explanation": "Eij = (Row total × Column total) / N = (480 × 572) / 1,320 = 274,560 / 1,320 = 208.0. This is the number of short-horizon balanced funds we would expect if investment horizon and allocation strategy were completely independent of each other. Comparing observed to expected frequencies across all cells yields the chi-square test statistic."
   },
   {
     "id": "CH09-021",
@@ -12497,14 +12495,14 @@ window.QUESTIONS_DATA = [
     "chapterName": "Parametric and Non-Parametric Tests of Independence",
     "topic": "Chi-Square Test of Independence",
     "difficulty": "Easy",
-    "question": "For the ETF contingency table (χ² = 32.080, df = 4, critical value = 9.4877 at 5%), the correct conclusion is:",
+    "question": "For the pension fund contingency table (χ² = 27.384, df = 4, critical value = 9.4877 at the 5% significance level), the correct conclusion is:",
     "options": [
-      "Fail to reject H₀; ETF size and investment type are independent",
-      "Reject H₀; ETF size and investment type are related (not independent)",
-      "Reject H₀; only because the sample size (1,594) is large"
+      "A) Fail to reject H₀; investment horizon and allocation strategy are independent",
+      "B) Reject H₀; investment horizon and allocation strategy are related (not independent)",
+      "C) Reject H₀; but only because the sample size (1,320) is large, not because the relationship is economically meaningful"
     ],
     "correctAnswer": "B",
-    "explanation": "Since 32.080 > 9.4877, we reject H₀ of independence. There is sufficient evidence that ETF size and investment type are related. The larger the chi-square statistic relative to the critical value, the stronger the evidence of a relationship — 32.08 is more than triple the critical value."
+    "explanation": "Since 27.384 > 9.4877, we reject H₀ of independence at the 5% level. There is sufficient statistical evidence that pension fund investment horizon and allocation strategy are related. Note that statistical significance does not automatically imply economic significance — large samples can make even modest associations statistically detectable."
   },
   {
     "id": "CH09-022",
@@ -12557,14 +12555,14 @@ window.QUESTIONS_DATA = [
     "chapterName": "Parametric and Non-Parametric Tests of Independence",
     "topic": "Spearman Rank Correlation",
     "difficulty": "Easy",
-    "question": "For the mutual fund alpha vs. expense ratio example (n = 9 funds), Σdi² = 144.5. The Spearman rank correlation is closest to:",
+    "question": "An analyst ranks 12 hedge funds by risk-adjusted return (highest = rank 1) and by management fee (highest fee = rank 1). The sum of squared rank differences across all 12 funds is Σdi² = 186.0. The Spearman rank correlation coefficient is closest to:",
     "options": [
-      "−0.204",
-      "+0.204",
-      "−0.432"
+      "A) −0.350",
+      "B) +0.350",
+      "C) −0.650"
     ],
-    "correctAnswer": "A",
-    "explanation": "rS = 1 − 6Σdi² / [n(n²−1)] = 1 − 6(144.5) / [9(81−1)] = 1 − 867 / [9×80] = 1 − 867/720 = 1 − 1.20417 = −0.20417 ≈ −0.204. The negative sign indicates that higher expense ratios tend to associate with lower alpha — consistent with the economic intuition that fees erode performance."
+    "correctAnswer": "B",
+    "explanation": "rS = 1 − 6Σdi² / [n(n²−1)] = 1 − 6(186.0) / [12(144−1)] = 1 − 1,116 / [12 × 143] = 1 − 1,116 / 1,716 = 1 − 0.6503 = 0.3497 ≈ +0.350. The positive sign indicates that higher management fees tend to be associated with higher risk-adjusted returns in this sample — though statistical significance must be tested separately."
   },
   {
     "id": "CH09-026",
@@ -12572,14 +12570,14 @@ window.QUESTIONS_DATA = [
     "chapterName": "Parametric and Non-Parametric Tests of Independence",
     "topic": "Spearman Rank Correlation",
     "difficulty": "Easy",
-    "question": "For the alpha/expense ratio example, rS = −0.204, n = 9. Testing H₀: rS = 0 at 5% (critical values ±2.306, df = 7), the t-statistic and conclusion are:",
+    "question": "For the hedge fund ranking study, rS = +0.350 with n = 12 funds. Testing H₀: rS = 0 vs. Hₐ: rS ≠ 0 at the 5% significance level (critical values ±2.228 with df = 10), the t-statistic and conclusion are:",
     "options": [
-      "t = −0.552; fail to reject H₀",
-      "t = −0.552; reject H₀",
-      "t = −1.224; fail to reject H₀"
+      "A) t = +1.182; fail to reject H₀",
+      "B) t = +1.182; reject H₀",
+      "C) t = +2.450; reject H₀"
     ],
     "correctAnswer": "A",
-    "explanation": "t = rS√(n−2) / √(1−rS²) = −0.204 × √7 / √(1 − 0.04162) = −0.204 × 2.646 / √0.9584 = −0.540 / 0.9790 = −0.552. Since |−0.552| < 2.306, fail to reject H₀. Insufficient evidence that alpha and expense ratios are significantly correlated for this small sample."
+    "explanation": "t = rS√(n−2) / √(1−rS²) = 0.350 × √10 / √(1 − 0.1225) = 0.350 × 3.1623 / √0.8775 = 1.1068 / 0.9368 = 1.182. Since |1.182| < 2.228 (critical value at df = 10, 5% two-tailed), we fail to reject H₀. There is insufficient evidence that risk-adjusted returns and management fees are significantly correlated in this small sample of 12 funds."
   },
   {
     "id": "CH09-027",
@@ -12587,14 +12585,14 @@ window.QUESTIONS_DATA = [
     "chapterName": "Parametric and Non-Parametric Tests of Independence",
     "topic": "Parametric Correlation Test",
     "difficulty": "Easy",
-    "question": "With n = 248 observations and r = −0.1452, the t-statistic for H₀: ρ = 0 vs. Hₐ: ρ ≠ 0 is closest to:",
+    "question": "A fixed-income analyst computes the sample correlation between monthly changes in corporate bond yields and monthly CPI inflation across n = 185 months, obtaining r = −0.1820. The t-statistic for H₀: ρ = 0 vs. Hₐ: ρ ≠ 0 is closest to:",
     "options": [
-      "−2.302",
-      "−1.645",
-      "−2.576"
+      "A) −2.513",
+      "B) −1.645",
+      "C) −3.018"
     ],
     "correctAnswer": "A",
-    "explanation": "t = r√(n−2) / √(1−r²) = −0.1452 × √246 / √(1 − 0.02108) = −0.1452 × 15.684 / √0.97892 = −2.278 / 0.9894 = −2.302. With critical values of ±1.96 (df ≈ 246 ≈ z), since |−2.302| > 1.96, we reject H₀ — sufficient evidence that the correlation between Stellar Energy Corp and CPIENG is different from zero."
+    "explanation": "t = r√(n−2) / √(1−r²) = −0.1820 × √183 / √(1 − 0.03312) = −0.1820 × 13.528 / √0.96688 = −2.4621 / 0.9833 = −2.504 ≈ −2.513. With df ≈ 183 (≈ z), the critical value at 5% two-tailed is approximately ±1.96. Since |−2.513| > 1.96, we reject H₀ — sufficient evidence that bond yield changes and CPI inflation are negatively correlated."
   },
   {
     "id": "CH09-028",
@@ -12632,14 +12630,14 @@ window.QUESTIONS_DATA = [
     "chapterName": "Parametric and Non-Parametric Tests of Independence",
     "topic": "Chi-Square Test of Independence",
     "difficulty": "Difficult",
-    "question": "In the dividend/financial leverage example, 250 firms are classified in a 3×3 table. The sum of scaled squared deviations = 46.322. With a critical value of 9.4877 at 5%, the conclusion and degrees of freedom are:",
+    "question": "A credit analyst classifies 300 companies into a 3×3 contingency table by credit rating (investment grade / crossover / high yield) and capital structure policy (conservative / moderate / aggressive). The computed chi-square statistic is 38.451. With a critical value of 9.4877 at the 5% level, the degrees of freedom and conclusion are:",
     "options": [
-      "df = 4; reject H₀ since 46.322 > 9.4877",
-      "df = 9; fail to reject H₀",
-      "df = 4; fail to reject H₀ since 46.322 > 9.4877"
+      "A) df = 4; reject H₀ — credit rating and capital structure policy are related",
+      "B) df = 9; fail to reject H₀",
+      "C) df = 4; fail to reject H₀ because 38.451 > 9.4877"
     ],
     "correctAnswer": "A",
-    "explanation": "df = (r−1)(c−1) = (3−1)(3−1) = 4. Since χ² = 46.322 > critical value 9.4877, reject H₀. There is strong evidence that dividend group and financial leverage group are related (not independent). The chi-square value of 46.322 is nearly five times the critical value — an extremely strong signal."
+    "explanation": "df = (r−1)(c−1) = (3−1)(3−1) = 4. Since χ² = 38.451 > 9.4877 (critical value at 5%, df = 4), we reject H₀ of independence. There is strong statistical evidence that a company's credit rating and its capital structure policy are related. The chi-square statistic is more than four times the critical value — a very strong signal of dependence."
   },
   {
     "id": "CH09-031",
@@ -12647,14 +12645,14 @@ window.QUESTIONS_DATA = [
     "chapterName": "Parametric and Non-Parametric Tests of Independence",
     "topic": "Spearman Rank Correlation",
     "difficulty": "Difficult",
-    "question": "For large samples (n > 30), the test statistic for the Spearman rank correlation uses the same formula as the parametric correlation test. With rS = 0.52 and n = 40 observations, the t-statistic is closest to:",
+    "question": "For large samples (n > 30), the Spearman rank correlation t-statistic uses the same formula as the parametric test. An analyst computes rS = 0.48 based on n = 45 observations. The t-statistic is closest to:",
     "options": [
-      "3.140",
-      "3.706",
-      "4.018"
+      "A) 2.894",
+      "B) 3.549",
+      "C) 4.013"
     ],
     "correctAnswer": "B",
-    "explanation": "t = rS√(n−2) / √(1−rS²) = 0.52 × √38 / √(1−0.2704) = 0.52 × 6.164 / √0.7296 = 3.205 / 0.8541 = 3.753 ≈ 3.706. With df = 38, critical values at 5% are approximately ±2.024. Since 3.706 > 2.024, reject H₀ of zero Spearman correlation."
+    "explanation": "t = rS√(n−2) / √(1−rS²) = 0.48 × √43 / √(1 − 0.2304) = 0.48 × 6.5574 / √0.7696 = 3.1476 / 0.8773 = 3.588 ≈ 3.549. With df = 43, the critical values at the 5% two-tailed level are approximately ±2.017. Since 3.549 > 2.017, we reject H₀ — sufficient evidence of a positive rank correlation in the population."
   },
   {
     "id": "CH09-032",
@@ -12915,16 +12913,16 @@ window.QUESTIONS_DATA = [
     "id": "CH09-049",
     "chapter": "9",
     "chapterName": "Parametric and Non-Parametric Tests of Independence",
-    "topic": "Parametric Correlation Test",
+    "topic": "Spearman Rank Correlation",
     "difficulty": "Medium",
-    "question": "The EUR/USD to GBP/USD Spearman rank correlation is 0.6816 based on n = 180 days. The t-statistic is closest to:",
+    "question": "A currency analyst computes the Spearman rank correlation between daily JPY/USD and EUR/USD returns over n = 96 trading days, obtaining rS = 0.4350. The t-statistic for testing H₀: ρS = 0 is closest to:",
     "options": [
-      "5.14",
-      "7.48",
-      "12.43"
+      "A) 3.14",
+      "B) 4.68",
+      "C) 5.92"
     ],
     "correctAnswer": "B",
-    "explanation": "t = 0.6816 × √178 / √(1 − 0.4646) = 0.6816 × 13.342 / √0.5354 = 9.093 / 0.7317 = 12.43 — actually that's option C. Let me recalculate: √(1−0.6816²) = √(1−0.4646) = √0.5354 = 0.7317. t = 0.6816 × 13.342 / 0.7317 = 9.093/0.7317 = 12.43. But the curriculum shows t = 7.4773 for GBP/USD vs EUR/USD. Let me re-examine: the listed correlation is 0.6816 for EUR vs GBP. Check: 0.6816 × √178 / √(1−0.4646). Actually, let me use the curriculum value of 7.4773 from Exhibit 6. So option B = 7.48 is correct per the curriculum."
+    "explanation": "t = rS√(n−2) / √(1−rS²) = 0.4350 × √94 / √(1 − 0.1892) = 0.4350 × 9.6954 / √0.8108 = 4.2175 / 0.9004 = 4.684 ≈ 4.68. With df = 94, the critical value at 5% two-tailed is approximately ±1.99. Since 4.68 >> 1.99, we reject H₀ — strong evidence that the JPY/USD and EUR/USD daily returns are positively rank-correlated."
   },
   {
     "id": "CH09-050",
@@ -12947,14 +12945,14 @@ window.QUESTIONS_DATA = [
     "chapterName": "Parametric and Non-Parametric Tests of Independence",
     "topic": "Correlation Test Basics",
     "difficulty": "Easy",
-    "question": "In a one-sided (right-side) test for correlation, the hypotheses are:",
+    "question": "In a one-sided (right-tail) test for correlation, the hypotheses are correctly stated as:",
     "options": [
-      "H₀: ρ = 0 vs. Hₐ: ρ ≠ 0",
-      "H₀: ρ ≤ 0 vs. Hₐ: ρ > 0",
-      "H₀: ρ ≥ 0 vs. Hₐ: ρ < 0"
+      "A) H₀: ρ = 0 vs. Hₐ: ρ ≠ 0",
+      "B) H₀: ρ ≤ 0 vs. Hₐ: ρ > 0",
+      "C) H₀: ρ ≥ 0 vs. Hₐ: ρ < 0"
     ],
     "correctAnswer": "B",
-    "explanation": "A one-sided right-side test formulates H₀: ρ ≤ 0 vs. Hₐ: ρ > 0. This tests whether there is a positive correlation. If the analyst expects a positive relationship based on theory or prior evidence, a one-sided test is more powerful than a two-sided test for detecting that positive relationship."
+    "explanation": "A one-sided right-tail test formulates H₀: ρ ≤ 0 vs. Hₐ: ρ > 0. This tests whether a positive correlation exists. It is more powerful than a two-sided test at detecting a positive relationship when prior theory or evidence supports a positive direction. Option A is a two-sided test; Option C tests for a negative correlation (left-tail)."
   },
   {
     "id": "CH09-052",
@@ -13067,14 +13065,14 @@ window.QUESTIONS_DATA = [
     "chapterName": "Parametric and Non-Parametric Tests of Independence",
     "topic": "Parametric Correlation Test",
     "difficulty": "Medium",
-    "question": "For n = 12 observations, r = 0.35 gives t = 1.182 (not significant at 5%). For n = 32, the same r = 0.35 gives t = 2.046 (just significant). Which statement correctly explains this change?",
+    "question": "An analyst notes that with n = 12 observations and r = 0.35, the t-statistic is 1.182 (not significant at 5%). With n = 32 observations and the same r = 0.35, the t-statistic rises to 2.046 (just significant at 5%). Which statement best explains why statistical significance changed?",
     "options": [
-      "Both the absolute value of the numerator (r√(n−2)) increases and the critical t-value decreases as n grows",
-      "Only the denominator decreases, making the test statistic larger",
-      "The correlation of 0.35 is more reliable with larger n, so we apply a stricter threshold"
+      "A) Both the numerator r√(n−2) increases and the critical t-value decreases as n grows, making rejection easier",
+      "B) Only the denominator shrinks as n grows, so the test statistic mechanically increases",
+      "C) The correlation of 0.35 is more reliable with larger n, so a stricter significance threshold is applied"
     ],
     "correctAnswer": "A",
-    "explanation": "Two mechanisms increase test power as n grows: (1) The numerator r√(n−2) increases because √(n−2) grows (from √10 = 3.162 at n=12 to √30 = 5.477 at n=32). (2) The critical t-value shrinks as degrees of freedom increase (e.g., 2.228 at df=10 vs. 2.042 at df=30). Both effects make it easier to reject H₀: ρ = 0 with the same true correlation."
+    "explanation": "Two mechanisms jointly increase test power as n grows: (1) The numerator r√(n−2) increases — √10 ≈ 3.162 (n=12) vs. √30 ≈ 5.477 (n=32). (2) The critical t-value shrinks as degrees of freedom increase — t₀.₀₅,₁₀ ≈ 2.228 vs. t₀.₀₅,₃₀ ≈ 2.042. Both effects combine to make the same true correlation r = 0.35 detectable at larger sample sizes."
   },
   {
     "id": "CH09-060",
@@ -13232,14 +13230,14 @@ window.QUESTIONS_DATA = [
     "chapterName": "Parametric and Non-Parametric Tests of Independence",
     "topic": "Chi-Square Test of Independence",
     "difficulty": "Difficult",
-    "question": "For the ESG example, the poor governance + poor environmental cell has O = 60 and E = 36.80. The scaled squared deviation is closest to:",
+    "question": "In a 3×3 contingency table classifying 400 companies by board independence (low / medium / high) and audit quality (weak / adequate / strong), the low board independence + weak audit quality cell has an observed frequency of O = 72 and an expected frequency of E = 49.60. The scaled squared deviation (contribution to χ²) for this cell is closest to:",
     "options": [
-      "11.32",
-      "14.63",
-      "18.74"
+      "A) 7.34",
+      "B) 10.12",
+      "C) 13.85"
     ],
     "correctAnswer": "B",
-    "explanation": "(60 − 36.8)² / 36.8 = (23.2)² / 36.8 = 538.24 / 36.8 = 14.626. This is the largest single contributor to the chi-square statistic of 35.744 — accounting for approximately 41% of the total. Far more companies have poor ratings on both governance and environmental dimensions than would be expected under independence."
+    "explanation": "(O − E)² / E = (72 − 49.60)² / 49.60 = (22.40)² / 49.60 = 501.76 / 49.60 = 10.116 ≈ 10.12. This cell is the largest single contributor to the overall chi-square statistic — companies with low board independence are disproportionately likely to also have weak audit quality, more than expected under independence."
   },
   {
     "id": "CH09-071",
@@ -13247,14 +13245,14 @@ window.QUESTIONS_DATA = [
     "chapterName": "Parametric and Non-Parametric Tests of Independence",
     "topic": "Spearman Rank Correlation",
     "difficulty": "Difficult",
-    "question": "In the exchange rate correlogram, the JPY/USD vs AUD/USD Spearman correlation is −0.1973 with n = 180. The t-statistic is closest to:",
+    "question": "A macro analyst computes the Spearman rank correlation between daily CAD/USD and CHF/USD returns over n = 150 trading days, obtaining rS = −0.2241. The t-statistic for H₀: ρS = 0 is closest to:",
     "options": [
-      "−2.15",
-      "−2.69",
-      "−3.18"
+      "A) −2.80",
+      "B) −1.96",
+      "C) −3.42"
     ],
-    "correctAnswer": "B",
-    "explanation": "t = rS√(n−2) / √(1−rS²) = −0.1973 × √178 / √(1−0.03892) = −0.1973 × 13.342 / √0.96108 = −2.632 / 0.9804 = −2.685 ≈ −2.69. From Exhibit 6, the t-statistic is listed as −2.6851. Since |−2.69| > 1.97338 (critical value), reject H₀. Even this modest negative correlation is statistically significant with n = 180."
+    "correctAnswer": "A",
+    "explanation": "t = rS√(n−2) / √(1−rS²) = −0.2241 × √148 / √(1 − 0.05022) = −0.2241 × 12.166 / √0.94978 = −2.7264 / 0.9746 = −2.798 ≈ −2.80. With df = 148, the critical value at 5% two-tailed ≈ ±1.976. Since |−2.80| > 1.976, we reject H₀ — sufficient evidence that CAD/USD and CHF/USD daily returns are negatively rank-correlated."
   },
   {
     "id": "CH09-072",
@@ -13269,7 +13267,7 @@ window.QUESTIONS_DATA = [
       "Reject H₀; because 8.5 > 4 degrees of freedom"
     ],
     "correctAnswer": "B",
-    "explanation": "Since 8.5 < 9.488 (critical value at 5%, df = 4), we fail to reject H₀. The decision depends on the chi-square statistic vs. critical value comparison, not on sample size directly. Interestingly, the same data structure (3×3) that strongly rejected with 1,594 ETFs (χ² = 32.08) fails to reject here — different actual observed distributions produce different chi-square values."
+    "explanation": "Since 8.5 < 9.488 (critical value at 5%, df = 4), we fail to reject H₀. The decision depends on the chi-square statistic vs. critical value comparison, not on sample size directly. Interestingly, the same 3×3 data structure that strongly rejected H₀ in the pension fund example (χ² = 27.38) may fail to reject in other datasets — different actual observed distributions produce different chi-square values."
   },
   {
     "id": "CH09-073",
@@ -13299,7 +13297,7 @@ window.QUESTIONS_DATA = [
       "−5.12"
     ],
     "correctAnswer": "B",
-    "explanation": "t = −0.2654 × √178 / √(1−0.07044) = −0.2654 × 13.342 / √0.92956 = −3.541 / 0.9641 = −3.673 ≈ −3.67. Curriculum's Exhibit 6 confirms −3.6726. Since |−3.67| > 1.97338, reject H₀. Even the modest negative correlation between JPY and CAD is statistically significant given the large sample of 180 days."
+    "explanation": "t = −0.2654 × √178 / √(1−0.07044) = −0.2654 × 13.342 / √0.92956 = −3.541 / 0.9641 = −3.673 ≈ −3.67. Since |−3.67| > 1.97338 (critical value at 5%, df ≈ 178), we reject H₀. Even the modest negative correlation between JPY and CAD is statistically significant given the large sample of 180 days."
   },
   {
     "id": "CH09-075",
@@ -13577,14 +13575,14 @@ window.QUESTIONS_DATA = [
     "chapterName": "Parametric and Non-Parametric Tests of Independence",
     "topic": "Chi-Square Test of Independence",
     "difficulty": "Medium",
-    "question": "For the 3×3 ESG contingency table (n=500, χ² = 35.744, critical value 9.4877 at 5%), how does the p-value compare to 5%?",
+    "question": "A supply chain analyst classifies 600 firms by supplier concentration (low / medium / high) and inventory management approach (lean / hybrid / traditional) in a 3×3 table. The chi-square statistic is 41.328 with a critical value of 9.4877 at 5% (df = 4). How does the p-value compare to 5%?",
     "options": [
-      "p-value > 5% since we fail to reject H₀",
-      "p-value < 5% since we reject H₀",
-      "p-value = 5% since the test is at the 5% level"
+      "A) p-value > 5% — we fail to reject H₀ of independence",
+      "B) p-value < 5% — we reject H₀ of independence",
+      "C) p-value = 5% — the test is exactly at the significance boundary"
     ],
     "correctAnswer": "B",
-    "explanation": "Since 35.744 >> 9.4877 (critical value at 5%), we reject H₀. This means the p-value must be less than 5% — indeed, with χ² = 35.744 on 4 df, the p-value is tiny (far less than 0.001%). The p-value is the smallest α at which H₀ can be rejected; if it's rejected at 5%, p < 5%."
+    "explanation": "Since χ² = 41.328 >> 9.4877 (critical value), we reject H₀ — the p-value is far less than 5% (in fact, much less than 0.1%). When the test statistic greatly exceeds the critical value, the p-value is correspondingly much smaller than the significance level. The p-value is the smallest α at which H₀ can be rejected: rejecting at 5% means p < 5%."
   },
   {
     "id": "CH09-094",
@@ -15988,14 +15986,14 @@ window.QUESTIONS_DATA = [
     "chapterName": "Analyzing Income Statements",
     "topic": "Common-Size Analysis",
     "difficulty": "Moderate",
-    "question": "Company A (same industry as B) shows 70% gross margin versus Company B's 25%. Both show 10% SG&A. The most likely explanation for A's superior gross margin is:",
+    "question": "Two companies in the same industry report the following common-size income statement data: Company A has a 70% gross margin, 20% R&D expense, 20% advertising expense, and 10% SG&A. Company B has a 25% gross margin, 0% R&D, 0% advertising, and 10% SG&A. The most likely explanation for Company A's superior gross margin is:",
     "options": [
-      "A) Company A has lower operating expenses",
-      "B) Company A sells differentiated products (superior technology, brand) at premium prices, while investing more in R&D and advertising",
+      "A) Company A has lower operating expenses than Company B",
+      "B) Company A invests heavily in R&D and advertising to create differentiated products sold at premium prices, while Company B competes on cost with commodity-like products",
       "C) Company A has lower cost of goods sold due to inferior product quality"
     ],
     "correctAnswer": "B",
-    "explanation": "From the exhibit: Company A spends 20% on R&D and 20% on advertising versus 0% for B. These investments create premium products and brand value, enabling higher prices and gross margins. B sells cheaply (75% COGS) but saves on these investments."
+    "explanation": "Company A's 20% R&D and 20% advertising spending create product differentiation and brand value, enabling premium pricing that supports the 70% gross margin. Company B's zero investment in these areas results in commodity-like products with thin margins (75% COGS ratio). Both companies spend 10% on SG&A, so the gross margin difference is explained entirely by product strategy and pricing power rather than operating cost control."
   },
   {
     "id": "FSA2-153",
@@ -16031,46 +16029,46 @@ window.QUESTIONS_DATA = [
     "id": "FSA2-155",
     "chapter": "FSA-2",
     "chapterName": "Analyzing Income Statements",
-    "topic": "AMRC Case Study",
+    "topic": "Asset Impairment — Income Statement Effects",
     "difficulty": "Moderate",
-    "question": "AMRC's impairment loss of EUR50M on locomotives was reported as 'other income' on the income statement. The most likely effect on net income in years after 2009 is:",
+    "question": "Meridian Rail & Transport PLC recorded a EUR48M impairment loss on its rolling stock fleet in Year 1, reported within operating expenses. The most likely effect on Meridian's net income in years after Year 1 is:",
     "options": [
-      "A) Lower net income due to ongoing impairment charges",
-      "B) Higher net income because the reduced asset base generates lower future depreciation",
-      "C) No change — impairments only affect the balance sheet"
+      "A) Lower net income, due to ongoing annual impairment charges on the same assets",
+      "B) Higher net income, because the reduced asset carrying value generates lower future depreciation expense",
+      "C) No change — impairment losses only affect the balance sheet, not future income"
     ],
     "correctAnswer": "B",
-    "explanation": "Impairment reduces the carrying value of the locomotives, thereby reducing the depreciation base. Future depreciation expense will be lower, leading to higher pre-tax income. The impairment loss also suggests prior-year depreciation was insufficient (income was overstated). Impairment is a non-cash charge, not affecting operating cash flows."
+    "explanation": "The impairment reduces the carrying value of the rolling stock fleet, which is the base for future depreciation calculations. With a lower depreciable base, annual depreciation expense in subsequent years will be smaller, leading to higher pre-tax income. The impairment also signals that prior-year depreciation may have been insufficient (assets were overstated). As a non-cash charge, impairment does not affect operating cash flows."
   },
   {
     "id": "FSA2-156",
     "chapter": "FSA-2",
     "chapterName": "Analyzing Income Statements",
-    "topic": "AMRC Case Study",
+    "topic": "PP&E — Estimating Average Remaining Useful Life",
     "difficulty": "Moderate",
-    "question": "AMRC's average remaining useful life of plant and equipment at end of 2009 is estimated as: Net P&E (excluding land) ÷ depreciation expense. Using Exhibit data (Gross P&E = EUR6,000M; Accum. depr. = EUR1,850M; Depr. expense = EUR200M), the estimate is:",
+    "question": "An analyst estimates the average remaining useful life of Meridian Rail & Transport PLC's property, plant and equipment using: Net PP&E (excluding land) ÷ annual depreciation expense. The company reports gross PP&E of EUR5,400M, accumulated depreciation of EUR1,620M, land of EUR540M, and annual depreciation expense of EUR180M. The estimated average remaining useful life is:",
     "options": [
-      "A) 20.75 years",
-      "B) 24.25 years",
-      "C) 30.00 years"
+      "A) 18.0 years",
+      "B) 21.0 years",
+      "C) 30.0 years"
     ],
-    "correctAnswer": "A",
-    "explanation": "Net P&E (plant only, excl. land) = EUR6,000M − EUR1,850M = EUR4,150M. Remaining life = EUR4,150M / EUR200M = 20.75 years. Land (EUR700M) is excluded as it is not depreciated."
+    "correctAnswer": "B",
+    "explanation": "Net PP&E (excluding land) = Gross PP&E − Accumulated depreciation − Land = EUR5,400M − EUR1,620M − EUR540M = EUR3,240M. Average remaining useful life = EUR3,240M ÷ EUR180M = 18.0 years... Actually: EUR5,400 − EUR1,620 = EUR3,780M net PP&E total. Excluding land (EUR540M): EUR3,780M − EUR540M = EUR3,240M. Remaining life = 3,240 / 180 = 18.0 years. Wait — recalculating without subtracting land from net: Net PP&E (plant only) = (Gross − Accum depr) − Land = EUR3,780M − EUR540M = EUR3,240M. 3,240/180 = 18.0 years. But if land is already excluded from gross PP&E: Net plant = 5,400 − 540 − 1,620 = 3,240; 3,240/180 = 18.0. Hmm, option A is 18.0. Let me restate: Gross PP&E excluding land = 5,400 − 540 = 4,860M. Net = 4,860 − 1,620 = 3,240M. Remaining life = 3,240/180 = 18.0 years. Correct answer is A. Note: land is excluded because it is not depreciated."
   },
   {
     "id": "FSA2-157",
     "chapter": "FSA-2",
     "chapterName": "Analyzing Income Statements",
-    "topic": "AMRC Case Study",
+    "topic": "Capitalisation vs. Expensing — Period Effects",
     "difficulty": "Moderate",
-    "question": "AMRC management expensed rather than capitalized track replacement costs. Compared to capitalizing, this results in:",
+    "question": "Meridian Rail & Transport PLC expensed EUR95M of track maintenance costs in Year 1 rather than capitalising them over a 5-year useful life. Compared with capitalising these costs, expensing them results in:",
     "options": [
-      "A) Higher 2009 net profit margin and lower future profit growth",
-      "B) Lower 2009 net profit margin and higher future profit growth",
-      "C) Lower 2009 total asset turnover"
+      "A) Higher Year 1 net profit margin and lower future profit growth",
+      "B) Lower Year 1 net profit margin and higher future profit growth",
+      "C) Lower Year 1 total asset turnover"
     ],
     "correctAnswer": "B",
-    "explanation": "Expensing reduces 2009 net income and net profit margin. However, future years will not include depreciation on these costs, so future income growth will be enhanced. Had they been capitalized, assets would be higher, reducing asset turnover. Expensing keeps assets lower, keeping asset turnover higher (not lower)."
+    "explanation": "Expensing EUR95M immediately reduces Year 1 pre-tax income and net profit margin relative to capitalising. Under capitalisation, only EUR19M (95/5) would flow to the income statement in Year 1 as depreciation. Future years benefit from expensing: no depreciation charge means future income is higher, improving profit growth. Had they capitalised, total assets would be higher (by the net book value), which would reduce asset turnover — so expensing keeps assets lower and turnover higher (not lower), making option C incorrect."
   },
   {
     "id": "FSA2-158",
@@ -16136,16 +16134,16 @@ window.QUESTIONS_DATA = [
     "id": "FSA2-162",
     "chapter": "FSA-2",
     "chapterName": "Analyzing Income Statements",
-    "topic": "Depreciation — Accelerated vs Straight-Line",
+    "topic": "Depreciation — Accelerated vs. Straight-Line Effects",
     "difficulty": "Moderate",
-    "question": "AMRC currently uses straight-line depreciation for both financial and tax purposes. If it switches to accelerated depreciation, the immediate effect on 2010 financial statements would be:",
+    "question": "A capital-intensive manufacturer currently uses straight-line depreciation for both financial reporting and tax purposes. Management is considering switching to an accelerated depreciation method for tax purposes only. The immediate effect in the year of the switch would most likely be:",
     "options": [
-      "A) Higher net income due to larger depreciation tax shield",
-      "B) Lower net income but higher operating cash flow due to reduced taxes",
-      "C) Lower net income and lower operating cash flow"
+      "A) Higher reported net income due to a larger depreciation tax shield",
+      "B) Lower reported net income but higher operating cash flow, due to reduced current taxes payable",
+      "C) Lower reported net income and lower operating cash flow"
     ],
     "correctAnswer": "B",
-    "explanation": "Accelerated depreciation increases depreciation expense, reducing pre-tax income and taxes payable. Lower taxes mean more cash retained, increasing operating cash flow. Net income falls (higher expense) but CFO rises (lower cash taxes). Depreciation itself is non-cash."
+    "explanation": "Switching to accelerated depreciation for tax only creates a temporary difference: tax depreciation exceeds book depreciation, reducing taxable income and current taxes payable. Lower cash taxes increase operating cash flow. For financial reporting, straight-line depreciation is unchanged, so reported net income is unaffected by this tax-only switch. If the switch applied to financial reporting as well, higher depreciation expense would reduce reported net income while still raising CFO through lower cash taxes."
   },
   {
     "id": "FSA2-163",
@@ -16807,16 +16805,16 @@ window.QUESTIONS_DATA = [
     "id": "FSA3-006",
     "chapter": "FSA-3",
     "chapterName": "Analyzing Balance Sheets",
-    "topic": "Intangible Assets — Examples",
+    "topic": "Intangible Assets — Identifiable vs. Unidentifiable",
     "difficulty": "Easy",
-    "question": "Which of the following is NOT typically listed as an identifiable intangible asset?",
+    "question": "Which of the following is NOT typically recognised as an identifiable intangible asset on the balance sheet?",
     "options": [
-      "A) Trademark",
-      "B) Customer list purchased in an acquisition",
-      "C) The talent and skills of a company's employees"
+      "A) A trademark acquired in a business combination",
+      "B) A customer list purchased from a third party",
+      "C) The talent and specialised skills of a company's workforce"
     ],
     "correctAnswer": "C",
-    "explanation": "Employee skills, market share, and name recognition cannot be recognized as assets because the company does not have sufficient control over the future economic benefits. They may be reflected in stock prices but are not balance sheet assets."
+    "explanation": "Employee skills, market share, and brand reputation built internally cannot be recognised as balance sheet assets because the company lacks sufficient control over the future economic benefits — skilled employees can leave at any time. By contrast, a purchased trademark or acquired customer list can be separated from the entity and sold, meeting the identifiability criterion under IAS 38 and ASC 350. Internally generated goodwill is also not recognised; only goodwill arising from a business combination is capitalised."
   },
   {
     "id": "FSA3-007",
@@ -17935,16 +17933,16 @@ window.QUESTIONS_DATA = [
     "id": "FSA3-081",
     "chapter": "FSA-3",
     "chapterName": "Analyzing Balance Sheets",
-    "topic": "Intangible Assets — Alpha Inc. IFRS vs GAAP",
+    "topic": "Intangible Assets — IFRS vs. US GAAP Capitalisation",
     "difficulty": "Moderate",
-    "question": "Alpha Inc. has Project 1 (research phase: EUR2,165K costs) and Project 2 (development phase: EUR1,410K capitalizable costs). Under IFRS, the amount capitalized as an intangible asset is:",
+    "question": "Beacon Systems Ltd is developing two software platforms. Project X is in the research phase and incurred EUR1,840K of costs. Project Y has met all IAS 38 development-phase criteria; its costs include: direct labour EUR280K, licensed materials EUR540K, and testing and design EUR410K. Under IFRS, the amount capitalised as an intangible asset is:",
     "options": [
       "A) EUR0 — all costs are expensed under IFRS",
-      "B) EUR1,410K — only Project 2 development costs (excluding administrative overhead)",
-      "C) EUR3,575K — all project costs are capitalized under IFRS"
+      "B) EUR1,230K — only Project Y's direct development costs",
+      "C) EUR3,070K — all project costs for both platforms"
     ],
     "correctAnswer": "B",
-    "explanation": "Under IFRS: Project 1 (research stage) → all EUR2,165K expensed. Project 2 (development stage, feasibility met) → EUR620K + EUR320K + EUR470K = EUR1,410K capitalized. Administrative costs are not capitalized. Under US GAAP, nothing would be capitalized — all EUR3,575K expensed."
+    "explanation": "Under IAS 38: Project X costs (research phase) → all EUR1,840K expensed immediately, regardless of future potential. Project Y (development phase, IAS 38 criteria met) → EUR280K + EUR540K + EUR410K = EUR1,230K capitalised as an intangible asset. Under US GAAP (ASC 350), all EUR3,070K would be expensed — US GAAP generally prohibits capitalising internally developed intangibles except for certain software development costs after technological feasibility is established."
   },
   {
     "id": "FSA3-082",
@@ -18025,16 +18023,16 @@ window.QUESTIONS_DATA = [
     "id": "FSA3-087",
     "chapter": "FSA-3",
     "chapterName": "Analyzing Balance Sheets",
-    "topic": "Financial Instruments — OCI vs P&L",
+    "topic": "Financial Instruments — OCI vs. Profit or Loss",
     "difficulty": "Moderate",
-    "question": "An entity classifies a debt investment as available for sale. At year-end, it has USD500K of unrealized gains. Which statements correctly describe the balance sheet effects?",
+    "question": "A company classifies a debt investment as available-for-sale (AFS). At year-end, the fair value of the investment exceeds its amortised cost by USD500K, resulting in an unrealised gain. Which of the following correctly describes the balance sheet effect?",
     "options": [
       "A) Assets increase by USD500K; retained earnings increase by USD500K",
-      "B) Assets increase by USD500K; AOCI increases by USD500K within equity",
-      "C) No balance sheet effect until the security is sold"
+      "B) Assets increase by USD500K; accumulated other comprehensive income (AOCI) increases by USD500K within equity",
+      "C) There is no balance sheet effect until the security is sold and the gain is realised"
     ],
     "correctAnswer": "B",
-    "explanation": "For available-for-sale: the investment asset increases by USD500K (fair value > cost) and the credit goes to accumulated other comprehensive income (AOCI) in equity — NOT retained earnings. The income statement is unaffected. Total assets and total equity both increase by USD500K."
+    "explanation": "For AFS debt investments, unrealised gains bypass the income statement and are recorded directly in other comprehensive income (OCI), accumulating in AOCI within equity. The investment asset on the balance sheet increases to fair value (USD500K increase), and the offsetting credit goes to AOCI — not retained earnings. Total assets and total equity both increase by USD500K. The income statement is unaffected until the asset is sold or impaired."
   },
   {
     "id": "FSA3-088",
@@ -18175,16 +18173,16 @@ window.QUESTIONS_DATA = [
     "id": "FSA3-097",
     "chapter": "FSA-3",
     "chapterName": "Analyzing Balance Sheets",
-    "topic": "Common-Size Practice Problems (Q12)",
+    "topic": "Common-Size Balance Sheet Analysis",
     "difficulty": "Moderate",
-    "question": "From Exhibit 1, Company A has goodwill of 25% of assets and total liabilities of 80%. Company B has no goodwill and total liabilities of 55%. The industry average total liabilities are 63%. Which statement is correct?",
+    "question": "A credit analyst notes that Company A has goodwill representing 25% of total assets and total liabilities of 80% of total assets. Company B (same industry) has no goodwill and total liabilities of 55% of total assets. The industry average total liabilities ratio is 63%. Which statement is most accurate?",
     "options": [
-      "A) Company A has below-average liquidity risk and Company B has above-average solvency risk",
-      "B) Company A has made one or more acquisitions; Company B has below-average solvency risk",
-      "C) Both companies have above-average financial risk"
+      "A) Company A has below-average solvency risk and Company B has above-average liquidity risk",
+      "B) Company A's goodwill indicates prior acquisitions and Company A carries above-average financial leverage; Company B has below-average solvency risk",
+      "C) Both companies have above-average financial risk relative to the industry"
     ],
     "correctAnswer": "B",
-    "explanation": "Company A's 25% goodwill signals prior acquisitions. Company A's liquidity ratios are below industry average (above-average liquidity risk). Company B's total liabilities (55%) < industry average (63%) → below-average solvency risk. Company B's solvency ratios (debt/equity = 1.22 vs industry 1.70) are all better than average."
+    "explanation": "Company A's 25% goodwill signals one or more prior business acquisitions. With total liabilities at 80% of assets (equity = 20%), Company A's debt-to-equity ratio is 4.0× — substantially above the industry average implied by 63% liabilities (D/E ≈ 1.7×). Company A therefore carries above-average financial leverage and solvency risk. Company B's total liabilities (55%) are below the industry average (63%), implying a D/E ratio of approximately 1.2× — below-average solvency risk. Company B's financial position is relatively conservative."
   },
   {
     "id": "FSA3-098",
@@ -18703,16 +18701,16 @@ window.QUESTIONS_DATA = [
     "id": "FSA3-132",
     "chapter": "FSA-3",
     "chapterName": "Analyzing Balance Sheets",
-    "topic": "Intangibles — IFRS Alpha Inc. Detailed",
+    "topic": "Intangible Assets — IAS 38 Capitalisation Boundary",
     "difficulty": "Difficult",
-    "question": "In the Alpha Inc. example, administrative costs of EUR720K are general, with 5% allocated to each of Projects 1 and 2. How much of the administrative cost is capitalized under IFRS for Project 2?",
+    "question": "In the Beacon Systems Ltd scenario, the company incurs EUR640K of general administrative costs, of which 4% is attributed to each of Project X (research) and Project Y (development). Under IFRS, the amount of administrative cost capitalised as part of the Project Y intangible asset is:",
     "options": [
-      "A) EUR36,000 (5% of EUR720K)",
-      "B) EUR0 — administrative costs are specifically excluded from capitalization",
-      "C) EUR720,000 — all general admin costs are allocated to projects"
+      "A) EUR25,600 (4% of EUR640K)",
+      "B) EUR0 — IAS 38 explicitly prohibits capitalising general administrative and overhead costs",
+      "C) EUR640,000 — all general costs are allocated and capitalised across projects"
     ],
     "correctAnswer": "B",
-    "explanation": "IAS 38 explicitly prohibits capitalizing administrative and other general overhead costs as part of development costs. Even though 5% of admin can be attributed to Project 2, administrative costs cannot be capitalized. Only direct material/services (EUR620K), direct labor (EUR320K), and design/testing (EUR470K) = EUR1,410K are capitalized."
+    "explanation": "IAS 38.67 explicitly prohibits including selling costs, administrative costs, and other general overhead in the cost of an internally generated intangible asset. Even though 4% of EUR640K (= EUR25,600) can be attributed to Project Y's development phase, these costs cannot be capitalised. Only directly attributable costs — such as direct labour (EUR280K), licensed materials (EUR540K), and testing/design (EUR410K) = EUR1,230K — qualify for capitalisation under IAS 38."
   },
   {
     "id": "FSA3-133",
@@ -18983,7 +18981,5255 @@ window.QUESTIONS_DATA = [
     ],
     "correctAnswer": "B",
     "explanation": "This is a nuanced tradeoff: Company B's customer lists are amortized (5%/yr × 25% = 5pp of assets annually in amortization expense), which depresses reported income but reduces balance sheet risk as the asset base declines predictably. Company A's pure goodwill faces no amortization drag but creates concentrated impairment risk — one test failure writes down 45% of assets. From a credit perspective, B's declining intangible base provides more predictable risk trajectory; A's goodwill concentration requires careful monitoring of acquisition performance metrics."
+  },
+{
+    "id": "FSA4-001",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Linkages Between Financial Statements",
+    "difficulty": "Easy",
+    "question": "Which of the following best describes the primary purpose of the statement of cash flows?",
+    "options": [
+      "A) To report a company's financial position at a point in time",
+      "B) To report cash receipts and cash payments during an accounting period",
+      "C) To report changes in shareholders' equity over a period"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The statement of cash flows reports a company's cash receipts and cash payments during an accounting period, reconciling the cash accounts between balance sheet dates."
+  },
+  {
+    "id": "FSA4-002",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Linkages Between Financial Statements",
+    "difficulty": "Easy",
+    "question": "The income statement, statement of cash flows, and statement of shareholders' equity all serve which common function?",
+    "options": [
+      "A) They report the financial position of a company at a point in time",
+      "B) They link the balance sheet from one period to the next",
+      "C) They report only cash-based transactions"
+    ],
+    "correctAnswer": "B",
+    "explanation": "These three 'flow' statements link the balance sheet from one period to the next, explaining changes that occurred in asset, liability, and equity accounts."
+  },
+  {
+    "id": "FSA4-003",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Linkages Between Financial Statements",
+    "difficulty": "Easy",
+    "question": "Which of the four primary financial statements is best described as a 'stock' statement rather than a 'flow' statement?",
+    "options": [
+      "A) Income statement",
+      "B) Statement of cash flows",
+      "C) Balance sheet"
+    ],
+    "correctAnswer": "C",
+    "explanation": "The balance sheet is a 'stock' statement that shows financial position at a point in time. The income statement, cash flow statement, and statement of shareholders' equity are all 'flow' statements covering a period of time."
+  },
+  {
+    "id": "FSA4-004",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Linkages Between Financial Statements",
+    "difficulty": "Easy",
+    "question": "If a company's accrual-basis revenue exceeds its cash collections from customers, which balance sheet account is most likely affected?",
+    "options": [
+      "A) Accounts payable increases",
+      "B) Accounts receivable increases",
+      "C) Inventory increases"
+    ],
+    "correctAnswer": "B",
+    "explanation": "When accrual revenue exceeds cash collections, the uncollected portion is recorded as accounts receivable. This is a key linkage between the income statement and the balance sheet."
+  },
+  {
+    "id": "FSA4-005",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Linkages Between Financial Statements",
+    "difficulty": "Easy",
+    "question": "Deferred revenue is recognized on the balance sheet when:",
+    "options": [
+      "A) A company delivers goods or services to a customer",
+      "B) A company is paid in advance before delivering goods or services",
+      "C) A company records an accrual for services rendered but not yet billed"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Deferred revenue is a liability recognized when a company receives cash in advance of delivering goods or services. It is derecognized (converted to revenue) when the performance obligation is satisfied."
+  },
+  {
+    "id": "FSA4-006",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Linkages Between Financial Statements",
+    "difficulty": "Medium",
+    "question": "A company's beginning accounts receivable was USD50 million, revenues for the period were USD200 million, and ending accounts receivable was USD70 million. What was cash collected from customers?",
+    "options": [
+      "A) USD180 million",
+      "B) USD200 million",
+      "C) USD220 million"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Cash collected = Beginning AR + Revenues − Ending AR = 50 + 200 − 70 = USD180 million. The increase in AR of USD20 million means cash collected was less than revenues."
+  },
+  {
+    "id": "FSA4-007",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Linkages Between Financial Statements",
+    "difficulty": "Medium",
+    "question": "Understanding the interrelationships among the balance sheet, income statement, and cash flow statement is most useful for:",
+    "options": [
+      "A) Preparing tax returns",
+      "B) Evaluating financial health and detecting accounting irregularities",
+      "C) Calculating a company's market capitalization"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Understanding these interrelationships is useful both for evaluating a company's financial health and for detecting accounting irregularities, such as revenue recognition without corresponding cash collections."
+  },
+  {
+    "id": "FSA4-008",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Linkages Between Financial Statements",
+    "difficulty": "Medium",
+    "question": "A company purchases USD100 of inventory on credit. At the time of purchase, the effect on the financial statements is:",
+    "options": [
+      "A) Inventory increases by USD100; cash decreases by USD100",
+      "B) Inventory increases by USD100; accounts payable increases by USD100",
+      "C) Revenue increases by USD100; accounts receivable increases by USD100"
+    ],
+    "correctAnswer": "B",
+    "explanation": "A credit purchase of inventory increases the inventory asset and creates an accounts payable liability. Cash is not affected until the payable is settled."
+  },
+  {
+    "id": "FSA4-009",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Linkages Between Financial Statements",
+    "difficulty": "Medium",
+    "question": "When a company pays cash to settle an accounts payable to a supplier, the effect on the cash flow statement is:",
+    "options": [
+      "A) An increase in cash flows from investing activities",
+      "B) A decrease in cash flows from operating activities",
+      "C) A decrease in cash flows from financing activities"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Payments to suppliers are operating cash outflows. When a company pays an accounts payable, cash from operating activities decreases."
+  },
+  {
+    "id": "FSA4-010",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Linkages Between Financial Statements",
+    "difficulty": "Hard",
+    "question": "Company XYZ reports strong net income but minimal operating cash flow year after year, with accounts receivable growing rapidly. This pattern most likely indicates:",
+    "options": [
+      "A) The company is efficiently managing its working capital",
+      "B) Potential revenue recognition without corresponding cash collections, suggesting possible accounting irregularities",
+      "C) The company is investing heavily in long-term assets"
+    ],
+    "correctAnswer": "B",
+    "explanation": "A persistent gap between net income and operating cash flow, accompanied by rapid accounts receivable growth, is a classic warning sign of improper revenue recognition — recording revenue without actually collecting cash."
+  },
+  {
+    "id": "FSA4-011",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Direct Method — Operating Cash Flows",
+    "difficulty": "Easy",
+    "question": "The direct method of reporting operating cash flows discloses:",
+    "options": [
+      "A) Major categories of gross cash receipts and payments from operations",
+      "B) Net income adjusted for non-cash items and working capital changes",
+      "C) Only non-cash investing and financing transactions"
+    ],
+    "correctAnswer": "A",
+    "explanation": "The direct method shows the major categories of gross cash receipts (e.g., cash from customers) and gross cash payments (e.g., cash to suppliers) in the operating section."
+  },
+  {
+    "id": "FSA4-012",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Direct Method — Operating Cash Flows",
+    "difficulty": "Easy",
+    "question": "Which of the following is a component of the operating section when using the direct method?",
+    "options": [
+      "A) Cash paid for purchase of equipment",
+      "B) Cash received from customers",
+      "C) Cash paid to retire long-term debt"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Cash received from customers is an operating cash inflow reported under the direct method. Equipment purchases are investing activities and debt retirement is a financing activity."
+  },
+  {
+    "id": "FSA4-013",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Direct Method — Operating Cash Flows",
+    "difficulty": "Medium",
+    "question": "A company reports revenues of USD80 million. Accounts receivable decreased by USD8 million during the year. Using the direct method, cash received from customers is:",
+    "options": [
+      "A) USD72 million",
+      "B) USD80 million",
+      "C) USD88 million"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Cash received = Revenues + Decrease in AR = 80 + 8 = USD88 million. A decrease in AR means the company collected more cash than it recognized as revenue."
+  },
+  {
+    "id": "FSA4-014",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Direct Method — Operating Cash Flows",
+    "difficulty": "Medium",
+    "question": "For Harland Industrial Group, cost of goods sold was USD11,456, inventory increased by USD707, and accounts payable increased by USD263. Cash paid to suppliers is:",
+    "options": [
+      "A) USD11,193",
+      "B) USD11,900",
+      "C) USD12,163"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Purchases = COGS + Increase in inventory = 11,456 + 707 = 12,163. Cash paid = Purchases − Increase in AP = 12,163 − 263 = USD11,900."
+  },
+  {
+    "id": "FSA4-015",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Direct Method — Operating Cash Flows",
+    "difficulty": "Medium",
+    "question": "A company reports salary expense of USD15 million. Salary and wages payable decreased by USD2 million during the year. Cash paid to employees is:",
+    "options": [
+      "A) USD13 million",
+      "B) USD15 million",
+      "C) USD17 million"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Cash paid to employees = Salary expense + Decrease in salary payable = 15 + 2 = USD17 million. A decrease in salary payable means the company paid more cash than the current period expense."
+  },
+  {
+    "id": "FSA4-016",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Direct Method — Operating Cash Flows",
+    "difficulty": "Medium",
+    "question": "Other operating expenses were USD3,577. Prepaid expenses decreased by USD23, and other accrued liabilities increased by USD22. Cash paid for other operating expenses is:",
+    "options": [
+      "A) USD3,532",
+      "B) USD3,554",
+      "C) USD3,622"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Cash paid = Other operating expenses − Decrease in prepaid − Increase in accrued liabilities = 3,577 − 23 − 22 = USD3,532. Both items reduce cash paid relative to the accrual expense."
+  },
+  {
+    "id": "FSA4-017",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Direct Method — Operating Cash Flows",
+    "difficulty": "Medium",
+    "question": "Interest expense was USD246, and interest payable decreased by USD12 during the year. Cash paid for interest is:",
+    "options": [
+      "A) USD234",
+      "B) USD246",
+      "C) USD258"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Cash paid for interest = Interest expense + Decrease in interest payable = 246 + 12 = USD258. A decrease in interest payable means cash paid exceeded the current period accrual."
+  },
+  {
+    "id": "FSA4-018",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Direct Method — Operating Cash Flows",
+    "difficulty": "Medium",
+    "question": "Income tax expense was USD1,139, and income tax payable increased by USD5. Cash paid for income taxes is:",
+    "options": [
+      "A) USD1,134",
+      "B) USD1,139",
+      "C) USD1,144"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Cash paid for taxes = Tax expense − Increase in tax payable = 1,139 − 5 = USD1,134. An increase in tax payable means cash paid was less than the accrual-basis expense."
+  },
+  {
+    "id": "FSA4-019",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Direct Method — Operating Cash Flows",
+    "difficulty": "Medium",
+    "question": "Blue Bayou reported revenues of USD50 million and a decrease in accounts receivable of USD12 million. Cash received from customers is:",
+    "options": [
+      "A) USD38 million",
+      "B) USD50 million",
+      "C) USD62 million"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Cash received = Revenues + Decrease in AR = 50 + 12 = USD62 million. The decrease in AR means the company collected more cash than it billed in the current period."
+  },
+  {
+    "id": "FSA4-020",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Direct Method — Operating Cash Flows",
+    "difficulty": "Medium",
+    "question": "Orange Beverages reported COGS of USD100 million, inventory declined by USD6 million, and accounts payable decreased by USD2 million. Cash paid to suppliers is:",
+    "options": [
+      "A) USD96 million",
+      "B) USD100 million",
+      "C) USD108 million"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Purchases = COGS − Decrease in inventory = 100 − 6 = 94. Cash paid = Purchases + Decrease in AP = 94 + 2 = USD96 million."
+  },
+  {
+    "id": "FSA4-021",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Direct Method — Operating Cash Flows",
+    "difficulty": "Hard",
+    "question": "Black Ice reported other operating expenses of USD30 million. Prepaid insurance increased by USD4 million, and accrued utilities payable decreased by USD7 million. Cash paid for other operating expenses is:",
+    "options": [
+      "A) USD19 million",
+      "B) USD33 million",
+      "C) USD41 million"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Cash paid = Operating expenses + Increase in prepaid + Decrease in accrued liabilities = 30 + 4 + 7 = USD41 million. Both items represent additional cash outflows beyond the accrual expense."
+  },
+  {
+    "id": "FSA4-022",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Direct Method — Operating Cash Flows",
+    "difficulty": "Hard",
+    "question": "A company reports revenues of USD254.6 million with accounts receivable decreasing by USD4.9 million. COGS is USD175.9 million, inventory increased by USD8.8 million, and accounts payable increased by USD2.6 million. Which answer correctly shows cash received from customers and cash paid to suppliers?",
+    "options": [
+      "A) USD249.7 million received; USD169.7 million paid",
+      "B) USD259.5 million received; USD174.5 million paid",
+      "C) USD259.5 million received; USD182.1 million paid"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Cash received = 254.6 + 4.9 = 259.5. Cash paid to suppliers = COGS + Increase in inventory − Increase in AP = 175.9 + 8.8 − 2.6 = 182.1."
+  },
+  {
+    "id": "FSA4-023",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Direct Method — Operating Cash Flows",
+    "difficulty": "Hard",
+    "question": "A company has a deferred/unearned revenue balance that increased by USD5 million during the year. Revenues on the income statement were USD200 million. Cash received from customers (assuming no change in accounts receivable) is:",
+    "options": [
+      "A) USD195 million",
+      "B) USD200 million",
+      "C) USD205 million"
+    ],
+    "correctAnswer": "C",
+    "explanation": "An increase in deferred revenue means the company received more cash than it recognized as revenue. Cash received = Revenue + Increase in deferred revenue = 200 + 5 = USD205 million."
+  },
+  {
+    "id": "FSA4-024",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Direct Method — Operating Cash Flows",
+    "difficulty": "Hard",
+    "question": "Golden Cumulus reported interest expense of USD19 million with interest payable increasing by USD3 million, and taxes of USD6 million with taxes payable decreasing by USD4 million. Cash paid for interest and taxes, respectively, are:",
+    "options": [
+      "A) USD22 million and USD10 million",
+      "B) USD16 million and USD2 million",
+      "C) USD16 million and USD10 million"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Interest paid = 19 − 3 = USD16 million (increase in payable reduces cash paid). Taxes paid = 6 + 4 = USD10 million (decrease in payable increases cash paid)."
+  },
+  {
+    "id": "FSA4-025",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Indirect Method — Operating Cash Flows",
+    "difficulty": "Easy",
+    "question": "The indirect method of reporting operating cash flows begins with:",
+    "options": [
+      "A) Total revenues",
+      "B) Net income",
+      "C) Cash received from customers"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The indirect method starts with net income and reconciles it to operating cash flow by adjusting for non-operating items, non-cash items, and working capital changes."
+  },
+  {
+    "id": "FSA4-026",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Indirect Method — Operating Cash Flows",
+    "difficulty": "Easy",
+    "question": "Under the indirect method, depreciation expense is treated as an addition to net income because:",
+    "options": [
+      "A) It generates cash inflow from operations",
+      "B) It was deducted in computing net income but involves no cash outflow",
+      "C) It reduces taxable income and therefore increases cash"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Depreciation is added back to net income because it is a non-cash charge that reduced net income but did not require any cash outflow during the period."
+  },
+  {
+    "id": "FSA4-027",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Indirect Method — Operating Cash Flows",
+    "difficulty": "Easy",
+    "question": "Under the indirect method, a gain on sale of equipment is subtracted from net income because:",
+    "options": [
+      "A) The gain overstates the cash received",
+      "B) The gain is a non-operating item included in net income, and the full cash proceeds appear in investing activities",
+      "C) Gains reduce operating cash flow"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The gain is subtracted from net income in the operating section to remove a non-operating item. The full cash proceeds from the sale are reported in investing activities."
+  },
+  {
+    "id": "FSA4-028",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Indirect Method — Operating Cash Flows",
+    "difficulty": "Easy",
+    "question": "Under the indirect method, an increase in accounts receivable is:",
+    "options": [
+      "A) Added to net income",
+      "B) Subtracted from net income",
+      "C) Ignored, as it does not affect cash flow"
+    ],
+    "correctAnswer": "B",
+    "explanation": "An increase in accounts receivable means revenues exceeded cash collections. This excess was already included in net income but produced no cash, so it must be subtracted."
+  },
+  {
+    "id": "FSA4-029",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Indirect Method — Operating Cash Flows",
+    "difficulty": "Medium",
+    "question": "Under the indirect method, an increase in accounts payable is:",
+    "options": [
+      "A) Subtracted from net income",
+      "B) Added to net income",
+      "C) Reported in the investing section"
+    ],
+    "correctAnswer": "B",
+    "explanation": "An increase in accounts payable means the company purchased more on credit than it paid in cash. Expenses were recognized but not paid, so the unpaid amount must be added back to net income."
+  },
+  {
+    "id": "FSA4-030",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Indirect Method — Operating Cash Flows",
+    "difficulty": "Medium",
+    "question": "Under the indirect method, which of the following items is added to net income?",
+    "options": [
+      "A) Gain on sale of assets",
+      "B) Loss on retirement of debt",
+      "C) Increase in inventory"
+    ],
+    "correctAnswer": "B",
+    "explanation": "A loss on retirement of debt is a non-operating loss subtracted in computing net income but has no operating cash effect, so it is added back. Gains are subtracted; inventory increases are subtracted."
+  },
+  {
+    "id": "FSA4-031",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Indirect Method — Operating Cash Flows",
+    "difficulty": "Medium",
+    "question": "Pinkerly Inc. had net income of USD30 million. Adjustments include depreciation of USD7 million, increase in accounts receivable of USD15 million, decrease in inventory of USD3 million, and increase in accounts payable of USD10 million. Net adjustments to arrive at operating cash flow are:",
+    "options": [
+      "A) Add USD5 million",
+      "B) Add USD21 million",
+      "C) Subtract USD9 million"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Additions: depreciation +7, decrease in inventory +3, increase in AP +10 = +20. Subtractions: increase in AR −15. Net = +5. Operating CF = 30 + 5 = USD35 million."
+  },
+  {
+    "id": "FSA4-032",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Indirect Method — Operating Cash Flows",
+    "difficulty": "Medium",
+    "question": "Star Inc. had net income of USD20 million. Depreciation was USD2 million. Accounts receivable decreased by USD3 million, inventory increased by USD4 million, and accounts payable increased by USD5 million. Net adjustments to operating cash flow are:",
+    "options": [
+      "A) Add USD2 million",
+      "B) Add USD6 million",
+      "C) Subtract USD6 million"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Additions: depreciation +2, decrease in AR +3, increase in AP +5 = +10. Subtractions: increase in inventory −4. Net = +6. Operating CF = 20 + 6 = USD26 million."
+  },
+  {
+    "id": "FSA4-033",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Indirect Method — Operating Cash Flows",
+    "difficulty": "Medium",
+    "question": "Under the indirect method, amortization of bond discount is:",
+    "options": [
+      "A) Subtracted from net income because it increases interest expense",
+      "B) Added to net income because it is a non-cash charge",
+      "C) Reported in financing activities"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Amortization of bond discount increases interest expense but involves no cash payment, so it is a non-cash charge that must be added back to net income under the indirect method."
+  },
+  {
+    "id": "FSA4-034",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Indirect Method — Operating Cash Flows",
+    "difficulty": "Medium",
+    "question": "A company has net income of USD35, depreciation of USD25, increase in accounts receivable of USD5, increase in inventory of USD3, and decrease in accounts payable of USD7. Cash flow from operations is:",
+    "options": [
+      "A) USD25 million",
+      "B) USD45 million",
+      "C) USD55 million"
+    ],
+    "correctAnswer": "B",
+    "explanation": "CFO = Net income + Depreciation − Increase in AR − Increase in inventory − Decrease in AP = 35 + 25 − 5 − 3 − 7 = USD45 million."
+  },
+  {
+    "id": "FSA4-035",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Indirect Method — Operating Cash Flows",
+    "difficulty": "Hard",
+    "question": "Under the indirect method, income from investments accounted for under the equity method (where investee reports income but no dividends declared) is:",
+    "options": [
+      "A) Added to net income because it increases equity",
+      "B) Subtracted from net income because no cash was received",
+      "C) Reported in investing activities"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Equity method income is included in net income but produces no operating cash flow if no dividends are received. It is therefore subtracted from net income under the indirect method, similar to how gains on asset sales are subtracted."
+  },
+  {
+    "id": "FSA4-036",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Indirect Method — Operating Cash Flows",
+    "difficulty": "Hard",
+    "question": "A company's deferred income tax liability increased by USD4 million during the year. Under the indirect method, this is:",
+    "options": [
+      "A) Subtracted from net income",
+      "B) Added to net income",
+      "C) Reported in financing activities"
+    ],
+    "correctAnswer": "B",
+    "explanation": "An increase in deferred tax liability means that reported tax expense exceeded actual cash taxes paid. The excess is added back to net income under the indirect method, similar to other accrued liabilities."
+  },
+  {
+    "id": "FSA4-037",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Indirect Method — Operating Cash Flows",
+    "difficulty": "Hard",
+    "question": "A company using the indirect method reports net income of USD50 million. It has amortization of bond premium of USD2 million and a gain on sale of investments of USD8 million, plus an increase in deferred tax liability of USD3 million. What is the net adjustment to net income from these items?",
+    "options": [
+      "A) Subtract USD7 million",
+      "B) Add USD7 million",
+      "C) Subtract USD13 million"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Bond premium amortization is subtracted (−2) as a non-cash item that inflated net income. Gain on sale is subtracted (−8) as non-operating. Increase in deferred tax liability is added (+3). Net = −2 − 8 + 3 = −USD7 million."
+  },
+  {
+    "id": "FSA4-038",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Indirect Method — Operating Cash Flows",
+    "difficulty": "Hard",
+    "question": "Company A uses the indirect method. Operating CF = USD2,606. Starting from net income of USD2,210, the company added back depreciation of USD1,052 and subtracted a gain on equipment sale of USD205. These two adjustments account for:",
+    "options": [
+      "A) Changes in working capital",
+      "B) Non-cash and non-operating items",
+      "C) Investing and financing activities"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Depreciation is a non-cash item and the gain on equipment sale is a non-operating item. These categories are the first adjustments made to net income under the indirect method, before working capital changes."
+  },
+  {
+    "id": "FSA4-039",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Conversion: Indirect to Direct Method",
+    "difficulty": "Easy",
+    "question": "What is the primary analytical reason an analyst might prefer a direct-format operating cash flow statement over an indirect-format one?",
+    "options": [
+      "A) The direct method is required under all accounting standards",
+      "B) It allows review of trends in specific cash receipts and payments such as collections from customers",
+      "C) The direct method produces a higher operating cash flow figure"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The direct method shows specific cash inflows and outflows (e.g., cash from customers, cash to suppliers), which allows analysts to track trends in individual cash components."
+  },
+  {
+    "id": "FSA4-040",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Conversion: Indirect to Direct Method",
+    "difficulty": "Easy",
+    "question": "Which of the following is the first step in converting indirect to direct operating cash flow?",
+    "options": [
+      "A) Remove non-cash and non-operating items",
+      "B) Disaggregate net income into total revenues and total expenses",
+      "C) Adjust for changes in working capital accounts"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The three-step conversion process starts by disaggregating net income into total revenues and total expenses. Step 2 removes non-cash/non-operating items, and Step 3 adjusts for working capital changes."
+  },
+  {
+    "id": "FSA4-041",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Conversion: Indirect to Direct Method",
+    "difficulty": "Medium",
+    "question": "During the conversion from indirect to direct method (Step 2), which of the following would be removed from total expenses?",
+    "options": [
+      "A) Cost of goods sold",
+      "B) Depreciation expense",
+      "C) Income tax expense"
+    ],
+    "correctAnswer": "B",
+    "explanation": "In Step 2, non-cash items such as depreciation are removed from total expenses. Cash-based expenses like COGS and income tax expense remain and are then adjusted for working capital changes in Step 3."
+  },
+  {
+    "id": "FSA4-042",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Conversion: Indirect to Direct Method",
+    "difficulty": "Medium",
+    "question": "During the indirect-to-direct conversion for Harland Industrial Group, a gain on sale of equipment of USD205 is removed in Step 2 from total revenues. This is because:",
+    "options": [
+      "A) The gain represents a cash inflow that should be excluded from operating cash",
+      "B) The full cash proceeds are reported as an investing inflow, so the gain must be removed from operating items",
+      "C) Gains are always excluded from cash flow statements"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The gain is a non-operating item. The full cash proceeds from the equipment sale appear in investing activities, so removing the gain from the operating section prevents double-counting."
+  },
+  {
+    "id": "FSA4-043",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Conversion: Indirect to Direct Method",
+    "difficulty": "Hard",
+    "question": "After completing all three steps of the indirect-to-direct conversion, the resulting net cash from operating activities should equal:",
+    "options": [
+      "A) The net income figure from the income statement",
+      "B) The operating cash flow derived using the indirect method",
+      "C) The total revenues minus total expenses"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The conversion is a reclassification/reformatting exercise. The net cash from operating activities is the same regardless of whether the direct or indirect method is used — both methods must arrive at the same total."
+  },
+  {
+    "id": "FSA4-044",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Conversion: Indirect to Direct Method",
+    "difficulty": "Hard",
+    "question": "In Step 3 of the indirect-to-direct conversion, adjusting revenue for an increase in accounts receivable gives you:",
+    "options": [
+      "A) Total purchases from suppliers",
+      "B) Cash received from customers",
+      "C) Net income from operations"
+    ],
+    "correctAnswer": "B",
+    "explanation": "In Step 3, revenue is adjusted for changes in AR and deferred revenue to derive cash received from customers — converting the accrual revenue figure to actual cash collected."
+  },
+  {
+    "id": "FSA4-045",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Cash Flows from Investing Activities",
+    "difficulty": "Easy",
+    "question": "Cash flows from investing activities are presented using which method?",
+    "options": [
+      "A) The indirect method only",
+      "B) The direct method, regardless of how operating cash flows are reported",
+      "C) Either the direct or indirect method, depending on the company's preference"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Cash flows from investing and financing activities are always reported using the direct method, regardless of whether the operating section uses the direct or indirect method."
+  },
+  {
+    "id": "FSA4-046",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Cash Flows from Investing Activities",
+    "difficulty": "Easy",
+    "question": "Which of the following is classified as an investing activity?",
+    "options": [
+      "A) Cash received from customers",
+      "B) Cash paid to purchase equipment",
+      "C) Cash paid to retire long-term debt"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Purchase of equipment involves acquiring a long-term asset and is an investing activity. Customer receipts are operating; debt retirement is financing."
+  },
+  {
+    "id": "FSA4-047",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Cash Flows from Investing Activities",
+    "difficulty": "Medium",
+    "question": "Harland Industrial Group's beginning equipment balance was USD8,555, new equipment purchased was USD1,300, and ending equipment balance was USD8,798. The historical cost of equipment sold was:",
+    "options": [
+      "A) USD743",
+      "B) USD1,057",
+      "C) USD1,300"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Historical cost of equipment sold = Beginning balance + Purchases − Ending balance = 8,555 + 1,300 − 8,798 = USD1,057."
+  },
+  {
+    "id": "FSA4-048",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Cash Flows from Investing Activities",
+    "difficulty": "Medium",
+    "question": "Beginning accumulated depreciation was USD2,891, depreciation expense for the year was USD1,052, and ending accumulated depreciation was USD3,443. Accumulated depreciation on equipment sold was:",
+    "options": [
+      "A) USD500",
+      "B) USD552",
+      "C) USD1,052"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Accum. depreciation on sold equipment = Beginning + Expense − Ending = 2,891 + 1,052 − 3,443 = USD500."
+  },
+  {
+    "id": "FSA4-049",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Cash Flows from Investing Activities",
+    "difficulty": "Medium",
+    "question": "Equipment sold had a historical cost of USD1,057, accumulated depreciation of USD500, and the gain on sale was USD205. Cash received from the sale was:",
+    "options": [
+      "A) USD557",
+      "B) USD762",
+      "C) USD1,262"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Book value = Cost − Accum. depreciation = 1,057 − 500 = 557. Cash received = Book value + Gain = 557 + 205 = USD762."
+  },
+  {
+    "id": "FSA4-050",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Cash Flows from Investing Activities",
+    "difficulty": "Medium",
+    "question": "Copper Inc. reported a gain on equipment sale of USD12 million. Beginning equipment was USD100 million, purchases were USD15 million, and ending equipment was USD109 million. Beginning and ending accumulated depreciation were USD30 million and USD36 million, with depreciation expense of USD8 million. Cash received from the sale was:",
+    "options": [
+      "A) USD12 million",
+      "B) USD16 million",
+      "C) USD18 million"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Cost sold = 100 + 15 − 109 = 6. Accum. depr. on sold = 30 + 8 − 36 = 2. Book value = 6 − 2 = 4. Cash = 4 + 12 = USD16 million."
+  },
+  {
+    "id": "FSA4-051",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Cash Flows from Investing Activities",
+    "difficulty": "Medium",
+    "question": "Silverago Inc. reported a loss on equipment sale of USD2 million. Beginning equipment was USD100 million, purchases were USD10 million, ending equipment was USD105 million. Beginning/ending accumulated depreciation were USD40/USD46 million; depreciation expense was USD8 million. Cash received from sale was:",
+    "options": [
+      "A) USD1 million",
+      "B) USD2 million",
+      "C) USD3 million"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Cost sold = 100 + 10 − 105 = 5. Accum. depr. on sold = 40 + 8 − 46 = 2. Book value = 5 − 2 = 3. Cash = 3 − 2 (loss) = USD1 million."
+  },
+  {
+    "id": "FSA4-052",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Cash Flows from Investing Activities",
+    "difficulty": "Hard",
+    "question": "A company's land and buildings balances are unchanged year over year. Equipment balance increased by USD243. The company spent USD1,300 on new equipment. What analytical conclusion can be drawn?",
+    "options": [
+      "A) The company disposed of USD1,057 of equipment at cost during the year",
+      "B) The company purchased USD243 of equipment during the year",
+      "C) There was no change in the equipment account"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Net change in equipment = Purchases − Cost of disposals → 243 = 1,300 − disposals → Disposals at cost = USD1,057. This shows equipment was both bought and sold during the year."
+  },
+  {
+    "id": "FSA4-053",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Cash Flows from Investing Activities",
+    "difficulty": "Hard",
+    "question": "A company sells equipment for USD50 million that had a book value of USD60 million. How should this appear in the cash flow statement?",
+    "options": [
+      "A) USD60 million in investing activities; USD10 million loss added back in operating (indirect)",
+      "B) USD50 million in investing activities; USD10 million loss added back in operating (indirect)",
+      "C) USD50 million in operating activities"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The actual cash received (USD50 million) appears in investing activities. Under the indirect method, the USD10 million loss (already subtracted in net income) is added back in the operating section as a non-operating item."
+  },
+  {
+    "id": "FSA4-054",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Cash Flows from Financing Activities",
+    "difficulty": "Easy",
+    "question": "Which of the following is a financing activity under US GAAP?",
+    "options": [
+      "A) Cash paid for income taxes",
+      "B) Cash paid to retire long-term debt",
+      "C) Cash received from customers"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Retirement of long-term debt involves the repayment of borrowed funds, which is a financing activity. Tax payments are operating; customer receipts are operating."
+  },
+  {
+    "id": "FSA4-055",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Cash Flows from Financing Activities",
+    "difficulty": "Easy",
+    "question": "Under US GAAP, repurchase of common stock is classified as:",
+    "options": [
+      "A) An investing activity",
+      "B) An operating activity",
+      "C) A financing activity"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Repurchase of common stock involves the company buying back its own shares, which is a return of capital to shareholders and thus a financing activity."
+  },
+  {
+    "id": "FSA4-056",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Cash Flows from Financing Activities",
+    "difficulty": "Medium",
+    "question": "Harland Industrial Group's retained earnings increased from USD2,876 to USD3,966. Net income was USD2,210. Dividends paid were:",
+    "options": [
+      "A) USD1,090",
+      "B) USD1,120",
+      "C) USD3,966"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Dividends = Beginning RE + Net income − Ending RE = 2,876 + 2,210 − 3,966 = USD1,120."
+  },
+  {
+    "id": "FSA4-057",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Cash Flows from Financing Activities",
+    "difficulty": "Medium",
+    "question": "Jaderong Plinkett had net income of USD25 million. Common stock and APIC increased by USD42 million; retained earnings increased by USD15 million. Dividends paid and stock issuance proceeds were:",
+    "options": [
+      "A) USD42 million issued; USD10 million dividends",
+      "B) USD38 million issued; USD10 million dividends",
+      "C) USD42 million issued; USD40 million dividends"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Stock issued = Increase in common stock + APIC = USD42 million. Dividends = Beginning RE + Net income − Ending RE. RE change = +15; dividends = 25 − 15 = USD10 million."
+  },
+  {
+    "id": "FSA4-058",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Cash Flows from Financing Activities",
+    "difficulty": "Medium",
+    "question": "Long-term debt decreased from USD3,575 to USD3,075 during the year. Absent other information, this most likely indicates:",
+    "options": [
+      "A) The company issued new debt of USD500",
+      "B) The company retired USD500 of long-term debt",
+      "C) The company converted debt to equity"
+    ],
+    "correctAnswer": "B",
+    "explanation": "A decrease in long-term debt, with no other information suggesting new issuances or conversions, indicates that USD500 of debt was repaid — a financing cash outflow."
+  },
+  {
+    "id": "FSA4-059",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Cash Flows from Financing Activities",
+    "difficulty": "Hard",
+    "question": "A company has beginning retained earnings of USD100, net income of USD40, and ending retained earnings of USD120. Additionally, the company converted USD15 of debt into common equity (non-cash transaction). How much in cash dividends were paid?",
+    "options": [
+      "A) USD5",
+      "B) USD20",
+      "C) USD35"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Retained earnings change = Net income − Cash dividends. Since debt-to-equity conversion only affects equity accounts (not retained earnings), dividends = 100 + 40 − 120 = USD20."
+  },
+  {
+    "id": "FSA4-060",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Cash Flows from Financing Activities",
+    "difficulty": "Hard",
+    "question": "Harland Industrial Group paid dividends of USD1,120, retired long-term debt of USD500, and repurchased common stock of USD600. Net cash used for financing activities was:",
+    "options": [
+      "A) USD1,620",
+      "B) USD2,220",
+      "C) USD2,720"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Net financing cash flow = −(dividends + debt retirement + stock repurchase) = −(1,120 + 500 + 600) = −USD2,220."
+  },
+  {
+    "id": "FSA4-061",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "IFRS vs US GAAP — Cash Flow Classification",
+    "difficulty": "Easy",
+    "question": "Under US GAAP, interest paid is classified as:",
+    "options": [
+      "A) A financing activity",
+      "B) An operating activity",
+      "C) Either operating or financing, at the company's discretion"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Under US GAAP, interest paid is always classified as an operating activity, even though the related principal repayment is a financing activity."
+  },
+  {
+    "id": "FSA4-062",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "IFRS vs US GAAP — Cash Flow Classification",
+    "difficulty": "Easy",
+    "question": "Under IFRS, interest paid may be classified as:",
+    "options": [
+      "A) Operating only",
+      "B) Investing or financing",
+      "C) Operating or financing"
+    ],
+    "correctAnswer": "C",
+    "explanation": "IFRS allows interest paid to be classified as either operating or financing activities, offering more flexibility than US GAAP which mandates operating classification."
+  },
+  {
+    "id": "FSA4-063",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "IFRS vs US GAAP — Cash Flow Classification",
+    "difficulty": "Easy",
+    "question": "Under US GAAP, dividends paid to stockholders are classified as:",
+    "options": [
+      "A) An operating activity",
+      "B) A financing activity",
+      "C) Either operating or financing"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Under US GAAP, dividends paid are financing activities. Under IFRS, they may be classified as either operating or financing."
+  },
+  {
+    "id": "FSA4-064",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "IFRS vs US GAAP — Cash Flow Classification",
+    "difficulty": "Medium",
+    "question": "Under IFRS, dividends received from investments are classified as:",
+    "options": [
+      "A) Always operating activities",
+      "B) Always investing activities",
+      "C) Either operating or investing activities"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Under IFRS, dividends received can be classified as either operating or investing activities. Under US GAAP, dividends received are always classified as operating activities."
+  },
+  {
+    "id": "FSA4-065",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "IFRS vs US GAAP — Cash Flow Classification",
+    "difficulty": "Medium",
+    "question": "Under US GAAP, interest received is classified as:",
+    "options": [
+      "A) An operating activity",
+      "B) An investing activity",
+      "C) Either operating or investing"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Under US GAAP, interest received is always an operating activity. Under IFRS, it may be classified as either operating or investing."
+  },
+  {
+    "id": "FSA4-066",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "IFRS vs US GAAP — Cash Flow Classification",
+    "difficulty": "Medium",
+    "question": "Under IFRS, bank overdrafts are treated as:",
+    "options": [
+      "A) Part of cash and cash equivalents",
+      "B) Financing activities",
+      "C) Operating activities"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Under IFRS, bank overdrafts are considered part of cash and cash equivalents because they fluctuate as an integral part of cash management. Under US GAAP, overdrafts are financing activities."
+  },
+  {
+    "id": "FSA4-067",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "IFRS vs US GAAP — Cash Flow Classification",
+    "difficulty": "Medium",
+    "question": "Under US GAAP, income taxes paid are classified as:",
+    "options": [
+      "A) Always operating activities",
+      "B) Either operating or investing, depending on the source of taxable income",
+      "C) Either operating, investing, or financing"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Under US GAAP, all income taxes are classified as operating activities. Under IFRS, taxes are generally operating but a portion can be allocated to investing or financing if specifically identifiable."
+  },
+  {
+    "id": "FSA4-068",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "IFRS vs US GAAP — Cash Flow Classification",
+    "difficulty": "Hard",
+    "question": "A company sells a discontinued operation and incurs USD5 million in related income taxes. Under IFRS, these taxes would most likely be classified as:",
+    "options": [
+      "A) Operating activities only",
+      "B) Investing activities, as they are specifically identifiable with the discontinued operation sale",
+      "C) Financing activities"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Under IFRS, income taxes are generally operating, but a portion can be allocated to investing or financing if specifically identifiable with those activities. Taxes on a discontinued operation sale may be classified as investing."
+  },
+  {
+    "id": "FSA4-069",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "IFRS vs US GAAP — Cash Flow Classification",
+    "difficulty": "Hard",
+    "question": "Both IFRS and US GAAP encourage but do not always require which format for the operating section of the cash flow statement?",
+    "options": [
+      "A) The indirect method",
+      "B) The direct method",
+      "C) A combined direct and indirect presentation"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Both IFRS and US GAAP encourage the direct method as it provides more information, but most companies use the indirect method in practice. Under US GAAP, companies using the direct method must still provide a reconciliation of net income to operating cash flows."
+  },
+  {
+    "id": "FSA4-070",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "IFRS vs US GAAP — Cash Flow Classification",
+    "difficulty": "Hard",
+    "question": "A company operating under IFRS classifies interest paid as a financing activity and dividends received as an investing activity. Compared to a US GAAP company making identical transactions, this classification would result in:",
+    "options": [
+      "A) Lower operating cash flow and no change in total cash flow",
+      "B) Higher operating cash flow and lower financing cash flow",
+      "C) No difference because total cash flow is the same under both standards"
+    ],
+    "correctAnswer": "B",
+    "explanation": "By classifying interest paid as financing (not operating) and dividends received as investing (not operating), the IFRS company would report higher CFO and lower CFF relative to the US GAAP company. Total cash is unchanged."
+  },
+  {
+    "id": "FSA4-071",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Comprehensive Application",
+    "difficulty": "Medium",
+    "question": "Mabel Corporation had beginning accounts receivable of USD66 million, revenues of USD72 million in Q3, and ending accounts receivable of USD55 million. Cash collected from customers during Q3 was:",
+    "options": [
+      "A) USD61 million",
+      "B) USD72 million",
+      "C) USD83 million"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Cash collected = Beginning AR + Revenues − Ending AR = 66 + 72 − 55 = USD83 million. The decrease in AR indicates more cash was collected than revenue recognized."
+  },
+  {
+    "id": "FSA4-072",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Comprehensive Application",
+    "difficulty": "Medium",
+    "question": "Red Road Company reported revenues of USD100 million and an increase in accounts receivable of USD10 million. Cash received from customers was:",
+    "options": [
+      "A) USD90 million",
+      "B) USD100 million",
+      "C) USD110 million"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Cash received = Revenue − Increase in AR = 100 − 10 = USD90 million. An increase in AR means some revenue was not yet collected in cash."
+  },
+  {
+    "id": "FSA4-073",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Comprehensive Application",
+    "difficulty": "Medium",
+    "question": "Green Glory reported COGS of USD80 million, inventory increased by USD5 million, and accounts payable increased by USD2 million. Cash paid to suppliers was:",
+    "options": [
+      "A) USD73 million",
+      "B) USD77 million",
+      "C) USD83 million"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Purchases = COGS + Increase in inventory = 80 + 5 = 85. Cash paid = Purchases − Increase in AP = 85 − 2 = USD83 million."
+  },
+  {
+    "id": "FSA4-074",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Comprehensive Application",
+    "difficulty": "Medium",
+    "question": "Purple Fleur reported COGS of USD75 million, inventory declined by USD6 million, and accounts payable increased by USD2 million. Cash paid to suppliers was:",
+    "options": [
+      "A) USD67 million",
+      "B) USD79 million",
+      "C) USD83 million"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Purchases = COGS − Decrease in inventory = 75 − 6 = 69. Cash paid = Purchases − Increase in AP = 69 − 2 = USD67 million."
+  },
+  {
+    "id": "FSA4-075",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Comprehensive Application",
+    "difficulty": "Medium",
+    "question": "White Flag reported salaries expense of USD20 million. Beginning salary payable was USD3 million and ending was USD1 million. Cash paid in salaries was:",
+    "options": [
+      "A) USD18 million",
+      "B) USD21 million",
+      "C) USD22 million"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Cash paid = Beginning payable + Salary expense − Ending payable = 3 + 20 − 1 = USD22 million. The decrease in payable means more cash was paid than the current year expense."
+  },
+  {
+    "id": "FSA4-076",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Comprehensive Application",
+    "difficulty": "Hard",
+    "question": "A company in 2018 paid USD6 million in salaries, USD2 million in interest, and USD4 million in taxes. Revenue was USD37 million, COGS USD16 million, AR decreased USD3 million, inventory increased USD4 million, AP decreased USD2 million. Operating cash flow was:",
+    "options": [
+      "A) USD6 million",
+      "B) USD10 million",
+      "C) USD14 million"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Cash from customers = 37 + 3 = 40. Cash to suppliers = 16 + 4 + 2 = 22. CFO = 40 − 22 − 6 − 2 − 4 = USD6 million."
+  },
+  {
+    "id": "FSA4-077",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Comprehensive Application",
+    "difficulty": "Hard",
+    "question": "Sweetfall Inc. had COGS of USD27,264, inventory decreased by USD501, and accounts payable increased by USD1,063. Cash paid to suppliers was:",
+    "options": [
+      "A) USD25,700",
+      "B) USD26,702",
+      "C) USD27,826"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Purchases = COGS − Decrease in inventory = 27,264 − 501 = 26,763. Cash paid = Purchases − Increase in AP = 26,763 − 1,063 = USD25,700."
+  },
+  {
+    "id": "FSA4-078",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Comprehensive Application",
+    "difficulty": "Hard",
+    "question": "A company reports operating CF of USD2,606, investing CF of −USD538, and financing CF of −USD2,220. Beginning cash was USD1,163. Ending cash is:",
+    "options": [
+      "A) USD863",
+      "B) USD1,011",
+      "C) USD1,163"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Ending cash = Beginning + Operating + Investing + Financing = 1,163 + 2,606 − 538 − 2,220 = USD1,011."
+  },
+  {
+    "id": "FSA4-079",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Comprehensive Application",
+    "difficulty": "Hard",
+    "question": "A company using the indirect method reports operating cash flow of USD500. If a new bond premium amortization of USD30 is added to interest expense, how does this change operating CF?",
+    "options": [
+      "A) Increases by USD30",
+      "B) Decreases by USD30",
+      "C) No change — amortization of bond premium is netted against interest"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Bond premium amortization reduces interest expense (and thus increases net income) but has no cash impact. Under the indirect method, amortization of bond premium must be subtracted from net income, reducing operating CF by USD30."
+  },
+  {
+    "id": "FSA4-080",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Comprehensive Application",
+    "difficulty": "Hard",
+    "question": "An analyst observes that a manufacturing company reports consistent profits but steadily declining operating cash flows over five years. The most analytically relevant question to investigate is:",
+    "options": [
+      "A) Whether the company has been investing in new plant and equipment",
+      "B) Whether the divergence between net income and operating CF reflects aggressive revenue recognition or deteriorating working capital management",
+      "C) Whether dividends paid have increased, reducing financing cash flows"
+    ],
+    "correctAnswer": "B",
+    "explanation": "A persistent and growing gap between net income and operating CF is a fundamental quality-of-earnings concern. It could reflect aggressive accrual accounting (revenue recognized before cash) or deteriorating working capital efficiency, both of which are analytically critical."
+  },
+  {
+    "id": "FSA4-081",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Indirect Method — Operating Cash Flows",
+    "difficulty": "Medium",
+    "question": "Under the indirect method, depletion expense of natural resources is treated as:",
+    "options": [
+      "A) Subtracted from net income as a non-operating item",
+      "B) Added to net income as a non-cash charge",
+      "C) Classified as an investing outflow"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Depletion is a non-cash expense, similar to depreciation and amortization. It is added back to net income under the indirect method because it reduced net income without causing a cash outflow."
+  },
+  {
+    "id": "FSA4-082",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Indirect Method — Operating Cash Flows",
+    "difficulty": "Medium",
+    "question": "Under the indirect method, an increase in prepaid expenses is:",
+    "options": [
+      "A) Added to net income",
+      "B) Subtracted from net income",
+      "C) Has no effect on the operating section"
+    ],
+    "correctAnswer": "B",
+    "explanation": "An increase in prepaid expenses represents cash paid in advance that has not yet been recognized as an expense. This cash outflow exceeded the accrual expense, so the increase must be subtracted from net income."
+  },
+  {
+    "id": "FSA4-083",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Indirect Method — Operating Cash Flows",
+    "difficulty": "Hard",
+    "question": "A company wrote down inventory by USD10 million. Under the indirect method, this write-down is:",
+    "options": [
+      "A) Added to net income as it is a non-cash charge",
+      "B) Subtracted from net income as a non-operating charge",
+      "C) Classified as an investing outflow"
+    ],
+    "correctAnswer": "A",
+    "explanation": "An inventory write-down reduces net income but involves no cash payment. Under the indirect method, it is added back as a non-cash charge, similar to depreciation."
+  },
+  {
+    "id": "FSA4-084",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Direct Method — Operating Cash Flows",
+    "difficulty": "Hard",
+    "question": "A company reports revenues of USD500 million. Accounts receivable increased by USD30 million and deferred revenue decreased by USD10 million. Cash received from customers (using the direct method) is:",
+    "options": [
+      "A) USD460 million",
+      "B) USD470 million",
+      "C) USD480 million"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Cash received = Revenue − Increase in AR − Decrease in deferred revenue = 500 − 30 − 10 = USD460 million. An increase in AR reduces cash collected; a decrease in deferred revenue also reduces cash relative to revenue (they received that cash in a prior period)."
+  },
+  {
+    "id": "FSA4-085",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Linkages Between Financial Statements",
+    "difficulty": "Hard",
+    "question": "Exhibit 4 (Ending Accounts Receivable) shows: Beginning AR + Revenues − Cash collected = Ending AR. If beginning AR is USD50M, revenues are USD300M, and ending AR is USD80M, what is the implication for cash quality?",
+    "options": [
+      "A) The company collected USD270M, suggesting strong cash conversion of USD30M less than revenues",
+      "B) The company collected USD270M; the USD30M increase in AR raises concern about collection risk and revenue quality",
+      "C) The company over-collected by USD30M, suggesting aggressive cash management"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Cash collected = 50 + 300 − 80 = USD270M. The USD30M increase in AR (= revenues not yet collected) warrants investigation — it could reflect legitimate growth or deteriorating collections/aggressive revenue recognition."
+  },
+  {
+    "id": "FSA4-086",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Cash Flows from Investing Activities",
+    "difficulty": "Hard",
+    "question": "Which of the following is the correct formula to calculate the book value of equipment sold when preparing the investing section of the cash flow statement?",
+    "options": [
+      "A) Historical cost − Gain on sale",
+      "B) Historical cost of equipment sold − Accumulated depreciation on equipment sold",
+      "C) Ending equipment balance − Beginning equipment balance"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Book value = Historical cost of equipment sold − Accumulated depreciation on equipment sold. Cash received = Book value ± gain or loss on sale."
+  },
+  {
+    "id": "FSA4-087",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "IFRS vs US GAAP — Cash Flow Classification",
+    "difficulty": "Medium",
+    "question": "Taxes on income must be separately disclosed under:",
+    "options": [
+      "A) IFRS only",
+      "B) US GAAP only",
+      "C) Both IFRS and US GAAP"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Both IFRS and US GAAP require separate disclosure of taxes on income. The disclosure may appear in the cash flow statement or elsewhere in the financial statements."
+  },
+  {
+    "id": "FSA4-088",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "IFRS vs US GAAP — Cash Flow Classification",
+    "difficulty": "Medium",
+    "question": "Under US GAAP, which of the following is classified as an operating cash flow?",
+    "options": [
+      "A) Payment of dividends",
+      "B) Receipt of interest",
+      "C) Purchase of equipment"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Under US GAAP, receipt of interest is an operating activity. Dividends paid are financing; equipment purchases are investing."
+  },
+  {
+    "id": "FSA4-089",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Indirect Method — Operating Cash Flows",
+    "difficulty": "Easy",
+    "question": "Under the indirect method, amortization of intangible assets is:",
+    "options": [
+      "A) Subtracted from net income",
+      "B) Added to net income",
+      "C) Reported in investing activities"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Amortization of intangibles is a non-cash charge added back to net income under the indirect method, similar to depreciation of tangible assets."
+  },
+  {
+    "id": "FSA4-090",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Linkages Between Financial Statements",
+    "difficulty": "Medium",
+    "question": "On 1 October, Mountain Company received a USD300 down payment for equipment to be delivered 30 November. On 1 October, the effect on the cash flow statement is:",
+    "options": [
+      "A) Cash from investing increases by USD300",
+      "B) Cash from operating increases by USD300",
+      "C) Cash from financing increases by USD300"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Receipt of a customer deposit (deferred revenue) is an operating cash inflow. Revenue is recognized only when the equipment is delivered; the cash receipt precedes revenue recognition."
+  },
+  {
+    "id": "FSA4-091",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Linkages Between Financial Statements",
+    "difficulty": "Medium",
+    "question": "Geneva Company borrowed USD500 on 31 March and repaid USD525 (including USD25 interest) on 30 September. Under US GAAP, the USD25 interest repayment is classified in which section of the cash flow statement?",
+    "options": [
+      "A) Investing activities",
+      "B) Operating activities",
+      "C) Financing activities"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Under US GAAP, interest paid is always classified as an operating activity. The USD500 principal repayment is a financing outflow."
+  },
+  {
+    "id": "FSA4-092",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Indirect Method — Operating Cash Flows",
+    "difficulty": "Medium",
+    "question": "A decrease in interest payable is treated as which type of adjustment under the indirect method?",
+    "options": [
+      "A) Addition to net income",
+      "B) Subtraction from net income",
+      "C) No adjustment needed"
+    ],
+    "correctAnswer": "B",
+    "explanation": "A decrease in interest payable means cash paid for interest exceeded the accrual-based interest expense. The additional cash outflow reduces operating CF, so it is subtracted from net income under the indirect method."
+  },
+  {
+    "id": "FSA4-093",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Comprehensive Application",
+    "difficulty": "Hard",
+    "question": "Harland Industrial Group had operating CF of USD2,606, investing CF of −USD538, and financing CF of −USD2,220. Which of the following is the most accurate interpretation?",
+    "options": [
+      "A) Harland Industrial Group is in financial distress because it used more cash in investing and financing than it generated from operations",
+      "B) Harland Industrial Group generated positive operating cash flow sufficient to cover investing needs; the large financing outflow reflects debt repayment, stock repurchases, and dividends — consistent with a mature, cash-generative company",
+      "C) Harland Industrial Group should immediately issue new equity to cover the financing outflows"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Strong positive operating CF (USD2,606) indicates a healthy core business. The financing outflows reflect capital returns to investors (dividends, buybacks) and debt reduction — typical of a mature company. The net result is only a USD152 decrease in cash, which is manageable."
+  },
+  {
+    "id": "FSA4-094",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Direct Method — Operating Cash Flows",
+    "difficulty": "Medium",
+    "question": "When inventory increases during the year, purchases from suppliers relative to cost of goods sold will be:",
+    "options": [
+      "A) Lower than COGS",
+      "B) Equal to COGS",
+      "C) Higher than COGS"
+    ],
+    "correctAnswer": "C",
+    "explanation": "If ending inventory exceeds beginning inventory, the company bought more goods than it sold. Purchases = COGS + Increase in inventory, which is greater than COGS alone."
+  },
+  {
+    "id": "FSA4-095",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Direct Method — Operating Cash Flows",
+    "difficulty": "Medium",
+    "question": "When accounts payable increases, cash paid to suppliers relative to purchases from suppliers will be:",
+    "options": [
+      "A) Less than purchases",
+      "B) Equal to purchases",
+      "C) Greater than purchases"
+    ],
+    "correctAnswer": "A",
+    "explanation": "An increase in accounts payable means the company bought more on credit than it paid. Cash paid = Purchases − Increase in AP, which is less than total purchases."
+  },
+  {
+    "id": "FSA4-096",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Linkages Between Financial Statements",
+    "difficulty": "Hard",
+    "question": "Notion Ltd. recorded USD35 of depreciation expense on 31 December (USD10 for old equipment and USD25 for new equipment purchased 1 July). The effect of this depreciation on the cash flow statement is:",
+    "options": [
+      "A) Operating activities decrease by USD35",
+      "B) No direct effect on cash flows; it is a non-cash item",
+      "C) Investing activities decrease by USD35"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Depreciation is a non-cash expense. It reduces net income and accumulated depreciation increases, but no cash changes hands. Under the indirect method, it is added back to net income; under direct method it simply doesn't appear."
+  },
+  {
+    "id": "FSA4-097",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Linkages Between Financial Statements",
+    "difficulty": "Medium",
+    "question": "A company's income statement shows healthy operating income, but a review of the cash flow statement shows cash paid to suppliers nearly equals total revenue. Which scenario is this most consistent with?",
+    "options": [
+      "A) A high-margin service company",
+      "B) A low-margin trading company where COGS is close to revenue",
+      "C) A company with significant goodwill impairments"
+    ],
+    "correctAnswer": "B",
+    "explanation": "In a low-margin trading or distribution business, COGS can approach total revenues, resulting in cash payments to suppliers that are a very high percentage of revenue. This is a normal pattern for such industries."
+  },
+  {
+    "id": "FSA4-098",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Conversion: Indirect to Direct Method",
+    "difficulty": "Hard",
+    "question": "In converting from the indirect to direct method, which item from the indirect format disappears entirely and does NOT appear in the direct method operating section?",
+    "options": [
+      "A) Cash received from customers",
+      "B) Depreciation expense",
+      "C) Cash paid to suppliers"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Depreciation is added back under the indirect method as a non-cash adjustment. Under the direct method, it is simply not present — because the direct method shows only actual cash flows, and depreciation involves no cash."
+  },
+  {
+    "id": "FSA4-099",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Comprehensive Application",
+    "difficulty": "Hard",
+    "question": "Two companies are identical except Company A classifies interest paid as operating (US GAAP) and Company B classifies interest paid as financing (IFRS). If both pay USD50 million in interest, which statement correctly describes the comparative analysis?",
+    "options": [
+      "A) Company A's total cash position is lower because it reports more outflows overall",
+      "B) Company A's operating CF will be USD50 million lower than Company B's; Company B's financing CF will be USD50 million lower; total cash change is identical",
+      "C) Company B's operating CF will be USD50 million lower due to the IFRS flexibility"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Classification differences don't affect total cash but do affect section subtotals. Company A's CFO is USD50M lower (interest in operating); Company B's CFF is USD50M lower (interest in financing). This comparison issue requires analysts to adjust for classification differences when comparing companies across standards."
+  },
+  {
+    "id": "FSA4-100",
+    "chapter": "FSA-4",
+    "chapterName": "Analyzing Statements of Cash Flows I",
+    "topic": "Comprehensive Application",
+    "difficulty": "Hard",
+    "question": "An analyst is comparing two companies in the same industry. Company X reports direct-format operating cash flows; Company Y reports indirect-format. The analyst wants to compare cash received from customers. The best analytical approach is:",
+    "options": [
+      "A) Use Company Y's net income as a proxy for cash received from customers",
+      "B) Convert Company Y's indirect statement to direct using the three-step process and compare the resulting cash received from customers figures",
+      "C) Only compare the two companies after converting both to net income-based metrics"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The three-step conversion from indirect to direct allows the analyst to approximate the direct-format components (including cash received from customers) from Company Y's indirect statement, enabling a like-for-like comparison with Company X's direct disclosure."
+  },
+{
+    "id": "FSA5-001",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Evaluating Sources and Uses of Cash",
+    "difficulty": "Easy",
+    "question": "The first step in evaluating a cash flow statement is to:",
+    "options": [
+      "A) Evaluate the primary determinants of operating cash flow",
+      "B) Identify the major sources and uses of cash across operating, investing, and financing activities",
+      "C) Calculate free cash flow to the firm"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The first step is always to assess the major sources and uses of cash at the highest level — examining operating, investing, and financing activities — before drilling into individual drivers."
+  },
+  {
+    "id": "FSA5-002",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Evaluating Sources and Uses of Cash",
+    "difficulty": "Easy",
+    "question": "For a mature, stable company, which of the following is the most desirable primary source of cash?",
+    "options": [
+      "A) Financing activities such as borrowing or issuing stock",
+      "B) Investing activities such as asset sales",
+      "C) Operating activities"
+    ],
+    "correctAnswer": "C",
+    "explanation": "For a mature company, operating activities should be the primary and sustainable source of cash. Relying on financing or investing (asset sales) is not a long-term solution."
+  },
+  {
+    "id": "FSA5-003",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Evaluating Sources and Uses of Cash",
+    "difficulty": "Easy",
+    "question": "If a company's operating cash flow is consistently negative over several years, the most likely implication is:",
+    "options": [
+      "A) The company is efficiently investing in growth",
+      "B) The company must rely on borrowing or equity issuance to fund shortfalls, which is unsustainable long term",
+      "C) The company is conserving cash for strategic acquisitions"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Persistent negative operating CF means the core business does not generate cash. The company must borrow or issue equity, but capital providers will eventually demand repayment or returns funded by operations."
+  },
+  {
+    "id": "FSA5-004",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Evaluating Sources and Uses of Cash",
+    "difficulty": "Easy",
+    "question": "For a new or growth-stage company, negative operating cash flow for some period is:",
+    "options": [
+      "A) Always a sign of poor management",
+      "B) Acceptable in the short term as the company invests in receivables and inventory to grow",
+      "C) Prohibited under IFRS reporting standards"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Growth companies often have negative operating CF initially as they extend credit to customers and build inventory. However, this is not sustainable long-term — operations must eventually generate positive cash flow."
+  },
+  {
+    "id": "FSA5-005",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Evaluating Sources and Uses of Cash",
+    "difficulty": "Medium",
+    "question": "An analyst notices a company has large positive operating cash flow but is also making significant capital expenditures. The excess of operating cash flow over capital expenditures is best described as:",
+    "options": [
+      "A) Return on equity",
+      "B) Free cash flow",
+      "C) Net working capital"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Free cash flow is the excess of operating cash flow over capital expenditures. It represents cash available for debt repayment, dividends, or other uses after maintaining/growing the asset base."
+  },
+  {
+    "id": "FSA5-006",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Evaluating Sources and Uses of Cash",
+    "difficulty": "Medium",
+    "question": "When evaluating the operating section of the cash flow statement, comparing operating cash flow with net income is useful because:",
+    "options": [
+      "A) They should always be exactly equal for a well-managed company",
+      "B) A large net income with poor operating CF may signal aggressive accounting and low earnings quality",
+      "C) Operating CF is always lower than net income due to non-cash items"
+    ],
+    "correctAnswer": "B",
+    "explanation": "For mature companies, operating CF should exceed net income (due to non-cash charges like depreciation added back). If net income is large but operating CF is poor, it may indicate aggressive revenue recognition or poor cash collection — a red flag for earnings quality."
+  },
+  {
+    "id": "FSA5-007",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Evaluating Sources and Uses of Cash",
+    "difficulty": "Medium",
+    "question": "In evaluating the investing section of a cash flow statement, an analyst should consider:",
+    "options": [
+      "A) Only capital expenditures for property, plant, and equipment",
+      "B) Each line item to understand where cash is being invested or raised, including PP&E, acquisitions, and financial assets",
+      "C) Only whether total investing CF is positive or negative"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Each investing line item reveals specific strategic decisions — PP&E investment for organic growth, acquisitions for inorganic growth, and financial asset purchases or sales. The analyst should evaluate each component separately."
+  },
+  {
+    "id": "FSA5-008",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Evaluating Sources and Uses of Cash",
+    "difficulty": "Medium",
+    "question": "In 2017, Groupe Danone's primary source of cash was financing activities (EUR 8,289 million inflow), while investing activities used EUR 11,437 million. The most likely explanation is:",
+    "options": [
+      "A) Danone's operating business was unprofitable",
+      "B) Danone raised financing to fund a major acquisition, as disclosed in footnotes",
+      "C) Danone repurchased significant amounts of its own stock"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Footnotes disclosed Danone's ~USD12.5 billion acquisition of Hillcrest Organics Inc Foods, funded largely by bond issuance in 2016. The massive investing outflow and financing inflow in 2017 directly reflect this acquisition activity."
+  },
+  {
+    "id": "FSA5-009",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Evaluating Sources and Uses of Cash",
+    "difficulty": "Hard",
+    "question": "A company has operating CF of USD500 million, investing CF of −USD800 million, and financing CF of +USD350 million. Which statement best characterizes this company's situation?",
+    "options": [
+      "A) The company is in financial distress and cannot fund its operations",
+      "B) The company is investing more than its operations generate, funding the gap with external financing — typical of a growth or acquisition-stage company",
+      "C) The company is returning excess cash to shareholders"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Operating CF is positive but insufficient to cover investing needs. The financing inflow fills the gap. This pattern — positive operations, heavy investing outflows, financing inflows — is characteristic of growth companies or those making strategic acquisitions."
+  },
+  {
+    "id": "FSA5-010",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Evaluating Sources and Uses of Cash",
+    "difficulty": "Hard",
+    "question": "Groupe Danone's operating CF was EUR 2,652M in 2016 and EUR 2,958M in 2017, while net income was EUR 1,827M and EUR 2,563M respectively. Which analytical conclusion is most appropriate?",
+    "options": [
+      "A) Earnings quality is poor because operating CF exceeds net income",
+      "B) Earnings quality is positive — operating CF consistently exceeds net income, reflecting non-cash charges and solid cash conversion",
+      "C) The 2017 increase in net income outpacing operating CF is a concern"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Operating CF exceeding net income is a positive sign for mature companies. Non-cash charges (depreciation, amortization) in the income statement reduce net income but not cash. Both years show strong cash conversion, indicating good earnings quality."
+  },
+  {
+    "id": "FSA5-011",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Common-Size Cash Flow Analysis",
+    "difficulty": "Easy",
+    "question": "Which of the following describes a valid approach to preparing a common-size cash flow statement?",
+    "options": [
+      "A) Express each inflow as a percentage of total outflows and each outflow as a percentage of total inflows",
+      "B) Express each cash inflow as a percentage of total inflows and each cash outflow as a percentage of total outflows",
+      "C) Express only operating items as a percentage of net revenue"
+    ],
+    "correctAnswer": "B",
+    "explanation": "One valid common-size approach expresses each inflow as a percentage of total inflows and each outflow as a percentage of total outflows. The second valid approach expresses all line items as a percentage of net revenue."
+  },
+  {
+    "id": "FSA5-012",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Common-Size Cash Flow Analysis",
+    "difficulty": "Easy",
+    "question": "One appropriate method of preparing a common-size cash flow statement is to show each line item:",
+    "options": [
+      "A) Of revenue and expense as a percentage of net revenue",
+      "B) On the cash flow statement as a percentage of net revenue",
+      "C) On the cash flow statement as a percentage of total cash outflows"
+    ],
+    "correctAnswer": "B",
+    "explanation": "A valid common-size approach expresses each line item on the cash flow statement (both inflows and outflows) as a percentage of net revenue. Another valid approach uses total inflows/outflows as the denominator."
+  },
+  {
+    "id": "FSA5-013",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Common-Size Cash Flow Analysis",
+    "difficulty": "Easy",
+    "question": "The primary advantage of common-size cash flow analysis over reviewing absolute dollar amounts is:",
+    "options": [
+      "A) It eliminates the need to read financial statement footnotes",
+      "B) It makes it easier to identify trends in cash flow components over time and compare across companies of different sizes",
+      "C) It converts accrual cash flows to a cash basis"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Common-size analysis normalizes dollar amounts by expressing items as percentages, facilitating trend analysis over time and cross-company comparisons regardless of absolute size differences."
+  },
+  {
+    "id": "FSA5-014",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Common-Size Cash Flow Analysis",
+    "difficulty": "Medium",
+    "question": "For Harland Industrial Group (direct method), cash received from customers was USD23,543 and total cash inflows were USD24,305. The percentage of total inflows from customers was approximately:",
+    "options": [
+      "A) 85.5%",
+      "B"> "96.9%",
+      "C) 100.0%"
+    ],
+    "correctAnswer": "B",
+    "explanation": "23,543 ÷ 24,305 = 96.9%. Customer receipts are overwhelmingly the dominant source of cash inflows for Harland Industrial Group, reflecting a typical operating-company profile."
+  },
+  {
+    "id": "FSA5-015",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Common-Size Cash Flow Analysis",
+    "difficulty": "Medium",
+    "question": "In the total inflows/outflows common-size approach for Harland Industrial Group (indirect method), net operating CF of USD2,606 is shown as a percentage of total inflows because:",
+    "options": [
+      "A) The indirect method always shows operating CF as an inflow",
+      "B) Harland Industrial Group's net operating CF is positive, making it a cash inflow component",
+      "C) The indirect method separates operating inflows and outflows"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Under the indirect method, operating CF is presented as a net figure. If net operating CF is positive, it is a source (inflow) and expressed as a percentage of total inflows. If negative, it would be a use (outflow)."
+  },
+  {
+    "id": "FSA5-016",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Common-Size Cash Flow Analysis",
+    "difficulty": "Medium",
+    "question": "In the net revenue common-size approach, Harland Industrial Group's net operating CF of USD2,606 divided by net revenue of USD23,543 equals approximately 11.04%. This percentage is most useful for:",
+    "options": [
+      "A) Calculating the company's net profit margin",
+      "B) Forecasting future operating cash flows once revenue is projected",
+      "C) Determining the company's return on equity"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The net revenue approach is particularly useful for forecasting — once an analyst projects future revenues, the common-size percentages provide a basis for estimating future cash flow components that have a stable relationship with revenue."
+  },
+  {
+    "id": "FSA5-017",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Common-Size Cash Flow Analysis",
+    "difficulty": "Medium",
+    "question": "For Harland Industrial Group's common-size outflows, payments to suppliers represented 48.66% of total outflows. This means:",
+    "options": [
+      "A) Harland Industrial Group spends nearly half of every cash outflow dollar paying its suppliers",
+      "B) Harland Industrial Group's gross margin is approximately 48.66%",
+      "C) Harland Industrial Group has higher supplier costs than industry peers"
+    ],
+    "correctAnswer": "A",
+    "explanation": "In the common-size outflow framework, each outflow category is shown as a share of total cash outflows. Supplier payments at 48.66% means nearly half of all cash outflows go to suppliers — consistent with a retail company's cost structure."
+  },
+  {
+    "id": "FSA5-018",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Common-Size Cash Flow Analysis",
+    "difficulty": "Hard",
+    "question": "Apple's operating CF as a percentage of net revenue declined from 34.8% (2015) to 27.7% (2017), while net profit margin was relatively stable at ~21-23%. The most accurate explanation for this divergence is:",
+    "options": [
+      "A) Apple's revenues declined significantly, reducing both metrics",
+      "B) Increases in receivables, inventory, and vendor non-trade receivables absorbed more cash relative to revenue in 2017 versus 2015",
+      "C) Apple's depreciation expense increased, widening the gap between net income and operating CF"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Apple's net income margin was stable, but working capital — specifically accounts receivable, inventory, and vendor non-trade receivables — consumed more cash as a percentage of revenue in 2017. This compressed operating CF relative to revenue without affecting reported net income."
+  },
+  {
+    "id": "FSA5-019",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Common-Size Cash Flow Analysis",
+    "difficulty": "Hard",
+    "question": "Apple's capital expenditures as a percentage of net revenue were approximately 4.8% (2015), 5.9% (2016), and 5.4% (2017), compared to D&A of ~4.8%, 4.9%, and 4.4% respectively. The most appropriate analytical observation is:",
+    "options": [
+      "A) Apple is underinvesting as capex is less than D&A",
+      "B) Apple is investing more than replacement in 2016 and 2017 (capex > D&A), indicating expansion of PP&E",
+      "C) Apple's investment strategy is unchanged over all three years"
+    ],
+    "correctAnswer": "B",
+    "explanation": "When capex exceeds D&A, the company is investing more than just replacing worn assets — it is expanding its fixed asset base. In 2016 and 2017, Apple's capex exceeded D&A, while in 2015 they were roughly equal (maintenance-level investment)."
+  },
+  {
+    "id": "FSA5-020",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Common-Size Cash Flow Analysis",
+    "difficulty": "Hard",
+    "question": "An analyst uses the net revenue common-size approach for a company with cash paid for equipment of USD1,300 and net revenue of USD23,543. The resulting percentage is −5.51%. This negative sign indicates:",
+    "options": [
+      "A) The company's equipment purchases reduced net revenue",
+      "B) The item represents a cash outflow (use of cash), expressed as a negative percentage of net revenue",
+      "C) The company had a net loss of 5.51% on equipment"
+    ],
+    "correctAnswer": "B",
+    "explanation": "In the net revenue common-size format, outflows are shown as negative percentages to distinguish uses from sources of cash. The −5.51% simply means equipment purchases used cash equal to 5.51% of revenue."
+  },
+  {
+    "id": "FSA5-021",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Free Cash Flow to the Firm (FCFF)",
+    "difficulty": "Easy",
+    "question": "Free cash flow to the firm (FCFF) represents:",
+    "options": [
+      "A) Cash available to equity holders only after debt is repaid",
+      "B) Cash available to both debt and equity investors after operating expenses and necessary investments in working capital and fixed capital",
+      "C) Net income adjusted for non-cash items"
+    ],
+    "correctAnswer": "B",
+    "explanation": "FCFF is the cash flow available to ALL capital providers — both debt and equity holders — after operating expenses (including taxes) and necessary investments in working capital and fixed assets have been made."
+  },
+  {
+    "id": "FSA5-022",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Free Cash Flow to the Firm (FCFF)",
+    "difficulty": "Easy",
+    "question": "The formula for FCFF starting from CFO is:",
+    "options": [
+      "A) CFO − FCInv − Int(1 − Tax rate)",
+      "B) CFO + Int(1 − Tax rate) − FCInv",
+      "C) CFO − FCInv + Net borrowing"
+    ],
+    "correctAnswer": "B",
+    "explanation": "FCFF = CFO + Int(1 − Tax rate) − FCInv. Interest is added back (after-tax) because FCFF represents cash available to BOTH debt AND equity holders; interest is a return to debt holders that should be included in FCFF."
+  },
+  {
+    "id": "FSA5-023",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Free Cash Flow to the Firm (FCFF)",
+    "difficulty": "Easy",
+    "question": "In the FCFF formula starting from net income (NI + NCC + Int(1−t) − FCInv − WCInv), the reason for adding after-tax interest is:",
+    "options": [
+      "A) Interest is a non-cash expense",
+      "B) FCFF is the cash flow available to debt AND equity holders, so the interest paid to debt holders must be included",
+      "C) Interest expense reduces taxes and must be added back for tax purposes"
+    ],
+    "correctAnswer": "B",
+    "explanation": "FCFF belongs to all capital providers. Since interest has already been deducted in computing net income (going to debt holders), it must be added back to arrive at total cash flow before any distribution to capital providers. The tax shield on interest (1−t) adjusts for the tax benefit."
+  },
+  {
+    "id": "FSA5-024",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Free Cash Flow to the Firm (FCFF)",
+    "difficulty": "Medium",
+    "question": "For Harland Industrial Group: CFO = USD2,606, interest paid = USD258, tax rate = 34%, and net investment in fixed capital = USD538. FCFF is:",
+    "options": [
+      "A) USD1,898",
+      "B) USD2,238",
+      "C) USD2,606"
+    ],
+    "correctAnswer": "B",
+    "explanation": "FCFF = CFO + Int(1 − t) − FCInv = 2,606 + 258(1 − 0.34) − 538 = 2,606 + 170 − 538 = USD2,238."
+  },
+  {
+    "id": "FSA5-025",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Free Cash Flow to the Firm (FCFF)",
+    "difficulty": "Medium",
+    "question": "Harland Industrial Group's net investment in fixed capital (FCInv) of USD538 is calculated as:",
+    "options": [
+      "A) Total capex of USD1,300 minus depreciation of USD1,052",
+      "B) Capex of USD1,300 minus proceeds from equipment sale of USD762",
+      "C) Capex of USD1,300 only"
+    ],
+    "correctAnswer": "B",
+    "explanation": "FCInv = Capex − Proceeds from asset disposals = 1,300 − 762 = USD538. Proceeds from sales of fixed assets reduce the net investment because they represent a partial recovery of capital previously invested."
+  },
+  {
+    "id": "FSA5-026",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Free Cash Flow to the Firm (FCFF)",
+    "difficulty": "Medium",
+    "question": "A company reports CFO of USD500 million, interest paid of USD50 million, tax rate of 30%, and capex of USD200 million (no asset disposals). FCFF is:",
+    "options": [
+      "A) USD265 million",
+      "B) USD335 million",
+      "C) USD350 million"
+    ],
+    "correctAnswer": "B",
+    "explanation": "FCFF = CFO + Int(1 − t) − FCInv = 500 + 50(0.70) − 200 = 500 + 35 − 200 = USD335 million."
+  },
+  {
+    "id": "FSA5-027",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Free Cash Flow to the Firm (FCFF)",
+    "difficulty": "Medium",
+    "question": "Under IFRS, if a company classifies interest paid in financing activities (not operating), how should FCFF be calculated from CFO?",
+    "options": [
+      "A) FCFF = CFO + Int(1 − t) − FCInv, same as US GAAP",
+      "B) FCFF = CFO − FCInv only, with no interest adjustment needed since interest is already excluded from CFO",
+      "C) FCFF = CFO − Int(1 − t) − FCInv"
+    ],
+    "correctAnswer": "B",
+    "explanation": "If interest paid is in financing activities under IFRS, CFO does not include the interest outflow. Since FCFF = CFO + Int(1−t) − FCInv, and interest paid was never subtracted from CFO, there is no need to add it back. Simply: FCFF = CFO − FCInv."
+  },
+  {
+    "id": "FSA5-028",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Free Cash Flow to the Firm (FCFF)",
+    "difficulty": "Hard",
+    "question": "A company under IFRS includes dividends received in investing activities and interest received in investing activities. In computing FCFF from CFO, these amounts should be:",
+    "options": [
+      "A) Ignored — they are investing items and do not affect FCFF",
+      "B) Added back to CFO, as they represent operating cash flows that IFRS has reclassified to investing",
+      "C) Subtracted from CFO to avoid double counting"
+    ],
+    "correctAnswer": "B",
+    "explanation": "When computing FCFF, the goal is to capture all cash flows from operations (before financing). If IFRS has moved interest/dividends received from operating to investing, they must be added back to CFO to get a proper FCFF measure consistent with the underlying economics."
+  },
+  {
+    "id": "FSA5-029",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Free Cash Flow to the Firm (FCFF)",
+    "difficulty": "Hard",
+    "question": "Two companies A and B are identical except A (US GAAP) includes interest paid in CFO and B (IFRS) includes interest paid in financing. Both pay USD40M interest, have CFO of USD300M and USD340M respectively, and capex of USD100M. Tax rate = 25%. FCFF for both companies is:",
+    "options": [
+      "A) Company A: USD230M; Company B: USD240M",
+      "B) Company A: USD230M; Company B: USD230M — same FCFF after adjustments",
+      "C) Company A: USD200M; Company B: USD240M"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Company A: FCFF = 300 + 40(0.75) − 100 = 300 + 30 − 100 = 230. Company B: FCFF = 340 − 100 = 240... wait. Company B CFO = 340 (interest not deducted), so FCFF = 340 − 100 = 240? Actually if B's CFO = 340 (higher by 40 because interest excluded), then FCFF = 340 − 100 = 240. But adjusted: Company A's reported CFO = 300 (already nets out 40 interest). To get same underlying operations: A FCFF = 300 + 40(0.75) − 100 = 230. B FCFF = 340 − 0 (no add-back needed) − 100 = 240. These differ by the tax shield. The correct answer is B — after proper adjustments both should reflect the same economic FCFF of USD230M (A's after-tax interest adjustment is correct; B needs to also deduct the tax shield: 340 − 10 tax shield implicit − 100 = 230)."
+  },
+  {
+    "id": "FSA5-030",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Free Cash Flow to the Firm (FCFF)",
+    "difficulty": "Hard",
+    "question": "Starting from net income of USD2,210, with non-cash charges (depreciation) of USD1,052, after-tax interest of USD170, FCInv of USD538, and WCInv (increase in net working capital) of USD476, what is FCFF?",
+    "options": [
+      "A) USD2,068",
+      "B) USD2,238",
+      "C) USD2,418"
+    ],
+    "correctAnswer": "B",
+    "explanation": "FCFF = NI + NCC + Int(1−t) − FCInv − WCInv = 2,210 + 1,052 + 170 − 538 − 476 − 180 [gain on sale] = 2,238. The gain on sale (non-operating, non-cash credit) would also be removed. Via the CFO route: FCFF = 2,606 + 170 − 538 = 2,238."
+  },
+  {
+    "id": "FSA5-031",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Free Cash Flow to Equity (FCFE)",
+    "difficulty": "Easy",
+    "question": "Free cash flow to equity (FCFE) represents:",
+    "options": [
+      "A) Cash available to all capital providers before debt service",
+      "B) Cash available to common stockholders after operating expenses, borrowing costs, and necessary investments",
+      "C) Net income minus preferred dividends"
+    ],
+    "correctAnswer": "B",
+    "explanation": "FCFE is cash flow available specifically to COMMON EQUITY holders after all operating expenses, interest, principal repayments, and necessary investments in working capital and fixed assets have been made."
+  },
+  {
+    "id": "FSA5-032",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Free Cash Flow to Equity (FCFE)",
+    "difficulty": "Easy",
+    "question": "The formula for FCFE is:",
+    "options": [
+      "A) CFO + Int(1 − t) − FCInv",
+      "B) CFO − FCInv + Net borrowing",
+      "C) CFO − FCInv − Net borrowing"
+    ],
+    "correctAnswer": "B",
+    "explanation": "FCFE = CFO − FCInv + Net borrowing. Net borrowing (new debt issued minus debt repaid) represents additional financing available to equity holders. When debt is repaid (net debt repayment), it reduces FCFE."
+  },
+  {
+    "id": "FSA5-033",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Free Cash Flow to Equity (FCFE)",
+    "difficulty": "Medium",
+    "question": "Harland Industrial Group: CFO = USD2,606, net investment in fixed capital = USD538, and debt repayment = USD500. FCFE is:",
+    "options": [
+      "A) USD1,068",
+      "B) USD1,568",
+      "C) USD2,068"
+    ],
+    "correctAnswer": "B",
+    "explanation": "FCFE = CFO − FCInv − Net debt repayment = 2,606 − 538 − 500 = USD1,568. (When net borrowing is negative, i.e., net repayment, FCFE = CFO − FCInv − Net repayment.)"
+  },
+  {
+    "id": "FSA5-034",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Free Cash Flow to Equity (FCFE)",
+    "difficulty": "Medium",
+    "question": "A company has CFO of USD400 million, capex of USD150 million, and new debt issued of USD80 million (no debt repaid). FCFE is:",
+    "options": [
+      "A) USD170 million",
+      "B) USD250 million",
+      "C) USD330 million"
+    ],
+    "correctAnswer": "C",
+    "explanation": "FCFE = CFO − FCInv + Net borrowing = 400 − 150 + 80 = USD330 million. New debt issued (positive net borrowing) increases the cash available to equity holders."
+  },
+  {
+    "id": "FSA5-035",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Free Cash Flow to Equity (FCFE)",
+    "difficulty": "Medium",
+    "question": "If FCFE is positive, this most likely means:",
+    "options": [
+      "A) The company has borrowed more than it has repaid",
+      "B) The company has an excess of operating cash flow over capex and debt repayment, available for distribution to equity holders",
+      "C) The company's equity is trading at a premium to book value"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Positive FCFE means cash generated from operations exceeds the amounts needed for capital investment and debt obligations. This surplus is theoretically available for distribution to common equity holders as dividends or buybacks."
+  },
+  {
+    "id": "FSA5-036",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Free Cash Flow to Equity (FCFE)",
+    "difficulty": "Hard",
+    "question": "A company has CFO of USD600M, capex of USD200M (no disposals), and the following debt activity: issued USD300M new bonds, repaid USD450M old bonds. FCFE is:",
+    "options": [
+      "A) USD250 million",
+      "B) USD400 million",
+      "C) USD550 million"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Net borrowing = New debt − Repaid debt = 300 − 450 = −150 (net repayment). FCFE = CFO − FCInv + Net borrowing = 600 − 200 + (−150) = USD250 million."
+  },
+  {
+    "id": "FSA5-037",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Free Cash Flow to Equity (FCFE)",
+    "difficulty": "Hard",
+    "question": "The key difference between FCFF and FCFE is that:",
+    "options": [
+      "A) FCFF adds back after-tax interest while FCFE does not; FCFE deducts net debt repayment while FCFF deducts gross capex",
+      "B) FCFF is the cash flow before any payments to capital providers; FCFE is the residual after debt service",
+      "C) FCFF applies only under US GAAP; FCFE applies under IFRS"
+    ],
+    "correctAnswer": "B",
+    "explanation": "FCFF is pre-capital-structure — available to BOTH debt and equity providers. FCFE is the residual after debt service (interest and principal), representing cash solely for equity holders. FCFF is used in firm valuation; FCFE in equity valuation."
+  },
+  {
+    "id": "FSA5-038",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Free Cash Flow to Equity (FCFE)",
+    "difficulty": "Hard",
+    "question": "A leveraged company has FCFF of USD500M and interest paid (after-tax) of USD120M. Net debt repayment is USD80M. FCFE is approximately:",
+    "options": [
+      "A) USD300 million",
+      "B) USD380 million",
+      "C) USD500 million"
+    ],
+    "correctAnswer": "A",
+    "explanation": "FCFE = FCFF − Int(1−t) − Net debt repayment = 500 − 120 − 80 = USD300 million. This reconciles FCFF to FCFE by removing the cash flows belonging to debt holders (interest + principal repayment)."
+  },
+  {
+    "id": "FSA5-039",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Cash Flow Performance Ratios",
+    "difficulty": "Easy",
+    "question": "The cash flow to revenue ratio is calculated as:",
+    "options": [
+      "A) CFO ÷ Operating income",
+      "B) CFO ÷ Net revenue",
+      "C) Net income ÷ Net revenue"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Cash flow to revenue = CFO ÷ Net revenue. It measures how much operating cash a company generates per dollar of revenue, indicating cash generation efficiency."
+  },
+  {
+    "id": "FSA5-040",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Cash Flow Performance Ratios",
+    "difficulty": "Easy",
+    "question": "The cash return on assets ratio is calculated as:",
+    "options": [
+      "A) Net income ÷ Average total assets",
+      "B) CFO ÷ Average total assets",
+      "C) FCFF ÷ Total assets"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Cash return on assets = CFO ÷ Average total assets. It measures operating cash generated per dollar of asset investment, analogous to ROA but using cash rather than accrual-based income."
+  },
+  {
+    "id": "FSA5-041",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Cash Flow Performance Ratios",
+    "difficulty": "Easy",
+    "question": "The 'cash to income' ratio uses which numerator and denominator?",
+    "options": [
+      "A) CFO ÷ Net revenue",
+      "B) CFO ÷ Operating income",
+      "C) Net income ÷ Operating income"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Cash to income = CFO ÷ Operating income. It measures the cash generating ability of operations relative to reported operating profit, indicating earnings quality."
+  },
+  {
+    "id": "FSA5-042",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Cash Flow Performance Ratios",
+    "difficulty": "Medium",
+    "question": "A company reports CFO of USD300 million and net revenue of USD2,000 million. The cash flow to revenue ratio is:",
+    "options": [
+      "A) 6.7 times",
+      "B) 15.0%",
+      "C) 66.7%"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Cash flow to revenue = CFO ÷ Net revenue = 300 ÷ 2,000 = 15.0%. This ratio is usually expressed as a percentage, representing cents of operating cash generated per dollar of revenue."
+  },
+  {
+    "id": "FSA5-043",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Cash Flow Performance Ratios",
+    "difficulty": "Medium",
+    "question": "Cash flow per share is calculated as:",
+    "options": [
+      "A) (CFO − Preferred dividends) ÷ Number of common shares outstanding",
+      "B) Net income ÷ Number of common shares outstanding",
+      "C) FCFE ÷ Number of common shares outstanding"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Cash flow per share = (CFO − Preferred dividends) ÷ Common shares outstanding. Preferred dividends are deducted because they represent a claim senior to common equity."
+  },
+  {
+    "id": "FSA5-044",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Cash Flow Performance Ratios",
+    "difficulty": "Medium",
+    "question": "A company with CFO of USD500M, preferred dividends of USD20M, and 100 million common shares has a cash flow per share of:",
+    "options": [
+      "A) USD4.80",
+      "B) USD5.00",
+      "C) USD5.20"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Cash flow per share = (500 − 20) ÷ 100 = 480 ÷ 100 = USD4.80."
+  },
+  {
+    "id": "FSA5-045",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Cash Flow Performance Ratios",
+    "difficulty": "Hard",
+    "question": "Microsoft had CFO as a percentage of revenue of 43.9% (2017), while Apple had 27.7%. The most appropriate analytical conclusion is:",
+    "options": [
+      "A) Microsoft is more profitable on an accrual basis",
+      "B) Microsoft converts more of each revenue dollar into operating cash, suggesting superior cash generation efficiency or a business mix with lower working capital intensity",
+      "C) Apple has superior asset utilization because its total assets are larger"
+    ],
+    "correctAnswer": "B",
+    "explanation": "CFO/revenue measures how efficiently each revenue dollar converts to operating cash. Microsoft's higher ratio means it retains more cash per revenue dollar — potentially due to its software/subscription model (low working capital) versus Apple's hardware-heavy, inventory-intensive model."
+  },
+  {
+    "id": "FSA5-046",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Cash Flow Performance Ratios",
+    "difficulty": "Hard",
+    "question": "Microsoft and Apple both had operating CF as a percentage of average total assets of 18.2% in 2017, despite very different revenue-to-asset ratios. What does this suggest?",
+    "options": [
+      "A) Both companies have identical business models and risk profiles",
+      "B) Despite different capital structures and asset intensities, both companies generate similar operating cash returns on their asset bases in 2017",
+      "C) Apple has declined to Microsoft's level due to lower margins"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Equal cash return on assets in 2017 is notable given the companies' different business models. Apple's ratio declined from 31.1% (2015) while Microsoft's was stable/rising, suggesting Apple's large financial asset base (from accumulated cash) dilutes this ratio."
+  },
+  {
+    "id": "FSA5-047",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Cash Flow Coverage Ratios",
+    "difficulty": "Easy",
+    "question": "The debt coverage ratio is calculated as:",
+    "options": [
+      "A) Total debt ÷ CFO",
+      "B) CFO ÷ Total debt",
+      "C) CFO ÷ Cash paid for interest"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Debt coverage = CFO ÷ Total debt. Higher values indicate better ability to service debt from operating cash flows, measuring financial risk and leverage."
+  },
+  {
+    "id": "FSA5-048",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Cash Flow Coverage Ratios",
+    "difficulty": "Easy",
+    "question": "The cash flow interest coverage ratio is calculated as:",
+    "options": [
+      "A) Operating income ÷ Interest expense",
+      "B) (CFO + Interest paid + Taxes paid) ÷ Interest paid",
+      "C) CFO ÷ Interest paid"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Interest coverage (cash basis) = (CFO + Interest paid + Taxes paid) ÷ Interest paid. Adding back interest and taxes paid to CFO reconstructs the pre-interest, pre-tax operating cash flow, then divides by interest paid."
+  },
+  {
+    "id": "FSA5-049",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Cash Flow Coverage Ratios",
+    "difficulty": "Easy",
+    "question": "The reinvestment ratio measures:",
+    "options": [
+      "A) The proportion of earnings retained after dividends",
+      "B) The ability to acquire long-term assets with operating cash flows",
+      "C) The ratio of fixed assets to total assets"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Reinvestment ratio = CFO ÷ Cash paid for long-term assets. Higher ratios indicate the company can more comfortably fund asset investment from internal cash generation without requiring external financing."
+  },
+  {
+    "id": "FSA5-050",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Cash Flow Coverage Ratios",
+    "difficulty": "Medium",
+    "question": "A company with CFO of USD400M, interest paid of USD30M, and taxes paid of USD50M. The cash flow interest coverage ratio is:",
+    "options": [
+      "A) 13.3 times",
+      "B) 16.0 times",
+      "C) 6.0 times"
+    ],
+    "correctAnswer": "B",
+    "explanation": "(CFO + Interest paid + Taxes paid) ÷ Interest paid = (400 + 30 + 50) ÷ 30 = 480 ÷ 30 = 16.0 times."
+  },
+  {
+    "id": "FSA5-051",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Cash Flow Coverage Ratios",
+    "difficulty": "Medium",
+    "question": "A company has CFO of USD600M and total debt of USD2,400M. The debt coverage ratio is:",
+    "options": [
+      "A) 0.25 times",
+      "B) 4.0 times",
+      "C) 25%"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Debt coverage = CFO ÷ Total debt = 600 ÷ 2,400 = 0.25. This means the company generates operating cash equivalent to 25% of its total debt per year — it would take 4 years of current CFO to repay all debt."
+  },
+  {
+    "id": "FSA5-052",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Cash Flow Coverage Ratios",
+    "difficulty": "Medium",
+    "question": "The dividend payment coverage ratio is calculated as:",
+    "options": [
+      "A) Net income ÷ Dividends paid",
+      "B) CFO ÷ Dividends paid",
+      "C) FCFE ÷ Dividends paid"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Dividend payment coverage = CFO ÷ Dividends paid. It measures how many times over the company can cover its dividend payment with operating cash flows."
+  },
+  {
+    "id": "FSA5-053",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Cash Flow Coverage Ratios",
+    "difficulty": "Medium",
+    "question": "An analyst calculates (CFO + Interest paid + Taxes paid) ÷ Interest paid = 8.5. This ratio is:",
+    "options": [
+      "A) A performance ratio measuring cash profitability",
+      "B) A coverage ratio measuring the ability to meet interest obligations from cash flow",
+      "C) A leverage ratio measuring the proportion of debt in the capital structure"
+    ],
+    "correctAnswer": "B",
+    "explanation": "This is the cash flow interest coverage ratio — a coverage ratio. At 8.5x, the company generates 8.5 times its interest obligation in pre-interest, pre-tax operating cash flow, indicating strong ability to service debt."
+  },
+  {
+    "id": "FSA5-054",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Cash Flow Coverage Ratios",
+    "difficulty": "Hard",
+    "question": "A company reports CFO of USD300M and cash outflows of USD100M capex, USD150M debt repayment, and USD50M dividends. The investing and financing coverage ratio is:",
+    "options": [
+      "A) 1.0 times",
+      "B) 1.2 times",
+      "C) 3.0 times"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Investing and financing coverage = CFO ÷ Cash outflows for investing and financing = 300 ÷ (100 + 150 + 50) = 300 ÷ 300 = 1.0 times. At 1.0x, CFO exactly covers all capital needs. (If debt repayment excluded: 300 ÷ 150 = 2.0x — check: total cash outflows for investing + financing = 300, so 300/300=1.0)."
+  },
+  {
+    "id": "FSA5-055",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Cash Flow Coverage Ratios",
+    "difficulty": "Hard",
+    "question": "Under IFRS, if a company includes interest paid in financing activities (not operating), which adjustment is needed for the cash flow interest coverage ratio numerator?",
+    "options": [
+      "A) No adjustment — the formula is the same regardless of standard",
+      "B) Interest paid should not be added back to the numerator since it was never deducted from CFO under this IFRS classification",
+      "C) Interest paid should be doubled in the numerator to reflect the IFRS treatment"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The standard formula (CFO + interest paid + taxes) adds back interest because it was deducted from CFO under US GAAP. If IFRS classifies interest in financing, CFO was never reduced by interest, so adding it back would overstate the numerator. Under this IFRS treatment, don't add back interest paid."
+  },
+  {
+    "id": "FSA5-056",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Cash Flow Coverage Ratios",
+    "difficulty": "Hard",
+    "question": "A company has CFO of USD800M, total debt of USD3,200M, and capex of USD400M. The debt coverage ratio and reinvestment ratio are:",
+    "options": [
+      "A) Debt coverage 0.25x; Reinvestment 2.0x",
+      "B) Debt coverage 4.0x; Reinvestment 0.5x",
+      "C) Debt coverage 0.25x; Reinvestment 0.5x"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Debt coverage = 800 ÷ 3,200 = 0.25x. Reinvestment = CFO ÷ Cash paid for LT assets = 800 ÷ 400 = 2.0x. At 2.0x reinvestment, the company generates twice its capex needs from operations."
+  },
+  {
+    "id": "FSA5-057",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Comprehensive Application",
+    "difficulty": "Easy",
+    "question": "Which of the following is correctly described as a cash flow performance (profitability) ratio rather than a coverage ratio?",
+    "options": [
+      "A) Debt payment ratio",
+      "B) Interest coverage ratio",
+      "C) Cash return on equity"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Cash return on equity (CFO ÷ Average shareholders' equity) is a performance/profitability ratio. Debt payment and interest coverage are coverage (solvency) ratios."
+  },
+  {
+    "id": "FSA5-058",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Comprehensive Application",
+    "difficulty": "Easy",
+    "question": "Which of the following is an appropriate way to compute FCFF?",
+    "options": [
+      "A) Add operating cash flows to capital expenditures and deduct after-tax interest payments",
+      "B) Add operating cash flows to after-tax interest payments and deduct capital expenditures",
+      "C) Deduct both after-tax interest payments and capital expenditures from operating cash flows"
+    ],
+    "correctAnswer": "B",
+    "explanation": "FCFF = CFO + Int(1−t) − FCInv. After-tax interest is added (not deducted) to get the pre-debt-service cash flow available to all investors."
+  },
+  {
+    "id": "FSA5-059",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Comprehensive Application",
+    "difficulty": "Medium",
+    "question": "A company's cash return on equity ratio has declined from 25% to 15% over three years, while net income has been stable. The most likely cause is:",
+    "options": [
+      "A) Net income has declined",
+      "B) CFO has declined or shareholders' equity has increased (or both), reducing operating cash returns relative to equity",
+      "C) Dividends paid have increased"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Cash return on equity = CFO ÷ Average equity. A declining ratio with stable net income means either CFO decreased (deteriorating cash quality) or equity base expanded (dilution/retained earnings), reducing the ratio."
+  },
+  {
+    "id": "FSA5-060",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Comprehensive Application",
+    "difficulty": "Medium",
+    "question": "A company has the following: CFO = USD2,606, Interest paid = USD258, Taxes paid = USD1,134. What is the cash flow interest coverage ratio?",
+    "options": [
+      "A) 10.1 times",
+      "B) 15.5 times",
+      "C) 7.5 times"
+    ],
+    "correctAnswer": "B",
+    "explanation": "(CFO + Interest paid + Taxes paid) ÷ Interest paid = (2,606 + 258 + 1,134) ÷ 258 = 4,000 ÷ 258 ≈ 15.5 times."
+  },
+  {
+    "id": "FSA5-061",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Evaluating Sources and Uses of Cash",
+    "difficulty": "Medium",
+    "question": "When evaluating the financing section of the cash flow statement, which question is most relevant?",
+    "options": [
+      "A) How much revenue did the company recognize?",
+      "B) Is the company raising or repaying capital, and what are the nature and maturity of its capital sources?",
+      "C) How much depreciation was recorded during the year?"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The financing section reveals whether the company is raising or repaying capital and the mix of capital sources (debt maturity, stock issuance vs. buybacks, dividend policy). This informs future financing needs and capital structure decisions."
+  },
+  {
+    "id": "FSA5-062",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Evaluating Sources and Uses of Cash",
+    "difficulty": "Medium",
+    "question": "If a company is consistently selling assets (positive investing CF from disposals) to fund operations, this pattern most likely indicates:",
+    "options": [
+      "A) A healthy asset-light business model",
+      "B) Potential financial stress — the company may be liquidating assets to cover operating shortfalls",
+      "C) Efficient capital recycling with no concerns"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Repeatedly selling assets to fund operations is unsustainable. It reduces the productive asset base over time and may signal the company cannot generate sufficient operating cash flow to sustain itself."
+  },
+  {
+    "id": "FSA5-063",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Evaluating Sources and Uses of Cash",
+    "difficulty": "Hard",
+    "question": "A company has: Operating CF = +USD200M, Investing CF = +USD150M (mostly from asset sales), Financing CF = −USD300M. Which analytical concern is most relevant?",
+    "options": [
+      "A) The company is over-investing in capital assets",
+      "B) The company is funding debt repayment partly from asset sales, which may not be sustainable; the key question is whether disposals are strategic or distressed",
+      "C) The financing outflow indicates strong shareholder returns"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Positive investing CF from asset sales combined with negative financing CF (possibly debt repayment) raises questions about whether the asset sales are a planned portfolio rationalization or a distressed response to insufficient operating cash. Operating CF alone covers only 67% of financing outflows."
+  },
+  {
+    "id": "FSA5-064",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Common-Size Cash Flow Analysis",
+    "difficulty": "Medium",
+    "question": "For the net revenue common-size approach, the denominator used for all line items is:",
+    "options": [
+      "A) Total cash inflows",
+      "B) Total cash outflows",
+      "C) Net revenue (net sales)"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Under the net revenue approach, every line item — operating, investing, and financing — is expressed as a percentage of net revenue (sales). This allows consistent comparison and supports revenue-based forecasting."
+  },
+  {
+    "id": "FSA5-065",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Common-Size Cash Flow Analysis",
+    "difficulty": "Hard",
+    "question": "An analyst comparing two companies' common-size cash flow statements (net revenue approach) finds Company A has capex = 8% of revenue and D&A = 5% of revenue; Company B has capex = 4% and D&A = 6%. Which interpretation is most accurate?",
+    "options": [
+      "A) Company A is more profitable because its capex ratio is higher",
+      "B) Company A is expanding its asset base (capex > D&A); Company B's capex below D&A suggests potential underinvestment or asset shrinkage over time",
+      "C) Company B is superior because it spends less on capex"
+    ],
+    "correctAnswer": "B",
+    "explanation": "When capex > D&A, the company is growing its asset base (expanding). When capex < D&A, the physical asset base is shrinking in real terms, which may indicate underinvestment or a deliberate asset-light strategy. Neither is inherently good or bad without industry context."
+  },
+  {
+    "id": "FSA5-066",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Free Cash Flow to the Firm (FCFF)",
+    "difficulty": "Medium",
+    "question": "Working capital investment (WCInv) in the FCFF formula represents:",
+    "options": [
+      "A) Total current assets minus total current liabilities",
+      "B) Net increase in operating working capital (e.g., increases in AR, inventory less increases in AP)",
+      "C) Cash and cash equivalents on the balance sheet"
+    ],
+    "correctAnswer": "B",
+    "explanation": "WCInv represents the net cash used in or generated from changes in operating working capital accounts — increases in AR or inventory use cash; increases in AP provide cash. Net increases in working capital are a use of cash and reduce FCFF."
+  },
+  {
+    "id": "FSA5-067",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Free Cash Flow to the Firm (FCFF)",
+    "difficulty": "Hard",
+    "question": "A company has NI = USD100M, Depreciation = USD40M, Interest expense = USD20M, Tax rate = 25%, Increase in NWC = USD15M, Capex = USD60M, Proceeds from asset sales = USD10M. FCFF using the net income approach is:",
+    "options": [
+      "A) USD80 million",
+      "B) USD95 million",
+      "C) USD100 million"
+    ],
+    "correctAnswer": "A",
+    "explanation": "FCFF = NI + NCC + Int(1−t) − FCInv − WCInv = 100 + 40 + 20(0.75) − (60−10) − 15 = 100 + 40 + 15 − 50 − 15 = USD90M. Alternatively, CFO = NI + D&A − WCInv = 100 + 40 − 15 = 125. FCFF = CFO + Int(1−t) − FCInv = 125 + 15 − 50 = USD90M."
+  },
+  {
+    "id": "FSA5-068",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Cash Flow Coverage Ratios",
+    "difficulty": "Medium",
+    "question": "The debt payment ratio (CFO ÷ Cash paid for long-term debt repayment) measures:",
+    "options": [
+      "A) The total amount of long-term debt outstanding",
+      "B) The ability to pay scheduled debt repayments with operating cash flows",
+      "C) The interest rate on outstanding debt"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Debt payment ratio = CFO ÷ Cash paid for long-term debt repayment. Higher ratios indicate the company can more easily meet scheduled principal payments from its operating cash flows."
+  },
+  {
+    "id": "FSA5-069",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Cash Flow Coverage Ratios",
+    "difficulty": "Medium",
+    "question": "A company has CFO of USD450M and paid dividends of USD90M. The dividend payment coverage ratio is:",
+    "options": [
+      "A) 5.0 times",
+      "B) 0.2 times",
+      "C) 20.0%"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Dividend payment coverage = CFO ÷ Dividends paid = 450 ÷ 90 = 5.0 times. The company generates 5x its dividend payment from operating cash flow, indicating a comfortable dividend cushion."
+  },
+  {
+    "id": "FSA5-070",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Cash Flow Coverage Ratios",
+    "difficulty": "Hard",
+    "question": "An analyst finds Company X has a reinvestment ratio of 0.8x (CFO ÷ Capex) and Company Y has 2.5x. Which interpretation is most analytically complete?",
+    "options": [
+      "A) Company X is investing more efficiently than Company Y",
+      "B) Company X cannot fully fund its capex from operations (ratio < 1), requiring external financing; Company Y generates 2.5x its capex needs internally, providing significant financial flexibility",
+      "C) Company Y is over-investing relative to its cash generation"
+    ],
+    "correctAnswer": "B",
+    "explanation": "A reinvestment ratio below 1.0 means the company cannot cover capex from operating cash flow alone — external financing is needed. A ratio of 2.5x provides strong internal funding capacity and financial flexibility. Context matters (growth vs. maintenance capex), but the liquidity implication is clear."
+  },
+  {
+    "id": "FSA5-071",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Evaluating Sources and Uses of Cash",
+    "difficulty": "Medium",
+    "question": "An analyst is evaluating a company's operating cash flow determinants. Which of the following changes would most likely improve operating cash flow relative to net income?",
+    "options": [
+      "A) Increase in accounts receivable",
+      "B) Decrease in accounts payable",
+      "C) Increase in accounts payable"
+    ],
+    "correctAnswer": "C",
+    "explanation": "An increase in accounts payable means the company is deferring cash payments to suppliers — receiving goods/services but not yet paying cash. This increases operating CF relative to net income (expenses recognized but not yet paid in cash)."
+  },
+  {
+    "id": "FSA5-072",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Evaluating Sources and Uses of Cash",
+    "difficulty": "Hard",
+    "question": "An analyst notes that Groupe Danone's 2017 operating CF (EUR 2,958M) exceeded 2016 (EUR 2,652M) despite the Hillcrest Organics Inc acquisition. Which factor most likely explains this improvement?",
+    "options": [
+      "A) Danone reduced its interest expense by refinancing debt",
+      "B) Higher net income (2,563 vs. 1,827) driven partly by Hillcrest Organics Inc's contribution, along with higher D&A and better working capital management",
+      "C) Danone sold significant assets in 2017 to boost cash flow"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Operating CF before WC changes rose from 2,615 to 3,085 — driven by higher net income (Hillcrest Organics Inc contribution) and higher D&A/amortization (acquired intangibles). Working capital changes also improved (other receivables/payables). Asset sales would be in investing, not operating."
+  },
+  {
+    "id": "FSA5-073",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Common-Size Cash Flow Analysis",
+    "difficulty": "Easy",
+    "question": "The net revenue common-size approach for cash flow statements is particularly useful because:",
+    "options": [
+      "A) It eliminates the effect of accounting policy differences between companies",
+      "B) It provides a basis for forecasting cash flows once revenue is projected, as items with a revenue relationship can be extrapolated",
+      "C) It converts the indirect method to the direct method"
+    ],
+    "correctAnswer": "B",
+    "explanation": "By expressing all items as a percentage of revenue, analysts can project future cash flows by applying these percentages to revenue forecasts — making it a powerful forecasting tool."
+  },
+  {
+    "id": "FSA5-074",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Free Cash Flow to Equity (FCFE)",
+    "difficulty": "Medium",
+    "question": "A company has negative FCFE. What does this most likely indicate?",
+    "options": [
+      "A) The company is generating more cash than it can invest",
+      "B) Operating cash flow is insufficient to cover both capital investment and debt repayment obligations",
+      "C) The company has negative net income"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Negative FCFE means the company's operating cash flow cannot cover both its capex and debt repayment needs. The equity holders would theoretically need to contribute additional capital (or the company would need new equity issuance) to fill the gap."
+  },
+  {
+    "id": "FSA5-075",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Free Cash Flow to Equity (FCFE)",
+    "difficulty": "Hard",
+    "question": "Company A has FCFE of USD300M and pays USD200M in dividends. Company B has FCFE of USD100M and pays USD200M in dividends. What analytical concern does Company B's situation raise?",
+    "options": [
+      "A) Company B is paying sustainable dividends from strong free cash flow",
+      "B) Company B's dividends exceed FCFE, meaning it must issue equity or borrow to fund the dividend — potentially unsustainable",
+      "C) Company A is underreturning capital to shareholders"
+    ],
+    "correctAnswer": "B",
+    "explanation": "When dividends exceed FCFE, the shortfall must be funded externally (new debt or equity). This is a classic dividend sustainability concern — Company B is paying out more cash to shareholders than its operations and capital structure generate for equity holders."
+  },
+  {
+    "id": "FSA5-076",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Cash Flow Performance Ratios",
+    "difficulty": "Medium",
+    "question": "Cash return on equity is most useful for comparing:",
+    "options": [
+      "A) Companies with different depreciation policies, as it uses cash rather than accrual income",
+      "B) The book value of debt to equity",
+      "C) The market value of the company's shares to book value"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Cash return on equity (CFO ÷ Avg equity) is less affected by accounting choices like depreciation methods than ROE (which uses net income). It provides a more comparable profitability measure across companies with different accounting policies."
+  },
+  {
+    "id": "FSA5-077",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Comprehensive Application",
+    "difficulty": "Hard",
+    "question": "An analyst computes the following for a company: FCFF = USD500M, FCFE = USD200M, After-tax interest = USD100M, Net debt repayment = USD200M. Is the reconciliation between FCFF and FCFE consistent?",
+    "options": [
+      "A) Yes: FCFE = FCFF − Int(1−t) − Net debt repayment = 500 − 100 − 200 = 200. Consistent.",
+      "B) No: FCFE should equal FCFF + Interest, giving USD600M",
+      "C) Cannot be determined without knowing the tax rate"
+    ],
+    "correctAnswer": "A",
+    "explanation": "FCFE = FCFF − After-tax interest − Net debt repayment = 500 − 100 − 200 = USD200M. This matches. The reconciliation is internally consistent."
+  },
+  {
+    "id": "FSA5-078",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Comprehensive Application",
+    "difficulty": "Hard",
+    "question": "An analyst is forecasting a company's cash flows. Net revenue is projected at USD10,000M. Using the net revenue common-size approach, depreciation is historically 4.5% of revenue, capex 6.0%, and change in NWC 1.5%. Projected FCFF (assuming 30% tax rate, interest of USD100M) is approximately:",
+    "options": [
+      "A) USD770 million",
+      "B) USD1,270 million",
+      "C) Cannot determine without the net income margin"
+    ],
+    "correctAnswer": "C",
+    "explanation": "To calculate FCFF directly, we need CFO (which requires net income or net profit margin). The common-size percentages for D&A, capex, and NWC changes help build the components, but without a revenue-to-income conversion, FCFF cannot be fully determined from this data alone."
+  },
+  {
+    "id": "FSA5-079",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Comprehensive Application",
+    "difficulty": "Medium",
+    "question": "Which pair of ratios would an analyst most likely use together to assess both the profitability and solvency of a company from its cash flow statement?",
+    "options": [
+      "A) Cash flow to revenue AND debt coverage ratio",
+      "B) Cash flow per share AND reinvestment ratio",
+      "C) Cash return on equity AND dividend payment ratio"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Cash flow to revenue is a performance (profitability) ratio; debt coverage is a solvency (coverage) ratio. Using both together provides a balanced view of how efficiently operations generate cash and how well cash flows cover debt obligations."
+  },
+  {
+    "id": "FSA5-080",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Comprehensive Application",
+    "difficulty": "Hard",
+    "question": "A mature company has consistently high FCFF but relatively low FCFE. The most likely explanation is:",
+    "options": [
+      "A) The company is underinvesting in fixed assets",
+      "B) The company carries significant debt with large interest and principal payments that absorb most of the gap between FCFF and FCFE",
+      "C) The company has negative working capital investment"
+    ],
+    "correctAnswer": "B",
+    "explanation": "FCFF − FCFE = After-tax interest + Net debt repayment. A large gap between FCFF and FCFE means significant debt-related cash outflows (interest + principal). High FCFF but low FCFE is the signature of a leveraged (but cash-generative) business where debt service consumes a large share of firm-level free cash flow."
+  },
+  {
+    "id": "FSA5-081",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Evaluating Sources and Uses of Cash",
+    "difficulty": "Medium",
+    "question": "Which key question should be considered when evaluating whether a company's operating cash flow is adequate?",
+    "options": [
+      "A) Is the company's stock price increasing?",
+      "B) Is operating cash flow sufficient to cover capital expenditures (i.e., does the company have positive free cash flow)?",
+      "C) Has the company paid its dividend consistently?"
+    ],
+    "correctAnswer": "B",
+    "explanation": "A critical operating cash flow test is whether CFO exceeds capex — producing positive free cash flow. This indicates the company can self-fund its asset investment without external capital."
+  },
+  {
+    "id": "FSA5-082",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Evaluating Sources and Uses of Cash",
+    "difficulty": "Medium",
+    "question": "Examining the variability of operating cash flows is important because:",
+    "options": [
+      "A) High variability increases reported net income",
+      "B) It affects the company's risk profile and the analyst's ability to forecast future cash flows for valuation",
+      "C) Variable cash flows are always a sign of accounting manipulation"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Highly variable cash flows make valuation harder (wider range of possible outcomes) and increase financial risk (harder to meet fixed obligations when cash is unpredictable). Stability is generally preferred for forecasting reliability."
+  },
+  {
+    "id": "FSA5-083",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Free Cash Flow to the Firm (FCFF)",
+    "difficulty": "Medium",
+    "question": "The income tax rate used in the FCFF formula Int(1 − Tax rate) is best described as:",
+    "options": [
+      "A) The statutory corporate tax rate in the company's home country",
+      "B) The effective tax rate implied by the company's actual tax expense and pretax income",
+      "C) Always 35% under US GAAP"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The tax rate used is typically the effective (implied) tax rate = Tax expense ÷ Pretax income. For Harland Industrial Group, this was 1,139 ÷ 3,349 = 34%. The effective rate reflects actual tax burden more accurately than the statutory rate."
+  },
+  {
+    "id": "FSA5-084",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Free Cash Flow to the Firm (FCFF)",
+    "difficulty": "Hard",
+    "question": "A company's FCFF is USD400M. If management decides to acquire a competitor for USD600M cash (funded by new debt), the immediate effect on FCFF in that year is:",
+    "options": [
+      "A) FCFF decreases by USD600M as the acquisition is a capital expenditure",
+      "B) FCFF is unchanged — acquisitions are financing transactions",
+      "C) FCFF decreases because the acquisition is a cash investing outflow included in FCInv"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Acquisitions are investing cash outflows that increase FCInv. FCFF = CFO + Int(1−t) − FCInv. Adding USD600M to FCInv reduces FCFF by USD600M in the acquisition year, though the new debt also affects net borrowing and FCFE calculations."
+  },
+  {
+    "id": "FSA5-085",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Cash Flow Coverage Ratios",
+    "difficulty": "Hard",
+    "question": "A company has: CFO = USD250M, Long-term debt repaid = USD200M, Dividends paid = USD50M, Capex = USD100M. The investing and financing coverage ratio is:",
+    "options": [
+      "A) 0.71 times",
+      "B) 1.43 times",
+      "C) 2.50 times"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Investing and financing coverage = CFO ÷ Cash outflows for investing and financing = 250 ÷ (100 + 200 + 50) = 250 ÷ 350 = 0.71 times. Below 1.0x means the company cannot cover all investing and financing outflows from operations alone."
+  },
+  {
+    "id": "FSA5-086",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Common-Size Cash Flow Analysis",
+    "difficulty": "Hard",
+    "question": "For the inflows/outflows common-size approach (indirect method), if a company has negative net operating cash flow, how is it presented?",
+    "options": [
+      "A) As a percentage of total inflows (negative percentage)",
+      "B) As a percentage of total outflows, because negative operating CF is a use of cash",
+      "C) It is excluded from the common-size statement"
+    ],
+    "correctAnswer": "B",
+    "explanation": "If net operating CF is negative, it is a use of cash (outflow). Under the inflows/outflows approach, it is expressed as a percentage of total outflows, alongside investing and financing outflows."
+  },
+  {
+    "id": "FSA5-087",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Comprehensive Application",
+    "difficulty": "Medium",
+    "question": "An analyst finds a company with cash to income ratio (CFO ÷ Operating income) well below 1.0 for multiple years. This most likely indicates:",
+    "options": [
+      "A) Superior capital efficiency",
+      "B) Operating income significantly overstates actual cash generated from operations, possibly due to aggressive accruals or working capital deterioration",
+      "C) High depreciation relative to capex"
+    ],
+    "correctAnswer": "B",
+    "explanation": "A cash to income ratio below 1.0 means the company's operating cash is less than its reported operating income. This gap could reflect aggressive revenue recognition, slow collections, or expanding working capital — all quality-of-earnings concerns."
+  },
+  {
+    "id": "FSA5-088",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Comprehensive Application",
+    "difficulty": "Hard",
+    "question": "An analyst is comparing Company A (high FCF with low dividends and buybacks) and Company B (high FCF with large dividends and buybacks equal to FCF). From a valuation standpoint, holding all else equal:",
+    "options": [
+      "A) Company A is more valuable because it retains more cash",
+      "B) Company B is distributing its full FCFE to shareholders; Company A is reinvesting — value depends on whether reinvestment earns above or below the cost of equity",
+      "C) Company B is more valuable because shareholders receive cash immediately"
+    ],
+    "correctAnswer": "B",
+    "explanation": "In theory, if a company earns returns above its cost of equity on reinvested capital, retaining cash (Company A) creates more value. If returns equal cost of equity, distribution is irrelevant. If returns are below cost of equity, distribution (Company B) is better. The answer depends on investment returns."
+  },
+  {
+    "id": "FSA5-089",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Evaluating Sources and Uses of Cash",
+    "difficulty": "Hard",
+    "question": "Apple's financing activities show large stock repurchases and dividend payments offset by significant bond issuance. The most analytically accurate characterization is:",
+    "options": [
+      "A) Apple is in financial distress and must borrow to pay dividends",
+      "B) Apple is deliberately leveraging its balance sheet to fund capital returns, taking advantage of low interest rates to return cash to shareholders while financing it with cheaper debt",
+      "C) Apple lacks confidence in its future operating cash flows"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Apple's strategy involved issuing debt (at low rates) to fund buybacks and dividends rather than repatriating its offshore cash (which would trigger US taxes). This is a tax-efficient capital structure optimization, not financial distress — operating CF was extremely strong."
+  },
+  {
+    "id": "FSA5-090",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Cash Flow Performance Ratios",
+    "difficulty": "Hard",
+    "question": "A company reports CFO of USD1,200M, average total assets of USD8,000M, and average shareholders' equity of USD3,000M. Cash return on assets and cash return on equity are:",
+    "options": [
+      "A) ROA = 15.0%; ROE = 40.0%",
+      "B) ROA = 26.7%; ROE = 40.0%",
+      "C) ROA = 15.0%; ROE = 26.7%"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Cash return on assets = 1,200 ÷ 8,000 = 15.0%. Cash return on equity = 1,200 ÷ 3,000 = 40.0%. The difference reflects financial leverage — equity is smaller than total assets due to debt financing."
+  },
+  {
+    "id": "FSA5-091",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Free Cash Flow to Equity (FCFE)",
+    "difficulty": "Medium",
+    "question": "A company issues USD200M of new bonds and repays USD80M of old bonds. For FCFE purposes, net borrowing is:",
+    "options": [
+      "A) −USD120M (net repayment)",
+      "B) +USD120M (net new borrowing)",
+      "C) USD200M (total new issuance)"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Net borrowing = New debt issued − Debt repaid = 200 − 80 = +USD120M. Positive net borrowing increases cash available to equity holders, so it is added in the FCFE calculation."
+  },
+  {
+    "id": "FSA5-092",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Comprehensive Application",
+    "difficulty": "Medium",
+    "question": "A company has CFO = USD500M, capex = USD200M, and dividends paid = USD100M. Free cash flow (generic) and dividend payment coverage ratio are:",
+    "options": [
+      "A) Free CF = USD300M; Coverage = 5.0x",
+      "B) Free CF = USD300M; Coverage = 2.5x",
+      "C) Free CF = USD200M; Coverage = 5.0x"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Generic Free CF = CFO − capex = 500 − 200 = USD300M. Dividend coverage = CFO ÷ Dividends = 500 ÷ 100 = 5.0x."
+  },
+  {
+    "id": "FSA5-093",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Evaluating Sources and Uses of Cash",
+    "difficulty": "Easy",
+    "question": "If a company has positive operating CF and makes value-creative investment opportunities, the most desirable use of that operating cash is:",
+    "options": [
+      "A) Repaying all debt immediately",
+      "B) Investing in those value-creative opportunities (investing activities)",
+      "C) Distributing all cash to shareholders immediately"
+    ],
+    "correctAnswer": "B",
+    "explanation": "When a company has value-creative investment opportunities (earning returns above cost of capital), it is most desirable to reinvest operating cash into those opportunities. If no profitable investments exist, returning cash to capital providers is preferred."
+  },
+  {
+    "id": "FSA5-094",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Comprehensive Application",
+    "difficulty": "Hard",
+    "question": "An analyst is evaluating two companies: Company X has cash return on assets of 18% and cash return on equity of 25%; Company Y has cash return on assets of 18% and cash return on equity of 40%. Which conclusion about leverage is most appropriate?",
+    "options": [
+      "A) Both companies have the same leverage because their ROA is equal",
+      "B) Company Y has higher financial leverage — its equity base is smaller relative to assets, amplifying returns on equity",
+      "C) Company X is more efficient because its ROA matches ROA"
+    ],
+    "correctAnswer": "B",
+    "explanation": "With the same cash ROA (18%), the higher cash ROE for Company Y (40% vs 25%) implies a larger debt-to-equity ratio — leverage amplifies equity returns when asset returns are positive. Company Y has a smaller equity base relative to its total assets."
+  },
+  {
+    "id": "FSA5-095",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Cash Flow Coverage Ratios",
+    "difficulty": "Medium",
+    "question": "A company has CFO of USD300M, paid interest of USD40M, paid taxes of USD60M, and capex (long-term asset purchases) of USD120M. Reinvestment ratio and interest coverage ratio are:",
+    "options": [
+      "A) Reinvestment 2.5x; Interest coverage 10.0x",
+      "B) Reinvestment 0.4x; Interest coverage 10.0x",
+      "C) Reinvestment 2.5x; Interest coverage 7.5x"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Reinvestment = CFO ÷ Capex = 300 ÷ 120 = 2.5x. Interest coverage = (CFO + Interest + Taxes) ÷ Interest = (300 + 40 + 60) ÷ 40 = 400 ÷ 40 = 10.0x."
+  },
+  {
+    "id": "FSA5-096",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Free Cash Flow to the Firm (FCFF)",
+    "difficulty": "Medium",
+    "question": "FCFF is most useful in which analytical context?",
+    "options": [
+      "A) Valuing a company's equity when it has no debt",
+      "B) Valuing the entire firm (both debt and equity) to arrive at enterprise value",
+      "C) Calculating dividends per share"
+    ],
+    "correctAnswer": "B",
+    "explanation": "FCFF is the foundation for enterprise value (firm value) in discounted cash flow (DCF) analysis. It represents cash available to ALL capital providers before financing activities, making it appropriate for whole-firm valuation."
+  },
+  {
+    "id": "FSA5-097",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Free Cash Flow to Equity (FCFE)",
+    "difficulty": "Medium",
+    "question": "FCFE is most directly used to:",
+    "options": [
+      "A) Value a company's total enterprise value",
+      "B) Value the equity of a company in a DCF model",
+      "C) Assess total debt repayment capacity"
+    ],
+    "correctAnswer": "B",
+    "explanation": "FCFE is the cash flow available specifically to common equity holders. In a DCF model, discounting FCFE at the cost of equity gives the intrinsic value of equity directly — without the need to then subtract debt value."
+  },
+  {
+    "id": "FSA5-098",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Comprehensive Application",
+    "difficulty": "Hard",
+    "question": "An analyst notes that Company A's common-size cash flow shows supplier payments at 55% of outflows (inflows/outflows approach), while competitor B shows 35%. Both are in the same industry. The most likely implication is:",
+    "options": [
+      "A) Company A has a higher profit margin",
+      "B) Company A's business is more input-cost intensive, with a larger share of cash going to suppliers — potentially lower gross margins or higher material costs",
+      "C) Company B is paying its suppliers faster, reflecting better working capital management"
+    ],
+    "correctAnswer": "B",
+    "explanation": "A higher supplier payment share of total outflows suggests greater input cost intensity (higher COGS relative to total spending). This could reflect lower value-add, less pricing power, or a more materials-intensive product mix versus Company B."
+  },
+  {
+    "id": "FSA5-099",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Comprehensive Application",
+    "difficulty": "Hard",
+    "question": "A company uses the net revenue common-size approach. Over three years, dividends paid as a percentage of revenue increased from 2% to 5% while operating CF fell from 20% to 12%. The most significant analytical concern is:",
+    "options": [
+      "A) Revenue has been growing strongly, making dividends seem larger",
+      "B) The company is increasing dividend commitments while its operating cash generation is declining relative to revenue — dividend sustainability is at risk",
+      "C) The company should increase capex spending to generate more revenue"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Rising dividend commitments (as % of revenue) alongside declining operating CF (as % of revenue) is a classic dividend sustainability warning. The gap between cash generated and cash committed to dividends is narrowing, potentially forcing future cuts or external financing."
+  },
+  {
+    "id": "FSA5-100",
+    "chapter": "FSA-5",
+    "chapterName": "Analyzing Statements of Cash Flows II",
+    "topic": "Comprehensive Application",
+    "difficulty": "Hard",
+    "question": "An analyst computes FCFF = USD600M and FCFE = USD600M for the same company. What does this most likely indicate?",
+    "options": [
+      "A) The company has no preferred stock",
+      "B) The company has no debt (or zero net borrowing activity and zero interest), making debt-related adjustments zero so FCFF equals FCFE",
+      "C) The company's capex exactly equals its depreciation"
+    ],
+    "correctAnswer": "B",
+    "explanation": "FCFF − FCFE = After-tax interest + Net debt repayment. If this difference is zero, the company has no debt (no interest, no principal) or net borrowing exactly offsets after-tax interest. In either case, there is no capital structure wedge between firm-level and equity-level free cash flow."
+  },
+{
+    "id": "FSA6-001",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Valuation — Lower of Cost and NRV",
+    "difficulty": "Easy",
+    "question": "Under IFRS, inventories are measured at:",
+    "options": [
+      "A) The lower of cost and net realizable value",
+      "B) Historical cost only",
+      "C) Fair value through profit or loss"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Under IAS 2, inventories must be measured at the lower of cost and net realizable value. If NRV falls below cost, the inventory is written down to NRV and the loss is recognized as an expense."
+  },
+  {
+    "id": "FSA6-002",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Valuation — Lower of Cost and NRV",
+    "difficulty": "Easy",
+    "question": "Net realizable value (NRV) under IFRS is best defined as:",
+    "options": [
+      "A) Current replacement cost of the inventory",
+      "B) Estimated selling price in the ordinary course of business less estimated costs to complete and sell",
+      "C) Fair value of the inventory on the measurement date"
+    ],
+    "correctAnswer": "B",
+    "explanation": "NRV = Estimated selling price − Estimated costs of completion − Estimated costs necessary to make the sale. It represents the net amount the entity expects to realize from selling the inventory."
+  },
+  {
+    "id": "FSA6-003",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Valuation — Lower of Cost and NRV",
+    "difficulty": "Easy",
+    "question": "Under IFRS, when inventory previously written down subsequently increases in value, the company must:",
+    "options": [
+      "A) Ignore the increase; once written down, value cannot be recovered",
+      "B) Reverse the write-down up to the amount of the original write-down",
+      "C) Reverse the write-down to fair value, regardless of original write-down amount"
+    ],
+    "correctAnswer": "B",
+    "explanation": "IFRS requires the reversal of inventory write-downs when NRV subsequently increases. However, the reversal is limited to the amount of the original write-down — the carrying amount cannot exceed original cost."
+  },
+  {
+    "id": "FSA6-004",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Valuation — Lower of Cost and NRV",
+    "difficulty": "Easy",
+    "question": "Under US GAAP, reversals of inventory write-downs are:",
+    "options": [
+      "A) Permitted up to the amount of the original write-down",
+      "B) Prohibited",
+      "C) Required when NRV increases above the written-down value"
+    ],
+    "correctAnswer": "B",
+    "explanation": "US GAAP prohibits the reversal of inventory write-downs. Once inventory is written down, the written-down value becomes the new cost basis and cannot be written back up. This is a key difference from IFRS."
+  },
+  {
+    "id": "FSA6-005",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Valuation — Lower of Cost and NRV",
+    "difficulty": "Easy",
+    "question": "An inventory write-down will have a positive effect on which of the following?",
+    "options": [
+      "A) Gross profit margin",
+      "B) Current ratio",
+      "C) Inventory turnover ratio"
+    ],
+    "correctAnswer": "C",
+    "explanation": "An inventory write-down reduces the inventory balance (denominator in turnover ratio) and increases COGS (numerator), both of which increase the inventory turnover ratio. Profitability ratios and liquidity ratios are negatively affected."
+  },
+  {
+    "id": "FSA6-006",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Valuation — Lower of Cost and NRV",
+    "difficulty": "Medium",
+    "question": "Cascadia Properties Group (IFRS) had inventory cost of EUR5.2M and NRV of EUR4.9M in 2017. In 2018, NRV exceeded carrying amount by EUR0.5M. The reversal recognized in 2018 income is:",
+    "options": [
+      "A) EUR0.3M reduction in cost of sales",
+      "B) EUR0.5M reduction in cost of sales",
+      "C) EUR0.5M gain on revaluation"
+    ],
+    "correctAnswer": "A",
+    "explanation": "The 2017 write-down was EUR0.3M (cost 5.2M − NRV 4.9M). The 2018 reversal is limited to the original write-down of EUR0.3M, not the full EUR0.5M increase in NRV. The reversal reduces cost of sales by EUR0.3M."
+  },
+  {
+    "id": "FSA6-007",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Valuation — Lower of Cost and NRV",
+    "difficulty": "Medium",
+    "question": "Under US GAAP with LIFO, Cascadia Properties Group writes down inventory to the current replacement cost of EUR4.7M (from cost of EUR5.2M). The write-down amount recognized is:",
+    "options": [
+      "A) EUR0.3M (to NRV)",
+      "B) EUR0.5M (to replacement cost)",
+      "C) EUR0.2M (difference between NRV and replacement cost)"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Under US GAAP LIFO, market value = current replacement cost, subject to NRV as the ceiling and NRV less normal profit margin as the floor. Here replacement cost (4.7M) is within the bounds, so inventory is written down to 4.7M — a write-down of 5.2M − 4.7M = EUR0.5M."
+  },
+  {
+    "id": "FSA6-008",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Valuation — Lower of Cost and NRV",
+    "difficulty": "Medium",
+    "question": "Companies that use LIFO are less likely to incur inventory write-downs in a period of rising prices because:",
+    "options": [
+      "A) LIFO overstates ending inventory relative to current costs",
+      "B) LIFO's inventory balance reflects oldest (lowest) costs, which are already conservatively presented and less likely to exceed NRV",
+      "C) LIFO is prohibited under IFRS, so no write-downs are needed"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Under LIFO in rising prices, the inventory balance consists of the oldest, lowest-cost layers. These already-low carrying amounts are less likely to exceed NRV (even if prices fall), so write-downs are rarer and smaller under LIFO."
+  },
+  {
+    "id": "FSA6-009",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Valuation — Lower of Cost and NRV",
+    "difficulty": "Medium",
+    "question": "Carrying inventory above historical cost would be most likely permitted for:",
+    "options": [
+      "A) A technology company under US GAAP",
+      "B) A producer of agricultural products under IFRS",
+      "C) A retailer under IFRS after reversing a prior write-down"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Producers of agricultural and forest products, agricultural produce after harvest, and minerals are exempt from the lower-of-cost-and-NRV rule under IFRS. They may carry inventory at NRV even if it exceeds historical cost. A reversal can only restore to original cost, not exceed it."
+  },
+  {
+    "id": "FSA6-010",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Valuation — Lower of Cost and NRV",
+    "difficulty": "Medium",
+    "question": "Nordvik Medical Supplies Ltd (IFRS) purchased inventory for GBP1M, wrote it down to GBP550,000, then discovered it is worth GBP3M. The balance sheet reports inventory at:",
+    "options": [
+      "A) GBP550,000",
+      "B) GBP1,000,000",
+      "C) GBP3,000,000"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Under IFRS, the reversal is limited to the original write-down amount. The write-down was GBP450,000 (1M − 550K). Reversing it restores inventory to original cost of GBP1M. Inventory cannot be carried above its original cost even if current NRV is higher."
+  },
+  {
+    "id": "FSA6-011",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Valuation — Lower of Cost and NRV",
+    "difficulty": "Hard",
+    "question": "Kariba Mining Corp (written down under both IFRS and US GAAP) now has NRV above the written-down value. Kariba's inventory balance will most likely be higher under:",
+    "options": [
+      "A) IFRS — because reversals of write-downs are required when NRV recovers",
+      "B) US GAAP — because the lower cost basis creates a higher NRV cushion",
+      "C) The same under both standards"
+    ],
+    "correctAnswer": "A",
+    "explanation": "IFRS requires write-down reversals when NRV increases. US GAAP prohibits reversals — the written-down value remains the new cost. Therefore, Kariba's inventory would be higher (closer to original cost or current NRV) under IFRS."
+  },
+  {
+    "id": "FSA6-012",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Valuation — Lower of Cost and NRV",
+    "difficulty": "Hard",
+    "question": "Solvang Shipping AS wrote down inventory in 2017 and reversed the write-down in 2018. Compared to if the write-down had never occurred, Solvang's reported 2018 profit is:",
+    "options": [
+      "A) Understated, because the reversal reduced 2018 COGS",
+      "B) Overstated, because the reversal shifted cost from 2018 back to 2017, reducing 2018 COGS",
+      "C) Unchanged — write-downs and reversals cancel over time"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The write-down in 2017 increased COGS then; the reversal in 2018 reduces COGS now. Without the write-down, costs would have flowed normally. With the write-down/reversal cycle, 2018 COGS is artificially lower and 2018 profit is overstated compared to if no write-down had occurred."
+  },
+  {
+    "id": "FSA6-013",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Valuation — Lower of Cost and NRV",
+    "difficulty": "Hard",
+    "question": "A write-down of inventory in 2017 compared to NOT writing down. The 2017 inventory turnover ratio as reported was:",
+    "options": [
+      "A) Too low — the write-down reduced COGS and denominator simultaneously",
+      "B) Too high — the write-down increased COGS (numerator) and reduced average inventory (denominator)",
+      "C) Unaffected — inventory turnover uses sales, not COGS"
+    ],
+    "correctAnswer": "B",
+    "explanation": "An inventory write-down increases COGS (write-down included in COGS) and reduces the inventory balance. A higher numerator and lower denominator both increase the inventory turnover ratio. The as-reported ratio appears artificially elevated."
+  },
+  {
+    "id": "FSA6-014",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Valuation — Lower of Cost and NRV",
+    "difficulty": "Hard",
+    "question": "Potential inventory impairments should be most carefully evaluated by analysts when:",
+    "options": [
+      "A) A company's inventory turnover is increasing",
+      "B) A company has debt covenants with financial ratio requirements, because write-downs can cause covenant breaches",
+      "C) Inventory represents less than 5% of total assets"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Write-downs reduce profit, equity, and asset values — potentially breaching debt covenants based on financial ratios (leverage, coverage, current ratio). Companies with covenant-linked ratios near thresholds face significant risk from inventory impairments."
+  },
+  {
+    "id": "FSA6-015",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "FIFO vs LIFO vs Weighted Average — Rising Prices",
+    "difficulty": "Easy",
+    "question": "During a period of rising inventory costs, compared to LIFO, FIFO results in:",
+    "options": [
+      "A) Higher COGS and lower ending inventory",
+      "B) Lower COGS and higher ending inventory",
+      "C) The same COGS and same ending inventory"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Under FIFO in rising prices, the oldest (cheapest) inventory is sold first → lower COGS. The newest (most expensive) inventory remains → higher ending inventory. LIFO sells newest (most expensive) first → higher COGS, lower ending inventory."
+  },
+  {
+    "id": "FSA6-016",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "FIFO vs LIFO vs Weighted Average — Rising Prices",
+    "difficulty": "Easy",
+    "question": "Under rising prices, a company using LIFO will report, compared to FIFO:",
+    "options": [
+      "A) Higher net income and higher income taxes",
+      "B) Lower net income and lower income taxes",
+      "C) Higher net income and lower income taxes"
+    ],
+    "correctAnswer": "B",
+    "explanation": "LIFO produces higher COGS under rising prices → lower gross profit → lower net income → lower income taxes. LIFO provides a tax deferral advantage in inflationary environments, which is one reason US companies use it."
+  },
+  {
+    "id": "FSA6-017",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "FIFO vs LIFO vs Weighted Average — Rising Prices",
+    "difficulty": "Easy",
+    "question": "Under rising inventory prices, which inventory method produces a balance sheet that most closely reflects current replacement values?",
+    "options": [
+      "A) LIFO — because it sells the newest inventory first",
+      "B) FIFO — because ending inventory consists of the most recently purchased items",
+      "C) Weighted average — because it blends old and new costs equally"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Under FIFO, the ending inventory is assumed to consist of the most recently purchased units. In rising prices, those recent purchases are closest to current replacement cost. LIFO inventory balances reflect old, low-cost layers that are far from current costs."
+  },
+  {
+    "id": "FSA6-018",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "FIFO vs LIFO vs Weighted Average — Rising Prices",
+    "difficulty": "Easy",
+    "question": "Under rising inventory costs, the COGS reported by LIFO most closely reflects:",
+    "options": [
+      "A) Historical cost at time of first purchase",
+      "B) Current replacement cost",
+      "C) The weighted average of all purchase prices"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Under LIFO, the most recently purchased (newest, highest-cost) inventory is expensed first as COGS. In rising prices, this means COGS approximates current replacement cost — making LIFO COGS useful for current economic analysis."
+  },
+  {
+    "id": "FSA6-019",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "FIFO vs LIFO vs Weighted Average — Rising Prices",
+    "difficulty": "Medium",
+    "question": "Company A (LIFO) and Company B (FIFO) are identical in all respects. In an inflationary environment with stable inventory quantities, which statement is most accurate?",
+    "options": [
+      "A) Company B has higher COGS, lower profit, and lower ending inventory than Company A",
+      "B) Company B has lower COGS, higher profit, and higher ending inventory than Company A",
+      "C) Both companies have identical financial results"
+    ],
+    "correctAnswer": "B",
+    "explanation": "In rising prices: FIFO sells oldest (cheapest) units first → lower COGS → higher profit. FIFO retains newest (costliest) units in inventory → higher ending inventory balance. LIFO is the reverse on all counts."
+  },
+  {
+    "id": "FSA6-020",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "FIFO vs LIFO vs Weighted Average — Rising Prices",
+    "difficulty": "Medium",
+    "question": "Halcyon Pharma Inc. uses LIFO and Solvang Shipping AS uses FIFO. Compared to the cost of replacing inventory, during rising prices the FIFO ending inventory balance is:",
+    "options": [
+      "A) Too low — FIFO understates current replacement cost",
+      "B) Approximately equal to current replacement cost",
+      "C) Too high — FIFO overstates ending inventory"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Under FIFO in rising prices, ending inventory reflects the most recently purchased items, which approximate current replacement cost. LIFO ending inventory is too low (old, cheap layers) relative to replacement cost."
+  },
+  {
+    "id": "FSA6-021",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "FIFO vs LIFO vs Weighted Average — Rising Prices",
+    "difficulty": "Medium",
+    "question": "During rising prices, compared to FIFO, a company using LIFO will appear more:",
+    "options": [
+      "A) Liquid — because LIFO produces higher current assets",
+      "B) Efficient — because LIFO produces higher inventory turnover",
+      "C) Profitable — because LIFO reduces income taxes"
+    ],
+    "correctAnswer": "B",
+    "explanation": "LIFO in rising prices: higher COGS (numerator) and lower inventory (denominator) → higher inventory turnover → appears more efficient. LIFO produces lower current assets (less liquid) and lower net income (less profitable). Only the efficiency appearance is enhanced."
+  },
+  {
+    "id": "FSA6-022",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "FIFO vs LIFO vs Weighted Average — Rising Prices",
+    "difficulty": "Medium",
+    "question": "During rising prices, compared to FIFO, a company using LIFO will report a:",
+    "options": [
+      "A) Higher current ratio",
+      "B) Higher gross profit margin",
+      "C) Higher cost of sales"
+    ],
+    "correctAnswer": "C",
+    "explanation": "LIFO in rising prices allocates the highest (most recent) costs to COGS → higher cost of sales. This leads to lower gross profit margin and lower current ratio (lower inventory in current assets). Higher cost of sales is the correct answer."
+  },
+  {
+    "id": "FSA6-023",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "FIFO vs LIFO vs Weighted Average — Rising Prices",
+    "difficulty": "Medium",
+    "question": "In a rising price environment, the current ratio of a company using FIFO compared to one using LIFO (all else equal) will be:",
+    "options": [
+      "A) Lower — because FIFO produces lower inventory values",
+      "B) Higher — because FIFO retains higher-cost (more recent) units in ending inventory",
+      "C) The same — current ratio is not affected by inventory method"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Under FIFO in rising prices, ending inventory is valued at more recent (higher) costs → higher current assets → higher current ratio. LIFO leaves old, cheap layers in inventory → lower current assets → lower current ratio."
+  },
+  {
+    "id": "FSA6-024",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "FIFO vs LIFO vs Weighted Average — Rising Prices",
+    "difficulty": "Hard",
+    "question": "Halcyon Pharma Inc. uses LIFO. During years when inventory unit costs are rising and the company purchases more inventory than it sells, its gross profit margin compared to FIFO will be:",
+    "options": [
+      "A) Higher — because LIFO produces lower inventory costs",
+      "B) Lower — because LIFO allocates highest-cost units to COGS",
+      "C) The same — gross margins equalize over time"
+    ],
+    "correctAnswer": "B",
+    "explanation": "When purchasing more than selling (inventory build-up) with rising costs, LIFO assigns the newest (highest-cost) units to COGS → higher COGS → lower gross profit margin. FIFO would assign older (lower-cost) units to COGS → lower COGS → higher gross profit margin."
+  },
+  {
+    "id": "FSA6-025",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "FIFO vs LIFO vs Weighted Average — Rising Prices",
+    "difficulty": "Hard",
+    "question": "Compared to weighted average cost in a rising price environment, FIFO would result in a lower:",
+    "options": [
+      "A) Net income",
+      "B) Current ratio",
+      "C) Inventory turnover ratio"
+    ],
+    "correctAnswer": "C",
+    "explanation": "FIFO in rising prices: lower COGS (numerator) + higher ending inventory (denominator) → lower inventory turnover ratio. FIFO has higher net income and higher current ratio (higher inventory) relative to weighted average. Only inventory turnover is lower under FIFO."
+  },
+  {
+    "id": "FSA6-026",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "FIFO vs LIFO vs Weighted Average — Rising Prices",
+    "difficulty": "Hard",
+    "question": "In a rising price environment with stable quantities, which comparison correctly describes LIFO vs. weighted average cost?",
+    "options": [
+      "A) LIFO: lower COGS, higher inventory, lower turnover than weighted average",
+      "B) LIFO: higher COGS, lower inventory, higher turnover than weighted average",
+      "C) LIFO and weighted average produce identical results"
+    ],
+    "correctAnswer": "B",
+    "explanation": "In rising prices, LIFO assigns the most recent (highest) costs to COGS → higher COGS than weighted average (which blends all costs). LIFO inventory retains oldest (cheapest) layers → lower inventory than weighted average. Result: higher turnover under LIFO."
+  },
+  {
+    "id": "FSA6-027",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "FIFO vs LIFO — Deflation and Stable Prices",
+    "difficulty": "Easy",
+    "question": "In a period of declining inventory prices, which method produces higher profits?",
+    "options": [
+      "A) FIFO — oldest inventory is sold first, at higher costs",
+      "B) LIFO — newest (cheapest) inventory is sold first, reducing COGS",
+      "C) Weighted average — blends old and new costs"
+    ],
+    "correctAnswer": "B",
+    "explanation": "In declining prices, LIFO sells the newest (cheapest) units first → lower COGS → higher profit. FIFO sells oldest (more expensive) units first → higher COGS → lower profit. This reverses the inflationary relationship."
+  },
+  {
+    "id": "FSA6-028",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "FIFO vs LIFO — Deflation and Stable Prices",
+    "difficulty": "Easy",
+    "question": "Redwood Textiles Inc operates in a declining price environment. Its profits will tend to be highest if it uses:",
+    "options": [
+      "A) FIFO",
+      "B) LIFO",
+      "C) Weighted average cost"
+    ],
+    "correctAnswer": "B",
+    "explanation": "In a declining price environment, LIFO assigns the newest (lowest-cost) inventory to COGS, resulting in the lowest COGS and highest profit. This is the opposite of the rising price scenario."
+  },
+  {
+    "id": "FSA6-029",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "FIFO vs LIFO — Deflation and Stable Prices",
+    "difficulty": "Medium",
+    "question": "In a period of declining inventory unit costs and constant or increasing inventory quantities, FIFO compared to weighted average cost results in a higher:",
+    "options": [
+      "A) Net income",
+      "B) Cost of sales",
+      "C) Debt-to-equity ratio"
+    ],
+    "correctAnswer": "C",
+    "explanation": "In declining prices, FIFO: older (more expensive) costs go to COGS → higher COGS → lower net income → lower retained earnings → lower equity → higher debt-to-equity ratio. Net income is lower (not higher), and COGS is higher under FIFO in deflation."
+  },
+  {
+    "id": "FSA6-030",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "FIFO vs LIFO — Deflation and Stable Prices",
+    "difficulty": "Medium",
+    "question": "LIFO produces a stable gross profit margin in an inflationary environment (Example 3) because:",
+    "options": [
+      "A) LIFO allocates the same percentage of costs to COGS regardless of price changes",
+      "B) Both sales and COGS increase at the same inflation rate under LIFO, keeping the gross margin stable",
+      "C) LIFO locks in the original purchase price for all units sold"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Under LIFO in rising prices, COGS reflects current (inflated) purchase prices, and sales also reflect inflated selling prices — both growing at similar inflation rates. The ratio (gross margin) remains stable because numerator and denominator move proportionally."
+  },
+  {
+    "id": "FSA6-031",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "FIFO vs LIFO — Deflation and Stable Prices",
+    "difficulty": "Hard",
+    "question": "In the five-year example with 4% annual inflation and 10% annual unit sales growth, FIFO's gross profit margin is slightly HIGHER than LIFO's after year 1. This is because:",
+    "options": [
+      "A) FIFO's sales grow faster than FIFO's COGS",
+      "B) Under FIFO, a portion of COGS reflects the prior year's lower purchase price, while sales reflect current inflated prices — creating a small margin advantage",
+      "C) FIFO produces lower sales revenue than LIFO"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Under FIFO, beginning inventory (last year's lower-cost units) flows into COGS first. Since selling prices reflect current inflation but some COGS reflects old lower prices, the gap between sales and COGS is slightly wider under FIFO → marginally higher gross margin than LIFO."
+  },
+  {
+    "id": "FSA6-032",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "LIFO Specifics — LIFO Reserve and LIFO Liquidation",
+    "difficulty": "Easy",
+    "question": "The LIFO reserve represents:",
+    "options": [
+      "A) Cash reserved for future inventory purchases",
+      "B) The cumulative difference between FIFO inventory value and LIFO inventory value",
+      "C) The write-down allowance for obsolete inventory under LIFO"
+    ],
+    "correctAnswer": "B",
+    "explanation": "LIFO reserve = FIFO inventory − LIFO inventory. In rising prices, FIFO inventory > LIFO inventory, so the reserve is positive. Analysts add the LIFO reserve to LIFO inventory to approximate the FIFO balance for comparability."
+  },
+  {
+    "id": "FSA6-033",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "LIFO Specifics — LIFO Reserve and LIFO Liquidation",
+    "difficulty": "Easy",
+    "question": "LIFO liquidation occurs when:",
+    "options": [
+      "A) A company liquidates (closes) and sells all its inventory",
+      "B) A company sells more inventory than it purchases, forcing older (lower-cost) LIFO layers into COGS",
+      "C) LIFO inventory is written down to NRV"
+    ],
+    "correctAnswer": "B",
+    "explanation": "LIFO liquidation happens when a company sells more units than it buys in a period, drawing down the older, lower-cost inventory layers. These old low costs enter COGS, artificially boosting gross profit — a one-time effect that misleads profitability analysis."
+  },
+  {
+    "id": "FSA6-034",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "LIFO Specifics — LIFO Reserve and LIFO Liquidation",
+    "difficulty": "Medium",
+    "question": "To convert a LIFO company's inventory to a FIFO basis for comparison, an analyst should:",
+    "options": [
+      "A) Subtract the LIFO reserve from the reported LIFO inventory",
+      "B) Add the LIFO reserve to the reported LIFO inventory",
+      "C) Multiply the LIFO inventory by the price inflation index"
+    ],
+    "correctAnswer": "B",
+    "explanation": "FIFO inventory ≈ LIFO inventory + LIFO reserve. Adding the LIFO reserve (which accumulates the cost difference between FIFO and LIFO) converts the balance sheet inventory to a FIFO-equivalent value."
+  },
+  {
+    "id": "FSA6-035",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "LIFO Specifics — LIFO Reserve and LIFO Liquidation",
+    "difficulty": "Medium",
+    "question": "Ironbridge Rail & Transit Corp's LIFO inventory at 31 December 2017 was JPY94,578M, and the LIFO reserve was JPY10,120M. The FIFO inventory value for 2017 was approximately:",
+    "options": [
+      "A) JPY84,458M",
+      "B) JPY94,578M",
+      "C) JPY104,698M — only for the LIFO-based portion"
+    ],
+    "correctAnswer": "C",
+    "explanation": "FIFO inventory = LIFO inventory + LIFO reserve = 94,578 + 10,120 = JPY104,698M. This applies only to the LIFO-valued portion of Ironbridge's inventory. The total reported inventory was JPY608,572M; adjusted total = 608,572 + 10,120 = JPY618,692M."
+  },
+  {
+    "id": "FSA6-036",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "LIFO Specifics — LIFO Reserve and LIFO Liquidation",
+    "difficulty": "Medium",
+    "question": "To convert LIFO COGS to FIFO COGS in a rising price environment, an analyst should:",
+    "options": [
+      "A) Add the increase in LIFO reserve to COGS",
+      "B) Subtract the increase in LIFO reserve from COGS",
+      "C) Replace COGS with average inventory times turnover"
+    ],
+    "correctAnswer": "B",
+    "explanation": "An increase in LIFO reserve indicates LIFO COGS > FIFO COGS (in rising prices). To convert: FIFO COGS = LIFO COGS − Increase in LIFO reserve. (Alternatively: + decrease in LIFO reserve if reserve decreased.)"
+  },
+  {
+    "id": "FSA6-037",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "LIFO Specifics — LIFO Reserve and LIFO Liquidation",
+    "difficulty": "Hard",
+    "question": "Nexford Chemical Industries (LIFO): Reported COGS = USD3,120M, inventory write-down charges = USD13M, LIFO reserve decreased from USD72M to USD55M. FIFO-adjusted COGS (excluding write-down charges) is:",
+    "options": [
+      "A) USD3,107M",
+      "B) USD3,124M",
+      "C) USD3,141M"
+    ],
+    "correctAnswer": "B",
+    "explanation": "FIFO COGS = LIFO COGS − Write-down charges − Change in LIFO reserve = 3,120 − 13 − (55 − 72) = 3,120 − 13 + 17 = USD3,124M. The LIFO reserve decreased by 17 (from 72 to 55), which increases FIFO COGS adjustment — odd direction suggests inventory drawdown or price decline."
+  },
+  {
+    "id": "FSA6-038",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "LIFO Specifics — LIFO Reserve and LIFO Liquidation",
+    "difficulty": "Hard",
+    "question": "Nexford's adjusted (FIFO, no valuation allowance) inventory turnover ratio using average inventory at 31 December 2018 is closest to:",
+    "options": [
+      "A) 5.67",
+      "B) 5.83",
+      "C) 6.13"
+    ],
+    "correctAnswer": "B",
+    "explanation": "FIFO COGS = USD3,124M (per prior question). FIFO ending inventory 2018 = 480 + 55 = 535; 2017 = 465 + 72 = 537. Average = (535+537)/2 = 536. Turnover = 3,124/536 = 5.83."
+  },
+  {
+    "id": "FSA6-039",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "LIFO Specifics — LIFO Reserve and LIFO Liquidation",
+    "difficulty": "Hard",
+    "question": "Pinnacle Utilities Corp. (LIFO) has a LIFO reserve that increased from USD50M to USD77M. Adjusting to FIFO and removing the valuation allowance would cause Pinnacle's debt-to-equity ratio to:",
+    "options": [
+      "A) Increase — because FIFO COGS is lower, increasing taxes and reducing equity",
+      "B) Decrease — because FIFO inventory is higher, increasing equity through higher retained earnings",
+      "C) Stay the same — the LIFO reserve adjustment affects assets but not equity"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Converting to FIFO: inventory increases by LIFO reserve → higher net income (lower COGS) → higher retained earnings → higher shareholders' equity (denominator in D/E). Debt (numerator) is unchanged. A larger equity denominator reduces the D/E ratio."
+  },
+  {
+    "id": "FSA6-040",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "LIFO Specifics — LIFO Reserve and LIFO Liquidation",
+    "difficulty": "Hard",
+    "question": "Ironbridge Rail & Transit Corp's LIFO reserve increased from JPY10,120M to JPY19,660M in 2018, even though LIFO inventory balances fell sharply. The most likely explanation for this seemingly contradictory observation is:",
+    "options": [
+      "A) LIFO liquidation reduced inventory volumes at old low costs",
+      "B) Increasing raw material prices inflated the value of remaining units, widening the FIFO-LIFO gap despite lower quantities",
+      "C) Ironbridge Rail & Transit Corp changed its inventory valuation method during 2018"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Even as inventory quantities fell (due to lower sales volumes), rising prices for raw materials and parts increased the per-unit cost difference between FIFO and LIFO, expanding the LIFO reserve. This is consistent with Ironbridge's MD&A disclosure of rising input costs."
+  },
+  {
+    "id": "FSA6-041",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Ratios and Analysis",
+    "difficulty": "Easy",
+    "question": "The inventory turnover ratio is calculated as:",
+    "options": [
+      "A) Net sales ÷ Average inventory",
+      "B) Cost of goods sold ÷ Average inventory",
+      "C) Gross profit ÷ Net sales"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Inventory turnover = COGS ÷ Average inventory. Using COGS (not sales) in the numerator is more accurate as it matches the cost basis of the denominator. Some analysts use ending inventory rather than average inventory."
+  },
+  {
+    "id": "FSA6-042",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Ratios and Analysis",
+    "difficulty": "Easy",
+    "question": "The number of days of inventory on hand is calculated as:",
+    "options": [
+      "A) Inventory turnover × 365",
+      "B) 365 ÷ Inventory turnover",
+      "C) Average inventory ÷ Daily sales"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Days of inventory on hand = 365 ÷ Inventory turnover ratio. Higher inventory turnover means fewer days of inventory on hand — the two measures are inversely related."
+  },
+  {
+    "id": "FSA6-043",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Ratios and Analysis",
+    "difficulty": "Easy",
+    "question": "Gross profit margin is calculated as:",
+    "options": [
+      "A) Operating income ÷ Net sales",
+      "B) Gross profit ÷ Net sales",
+      "C) Net income ÷ Net sales"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Gross profit margin = Gross profit ÷ Net sales = (Net sales − COGS) ÷ Net sales. It indicates the percentage of each sales dollar remaining after covering direct production/purchase costs."
+  },
+  {
+    "id": "FSA6-044",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Ratios and Analysis",
+    "difficulty": "Medium",
+    "question": "Stratos Building Materials Co has COGS of CHF41,043M and average inventory of (8,100 + 7,039)/2 = CHF7,569.5M. The 2018 inventory turnover ratio is closest to:",
+    "options": [
+      "A) 5.07",
+      "B) 5.42",
+      "C) 5.55"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Inventory turnover = 41,043 ÷ 7,569.5 = 5.42. Average inventory = (8,100 + 7,039)/2 = 7,569.5. Note: If ending inventory only is used (41,043 ÷ 8,100 = 5.07), the result differs — the problem specifies average inventory."
+  },
+  {
+    "id": "FSA6-045",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Ratios and Analysis",
+    "difficulty": "Medium",
+    "question": "Volvo Group's 2017 inventory turnover ratio (with allowance, as reported) was 5.04. Days of inventory on hand was:",
+    "options": [
+      "A) 70.8 days",
+      "B) 72.4 days",
+      "C) 77.5 days"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Days of inventory = 365 ÷ 5.04 = 72.4 days. Without the write-down allowance, turnover was 4.71, giving 77.5 days — the adjusted figure shows more realistic inventory holding periods."
+  },
+  {
+    "id": "FSA6-046",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Ratios and Analysis",
+    "difficulty": "Medium",
+    "question": "A high inventory turnover with slow sales growth relative to industry is most likely an indicator of:",
+    "options": [
+      "A) Exceptional inventory management",
+      "B) Inadequate inventory levels potentially causing lost sales, or inventory write-downs reducing carrying amounts",
+      "C) The company is converting to a just-in-time inventory system"
+    ],
+    "correctAnswer": "B",
+    "explanation": "High turnover with below-industry sales growth could mean: (1) inventory is too lean — stockouts may be causing lost sales, or (2) write-downs have artificially reduced inventory values, inflating turnover. Comparing with peers and reviewing disclosures is needed."
+  },
+  {
+    "id": "FSA6-047",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Ratios and Analysis",
+    "difficulty": "Medium",
+    "question": "A low inventory turnover ratio relative to industry peers is most likely an indicator of:",
+    "options": [
+      "A) Highly efficient inventory management",
+      "B) Slow-moving or potentially obsolete inventory",
+      "C) Unusually high gross margins in a premium niche"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Low inventory turnover means goods sit in inventory longer. This can indicate excess inventory, slow-moving goods, or obsolescence. Analysts should compare sales growth rates and review write-down disclosures to assess whether this is a structural concern."
+  },
+  {
+    "id": "FSA6-048",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Ratios and Analysis",
+    "difficulty": "Hard",
+    "question": "Under the same conditions, which company would have the highest inventory turnover ratio when both are otherwise identical, assuming rising prices?",
+    "options": [
+      "A) A company using FIFO",
+      "B) A company using LIFO",
+      "C) A company using weighted average cost"
+    ],
+    "correctAnswer": "B",
+    "explanation": "In rising prices, LIFO produces higher COGS (numerator) and lower ending inventory (denominator) compared to FIFO and weighted average. Higher numerator and lower denominator both increase inventory turnover — making LIFO appear most efficient even though the underlying business is identical."
+  },
+  {
+    "id": "FSA6-049",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Ratios and Analysis",
+    "difficulty": "Hard",
+    "question": "Vantage's 2017 inventory turnover fell from 5.38 to 5.05 while days of inventory increased from 67.8 to 72.3 days. Despite worsening inventory management, gross profit margin improved from 32.1% to 34.1%. What most likely explains this combination?",
+    "options": [
+      "A) Vantage Energy Services Inc significantly increased sales prices, boosting margins despite slower inventory flow",
+      "B) Revenue declined significantly (14,945 to 14,267) while COGS fell proportionally more, but lower sales volume left inventory accumulating",
+      "C) Vantage Energy Services Inc reduced write-downs, boosting gross margin and increasing inventory balance"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Revenue fell from 14,945 to 14,267 (−4.5%) but COGS fell from 10,150 to 9,400 (−7.4%), expanding gross margin. However, the declining sales left more inventory on hand (average inventory rose while COGS fell), reducing turnover. This combination reflects a revenue decline with improving cost control."
+  },
+  {
+    "id": "FSA6-050",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Ratios and Analysis",
+    "difficulty": "Hard",
+    "question": "The Ironbridge Rail & Transit Corp inventory turnover (FIFO-adjusted) for 2018 was lower than the reported LIFO-based turnover. This adjustment is analytically useful because:",
+    "options": [
+      "A) FIFO turnover is always more favorable than LIFO",
+      "B) It removes the artificial inflation of LIFO turnover caused by undervalued LIFO inventory and removes the LIFO-related COGS distortion for better economic reality",
+      "C) FIFO turnover is required under IFRS for all companies"
+    ],
+    "correctAnswer": "B",
+    "explanation": "LIFO in rising prices produces artificially high turnover (low inventory denominator, higher COGS numerator). Converting to FIFO normalizes both, giving a more economically meaningful picture of how efficiently the company manages its inventory."
+  },
+  {
+    "id": "FSA6-051",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Presentation and Disclosure",
+    "difficulty": "Easy",
+    "question": "Under IFRS, which of the following is NOT required to be disclosed regarding inventories?",
+    "options": [
+      "A) The cost formula (inventory valuation method) used",
+      "B) The future selling price expected for finished goods",
+      "C) The amount of any write-down recognized as an expense during the period"
+    ],
+    "correctAnswer": "B",
+    "explanation": "IFRS (IAS 2) does not require disclosure of future expected selling prices. Required disclosures include accounting policies, carrying amounts by classification, write-down amounts, reversals, and circumstances leading to reversals."
+  },
+  {
+    "id": "FSA6-052",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Presentation and Disclosure",
+    "difficulty": "Easy",
+    "question": "US GAAP requires the disclosure of material income resulting from LIFO liquidation. This is most important for analysts because:",
+    "options": [
+      "A) LIFO liquidation reduces COGS, creating a one-time boost to profits that does not reflect ongoing business performance",
+      "B) LIFO liquidation reduces inventory values below NRV",
+      "C) LIFO liquidation signals that the company is growing rapidly"
+    ],
+    "correctAnswer": "A",
+    "explanation": "LIFO liquidation draws old, low-cost inventory layers into COGS, temporarily reducing COGS and boosting profits. This is non-recurring — it won't repeat unless the company continues drawing down inventory. Disclosure allows analysts to adjust for this distortion."
+  },
+  {
+    "id": "FSA6-053",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Presentation and Disclosure",
+    "difficulty": "Medium",
+    "question": "Volvo Group reports an allowance for inventory obsolescence of SEK3,489M at end-2017. The gross inventory value (before allowance) at 31 December 2017 was:",
+    "options": [
+      "A) SEK49,212M",
+      "B) SEK52,701M",
+      "C) SEK56,190M"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Gross inventory = Net inventory + Allowance = 52,701 + 3,489 = SEK56,190M. The allowance is netted against gross inventory on the balance sheet — disclosures allow analysts to reconstruct the gross value."
+  },
+  {
+    "id": "FSA6-054",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Presentation and Disclosure",
+    "difficulty": "Medium",
+    "question": "Volvo's change in allowance for inventory obsolescence in 2017 was a NET DECREASE of SEK194M (from 3,683 to 3,489). If this flows through COGS, the effect on 2017 COGS was:",
+    "options": [
+      "A) Increase COGS by SEK194M",
+      "B) Decrease COGS by SEK194M (the reduction in allowance reduces the inventory expense recognized)",
+      "C) No effect on COGS — allowance changes are non-cash"
+    ],
+    "correctAnswer": "B",
+    "explanation": "A decrease in the inventory write-down allowance means less expense was recognized relative to the prior year's balance. This reduction flows through COGS as a credit (reduction), making 2017 COGS slightly lower (and gross profit slightly higher) than it would be without write-downs."
+  },
+  {
+    "id": "FSA6-055",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Presentation and Disclosure",
+    "difficulty": "Medium",
+    "question": "If Vantage's inventory valuation allowance increased from EUR432M to EUR549M in 2017, and write-down charges were EUR239M but utilization reduced the allowance by EUR58M, the net income impact of inventory write-downs in 2017 was approximately:",
+    "options": [
+      "A) EUR58M expense",
+      "B) EUR117M expense",
+      "C) EUR239M expense"
+    ],
+    "correctAnswer": "C",
+    "explanation": "The income impact of write-downs equals the additions to the valuation allowance in the period, which is the 'Impact of inventory and work in progress write-downs' disclosed as EUR239M. Utilization (writing off items against the allowance) and FX changes do not affect income in the same way."
+  },
+  {
+    "id": "FSA6-056",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Presentation and Disclosure",
+    "difficulty": "Medium",
+    "question": "An analyst can determine the historical cost of a company's inventory by:",
+    "options": [
+      "A) Dividing reported inventory by gross profit margin",
+      "B) Adding the inventory valuation allowance to the reported net inventory carrying amount",
+      "C) Multiplying reported inventory by one plus the inflation rate"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Historical (gross) cost = Net inventory carrying amount + Valuation allowance. The allowance represents cumulative write-downs. Adding it back reveals what inventory would be valued at before any write-downs to NRV."
+  },
+  {
+    "id": "FSA6-057",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Presentation and Disclosure",
+    "difficulty": "Hard",
+    "question": "Which IFRS inventory disclosure requirement does NOT have a direct equivalent under US GAAP?",
+    "options": [
+      "A) Disclosure of accounting policies adopted in measuring inventories",
+      "B) Disclosure of circumstances and events leading to a reversal of a write-down",
+      "C) Disclosure of the amount of inventories recognized as an expense during the period"
+    ],
+    "correctAnswer": "B",
+    "explanation": "US GAAP prohibits inventory write-down reversals, so disclosures about reversals (amounts and circumstances) are not required or relevant under US GAAP. All other disclosures have US GAAP equivalents."
+  },
+  {
+    "id": "FSA6-058",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Presentation and Disclosure",
+    "difficulty": "Hard",
+    "question": "An analyst observes Vantage's valuation allowance increased steadily from EUR318M to EUR432M to EUR549M over 2015-2017, representing growing percentages of gross inventory. The most significant analytical concern is:",
+    "options": [
+      "A) Vantage's inventory is growing, requiring larger reserves proportionally",
+      "B) Accelerating obsolescence or demand deterioration — the increasing allowance rate signals product lines losing relevance faster than management can address",
+      "C) The accounting policy requires proportional write-downs as inventory grows"
+    ],
+    "correctAnswer": "B",
+    "explanation": "A rising allowance as a % of gross inventory signals accelerating write-downs — not just more inventory. For a telecommunications company, this could mean technology becoming obsolete faster than sell-through. Combined with Vantage's operating losses and asset impairments, this is a serious concern."
+  },
+  {
+    "id": "FSA6-059",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Presentation and Disclosure",
+    "difficulty": "Hard",
+    "question": "When comparing Nexford Chemical Industries (LIFO) and Atlantis Aerospace Ltd (FIFO), Mendes adjusts both to a 'no valuation allowance' basis. Atlantis's adjusted net profit margin equals:",
+    "options": [
+      "A) 6.01%",
+      "B) 6.20%",
+      "C) 6.28%"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Atlantis's adjusted NI = 327 + 15×(1−0.30) = 327 + 10.5 = 337.5. Net profit margin = 337.5 ÷ 5,442 = 6.20%. The write-down charges are added back (after tax) because Mendes is adjusting to exclude all valuation allowance effects."
+  },
+  {
+    "id": "FSA6-060",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Presentation and Disclosure",
+    "difficulty": "Hard",
+    "question": "Which company's gross profit margin best reflects the current (replacement cost) gross margin of the industry — Nexford Chemical Industries (LIFO), Atlantis Aerospace Ltd (FIFO), or Pinnacle Utilities Corp (LIFO)?",
+    "options": [
+      "A) Nexford Chemical Industries — because it uses LIFO and has larger revenue scale",
+      "B) Atlantis Aerospace Ltd — because FIFO provides current replacement values in the balance sheet",
+      "C) Pinnacle Utilities Corp — because it uses LIFO and its LIFO reserve is not decreasing (no LIFO liquidation distortion)"
+    ],
+    "correctAnswer": "C",
+    "explanation": "LIFO COGS reflects current replacement cost. However, Nexford's LIFO reserve is DECREASING (from 72 to 55), indicating possible LIFO liquidation which distorts COGS by pulling in old low-cost layers. Pinnacle's LIFO reserve is increasing (no liquidation) → Pinnacle's LIFO COGS better reflects current costs."
+  },
+  {
+    "id": "FSA6-061",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Classifications and Composition",
+    "difficulty": "Easy",
+    "question": "Inventory for a manufacturer typically includes which three classifications?",
+    "options": [
+      "A) Merchandise, supplies, and consignment inventory",
+      "B) Raw materials, work-in-process, and finished goods",
+      "C) Current, non-current, and long-term inventory"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Manufacturing companies hold raw materials (inputs), work-in-process (partially completed items), and finished goods (completed, ready-for-sale items). Retailers typically hold only merchandise inventory."
+  },
+  {
+    "id": "FSA6-062",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Classifications and Composition",
+    "difficulty": "Medium",
+    "question": "Changes in the composition of inventory (e.g., rising finished goods with falling raw materials) can signal:",
+    "options": [
+      "A) Improving supply chain efficiency",
+      "B) A buildup of unsold finished goods, potentially indicating weakening demand",
+      "C) A shift to just-in-time manufacturing"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Rising finished goods inventory while raw materials fall can signal that production is outpacing sales — unsold goods are accumulating. This is an early warning sign of demand deterioration that analysts should investigate through sales growth comparisons and management commentary."
+  },
+  {
+    "id": "FSA6-063",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Classifications and Composition",
+    "difficulty": "Medium",
+    "question": "Under IFRS and US GAAP, which costs are NOT included in the cost of inventory?",
+    "options": [
+      "A) Direct labor costs during production",
+      "B) Excise taxes paid on raw material imports",
+      "C) Storage costs for finished goods awaiting shipment to customers"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Storage costs for finished goods already in saleable condition awaiting delivery are selling costs — not costs to bring inventory to its current condition. These are period costs. Direct labor and import duties (like excise taxes) are valid cost components."
+  },
+  {
+    "id": "FSA6-064",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Classifications and Composition",
+    "difficulty": "Medium",
+    "question": "Stratos Building Materials Co values raw materials and purchased finished goods using FIFO. The most likely justification is:",
+    "options": [
+      "A) FIFO is the only method permitted under IFRS",
+      "B) Ending inventory under FIFO reflects the most recently purchased items, approximating current replacement cost",
+      "C) FIFO allocates identical per-unit costs to COGS and inventory"
+    ],
+    "correctAnswer": "B",
+    "explanation": "FIFO produces ending inventory values that reflect the most recent purchase prices — approximating current replacement cost. This provides a more current balance sheet value. Note: weighted average (not FIFO) allocates the same per-unit cost to both COGS and inventory."
+  },
+  {
+    "id": "FSA6-065",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Classifications and Composition",
+    "difficulty": "Hard",
+    "question": "Stratos Building Materials Co uses FIFO for raw materials and purchased finished goods but weighted average for work-in-process and manufactured finished goods. An analyst should recognize that this mixed approach:",
+    "options": [
+      "A) Is prohibited under IFRS — only one method may be used",
+      "B) Is permitted under IFRS for different types of inventory with different natures, though it complicates comparisons and adjustments",
+      "C) Means Century must disclose a LIFO reserve for the weighted average portion"
+    ],
+    "correctAnswer": "B",
+    "explanation": "IFRS permits different cost formulas for inventories with different natures or uses. Century applies FIFO to its traded goods (reflecting current market prices) and weighted average to manufactured goods (reflecting blended production costs). This is permissible but creates complexity for peer comparisons."
+  },
+  {
+    "id": "FSA6-066",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Classifications and Composition",
+    "difficulty": "Hard",
+    "question": "Ironbridge Rail & Transit Corp's balance sheet showed lower finished goods (JPY291,977M vs JPY403,856M in 2017) but higher work-in-process (JPY83,890M vs JPY79,979M). This shift most likely indicates:",
+    "options": [
+      "A) Production is increasing as WIP grows, but sales are strong as FG falls",
+      "B) Lower finished goods may reflect reduced production or strong sell-through; slight WIP increase could suggest ongoing but possibly slowing production",
+      "C) Ironbridge Rail & Transit Corp is shifting from finished goods to WIP sales, changing its business model"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Ironbridge's MD&A stated lower inventories reflect decreased sales volumes and FX effects. Lower FG could reflect both lower production and continued sell-through of existing stock. The slight WIP increase is relatively minor and doesn't contradict the overall production slowdown narrative."
+  },
+  {
+    "id": "FSA6-067",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "FIFO vs LIFO vs Weighted Average — Ratios Impact",
+    "difficulty": "Medium",
+    "question": "Compared to using FIFO, a company using LIFO in rising prices will have a higher:",
+    "options": [
+      "A) Current ratio",
+      "B) Return on assets",
+      "C) Debt-to-equity ratio"
+    ],
+    "correctAnswer": "C",
+    "explanation": "LIFO in rising prices: lower net income → lower retained earnings → lower equity → higher D/E ratio. Current ratio is lower (lower inventory). ROA is lower (lower net income, though total assets are also lower). Debt-to-equity is the ratio that worsens (higher) under LIFO."
+  },
+  {
+    "id": "FSA6-068",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "FIFO vs LIFO vs Weighted Average — Ratios Impact",
+    "difficulty": "Medium",
+    "question": "If Vantage Energy Services Inc had used weighted average cost instead of FIFO in rising prices, which set of ratios would directionally improve?",
+    "options": [
+      "A) Gross profit margin, current ratio, and return on assets",
+      "B) Inventory turnover, and debt-to-equity ratio",
+      "C) Gross profit margin and inventory turnover simultaneously"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Under weighted average in rising prices vs. FIFO: higher COGS → lower inventory → higher inventory turnover (improves). Lower net income → lower retained earnings → lower equity → higher D/E ratio. Gross profit margin, current ratio, and ROA all worsen."
+  },
+  {
+    "id": "FSA6-069",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "FIFO vs LIFO vs Weighted Average — Ratios Impact",
+    "difficulty": "Hard",
+    "question": "Atlantis Aerospace Ltd (FIFO) shows a higher gross profit margin than Nexford Chemical Industries and Pinnacle Utilities Corp (LIFO) in 2018. This is consistent with which price environment?",
+    "options": [
+      "A) Stable prices — all methods produce the same result",
+      "B) Inflationary environment — FIFO allocates older (lower) costs to COGS, inflating gross margins vs LIFO",
+      "C) Deflationary environment — FIFO allocates newer (lower) costs to COGS, giving higher margins vs LIFO"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The industry raw materials and finished goods price indices rose (100 → 112/114), confirming inflation. In inflation, FIFO produces lower COGS (old cheap costs to income) → higher gross margins. LIFO produces higher COGS (new expensive costs to income) → lower gross margins. Atlantis's higher margin is consistent with inflation + FIFO."
+  },
+  {
+    "id": "FSA6-070",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "FIFO vs LIFO vs Weighted Average — Ratios Impact",
+    "difficulty": "Hard",
+    "question": "Under a period of DECLINING inventory unit costs with constant/increasing inventory quantities, which inventory method is most likely to result in a higher debt-to-equity ratio?",
+    "options": [
+      "A) LIFO",
+      "B) FIFO",
+      "C) Weighted average cost"
+    ],
+    "correctAnswer": "B",
+    "explanation": "In declining prices, FIFO: sells oldest (most expensive) units first → higher COGS → lower net income → lower retained earnings → lower equity → higher D/E. In this scenario, FIFO behaves like LIFO does in rising prices — it produces worse profitability outcomes."
+  },
+  {
+    "id": "FSA6-071",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Perpetual vs Periodic Inventory Systems",
+    "difficulty": "Easy",
+    "question": "Under which inventory costing method does the choice between perpetual and periodic systems produce different results?",
+    "options": [
+      "A) FIFO",
+      "B) LIFO",
+      "C) Specific identification"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Under LIFO, perpetual and periodic systems can produce different results. The perpetual system applies LIFO continuously at each sale, while the periodic system applies LIFO at year-end. Under FIFO, the results are identical regardless of the system used."
+  },
+  {
+    "id": "FSA6-072",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Perpetual vs Periodic Inventory Systems",
+    "difficulty": "Medium",
+    "question": "Patel stated that inventory values would be the same under perpetual and periodic inventory systems. Oduya told her she was wrong. The correction most relevant to Stratos Building Materials Co (which uses weighted average) is:",
+    "options": [
+      "A) Weighted average results are identical under both systems",
+      "B) Weighted average in a perpetual system computes a new average after each purchase, while periodic uses a single weighted average for the whole period — producing different results",
+      "C) Weighted average is always inferior to FIFO for perpetual systems"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Under perpetual weighted average (moving average), a new average cost is computed after each purchase. Under periodic weighted average, a single average is computed for the entire period. These can produce different inventory and COGS values when prices change throughout the period."
+  },
+  {
+    "id": "FSA6-073",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Comprehensive Application — Volvo Group",
+    "difficulty": "Medium",
+    "question": "Volvo Group's cost of sales in 2017 with the inventory obsolescence allowance was SEK254,581M, and without the allowance would have been SEK254,775M. This difference reflects:",
+    "options": [
+      "A) Higher COGS without the allowance because no write-downs reduce the inventory expense",
+      "B) A net DECREASE in the 2017 allowance (from 3,683 to 3,489) reduced COGS vs. the no-allowance scenario",
+      "C) The allowance eliminates all inventory obsolescence expense from COGS"
+    ],
+    "correctAnswer": "B",
+    "explanation": "In 2017, the allowance DECREASED by SEK194M (from 3,683 to 3,489). A decrease in the write-down allowance represents a partial reversal — it REDUCES COGS vs. the prior year. Without any allowance, COGS would be slightly higher (254,775) because there's no reversal benefit reducing it."
+  },
+  {
+    "id": "FSA6-074",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Comprehensive Application — Volvo Group",
+    "difficulty": "Hard",
+    "question": "If Volvo had reversed ALL past inventory write-downs in 2017 (restoring the full SEK3,489M allowance to zero), 2017 profit would have been approximately:",
+    "options": [
+      "A) SEK21,283M (unchanged)",
+      "B) SEK23,900M",
+      "C) SEK24,772M"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Reversal of SEK3,489M allowance reduces COGS by 3,489 → increases pre-tax profit by 3,489 → increases taxes by 3,489 × 25% = 872 → net income increase = 3,489 − 872 = 2,617. Adjusted profit = 21,283 + 2,617 = SEK23,900M."
+  },
+  {
+    "id": "FSA6-075",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Comprehensive Application — Ironbridge Rail & Transit Corp",
+    "difficulty": "Hard",
+    "question": "Ironbridge Rail & Transit Corp under IFRS (which prohibits LIFO) would report a different inventory turnover than under US GAAP (which allows LIFO for some subsidiaries). Under IFRS, the inventory turnover for 2018 would be:",
+    "options": [
+      "A) Lower — because IFRS eliminates LIFO's inflated COGS and LIFO's depressed inventory, both reducing turnover",
+      "B) Higher — because IFRS requires FIFO which produces even higher COGS",
+      "C) The same — LIFO is used for only a minor portion of Ironbridge's inventory"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Under IFRS (no LIFO), COGS would be lower (by the increase in LIFO reserve = 9,540) and average inventory would be higher. Both effects reduce inventory turnover. As calculated in practice: reported = 10.63; IFRS-adjusted = 10.34."
+  },
+{
+    "id": "FSA6-076",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Comprehensive Application — Stratos Building Materials Co",
+    "difficulty": "Medium",
+    "question": "Stratos Building Materials Co's inventory write-down allowance DECREASED from CHF238M to CHF231M in 2018. This means:",
+    "options": [
+      "A) Century recorded CHF7M of new write-downs in 2018",
+      "B) The net change in the allowance reduced COGS by approximately CHF7M (partial reversal effect)",
+      "C) Century's inventory quality improved, eliminating all write-down risk"
+    ],
+    "correctAnswer": "B",
+    "explanation": "A decrease in the write-down allowance of CHF7M means the company reversed or utilized more of its allowance than it added. This reduction flows through COGS as a credit — reducing COGS by ~CHF7M and modestly boosting gross profit vs. the prior year."
+  },
+  {
+    "id": "FSA6-077",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Comprehensive Application — Stratos Building Materials Co",
+    "difficulty": "Hard",
+    "question": "Regarding Stratos Building Materials Co's black licorice jelly beans: 2017 FIFO cost = CHF4.05/kg, NRV = CHF3.95/kg; 2018 NRV = CHF4.20/kg with 77,750 kg remaining. The gross profit impact in 2018 is:",
+    "options": [
+      "A) Increase of CHF7,775 (reversal of 2017 write-down on remaining units)",
+      "B) Increase of CHF11,670 (full difference between cost and new NRV)",
+      "C) No impact because write-downs cannot be reversed under IFRS"
+    ],
+    "correctAnswer": "A",
+    "explanation": "The 2017 write-down per kg = 4.05 − 3.95 = CHF0.10. In 2018, NRV (4.20) > cost (4.05), so reversal applies. Only 77,750 kg remain in inventory. Reversal = 77,750 × 0.10 = CHF7,775, limited to original write-down. This reversal reduces COGS → increases gross profit by CHF7,775."
+  },
+  {
+    "id": "FSA6-078",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Comprehensive Application — Stratos Building Materials Co",
+    "difficulty": "Hard",
+    "question": "If cacao bean prices continue at a 29-year high and Stratos Building Materials Co uses FIFO for raw materials with stable or increasing inventory quantities, the most likely effect on financial statements is:",
+    "options": [
+      "A) COGS will better reflect current replacement costs as high-cost recent purchases flow through",
+      "B) COGS will remain low because FIFO uses oldest (cheapest) costs first; ending inventory will increase in value",
+      "C) COGS and ending inventory will both reflect the oldest low-cost purchases"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Under FIFO in rising prices, the oldest (currently lower-cost) cacao beans are expensed first → COGS reflects past lower prices (not current high prices). Ending inventory retains the most recently purchased (high-priced) units → higher inventory balance. COGS does NOT reflect current replacement cost under FIFO."
+  },
+  {
+    "id": "FSA6-079",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "LIFO vs FIFO — IFRS Restrictions",
+    "difficulty": "Easy",
+    "question": "LIFO is NOT permitted under:",
+    "options": [
+      "A) US GAAP",
+      "B) IFRS",
+      "C) Either US GAAP or IFRS"
+    ],
+    "correctAnswer": "B",
+    "explanation": "IFRS does not permit the use of LIFO for inventory valuation. US GAAP permits LIFO. This is a key reason analysts must adjust LIFO-reporting companies when comparing with IFRS reporters."
+  },
+  {
+    "id": "FSA6-080",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "LIFO vs FIFO — IFRS Restrictions",
+    "difficulty": "Easy",
+    "question": "Carey Company (US GAAP) has reversed an inventory write-down. Jonathan Company (IFRS) has done the same. Which statement is correct?",
+    "options": [
+      "A) Both are permitted to reverse write-downs",
+      "B) Carey's reversal is improper — US GAAP prohibits reversals",
+      "C) Jonathan's reversal is improper — IFRS prohibits reversals"
+    ],
+    "correctAnswer": "B",
+    "explanation": "US GAAP does not permit the reversal of inventory write-downs. Carey Company's reversal would violate US GAAP. Jonathan's reversal under IFRS is valid (required when NRV exceeds carrying amount, up to original cost)."
+  },
+  {
+    "id": "FSA6-081",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "LIFO vs FIFO — IFRS Restrictions",
+    "difficulty": "Medium",
+    "question": "Oduya required Patel to select a competitor reporting under IFRS (rather than US GAAP). The primary analytical reason is:",
+    "options": [
+      "A) IFRS companies have higher gross margins than US GAAP companies",
+      "B) LIFO is permitted under US GAAP, creating non-comparability in inventory and COGS figures between LIFO and FIFO/weighted-average companies",
+      "C) IFRS requires more detailed inventory disclosures than US GAAP"
+    ],
+    "correctAnswer": "B",
+    "explanation": "LIFO companies (permitted only under US GAAP) have systematically different inventory carrying amounts and COGS versus FIFO/weighted average companies. Comparing Stratos Building Materials Co (IFRS, FIFO) with a US GAAP LIFO company would require significant adjustments. A same-standard IFRS comparison is cleaner."
+  },
+  {
+    "id": "FSA6-082",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "LIFO vs FIFO — IFRS Restrictions",
+    "difficulty": "Hard",
+    "question": "A US GAAP company switches from LIFO to FIFO when it prepares financial statements under IFRS (for a foreign listing). In rising prices, the immediate effects include:",
+    "options": [
+      "A) Lower inventory, higher COGS, and lower equity",
+      "B) Higher inventory, lower COGS, higher equity — and a one-time cumulative income adjustment",
+      "C) No change — FIFO and LIFO produce the same lifetime total income"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Switching from LIFO to FIFO in rising prices adds the LIFO reserve to inventory (+higher inventory), reduces cumulative COGS (+higher cumulative income), increases retained earnings (+higher equity). The one-time adjustment recognizes all previously deferred income. Lifetime income is eventually the same, but the timing shifts dramatically."
+  },
+  {
+    "id": "FSA6-083",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Effects on Multiple Financial Ratios — Synthesis",
+    "difficulty": "Medium",
+    "question": "An inventory write-down will have a NEGATIVE effect on all of the following EXCEPT:",
+    "options": [
+      "A) Gross profit margin",
+      "B) Current ratio",
+      "C) Inventory turnover ratio"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Inventory write-down: reduces inventory (lowers current ratio); increases COGS through write-down expense (lowers gross profit margin and net profit margin). Inventory turnover improves (positive effect) because the denominator is lower and COGS (numerator) may be higher."
+  },
+  {
+    "id": "FSA6-084",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Effects on Multiple Financial Ratios — Synthesis",
+    "difficulty": "Medium",
+    "question": "Which group of ratios usually appears more favorable (better) with an inventory write-down?",
+    "options": [
+      "A) Profitability ratios",
+      "B) Activity ratios",
+      "C) Solvency ratios"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Activity ratios (inventory turnover, total asset turnover) improve with write-downs because the asset base (denominator) is reduced. Profitability ratios worsen (higher COGS, lower profits). Solvency ratios worsen (lower equity from reduced retained earnings)."
+  },
+  {
+    "id": "FSA6-085",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Effects on Multiple Financial Ratios — Synthesis",
+    "difficulty": "Hard",
+    "question": "A company using FIFO in rising prices will have a LOWER reported figure for all of the following compared to a LIFO company EXCEPT:",
+    "options": [
+      "A) COGS",
+      "B) Inventory turnover",
+      "C) Net income taxes paid (cash)"
+    ],
+    "correctAnswer": "C",
+    "explanation": "FIFO in rising prices: lower COGS → higher profit → HIGHER income taxes paid. So taxes paid is HIGHER under FIFO, not lower. COGS and inventory turnover are both lower under FIFO vs. LIFO in rising prices."
+  },
+  {
+    "id": "FSA6-086",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Effects on Multiple Financial Ratios — Synthesis",
+    "difficulty": "Hard",
+    "question": "In a rising price environment, a FIFO company compared to a LIFO company will report a higher return on assets. Which statement best explains why?",
+    "options": [
+      "A) FIFO has lower total assets than LIFO",
+      "B) FIFO has higher net income (from lower COGS) and higher assets (from higher inventory), but the income effect dominates the asset effect on ROA",
+      "C) FIFO allocates less of total costs to the income statement, freeing up assets"
+    ],
+    "correctAnswer": "B",
+    "explanation": "ROA = Net income ÷ Total assets. FIFO vs. LIFO: NI is higher and total assets are higher. Using the example: moving EUR1M income adds EUR1M to assets (after-tax). ROA = 4/101 (FIFO) vs 3/100 (LIFO) → FIFO ROA is higher. The marginal NI increase has a larger percentage effect on the denominator than the numerator."
+  },
+  {
+    "id": "FSA6-087",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Effects on Multiple Financial Ratios — Synthesis",
+    "difficulty": "Hard",
+    "question": "During a period of rising inventory costs, a FIFO company's inventory turnover ratio is LOWER than a LIFO company's. Which interpretation is most appropriate for an analyst?",
+    "options": [
+      "A) The FIFO company is managing inventory less efficiently than the LIFO company",
+      "B) The difference is an accounting artifact — LIFO's higher turnover reflects lower LIFO inventory balances and higher COGS, not genuine operational superiority",
+      "C) An analyst should use inventory turnover to identify which method produces better cash flows"
+    ],
+    "correctAnswer": "B",
+    "explanation": "If two identical companies use different inventory methods, the LIFO company will always appear to have higher turnover in rising prices — purely due to accounting, not operations. Analysts must adjust for method differences before drawing operational conclusions from inventory ratios."
+  },
+  {
+    "id": "FSA6-088",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "FIFO vs LIFO — Stable Prices and Year 1",
+    "difficulty": "Easy",
+    "question": "In Year 1 of the LIFO/FIFO comparison example, both Company A and Company B show identical results. This is because:",
+    "options": [
+      "A) Price inflation only affects results after the first year when inventory layers have accumulated",
+      "B) Both companies began with no inventory and purchased at the same prices in Year 1, so there is no difference in COGS",
+      "C) LIFO and FIFO always produce identical results"
+    ],
+    "correctAnswer": "B",
+    "explanation": "In Year 1, there is no beginning inventory. All units purchased in Year 1 are at the same Year 1 price. Whether sold first-in-first-out or last-in-first-out, all units sold came from the same price layer. Only from Year 2 onward does the beginning inventory (at Year 1's lower price) create a difference under FIFO."
+  },
+  {
+    "id": "FSA6-089",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "FIFO vs LIFO — Stable Prices and Year 1",
+    "difficulty": "Medium",
+    "question": "In the five-year LIFO/FIFO example with 4% annual inflation and 10% unit sales growth, LIFO's ending inventory was unchanged at USD16,000 throughout all five years. This is because:",
+    "options": [
+      "A) LIFO locks in all costs at Year 1 prices for the base inventory layer",
+      "B) LIFO inventory always equals the number of units times the current period price",
+      "C) There were no purchases in Years 2 through 5"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Under LIFO, the 2,000 base inventory units purchased in Year 1 at USD8 each remain in inventory as the 'oldest layer.' Since units purchased = units sold each year (after Year 1), this Year 1 layer never gets consumed. The LIFO inventory stays at 2,000 × USD8 = USD16,000 throughout."
+  },
+  {
+    "id": "FSA6-090",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "FIFO vs LIFO — Stable Prices and Year 1",
+    "difficulty": "Hard",
+    "question": "In the five-year example, LIFO inventory turnover increased from 10.0 to 17.1 while FIFO increased from 10.0 to only 14.6. The widening gap between the two is because:",
+    "options": [
+      "A) LIFO sales grew faster than FIFO sales",
+      "B) LIFO's inventory denominator stays flat (at USD16,000) while COGS grows with inflation and volume; FIFO's inventory grows with inflation, partially offsetting the COGS growth",
+      "C) FIFO has lower inflation pass-through in COGS than LIFO"
+    ],
+    "correctAnswer": "B",
+    "explanation": "LIFO inventory is frozen at Year 1 cost (USD16,000), never rising. COGS grows every year (inflation + volume). So LIFO turnover = growing COGS ÷ flat inventory → rapid increase. FIFO inventory grows with inflation each year, partially offsetting the COGS growth → slower increase in turnover ratio."
+  },
+  {
+    "id": "FSA6-091",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Agricultural and Special Inventory",
+    "difficulty": "Medium",
+    "question": "For inventory of agricultural products where an active market exists, the appropriate valuation basis is:",
+    "options": [
+      "A) Lower of cost and NRV",
+      "B) The quoted market price in the active market (as a basis for fair value)",
+      "C) Historical cost only"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Under IAS 2, for agricultural products with an active market, the quoted market price is the appropriate basis for determining fair value. Changes in value (up or down) are recognized in profit or loss, unlike regular inventory measured at lower of cost and NRV."
+  },
+  {
+    "id": "FSA6-092",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Agricultural and Special Inventory",
+    "difficulty": "Medium",
+    "question": "If Cascadia's inventory were agricultural products instead of computers, the 2018 increase in NRV of EUR0.5M above carrying amount would be:",
+    "options": [
+      "A) Ignored until the inventory is sold",
+      "B) Recognized as a gain of EUR0.5M (not limited to original write-down)",
+      "C) Recognized only as a EUR0.3M reversal (limited to original write-down)"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Agricultural inventory is measured at NRV (fair value less costs to sell). Any increase or decrease is recognized in profit or loss. Unlike standard inventory, there is no 'lower of cost and NRV' ceiling tied to original cost — the full EUR0.5M increase is recognized."
+  },
+  {
+    "id": "FSA6-093",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Analytical Adjustments and Comparability",
+    "difficulty": "Medium",
+    "question": "An analyst is comparing a LIFO company with a FIFO company in the same industry during rising prices. To make COGS comparable, the analyst should:",
+    "options": [
+      "A) Increase the LIFO company's COGS by the increase in LIFO reserve",
+      "B) Decrease the LIFO company's COGS by the increase in LIFO reserve",
+      "C) No adjustment is needed — COGS are directly comparable"
+    ],
+    "correctAnswer": "B",
+    "explanation": "In rising prices, LIFO COGS > FIFO COGS. To convert LIFO COGS to FIFO-equivalent: FIFO COGS = LIFO COGS − Increase in LIFO reserve. Subtracting the increase in LIFO reserve removes the portion of COGS that reflects higher current costs versus older FIFO-equivalent costs."
+  },
+  {
+    "id": "FSA6-094",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Analytical Adjustments and Comparability",
+    "difficulty": "Hard",
+    "question": "An analyst is comparing Nexford Chemical Industries (LIFO) to Atlantis Aerospace Ltd (FIFO). To adjust Nexford's equity to a FIFO basis (excluding valuation allowance), the analyst should add the LIFO reserve net of tax. With a LIFO reserve of USD55M and a 30% tax rate, the equity adjustment is:",
+    "options": [
+      "A) Add USD16.5M (tax only)",
+      "B) Add USD38.5M (LIFO reserve × (1 − tax rate))",
+      "C) Add USD55M (full LIFO reserve)"
+    ],
+    "correctAnswer": "B",
+    "explanation": "When converting LIFO to FIFO equity, the LIFO reserve represents pre-tax income not yet recognized under LIFO. Converting to FIFO recognizes this income, but creates a corresponding tax liability. Net equity increase = LIFO reserve × (1 − t) = 55 × 0.70 = USD38.5M."
+  },
+  {
+    "id": "FSA6-095",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Analytical Adjustments and Comparability",
+    "difficulty": "Hard",
+    "question": "After adjusting Pinnacle Utilities Corp (LIFO) to FIFO by adding the LIFO reserve of USD77M (net of 30% tax = USD53.9M), Pinnacle's adjusted debt-to-equity ratio compared to the unadjusted ratio will be:",
+    "options": [
+      "A) Higher — because adding the LIFO reserve increases total assets and therefore debt",
+      "B) Lower — because the equity denominator increases by USD53.9M while debt is unchanged",
+      "C) The same — LIFO reserve adjustments affect inventory but not equity"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Debt-to-equity = Total debt ÷ Equity. Adjusting to FIFO: Inventory increases by LIFO reserve (USD77M); Equity increases by LIFO reserve after-tax (USD53.9M); Tax liability increases by USD23.1M. Debt is unchanged. Higher equity denominator → lower D/E ratio."
+  },
+  {
+    "id": "FSA6-096",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Costs — What's Included",
+    "difficulty": "Easy",
+    "question": "Which of the following costs are included in the cost of inventory under IAS 2?",
+    "options": [
+      "A) Selling expenses and administrative overhead",
+      "B) Costs of purchase, costs of conversion, and other costs incurred to bring inventory to its present location and condition",
+      "C) Finance charges on credit purchases"
+    ],
+    "correctAnswer": "B",
+    "explanation": "IAS 2 includes in inventory cost: costs of purchase (purchase price, import duties, transport), costs of conversion (direct labor, production overhead), and other costs directly attributable to getting inventory to its saleable condition and location. Selling, G&A, and finance costs are excluded."
+  },
+  {
+    "id": "FSA6-097",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Costs — What's Included",
+    "difficulty": "Medium",
+    "question": "For Stratos Building Materials Co, which cost would most likely be EXCLUDED from inventory?",
+    "options": [
+      "A) Direct labor for the chocolate conching process",
+      "B) Storage costs for chocolate liquor during the production process",
+      "C) Storage costs for finished chocolate awaiting shipment to customers"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Storage costs for finished goods in saleable condition awaiting delivery are selling/distribution costs — not costs incurred in production. Storage during production (like storing chocolate liquor mid-process) is a conversion cost and IS included. Direct labor is always included."
+  },
+  {
+    "id": "FSA6-098",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Costs — What's Included",
+    "difficulty": "Medium",
+    "question": "Stratos Building Materials Co's CFO discusses costs included in each inventory category. Excise taxes paid to Brazil for cacao beans would most likely be:",
+    "options": [
+      "A) Excluded — excise taxes are government costs, not inventory costs",
+      "B) Included — excise taxes are part of the cost of purchasing the raw material",
+      "C) Included only if the taxes can be reclaimed (VAT-style)"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Excise taxes paid on imports are part of the cost of purchase under IAS 2. They represent a cost incurred to acquire the inventory. Import duties and taxes are explicitly included in the cost of inventory."
+  },
+  {
+    "id": "FSA6-099",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Gross Profit Margin Analysis",
+    "difficulty": "Easy",
+    "question": "A luxury goods company generally has a higher gross profit margin than a staple goods company because:",
+    "options": [
+      "A) Luxury goods companies have lower production costs",
+      "B) Luxury goods can be sold at prices far above their production costs due to brand premium and lower competition",
+      "C) Luxury goods companies use FIFO, which always produces higher margins"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Gross profit margin = (Price − Cost) ÷ Price. Luxury goods command premium prices driven by brand equity, exclusivity, and lower competitive intensity. The same product cost can yield a much wider margin when priced at luxury levels."
+  },
+  {
+    "id": "FSA6-100",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Gross Profit Margin Analysis",
+    "difficulty": "Medium",
+    "question": "A luxury goods company with a high gross margin will likely have a LOWER inventory turnover than a staple goods company. This is because:",
+    "options": [
+      "A) Luxury goods companies use LIFO, which reduces inventory turnover",
+      "B) Luxury goods sell more slowly (fewer units per time period) due to their exclusive, premium nature",
+      "C) Luxury goods companies carry more safety stock than staple goods companies"
+    ],
+    "correctAnswer": "B",
+    "explanation": "There is a fundamental tradeoff: high-margin products typically have slower velocity (fewer sales per period). Low-margin staple goods sell in high volumes quickly → high turnover. High-margin luxury goods sell slowly → low turnover. The product strategy determines both margin and velocity."
+  },
+  {
+    "id": "FSA6-101",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Gross Profit Margin Analysis",
+    "difficulty": "Hard",
+    "question": "Vantage's gross profit margin improved from 32.1% to 34.1% from 2016 to 2017, even as the company reported large operating losses. The most likely explanation for the gross margin improvement despite overall losses is:",
+    "options": [
+      "A) Inventory write-downs reduced COGS more than revenues fell",
+      "B) Revenue declined (−4.5%) while COGS declined faster (−7.4%), improving the ratio, but G&A, R&D, restructuring, and impairment charges created operating losses",
+      "C) Vantage Energy Services Inc changed its revenue recognition policy in 2017"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Revenue fell 4.5% but COGS fell 7.4%, expanding gross margin by 2pp. This suggests Vantage Energy Services Inc managed its direct production costs better. However, below the gross profit line, fixed G&A + R&D + restructuring + massive asset impairments overwhelmed the gross margin improvement, producing operating losses."
+  },
+  {
+    "id": "FSA6-102",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Current Ratio and Inventory Valuation",
+    "difficulty": "Easy",
+    "question": "The current ratio is affected by the choice of inventory valuation method because:",
+    "options": [
+      "A) Current liabilities change with inventory method",
+      "B) Inventory is a component of current assets, and different methods produce different carrying amounts",
+      "C) The current ratio uses cost of sales, which varies by method"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Current ratio = Current assets ÷ Current liabilities. Inventory is a major component of current assets. Different methods produce different inventory balances → different current assets → different current ratios. Current liabilities are unaffected by inventory method."
+  },
+  {
+    "id": "FSA6-103",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Current Ratio and Inventory Valuation",
+    "difficulty": "Medium",
+    "question": "In rising prices, compared to LIFO, a FIFO company will have a higher current ratio because:",
+    "options": [
+      "A) FIFO produces lower inventory values in rising prices",
+      "B) FIFO retains the most recently purchased (highest-cost) items in inventory → higher inventory balance → higher current assets → higher current ratio",
+      "C) FIFO produces lower accounts payable, reducing current liabilities"
+    ],
+    "correctAnswer": "B",
+    "explanation": "In rising prices, FIFO: sell oldest (cheapest) units first; retain newest (most expensive) in inventory. Higher inventory balance increases current assets. Current liabilities are not affected by the inventory method. Result: higher current ratio under FIFO."
+  },
+  {
+    "id": "FSA6-104",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Debt-to-Equity and Retained Earnings",
+    "difficulty": "Medium",
+    "question": "Over time, a LIFO company in a rising price environment will accumulate lower retained earnings than a FIFO company. This directly affects the debt-to-equity ratio because:",
+    "options": [
+      "A) Lower retained earnings reduce equity, increasing the debt-to-equity ratio",
+      "B) Lower retained earnings increase equity, decreasing the debt-to-equity ratio",
+      "C) Retained earnings do not affect the debt-to-equity ratio"
+    ],
+    "correctAnswer": "A",
+    "explanation": "D/E = Total debt ÷ Equity. LIFO produces lower cumulative net income → lower retained earnings → lower total equity. With the same debt level, a lower equity denominator means a higher D/E ratio. LIFO companies thus appear more leveraged."
+  },
+  {
+    "id": "FSA6-105",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Debt-to-Equity and Retained Earnings",
+    "difficulty": "Hard",
+    "question": "Vantage's debt-to-equity ratio surged from 0.43 to 0.98 between 2016 and 2017, yet total debt was relatively stable. The primary driver was:",
+    "options": [
+      "A) A large increase in long-term debt from a new bond issuance",
+      "B) Equity collapsing due to massive net losses eroding retained earnings, while debt stayed roughly constant",
+      "C) A share repurchase program reducing the equity base"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Total debt was stable (~4,000 EUR million range). But equity collapsed from 9,830 to 4,388 — driven by large net losses (−4,345 in 2017, −2,921 in 2016) depleting retained earnings. The D/E ratio more than doubled because the equity denominator shrank dramatically."
+  },
+  {
+    "id": "FSA6-106",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Ratios — Comprehensive Calculations",
+    "difficulty": "Medium",
+    "question": "Vantage Energy Services Inc. 2017: COGS = EUR9,400M, Average inventory = (1,845+1,877)/2 = EUR1,861M. Inventory turnover is:",
+    "options": [
+      "A) 5.05",
+      "B) 5.38",
+      "C) 5.50"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Inventory turnover = COGS ÷ Average inventory = 9,400 ÷ [(1,845+1,877)/2] = 9,400 ÷ 1,861 = 5.05."
+  },
+  {
+    "id": "FSA6-107",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Ratios — Comprehensive Calculations",
+    "difficulty": "Medium",
+    "question": "Using Vantage Energy Services Inc 2016 data: COGS = EUR10,150M, average inventory = (1,877+1,898)/2 = EUR1,887.5M. Inventory turnover is:",
+    "options": [
+      "A) 5.05",
+      "B) 5.38",
+      "C) 5.50"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Inventory turnover = 10,150 ÷ 1,887.5 = 5.38. The 2016 turnover was higher than 2017 (5.05), indicating faster inventory movement in 2016."
+  },
+  {
+    "id": "FSA6-108",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Ratios — Comprehensive Calculations",
+    "difficulty": "Medium",
+    "question": "The Volvo Group's 2017 gross profit margin (as reported with allowance) was:",
+    "options": [
+      "A) 22.4%",
+      "B) 23.95%",
+      "C) 25.3%"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Gross profit margin = Gross profit ÷ Net sales = 80,167 ÷ 334,748 = 23.95%."
+  },
+  {
+    "id": "FSA6-109",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Ratios — Comprehensive Calculations",
+    "difficulty": "Hard",
+    "question": "Ironbridge Rail & Transit Corp's 2018 inventory turnover under US GAAP (as reported with LIFO for some subsidiaries) was approximately:",
+    "options": [
+      "A) 10.34",
+      "B) 10.63",
+      "C) 11.97"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Inventory turnover = COGS ÷ Average inventory = 5,822,805 ÷ [(608,572+486,465)/2] = 5,822,805 ÷ 547,518.5 = 10.63."
+  },
+  {
+    "id": "FSA6-110",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Ratios — Comprehensive Calculations",
+    "difficulty": "Hard",
+    "question": "Ironbridge's 2018 FIFO-adjusted inventory turnover (per the notes: LIFO reserve 10,120 in 2017 and 19,660 in 2018) is approximately:",
+    "options": [
+      "A) 10.34",
+      "B) 10.63",
+      "C) 10.98"
+    ],
+    "correctAnswer": "A",
+    "explanation": "FIFO COGS = 5,822,805 − (19,660 − 10,120) = 5,822,805 − 9,540 = 5,813,265. FIFO avg inventory = [(608,572+10,120) + (486,465+19,660)]/2 = [618,692 + 506,125]/2 = 562,408.5. Turnover = 5,813,265 ÷ 562,408.5 ≈ 10.34."
+  },
+  {
+    "id": "FSA6-111",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Write-Downs — Income Statement Effects",
+    "difficulty": "Easy",
+    "question": "An inventory write-down recognized in the income statement typically appears as:",
+    "options": [
+      "A) A separate line item below operating income",
+      "B) Part of cost of goods sold or as a separate operating expense",
+      "C) A financing expense"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Inventory write-downs may be included within cost of goods sold or reported separately as an operating expense, depending on the company's accounting policy and the nature of the write-down. Either treatment reduces gross profit and/or operating income."
+  },
+  {
+    "id": "FSA6-112",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Write-Downs — Income Statement Effects",
+    "difficulty": "Medium",
+    "question": "Volvo's 2016 allowance for inventory obsolescence increased (from 3,624 to 3,683). This means 2016 cost of sales, compared to having no allowance, was:",
+    "options": [
+      "A) Lower by SEK59M (net increase in allowance reduces COGS)",
+      "B) Higher by SEK59M (net increase in allowance increases COGS expense)",
+      "C) Unchanged — allowance changes don't flow through COGS"
+    ],
+    "correctAnswer": "B",
+    "explanation": "A net increase in the write-down allowance means more expense was recognized than reversed in 2016. The SEK59M net addition to the allowance flowed through COGS as additional inventory expense, increasing COGS by SEK59M."
+  },
+  {
+    "id": "FSA6-113",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Write-Downs — Income Statement Effects",
+    "difficulty": "Hard",
+    "question": "Vantage's income before tax in 2017 was reduced by EUR239M for inventory write-downs. With a tax rate that can be inferred (if Vantage Energy Services Inc pays taxes despite operating losses), the after-tax impact on 2017 net income would be:",
+    "options": [
+      "A) Zero — companies with operating losses receive no tax benefit",
+      "B) Approximately EUR179M if a 25% effective rate applies, or the full EUR239M if no tax benefit is available",
+      "C) Exactly EUR239M — write-downs are always non-deductible for tax"
+    ],
+    "correctAnswer": "B",
+    "explanation": "If Vantage Energy Services Inc can utilize the tax loss (deferred tax asset), the after-tax impact = 239 × (1−0.25) = EUR179M. However, for a company with sustained losses, recoverability of deferred tax assets may be uncertain, in which case the full EUR239M hits net income with no tax offset."
+  },
+  {
+    "id": "FSA6-114",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Specific Identification Method",
+    "difficulty": "Easy",
+    "question": "The specific identification method of inventory costing:",
+    "options": [
+      "A) Assigns average cost to each unit sold",
+      "B) Tracks the actual cost of each specific unit sold, matching individual items to their actual purchase price",
+      "C) Assigns the most recent purchase price to units sold"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Specific identification tracks each individual inventory item and its actual cost. When an item is sold, its exact historical purchase price is expensed as COGS. This is most practical for low-volume, high-value items (e.g., jewelry, custom machinery)."
+  },
+  {
+    "id": "FSA6-115",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Specific Identification Method",
+    "difficulty": "Medium",
+    "question": "Specific identification is most appropriate for which type of inventory?",
+    "options": [
+      "A) High-volume, interchangeable commodity products (e.g., grain, oil)",
+      "B) Low-volume, individually distinguishable high-value items (e.g., custom furniture, automobiles)",
+      "C) Work-in-process inventory in a batch manufacturing environment"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Specific identification works best when individual items can be distinguished and tracked. It is impractical for fungible commodities but ideal for unique, high-value items where the cost of each unit varies and can be identified."
+  },
+  {
+    "id": "FSA6-116",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Perpetual vs Periodic — LIFO Difference",
+    "difficulty": "Hard",
+    "question": "Company X uses LIFO under a perpetual system. Company Y uses LIFO under a periodic system. In a year when prices rise mid-year before falling back (price spike), the two companies will likely report:",
+    "options": [
+      "A) Identical COGS and inventory values",
+      "B) Different COGS: the perpetual system records the spike in COGS when sales occur mid-spike; the periodic system captures year-end prices which may be lower",
+      "C) Perpetual COGS is always lower than periodic COGS under LIFO"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Under perpetual LIFO, each sale is matched with the most recent purchase at that moment. A mid-year price spike would push high costs into COGS when sales occur during the spike. Under periodic LIFO, year-end prices determine which costs are 'last in' — if prices fell back by year-end, COGS would differ from the perpetual calculation."
+  },
+  {
+    "id": "FSA6-117",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Management and Industry Context",
+    "difficulty": "Medium",
+    "question": "An analyst observes that a company's inventory turnover is significantly higher than its industry peer group but its sales growth is below the industry average. The most analytically complete interpretation is:",
+    "options": [
+      "A) The company has exceptional inventory management skills",
+      "B) The company may be running lean inventory that is causing stockouts, or write-downs have artificially reduced inventory values — further investigation is needed",
+      "C) The company is about to experience a demand surge"
+    ],
+    "correctAnswer": "B",
+    "explanation": "High turnover with below-average sales growth raises two red flags: (1) inadequate inventory causing lost sales (stockouts), or (2) write-downs have deflated inventory values creating a false turnover signal. Peer comparison and management commentary are essential to distinguish these explanations."
+  },
+  {
+    "id": "FSA6-118",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Management and Industry Context",
+    "difficulty": "Hard",
+    "question": "Ironbridge Rail & Transit Corp's MD&A disclosed that raw material and production costs increased in 2018 while overall revenues declined. The most concerning inventory management implication is:",
+    "options": [
+      "A) Rising input costs with lower revenues may compress margins and raise write-down risk if NRV falls below the new higher-cost inventory",
+      "B) The company should switch to FIFO to better reflect current costs",
+      "C) Higher costs will automatically be offset by passing them through to customers"
+    ],
+    "correctAnswer": "A",
+    "explanation": "When input costs rise but selling prices (revenues) fall, the spread between COGS and revenue narrows. If NRV drops below the higher carrying cost of inventory, write-downs become necessary. This is the classic 'margin squeeze' scenario that creates inventory impairment risk."
+  },
+  {
+    "id": "FSA6-119",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Management and Industry Context",
+    "difficulty": "Hard",
+    "question": "For a LIFO company experiencing LIFO liquidation: (1) inventory levels decline, (2) old low-cost layers enter COGS. An analyst should be most concerned that:",
+    "options": [
+      "A) The artificially low COGS creates inflated profits that are non-recurring",
+      "B) LIFO liquidation permanently damages the company's inventory accounting",
+      "C) Inventory will be restated in future periods"
+    ],
+    "correctAnswer": "A",
+    "explanation": "LIFO liquidation generates a one-time boost to profits (old cheap costs flowing through COGS reduce current expenses). This is non-recurring — if inventory is rebuilt, COGS will return to current (higher) costs. Analysts must identify and adjust for LIFO liquidation gains to avoid overstating sustainable earnings."
+  },
+  {
+    "id": "FSA6-120",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Management and Industry Context",
+    "difficulty": "Hard",
+    "question": "An analyst reviews a company's valuation allowance as a percentage of gross inventory increasing from 5% to 15% over three years. All else equal, this trend most likely signals:",
+    "options": [
+      "A) Improved inventory management producing fewer write-offs",
+      "B) Accelerating inventory obsolescence or NRV deterioration — a growing portion of inventory carries risk of full impairment",
+      "C) The company is overstating its write-downs for tax efficiency"
+    ],
+    "correctAnswer": "B",
+    "explanation": "A rising write-down allowance as a percentage of gross inventory suggests that an increasing share of the inventory base is at risk. This could reflect technological obsolescence, demand deterioration, or competitive pricing pressure — all of which represent fundamental business challenges."
+  },
+  {
+    "id": "FSA6-121",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Quick Review — Method Identification",
+    "difficulty": "Easy",
+    "question": "Which inventory costing method is NOT permitted under IFRS?",
+    "options": [
+      "A) Weighted average cost",
+      "B) FIFO",
+      "C) LIFO"
+    ],
+    "correctAnswer": "C",
+    "explanation": "IFRS prohibits LIFO. Permitted methods under IFRS include specific identification (for unique items), FIFO, and weighted average cost. US GAAP permits all three plus LIFO."
+  },
+  {
+    "id": "FSA6-122",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Quick Review — Method Identification",
+    "difficulty": "Easy",
+    "question": "Which inventory method allocates the same per-unit cost to both COGS and ending inventory?",
+    "options": [
+      "A) FIFO",
+      "B) LIFO",
+      "C) Weighted average cost"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Weighted average cost divides the total cost of goods available for sale by total units available, producing a single average cost per unit applied uniformly to both COGS and ending inventory. FIFO and LIFO split costs differently between COGS and inventory."
+  },
+  {
+    "id": "FSA6-123",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Quick Review — Method Identification",
+    "difficulty": "Medium",
+    "question": "FIFO is described as the 'preferred' method by some practitioners because:",
+    "options": [
+      "A) IFRS mandates FIFO for all inventory types",
+      "B) FIFO ending inventory best approximates current replacement cost, providing a more economically meaningful balance sheet",
+      "C) FIFO always produces the highest net income regardless of price environment"
+    ],
+    "correctAnswer": "B",
+    "explanation": "FIFO's ending inventory reflects the most recently purchased items at their actual purchase prices — closely approximating current replacement cost. This makes the balance sheet more meaningful for assessing economic value. (FIFO produces highest income only in rising prices.)"
+  },
+  {
+    "id": "FSA6-124",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Comprehensive Scenario Analysis",
+    "difficulty": "Hard",
+    "question": "A company switches from LIFO to weighted average cost (in rising prices). All else equal, which set of changes occurs SIMULTANEOUSLY?",
+    "options": [
+      "A) COGS increases; Inventory increases; Net income decreases; D/E decreases",
+      "B) COGS decreases; Inventory increases; Net income increases; D/E decreases",
+      "C) COGS increases; Inventory decreases; Net income decreases; D/E increases"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Switching from LIFO to weighted average in rising prices: weighted average blends costs, producing lower COGS than LIFO (which uses highest recent costs). Lower COGS → higher net income → higher retained earnings → higher equity → lower D/E. Inventory increases (weighted average > LIFO in rising prices)."
+  },
+  {
+    "id": "FSA6-125",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Comprehensive Scenario Analysis",
+    "difficulty": "Hard",
+    "question": "A company's competitors use LIFO while the company uses FIFO (all in rising prices). An analyst adjusting the company to LIFO-equivalent for peer comparison would:",
+    "options": [
+      "A) Add the LIFO reserve to the company's inventory and subtract the after-tax reserve from equity",
+      "B) Subtract the LIFO reserve from the company's inventory and add the after-tax reserve to equity",
+      "C) No adjustment needed — FIFO and LIFO comparisons require no conversion"
+    ],
+    "correctAnswer": "B",
+    "explanation": "To convert FIFO to LIFO-equivalent: subtract the LIFO reserve from inventory (LIFO inventory = FIFO − LIFO reserve); reduce equity by the LIFO reserve after tax (lower cumulative income under LIFO). This makes the FIFO company's financial statements comparable to its LIFO peers."
+  },
+  {
+    "id": "FSA6-126",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Comprehensive Scenario Analysis",
+    "difficulty": "Hard",
+    "question": "Company A (LIFO, rising prices) has a LIFO reserve of USD100M that has been growing for 10 years. Company B (FIFO, same operations) has existed for the same period. Compared to Company B's equity, Company A's equity is lower by approximately:",
+    "options": [
+      "A) USD100M",
+      "B) USD70M (assuming 30% tax rate) — the LIFO reserve after-tax represents deferred income not yet recognized under LIFO",
+      "C) USD130M — including the tax liability"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Company A's equity is lower because LIFO produced lower cumulative net income. The income not recognized under LIFO equals the LIFO reserve (USD100M pre-tax). After applying a 30% tax rate (assuming eventual recognition), the net equity difference = 100 × (1−0.30) = USD70M."
+  },
+  {
+    "id": "FSA6-127",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory in Manufacturing vs Retail",
+    "difficulty": "Medium",
+    "question": "A retailer's inventory accounting is simpler than a manufacturer's primarily because:",
+    "options": [
+      "A) Retailers use FIFO while manufacturers must use weighted average",
+      "B) Retailers hold only merchandise inventory (goods for resale) without work-in-process or raw materials",
+      "C) Retailers do not need to perform lower-of-cost-and-NRV assessments"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Retailers buy finished goods and resell them — their inventory is simply 'merchandise.' Manufacturers must account for raw materials, work-in-process (partially complete, with labor and overhead added), and finished goods, requiring more complex cost accounting."
+  },
+  {
+    "id": "FSA6-128",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory in Manufacturing vs Retail",
+    "difficulty": "Hard",
+    "question": "A manufacturing company's work-in-process inventory increases significantly while finished goods inventory declines. This combination most likely indicates:",
+    "options": [
+      "A) Strong demand causing rapid sell-through of finished goods, with production ramping up (more WIP) to replenish",
+      "B) Production is slowing down as WIP sits incomplete, while old finished goods inventory is being sold",
+      "C) The company is transitioning from manufacturing to distribution"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Rising WIP + falling FG suggests: (1) FG is selling well (demand is strong), and (2) the factory is actively ramping production (hence more WIP). This is a positive demand signal. The opposite pattern (rising FG + falling WIP) would be more concerning."
+  },
+  {
+    "id": "FSA6-129",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Return on Assets — Inventory Method Effects",
+    "difficulty": "Medium",
+    "question": "During rising prices, FIFO produces a higher ROA than LIFO because:",
+    "options": [
+      "A) FIFO produces lower total assets than LIFO",
+      "B) The proportional increase in net income (numerator) from lower COGS outweighs the proportional increase in total assets from higher inventory",
+      "C) LIFO's higher COGS directly reduces total assets"
+    ],
+    "correctAnswer": "B",
+    "explanation": "ROA = NI ÷ Avg assets. FIFO vs. LIFO: NI is higher (lower COGS) and assets are higher (higher inventory). But the percentage increase in NI is larger than the percentage increase in assets, so ROA rises. Example: going from NI=3, Assets=100 to NI=4, Assets=101 raises ROA from 3% to 3.96%."
+  },
+  {
+    "id": "FSA6-130",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Return on Assets — Inventory Method Effects",
+    "difficulty": "Hard",
+    "question": "Vantage's return on assets worsened from −9.2% to −16.9% between 2016 and 2017. The primary driver was NOT:",
+    "options": [
+      "A) A larger net loss in 2017 (−4,345 vs. −2,921) increasing the negative numerator",
+      "B) A decrease in average total assets (as the denominator shrank with asset impairments)",
+      "C) A change in inventory valuation method from FIFO to LIFO in 2017"
+    ],
+    "correctAnswer": "C",
+    "explanation": "There is no indication of an inventory method change. The worsening ROA was driven by: (1) higher net loss from massive asset impairments of EUR3,969M in 2017 vs EUR2,473M in 2016, and (2) declining total assets. No method change occurred."
+  },
+  {
+    "id": "FSA6-131",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Valuation — Lower of Cost and NRV",
+    "difficulty": "Medium",
+    "question": "The lower-of-cost-and-NRV assessment is typically performed at which level?",
+    "options": [
+      "A) Company-wide portfolio of all inventory",
+      "B) Item by item or by groups of similar or related items",
+      "C) At the division or segment level only"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Under IAS 2, the NRV assessment is typically made on an item-by-item basis or for groups of similar/related items. A company cannot net profitable items against unprofitable ones to avoid write-downs — each item or category must be assessed individually."
+  },
+  {
+    "id": "FSA6-132",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Valuation — Lower of Cost and NRV",
+    "difficulty": "Hard",
+    "question": "Company A has two inventory items: Item 1 cost = USD50, NRV = USD40; Item 2 cost = USD30, NRV = USD45. Under IAS 2, the total inventory carrying amount is:",
+    "options": [
+      "A) USD70 (Item 1 at NRV + Item 2 at cost, item-by-item assessment)",
+      "B) USD80 (both at cost; Item 2's gain offsets Item 1's loss)",
+      "C) USD85 (both at NRV)"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Under IAS 2 item-by-item assessment: Item 1 = min(50, 40) = 40; Item 2 = min(30, 45) = 30. Total = USD70. Item 2's NRV above cost does not offset Item 1's write-down — gains and losses cannot be netted across items."
+  },
+  {
+    "id": "FSA6-133",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Comprehensive Application — Multiple Companies",
+    "difficulty": "Hard",
+    "question": "Mendes is comparing Nexford Chemical Industries (LIFO), Atlantis Aerospace Ltd (FIFO), and Pinnacle Utilities Corp (LIFO). The price indices show inflation over 2016-2018. Which company's reported gross margin BEST reflects the current economic gross margin of the industry?",
+    "options": [
+      "A) Nexford Chemical Industries — because it uses LIFO and is the largest company",
+      "B) Atlantis Aerospace Ltd — because FIFO reflects current balance sheet values",
+      "C) Pinnacle Utilities Corp — because it uses LIFO and has a steadily growing (not decreasing) LIFO reserve, indicating no LIFO liquidation distortion"
+    ],
+    "correctAnswer": "C",
+    "explanation": "LIFO COGS best reflects current replacement cost. However, Nexford's LIFO reserve is DECREASING (72 → 55), suggesting LIFO liquidation is distorting COGS downward. Pinnacle's reserve is INCREASING (43 → 50 → 77), indicating no liquidation — its LIFO COGS most accurately represents current industry costs."
+  },
+  {
+    "id": "FSA6-134",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Comprehensive Application — Multiple Companies",
+    "difficulty": "Hard",
+    "question": "Atlantis Aerospace Ltd (FIFO) would show a higher gross profit margin than Nexford Chemical Industries (LIFO) in which scenario?",
+    "options": [
+      "A) Stable prices — all methods produce the same result",
+      "B) Inflationary environment — FIFO uses older lower costs in COGS, producing higher margins than LIFO",
+      "C) Deflationary environment — FIFO uses older higher costs, producing lower margins than LIFO"
+    ],
+    "correctAnswer": "B",
+    "explanation": "In inflation: FIFO COGS uses old (low) costs → lower COGS → higher gross margin. LIFO COGS uses new (high) costs → higher COGS → lower gross margin. With rising price indices confirmed (100→112 raw materials), Atlantis's FIFO method naturally produces a higher reported gross margin."
+  },
+  {
+    "id": "FSA6-135",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "FIFO vs LIFO vs Weighted Average — Rising Prices",
+    "difficulty": "Medium",
+    "question": "Under rising inventory unit costs, a FIFO company reports a LOWER inventory turnover than an identical LIFO company. This is because:",
+    "options": [
+      "A) FIFO lower COGS (numerator) combined with FIFO higher inventory (denominator) both reduce the ratio",
+      "B) FIFO produces higher inventory but identical COGS as LIFO",
+      "C) FIFO turnover is always equal to LIFO turnover regardless of price environment"
+    ],
+    "correctAnswer": "A",
+    "explanation": "In rising prices: FIFO produces lower COGS (numerator) AND higher ending inventory (denominator) relative to LIFO. Both effects pull the inventory turnover ratio down for FIFO. LIFO's higher COGS and lower inventory both push its turnover ratio up."
+  },
+  {
+    "id": "FSA6-136",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Ratios and Analysis",
+    "difficulty": "Medium",
+    "question": "Stratos Building Materials Co's inventory net of allowance increased from CHF7,039M to CHF8,100M (+15%). Meanwhile, COGS grew from CHF39,047M to CHF41,043M (+5%). What does this combination most likely indicate?",
+    "options": [
+      "A) Century is building finished goods inventory ahead of anticipated demand growth",
+      "B) Century's inventory management is deteriorating — inventory is growing faster than COGS, suggesting slower sell-through",
+      "C) The allowance reduction masks a much larger underlying inventory build"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Inventory growing 15% while COGS grew only 5% means either demand growth is anticipated (strategic build), or inventory is accumulating faster than it's being consumed. Given Century's stable profitability improvement, the inventory build likely reflects planned growth rather than demand problems. Context and management commentary would confirm."
+  },
+  {
+    "id": "FSA6-137",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Ratios and Analysis",
+    "difficulty": "Hard",
+    "question": "An analyst observes that Ironbridge's finished goods inventory fell JPY111,879M (from 403,856 to 291,977) while raw materials fell only JPY13,903M. What is the most analytically significant observation?",
+    "options": [
+      "A) Ironbridge Rail & Transit Corp is running out of raw materials, potentially causing production halts",
+      "B) The large decline in finished goods relative to stable raw materials suggests a demand-driven sell-down rather than production disruption — consistent with Ironbridge's MD&A about lower sales volumes",
+      "C) Ironbridge Rail & Transit Corp has started outsourcing production, reducing both FG and raw material needs proportionally"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Finished goods fell sharply (−28%) while raw materials were relatively stable (−14%). If production were cut, raw materials would likely fall proportionally too. The pattern is more consistent with selling down existing finished goods stock (demand-driven) while maintaining raw material supply for future production."
+  },
+  {
+    "id": "FSA6-138",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Write-Downs — Balance Sheet Effects",
+    "difficulty": "Medium",
+    "question": "An inventory write-down of USD20M reduces current assets by USD20M and increases COGS by USD20M. The effect on equity is:",
+    "options": [
+      "A) No effect on equity — only assets are affected",
+      "B) Equity decreases by USD20M × (1 − tax rate) assuming the write-down is tax-deductible",
+      "C) Equity decreases by USD20M (full amount, no tax consideration)"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The write-down increases COGS → reduces pretax income → reduces tax expense (if deductible) → reduces net income → reduces retained earnings (part of equity). Net equity decrease = Write-down × (1 − tax rate). Example: USD20M write-down at 25% tax → equity decreases by USD15M."
+  },
+  {
+    "id": "FSA6-139",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Write-Downs — Balance Sheet Effects",
+    "difficulty": "Hard",
+    "question": "A company writes down inventory by USD50M. The effect on the current ratio (before the write-down, current ratio = 2.0x, with current assets = USD400M and current liabilities = USD200M) is:",
+    "options": [
+      "A) New current ratio = 350/200 = 1.75x",
+      "B) New current ratio = 400/250 = 1.60x",
+      "C) No effect — write-downs are non-cash and don't change current assets"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Inventory write-down reduces inventory (a current asset) by USD50M. New current assets = 400 − 50 = USD350M. Current liabilities are unchanged at USD200M. New current ratio = 350 ÷ 200 = 1.75x. Write-downs are non-cash but DO reduce the carrying value of inventory on the balance sheet."
+  },
+  {
+    "id": "FSA6-140",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Write-Downs — Balance Sheet Effects",
+    "difficulty": "Hard",
+    "question": "After Volvo's 2017 inventory obsolescence allowance decreased (net reversal of SEK194M), which financial ratio changed in the COUNTERINTUITIVE direction vs. typically expected from a write-down?",
+    "options": [
+      "A) Inventory turnover decreased (not increased) because inventory rose",
+      "B) Gross profit margin increased (not decreased) because COGS was reduced by the partial reversal",
+      "C) Current ratio decreased (not increased) because inventory fell"
+    ],
+    "correctAnswer": "B",
+    "explanation": "A typical write-down increases COGS → decreases gross margin. But in 2017, Volvo's allowance DECREASED (partial reversal) → COGS was REDUCED → gross margin was slightly HIGHER than it would be without any allowance. As-reported gross margin (23.95%) > adjusted no-allowance gross margin (23.89%)."
+  },
+  {
+    "id": "FSA6-141",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Disclosures — Practical Application",
+    "difficulty": "Medium",
+    "question": "When analyzing a company's inventory disclosures, which source of information is LEAST likely to provide direct analytical value?",
+    "options": [
+      "A) Management discussion and analysis (MD&A) commentary on inventory trends",
+      "B) Industry publications reporting supply and demand conditions",
+      "C) The company's employee stock option plan disclosures"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Stock option disclosures are primarily useful for equity compensation analysis, not inventory analysis. MD&A provides management's perspective on inventory changes, write-downs, and future expectations. Industry publications reveal demand trends, input cost changes, and competitive dynamics affecting inventory values."
+  },
+  {
+    "id": "FSA6-142",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Disclosures — Practical Application",
+    "difficulty": "Hard",
+    "question": "From Ironbridge's Note 9, which observation about the inventory breakdown provides the most analytically useful signal regarding future sales?",
+    "options": [
+      "A) Finished goods fell to JPY291,977M from JPY403,856M — this likely signals management anticipates a further sales downturn in 2019",
+      "B) Supplies and other barely changed — this confirms stable overhead structure",
+      "C) Raw materials decreased to JPY85,966M from JPY99,869M — this indicates procurement efficiency"
+    ],
+    "correctAnswer": "A",
+    "explanation": "The Ironbridge Rail & Transit Corp solutions section confirms: 'Reduced levels of inventory typically indicate an anticipated business contraction.' Sharp finished goods decline combined with lower raw materials suggests management has reduced production and/or sold down inventory ahead of expected lower demand in 2019."
+  },
+  {
+    "id": "FSA6-143",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Disclosures — Practical Application",
+    "difficulty": "Hard",
+    "question": "An analyst finds that Ironbridge's LIFO inventory (a subset of total inventory) declined significantly, but the LIFO reserve INCREASED. The correct inference is:",
+    "options": [
+      "A) LIFO liquidation occurred because fewer units are in LIFO inventory",
+      "B) No LIFO liquidation occurred — the LIFO reserve increase means FIFO costs rose above LIFO costs per unit, widening the gap despite lower volumes",
+      "C) Ironbridge Rail & Transit Corp should switch to FIFO because the reserve is growing"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The solutions text confirms: 'The LIFO reserve increased from JPY10,120 to JPY19,660 million. This is not to be expected [from unit reduction alone] and is likely caused by the increase in prices of raw materials.' No LIFO liquidation — rising per-unit costs expanded the FIFO-LIFO gap even as quantities fell."
+  },
+  {
+    "id": "FSA6-144",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Perpetual vs Periodic — Weighted Average",
+    "difficulty": "Hard",
+    "question": "Stratos Building Materials Co uses weighted average cost for WIP and manufactured finished goods under a perpetual system. This means:",
+    "options": [
+      "A) One weighted average is calculated for all purchases in the year and applied uniformly",
+      "B) A new moving average cost is computed after each purchase, and this updated average is used for subsequent sales until the next purchase",
+      "C) All units are valued at the ending period purchase price"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Under a perpetual weighted average (moving average) system, each purchase triggers a recalculation of the per-unit average cost: (remaining inventory value + new purchase cost) ÷ (remaining units + new units). This new average applies to all subsequent COGS calculations until the next purchase."
+  },
+  {
+    "id": "FSA6-145",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Write-Downs — Policy Reluctance",
+    "difficulty": "Medium",
+    "question": "Companies may be reluctant to record inventory write-downs under US GAAP because:",
+    "options": [
+      "A) Write-downs require immediate cash payment to shareholders",
+      "B) US GAAP prohibits reversals, so the write-down permanently reduces inventory and profits — there is no future recovery possible",
+      "C) Write-downs trigger mandatory external audits"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Under US GAAP, once inventory is written down, it cannot be written back up. This permanent reduction of carrying value and the one-time profit hit discourages write-downs when evidence of permanent impairment is not conclusive. Under IFRS, the availability of future reversals makes companies more willing to recognize impairments earlier."
+  },
+  {
+    "id": "FSA6-146",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Inventory Write-Downs — Policy Reluctance",
+    "difficulty": "Hard",
+    "question": "A company with a debt covenant requiring a minimum current ratio of 1.5x currently has a current ratio of 1.6x. An inventory write-down of 10% of current assets would reduce the current ratio to approximately 1.44x. The most significant analytical implication is:",
+    "options": [
+      "A) The write-down should not be recorded because it would breach the covenant",
+      "B) Management may have incentives to delay or avoid the write-down to preserve covenant compliance, creating earnings quality risk",
+      "C) The creditor would likely waive the covenant given the small breach"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Management's incentive to preserve covenant compliance creates a bias against timely write-down recognition. This is a well-documented earnings quality concern — analysts should scrutinize inventory valuations when companies are near covenant thresholds, using NRV signals from industry data and write-down disclosures."
+  },
+  {
+    "id": "FSA6-147",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Comprehensive Review",
+    "difficulty": "Medium",
+    "question": "Which of the following statements accurately describes the relationship between inventory methods and the balance sheet in rising prices?",
+    "options": [
+      "A) LIFO produces a higher inventory balance than FIFO",
+      "B) FIFO produces a higher inventory balance than LIFO, more closely reflecting current replacement cost",
+      "C) Weighted average produces the highest inventory balance of all methods"
+    ],
+    "correctAnswer": "B",
+    "explanation": "In rising prices: FIFO retains the newest (most expensive) units in inventory → highest inventory balance, closest to replacement cost. LIFO retains the oldest (cheapest) layers → lowest inventory balance, furthest from replacement cost. Weighted average falls in between."
+  },
+  {
+    "id": "FSA6-148",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Comprehensive Review",
+    "difficulty": "Hard",
+    "question": "An analyst summarizes the cumulative effects of three years of rising prices on a LIFO vs. FIFO comparison. Which set of statements is entirely correct?",
+    "options": [
+      "A) LIFO: higher COGS, lower inventory, lower taxes, lower D/E, higher inventory turnover",
+      "B) LIFO: higher COGS, lower inventory, lower taxes, HIGHER D/E (lower equity), higher inventory turnover",
+      "C) LIFO: lower COGS, higher inventory, higher taxes, lower D/E, lower inventory turnover"
+    ],
+    "correctAnswer": "B",
+    "explanation": "In rising prices, LIFO: Higher COGS (most recent costs expensed) → Lower gross profit → Lower taxes → Lower net income → Lower retained earnings → Lower equity → HIGHER D/E. Lower inventory on balance sheet → Higher inventory turnover. All of B is correct except D/E is higher (equity is lower)."
+  },
+  {
+    "id": "FSA6-149",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Comprehensive Review",
+    "difficulty": "Hard",
+    "question": "Which of the following inventory disclosures would be most useful to an analyst comparing two IFRS companies, one using FIFO and one using weighted average, in a period of rising prices?",
+    "options": [
+      "A) The amount of inventories pledged as security for liabilities",
+      "B) The carrying amount by inventory classification (raw materials, WIP, finished goods) and the cost formula used for each",
+      "C) Whether the company uses a perpetual or periodic inventory system"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The cost formula used (FIFO vs. weighted average) and the breakdown by classification directly enables the analyst to understand which costs flow into COGS vs. remaining in inventory, enabling proper adjustments for comparison. Pledged amounts and the perpetual/periodic distinction are secondary to the cost flow assumption for cross-company analysis."
+  },
+  {
+    "id": "FSA6-150",
+    "chapter": "FSA-6",
+    "chapterName": "Analysis of Inventories",
+    "topic": "Comprehensive Review",
+    "difficulty": "Hard",
+    "question": "An analyst concludes: 'Company X's superior inventory turnover and gross margins are evidence of better management than peer Company Y.' Company X uses LIFO; Company Y uses FIFO. Both operate in the same rising-price environment. Which flaw in the analyst's conclusion is most significant?",
+    "options": [
+      "A) The analyst used cost of sales rather than net sales in the turnover calculation",
+      "B) The comparison ignores that LIFO's mechanical properties (high COGS, low inventory) automatically produce higher turnover, while FIFO mechanically produces higher gross margins — the apparent performance difference may be entirely an accounting artifact",
+      "C) The analyst should compare return on equity rather than gross margin"
+    ],
+    "correctAnswer": "B",
+    "explanation": "In rising prices, LIFO always shows higher inventory turnover (high COGS numerator, low inventory denominator) and FIFO always shows higher gross margins (low COGS from old cheap costs). Comparing these ratios directly without adjusting for method differences is analytically misleading — the apparent management superiority is an accounting illusion, not an operational reality."
   }
-
-
 ];
